@@ -17,75 +17,6 @@
 namespace SDK::Params
 {
 
-// LuaFunction umg_fight.umg_fight_C.CheckFightPartShow
-// 0x0003 (0x0003 - 0x0000)
-struct umg_fight_C_CheckFightPartShow final
-{
-public:
-	EFightWidgetPart                              InPart;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EFightWidgetPartHideReason                    InReason;                                          // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_C_CheckFightPartShow;
-
-// LuaFunction umg_fight.umg_fight_C.GetFightPartShow
-// 0x0002 (0x0002 - 0x0000)
-struct umg_fight_C_GetFightPartShow final
-{
-public:
-	EFightWidgetPart                              InPart;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_C_GetFightPartShow;
-
-// LuaFunction umg_fight.umg_fight_C.SetFightPartShow
-// 0x0004 (0x0004 - 0x0000)
-struct umg_fight_C_SetFightPartShow final
-{
-public:
-	EFightWidgetPart                              InPart;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EFightWidgetPartHideReason                    InReason;                                          // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShow;                                             // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bForce;                                            // 0x0003(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_C_SetFightPartShow;
-
-// LuaFunction umg_fight.umg_fight_C.UpdateInteractionProgress
-// 0x0004 (0x0004 - 0x0000)
-struct umg_fight_C_UpdateInteractionProgress final
-{
-public:
-	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_C_UpdateInteractionProgress;
-
-// LuaFunction umg_fight.umg_fight_C.HideSkillSelector
-// 0x0004 (0x0004 - 0x0000)
-struct umg_fight_C_HideSkillSelector final
-{
-public:
-	int32                                         SkillIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_C_HideSkillSelector;
-
-// LuaFunction umg_fight.umg_fight_C.ShowOrHideCross
-// 0x0001 (0x0001 - 0x0000)
-struct umg_fight_C_ShowOrHideCross final
-{
-public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_C_ShowOrHideCross;
-
-// LuaFunction umg_fight.umg_fight_C.ShowSkillSelector
-// 0x0004 (0x0004 - 0x0000)
-struct umg_fight_C_ShowSkillSelector final
-{
-public:
-	int32                                         SkillIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_C_ShowSkillSelector;
-
 // Function umg_fight.umg_fight_C.ExecuteUbergraph_umg_fight
 // 0x00E8 (0x00E8 - 0x0000)
 struct umg_fight_C_ExecuteUbergraph_umg_fight final
@@ -285,14 +216,74 @@ public:
 };
 DUMPER7_ASSERTS_umg_fight_C_Get_TxtOnlineNum_Text_0;
 
-// LuaFunction umg_fight.umg_fight_C.WidgetGeometryReadyFrame
-// 0x0004 (0x0004 - 0x0000)
-struct umg_fight_C_WidgetGeometryReadyFrame final
+// LuaFunction umg_fight.umg_fight_C.GetFightPartShow
+// 0x0002 (0x0002 - 0x0000)
+struct umg_fight_C_GetFightPartShow final
 {
 public:
-	int32                                         Frame;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EFightWidgetPart                              InPart;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_umg_fight_C_WidgetGeometryReadyFrame;
+DUMPER7_ASSERTS_umg_fight_C_GetFightPartShow;
+
+// LuaFunction umg_fight.umg_fight_C.CheckFightPartShow
+// 0x0003 (0x0003 - 0x0000)
+struct umg_fight_C_CheckFightPartShow final
+{
+public:
+	EFightWidgetPart                              InPart;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EFightWidgetPartHideReason                    InReason;                                          // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_C_CheckFightPartShow;
+
+// LuaFunction umg_fight.umg_fight_C.SetFightPartShow
+// 0x0004 (0x0004 - 0x0000)
+struct umg_fight_C_SetFightPartShow final
+{
+public:
+	EFightWidgetPart                              InPart;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EFightWidgetPartHideReason                    InReason;                                          // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShow;                                             // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bForce;                                            // 0x0003(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_C_SetFightPartShow;
+
+// LuaFunction umg_fight.umg_fight_C.ShowOrHideCross
+// 0x0001 (0x0001 - 0x0000)
+struct umg_fight_C_ShowOrHideCross final
+{
+public:
+	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_C_ShowOrHideCross;
+
+// LuaFunction umg_fight.umg_fight_C.UpdateInteractionProgress
+// 0x0004 (0x0004 - 0x0000)
+struct umg_fight_C_UpdateInteractionProgress final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_C_UpdateInteractionProgress;
+
+// LuaFunction umg_fight.umg_fight_C.ShowSkillSelector
+// 0x0004 (0x0004 - 0x0000)
+struct umg_fight_C_ShowSkillSelector final
+{
+public:
+	int32                                         SkillIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_C_ShowSkillSelector;
+
+// LuaFunction umg_fight.umg_fight_C.HideSkillSelector
+// 0x0004 (0x0004 - 0x0000)
+struct umg_fight_C_HideSkillSelector final
+{
+public:
+	int32                                         SkillIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_C_HideSkillSelector;
 
 // Function umg_fight.umg_fight_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)
@@ -302,6 +293,15 @@ public:
 	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_umg_fight_C_GetModuleName;
+
+// LuaFunction umg_fight.umg_fight_C.WidgetGeometryReadyFrame
+// 0x0004 (0x0004 - 0x0000)
+struct umg_fight_C_WidgetGeometryReadyFrame final
+{
+public:
+	int32                                         Frame;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_C_WidgetGeometryReadyFrame;
 
 }
 

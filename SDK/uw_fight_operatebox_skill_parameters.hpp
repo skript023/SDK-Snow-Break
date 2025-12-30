@@ -14,6 +14,24 @@
 namespace SDK::Params
 {
 
+// LuaFunction uw_fight_operatebox_skill.uw_fight_operatebox_skill_C.K2_PlayCDAnim
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_operatebox_skill_C_K2_PlayCDAnim final
+{
+public:
+	bool                                          bPlayCD;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_uw_fight_operatebox_skill_C_K2_PlayCDAnim;
+
+// LuaFunction uw_fight_operatebox_skill.uw_fight_operatebox_skill_C.K2_OnCustomUmgAnimFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_operatebox_skill_C_K2_OnCustomUmgAnimFinished final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_uw_fight_operatebox_skill_C_K2_OnCustomUmgAnimFinished;
+
 // LuaFunction uw_fight_operatebox_skill.uw_fight_operatebox_skill_C.OnChargeTimesChange
 // 0x0008 (0x0008 - 0x0000)
 struct uw_fight_operatebox_skill_C_OnChargeTimesChange final
@@ -32,24 +50,6 @@ public:
 	bool                                          bStart;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_uw_fight_operatebox_skill_C_OnSkillStrengthening;
-
-// LuaFunction uw_fight_operatebox_skill.uw_fight_operatebox_skill_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_operatebox_skill_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_uw_fight_operatebox_skill_C_K2_OnCustomUmgAnimFinished;
-
-// LuaFunction uw_fight_operatebox_skill.uw_fight_operatebox_skill_C.K2_PlayCDAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_operatebox_skill_C_K2_PlayCDAnim final
-{
-public:
-	bool                                          bPlayCD;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_uw_fight_operatebox_skill_C_K2_PlayCDAnim;
 
 // Function uw_fight_operatebox_skill.uw_fight_operatebox_skill_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

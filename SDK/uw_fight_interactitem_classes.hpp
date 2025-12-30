@@ -40,8 +40,8 @@ public:
 	int32                                         PriorityLevel;                                     // 0x0430(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 	void InitGamepadLongPressUI();
 	void Construct();
 	void UpdateKeyShow();

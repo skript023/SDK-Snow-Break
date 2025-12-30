@@ -33,8 +33,8 @@ public:
 
 public:
 	void ReceiveBeginPlay();
-	void ExecuteUbergraph_girl004b_skill03(int32 EntryPoint);
 	void ReceiveDestroyed();
+	void ExecuteUbergraph_girl004b_skill03(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

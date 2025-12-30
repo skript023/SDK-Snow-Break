@@ -17,54 +17,6 @@
 namespace SDK
 {
 
-// Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.CheckBunkerLeader
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UAbilityComponentBase*            InAbility                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool*                                   InType                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UCondition_PlayerBunkerState_C::CheckBunkerLeader(class UAbilityComponentBase* InAbility, bool* InType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Condition_PlayerBunkerState_C", "CheckBunkerLeader");
-
-	Params::Condition_PlayerBunkerState_C_CheckBunkerLeader Parms{};
-
-	Parms.InAbility = InAbility;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (InType != nullptr)
-		*InType = Parms.InType;
-}
-
-
-// Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.CheckEdgeType
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AGamePlayer*                      InPlayer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool*                                   InType                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UCondition_PlayerBunkerState_C::CheckEdgeType(class AGamePlayer* InPlayer, bool* InType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Condition_PlayerBunkerState_C", "CheckEdgeType");
-
-	Params::Condition_PlayerBunkerState_C_CheckEdgeType Parms{};
-
-	Parms.InPlayer = InPlayer;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (InType != nullptr)
-		*InType = Parms.InType;
-}
-
-
 // Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.CheckBunkerType
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -86,30 +38,6 @@ void UCondition_PlayerBunkerState_C::CheckBunkerType(class AGamePlayer* InPlayer
 
 	if (InType != nullptr)
 		*InType = Parms.InType;
-}
-
-
-// Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.CheckState
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UAbilityComponentBase*            InAbility                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool*                                   bCom                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UCondition_PlayerBunkerState_C::CheckState(class UAbilityComponentBase* InAbility, bool* bCom)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Condition_PlayerBunkerState_C", "CheckState");
-
-	Params::Condition_PlayerBunkerState_C_CheckState Parms{};
-
-	Parms.InAbility = InAbility;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (bCom != nullptr)
-		*bCom = Parms.bCom;
 }
 
 
@@ -169,6 +97,78 @@ void UCondition_PlayerBunkerState_C::ExecuteUbergraph_Condition_PlayerBunkerStat
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.CheckBunkerLeader
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UAbilityComponentBase*            InAbility                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   InType                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UCondition_PlayerBunkerState_C::CheckBunkerLeader(class UAbilityComponentBase* InAbility, bool* InType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Condition_PlayerBunkerState_C", "CheckBunkerLeader");
+
+	Params::Condition_PlayerBunkerState_C_CheckBunkerLeader Parms{};
+
+	Parms.InAbility = InAbility;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (InType != nullptr)
+		*InType = Parms.InType;
+}
+
+
+// Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.CheckEdgeType
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AGamePlayer*                      InPlayer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   InType                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UCondition_PlayerBunkerState_C::CheckEdgeType(class AGamePlayer* InPlayer, bool* InType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Condition_PlayerBunkerState_C", "CheckEdgeType");
+
+	Params::Condition_PlayerBunkerState_C_CheckEdgeType Parms{};
+
+	Parms.InPlayer = InPlayer;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (InType != nullptr)
+		*InType = Parms.InType;
+}
+
+
+// Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.CheckState
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UAbilityComponentBase*            InAbility                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   bCom                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UCondition_PlayerBunkerState_C::CheckState(class UAbilityComponentBase* InAbility, bool* bCom)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Condition_PlayerBunkerState_C", "CheckState");
+
+	Params::Condition_PlayerBunkerState_C_CheckState Parms{};
+
+	Parms.InAbility = InAbility;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (bCom != nullptr)
+		*bCom = Parms.bCom;
 }
 
 }

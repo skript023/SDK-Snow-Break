@@ -151,6 +151,12 @@ public:
 	class URedirectTextBlock*                     TxtTitle;                                          // 0x07A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
+	void OnConstruct();
+	void Destruct();
+	void CustListQuickPlayAnim();
+	void CustListPlayAnim();
+	void Construct();
+	void OnListItemObjectSet(class UObject* ListItemObject);
 	void SequenceEvent__ENTRYPOINTuw_widgets_item_list_3();
 	void SequenceEvent__ENTRYPOINTuw_widgets_item_list_2();
 	void SequenceEvent__ENTRYPOINTuw_widgets_item_list_1();
@@ -165,12 +171,6 @@ public:
 	void SequenceEvent_4();
 	void SequenceEvent_5();
 	void ExecuteUbergraph_uw_widgets_item_list(int32 EntryPoint);
-	void Destruct();
-	void OnConstruct();
-	void OnListItemObjectSet(class UObject* ListItemObject);
-	void CustListPlayAnim();
-	void Construct();
-	void CustListQuickPlayAnim();
 
 	class FString GetModuleName() const;
 

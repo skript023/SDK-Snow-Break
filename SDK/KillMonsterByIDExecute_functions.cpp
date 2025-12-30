@@ -17,88 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnActive_Client
-// (Native, Event, Public, BlueprintEvent)
-
-void UKillMonsterByIdExecute_C::OnActive_Client()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnActive_Client");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnActive
-// (Native, Event, Public, BlueprintEvent)
-
-void UKillMonsterByIdExecute_C::OnActive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnActive");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.GetDescription
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UKillMonsterByIdExecute_C::GetDescription()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterByIdExecute_C", "GetDescription");
-
-	Params::KillMonsterByIdExecute_C_GetDescription Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnEnd
-// (Native, Event, Public, BlueprintEvent)
-
-void UKillMonsterByIdExecute_C::OnEnd()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnEnd");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnCountDown_Client
 // (Native, Event, Public, BlueprintEvent)
 
@@ -137,23 +55,85 @@ void UKillMonsterByIdExecute_C::OnEnd_Client()
 }
 
 
-// Function KillMonsterByIDExecute.KillMonsterByIdExecute_C.GetModuleName
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnActive
+// (Native, Event, Public, BlueprintEvent)
 
-class FString UKillMonsterByIdExecute_C::GetModuleName() const
+void UKillMonsterByIdExecute_C::OnActive()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterByIdExecute_C", "GetModuleName");
+		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnActive");
 
-	Params::KillMonsterByIdExecute_C_GetModuleName Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnEnd
+// (Native, Event, Public, BlueprintEvent)
+
+void UKillMonsterByIdExecute_C::OnEnd()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnEnd");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.GetDescription
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UKillMonsterByIdExecute_C::GetDescription()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KillMonsterByIdExecute_C", "GetDescription");
+
+	Params::KillMonsterByIdExecute_C_GetDescription Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
+	Func->FunctionFlags = Flgs;
+
 	return Parms.ReturnValue;
+}
+
+
+// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnActive_Client
+// (Native, Event, Public, BlueprintEvent)
+
+void UKillMonsterByIdExecute_C::OnActive_Client()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnActive_Client");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -170,6 +150,26 @@ class FString UKillMonsterByIdExecute_C::GetSpecialStaticDescription() const
 		Func = Class->GetFunction("KillMonsterByIdExecute_C", "GetSpecialStaticDescription");
 
 	Params::KillMonsterByIdExecute_C_GetSpecialStaticDescription Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KillMonsterByIDExecute.KillMonsterByIdExecute_C.GetModuleName
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+
+class FString UKillMonsterByIdExecute_C::GetModuleName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KillMonsterByIdExecute_C", "GetModuleName");
+
+	Params::KillMonsterByIdExecute_C_GetModuleName Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

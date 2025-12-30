@@ -16,6 +16,15 @@
 namespace SDK::Params
 {
 
+// Function SwitchMgr.SwitchMgr_C.ReceiveTick__Overridden
+// 0x0004 (0x0004 - 0x0000)
+struct SwitchMgr_C_ReceiveTick__Overridden final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SwitchMgr_C_ReceiveTick__Overridden;
+
 // Function SwitchMgr.SwitchMgr_C.ExecuteUbergraph_SwitchMgr
 // 0x0008 (0x0008 - 0x0000)
 struct SwitchMgr_C_ExecuteUbergraph_SwitchMgr final
@@ -25,15 +34,6 @@ public:
 	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_SwitchMgr_C_ExecuteUbergraph_SwitchMgr;
-
-// Function SwitchMgr.SwitchMgr_C.ReceiveTick__Overridden
-// 0x0004 (0x0004 - 0x0000)
-struct SwitchMgr_C_ReceiveTick__Overridden final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_SwitchMgr_C_ReceiveTick__Overridden;
 
 // LuaFunction SwitchMgr.SwitchMgr_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)

@@ -28,13 +28,13 @@ public:
 	TArray<int32>                                 InterruptSkillID;                                  // 0x0120(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
+	void BindEvent(class UAbilityComponentBase* Ability);
 	void UnbindEvent(class UAbilityComponentBase* Ability);
 	void K2_InitCondition();
+	void OnSkillCancel(int32 SkillID, ESkillInterruptedType InType, int32 InInterruptSkillID);
 	void K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void K2_UnbindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void ExecuteUbergraph_Condition_SkillCancel(int32 EntryPoint);
-	void BindEvent(class UAbilityComponentBase* Ability);
-	void OnSkillCancel(int32 SkillID, ESkillInterruptedType InType, int32 InInterruptSkillID);
 
 public:
 	static class UClass* StaticClass()

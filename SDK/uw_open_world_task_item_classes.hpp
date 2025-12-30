@@ -32,21 +32,21 @@ public:
 	class URedirectTextBlock*                     Title;                                             // 0x03E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_open_world_task_item(int32 EntryPoint);
-	void OnClickTask();
-	void Destruct__Overridden();
-	void Construct__Overridden();
-	void BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature();
-	void BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature();
-	void OnListItemObjectSet(class UObject* ListItemObject);
-	void BP_OnItemSelectionChanged(bool bIsSelected);
-	void BP_OnItemExpansionChanged(bool bIsExpanded);
-	void BP_OnEntryReleased();
 	void GetTaskPointId__Overridden(class FString* ID);
-	void Construct();
+	void BP_OnEntryReleased();
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void BP_OnItemSelectionChanged(bool bIsSelected);
+	void OnListItemObjectSet(class UObject* ListItemObject);
+	void BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature();
+	void BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature();
+	void Construct__Overridden();
+	void Destruct__Overridden();
+	void OnClickTask();
+	void ExecuteUbergraph_uw_open_world_task_item(int32 EntryPoint);
 	void GetTaskPointId(class FString* ID);
-	void OnConstruct();
+	void Construct();
 	void Destruct();
+	void OnConstruct();
 
 	class FString GetModuleName() const;
 

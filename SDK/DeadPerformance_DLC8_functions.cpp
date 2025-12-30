@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function DeadPerformance_DLC8.DeadPerformance_DLC8_C.ExecuteUbergraph_DeadPerformance_DLC8
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UDeadPerformance_DLC8_C::ExecuteUbergraph_DeadPerformance_DLC8(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DeadPerformance_DLC8_C", "ExecuteUbergraph_DeadPerformance_DLC8");
+
+	Params::DeadPerformance_DLC8_C_ExecuteUbergraph_DeadPerformance_DLC8 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function DeadPerformance_DLC8.DeadPerformance_DLC8_C.DeadPerformanceLogic
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -38,26 +58,6 @@ void UDeadPerformance_DLC8_C::DeadPerformanceLogic(class AGameCharacter* DeadCha
 	Parms.Killer = Killer;
 	Parms.DeadComponent = DeadComponent;
 	Parms.HealthChangeValue = std::move(HealthChangeValue);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function DeadPerformance_DLC8.DeadPerformance_DLC8_C.ExecuteUbergraph_DeadPerformance_DLC8
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UDeadPerformance_DLC8_C::ExecuteUbergraph_DeadPerformance_DLC8(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DeadPerformance_DLC8_C", "ExecuteUbergraph_DeadPerformance_DLC8");
-
-	Params::DeadPerformance_DLC8_C_ExecuteUbergraph_DeadPerformance_DLC8 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

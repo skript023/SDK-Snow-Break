@@ -125,6 +125,44 @@ void Uuw_fight_star_tips_C::TryPlay__Overridden()
 }
 
 
+// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.TryPlay
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_star_tips_C::TryPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_star_tips_C", "TryPlay");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_star_tips_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_star_tips_C", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -145,25 +183,6 @@ void Uuw_fight_star_tips_C::OnAnimationFinished(const class UWidgetAnimation* An
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.TryPlay
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_star_tips_C::TryPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_star_tips_C", "TryPlay");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -194,15 +213,15 @@ void Uuw_fight_star_tips_C::OnListItemObjectSet(class UObject* ListItemObject)
 }
 
 
-// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.Construct
+// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.Destruct
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_star_tips_C::Construct()
+void Uuw_fight_star_tips_C::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_star_tips_C", "Construct");
+		Func = Class->GetFunction("uw_fight_star_tips_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -222,25 +241,6 @@ void Uuw_fight_star_tips_C::OnConstruct()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_star_tips_C", "OnConstruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_star_tips_C::Destruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_star_tips_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

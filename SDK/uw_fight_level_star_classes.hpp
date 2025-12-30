@@ -30,8 +30,8 @@ public:
 	void Destruct__Overridden();
 	void Construct__Overridden();
 	void Construct();
-	void OnConstruct();
 	void Destruct();
+	void OnConstruct();
 
 	class FString GetModuleName() const;
 

@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_interactlist.uw_fight_interactlist_C.RemoveInteractItemOfOwner
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          Owner                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_interactlist_C::RemoveInteractItemOfOwner(class UObject* Owner)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_interactlist_C", "RemoveInteractItemOfOwner");
-
-	Params::uw_fight_interactlist_C_RemoveInteractItemOfOwner Parms{};
-
-	Parms.Owner = Owner;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_interactlist.uw_fight_interactlist_C.AddInteractItem
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -69,6 +49,26 @@ void Uuw_fight_interactlist_C::AddInteractItem(class UClass* InteractItemBaseCla
 }
 
 
+// Function uw_fight_interactlist.uw_fight_interactlist_C.RemoveInteractItemOfOwner
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          Owner                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_interactlist_C::RemoveInteractItemOfOwner(class UObject* Owner)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_interactlist_C", "RemoveInteractItemOfOwner");
+
+	Params::uw_fight_interactlist_C_RemoveInteractItemOfOwner Parms{};
+
+	Parms.Owner = Owner;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // LuaFunction uw_fight_interactlist.uw_fight_interactlist_C.Construct
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
@@ -88,15 +88,15 @@ void Uuw_fight_interactlist_C::Construct()
 }
 
 
-// LuaFunction uw_fight_interactlist.uw_fight_interactlist_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_interactlist.uw_fight_interactlist_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_interactlist_C::OnConstruct()
+void Uuw_fight_interactlist_C::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_interactlist_C", "OnConstruct");
+		Func = Class->GetFunction("uw_fight_interactlist_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -107,15 +107,15 @@ void Uuw_fight_interactlist_C::OnConstruct()
 }
 
 
-// LuaFunction uw_fight_interactlist.uw_fight_interactlist_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_interactlist.uw_fight_interactlist_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_interactlist_C::Destruct()
+void Uuw_fight_interactlist_C::OnConstruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_interactlist_C", "Destruct");
+		Func = Class->GetFunction("uw_fight_interactlist_C", "OnConstruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -42,15 +42,15 @@ public:
 	class UVtaSlateTexture*                       FileImg;                                           // 0x0438(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetState(uint8 InState);
-	void BP_OnEntryReleased();
-	void BP_OnItemExpansionChanged(bool bIsExpanded);
-	void BP_OnItemSelectionChanged(bool bIsSelected);
-	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
 	void ExecuteUbergraph_uw_fight_level_task_list_item_pc(int32 EntryPoint);
+	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
+	void BP_OnItemSelectionChanged(bool bIsSelected);
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void BP_OnEntryReleased();
+	void SetState(uint8 InState);
 	void OnListItemObjectSet(class UObject* ListItemObject);
-	void OnConstruct();
 	void Destruct();
+	void OnConstruct();
 
 	class FString GetModuleName() const;
 

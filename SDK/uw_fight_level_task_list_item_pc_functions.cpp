@@ -17,75 +17,21 @@
 namespace SDK
 {
 
-// Function uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.SetState
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.ExecuteUbergraph_uw_fight_level_task_list_item_pc
+// (Final, UbergraphFunction)
 // Parameters:
-// uint8                                   InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_level_task_list_item_pc_C::SetState(uint8 InState)
+void Uuw_fight_level_task_list_item_pc_C::ExecuteUbergraph_uw_fight_level_task_list_item_pc(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "SetState");
+		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "ExecuteUbergraph_uw_fight_level_task_list_item_pc");
 
-	Params::uw_fight_level_task_list_item_pc_C_SetState Parms{};
+	Params::uw_fight_level_task_list_item_pc_C_ExecuteUbergraph_uw_fight_level_task_list_item_pc Parms{};
 
-	Parms.InState = InState;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.BP_OnEntryReleased
-// (Event, Protected, BlueprintEvent)
-
-void Uuw_fight_level_task_list_item_pc_C::BP_OnEntryReleased()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "BP_OnEntryReleased");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.BP_OnItemExpansionChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_level_task_list_item_pc_C::BP_OnItemExpansionChanged(bool bIsExpanded)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "BP_OnItemExpansionChanged");
-
-	Params::uw_fight_level_task_list_item_pc_C_BP_OnItemExpansionChanged Parms{};
-
-	Parms.bIsExpanded = bIsExpanded;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.BP_OnItemSelectionChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bIsSelected                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_level_task_list_item_pc_C::BP_OnItemSelectionChanged(bool bIsSelected)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "BP_OnItemSelectionChanged");
-
-	Params::uw_fight_level_task_list_item_pc_C_BP_OnItemSelectionChanged Parms{};
-
-	Parms.bIsSelected = bIsSelected;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -111,21 +57,75 @@ void Uuw_fight_level_task_list_item_pc_C::OnListItemObjectSet__Overridden(class 
 }
 
 
-// Function uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.ExecuteUbergraph_uw_fight_level_task_list_item_pc
-// (Final, UbergraphFunction)
+// Function uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.BP_OnItemSelectionChanged
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsSelected                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_level_task_list_item_pc_C::ExecuteUbergraph_uw_fight_level_task_list_item_pc(int32 EntryPoint)
+void Uuw_fight_level_task_list_item_pc_C::BP_OnItemSelectionChanged(bool bIsSelected)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "ExecuteUbergraph_uw_fight_level_task_list_item_pc");
+		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "BP_OnItemSelectionChanged");
 
-	Params::uw_fight_level_task_list_item_pc_C_ExecuteUbergraph_uw_fight_level_task_list_item_pc Parms{};
+	Params::uw_fight_level_task_list_item_pc_C_BP_OnItemSelectionChanged Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bIsSelected = bIsSelected;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.BP_OnItemExpansionChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_level_task_list_item_pc_C::BP_OnItemExpansionChanged(bool bIsExpanded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "BP_OnItemExpansionChanged");
+
+	Params::uw_fight_level_task_list_item_pc_C_BP_OnItemExpansionChanged Parms{};
+
+	Parms.bIsExpanded = bIsExpanded;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.BP_OnEntryReleased
+// (Event, Protected, BlueprintEvent)
+
+void Uuw_fight_level_task_list_item_pc_C::BP_OnEntryReleased()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "BP_OnEntryReleased");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.SetState
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// uint8                                   InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_level_task_list_item_pc_C::SetState(uint8 InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "SetState");
+
+	Params::uw_fight_level_task_list_item_pc_C_SetState Parms{};
+
+	Parms.InState = InState;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -156,15 +156,15 @@ void Uuw_fight_level_task_list_item_pc_C::OnListItemObjectSet(class UObject* Lis
 }
 
 
-// LuaFunction uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_level_task_list_item_pc_C::OnConstruct()
+void Uuw_fight_level_task_list_item_pc_C::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "OnConstruct");
+		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -175,15 +175,15 @@ void Uuw_fight_level_task_list_item_pc_C::OnConstruct()
 }
 
 
-// LuaFunction uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_level_task_list_item_pc.uw_fight_level_task_list_item_pc_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_level_task_list_item_pc_C::Destruct()
+void Uuw_fight_level_task_list_item_pc_C::OnConstruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "Destruct");
+		Func = Class->GetFunction("uw_fight_level_task_list_item_pc_C", "OnConstruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

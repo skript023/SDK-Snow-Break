@@ -31,8 +31,8 @@ public:
 	class FString                                 Operator;                                          // 0x0128(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
-	void K2_InitCondition();
 	bool K2_CheckCondition(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
+	void K2_InitCondition();
 	void ExecuteUbergraph_Condition_SkillSelectorResultNumExist(int32 EntryPoint);
 
 public:

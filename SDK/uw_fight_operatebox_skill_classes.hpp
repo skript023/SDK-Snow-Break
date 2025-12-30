@@ -43,11 +43,11 @@ public:
 	class URedirectTextBlock*                     TxtCD;                                             // 0x0618(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
+	void K2_PlayCDAnim(bool bPlayCD);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void Construct();
 	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
 	void OnSkillStrengthening(bool bStart);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
-	void K2_PlayCDAnim(bool bPlayCD);
 	void Destruct();
 
 	class FString GetModuleName() const;

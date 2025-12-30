@@ -33,8 +33,8 @@ public:
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void StartProgress(float PerformTime);
 	void StopProgress();
-	void OnConstruct();
 	void Destruct();
+	void OnConstruct();
 
 	class FString GetModuleName() const;
 

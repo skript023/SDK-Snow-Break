@@ -108,15 +108,6 @@ public:
 	TArray<class FString>                         TempExclude;                                       // 0x0920(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void Destruct();
-	bool CheckFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason);
-	bool GetFightPartShow(EFightWidgetPart InPart);
-	void SetFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason, bool bShow, bool bForce);
-	void UpdateInteractionProgress(float InValue);
-	void HideSkillSelector(int32 SkillIndex);
-	void UpdateControl();
-	void ShowOrHideCross(bool bShow);
-	void ShowSkillSelector(int32 SkillIndex);
 	void ExecuteUbergraph_umg_fight_pc(int32 EntryPoint);
 	void CustomEvent_2(const struct FQTESwitchParam& SwitchParam);
 	void CustomEvent_1();
@@ -131,9 +122,18 @@ public:
 	void IsContain(class UWidget* InWidget, bool* bContain);
 	void HideHP(bool bHide_0);
 	class FText Get_TxtOnlineNum_Text_0();
+	bool GetFightPartShow(EFightWidgetPart InPart);
+	void UpdateControl();
+	bool CheckFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason);
+	void SetFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason, bool bShow, bool bForce);
+	void ShowOrHideCross(bool bShow);
+	void UpdateInteractionProgress(float InValue);
+	void ShowSkillSelector(int32 SkillIndex);
+	void HideSkillSelector(int32 SkillIndex);
+	void Destruct();
 
-	void WidgetGeometryReadyFrame(int32 Frame) const;
 	class FString GetModuleName() const;
+	void WidgetGeometryReadyFrame(int32 Frame) const;
 
 public:
 	static class UClass* StaticClass()

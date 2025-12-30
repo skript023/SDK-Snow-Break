@@ -17,41 +17,29 @@
 namespace SDK
 {
 
-// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.BindExitInteractEvent
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.DontRequireNormalState
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool*                                   ret                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_open_machine_item_C::BindExitInteractEvent()
+void Uuw_fight_open_machine_item_C::DontRequireNormalState(bool* ret)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_open_machine_item_C", "BindExitInteractEvent");
+		Func = Class->GetFunction("uw_fight_open_machine_item_C", "DontRequireNormalState");
+
+	Params::uw_fight_open_machine_item_C_DontRequireNormalState Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
 
-
-// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.TriggerInteract
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_open_machine_item_C::TriggerInteract()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_open_machine_item_C", "TriggerInteract");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
+	if (ret != nullptr)
+		*ret = Parms.ret;
 }
 
 
@@ -93,29 +81,41 @@ void Uuw_fight_open_machine_item_C::BindKeyBoardOnSettingChange()
 }
 
 
-// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.DontRequireNormalState
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool*                                   ret                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.TriggerInteract
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_open_machine_item_C::DontRequireNormalState(bool* ret)
+void Uuw_fight_open_machine_item_C::TriggerInteract()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_open_machine_item_C", "DontRequireNormalState");
-
-	Params::uw_fight_open_machine_item_C_DontRequireNormalState Parms{};
+		Func = Class->GetFunction("uw_fight_open_machine_item_C", "TriggerInteract");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
 
-	if (ret != nullptr)
-		*ret = Parms.ret;
+
+// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.BindExitInteractEvent
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_open_machine_item_C::BindExitInteractEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_open_machine_item_C", "BindExitInteractEvent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -138,15 +138,15 @@ void Uuw_fight_open_machine_item_C::InitGamepadLongPressUI()
 }
 
 
-// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_open_machine_item_C::OnConstruct()
+void Uuw_fight_open_machine_item_C::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_open_machine_item_C", "OnConstruct");
+		Func = Class->GetFunction("uw_fight_open_machine_item_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -157,15 +157,15 @@ void Uuw_fight_open_machine_item_C::OnConstruct()
 }
 
 
-// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_open_machine_item_C::Destruct()
+void Uuw_fight_open_machine_item_C::OnConstruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_open_machine_item_C", "Destruct");
+		Func = Class->GetFunction("uw_fight_open_machine_item_C", "OnConstruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -35,11 +35,11 @@ public:
 	void Play();
 	void Stop();
 	void SetPlaySpeed(float InSpeedPre);
-	void ReceiveWarning(bool IsWarning, float InTotalTime);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void Construct();
-	void OnConstruct();
+	void ReceiveWarning(bool IsWarning, float InTotalTime);
 	void Destruct();
+	void OnConstruct();
 
 	class FString GetModuleName() const;
 

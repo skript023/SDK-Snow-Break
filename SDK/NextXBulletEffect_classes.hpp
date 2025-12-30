@@ -35,15 +35,15 @@ public:
 	EAttributeType                                InputBulletType;                                   // 0x0159(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void SetModifierNextBullet();
 	void CheckState(ECharacterActionState InState, bool bSet);
 	void K2_ReceiveInitialize(const TArray<struct FParamInfo>& Info, const class UGameAbilityComponent* lpInstigator);
+	void K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn);
 	void ReceiveOnWeaponFire(int32 ForceShootCount);
 	void K2_ReceiveActive(const class UObject* Instigator);
+	void OnPlayerActionFlay(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet);
 	void ReceiveOnPreWeaponFire(EAttributeType BulletType_0);
 	void ReceiveOnOverlaid();
-	void SetModifierNextBullet();
-	void K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn);
-	void OnPlayerActionFlay(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet);
 	void ExecuteUbergraph_NextXBulletEffect(int32 EntryPoint);
 
 public:

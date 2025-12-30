@@ -79,25 +79,6 @@ void Uuw_fight_worldboss_score_C::NumberScroll__Overridden(float InDeltaTime)
 }
 
 
-// LuaFunction uw_fight_worldboss_score.uw_fight_worldboss_score_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_worldboss_score_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_worldboss_score_C", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_worldboss_score.uw_fight_worldboss_score_C.NumberScroll
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -123,15 +104,15 @@ void Uuw_fight_worldboss_score_C::NumberScroll(float InDeltaTime)
 }
 
 
-// LuaFunction uw_fight_worldboss_score.uw_fight_worldboss_score_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_worldboss_score.uw_fight_worldboss_score_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_worldboss_score_C::OnConstruct()
+void Uuw_fight_worldboss_score_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_worldboss_score_C", "OnConstruct");
+		Func = Class->GetFunction("uw_fight_worldboss_score_C", "Construct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -151,6 +132,25 @@ void Uuw_fight_worldboss_score_C::Destruct()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_worldboss_score_C", "Destruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_worldboss_score.uw_fight_worldboss_score_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_worldboss_score_C::OnConstruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_worldboss_score_C", "OnConstruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

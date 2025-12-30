@@ -16,6 +16,15 @@
 namespace SDK::Params
 {
 
+// Function Condition_SkillCancel.Condition_SkillCancel_C.BindEvent
+// 0x0008 (0x0008 - 0x0000)
+struct Condition_SkillCancel_C_BindEvent final
+{
+public:
+	class UAbilityComponentBase*                  Ability;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Condition_SkillCancel_C_BindEvent;
+
 // Function Condition_SkillCancel.Condition_SkillCancel_C.UnbindEvent
 // 0x0008 (0x0008 - 0x0000)
 struct Condition_SkillCancel_C_UnbindEvent final
@@ -24,6 +33,18 @@ public:
 	class UAbilityComponentBase*                  Ability;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Condition_SkillCancel_C_UnbindEvent;
+
+// Function Condition_SkillCancel.Condition_SkillCancel_C.OnSkillCancel
+// 0x000C (0x000C - 0x0000)
+struct Condition_SkillCancel_C_OnSkillCancel final
+{
+public:
+	int32                                         SkillID;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESkillInterruptedType                         InType;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         InInterruptSkillID;                                // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Condition_SkillCancel_C_OnSkillCancel;
 
 // Function Condition_SkillCancel.Condition_SkillCancel_C.K2_BindEvent
 // 0x0010 (0x0010 - 0x0000)
@@ -74,27 +95,6 @@ public:
 	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x0085(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_Condition_SkillCancel_C_ExecuteUbergraph_Condition_SkillCancel;
-
-// Function Condition_SkillCancel.Condition_SkillCancel_C.BindEvent
-// 0x0008 (0x0008 - 0x0000)
-struct Condition_SkillCancel_C_BindEvent final
-{
-public:
-	class UAbilityComponentBase*                  Ability;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Condition_SkillCancel_C_BindEvent;
-
-// Function Condition_SkillCancel.Condition_SkillCancel_C.OnSkillCancel
-// 0x000C (0x000C - 0x0000)
-struct Condition_SkillCancel_C_OnSkillCancel final
-{
-public:
-	int32                                         SkillID;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ESkillInterruptedType                         InType;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         InInterruptSkillID;                                // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Condition_SkillCancel_C_OnSkillCancel;
 
 }
 

@@ -43,11 +43,11 @@ public:
 	struct FSoftClassPath                         OrgUIPath;                                         // 0x05C8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
-	void ReceiveTick(float DeltaSeconds);
 	void GetPartitionMainPart(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult);
-	void GetPartitionMainBone(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
 	void GetAllTargetWithWeakResults(TArray<struct FBoneResult>* NewResults);
 	void GetAllQueryResults(TArray<struct FQueryResult>* OutResults);
+	void ReceiveTick(float DeltaSeconds);
+	void GetPartitionMainBone(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
 	void GetSortedPartitions(class AGameCharacter* GameCharacter, TArray<struct FBoneResult>* OutPartitions);
 	TArray<struct FSoftObjectPath> OnGetAssetPath(int32 InId, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs);
 	void GetRemainSelectTargetCount(int32* Count);

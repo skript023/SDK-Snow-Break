@@ -14,6 +14,114 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnQTEStateChange
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_button_pc_C_OnQTEStateChange final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnQTEStateChange;
+
+// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnModifyStateChange
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_button_pc_C_OnModifyStateChange final
+{
+public:
+	bool                                          bModify;                                           // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnModifyStateChange;
+
+// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnSkillStrengthening__Overridden
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_button_pc_C_OnSkillStrengthening__Overridden final
+{
+public:
+	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnSkillStrengthening__Overridden;
+
+// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_PlayCDAnim__Overridden
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_button_pc_C_K2_PlayCDAnim__Overridden final
+{
+public:
+	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_PlayCDAnim__Overridden;
+
+// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_NormalEnergyChange
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_button_pc_C_K2_NormalEnergyChange final
+{
+public:
+	bool                                          bFull;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_NormalEnergyChange;
+
+// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_SetButtonForbid
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_button_pc_C_K2_SetButtonForbid final
+{
+public:
+	bool                                          bForbid;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_SetButtonForbid;
+
+// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_SetButtonAbnormal
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_button_pc_C_K2_SetButtonAbnormal final
+{
+public:
+	bool                                          bForbid;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_SetButtonAbnormal;
+
+// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_PlaySustainAnim
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_button_pc_C_K2_PlaySustainAnim final
+{
+public:
+	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_PlaySustainAnim;
+
+// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnSkillKeepInterrupt
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_button_pc_C_OnSkillKeepInterrupt final
+{
+public:
+	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnSkillKeepInterrupt;
+
+// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_OnCustomUmgAnimFinished__Overridden
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished__Overridden final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished__Overridden;
+
+// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.PlayDerivedSkillAnim
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_button_pc_C_PlayDerivedSkillAnim final
+{
+public:
+	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_PlayDerivedSkillAnim;
+
+// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnUIEffectSkillLongPress
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_button_pc_C_OnUIEffectSkillLongPress final
+{
+public:
+	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnUIEffectSkillLongPress;
+
 // Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.ExecuteUbergraph_uw_fight_skill_button_pc
 // 0x001C (0x001C - 0x0000)
 struct uw_fight_skill_button_pc_C_ExecuteUbergraph_uw_fight_skill_button_pc final
@@ -38,113 +146,23 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_ExecuteUbergraph_uw_fight_skill_button_pc;
 
-// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_OnCustomUmgAnimFinished__Overridden
+// LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_PlayCDAnim
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_button_pc_C_K2_PlayCDAnim final
+{
+public:
+	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_PlayCDAnim;
+
+// LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_OnCustomUmgAnimFinished
 // 0x0008 (0x0008 - 0x0000)
-struct uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished__Overridden final
+struct uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished final
 {
 public:
 	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished__Overridden;
-
-// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnUIEffectSkillLongPress
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_pc_C_OnUIEffectSkillLongPress final
-{
-public:
-	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnUIEffectSkillLongPress;
-
-// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnSkillKeepInterrupt
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_pc_C_OnSkillKeepInterrupt final
-{
-public:
-	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnSkillKeepInterrupt;
-
-// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_PlaySustainAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_pc_C_K2_PlaySustainAnim final
-{
-public:
-	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_PlaySustainAnim;
-
-// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.PlayDerivedSkillAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_pc_C_PlayDerivedSkillAnim final
-{
-public:
-	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_PlayDerivedSkillAnim;
-
-// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_SetButtonAbnormal
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_pc_C_K2_SetButtonAbnormal final
-{
-public:
-	bool                                          bForbid;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_SetButtonAbnormal;
-
-// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_SetButtonForbid
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_pc_C_K2_SetButtonForbid final
-{
-public:
-	bool                                          bForbid;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_SetButtonForbid;
-
-// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_NormalEnergyChange
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_pc_C_K2_NormalEnergyChange final
-{
-public:
-	bool                                          bFull;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_NormalEnergyChange;
-
-// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_PlayCDAnim__Overridden
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_pc_C_K2_PlayCDAnim__Overridden final
-{
-public:
-	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_PlayCDAnim__Overridden;
-
-// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnSkillStrengthening__Overridden
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_pc_C_OnSkillStrengthening__Overridden final
-{
-public:
-	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnSkillStrengthening__Overridden;
-
-// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnModifyStateChange
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_pc_C_OnModifyStateChange final
-{
-public:
-	bool                                          bModify;                                           // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnModifyStateChange;
-
-// Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnQTEStateChange
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_pc_C_OnQTEStateChange final
-{
-public:
-	bool                                          bActive;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnQTEStateChange;
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished;
 
 // LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnChargeTimesChange
 // 0x0008 (0x0008 - 0x0000)
@@ -164,24 +182,6 @@ public:
 	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnSkillStrengthening;
-
-// LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished;
-
-// LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_PlayCDAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_pc_C_K2_PlayCDAnim final
-{
-public:
-	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_PlayCDAnim;
 
 // Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

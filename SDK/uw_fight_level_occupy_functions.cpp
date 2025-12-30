@@ -59,6 +59,25 @@ void Uuw_fight_level_occupy_C::Tick__Overridden(const struct FGeometry& MyGeomet
 }
 
 
+// LuaFunction uw_fight_level_occupy.uw_fight_level_occupy_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_level_occupy_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_occupy_C", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_level_occupy.uw_fight_level_occupy_C.Tick
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -86,15 +105,15 @@ void Uuw_fight_level_occupy_C::Tick(const struct FGeometry& MyGeometry, float In
 }
 
 
-// LuaFunction uw_fight_level_occupy.uw_fight_level_occupy_C.Construct
+// LuaFunction uw_fight_level_occupy.uw_fight_level_occupy_C.Destruct
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_level_occupy_C::Construct()
+void Uuw_fight_level_occupy_C::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_occupy_C", "Construct");
+		Func = Class->GetFunction("uw_fight_level_occupy_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -114,25 +133,6 @@ void Uuw_fight_level_occupy_C::OnConstruct()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_level_occupy_C", "OnConstruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_level_occupy.uw_fight_level_occupy_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_level_occupy_C::Destruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_occupy_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

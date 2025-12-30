@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "PostFogInSide_Str_structs.hpp"
 #include "Game_structs.hpp"
 #include "TwostFogInSide_Str_structs.hpp"
+#include "PostFogInSide_Str_structs.hpp"
 
 
 namespace SDK::Params

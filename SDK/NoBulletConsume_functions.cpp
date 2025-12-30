@@ -17,48 +17,6 @@
 namespace SDK
 {
 
-// Function NoBulletConsume.NoBulletConsume_C.WeaponFire
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// uint8                                   ForceShootCount                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class APlayerWeapon*                    InCurWeapon                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UNoBulletConsume_C::WeaponFire(uint8 ForceShootCount, class APlayerWeapon* InCurWeapon)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NoBulletConsume_C", "WeaponFire");
-
-	Params::NoBulletConsume_C_WeaponFire Parms{};
-
-	Parms.ForceShootCount = ForceShootCount;
-	Parms.InCurWeapon = InCurWeapon;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function NoBulletConsume.NoBulletConsume_C.ExecuteUbergraph_NoBulletConsume
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UNoBulletConsume_C::ExecuteUbergraph_NoBulletConsume(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NoBulletConsume_C", "ExecuteUbergraph_NoBulletConsume");
-
-	Params::NoBulletConsume_C_ExecuteUbergraph_NoBulletConsume Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function NoBulletConsume.NoBulletConsume_C.K2_ReceiveActive
 // (Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -116,6 +74,48 @@ void UNoBulletConsume_C::K2_ReceiveDeActive(const class UGameAbilityComponent* P
 	Params::NoBulletConsume_C_K2_ReceiveDeActive Parms{};
 
 	Parms.Pawn = Pawn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function NoBulletConsume.NoBulletConsume_C.WeaponFire
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// uint8                                   ForceShootCount                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APlayerWeapon*                    InCurWeapon                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UNoBulletConsume_C::WeaponFire(uint8 ForceShootCount, class APlayerWeapon* InCurWeapon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NoBulletConsume_C", "WeaponFire");
+
+	Params::NoBulletConsume_C_WeaponFire Parms{};
+
+	Parms.ForceShootCount = ForceShootCount;
+	Parms.InCurWeapon = InCurWeapon;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function NoBulletConsume.NoBulletConsume_C.ExecuteUbergraph_NoBulletConsume
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UNoBulletConsume_C::ExecuteUbergraph_NoBulletConsume(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NoBulletConsume_C", "ExecuteUbergraph_NoBulletConsume");
+
+	Params::NoBulletConsume_C_ExecuteUbergraph_NoBulletConsume Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

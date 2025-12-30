@@ -17,66 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.OnMoveTick
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Friction                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFluid                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   BrakingDeceleration                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkillMove_DragToLoc_Update_C::OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_DragToLoc_Update_C", "OnMoveTick");
-
-	Params::SkillMove_DragToLoc_Update_C_OnMoveTick Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-	Parms.Friction = Friction;
-	Parms.bFluid = bFluid;
-	Parms.BrakingDeceleration = BrakingDeceleration;
-	Parms.Movement = Movement;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.OnMoveStart
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// class AActor*                           Launcher                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkillMove_DragToLoc_Update_C::OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_DragToLoc_Update_C", "OnMoveStart");
-
-	Params::SkillMove_DragToLoc_Update_C_OnMoveStart Parms{};
-
-	Parms.Launcher = Launcher;
-	Parms.Movement = Movement;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.IsUsedToAddVelocityInsteadOverride
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -116,6 +56,66 @@ void USkillMove_DragToLoc_Update_C::OnMoveEnd(class UBaseMovementComponent* Move
 
 	Params::SkillMove_DragToLoc_Update_C_OnMoveEnd Parms{};
 
+	Parms.Movement = Movement;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.OnMoveStart
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// class AActor*                           Launcher                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkillMove_DragToLoc_Update_C::OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillMove_DragToLoc_Update_C", "OnMoveStart");
+
+	Params::SkillMove_DragToLoc_Update_C_OnMoveStart Parms{};
+
+	Parms.Launcher = Launcher;
+	Parms.Movement = Movement;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.OnMoveTick
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Friction                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFluid                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   BrakingDeceleration                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkillMove_DragToLoc_Update_C::OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillMove_DragToLoc_Update_C", "OnMoveTick");
+
+	Params::SkillMove_DragToLoc_Update_C_OnMoveTick Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+	Parms.Friction = Friction;
+	Parms.bFluid = bFluid;
+	Parms.BrakingDeceleration = BrakingDeceleration;
 	Parms.Movement = Movement;
 
 	auto Flgs = Func->FunctionFlags;

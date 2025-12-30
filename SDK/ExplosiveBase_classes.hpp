@@ -55,6 +55,8 @@ public:
 	TMulticastInlineDelegate<void()>              ExplosiveMessage;                                  // 0x15B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
+	void CheckCull();
+	void SetHpShowDistance();
 	void ChangeTickInteral();
 	void Detach();
 	void TryAttach();
@@ -80,8 +82,6 @@ public:
 	void DealFuncOnEnd();
 	void OnRecycle();
 	void ExecuteUbergraph_ExplosiveBase(int32 EntryPoint);
-	void SetHpShowDistance();
-	void CheckCull();
 
 	class FString GetModuleName() const;
 

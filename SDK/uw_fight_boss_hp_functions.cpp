@@ -81,6 +81,35 @@ void Uuw_fight_boss_hp_C::Tick(const struct FGeometry& MyGeometry, float InDelta
 }
 
 
+// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.K2_OnAppliedModifierChange
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   ModifierID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    IsApply                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// int64                                   InLauncherCharacterHashIndex                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_boss_hp_C::K2_OnAppliedModifierChange(int32 ModifierID, bool IsApply, int64 InLauncherCharacterHashIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_boss_hp_C", "K2_OnAppliedModifierChange");
+
+	Params::uw_fight_boss_hp_C_K2_OnAppliedModifierChange Parms{};
+
+	Parms.ModifierID = ModifierID;
+	Parms.IsApply = IsApply;
+	Parms.InLauncherCharacterHashIndex = InLauncherCharacterHashIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.K2_OnUpdate
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -125,25 +154,21 @@ void Uuw_fight_boss_hp_C::Construct()
 }
 
 
-// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.K2_OnAppliedModifierChange
+// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.OnDamageNumChange
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   ModifierID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    IsApply                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// int64                                   InLauncherCharacterHashIndex                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   DamageTaken                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void Uuw_fight_boss_hp_C::K2_OnAppliedModifierChange(int32 ModifierID, bool IsApply, int64 InLauncherCharacterHashIndex)
+void Uuw_fight_boss_hp_C::OnDamageNumChange(float DamageTaken)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_boss_hp_C", "K2_OnAppliedModifierChange");
+		Func = Class->GetFunction("uw_fight_boss_hp_C", "OnDamageNumChange");
 
-	Params::uw_fight_boss_hp_C_K2_OnAppliedModifierChange Parms{};
+	Params::uw_fight_boss_hp_C_OnDamageNumChange Parms{};
 
-	Parms.ModifierID = ModifierID;
-	Parms.IsApply = IsApply;
-	Parms.InLauncherCharacterHashIndex = InLauncherCharacterHashIndex;
+	Parms.DamageTaken = DamageTaken;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -168,31 +193,6 @@ void Uuw_fight_boss_hp_C::K2_NotifyInitBindBoss()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.OnDamageNumChange
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DamageTaken                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_boss_hp_C::OnDamageNumChange(float DamageTaken)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_boss_hp_C", "OnDamageNumChange");
-
-	Params::uw_fight_boss_hp_C_OnDamageNumChange Parms{};
-
-	Parms.DamageTaken = DamageTaken;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

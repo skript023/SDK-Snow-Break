@@ -16,6 +16,15 @@
 namespace SDK::Params
 {
 
+// LuaFunction Emitter_SkillMove_RushToGoal.Emitter_SkillMove_RushToGoal_C.OnEmitTick
+// 0x0004 (0x0004 - 0x0000)
+struct Emitter_SkillMove_RushToGoal_C_OnEmitTick final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Emitter_SkillMove_RushToGoal_C_OnEmitTick;
+
 // Function Emitter_SkillMove_RushToGoal.Emitter_SkillMove_RushToGoal_C.GetDefaultParamsValue
 // 0x00B0 (0x00B0 - 0x0000)
 struct Emitter_SkillMove_RushToGoal_C_GetDefaultParamsValue final
@@ -34,15 +43,6 @@ public:
 	TArray<struct FParamInfo>                     K2Node_MakeArray_Array;                            // 0x00A0(0x0010)(ReferenceParm)
 };
 DUMPER7_ASSERTS_Emitter_SkillMove_RushToGoal_C_GetDefaultParamsValue;
-
-// LuaFunction Emitter_SkillMove_RushToGoal.Emitter_SkillMove_RushToGoal_C.OnEmitTick
-// 0x0004 (0x0004 - 0x0000)
-struct Emitter_SkillMove_RushToGoal_C_OnEmitTick final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Emitter_SkillMove_RushToGoal_C_OnEmitTick;
 
 }
 

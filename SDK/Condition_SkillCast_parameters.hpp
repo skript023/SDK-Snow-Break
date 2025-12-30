@@ -32,6 +32,18 @@ public:
 };
 DUMPER7_ASSERTS_Condition_SkillCast_C_BindEventToSkillEmit;
 
+// Function Condition_SkillCast.Condition_SkillCast_C.SkillEmit
+// 0x0020 (0x0020 - 0x0000)
+struct Condition_SkillCast_C_SkillEmit final
+{
+public:
+	int32                                         SkillID;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 OriginSkills;                                      // 0x0008(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UGameAbilityComponent*                  AbilityRef;                                        // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Condition_SkillCast_C_SkillEmit;
+
 // Function Condition_SkillCast.Condition_SkillCast_C.UnbindEventToSkillEmit
 // 0x0008 (0x0008 - 0x0000)
 struct Condition_SkillCast_C_UnbindEventToSkillEmit final
@@ -51,6 +63,16 @@ public:
 	class APlayerWeapon*                          InCurWeapon;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Condition_SkillCast_C_OnFire;
+
+// Function Condition_SkillCast.Condition_SkillCast_C.K2_BindEvent
+// 0x0010 (0x0010 - 0x0000)
+struct Condition_SkillCast_C_K2_BindEvent final
+{
+public:
+	class UAbilityComponentBase*                  InCurLauncher;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Condition_SkillCast_C_K2_BindEvent;
 
 // Function Condition_SkillCast.Condition_SkillCast_C.K2_UnbindEvent
 // 0x0010 (0x0010 - 0x0000)
@@ -104,28 +126,6 @@ public:
 	class AGameCharacter*                         K2Node_Event_InCurLauncherChara_1;                 // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Condition_SkillCast_C_ExecuteUbergraph_Condition_SkillCast;
-
-// Function Condition_SkillCast.Condition_SkillCast_C.SkillEmit
-// 0x0020 (0x0020 - 0x0000)
-struct Condition_SkillCast_C_SkillEmit final
-{
-public:
-	int32                                         SkillID;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 OriginSkills;                                      // 0x0008(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UGameAbilityComponent*                  AbilityRef;                                        // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Condition_SkillCast_C_SkillEmit;
-
-// Function Condition_SkillCast.Condition_SkillCast_C.K2_BindEvent
-// 0x0010 (0x0010 - 0x0000)
-struct Condition_SkillCast_C_K2_BindEvent final
-{
-public:
-	class UAbilityComponentBase*                  InCurLauncher;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Condition_SkillCast_C_K2_BindEvent;
 
 }
 

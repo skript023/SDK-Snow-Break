@@ -55,17 +55,17 @@ public:
 	class UUserWidget*                            Widget;                                            // 0x04A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void OnConstruct();
+	void Destruct();
+	void AddTipsPool(const class FText& Title, const class FText& Desc, float Duration, uint8 Type, const class FString& tableStr, const class FString& SoundEffect, bool* Result);
+	void CloseCurrent();
+	void Construct();
 	void CloseCurrent__Overridden();
 	void AddTipsPool__Overridden(const class FText& Title, const class FText& Desc, float Duration, uint8 Type, const class FString& tableStr, const class FString& SoundEffect, bool* Result);
 	void RemoveTip();
 	void AddTip(const class FString& Name_0, const class FString& Desc, bool* Result);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void ExecuteUbergraph_uw_fight_tips(int32 EntryPoint);
-	void Destruct();
-	void OnConstruct();
-	void CloseCurrent();
-	void Construct();
-	void AddTipsPool(const class FText& Title, const class FText& Desc, float Duration, uint8 Type, const class FString& tableStr, const class FString& SoundEffect, bool* Result);
 
 	class FString GetModuleName() const;
 

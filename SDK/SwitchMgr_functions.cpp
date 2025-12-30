@@ -17,23 +17,45 @@
 namespace SDK
 {
 
-// Function SwitchMgr.SwitchMgr_C.ExecuteUbergraph_SwitchMgr
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function SwitchMgr.SwitchMgr_C.OnSwitchEvent__Overridden
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ASwitchMgr_C::ExecuteUbergraph_SwitchMgr(int32 EntryPoint)
+void ASwitchMgr_C::OnSwitchEvent__Overridden()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SwitchMgr_C", "ExecuteUbergraph_SwitchMgr");
+		Func = Class->GetFunction("SwitchMgr_C", "OnSwitchEvent__Overridden");
 
-	Params::SwitchMgr_C_ExecuteUbergraph_SwitchMgr Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function SwitchMgr.SwitchMgr_C.OnBind__Overridden
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ASwitchMgr_C::OnBind__Overridden()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SwitchMgr_C", "OnBind__Overridden");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function SwitchMgr.SwitchMgr_C.SwitchForce__Overridden
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ASwitchMgr_C::SwitchForce__Overridden()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SwitchMgr_C", "SwitchForce__Overridden");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -57,45 +79,42 @@ void ASwitchMgr_C::ReceiveTick__Overridden(float DeltaSeconds)
 }
 
 
-// Function SwitchMgr.SwitchMgr_C.SwitchForce__Overridden
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function SwitchMgr.SwitchMgr_C.ExecuteUbergraph_SwitchMgr
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ASwitchMgr_C::SwitchForce__Overridden()
+void ASwitchMgr_C::ExecuteUbergraph_SwitchMgr(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SwitchMgr_C", "SwitchForce__Overridden");
+		Func = Class->GetFunction("SwitchMgr_C", "ExecuteUbergraph_SwitchMgr");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::SwitchMgr_C_ExecuteUbergraph_SwitchMgr Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function SwitchMgr.SwitchMgr_C.OnBind__Overridden
-// (Public, BlueprintCallable, BlueprintEvent)
+// LuaFunction SwitchMgr.SwitchMgr_C.OnBind
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASwitchMgr_C::OnBind__Overridden()
+void ASwitchMgr_C::OnBind()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SwitchMgr_C", "OnBind__Overridden");
+		Func = Class->GetFunction("SwitchMgr_C", "OnBind");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-}
 
-
-// Function SwitchMgr.SwitchMgr_C.OnSwitchEvent__Overridden
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ASwitchMgr_C::OnSwitchEvent__Overridden()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SwitchMgr_C", "OnSwitchEvent__Overridden");
-
-	UObject::ProcessEvent(Func, nullptr);
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -127,6 +146,25 @@ void ASwitchMgr_C::OnSwitchEvent()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("SwitchMgr_C", "OnSwitchEvent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction SwitchMgr.SwitchMgr_C.ReceiveBeginPlay
+// (Native, Event, Protected, BlueprintEvent)
+
+void ASwitchMgr_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SwitchMgr_C", "ReceiveBeginPlay");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -182,44 +220,6 @@ void ASwitchMgr_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction SwitchMgr.SwitchMgr_C.OnBind
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASwitchMgr_C::OnBind()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SwitchMgr_C", "OnBind");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction SwitchMgr.SwitchMgr_C.ReceiveBeginPlay
-// (Native, Event, Protected, BlueprintEvent)
-
-void ASwitchMgr_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SwitchMgr_C", "ReceiveBeginPlay");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

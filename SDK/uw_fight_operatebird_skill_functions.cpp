@@ -65,25 +65,6 @@ void Uuw_fight_operatebird_skill_C::BndEvt__uw_fight_operatebird_skill_ButtonSki
 }
 
 
-// LuaFunction uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_operatebird_skill_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_operatebird_skill_C", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.K2_OnCustomUmgAnimFinished
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -104,6 +85,25 @@ void Uuw_fight_operatebird_skill_C::K2_OnCustomUmgAnimFinished(const class FName
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_operatebird_skill_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_operatebird_skill_C", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

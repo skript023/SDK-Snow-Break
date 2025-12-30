@@ -17,32 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.GetAllTargetWithWeakResults
-// (Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<struct FBoneResult>*             NewResults                                             (Parm, OutParm, ContainsInstancedReference)
-
-void ASkillSelector_LieTu_NormalSkill01_2_C::GetAllTargetWithWeakResults(TArray<struct FBoneResult>* NewResults)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillSelector_LieTu_NormalSkill01_2_C", "GetAllTargetWithWeakResults");
-
-	Params::SkillSelector_LieTu_NormalSkill01_2_C_GetAllTargetWithWeakResults Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (NewResults != nullptr)
-		*NewResults = std::move(Parms.NewResults);
-}
-
-
 // LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.GetPartitionMainPart
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -73,6 +47,50 @@ void ASkillSelector_LieTu_NormalSkill01_2_C::GetPartitionMainPart(const struct F
 
 	if (BoneResult != nullptr)
 		*BoneResult = std::move(Parms.BoneResult);
+}
+
+
+// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.ReceiveDestroyed
+// (Native, Event, Public, BlueprintEvent)
+
+void ASkillSelector_LieTu_NormalSkill01_2_C::ReceiveDestroyed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillSelector_LieTu_NormalSkill01_2_C", "ReceiveDestroyed");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.ReceiveTick
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ASkillSelector_LieTu_NormalSkill01_2_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillSelector_LieTu_NormalSkill01_2_C", "ReceiveTick");
+
+	Params::SkillSelector_LieTu_NormalSkill01_2_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -113,49 +131,19 @@ void ASkillSelector_LieTu_NormalSkill01_2_C::GetPartMainBone(const struct FBoneR
 }
 
 
-// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.ReceiveTick
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.GetAllTargetWithWeakResults
+// (Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TArray<struct FBoneResult>*             NewResults                                             (Parm, OutParm, ContainsInstancedReference)
 
-void ASkillSelector_LieTu_NormalSkill01_2_C::ReceiveTick(float DeltaSeconds)
+void ASkillSelector_LieTu_NormalSkill01_2_C::GetAllTargetWithWeakResults(TArray<struct FBoneResult>* NewResults)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SkillSelector_LieTu_NormalSkill01_2_C", "ReceiveTick");
+		Func = Class->GetFunction("SkillSelector_LieTu_NormalSkill01_2_C", "GetAllTargetWithWeakResults");
 
-	Params::SkillSelector_LieTu_NormalSkill01_2_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.GetPartitionMainBone
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FBoneResult&               PartitionResult                                        (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
-// bool*                                   IsValid                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FBoneResult*                     BoneResult                                             (Parm, OutParm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
-// class AGameCharacter**                  GameCharacter                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ASkillSelector_LieTu_NormalSkill01_2_C::GetPartitionMainBone(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillSelector_LieTu_NormalSkill01_2_C", "GetPartitionMainBone");
-
-	Params::SkillSelector_LieTu_NormalSkill01_2_C_GetPartitionMainBone Parms{};
-
-	Parms.PartitionResult = std::move(PartitionResult);
+	Params::SkillSelector_LieTu_NormalSkill01_2_C_GetAllTargetWithWeakResults Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -164,14 +152,8 @@ void ASkillSelector_LieTu_NormalSkill01_2_C::GetPartitionMainBone(const struct F
 
 	Func->FunctionFlags = Flgs;
 
-	if (IsValid != nullptr)
-		*IsValid = Parms.IsValid;
-
-	if (BoneResult != nullptr)
-		*BoneResult = std::move(Parms.BoneResult);
-
-	if (GameCharacter != nullptr)
-		*GameCharacter = Parms.GameCharacter;
+	if (NewResults != nullptr)
+		*NewResults = std::move(Parms.NewResults);
 }
 
 
@@ -220,22 +202,40 @@ void ASkillSelector_LieTu_NormalSkill01_2_C::GetAllQueryResults(TArray<struct FQ
 }
 
 
-// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.ReceiveDestroyed
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.GetPartitionMainBone
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FBoneResult&               PartitionResult                                        (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
+// bool*                                   IsValid                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FBoneResult*                     BoneResult                                             (Parm, OutParm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
+// class AGameCharacter**                  GameCharacter                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ASkillSelector_LieTu_NormalSkill01_2_C::ReceiveDestroyed()
+void ASkillSelector_LieTu_NormalSkill01_2_C::GetPartitionMainBone(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SkillSelector_LieTu_NormalSkill01_2_C", "ReceiveDestroyed");
+		Func = Class->GetFunction("SkillSelector_LieTu_NormalSkill01_2_C", "GetPartitionMainBone");
+
+	Params::SkillSelector_LieTu_NormalSkill01_2_C_GetPartitionMainBone Parms{};
+
+	Parms.PartitionResult = std::move(PartitionResult);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	if (IsValid != nullptr)
+		*IsValid = Parms.IsValid;
+
+	if (BoneResult != nullptr)
+		*BoneResult = std::move(Parms.BoneResult);
+
+	if (GameCharacter != nullptr)
+		*GameCharacter = Parms.GameCharacter;
 }
 
 }

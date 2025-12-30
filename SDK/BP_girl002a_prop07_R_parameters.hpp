@@ -27,6 +27,24 @@ public:
 };
 DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyEnd_56AB6F724029C72D37D0FCBD2C3C9D74;
 
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyBegin_56AB6F724029C72D37D0FCBD2C3C9D74
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnNotifyBegin_56AB6F724029C72D37D0FCBD2C3C9D74 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyBegin_56AB6F724029C72D37D0FCBD2C3C9D74;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnInterrupted_56AB6F724029C72D37D0FCBD2C3C9D74
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnInterrupted_56AB6F724029C72D37D0FCBD2C3C9D74 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnInterrupted_56AB6F724029C72D37D0FCBD2C3C9D74;
+
 // Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnBlendOut_56AB6F724029C72D37D0FCBD2C3C9D74
 // 0x0008 (0x0008 - 0x0000)
 struct BP_girl002a_prop07_R_C_OnBlendOut_56AB6F724029C72D37D0FCBD2C3C9D74 final
@@ -36,6 +54,15 @@ public:
 };
 DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnBlendOut_56AB6F724029C72D37D0FCBD2C3C9D74;
 
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnCompleted_56AB6F724029C72D37D0FCBD2C3C9D74
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnCompleted_56AB6F724029C72D37D0FCBD2C3C9D74 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnCompleted_56AB6F724029C72D37D0FCBD2C3C9D74;
+
 // Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyEnd_721F9AA4472937428D5C42A92827138D
 // 0x0008 (0x0008 - 0x0000)
 struct BP_girl002a_prop07_R_C_OnNotifyEnd_721F9AA4472937428D5C42A92827138D final
@@ -44,6 +71,15 @@ public:
 	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyEnd_721F9AA4472937428D5C42A92827138D;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyBegin_721F9AA4472937428D5C42A92827138D
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnNotifyBegin_721F9AA4472937428D5C42A92827138D final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyBegin_721F9AA4472937428D5C42A92827138D;
 
 // Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnInterrupted_721F9AA4472937428D5C42A92827138D
 // 0x0008 (0x0008 - 0x0000)
@@ -117,6 +153,15 @@ public:
 };
 DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnCompleted_105F2A31449A2955C8E09081172F6378;
 
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyEnd_58F6D6A2477FB1AA6BFCE99AA072BE3A
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnNotifyEnd_58F6D6A2477FB1AA6BFCE99AA072BE3A final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyEnd_58F6D6A2477FB1AA6BFCE99AA072BE3A;
+
 // Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyBegin_58F6D6A2477FB1AA6BFCE99AA072BE3A
 // 0x0008 (0x0008 - 0x0000)
 struct BP_girl002a_prop07_R_C_OnNotifyBegin_58F6D6A2477FB1AA6BFCE99AA072BE3A final
@@ -125,6 +170,87 @@ public:
 	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyBegin_58F6D6A2477FB1AA6BFCE99AA072BE3A;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnInterrupted_58F6D6A2477FB1AA6BFCE99AA072BE3A
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnInterrupted_58F6D6A2477FB1AA6BFCE99AA072BE3A final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnInterrupted_58F6D6A2477FB1AA6BFCE99AA072BE3A;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnBlendOut_58F6D6A2477FB1AA6BFCE99AA072BE3A
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnBlendOut_58F6D6A2477FB1AA6BFCE99AA072BE3A final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnBlendOut_58F6D6A2477FB1AA6BFCE99AA072BE3A;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnCompleted_58F6D6A2477FB1AA6BFCE99AA072BE3A
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnCompleted_58F6D6A2477FB1AA6BFCE99AA072BE3A final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnCompleted_58F6D6A2477FB1AA6BFCE99AA072BE3A;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyEnd_F8AE6AD74AE4D8A81374AFB062B38711
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnNotifyEnd_F8AE6AD74AE4D8A81374AFB062B38711 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyEnd_F8AE6AD74AE4D8A81374AFB062B38711;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyBegin_F8AE6AD74AE4D8A81374AFB062B38711
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnNotifyBegin_F8AE6AD74AE4D8A81374AFB062B38711 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyBegin_F8AE6AD74AE4D8A81374AFB062B38711;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnInterrupted_F8AE6AD74AE4D8A81374AFB062B38711
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnInterrupted_F8AE6AD74AE4D8A81374AFB062B38711 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnInterrupted_F8AE6AD74AE4D8A81374AFB062B38711;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnBlendOut_F8AE6AD74AE4D8A81374AFB062B38711
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnBlendOut_F8AE6AD74AE4D8A81374AFB062B38711 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnBlendOut_F8AE6AD74AE4D8A81374AFB062B38711;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnCompleted_F8AE6AD74AE4D8A81374AFB062B38711
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnCompleted_F8AE6AD74AE4D8A81374AFB062B38711 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnCompleted_F8AE6AD74AE4D8A81374AFB062B38711;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyEnd_B58669B944316AA214640F82A41C3832
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnNotifyEnd_B58669B944316AA214640F82A41C3832 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyEnd_B58669B944316AA214640F82A41C3832;
 
 // Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyBegin_B58669B944316AA214640F82A41C3832
 // 0x0008 (0x0008 - 0x0000)
@@ -135,6 +261,24 @@ public:
 };
 DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyBegin_B58669B944316AA214640F82A41C3832;
 
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnInterrupted_B58669B944316AA214640F82A41C3832
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnInterrupted_B58669B944316AA214640F82A41C3832 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnInterrupted_B58669B944316AA214640F82A41C3832;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnBlendOut_B58669B944316AA214640F82A41C3832
+// 0x0008 (0x0008 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnBlendOut_B58669B944316AA214640F82A41C3832 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnBlendOut_B58669B944316AA214640F82A41C3832;
+
 // Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnCompleted_B58669B944316AA214640F82A41C3832
 // 0x0008 (0x0008 - 0x0000)
 struct BP_girl002a_prop07_R_C_OnCompleted_B58669B944316AA214640F82A41C3832 final
@@ -143,6 +287,27 @@ public:
 	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnCompleted_B58669B944316AA214640F82A41C3832;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnAbilityCastSkill_事件_0
+// 0x0020 (0x0020 - 0x0000)
+struct BP_girl002a_prop07_R_C_OnAbilityCastSkill_事件_0 final
+{
+public:
+	int32                                         SkillID;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 OriginSkills;                                      // 0x0008(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UGameAbilityComponent*                  AbilityRef;                                        // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnAbilityCastSkill_事件_0;
+
+// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_girl002a_prop07_R_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_ReceiveTick;
 
 // Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.ExecuteUbergraph_BP_girl002a_prop07_R
 // 0x0650 (0x0650 - 0x0000)
@@ -267,171 +432,6 @@ public:
 	float                                         K2Node_Event_DeltaSeconds;                         // 0x064C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_ExecuteUbergraph_BP_girl002a_prop07_R;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyBegin_56AB6F724029C72D37D0FCBD2C3C9D74
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnNotifyBegin_56AB6F724029C72D37D0FCBD2C3C9D74 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyBegin_56AB6F724029C72D37D0FCBD2C3C9D74;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnInterrupted_56AB6F724029C72D37D0FCBD2C3C9D74
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnInterrupted_56AB6F724029C72D37D0FCBD2C3C9D74 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnInterrupted_56AB6F724029C72D37D0FCBD2C3C9D74;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnCompleted_56AB6F724029C72D37D0FCBD2C3C9D74
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnCompleted_56AB6F724029C72D37D0FCBD2C3C9D74 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnCompleted_56AB6F724029C72D37D0FCBD2C3C9D74;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyBegin_721F9AA4472937428D5C42A92827138D
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnNotifyBegin_721F9AA4472937428D5C42A92827138D final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyBegin_721F9AA4472937428D5C42A92827138D;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyEnd_58F6D6A2477FB1AA6BFCE99AA072BE3A
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnNotifyEnd_58F6D6A2477FB1AA6BFCE99AA072BE3A final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyEnd_58F6D6A2477FB1AA6BFCE99AA072BE3A;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnInterrupted_58F6D6A2477FB1AA6BFCE99AA072BE3A
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnInterrupted_58F6D6A2477FB1AA6BFCE99AA072BE3A final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnInterrupted_58F6D6A2477FB1AA6BFCE99AA072BE3A;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnBlendOut_58F6D6A2477FB1AA6BFCE99AA072BE3A
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnBlendOut_58F6D6A2477FB1AA6BFCE99AA072BE3A final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnBlendOut_58F6D6A2477FB1AA6BFCE99AA072BE3A;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnCompleted_58F6D6A2477FB1AA6BFCE99AA072BE3A
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnCompleted_58F6D6A2477FB1AA6BFCE99AA072BE3A final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnCompleted_58F6D6A2477FB1AA6BFCE99AA072BE3A;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyEnd_F8AE6AD74AE4D8A81374AFB062B38711
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnNotifyEnd_F8AE6AD74AE4D8A81374AFB062B38711 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyEnd_F8AE6AD74AE4D8A81374AFB062B38711;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyBegin_F8AE6AD74AE4D8A81374AFB062B38711
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnNotifyBegin_F8AE6AD74AE4D8A81374AFB062B38711 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyBegin_F8AE6AD74AE4D8A81374AFB062B38711;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnInterrupted_F8AE6AD74AE4D8A81374AFB062B38711
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnInterrupted_F8AE6AD74AE4D8A81374AFB062B38711 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnInterrupted_F8AE6AD74AE4D8A81374AFB062B38711;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnBlendOut_F8AE6AD74AE4D8A81374AFB062B38711
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnBlendOut_F8AE6AD74AE4D8A81374AFB062B38711 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnBlendOut_F8AE6AD74AE4D8A81374AFB062B38711;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnCompleted_F8AE6AD74AE4D8A81374AFB062B38711
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnCompleted_F8AE6AD74AE4D8A81374AFB062B38711 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnCompleted_F8AE6AD74AE4D8A81374AFB062B38711;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnNotifyEnd_B58669B944316AA214640F82A41C3832
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnNotifyEnd_B58669B944316AA214640F82A41C3832 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnNotifyEnd_B58669B944316AA214640F82A41C3832;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnInterrupted_B58669B944316AA214640F82A41C3832
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnInterrupted_B58669B944316AA214640F82A41C3832 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnInterrupted_B58669B944316AA214640F82A41C3832;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnBlendOut_B58669B944316AA214640F82A41C3832
-// 0x0008 (0x0008 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnBlendOut_B58669B944316AA214640F82A41C3832 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnBlendOut_B58669B944316AA214640F82A41C3832;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.OnAbilityCastSkill_事件_0
-// 0x0020 (0x0020 - 0x0000)
-struct BP_girl002a_prop07_R_C_OnAbilityCastSkill_事件_0 final
-{
-public:
-	int32                                         SkillID;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 OriginSkills;                                      // 0x0008(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UGameAbilityComponent*                  AbilityRef;                                        // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_OnAbilityCastSkill_事件_0;
-
-// Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_girl002a_prop07_R_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_ReceiveTick;
 
 }
 

@@ -43,20 +43,20 @@ public:
 	float                                         ArmLength;                                         // 0x0314(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void GetArmLength(float* Length);
+	void GetXYZ(struct FVector* Local);
+	class FText Get_FovNum_Text_0(int32 Count_0);
+	void BndEvt__LengthNum_K2Node_ComponentBoundEvent_4_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text);
+	void Construct();
+	void BndEvt__Chooese_K2Node_ComponentBoundEvent_6_OnSelectionChangedEvent__DelegateSignature(const class FString& SelectedItem, ESelectInfo SelectionType);
+	void BndEvt__X_K2Node_ComponentBoundEvent_0_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text);
+	void BndEvt__Y_K2Node_ComponentBoundEvent_1_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text);
 	void BndEvt__Z_K2Node_ComponentBoundEvent_2_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text);
 	void ExecuteUbergraph_umg_camerasetting(int32 EntryPoint);
-	void BndEvt__Y_K2Node_ComponentBoundEvent_1_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text);
-	void BndEvt__X_K2Node_ComponentBoundEvent_0_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text);
-	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void BndEvt__Chooese_K2Node_ComponentBoundEvent_6_OnSelectionChangedEvent__DelegateSignature(const class FString& SelectedItem, ESelectInfo SelectionType);
-	void Construct();
-	void BndEvt__FovNum_K2Node_ComponentBoundEvent_3_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text);
-	void BndEvt__LengthNum_K2Node_ComponentBoundEvent_4_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text);
-	void Update();
-	class FText Get_FovNum_Text_0(int32 Count_0);
-	void GetXYZ(struct FVector* Local);
 	void UpdateData();
-	void GetArmLength(float* Length);
+	void Update();
+	void BndEvt__FovNum_K2Node_ComponentBoundEvent_3_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text);
+	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 
 public:
 	static class UClass* StaticClass()

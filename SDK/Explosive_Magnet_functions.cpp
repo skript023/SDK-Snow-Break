@@ -17,43 +17,41 @@
 namespace SDK
 {
 
-// Function Explosive_Magnet.Explosive_Magnet_C.ExecuteUbergraph_Explosive_Magnet
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// LuaFunction Explosive_Magnet.Explosive_Magnet_C.CheckCull
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void AExplosive_Magnet_C::ExecuteUbergraph_Explosive_Magnet(int32 EntryPoint)
+void AExplosive_Magnet_C::CheckCull()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Explosive_Magnet_C", "ExecuteUbergraph_Explosive_Magnet");
+		Func = Class->GetFunction("Explosive_Magnet_C", "CheckCull");
 
-	Params::Explosive_Magnet_C_ExecuteUbergraph_Explosive_Magnet Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.EntryPoint = EntryPoint;
+	UObject::ProcessEvent(Func, nullptr);
 
-	UObject::ProcessEvent(Func, &Parms);
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Explosive_Magnet.Explosive_Magnet_C.ReSpawn
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    IsValid                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// LuaFunction Explosive_Magnet.Explosive_Magnet_C.SetHpShowDistance
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void AExplosive_Magnet_C::ReSpawn(bool IsValid)
+void AExplosive_Magnet_C::SetHpShowDistance()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Explosive_Magnet_C", "ReSpawn");
+		Func = Class->GetFunction("Explosive_Magnet_C", "SetHpShowDistance");
 
-	Params::Explosive_Magnet_C_ReSpawn Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.IsValid = IsValid;
+	UObject::ProcessEvent(Func, nullptr);
 
-	UObject::ProcessEvent(Func, &Parms);
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -77,41 +75,43 @@ bool AExplosive_Magnet_C::IsStillValid()
 }
 
 
-// LuaFunction Explosive_Magnet.Explosive_Magnet_C.SetHpShowDistance
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Function Explosive_Magnet.Explosive_Magnet_C.ReSpawn
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsValid                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void AExplosive_Magnet_C::SetHpShowDistance()
+void AExplosive_Magnet_C::ReSpawn(bool IsValid)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Explosive_Magnet_C", "SetHpShowDistance");
+		Func = Class->GetFunction("Explosive_Magnet_C", "ReSpawn");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Params::Explosive_Magnet_C_ReSpawn Parms{};
 
-	UObject::ProcessEvent(Func, nullptr);
+	Parms.IsValid = IsValid;
 
-	Func->FunctionFlags = Flgs;
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// LuaFunction Explosive_Magnet.Explosive_Magnet_C.CheckCull
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Function Explosive_Magnet.Explosive_Magnet_C.ExecuteUbergraph_Explosive_Magnet
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AExplosive_Magnet_C::CheckCull()
+void AExplosive_Magnet_C::ExecuteUbergraph_Explosive_Magnet(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Explosive_Magnet_C", "CheckCull");
+		Func = Class->GetFunction("Explosive_Magnet_C", "ExecuteUbergraph_Explosive_Magnet");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Params::Explosive_Magnet_C_ExecuteUbergraph_Explosive_Magnet Parms{};
 
-	UObject::ProcessEvent(Func, nullptr);
+	Parms.EntryPoint = EntryPoint;
 
-	Func->FunctionFlags = Flgs;
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

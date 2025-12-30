@@ -17,46 +17,6 @@
 namespace SDK
 {
 
-// Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.PrepareCondition
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-
-bool USelfCheck_SwitchState_C::PrepareCondition()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SelfCheck_SwitchState_C", "PrepareCondition");
-
-	Params::SelfCheck_SwitchState_C_PrepareCondition Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.ResetCondition
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-
-bool USelfCheck_SwitchState_C::ResetCondition()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SelfCheck_SwitchState_C", "ResetCondition");
-
-	Params::SelfCheck_SwitchState_C_ResetCondition Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.K2_InitCondition
 // (Event, Public, BlueprintEvent)
 
@@ -66,20 +26,6 @@ void USelfCheck_SwitchState_C::K2_InitCondition()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("SelfCheck_SwitchState_C", "K2_InitCondition");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.BindEvent
-// (BlueprintCallable, BlueprintEvent)
-
-void USelfCheck_SwitchState_C::BindEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SelfCheck_SwitchState_C", "BindEvent");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -96,28 +42,6 @@ void USelfCheck_SwitchState_C::UnbindEvent()
 		Func = Class->GetFunction("SelfCheck_SwitchState_C", "UnbindEvent");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.PrepareSwitchCharacter
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bEnter                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class AGameCharacter*                   CurCharacter                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void USelfCheck_SwitchState_C::PrepareSwitchCharacter(bool bEnter, class AGameCharacter* CurCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SelfCheck_SwitchState_C", "PrepareSwitchCharacter");
-
-	Params::SelfCheck_SwitchState_C_PrepareSwitchCharacter Parms{};
-
-	Parms.bEnter = bEnter;
-	Parms.CurCharacter = CurCharacter;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -160,6 +84,82 @@ void USelfCheck_SwitchState_C::OnDead(bool bDead, class UAbilityComponentBase* I
 	Parms.bDead = bDead;
 	Parms.InLauncher = InLauncher;
 	Parms.HealthChangeData = std::move(HealthChangeData);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.PrepareCondition
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool USelfCheck_SwitchState_C::PrepareCondition()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SelfCheck_SwitchState_C", "PrepareCondition");
+
+	Params::SelfCheck_SwitchState_C_PrepareCondition Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.ResetCondition
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool USelfCheck_SwitchState_C::ResetCondition()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SelfCheck_SwitchState_C", "ResetCondition");
+
+	Params::SelfCheck_SwitchState_C_ResetCondition Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.BindEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void USelfCheck_SwitchState_C::BindEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SelfCheck_SwitchState_C", "BindEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.PrepareSwitchCharacter
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bEnter                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class AGameCharacter*                   CurCharacter                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void USelfCheck_SwitchState_C::PrepareSwitchCharacter(bool bEnter, class AGameCharacter* CurCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SelfCheck_SwitchState_C", "PrepareSwitchCharacter");
+
+	Params::SelfCheck_SwitchState_C_PrepareSwitchCharacter Parms{};
+
+	Parms.bEnter = bEnter;
+	Parms.CurCharacter = CurCharacter;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

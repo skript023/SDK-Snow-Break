@@ -39,14 +39,14 @@ public:
 
 public:
 	TArray<struct FSoftObjectPath> OnGetAssetPath(TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
-	void Multicast_EnableSpecialShoot(bool bEnable);
-	void ReceiveBeginPlay();
-	void OnCharacterFire(const struct FFireInfo& FireInfo, bool bStartFire);
-	void ExecuteUbergraph_BP_Girl015(int32 EntryPoint);
 	void SkillEnd(int32 SkillID);
 	void EnableSpecialShoot(bool bEnable);
+	void Multicast_EnableSpecialShoot(bool bEnable);
 	void SkillStart(int32 SkillID, const TArray<int32>& OriginSkills, class UGameAbilityComponent* AbilityRef);
+	void ReceiveBeginPlay();
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void OnCharacterFire(const struct FFireInfo& FireInfo, bool bStartFire);
+	void ExecuteUbergraph_BP_Girl015(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

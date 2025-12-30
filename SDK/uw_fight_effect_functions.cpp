@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function uw_fight_effect.uw_fight_effect_C.ExecuteUbergraph_uw_fight_effect
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_effect_C::ExecuteUbergraph_uw_fight_effect(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_effect_C", "ExecuteUbergraph_uw_fight_effect");
+
+	Params::uw_fight_effect_C_ExecuteUbergraph_uw_fight_effect Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function uw_fight_effect.uw_fight_effect_C.OnHit__Overridden
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -36,26 +56,6 @@ void Uuw_fight_effect_C::OnHit__Overridden(float Angle, float Shield, bool IsBig
 	Parms.Angle = Angle;
 	Parms.Shield = Shield;
 	Parms.IsBigHit = IsBigHit;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_effect.uw_fight_effect_C.ExecuteUbergraph_uw_fight_effect
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_effect_C::ExecuteUbergraph_uw_fight_effect(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_effect_C", "ExecuteUbergraph_uw_fight_effect");
-
-	Params::uw_fight_effect_C_ExecuteUbergraph_uw_fight_effect Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

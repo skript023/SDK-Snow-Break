@@ -17,102 +17,6 @@
 namespace SDK
 {
 
-// Function OnHurt_Base.OnHurt_Base_C.K2_InitCondition
-// (Event, Public, BlueprintEvent)
-
-void UOnHurt_Base_C::K2_InitCondition()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("OnHurt_Base_C", "K2_InitCondition");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function OnHurt_Base.OnHurt_Base_C.ReceiverBind
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UAbilityComponentBase*            BindTarget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UOnHurt_Base_C::ReceiverBind(class UAbilityComponentBase* BindTarget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("OnHurt_Base_C", "ReceiverBind");
-
-	Params::OnHurt_Base_C_ReceiverBind Parms{};
-
-	Parms.BindTarget = BindTarget;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function OnHurt_Base.OnHurt_Base_C.ApplyDamage
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FApplyDamageResultData&    DamageResultData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-
-void UOnHurt_Base_C::ApplyDamage(const struct FApplyDamageResultData& DamageResultData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("OnHurt_Base_C", "ApplyDamage");
-
-	Params::OnHurt_Base_C_ApplyDamage Parms{};
-
-	Parms.DamageResultData = std::move(DamageResultData);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function OnHurt_Base.OnHurt_Base_C.UnbindNotifySummon
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AGameCharacter*                   InCharacter                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UOnHurt_Base_C::UnbindNotifySummon(class AGameCharacter* InCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("OnHurt_Base_C", "UnbindNotifySummon");
-
-	Params::OnHurt_Base_C_UnbindNotifySummon Parms{};
-
-	Parms.InCharacter = InCharacter;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function OnHurt_Base.OnHurt_Base_C.K2_UnbindEvent
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UAbilityComponentBase*            InCurLauncher                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AGameCharacter*                   InCurLauncherChara                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UOnHurt_Base_C::K2_UnbindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("OnHurt_Base_C", "K2_UnbindEvent");
-
-	Params::OnHurt_Base_C_K2_UnbindEvent Parms{};
-
-	Parms.InCurLauncher = InCurLauncher;
-	Parms.InCurLauncherChara = InCurLauncherChara;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function OnHurt_Base.OnHurt_Base_C.CondtionCacheTarget
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -156,6 +60,40 @@ void UOnHurt_Base_C::OnReceiveNotify(const struct FApplyDamageResultData& Damage
 
 	if (bCastAllowed != nullptr)
 		*bCastAllowed = Parms.bCastAllowed;
+}
+
+
+// Function OnHurt_Base.OnHurt_Base_C.K2_InitCondition
+// (Event, Public, BlueprintEvent)
+
+void UOnHurt_Base_C::K2_InitCondition()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OnHurt_Base_C", "K2_InitCondition");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function OnHurt_Base.OnHurt_Base_C.ReceiverBind
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UAbilityComponentBase*            BindTarget                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UOnHurt_Base_C::ReceiverBind(class UAbilityComponentBase* BindTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OnHurt_Base_C", "ReceiverBind");
+
+	Params::OnHurt_Base_C_ReceiverBind Parms{};
+
+	Parms.BindTarget = BindTarget;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -239,6 +177,26 @@ void UOnHurt_Base_C::ReceiveDamage(const struct FApplyDamageResultData& DamageRe
 }
 
 
+// Function OnHurt_Base.OnHurt_Base_C.ApplyDamage
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FApplyDamageResultData&    DamageResultData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+
+void UOnHurt_Base_C::ApplyDamage(const struct FApplyDamageResultData& DamageResultData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OnHurt_Base_C", "ApplyDamage");
+
+	Params::OnHurt_Base_C_ApplyDamage Parms{};
+
+	Parms.DamageResultData = std::move(DamageResultData);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function OnHurt_Base.OnHurt_Base_C.OnNotifySummon
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -279,6 +237,26 @@ void UOnHurt_Base_C::BindNotifySummon(class AGameCharacter* InCharacter)
 }
 
 
+// Function OnHurt_Base.OnHurt_Base_C.UnbindNotifySummon
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AGameCharacter*                   InCharacter                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UOnHurt_Base_C::UnbindNotifySummon(class AGameCharacter* InCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OnHurt_Base_C", "UnbindNotifySummon");
+
+	Params::OnHurt_Base_C_UnbindNotifySummon Parms{};
+
+	Parms.InCharacter = InCharacter;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function OnHurt_Base.OnHurt_Base_C.K2_BindEvent
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -293,6 +271,28 @@ void UOnHurt_Base_C::K2_BindEvent(class UAbilityComponentBase* InCurLauncher, cl
 		Func = Class->GetFunction("OnHurt_Base_C", "K2_BindEvent");
 
 	Params::OnHurt_Base_C_K2_BindEvent Parms{};
+
+	Parms.InCurLauncher = InCurLauncher;
+	Parms.InCurLauncherChara = InCurLauncherChara;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function OnHurt_Base.OnHurt_Base_C.K2_UnbindEvent
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UAbilityComponentBase*            InCurLauncher                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AGameCharacter*                   InCurLauncherChara                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UOnHurt_Base_C::K2_UnbindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OnHurt_Base_C", "K2_UnbindEvent");
+
+	Params::OnHurt_Base_C_K2_UnbindEvent Parms{};
 
 	Parms.InCurLauncher = InCurLauncher;
 	Parms.InCurLauncherChara = InCurLauncherChara;

@@ -122,6 +122,48 @@ void AModifierLineEffectActorBase_C::DestroyEffect()
 }
 
 
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.TickLine
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void AModifierLineEffectActorBase_C::TickLine()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "TickLine");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.CalcPointOffset
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   Start                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   End                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Offset                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector*                         OutVector                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AModifierLineEffectActorBase_C::CalcPointOffset(const struct FVector& Start, const struct FVector& End, float Offset, struct FVector* OutVector)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "CalcPointOffset");
+
+	Params::ModifierLineEffectActorBase_C_CalcPointOffset Parms{};
+
+	Parms.Start = std::move(Start);
+	Parms.End = std::move(End);
+	Parms.Offset = Offset;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (OutVector != nullptr)
+		*OutVector = std::move(Parms.OutVector);
+}
+
+
 // Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.LineToLauncher
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -260,6 +302,26 @@ void AModifierLineEffectActorBase_C::OnPreEffectActorEndPlay(class AActor* Actor
 }
 
 
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ReceiveEndPlay
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AModifierLineEffectActorBase_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "ReceiveEndPlay");
+
+	Params::ModifierLineEffectActorBase_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnPreEffectActorOwnerDead
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -343,68 +405,6 @@ void AModifierLineEffectActorBase_C::ExecuteUbergraph_ModifierLineEffectActorBas
 	Params::ModifierLineEffectActorBase_C_ExecuteUbergraph_ModifierLineEffectActorBase Parms{};
 
 	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.TickLine
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void AModifierLineEffectActorBase_C::TickLine()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "TickLine");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.CalcPointOffset
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FVector&                   Start                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FVector&                   End                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Offset                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector*                         OutVector                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AModifierLineEffectActorBase_C::CalcPointOffset(const struct FVector& Start, const struct FVector& End, float Offset, struct FVector* OutVector)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "CalcPointOffset");
-
-	Params::ModifierLineEffectActorBase_C_CalcPointOffset Parms{};
-
-	Parms.Start = std::move(Start);
-	Parms.End = std::move(End);
-	Parms.Offset = Offset;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (OutVector != nullptr)
-		*OutVector = std::move(Parms.OutVector);
-}
-
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ReceiveEndPlay
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AModifierLineEffectActorBase_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "ReceiveEndPlay");
-
-	Params::ModifierLineEffectActorBase_C_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

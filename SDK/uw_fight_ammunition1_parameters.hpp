@@ -14,26 +14,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_ammunition1.uw_fight_ammunition1_C.SetBulletTimeEffect
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_ammunition1_C_SetBulletTimeEffect final
-{
-public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_ammunition1_C_SetBulletTimeEffect;
-
-// Function uw_fight_ammunition1.uw_fight_ammunition1_C.OnBulletChange
-// 0x000C (0x000C - 0x0000)
-struct uw_fight_ammunition1_C_OnBulletChange final
-{
-public:
-	int32                                         InCurBullet;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         InMaxBullet;                                       // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         InPercent;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_ammunition1_C_OnBulletChange;
-
 // Function uw_fight_ammunition1.uw_fight_ammunition1_C.GetNextLeftCount
 // 0x0050 (0x0050 - 0x0000)
 struct uw_fight_ammunition1_C_GetNextLeftCount final
@@ -72,6 +52,15 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_ammunition1_C_SetBulletEffect;
 
+// Function uw_fight_ammunition1.uw_fight_ammunition1_C.SetBulletTimeEffect
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_ammunition1_C_SetBulletTimeEffect final
+{
+public:
+	bool                                          bShow;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_ammunition1_C_SetBulletTimeEffect;
+
 // Function uw_fight_ammunition1.uw_fight_ammunition1_C.SetBulletCountEffect
 // 0x0010 (0x0010 - 0x0000)
 struct uw_fight_ammunition1_C_SetBulletCountEffect final
@@ -83,6 +72,17 @@ public:
 	float                                         End;                                               // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_ammunition1_C_SetBulletCountEffect;
+
+// Function uw_fight_ammunition1.uw_fight_ammunition1_C.OnBulletChange
+// 0x000C (0x000C - 0x0000)
+struct uw_fight_ammunition1_C_OnBulletChange final
+{
+public:
+	int32                                         InCurBullet;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         InMaxBullet;                                       // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         InPercent;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_ammunition1_C_OnBulletChange;
 
 // Function uw_fight_ammunition1.uw_fight_ammunition1_C.ExecuteUbergraph_uw_fight_ammunition1
 // 0x0024 (0x0024 - 0x0000)

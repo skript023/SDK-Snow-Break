@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function OpenDoorEvent.OpenDoorEvent_C.OpenEvent
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UOpenDoorEvent_C::OpenEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OpenDoorEvent_C", "OpenEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function OpenDoorEvent.OpenDoorEvent_C.OnTrigger
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -34,20 +48,6 @@ bool UOpenDoorEvent_C::OnTrigger()
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
-}
-
-
-// Function OpenDoorEvent.OpenDoorEvent_C.OpenEvent
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UOpenDoorEvent_C::OpenEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("OpenDoorEvent_C", "OpenEvent");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -27,8 +27,8 @@ public:
 
 public:
 	void OnEmitEnd();
-	void EmitterDestroyLua();
 	EEmitterResult OnEmit();
+	void EmitterDestroyLua();
 	TArray<struct FSoftObjectPath> OnGetAssetPath(const TArray<struct FParamInfo>& Values, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
 	void GetDefaultParamsValue(TArray<struct FParamInfo>* Values);
 	void ExecuteUbergraph_Emitter_Trap(int32 EntryPoint);

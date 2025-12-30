@@ -25,8 +25,8 @@ public:
 	float                                         Delay;                                             // 0x0178(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool OnTrigger();
 	void OpenEvent();
+	bool OnTrigger();
 
 	class FString GetSpecialStaticDescription() const;
 

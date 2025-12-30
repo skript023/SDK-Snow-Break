@@ -27,8 +27,8 @@ public:
 	float                                         ExtendTime;                                        // 0x00E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	float RepelMoveExtendTime();
 	float MoveTickCalcVelocity(float DeltaTime);
+	float RepelMoveExtendTime();
 
 public:
 	static class UClass* StaticClass()

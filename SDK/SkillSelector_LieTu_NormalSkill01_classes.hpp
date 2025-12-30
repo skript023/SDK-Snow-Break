@@ -46,31 +46,31 @@ public:
 
 public:
 	void GetPartitionMainPart(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult);
-	void ReceiveBeginPlay();
-	void ReceiveTick(float DeltaSeconds);
 	void ReceiveDestroyed();
-	void TriggerUIEvent(const struct FBoneResult& Target, class FName EventName);
-	void GetSortedGameCharacters(TArray<class AGameCharacter*>* OutCharacters);
-	void GetPartitionMainBone__Overridden(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
-	void ShowUI(const struct FBoneResult& Part, bool bShow);
-	void GetAllTargetWithWeakResults__Overridden(TArray<struct FBoneResult>* NewResults);
-	void ReceiveTick__Overridden(float DeltaSeconds);
-	void ExecuteUbergraph_SkillSelector_LieTu_NormalSkill01(int32 EntryPoint);
-	void GetAllTargetWithWeakResults(TArray<struct FBoneResult>* NewResults);
-	void GetPartitionMainBone(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
+	void ReceiveTick(float DeltaSeconds);
 	void GetPartMainBone(const struct FBoneResult& PartResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
+	void GetAllTargetWithWeakResults(TArray<struct FBoneResult>* NewResults);
+	void ReceiveBeginPlay();
 	void GetAllQueryResults(TArray<struct FQueryResult>* OutResults);
+	void GetPartitionMainBone(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
 	void GetPartMainBone__Overridden(const struct FBoneResult& PartResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
 	TArray<struct FSoftObjectPath> OnGetAssetPath(int32 InId, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs);
 	void GetRemainSelectTargetCount(int32* Count);
 	void RemoveOutOfViewTarget();
+	void TriggerUIEvent(const struct FBoneResult& Target, class FName EventName);
 	void GetSortedPartitions(class AGameCharacter* GameCharacter, TArray<struct FBoneResult>* OutPartitions);
+	void GetSortedGameCharacters(TArray<class AGameCharacter*>* OutCharacters);
 	void GetPartitionMainPart__Overridden(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult);
+	void GetPartitionMainBone__Overridden(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
 	void GetAllQueryResults__Overridden(TArray<struct FQueryResult>* OutResults);
+	void ShowUI(const struct FBoneResult& Part, bool bShow);
 	void CheckTargetInView(class AGameCharacter* InTarget, const struct FBoneResult& BoneResult, bool* bInView);
+	void GetAllTargetWithWeakResults__Overridden(TArray<struct FBoneResult>* NewResults);
 	void ReceiveDestroyed__Overridden();
 	void OnReceiveFinish();
+	void ReceiveTick__Overridden(float DeltaSeconds);
 	void ReceiveBeginPlay__Overridden();
+	void ExecuteUbergraph_SkillSelector_LieTu_NormalSkill01(int32 EntryPoint);
 
 	class FString GetModuleName() const;
 

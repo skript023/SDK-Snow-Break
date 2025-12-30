@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function Repel_Formula.Repel_Formula_C.RepelMoveExtendTime
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-float URepel_Formula_C::RepelMoveExtendTime()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Repel_Formula_C", "RepelMoveExtendTime");
-
-	Params::Repel_Formula_C_RepelMoveExtendTime Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function Repel_Formula.Repel_Formula_C.MoveTickCalcVelocity
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -53,6 +33,26 @@ float URepel_Formula_C::MoveTickCalcVelocity(float DeltaTime)
 	Params::Repel_Formula_C_MoveTickCalcVelocity Parms{};
 
 	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Repel_Formula.Repel_Formula_C.RepelMoveExtendTime
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float URepel_Formula_C::RepelMoveExtendTime()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Repel_Formula_C", "RepelMoveExtendTime");
+
+	Params::Repel_Formula_C_RepelMoveExtendTime Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

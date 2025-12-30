@@ -28,14 +28,14 @@ public:
 	float                                         KeepTime;                                          // 0x0114(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool PrepareCondition();
-	bool ResetCondition();
 	void K2_InitCondition();
-	void BindEvent();
 	void UnbindEvent();
-	void PrepareSwitchCharacter(bool bEnter, class AGameCharacter* CurCharacter);
 	void SwitchCharacter(bool bEnter);
 	void OnDead(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData);
+	bool PrepareCondition();
+	bool ResetCondition();
+	void BindEvent();
+	void PrepareSwitchCharacter(bool bEnter, class AGameCharacter* CurCharacter);
 	void ExecuteUbergraph_SelfCheck_SwitchState(int32 EntryPoint);
 
 public:

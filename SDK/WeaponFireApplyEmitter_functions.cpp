@@ -53,6 +53,27 @@ TArray<struct FSoftObjectPath> UWeaponFireApplyEmitter_C::OnGetAssetPath(const T
 }
 
 
+// Function WeaponFireApplyEmitter.WeaponFireApplyEmitter_C.IsActive
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool*                                   bActive                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UWeaponFireApplyEmitter_C::IsActive(bool* bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WeaponFireApplyEmitter_C", "IsActive");
+
+	Params::WeaponFireApplyEmitter_C_IsActive Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (bActive != nullptr)
+		*bActive = Parms.bActive;
+}
+
+
 // Function WeaponFireApplyEmitter.WeaponFireApplyEmitter_C.K2_ReceiveInitialize
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -70,6 +91,20 @@ void UWeaponFireApplyEmitter_C::K2_ReceiveInitialize(const TArray<struct FParamI
 	Parms.Info = std::move(Info);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WeaponFireApplyEmitter.WeaponFireApplyEmitter_C.K2_ReceiveActive
+// (Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UWeaponFireApplyEmitter_C::K2_ReceiveActive()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WeaponFireApplyEmitter_C", "K2_ReceiveActive");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -124,41 +159,6 @@ void UWeaponFireApplyEmitter_C::ExecuteUbergraph_WeaponFireApplyEmitter(int32 En
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WeaponFireApplyEmitter.WeaponFireApplyEmitter_C.IsActive
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// bool*                                   bActive                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UWeaponFireApplyEmitter_C::IsActive(bool* bActive)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WeaponFireApplyEmitter_C", "IsActive");
-
-	Params::WeaponFireApplyEmitter_C_IsActive Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (bActive != nullptr)
-		*bActive = Parms.bActive;
-}
-
-
-// Function WeaponFireApplyEmitter.WeaponFireApplyEmitter_C.K2_ReceiveActive
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UWeaponFireApplyEmitter_C::K2_ReceiveActive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WeaponFireApplyEmitter_C", "K2_ReceiveActive");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

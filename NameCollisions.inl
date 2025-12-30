@@ -11,17 +11,17 @@
 
 namespace GameplayAbilities { struct FServerAbilityRPCBatch; }
 
-namespace uw_fight_power_girl002a_twobar { class Uuw_fight_power_girl002a_twobar_C; }
-
 namespace uw_fight_power_girl002a { class Uuw_fight_power_girl002a_C; }
 
 namespace uw_fight_power_girl002a_0 { class Uuw_fight_power_girl002a_C; }
+
+namespace uw_fight_power_girl002a_twobar_0 { class Uuw_fight_power_girl002a_twobar_C; }
 
 namespace uw_fight_power_girl002a_bar_0 { class Uuw_fight_power_girl002a_bar_C; }
 
 namespace uw_fight_power_girl002a_bar { class Uuw_fight_power_girl002a_bar_C; }
 
-namespace uw_fight_power_girl002a_twobar_0 { class Uuw_fight_power_girl002a_twobar_C; }
+namespace uw_fight_power_girl002a_twobar { class Uuw_fight_power_girl002a_twobar_C; }
 
 
 namespace Game

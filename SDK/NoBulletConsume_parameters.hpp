@@ -16,6 +16,34 @@
 namespace SDK::Params
 {
 
+// Function NoBulletConsume.NoBulletConsume_C.K2_ReceiveActive
+// 0x0008 (0x0008 - 0x0000)
+struct NoBulletConsume_C_K2_ReceiveActive final
+{
+public:
+	const class UObject*                          Instigator;                                        // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_NoBulletConsume_C_K2_ReceiveActive;
+
+// Function NoBulletConsume.NoBulletConsume_C.K2_ReceiveInitialize
+// 0x0018 (0x0018 - 0x0000)
+struct NoBulletConsume_C_K2_ReceiveInitialize final
+{
+public:
+	TArray<struct FParamInfo>                     Info;                                              // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	const class UGameAbilityComponent*            lpInstigator;                                      // 0x0010(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_NoBulletConsume_C_K2_ReceiveInitialize;
+
+// Function NoBulletConsume.NoBulletConsume_C.K2_ReceiveDeActive
+// 0x0008 (0x0008 - 0x0000)
+struct NoBulletConsume_C_K2_ReceiveDeActive final
+{
+public:
+	const class UGameAbilityComponent*            Pawn;                                              // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_NoBulletConsume_C_K2_ReceiveDeActive;
+
 // Function NoBulletConsume.NoBulletConsume_C.WeaponFire
 // 0x0010 (0x0010 - 0x0000)
 struct NoBulletConsume_C_WeaponFire final
@@ -72,34 +100,6 @@ public:
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x00D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_NoBulletConsume_C_ExecuteUbergraph_NoBulletConsume;
-
-// Function NoBulletConsume.NoBulletConsume_C.K2_ReceiveActive
-// 0x0008 (0x0008 - 0x0000)
-struct NoBulletConsume_C_K2_ReceiveActive final
-{
-public:
-	const class UObject*                          Instigator;                                        // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_NoBulletConsume_C_K2_ReceiveActive;
-
-// Function NoBulletConsume.NoBulletConsume_C.K2_ReceiveInitialize
-// 0x0018 (0x0018 - 0x0000)
-struct NoBulletConsume_C_K2_ReceiveInitialize final
-{
-public:
-	TArray<struct FParamInfo>                     Info;                                              // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	const class UGameAbilityComponent*            lpInstigator;                                      // 0x0010(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_NoBulletConsume_C_K2_ReceiveInitialize;
-
-// Function NoBulletConsume.NoBulletConsume_C.K2_ReceiveDeActive
-// 0x0008 (0x0008 - 0x0000)
-struct NoBulletConsume_C_K2_ReceiveDeActive final
-{
-public:
-	const class UGameAbilityComponent*            Pawn;                                              // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_NoBulletConsume_C_K2_ReceiveDeActive;
 
 }
 

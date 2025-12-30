@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function AIEvent_AddEnmity.AIEvent_AddEnmity_C.ExecuteOnServer
+// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           InCharacter                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIEvent_AddEnmity_C::ExecuteOnServer(class AActor* InCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIEvent_AddEnmity_C", "ExecuteOnServer");
+
+	Params::AIEvent_AddEnmity_C_ExecuteOnServer Parms{};
+
+	Parms.InCharacter = InCharacter;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function AIEvent_AddEnmity.AIEvent_AddEnmity_C.CanInterruptFight
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -52,26 +72,6 @@ void UAIEvent_AddEnmity_C::OnExecute(class AGameCharacter* Character)
 	Params::AIEvent_AddEnmity_C_OnExecute Parms{};
 
 	Parms.Character = Character;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIEvent_AddEnmity.AIEvent_AddEnmity_C.ExecuteOnServer
-// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AActor*                           InCharacter                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIEvent_AddEnmity_C::ExecuteOnServer(class AActor* InCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIEvent_AddEnmity_C", "ExecuteOnServer");
-
-	Params::AIEvent_AddEnmity_C_ExecuteOnServer Parms{};
-
-	Parms.InCharacter = InCharacter;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

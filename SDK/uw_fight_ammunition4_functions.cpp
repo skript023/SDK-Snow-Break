@@ -17,6 +17,53 @@
 namespace SDK
 {
 
+// Function uw_fight_ammunition4.uw_fight_ammunition4_C.GetNextLeftCount
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UModifier*                        InModifier                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+int32 Uuw_fight_ammunition4_C::GetNextLeftCount(class UModifier* InModifier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_ammunition4_C", "GetNextLeftCount");
+
+	Params::uw_fight_ammunition4_C_GetNextLeftCount Parms{};
+
+	Parms.InModifier = InModifier;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function uw_fight_ammunition4.uw_fight_ammunition4_C.Set Bullet Image
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Start                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   End                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_ammunition4_C::Set_Bullet_Image(int32 Start, int32 End, const struct FLinearColor& Color)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_ammunition4_C", "Set Bullet Image");
+
+	Params::uw_fight_ammunition4_C_Set_Bullet_Image Parms{};
+
+	Parms.Start = Start;
+	Parms.End = End;
+	Parms.Color = std::move(Color);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function uw_fight_ammunition4.uw_fight_ammunition4_C.SetBullet
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -186,53 +233,6 @@ void Uuw_fight_ammunition4_C::ExecuteUbergraph_uw_fight_ammunition4(int32 EntryP
 	Params::uw_fight_ammunition4_C_ExecuteUbergraph_uw_fight_ammunition4 Parms{};
 
 	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_ammunition4.uw_fight_ammunition4_C.GetNextLeftCount
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UModifier*                        InModifier                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-int32 Uuw_fight_ammunition4_C::GetNextLeftCount(class UModifier* InModifier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition4_C", "GetNextLeftCount");
-
-	Params::uw_fight_ammunition4_C_GetNextLeftCount Parms{};
-
-	Parms.InModifier = InModifier;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function uw_fight_ammunition4.uw_fight_ammunition4_C.Set Bullet Image
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Start                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   End                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_ammunition4_C::Set_Bullet_Image(int32 Start, int32 End, const struct FLinearColor& Color)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition4_C", "Set Bullet Image");
-
-	Params::uw_fight_ammunition4_C_Set_Bullet_Image Parms{};
-
-	Parms.Start = Start;
-	Parms.End = End;
-	Parms.Color = std::move(Color);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

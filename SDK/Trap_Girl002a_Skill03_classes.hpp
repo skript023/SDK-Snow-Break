@@ -29,8 +29,8 @@ public:
 public:
 	void ReceiveBeginPlay();
 	void Client_OnActive();
-	void ExecuteUbergraph_Trap_Girl002a_Skill03(int32 EntryPoint);
 	void Server_OnActive();
+	void ExecuteUbergraph_Trap_Girl002a_Skill03(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

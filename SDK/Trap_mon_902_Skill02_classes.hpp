@@ -39,11 +39,11 @@ public:
 
 public:
 	void ReceiveBeginPlay();
-	void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
 	void BP_OnDead(class UAbilityComponentBase* Killer);
+	void BP_ClientPlayTrapEndExhibition();
+	void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
 	void Server_OnActive();
 	void Client_OnActive();
-	void BP_ClientPlayTrapEndExhibition();
 	void OnRecycle();
 	void ExecuteUbergraph_Trap_mon_902_Skill02(int32 EntryPoint);
 

@@ -9,6 +9,7 @@
 // Basic file containing structs required by the SDK
 
 #define VC_EXTRALEAN
+#define WIN32_LEAN_AND_MEAN
 
 #include <string>
 #include <functional>
@@ -35,7 +36,7 @@ namespace Offsets
 	constexpr int32 GObjects          = 0x0756EE58;
 	constexpr int32 AppendString      = 0x02768D90;
 	constexpr int32 GNames            = 0x075565C0;
-	constexpr int32 GWorld            = 0x00000000;
+	constexpr int32 GWorld            = 0x076BE328;
 	constexpr int32 ProcessEvent      = 0x02984770;
 	constexpr int32 ProcessEventIdx   = 0x00000043;
 }

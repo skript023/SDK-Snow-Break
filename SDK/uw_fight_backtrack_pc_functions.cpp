@@ -121,34 +121,15 @@ void Uuw_fight_backtrack_pc_C::ConstructInLua__Overridden()
 }
 
 
-// LuaFunction uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.OnMoveLeftStart
+// LuaFunction uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.OnMoveRightStart
 // (Native, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_backtrack_pc_C::OnMoveLeftStart()
+void Uuw_fight_backtrack_pc_C::OnMoveRightStart()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "OnMoveLeftStart");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.OnMoveLeftEnd
-// (Native, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_backtrack_pc_C::OnMoveLeftEnd()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "OnMoveLeftEnd");
+		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "OnMoveRightStart");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -178,15 +159,15 @@ void Uuw_fight_backtrack_pc_C::OnMoveRightEnd()
 }
 
 
-// LuaFunction uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.OnMoveRightStart
+// LuaFunction uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.OnMoveLeftEnd
 // (Native, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_backtrack_pc_C::OnMoveRightStart()
+void Uuw_fight_backtrack_pc_C::OnMoveLeftEnd()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "OnMoveRightStart");
+		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "OnMoveLeftEnd");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -206,6 +187,25 @@ void Uuw_fight_backtrack_pc_C::ConstructInLua()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "ConstructInLua");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.OnMoveLeftStart
+// (Native, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_backtrack_pc_C::OnMoveLeftStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "OnMoveLeftStart");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

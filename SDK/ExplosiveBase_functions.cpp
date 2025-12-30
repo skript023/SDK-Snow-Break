@@ -17,6 +17,44 @@
 namespace SDK
 {
 
+// LuaFunction ExplosiveBase.ExplosiveBase_C.CheckCull
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void AExplosiveBase_C::CheckCull()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExplosiveBase_C", "CheckCull");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction ExplosiveBase.ExplosiveBase_C.SetHpShowDistance
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void AExplosiveBase_C::SetHpShowDistance()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExplosiveBase_C", "SetHpShowDistance");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function ExplosiveBase.ExplosiveBase_C.ChangeTickInteral
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -420,44 +458,6 @@ void AExplosiveBase_C::ExecuteUbergraph_ExplosiveBase(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// LuaFunction ExplosiveBase.ExplosiveBase_C.SetHpShowDistance
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void AExplosiveBase_C::SetHpShowDistance()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ExplosiveBase_C", "SetHpShowDistance");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction ExplosiveBase.ExplosiveBase_C.CheckCull
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void AExplosiveBase_C::CheckCull()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ExplosiveBase_C", "CheckCull");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 

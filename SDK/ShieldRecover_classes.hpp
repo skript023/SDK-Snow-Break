@@ -25,8 +25,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0138(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void K2_ReceiveActive(const class UObject* Instigator);
 	void ExecuteUbergraph_ShieldRecover(int32 EntryPoint);
+	void K2_ReceiveActive(const class UObject* Instigator);
 
 public:
 	static class UClass* StaticClass()

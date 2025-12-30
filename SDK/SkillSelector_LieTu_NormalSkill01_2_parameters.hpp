@@ -16,16 +16,6 @@
 namespace SDK::Params
 {
 
-// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.GetAllTargetWithWeakResults
-// 0x0020 (0x0020 - 0x0000)
-struct SkillSelector_LieTu_NormalSkill01_2_C_GetAllTargetWithWeakResults final
-{
-public:
-	TArray<struct FBoneResult>                    NewResults;                                        // 0x0000(0x0010)(Parm, OutParm, ContainsInstancedReference)
-	TArray<struct FBoneResult>                    Results;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_SkillSelector_LieTu_NormalSkill01_2_C_GetAllTargetWithWeakResults;
-
 // LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.GetPartitionMainPart
 // 0x0058 (0x0058 - 0x0000)
 struct SkillSelector_LieTu_NormalSkill01_2_C_GetPartitionMainPart final
@@ -37,6 +27,15 @@ public:
 	struct FBoneResult                            BoneResult;                                        // 0x0030(0x0028)(Parm, OutParm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_SkillSelector_LieTu_NormalSkill01_2_C_GetPartitionMainPart;
+
+// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct SkillSelector_LieTu_NormalSkill01_2_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SkillSelector_LieTu_NormalSkill01_2_C_ReceiveTick;
 
 // LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.GetPartMainBone
 // 0x0060 (0x0060 - 0x0000)
@@ -51,14 +50,26 @@ public:
 };
 DUMPER7_ASSERTS_SkillSelector_LieTu_NormalSkill01_2_C_GetPartMainBone;
 
-// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct SkillSelector_LieTu_NormalSkill01_2_C_ReceiveTick final
+// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.GetAllTargetWithWeakResults
+// 0x0020 (0x0020 - 0x0000)
+struct SkillSelector_LieTu_NormalSkill01_2_C_GetAllTargetWithWeakResults final
 {
 public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FBoneResult>                    NewResults;                                        // 0x0000(0x0010)(Parm, OutParm, ContainsInstancedReference)
+	TArray<struct FBoneResult>                    Results;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
 };
-DUMPER7_ASSERTS_SkillSelector_LieTu_NormalSkill01_2_C_ReceiveTick;
+DUMPER7_ASSERTS_SkillSelector_LieTu_NormalSkill01_2_C_GetAllTargetWithWeakResults;
+
+// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.GetAllQueryResults
+// 0x0028 (0x0028 - 0x0000)
+struct SkillSelector_LieTu_NormalSkill01_2_C_GetAllQueryResults final
+{
+public:
+	TArray<struct FQueryResult>                   OutResults;                                        // 0x0000(0x0010)(Parm, OutParm, ContainsInstancedReference)
+	class AGameCharacter*                         GameCharacter;                                     // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FQueryResult>                   Results;                                           // 0x0018(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_SkillSelector_LieTu_NormalSkill01_2_C_GetAllQueryResults;
 
 // LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.GetPartitionMainBone
 // 0x0060 (0x0060 - 0x0000)
@@ -72,17 +83,6 @@ public:
 	class AGameCharacter*                         GameCharacter;                                     // 0x0058(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_SkillSelector_LieTu_NormalSkill01_2_C_GetPartitionMainBone;
-
-// LuaFunction SkillSelector_LieTu_NormalSkill01_2.SkillSelector_LieTu_NormalSkill01_2_C.GetAllQueryResults
-// 0x0028 (0x0028 - 0x0000)
-struct SkillSelector_LieTu_NormalSkill01_2_C_GetAllQueryResults final
-{
-public:
-	TArray<struct FQueryResult>                   OutResults;                                        // 0x0000(0x0010)(Parm, OutParm, ContainsInstancedReference)
-	class AGameCharacter*                         GameCharacter;                                     // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FQueryResult>                   Results;                                           // 0x0018(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_SkillSelector_LieTu_NormalSkill01_2_C_GetAllQueryResults;
 
 }
 

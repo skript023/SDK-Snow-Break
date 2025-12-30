@@ -14,15 +14,6 @@
 namespace SDK::Params
 {
 
-// Function Repel_Formula.Repel_Formula_C.RepelMoveExtendTime
-// 0x0004 (0x0004 - 0x0000)
-struct Repel_Formula_C_RepelMoveExtendTime final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Repel_Formula_C_RepelMoveExtendTime;
-
 // Function Repel_Formula.Repel_Formula_C.MoveTickCalcVelocity
 // 0x003C (0x003C - 0x0000)
 struct Repel_Formula_C_MoveTickCalcVelocity final
@@ -46,6 +37,15 @@ public:
 	float                                         CallFunc_FMax_ReturnValue_1;                       // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Repel_Formula_C_MoveTickCalcVelocity;
+
+// Function Repel_Formula.Repel_Formula_C.RepelMoveExtendTime
+// 0x0004 (0x0004 - 0x0000)
+struct Repel_Formula_C_RepelMoveExtendTime final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Repel_Formula_C_RepelMoveExtendTime;
 
 }
 

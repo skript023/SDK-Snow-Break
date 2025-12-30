@@ -57,11 +57,11 @@ public:
 public:
 	void ExecuteUbergraph_uw_fight_level_skillintro(int32 EntryPoint);
 	void Tick__Overridden(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void Construct();
 	void OnAnimationFinished(const class UWidgetAnimation* Animation);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void OnConstruct();
+	void Construct();
 	void Destruct();
+	void OnConstruct();
 
 	class FString GetModuleName() const;
 

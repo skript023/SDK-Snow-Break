@@ -46,6 +46,8 @@ public:
 	int32                                         RushButtonType;                                    // 0x15BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void CalcSideLength(float InVal, float LineVal, float* ReturnVal);
 	void SetRushButtonType(int32 InType);
 	void AutoFireToRush();
@@ -65,8 +67,6 @@ public:
 	void NotifyInteractFailed();
 	void OnSwitchPlayerCharacterFinished();
 	void ExecuteUbergraph_BP_GameController(int32 EntryPoint);
-	void ReceiveBeginPlay();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 
 	class FString GetModuleName() const;
 

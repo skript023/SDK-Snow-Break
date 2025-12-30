@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// LuaFunction uw_widgets_item_list.uw_widgets_item_list_C.OnListItemObjectSet
+// 0x0008 (0x0008 - 0x0000)
+struct uw_widgets_item_list_C_OnListItemObjectSet final
+{
+public:
+	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_widgets_item_list_C_OnListItemObjectSet;
+
 // Function uw_widgets_item_list.uw_widgets_item_list_C.BP_OnItemExpansionChanged
 // 0x0001 (0x0001 - 0x0000)
 struct uw_widgets_item_list_C_BP_OnItemExpansionChanged final
@@ -57,15 +66,6 @@ public:
 	class UWwiseComponent*                        CallFunc_PostEvent2DInSequence_ReturnValue_2;      // 0x0028(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_widgets_item_list_C_ExecuteUbergraph_uw_widgets_item_list;
-
-// LuaFunction uw_widgets_item_list.uw_widgets_item_list_C.OnListItemObjectSet
-// 0x0008 (0x0008 - 0x0000)
-struct uw_widgets_item_list_C_OnListItemObjectSet final
-{
-public:
-	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_widgets_item_list_C_OnListItemObjectSet;
 
 // Function uw_widgets_item_list.uw_widgets_item_list_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

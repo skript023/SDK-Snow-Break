@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_guide_keyprompt.uw_fight_guide_keyprompt_C.ExecuteUbergraph_uw_fight_guide_keyprompt
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_guide_keyprompt_C::ExecuteUbergraph_uw_fight_guide_keyprompt(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_guide_keyprompt_C", "ExecuteUbergraph_uw_fight_guide_keyprompt");
-
-	Params::uw_fight_guide_keyprompt_C_ExecuteUbergraph_uw_fight_guide_keyprompt Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_guide_keyprompt.uw_fight_guide_keyprompt_C.OnListItemObjectSet__Overridden
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -52,6 +32,40 @@ void Uuw_fight_guide_keyprompt_C::OnListItemObjectSet__Overridden(class UObject*
 	Params::uw_fight_guide_keyprompt_C_OnListItemObjectSet__Overridden Parms{};
 
 	Parms.ListItemObject = ListItemObject;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_guide_keyprompt.uw_fight_guide_keyprompt_C.BP_OnEntryReleased
+// (Event, Protected, BlueprintEvent)
+
+void Uuw_fight_guide_keyprompt_C::BP_OnEntryReleased()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_guide_keyprompt_C", "BP_OnEntryReleased");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_guide_keyprompt.uw_fight_guide_keyprompt_C.BP_OnItemExpansionChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_guide_keyprompt_C::BP_OnItemExpansionChanged(bool bIsExpanded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_guide_keyprompt_C", "BP_OnItemExpansionChanged");
+
+	Params::uw_fight_guide_keyprompt_C_BP_OnItemExpansionChanged Parms{};
+
+	Parms.bIsExpanded = bIsExpanded;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -77,37 +91,23 @@ void Uuw_fight_guide_keyprompt_C::BP_OnItemSelectionChanged(bool bIsSelected)
 }
 
 
-// Function uw_fight_guide_keyprompt.uw_fight_guide_keyprompt_C.BP_OnItemExpansionChanged
-// (Event, Protected, BlueprintEvent)
+// Function uw_fight_guide_keyprompt.uw_fight_guide_keyprompt_C.ExecuteUbergraph_uw_fight_guide_keyprompt
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_guide_keyprompt_C::BP_OnItemExpansionChanged(bool bIsExpanded)
+void Uuw_fight_guide_keyprompt_C::ExecuteUbergraph_uw_fight_guide_keyprompt(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_guide_keyprompt_C", "BP_OnItemExpansionChanged");
+		Func = Class->GetFunction("uw_fight_guide_keyprompt_C", "ExecuteUbergraph_uw_fight_guide_keyprompt");
 
-	Params::uw_fight_guide_keyprompt_C_BP_OnItemExpansionChanged Parms{};
+	Params::uw_fight_guide_keyprompt_C_ExecuteUbergraph_uw_fight_guide_keyprompt Parms{};
 
-	Parms.bIsExpanded = bIsExpanded;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_guide_keyprompt.uw_fight_guide_keyprompt_C.BP_OnEntryReleased
-// (Event, Protected, BlueprintEvent)
-
-void Uuw_fight_guide_keyprompt_C::BP_OnEntryReleased()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_guide_keyprompt_C", "BP_OnEntryReleased");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -136,15 +136,15 @@ void Uuw_fight_guide_keyprompt_C::OnListItemObjectSet(class UObject* ListItemObj
 }
 
 
-// LuaFunction uw_fight_guide_keyprompt.uw_fight_guide_keyprompt_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_guide_keyprompt.uw_fight_guide_keyprompt_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_guide_keyprompt_C::OnConstruct()
+void Uuw_fight_guide_keyprompt_C::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_guide_keyprompt_C", "OnConstruct");
+		Func = Class->GetFunction("uw_fight_guide_keyprompt_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -155,15 +155,15 @@ void Uuw_fight_guide_keyprompt_C::OnConstruct()
 }
 
 
-// LuaFunction uw_fight_guide_keyprompt.uw_fight_guide_keyprompt_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_guide_keyprompt.uw_fight_guide_keyprompt_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_guide_keyprompt_C::Destruct()
+void Uuw_fight_guide_keyprompt_C::OnConstruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_guide_keyprompt_C", "Destruct");
+		Func = Class->GetFunction("uw_fight_guide_keyprompt_C", "OnConstruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -116,11 +116,11 @@ public:
 	void OnSkillStrengthening__Overridden(bool bStart);
 	void K2_PlayCDAnim__Overridden(bool bPlayCD);
 	void K2_PlayFinishAnim(bool bPlayAnim);
+	void K2_PlayCDAnim(bool bPlayCD);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void Construct();
 	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
 	void OnSkillStrengthening(bool bStart);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
-	void K2_PlayCDAnim(bool bPlayCD);
 	void Destruct();
 
 	class FString GetModuleName() const;

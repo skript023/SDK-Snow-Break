@@ -52,6 +52,8 @@ public:
 	void WrapSetStartAndEndPoint(const struct FVector& Start, const struct FVector& End);
 	void SetEnd2Point();
 	void DestroyEffect();
+	void TickLine();
+	void CalcPointOffset(const struct FVector& Start, const struct FVector& End, float Offset, struct FVector* OutVector);
 	void LineToLauncher();
 	void GetApplyLocation(struct FVector* OutLocation);
 	void CheckLauncher(class AActor* LauncherA, class AActor* LauncherB, bool* bEqual);
@@ -59,13 +61,11 @@ public:
 	void LineToEffectActor(class AModifierLineEffectActorBase_C* EffectActor);
 	void ReceiveBeginPlay();
 	void OnPreEffectActorEndPlay(class AActor* Actor, EEndPlayReason EndPlayReason);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void OnPreEffectActorOwnerDead(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData);
 	void OnLauncherDead(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData);
 	void ReceiveTick(float DeltaSeconds);
 	void ExecuteUbergraph_ModifierLineEffectActorBase(int32 EntryPoint);
-	void TickLine();
-	void CalcPointOffset(const struct FVector& Start, const struct FVector& End, float Offset, struct FVector* OutVector);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 
 public:
 	static class UClass* StaticClass()

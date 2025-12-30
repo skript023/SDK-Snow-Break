@@ -49,8 +49,8 @@ public:
 	void ExecuteUbergraph_uw_fight_operatebird_skill(int32 EntryPoint);
 	void BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature();
 	void BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature();
-	void Construct();
 	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void Construct();
 	void Destruct();
 
 	class FString GetModuleName() const;

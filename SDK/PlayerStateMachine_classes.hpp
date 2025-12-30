@@ -60,12 +60,6 @@ public:
 	struct FSMState                               PlayerStateMachine_PlayerStateMachine_C_0;         // 0x3E40(0x01C8)()
 
 public:
-	void OnStartDodge();
-	void Func_PlayerStateMachine_PlayerStateMachine_C_0();
-	void Func_PlayerStateMachine_PlayerStateMachine_C_1();
-	void Func_PlayerStateMachine_PlayerStateMachine_C_2();
-	void Func_PlayerStateMachine_PlayerStateMachine_C_3();
-	void Func_PlayerStateMachine_PlayerStateMachine_C_4();
 	void Func_PlayerStateMachine_PlayerStateMachine_C_5();
 	void Func_PlayerStateMachine_PlayerStateMachine_C_6();
 	void Func_PlayerStateMachine_PlayerStateMachine_C_7();
@@ -104,6 +98,12 @@ public:
 	void Func_PlayerStateMachine_PlayerStateMachine_C_8();
 	void Func_PlayerStateMachine_PlayerStateMachine_C_9();
 	void ExecuteUbergraph_PlayerStateMachine(int32 EntryPoint);
+	void OnStartDodge();
+	void Func_PlayerStateMachine_PlayerStateMachine_C_0();
+	void Func_PlayerStateMachine_PlayerStateMachine_C_1();
+	void Func_PlayerStateMachine_PlayerStateMachine_C_2();
+	void Func_PlayerStateMachine_PlayerStateMachine_C_3();
+	void Func_PlayerStateMachine_PlayerStateMachine_C_4();
 
 public:
 	static class UClass* StaticClass()

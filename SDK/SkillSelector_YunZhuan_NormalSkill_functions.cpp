@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction SkillSelector_YunZhuan_NormalSkill.SkillSelector_YunZhuan_NormalSkill_C.ReceiveTick
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ASkillSelector_YunZhuan_NormalSkill_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillSelector_YunZhuan_NormalSkill_C", "ReceiveTick");
-
-	Params::SkillSelector_YunZhuan_NormalSkill_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction SkillSelector_YunZhuan_NormalSkill.SkillSelector_YunZhuan_NormalSkill_C.GetPartitionMainPart
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -72,43 +47,6 @@ void ASkillSelector_YunZhuan_NormalSkill_C::GetPartitionMainPart(const struct FB
 
 	if (BoneResult != nullptr)
 		*BoneResult = std::move(Parms.BoneResult);
-}
-
-
-// LuaFunction SkillSelector_YunZhuan_NormalSkill.SkillSelector_YunZhuan_NormalSkill_C.GetPartitionMainBone
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FBoneResult&               PartitionResult                                        (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
-// bool*                                   IsValid                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FBoneResult*                     BoneResult                                             (Parm, OutParm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
-// class AGameCharacter**                  GameCharacter                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ASkillSelector_YunZhuan_NormalSkill_C::GetPartitionMainBone(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillSelector_YunZhuan_NormalSkill_C", "GetPartitionMainBone");
-
-	Params::SkillSelector_YunZhuan_NormalSkill_C_GetPartitionMainBone Parms{};
-
-	Parms.PartitionResult = std::move(PartitionResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (IsValid != nullptr)
-		*IsValid = Parms.IsValid;
-
-	if (BoneResult != nullptr)
-		*BoneResult = std::move(Parms.BoneResult);
-
-	if (GameCharacter != nullptr)
-		*GameCharacter = Parms.GameCharacter;
 }
 
 
@@ -161,6 +99,68 @@ void ASkillSelector_YunZhuan_NormalSkill_C::GetAllQueryResults(TArray<struct FQu
 
 	if (OutResults != nullptr)
 		*OutResults = std::move(Parms.OutResults);
+}
+
+
+// LuaFunction SkillSelector_YunZhuan_NormalSkill.SkillSelector_YunZhuan_NormalSkill_C.ReceiveTick
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ASkillSelector_YunZhuan_NormalSkill_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillSelector_YunZhuan_NormalSkill_C", "ReceiveTick");
+
+	Params::SkillSelector_YunZhuan_NormalSkill_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction SkillSelector_YunZhuan_NormalSkill.SkillSelector_YunZhuan_NormalSkill_C.GetPartitionMainBone
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FBoneResult&               PartitionResult                                        (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
+// bool*                                   IsValid                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FBoneResult*                     BoneResult                                             (Parm, OutParm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
+// class AGameCharacter**                  GameCharacter                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ASkillSelector_YunZhuan_NormalSkill_C::GetPartitionMainBone(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillSelector_YunZhuan_NormalSkill_C", "GetPartitionMainBone");
+
+	Params::SkillSelector_YunZhuan_NormalSkill_C_GetPartitionMainBone Parms{};
+
+	Parms.PartitionResult = std::move(PartitionResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (IsValid != nullptr)
+		*IsValid = Parms.IsValid;
+
+	if (BoneResult != nullptr)
+		*BoneResult = std::move(Parms.BoneResult);
+
+	if (GameCharacter != nullptr)
+		*GameCharacter = Parms.GameCharacter;
 }
 
 

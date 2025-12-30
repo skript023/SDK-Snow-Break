@@ -64,6 +64,24 @@ public:
 };
 DUMPER7_ASSERTS_BP_Girl015_C_OnGetAssetPath;
 
+// Function BP_Girl015.BP_Girl015_C.SkillEnd
+// 0x0004 (0x0004 - 0x0000)
+struct BP_Girl015_C_SkillEnd final
+{
+public:
+	int32                                         SkillID;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Girl015_C_SkillEnd;
+
+// Function BP_Girl015.BP_Girl015_C.EnableSpecialShoot
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Girl015_C_EnableSpecialShoot final
+{
+public:
+	bool                                          bEnable;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_Girl015_C_EnableSpecialShoot;
+
 // Function BP_Girl015.BP_Girl015_C.Multicast_EnableSpecialShoot
 // 0x0001 (0x0001 - 0x0000)
 struct BP_Girl015_C_Multicast_EnableSpecialShoot final
@@ -72,6 +90,27 @@ public:
 	bool                                          bEnable;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_Girl015_C_Multicast_EnableSpecialShoot;
+
+// Function BP_Girl015.BP_Girl015_C.SkillStart
+// 0x0020 (0x0020 - 0x0000)
+struct BP_Girl015_C_SkillStart final
+{
+public:
+	int32                                         SkillID;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 OriginSkills;                                      // 0x0008(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UGameAbilityComponent*                  AbilityRef;                                        // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Girl015_C_SkillStart;
+
+// Function BP_Girl015.BP_Girl015_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Girl015_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Girl015_C_ReceiveEndPlay;
 
 // Function BP_Girl015.BP_Girl015_C.OnCharacterFire
 // 0x0048 (0x0048 - 0x0000)
@@ -128,45 +167,6 @@ public:
 	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_Girl015_C_ExecuteUbergraph_BP_Girl015;
-
-// Function BP_Girl015.BP_Girl015_C.SkillEnd
-// 0x0004 (0x0004 - 0x0000)
-struct BP_Girl015_C_SkillEnd final
-{
-public:
-	int32                                         SkillID;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Girl015_C_SkillEnd;
-
-// Function BP_Girl015.BP_Girl015_C.EnableSpecialShoot
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Girl015_C_EnableSpecialShoot final
-{
-public:
-	bool                                          bEnable;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_Girl015_C_EnableSpecialShoot;
-
-// Function BP_Girl015.BP_Girl015_C.SkillStart
-// 0x0020 (0x0020 - 0x0000)
-struct BP_Girl015_C_SkillStart final
-{
-public:
-	int32                                         SkillID;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 OriginSkills;                                      // 0x0008(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UGameAbilityComponent*                  AbilityRef;                                        // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Girl015_C_SkillStart;
-
-// Function BP_Girl015.BP_Girl015_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Girl015_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Girl015_C_ReceiveEndPlay;
 
 }
 

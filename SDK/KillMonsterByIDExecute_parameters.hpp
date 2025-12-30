@@ -23,15 +23,6 @@ public:
 };
 DUMPER7_ASSERTS_KillMonsterByIdExecute_C_GetDescription;
 
-// Function KillMonsterByIDExecute.KillMonsterByIdExecute_C.GetModuleName
-// 0x0010 (0x0010 - 0x0000)
-struct KillMonsterByIdExecute_C_GetModuleName final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_KillMonsterByIdExecute_C_GetModuleName;
-
 // Function KillMonsterByIDExecute.KillMonsterByIdExecute_C.GetSpecialStaticDescription
 // 0x0060 (0x0060 - 0x0000)
 struct KillMonsterByIdExecute_C_GetSpecialStaticDescription final
@@ -45,6 +36,15 @@ public:
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0050(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_KillMonsterByIdExecute_C_GetSpecialStaticDescription;
+
+// Function KillMonsterByIDExecute.KillMonsterByIdExecute_C.GetModuleName
+// 0x0010 (0x0010 - 0x0000)
+struct KillMonsterByIdExecute_C_GetModuleName final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_KillMonsterByIdExecute_C_GetModuleName;
 
 }
 

@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function uw_fight_skill_panel_pc.uw_fight_skill_panel_pc_C.ExecuteUbergraph_uw_fight_skill_panel_pc
-// (Final, UbergraphFunction)
+// Function uw_fight_skill_panel_pc.uw_fight_skill_panel_pc_C.OnWeaponChange
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APlayerWeapon*                    InWeapon                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_skill_panel_pc_C::ExecuteUbergraph_uw_fight_skill_panel_pc(int32 EntryPoint)
+void Uuw_fight_skill_panel_pc_C::OnWeaponChange(class APlayerWeapon* InWeapon)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_panel_pc_C", "ExecuteUbergraph_uw_fight_skill_panel_pc");
+		Func = Class->GetFunction("uw_fight_skill_panel_pc_C", "OnWeaponChange");
 
-	Params::uw_fight_skill_panel_pc_C_ExecuteUbergraph_uw_fight_skill_panel_pc Parms{};
+	Params::uw_fight_skill_panel_pc_C_OnWeaponChange Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.InWeapon = InWeapon;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,21 +57,21 @@ void Uuw_fight_skill_panel_pc_C::ShowOrHideCancelBtn(bool bShow)
 }
 
 
-// Function uw_fight_skill_panel_pc.uw_fight_skill_panel_pc_C.OnWeaponChange
-// (Event, Public, BlueprintEvent)
+// Function uw_fight_skill_panel_pc.uw_fight_skill_panel_pc_C.ExecuteUbergraph_uw_fight_skill_panel_pc
+// (Final, UbergraphFunction)
 // Parameters:
-// class APlayerWeapon*                    InWeapon                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_skill_panel_pc_C::OnWeaponChange(class APlayerWeapon* InWeapon)
+void Uuw_fight_skill_panel_pc_C::ExecuteUbergraph_uw_fight_skill_panel_pc(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_panel_pc_C", "OnWeaponChange");
+		Func = Class->GetFunction("uw_fight_skill_panel_pc_C", "ExecuteUbergraph_uw_fight_skill_panel_pc");
 
-	Params::uw_fight_skill_panel_pc_C_OnWeaponChange Parms{};
+	Params::uw_fight_skill_panel_pc_C_ExecuteUbergraph_uw_fight_skill_panel_pc Parms{};
 
-	Parms.InWeapon = InWeapon;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

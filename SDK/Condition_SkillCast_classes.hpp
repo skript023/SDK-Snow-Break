@@ -30,13 +30,13 @@ public:
 public:
 	bool ResetCondition();
 	void BindEventToSkillEmit(class UAbilityComponentBase* Ability_0);
+	void SkillEmit(int32 SkillID, const TArray<int32>& OriginSkills, class UGameAbilityComponent* AbilityRef);
 	void UnbindEventToSkillEmit(class UAbilityComponentBase* Ability_0);
 	void K2_InitCondition();
 	void OnFire(uint8 ForceShootCount, class APlayerWeapon* InCurWeapon);
+	void K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void K2_UnbindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void ExecuteUbergraph_Condition_SkillCast(int32 EntryPoint);
-	void SkillEmit(int32 SkillID, const TArray<int32>& OriginSkills, class UGameAbilityComponent* AbilityRef);
-	void K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 
 public:
 	static class UClass* StaticClass()

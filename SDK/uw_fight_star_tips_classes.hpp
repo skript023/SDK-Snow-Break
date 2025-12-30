@@ -47,12 +47,12 @@ public:
 	void BP_OnItemSelectionChanged(bool bIsSelected);
 	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
 	void TryPlay__Overridden();
-	void OnAnimationFinished(const class UWidgetAnimation* Animation);
 	void TryPlay();
-	void OnListItemObjectSet(class UObject* ListItemObject);
 	void Construct();
-	void OnConstruct();
+	void OnAnimationFinished(const class UWidgetAnimation* Animation);
+	void OnListItemObjectSet(class UObject* ListItemObject);
 	void Destruct();
+	void OnConstruct();
 
 	class FString GetModuleName() const;
 

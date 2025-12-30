@@ -30,12 +30,12 @@ public:
 	class FString                                 TagName;                                           // 0x0120(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
-	void GetModiferLauner(class UAbilityComponentBase** OutAbility);
 	void CheckModifierExit(class AGameCharacter* NewParam, bool* bExit);
-	void GetLauncher(class AGameCharacter** GameCharacter);
 	bool K2_CheckCondition(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
-	void K2_InitCondition();
 	void ExecuteUbergraph_Condition_ModifierNotExist(int32 EntryPoint);
+	void GetModiferLauner(class UAbilityComponentBase** OutAbility);
+	void GetLauncher(class AGameCharacter** GameCharacter);
+	void K2_InitCondition();
 
 public:
 	static class UClass* StaticClass()

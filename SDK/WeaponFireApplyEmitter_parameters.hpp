@@ -34,6 +34,17 @@ public:
 };
 DUMPER7_ASSERTS_WeaponFireApplyEmitter_C_OnGetAssetPath;
 
+// Function WeaponFireApplyEmitter.WeaponFireApplyEmitter_C.IsActive
+// 0x0003 (0x0003 - 0x0000)
+struct WeaponFireApplyEmitter_C_IsActive final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsActiveEffect_ReturnValue;               // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WeaponFireApplyEmitter_C_IsActive;
+
 // Function WeaponFireApplyEmitter.WeaponFireApplyEmitter_C.K2_ReceiveInitialize
 // 0x0010 (0x0010 - 0x0000)
 struct WeaponFireApplyEmitter_C_K2_ReceiveInitialize final
@@ -65,17 +76,6 @@ public:
 	bool                                          CallFunc_IsActive_bActive;                         // 0x001D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_WeaponFireApplyEmitter_C_ExecuteUbergraph_WeaponFireApplyEmitter;
-
-// Function WeaponFireApplyEmitter.WeaponFireApplyEmitter_C.IsActive
-// 0x0003 (0x0003 - 0x0000)
-struct WeaponFireApplyEmitter_C_IsActive final
-{
-public:
-	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsActiveEffect_ReturnValue;               // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_WeaponFireApplyEmitter_C_IsActive;
 
 }
 

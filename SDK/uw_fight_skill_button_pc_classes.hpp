@@ -113,27 +113,27 @@ public:
 	int32                                         SoundId;                                           // 0x087C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_skill_button_pc(int32 EntryPoint);
-	void K2_OnCustomUmgAnimFinished__Overridden(const class FName& AnimName);
-	void OnUIEffectSkillLongPress(bool bStart);
-	void OnSkillKeepInterrupt(bool bStart);
-	void K2_PlaySustainAnim(bool bPlay);
-	void PlayDerivedSkillAnim(bool bPlay);
-	void K2_SetButtonAbnormal(bool bForbid);
-	void K2_SetButtonForbid(bool bForbid);
-	void K2_NormalEnergyChange(bool bFull);
-	void PlayCastableAnim();
-	void K2_PlayCDAnim__Overridden(bool bPlay);
-	void OnReduceCD();
-	void OnSkillStrengthening__Overridden(bool bStart);
-	void Construct__Overridden();
-	void OnModifyStateChange(const bool bModify);
 	void OnQTEStateChange(bool bActive);
+	void OnModifyStateChange(const bool bModify);
+	void Construct__Overridden();
+	void OnSkillStrengthening__Overridden(bool bStart);
+	void OnReduceCD();
+	void K2_PlayCDAnim__Overridden(bool bPlay);
+	void PlayCastableAnim();
+	void K2_NormalEnergyChange(bool bFull);
+	void K2_SetButtonForbid(bool bForbid);
+	void K2_SetButtonAbnormal(bool bForbid);
+	void K2_PlaySustainAnim(bool bPlay);
+	void OnSkillKeepInterrupt(bool bStart);
+	void K2_OnCustomUmgAnimFinished__Overridden(const class FName& AnimName);
+	void PlayDerivedSkillAnim(bool bPlay);
+	void OnUIEffectSkillLongPress(bool bStart);
+	void ExecuteUbergraph_uw_fight_skill_button_pc(int32 EntryPoint);
+	void K2_PlayCDAnim(bool bPlay);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void Construct();
 	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
 	void OnSkillStrengthening(bool bStart);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
-	void K2_PlayCDAnim(bool bPlay);
 	void Destruct();
 
 	class FString GetModuleName() const;

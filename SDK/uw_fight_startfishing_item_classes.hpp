@@ -21,13 +21,13 @@ namespace SDK
 class Uuw_fight_startfishing_item_C final : public Uuw_fight_interactitem_C
 {
 public:
-	void TriggerInteract();
 	void UpdateKeyShow();
 	void BindKeyBoardOnSettingChange();
+	void TriggerInteract();
 	void BindExitInteractEvent();
 	void InitGamepadLongPressUI();
-	void OnConstruct();
 	void Destruct();
+	void OnConstruct();
 
 	class FString GetModuleName() const;
 

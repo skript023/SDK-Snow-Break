@@ -14,6 +14,48 @@
 namespace SDK::Params
 {
 
+// Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.CheckBunkerType
+// 0x0010 (0x0010 - 0x0000)
+struct Condition_PlayerBunkerState_C_CheckBunkerType final
+{
+public:
+	class AGamePlayer*                            InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          InType;                                            // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_GetIsHalfBunker_ReturnValue;              // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_GetIsHalfBunker_ReturnValue_1;            // 0x000A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x000B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x000D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Condition_PlayerBunkerState_C_CheckBunkerType;
+
+// Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.K2_CheckCondition
+// 0x0028 (0x0028 - 0x0000)
+struct Condition_PlayerBunkerState_C_K2_CheckCondition final
+{
+public:
+	class UAbilityComponentBase*                  InCurLauncher;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilityComponentBase*                  CallFunc_GetLauncherAbility_ReturnValue;           // 0x0018(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_CheckState_bCom;                          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Condition_PlayerBunkerState_C_K2_CheckCondition;
+
+// Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.ExecuteUbergraph_Condition_PlayerBunkerState
+// 0x0008 (0x0008 - 0x0000)
+struct Condition_PlayerBunkerState_C_ExecuteUbergraph_Condition_PlayerBunkerState final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchString_CmpSuccess_1;                  // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchString_CmpSuccess_2;                  // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchString_CmpSuccess_3;                  // 0x0007(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Condition_PlayerBunkerState_C_ExecuteUbergraph_Condition_PlayerBunkerState;
+
 // Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.CheckBunkerLeader
 // 0x0010 (0x0010 - 0x0000)
 struct Condition_PlayerBunkerState_C_CheckBunkerLeader final
@@ -45,21 +87,6 @@ public:
 };
 DUMPER7_ASSERTS_Condition_PlayerBunkerState_C_CheckEdgeType;
 
-// Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.CheckBunkerType
-// 0x0010 (0x0010 - 0x0000)
-struct Condition_PlayerBunkerState_C_CheckBunkerType final
-{
-public:
-	class AGamePlayer*                            InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          InType;                                            // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_GetIsHalfBunker_ReturnValue;              // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_GetIsHalfBunker_ReturnValue_1;            // 0x000A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x000B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x000D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Condition_PlayerBunkerState_C_CheckBunkerType;
-
 // Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.CheckState
 // 0x0038 (0x0038 - 0x0000)
 struct Condition_PlayerBunkerState_C_CheckState final
@@ -85,33 +112,6 @@ public:
 	bool                                          CallFunc_EqualEqual_BoolBool_ReturnValue;          // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_Condition_PlayerBunkerState_C_CheckState;
-
-// Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.K2_CheckCondition
-// 0x0028 (0x0028 - 0x0000)
-struct Condition_PlayerBunkerState_C_K2_CheckCondition final
-{
-public:
-	class UAbilityComponentBase*                  InCurLauncher;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbilityComponentBase*                  CallFunc_GetLauncherAbility_ReturnValue;           // 0x0018(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_CheckState_bCom;                          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Condition_PlayerBunkerState_C_K2_CheckCondition;
-
-// Function Condition_PlayerBunkerState.Condition_PlayerBunkerState_C.ExecuteUbergraph_Condition_PlayerBunkerState
-// 0x0008 (0x0008 - 0x0000)
-struct Condition_PlayerBunkerState_C_ExecuteUbergraph_Condition_PlayerBunkerState final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchString_CmpSuccess_1;                  // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchString_CmpSuccess_2;                  // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchString_CmpSuccess_3;                  // 0x0007(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Condition_PlayerBunkerState_C_ExecuteUbergraph_Condition_PlayerBunkerState;
 
 }
 

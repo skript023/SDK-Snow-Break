@@ -17,6 +17,40 @@
 namespace SDK
 {
 
+// Function BulletRecover.BulletRecover_C.InitConfig
+// (BlueprintCallable, BlueprintEvent)
+
+void UBulletRecover_C::InitConfig()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BulletRecover_C", "InitConfig");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BulletRecover.BulletRecover_C.ExecuteUbergraph_BulletRecover
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBulletRecover_C::ExecuteUbergraph_BulletRecover(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BulletRecover_C", "ExecuteUbergraph_BulletRecover");
+
+	Params::BulletRecover_C_ExecuteUbergraph_BulletRecover Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // LuaFunction BulletRecover.BulletRecover_C.K2_RecoverAttribute
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -94,40 +128,6 @@ void UBulletRecover_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Paw
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BulletRecover.BulletRecover_C.InitConfig
-// (BlueprintCallable, BlueprintEvent)
-
-void UBulletRecover_C::InitConfig()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BulletRecover_C", "InitConfig");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BulletRecover.BulletRecover_C.ExecuteUbergraph_BulletRecover
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBulletRecover_C::ExecuteUbergraph_BulletRecover(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BulletRecover_C", "ExecuteUbergraph_BulletRecover");
-
-	Params::BulletRecover_C_ExecuteUbergraph_BulletRecover Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

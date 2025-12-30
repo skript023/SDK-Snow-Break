@@ -17,6 +17,30 @@
 namespace SDK
 {
 
+// Function BP_UMGMaterialLibrary.BP_UMGMaterialLibrary_C.UpdateMateiralScaleParameter
+// (Static, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TMap<class FName, float>&         Values                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UMaterialInstanceDynamic*         DynamicMat                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_UMGMaterialLibrary_C::UpdateMateiralScaleParameter(const TMap<class FName, float>& Values, class UMaterialInstanceDynamic* DynamicMat, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BP_UMGMaterialLibrary_C", "UpdateMateiralScaleParameter");
+
+	Params::BP_UMGMaterialLibrary_C_UpdateMateiralScaleParameter Parms{};
+
+	Parms.Values = std::move(Values);
+	Parms.DynamicMat = DynamicMat;
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_UMGMaterialLibrary.BP_UMGMaterialLibrary_C.CreateDynamicMaterial
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -40,30 +64,6 @@ void UBP_UMGMaterialLibrary_C::CreateDynamicMaterial(class UMaterialInterface* m
 
 	if (AsMaterial_Instance_Dynamic != nullptr)
 		*AsMaterial_Instance_Dynamic = Parms.AsMaterial_Instance_Dynamic;
-}
-
-
-// Function BP_UMGMaterialLibrary.BP_UMGMaterialLibrary_C.UpdateMateiralScaleParameter
-// (Static, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TMap<class FName, float>&         Values                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
-// class UMaterialInstanceDynamic*         DynamicMat                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBP_UMGMaterialLibrary_C::UpdateMateiralScaleParameter(const TMap<class FName, float>& Values, class UMaterialInstanceDynamic* DynamicMat, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BP_UMGMaterialLibrary_C", "UpdateMateiralScaleParameter");
-
-	Params::BP_UMGMaterialLibrary_C_UpdateMateiralScaleParameter Parms{};
-
-	Parms.Values = std::move(Values);
-	Parms.DynamicMat = DynamicMat;
-	Parms.__WorldContext = __WorldContext;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
 }
 
 }

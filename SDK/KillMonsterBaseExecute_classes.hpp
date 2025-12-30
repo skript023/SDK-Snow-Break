@@ -31,15 +31,15 @@ public:
 	bool                                          DoFuncImmediately;                                 // 0x0229(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
+	void OnActive();
 	void OnCountDown_Client();
+	void OnEnd_Client();
 	void OnActive_Client();
 	class FString GetDescription();
-	void OnActive();
-	void OnEnd_Client();
 	void OnEnd();
 
-	class FString GetModuleName() const;
 	class FString GetSpecialStaticDescription() const;
+	class FString GetModuleName() const;
 
 public:
 	static class UClass* StaticClass()

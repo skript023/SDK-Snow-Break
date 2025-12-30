@@ -364,96 +364,6 @@ void Uuw_fight_player_item_pc_C::IsInFight(bool* InFight)
 }
 
 
-// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnChargeTimesChange
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   InCurrentTimes                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InMaxTimes                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_player_item_pc_C::OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_pc_C", "OnChargeTimesChange");
-
-	Params::uw_fight_player_item_pc_C_OnChargeTimesChange Parms{};
-
-	Parms.InCurrentTimes = InCurrentTimes;
-	Parms.InMaxTimes = InMaxTimes;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.NotifyDataChange
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_player_item_pc_C::NotifyDataChange()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_pc_C", "NotifyDataChange");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_player_item_pc_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_pc_C", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.K2_OnCustomUmgAnimFinished
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FName&                      AnimName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_player_item_pc_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_pc_C", "K2_OnCustomUmgAnimFinished");
-
-	Params::uw_fight_player_item_pc_C_K2_OnCustomUmgAnimFinished Parms{};
-
-	Parms.AnimName = AnimName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.UpdateKeyboard
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -504,20 +414,28 @@ void Uuw_fight_player_item_pc_C::OnAnimationFinished(const class UWidgetAnimatio
 }
 
 
-// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.NotifyReviveCdOK
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnChargeTimesChange
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   InCurrentTimes                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InMaxTimes                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void Uuw_fight_player_item_pc_C::NotifyReviveCdOK()
+void Uuw_fight_player_item_pc_C::OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_pc_C", "NotifyReviveCdOK");
+		Func = Class->GetFunction("uw_fight_player_item_pc_C", "OnChargeTimesChange");
+
+	Params::uw_fight_player_item_pc_C_OnChargeTimesChange Parms{};
+
+	Parms.InCurrentTimes = InCurrentTimes;
+	Parms.InMaxTimes = InMaxTimes;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -557,6 +475,88 @@ void Uuw_fight_player_item_pc_C::NotifyRefreshCharacter()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_player_item_pc_C", "NotifyRefreshCharacter");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.K2_OnCustomUmgAnimFinished
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FName&                      AnimName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_player_item_pc_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_pc_C", "K2_OnCustomUmgAnimFinished");
+
+	Params::uw_fight_player_item_pc_C_K2_OnCustomUmgAnimFinished Parms{};
+
+	Parms.AnimName = AnimName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.NotifyDataChange
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_player_item_pc_C::NotifyDataChange()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_pc_C", "NotifyDataChange");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.NotifyReviveCdOK
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_player_item_pc_C::NotifyReviveCdOK()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_pc_C", "NotifyReviveCdOK");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_player_item_pc_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_pc_C", "Construct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

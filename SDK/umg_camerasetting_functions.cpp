@@ -17,6 +17,167 @@
 namespace SDK
 {
 
+// Function umg_camerasetting.umg_camerasetting_C.GetArmLength
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// float*                                  Length                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uumg_camerasetting_C::GetArmLength(float* Length)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_camerasetting_C", "GetArmLength");
+
+	Params::umg_camerasetting_C_GetArmLength Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Length != nullptr)
+		*Length = Parms.Length;
+}
+
+
+// Function umg_camerasetting.umg_camerasetting_C.GetXYZ
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// struct FVector*                         Local                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uumg_camerasetting_C::GetXYZ(struct FVector* Local)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_camerasetting_C", "GetXYZ");
+
+	Params::umg_camerasetting_C_GetXYZ Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Local != nullptr)
+		*Local = std::move(Parms.Local);
+}
+
+
+// Function umg_camerasetting.umg_camerasetting_C.Get_FovNum_Text_0
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   Count_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+class FText Uumg_camerasetting_C::Get_FovNum_Text_0(int32 Count_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_camerasetting_C", "Get_FovNum_Text_0");
+
+	Params::umg_camerasetting_C_Get_FovNum_Text_0 Parms{};
+
+	Parms.Count_0 = Count_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function umg_camerasetting.umg_camerasetting_C.BndEvt__LengthNum_K2Node_ComponentBoundEvent_4_OnEditableTextBoxChangedEvent__DelegateSignature
+// (HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      Text                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void Uumg_camerasetting_C::BndEvt__LengthNum_K2Node_ComponentBoundEvent_4_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_camerasetting_C", "BndEvt__LengthNum_K2Node_ComponentBoundEvent_4_OnEditableTextBoxChangedEvent__DelegateSignature");
+
+	Params::umg_camerasetting_C_BndEvt__LengthNum_K2Node_ComponentBoundEvent_4_OnEditableTextBoxChangedEvent__DelegateSignature Parms{};
+
+	Parms.Text = std::move(Text);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function umg_camerasetting.umg_camerasetting_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uumg_camerasetting_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_camerasetting_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function umg_camerasetting.umg_camerasetting_C.BndEvt__Chooese_K2Node_ComponentBoundEvent_6_OnSelectionChangedEvent__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// const class FString&                    SelectedItem                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// ESelectInfo                             SelectionType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uumg_camerasetting_C::BndEvt__Chooese_K2Node_ComponentBoundEvent_6_OnSelectionChangedEvent__DelegateSignature(const class FString& SelectedItem, ESelectInfo SelectionType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_camerasetting_C", "BndEvt__Chooese_K2Node_ComponentBoundEvent_6_OnSelectionChangedEvent__DelegateSignature");
+
+	Params::umg_camerasetting_C_BndEvt__Chooese_K2Node_ComponentBoundEvent_6_OnSelectionChangedEvent__DelegateSignature Parms{};
+
+	Parms.SelectedItem = std::move(SelectedItem);
+	Parms.SelectionType = SelectionType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function umg_camerasetting.umg_camerasetting_C.BndEvt__X_K2Node_ComponentBoundEvent_0_OnEditableTextBoxChangedEvent__DelegateSignature
+// (HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      Text                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void Uumg_camerasetting_C::BndEvt__X_K2Node_ComponentBoundEvent_0_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_camerasetting_C", "BndEvt__X_K2Node_ComponentBoundEvent_0_OnEditableTextBoxChangedEvent__DelegateSignature");
+
+	Params::umg_camerasetting_C_BndEvt__X_K2Node_ComponentBoundEvent_0_OnEditableTextBoxChangedEvent__DelegateSignature Parms{};
+
+	Parms.Text = std::move(Text);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function umg_camerasetting.umg_camerasetting_C.BndEvt__Y_K2Node_ComponentBoundEvent_1_OnEditableTextBoxChangedEvent__DelegateSignature
+// (HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      Text                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void Uumg_camerasetting_C::BndEvt__Y_K2Node_ComponentBoundEvent_1_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_camerasetting_C", "BndEvt__Y_K2Node_ComponentBoundEvent_1_OnEditableTextBoxChangedEvent__DelegateSignature");
+
+	Params::umg_camerasetting_C_BndEvt__Y_K2Node_ComponentBoundEvent_1_OnEditableTextBoxChangedEvent__DelegateSignature Parms{};
+
+	Parms.Text = std::move(Text);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function umg_camerasetting.umg_camerasetting_C.BndEvt__Z_K2Node_ComponentBoundEvent_2_OnEditableTextBoxChangedEvent__DelegateSignature
 // (HasOutParams, BlueprintEvent)
 // Parameters:
@@ -57,39 +218,47 @@ void Uumg_camerasetting_C::ExecuteUbergraph_umg_camerasetting(int32 EntryPoint)
 }
 
 
-// Function umg_camerasetting.umg_camerasetting_C.BndEvt__Y_K2Node_ComponentBoundEvent_1_OnEditableTextBoxChangedEvent__DelegateSignature
-// (HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      Text                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// Function umg_camerasetting.umg_camerasetting_C.UpdateData
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void Uumg_camerasetting_C::BndEvt__Y_K2Node_ComponentBoundEvent_1_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text)
+void Uumg_camerasetting_C::UpdateData()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("umg_camerasetting_C", "BndEvt__Y_K2Node_ComponentBoundEvent_1_OnEditableTextBoxChangedEvent__DelegateSignature");
+		Func = Class->GetFunction("umg_camerasetting_C", "UpdateData");
 
-	Params::umg_camerasetting_C_BndEvt__Y_K2Node_ComponentBoundEvent_1_OnEditableTextBoxChangedEvent__DelegateSignature Parms{};
-
-	Parms.Text = std::move(Text);
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function umg_camerasetting.umg_camerasetting_C.BndEvt__X_K2Node_ComponentBoundEvent_0_OnEditableTextBoxChangedEvent__DelegateSignature
-// (HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      Text                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// Function umg_camerasetting.umg_camerasetting_C.Update
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void Uumg_camerasetting_C::BndEvt__X_K2Node_ComponentBoundEvent_0_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text)
+void Uumg_camerasetting_C::Update()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("umg_camerasetting_C", "BndEvt__X_K2Node_ComponentBoundEvent_0_OnEditableTextBoxChangedEvent__DelegateSignature");
+		Func = Class->GetFunction("umg_camerasetting_C", "Update");
 
-	Params::umg_camerasetting_C_BndEvt__X_K2Node_ComponentBoundEvent_0_OnEditableTextBoxChangedEvent__DelegateSignature Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function umg_camerasetting.umg_camerasetting_C.BndEvt__FovNum_K2Node_ComponentBoundEvent_3_OnEditableTextBoxChangedEvent__DelegateSignature
+// (HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      Text                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void Uumg_camerasetting_C::BndEvt__FovNum_K2Node_ComponentBoundEvent_3_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_camerasetting_C", "BndEvt__FovNum_K2Node_ComponentBoundEvent_3_OnEditableTextBoxChangedEvent__DelegateSignature");
+
+	Params::umg_camerasetting_C_BndEvt__FovNum_K2Node_ComponentBoundEvent_3_OnEditableTextBoxChangedEvent__DelegateSignature Parms{};
 
 	Parms.Text = std::move(Text);
 
@@ -116,175 +285,6 @@ void Uumg_camerasetting_C::Tick(const struct FGeometry& MyGeometry, float InDelt
 	Parms.InDeltaTime = InDeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function umg_camerasetting.umg_camerasetting_C.BndEvt__Chooese_K2Node_ComponentBoundEvent_6_OnSelectionChangedEvent__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// const class FString&                    SelectedItem                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// ESelectInfo                             SelectionType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uumg_camerasetting_C::BndEvt__Chooese_K2Node_ComponentBoundEvent_6_OnSelectionChangedEvent__DelegateSignature(const class FString& SelectedItem, ESelectInfo SelectionType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_camerasetting_C", "BndEvt__Chooese_K2Node_ComponentBoundEvent_6_OnSelectionChangedEvent__DelegateSignature");
-
-	Params::umg_camerasetting_C_BndEvt__Chooese_K2Node_ComponentBoundEvent_6_OnSelectionChangedEvent__DelegateSignature Parms{};
-
-	Parms.SelectedItem = std::move(SelectedItem);
-	Parms.SelectionType = SelectionType;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function umg_camerasetting.umg_camerasetting_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uumg_camerasetting_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_camerasetting_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function umg_camerasetting.umg_camerasetting_C.BndEvt__FovNum_K2Node_ComponentBoundEvent_3_OnEditableTextBoxChangedEvent__DelegateSignature
-// (HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      Text                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void Uumg_camerasetting_C::BndEvt__FovNum_K2Node_ComponentBoundEvent_3_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_camerasetting_C", "BndEvt__FovNum_K2Node_ComponentBoundEvent_3_OnEditableTextBoxChangedEvent__DelegateSignature");
-
-	Params::umg_camerasetting_C_BndEvt__FovNum_K2Node_ComponentBoundEvent_3_OnEditableTextBoxChangedEvent__DelegateSignature Parms{};
-
-	Parms.Text = std::move(Text);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function umg_camerasetting.umg_camerasetting_C.BndEvt__LengthNum_K2Node_ComponentBoundEvent_4_OnEditableTextBoxChangedEvent__DelegateSignature
-// (HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      Text                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void Uumg_camerasetting_C::BndEvt__LengthNum_K2Node_ComponentBoundEvent_4_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_camerasetting_C", "BndEvt__LengthNum_K2Node_ComponentBoundEvent_4_OnEditableTextBoxChangedEvent__DelegateSignature");
-
-	Params::umg_camerasetting_C_BndEvt__LengthNum_K2Node_ComponentBoundEvent_4_OnEditableTextBoxChangedEvent__DelegateSignature Parms{};
-
-	Parms.Text = std::move(Text);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function umg_camerasetting.umg_camerasetting_C.Update
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void Uumg_camerasetting_C::Update()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_camerasetting_C", "Update");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function umg_camerasetting.umg_camerasetting_C.Get_FovNum_Text_0
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// int32                                   Count_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
-
-class FText Uumg_camerasetting_C::Get_FovNum_Text_0(int32 Count_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_camerasetting_C", "Get_FovNum_Text_0");
-
-	Params::umg_camerasetting_C_Get_FovNum_Text_0 Parms{};
-
-	Parms.Count_0 = Count_0;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function umg_camerasetting.umg_camerasetting_C.GetXYZ
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// struct FVector*                         Local                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uumg_camerasetting_C::GetXYZ(struct FVector* Local)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_camerasetting_C", "GetXYZ");
-
-	Params::umg_camerasetting_C_GetXYZ Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Local != nullptr)
-		*Local = std::move(Parms.Local);
-}
-
-
-// Function umg_camerasetting.umg_camerasetting_C.UpdateData
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uumg_camerasetting_C::UpdateData()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_camerasetting_C", "UpdateData");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function umg_camerasetting.umg_camerasetting_C.GetArmLength
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// float*                                  Length                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uumg_camerasetting_C::GetArmLength(float* Length)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_camerasetting_C", "GetArmLength");
-
-	Params::umg_camerasetting_C_GetArmLength Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Length != nullptr)
-		*Length = Parms.Length;
 }
 
 }

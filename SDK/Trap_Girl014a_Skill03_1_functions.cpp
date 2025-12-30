@@ -51,20 +51,6 @@ void ATrap_Girl014a_Skill03_1_C::StartFallEffect(bool bIsServer)
 }
 
 
-// Function Trap_Girl014a_Skill03_1.Trap_Girl014a_Skill03_1_C.Client_OnActive
-// (Event, Public, BlueprintEvent)
-
-void ATrap_Girl014a_Skill03_1_C::Client_OnActive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Trap_Girl014a_Skill03_1_C", "Client_OnActive");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function Trap_Girl014a_Skill03_1.Trap_Girl014a_Skill03_1_C.Server_OnActive
 // (Event, Public, BlueprintEvent)
 
@@ -74,6 +60,20 @@ void ATrap_Girl014a_Skill03_1_C::Server_OnActive()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("Trap_Girl014a_Skill03_1_C", "Server_OnActive");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Trap_Girl014a_Skill03_1.Trap_Girl014a_Skill03_1_C.Client_OnActive
+// (Event, Public, BlueprintEvent)
+
+void ATrap_Girl014a_Skill03_1_C::Client_OnActive()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Trap_Girl014a_Skill03_1_C", "Client_OnActive");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -16,18 +16,6 @@
 namespace SDK::Params
 {
 
-// Function OpenDoorEvent.OpenDoorEvent_C.OnTrigger
-// 0x0018 (0x0018 - 0x0000)
-struct OpenDoorEvent_C_OnTrigger final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTimerHandle                           CallFunc_K2_SetTimer_ReturnValue;                  // 0x0008(0x0008)(NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_FloatFloat_ReturnValue;        // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_OpenDoorEvent_C_OnTrigger;
-
 // Function OpenDoorEvent.OpenDoorEvent_C.OpenEvent
 // 0x0038 (0x0038 - 0x0000)
 struct OpenDoorEvent_C_OpenEvent final
@@ -44,6 +32,18 @@ public:
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_OpenDoorEvent_C_OpenEvent;
+
+// Function OpenDoorEvent.OpenDoorEvent_C.OnTrigger
+// 0x0018 (0x0018 - 0x0000)
+struct OpenDoorEvent_C_OnTrigger final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTimerHandle                           CallFunc_K2_SetTimer_ReturnValue;                  // 0x0008(0x0008)(NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_FloatFloat_ReturnValue;        // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_OpenDoorEvent_C_OnTrigger;
 
 // Function OpenDoorEvent.OpenDoorEvent_C.GetSpecialStaticDescription
 // 0x0050 (0x0050 - 0x0000)

@@ -157,25 +157,6 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_player_item_C_IsInFight;
 
-// LuaFunction uw_fight_player_item.uw_fight_player_item_C.OnChargeTimesChange
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_player_item_C_OnChargeTimesChange final
-{
-public:
-	int32                                         InCurrentTimes;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InMaxTimes;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_C_OnChargeTimesChange;
-
-// LuaFunction uw_fight_player_item.uw_fight_player_item_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_player_item_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_C_K2_OnCustomUmgAnimFinished;
-
 // LuaFunction uw_fight_player_item.uw_fight_player_item_C.UpdateKeyboard
 // 0x0004 (0x0004 - 0x0000)
 struct uw_fight_player_item_C_UpdateKeyboard final
@@ -194,6 +175,16 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_player_item_C_OnAnimationFinished;
 
+// LuaFunction uw_fight_player_item.uw_fight_player_item_C.OnChargeTimesChange
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_player_item_C_OnChargeTimesChange final
+{
+public:
+	int32                                         InCurrentTimes;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InMaxTimes;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_C_OnChargeTimesChange;
+
 // LuaFunction uw_fight_player_item.uw_fight_player_item_C.NotifyClick
 // 0x0001 (0x0001 - 0x0000)
 struct uw_fight_player_item_C_NotifyClick final
@@ -202,6 +193,15 @@ public:
 	EPlayerBtnType                                BtnType;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_uw_fight_player_item_C_NotifyClick;
+
+// LuaFunction uw_fight_player_item.uw_fight_player_item_C.K2_OnCustomUmgAnimFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_player_item_C_K2_OnCustomUmgAnimFinished final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_C_K2_OnCustomUmgAnimFinished;
 
 // Function uw_fight_player_item.uw_fight_player_item_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

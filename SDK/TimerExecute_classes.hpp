@@ -25,14 +25,14 @@ public:
 	bool                                          bWarning;                                          // 0x0219(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
+	void OnEnd_Client();
 	void OnActive_Client();
 	class FString GetDescription();
-	void OnActive();
-	void OnEnd_Client();
 	void OnEnd();
+	void OnActive();
 
-	class FString GetModuleName() const;
 	class FString GetSpecialStaticDescription() const;
+	class FString GetModuleName() const;
 
 public:
 	static class UClass* StaticClass()

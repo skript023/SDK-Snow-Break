@@ -16,6 +16,18 @@
 namespace SDK::Params
 {
 
+// Function BulletRecover.BulletRecover_C.ExecuteUbergraph_BulletRecover
+// 0x0058 (0x0058 - 0x0000)
+struct BulletRecover_C_ExecuteUbergraph_BulletRecover final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBulletRecoverTemplate                 CallFunc_GetDataTableRowFromName_OutRow;           // 0x0008(0x0048)()
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BulletRecover_C_ExecuteUbergraph_BulletRecover;
+
 // LuaFunction BulletRecover.BulletRecover_C.K2_RecoverAttribute
 // 0x0010 (0x0010 - 0x0000)
 struct BulletRecover_C_K2_RecoverAttribute final
@@ -44,18 +56,6 @@ public:
 	const class UGameAbilityComponent*            Pawn;                                              // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_BulletRecover_C_K2_ReceiveDeActive;
-
-// Function BulletRecover.BulletRecover_C.ExecuteUbergraph_BulletRecover
-// 0x0058 (0x0058 - 0x0000)
-struct BulletRecover_C_ExecuteUbergraph_BulletRecover final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBulletRecoverTemplate                 CallFunc_GetDataTableRowFromName_OutRow;           // 0x0008(0x0048)()
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BulletRecover_C_ExecuteUbergraph_BulletRecover;
 
 // Function BulletRecover.BulletRecover_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

@@ -28,9 +28,9 @@ public:
 	class Uuw_fight_skill03_button_pc_C*          Skill3;                                            // 0x0450(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_skill_panel_pc(int32 EntryPoint);
-	void ShowOrHideCancelBtn(bool bShow);
 	void OnWeaponChange(class APlayerWeapon* InWeapon);
+	void ShowOrHideCancelBtn(bool bShow);
+	void ExecuteUbergraph_uw_fight_skill_panel_pc(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

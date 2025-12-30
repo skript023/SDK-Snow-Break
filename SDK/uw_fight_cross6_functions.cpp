@@ -17,40 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_cross6.uw_fight_cross6_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_cross6_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_cross6_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_cross6.uw_fight_cross6_C.ExecuteUbergraph_uw_fight_cross6
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_cross6_C::ExecuteUbergraph_uw_fight_cross6(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_cross6_C", "ExecuteUbergraph_uw_fight_cross6");
-
-	Params::uw_fight_cross6_C_ExecuteUbergraph_uw_fight_cross6 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_cross6.uw_fight_cross6_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
@@ -70,6 +36,20 @@ void Uuw_fight_cross6_C::Tick(const struct FGeometry& MyGeometry, float InDeltaT
 	Parms.InDeltaTime = InDeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_cross6.uw_fight_cross6_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_cross6_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_cross6_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -94,6 +74,26 @@ void Uuw_fight_cross6_C::K2_OnReloading(bool bIsReload, EWeaponType Type, bool b
 	Parms.Type = Type;
 	Parms.bInterrupt = bInterrupt;
 	Parms.AnimTime = AnimTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_cross6.uw_fight_cross6_C.ExecuteUbergraph_uw_fight_cross6
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_cross6_C::ExecuteUbergraph_uw_fight_cross6(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_cross6_C", "ExecuteUbergraph_uw_fight_cross6");
+
+	Params::uw_fight_cross6_C_ExecuteUbergraph_uw_fight_cross6 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

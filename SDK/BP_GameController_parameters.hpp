@@ -18,6 +18,15 @@
 namespace SDK::Params
 {
 
+// LuaFunction BP_GameController.BP_GameController_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct BP_GameController_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_GameController_C_ReceiveEndPlay;
+
 // Function BP_GameController.BP_GameController_C.CalcSideLength
 // 0x0034 (0x0034 - 0x0000)
 struct BP_GameController_C_CalcSideLength final
@@ -265,15 +274,6 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_GameController_C_ExecuteUbergraph_BP_GameController;
-
-// LuaFunction BP_GameController.BP_GameController_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct BP_GameController_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_GameController_C_ReceiveEndPlay;
 
 // Function BP_GameController.BP_GameController_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

@@ -14,15 +14,6 @@
 namespace SDK::Params
 {
 
-// Function umg_pause.umg_pause_C.GetModuleName
-// 0x0010 (0x0010 - 0x0000)
-struct umg_pause_C_GetModuleName final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_umg_pause_C_GetModuleName;
-
 // LuaFunction umg_pause.umg_pause_C.WidgetGeometryReadyFrame
 // 0x0004 (0x0004 - 0x0000)
 struct umg_pause_C_WidgetGeometryReadyFrame final
@@ -31,6 +22,15 @@ public:
 	int32                                         Frame;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_umg_pause_C_WidgetGeometryReadyFrame;
+
+// Function umg_pause.umg_pause_C.GetModuleName
+// 0x0010 (0x0010 - 0x0000)
+struct umg_pause_C_GetModuleName final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_umg_pause_C_GetModuleName;
 
 }
 

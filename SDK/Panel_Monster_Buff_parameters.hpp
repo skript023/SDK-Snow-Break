@@ -16,34 +16,6 @@
 namespace SDK::Params
 {
 
-// Function Panel_Monster_Buff.Panel_Monster_Buff_C.K2_OnSkillBlockup
-// 0x0001 (0x0001 - 0x0000)
-struct Panel_Monster_Buff_C_K2_OnSkillBlockup final
-{
-public:
-	bool                                          bInBlockUp;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Panel_Monster_Buff_C_K2_OnSkillBlockup;
-
-// Function Panel_Monster_Buff.Panel_Monster_Buff_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct Panel_Monster_Buff_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Panel_Monster_Buff_C_K2_OnCustomUmgAnimFinished;
-
-// Function Panel_Monster_Buff.Panel_Monster_Buff_C.Tick
-// 0x003C (0x003C - 0x0000)
-struct Panel_Monster_Buff_C_Tick final
-{
-public:
-	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Panel_Monster_Buff_C_Tick;
-
 // Function Panel_Monster_Buff.Panel_Monster_Buff_C.ExecuteUbergraph_Panel_Monster_Buff
 // 0x004C (0x004C - 0x0000)
 struct Panel_Monster_Buff_C_ExecuteUbergraph_Panel_Monster_Buff final
@@ -57,6 +29,34 @@ public:
 	float                                         K2Node_Event_InDeltaTime;                          // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Panel_Monster_Buff_C_ExecuteUbergraph_Panel_Monster_Buff;
+
+// Function Panel_Monster_Buff.Panel_Monster_Buff_C.Tick
+// 0x003C (0x003C - 0x0000)
+struct Panel_Monster_Buff_C_Tick final
+{
+public:
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Panel_Monster_Buff_C_Tick;
+
+// Function Panel_Monster_Buff.Panel_Monster_Buff_C.K2_OnCustomUmgAnimFinished
+// 0x0008 (0x0008 - 0x0000)
+struct Panel_Monster_Buff_C_K2_OnCustomUmgAnimFinished final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Panel_Monster_Buff_C_K2_OnCustomUmgAnimFinished;
+
+// Function Panel_Monster_Buff.Panel_Monster_Buff_C.K2_OnSkillBlockup
+// 0x0001 (0x0001 - 0x0000)
+struct Panel_Monster_Buff_C_K2_OnSkillBlockup final
+{
+public:
+	bool                                          bInBlockUp;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Panel_Monster_Buff_C_K2_OnSkillBlockup;
 
 }
 

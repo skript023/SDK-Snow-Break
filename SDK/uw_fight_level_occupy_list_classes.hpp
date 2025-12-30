@@ -50,8 +50,8 @@ public:
 	void BP_OnEntryReleased();
 	void Construct();
 	void OnListItemObjectSet(class UObject* ListItemObject);
-	void OnConstruct();
 	void Destruct();
+	void OnConstruct();
 
 	class FString GetModuleName() const;
 

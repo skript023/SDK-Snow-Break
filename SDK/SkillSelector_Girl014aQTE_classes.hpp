@@ -32,8 +32,8 @@ public:
 	void SortTargets(TArray<struct FQueryResult>& QueryTargets, const struct FVector& CenterPosition, TArray<struct FQueryResult>* OutTargets);
 	void SortTargets__Overridden(TArray<struct FQueryResult>& QueryTargets, const struct FVector& CenterPosition, TArray<struct FQueryResult>* OutTargets);
 	void GetAllTargets(TArray<struct FQueryResult>* OutResults);
-	void ExecuteUbergraph_SkillSelector_Girl014aQTE(int32 EntryPoint);
 	void ReceiveBeginPlay();
+	void ExecuteUbergraph_SkillSelector_Girl014aQTE(int32 EntryPoint);
 
 	class FString GetModuleName() const;
 

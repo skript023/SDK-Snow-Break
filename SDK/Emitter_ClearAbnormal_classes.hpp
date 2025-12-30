@@ -22,9 +22,9 @@ namespace SDK
 class UEmitter_ClearAbnormal_C final : public USkill_Emitter
 {
 public:
-	void EmitterDestroyLua();
 	void OnEmitEnd();
 	EEmitterResult OnEmit();
+	void EmitterDestroyLua();
 	void GetDefaultParamsValue(TArray<struct FParamInfo>* Values);
 
 	class FString GetModuleName() const;

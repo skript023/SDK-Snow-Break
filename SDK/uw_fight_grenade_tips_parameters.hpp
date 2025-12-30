@@ -68,6 +68,16 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_grenade_tips_C_SetPlaySpeed;
 
+// LuaFunction uw_fight_grenade_tips.uw_fight_grenade_tips_C.Tick
+// 0x003C (0x003C - 0x0000)
+struct uw_fight_grenade_tips_C_Tick final
+{
+public:
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_grenade_tips_C_Tick;
+
 // LuaFunction uw_fight_grenade_tips.uw_fight_grenade_tips_C.ReceiveWarning
 // 0x0008 (0x0008 - 0x0000)
 struct uw_fight_grenade_tips_C_ReceiveWarning final
@@ -78,16 +88,6 @@ public:
 	float                                         InTotalTime;                                       // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_uw_fight_grenade_tips_C_ReceiveWarning;
-
-// LuaFunction uw_fight_grenade_tips.uw_fight_grenade_tips_C.Tick
-// 0x003C (0x003C - 0x0000)
-struct uw_fight_grenade_tips_C_Tick final
-{
-public:
-	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_grenade_tips_C_Tick;
 
 // Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

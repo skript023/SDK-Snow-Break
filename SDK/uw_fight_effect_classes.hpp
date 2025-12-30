@@ -43,8 +43,8 @@ public:
 	class Uuw_fight_injured_subitem1_C*           HitAngle90;                                        // 0x0320(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void OnHit__Overridden(float Angle, float Shield, bool IsBigHit);
 	void ExecuteUbergraph_uw_fight_effect(int32 EntryPoint);
+	void OnHit__Overridden(float Angle, float Shield, bool IsBigHit);
 	void OnHit(float Angle, float Shield, bool IsBigHit);
 	void Construct();
 	void Destruct();

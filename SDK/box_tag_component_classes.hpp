@@ -26,10 +26,10 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void OnActive();
-	void OnOpen();
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_box_tag_component(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	void OnOpen();
+	void OnActive();
 
 public:
 	static class UClass* StaticClass()

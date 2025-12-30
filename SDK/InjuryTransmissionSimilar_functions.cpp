@@ -17,33 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction InjuryTransmissionSimilar.InjuryTransmissionSimilar_C.K2_ReceiveInitialize
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TArray<struct FParamInfo>&        Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// const class UGameAbilityComponent*      lpInstigator                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInjuryTransmissionSimilar_C::K2_ReceiveInitialize(const TArray<struct FParamInfo>& Info, const class UGameAbilityComponent* lpInstigator)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InjuryTransmissionSimilar_C", "K2_ReceiveInitialize");
-
-	Params::InjuryTransmissionSimilar_C_K2_ReceiveInitialize Parms{};
-
-	Parms.Info = std::move(Info);
-	Parms.lpInstigator = lpInstigator;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction InjuryTransmissionSimilar.InjuryTransmissionSimilar_C.K2_InjuryTransmission
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -63,6 +36,33 @@ void UInjuryTransmissionSimilar_C::K2_InjuryTransmission(class UAbilityComponent
 	Parms.lpTarget = lpTarget;
 	Parms.PreResultData = std::move(PreResultData);
 	Parms.Info = std::move(Info);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction InjuryTransmissionSimilar.InjuryTransmissionSimilar_C.K2_ReceiveInitialize
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TArray<struct FParamInfo>&        Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class UGameAbilityComponent*      lpInstigator                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInjuryTransmissionSimilar_C::K2_ReceiveInitialize(const TArray<struct FParamInfo>& Info, const class UGameAbilityComponent* lpInstigator)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InjuryTransmissionSimilar_C", "K2_ReceiveInitialize");
+
+	Params::InjuryTransmissionSimilar_C_K2_ReceiveInitialize Parms{};
+
+	Parms.Info = std::move(Info);
+	Parms.lpInstigator = lpInstigator;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

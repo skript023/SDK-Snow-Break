@@ -14,6 +14,42 @@
 namespace SDK::Params
 {
 
+// Function uw_open_world_task_item.uw_open_world_task_item_C.GetTaskPointId__Overridden
+// 0x0010 (0x0010 - 0x0000)
+struct uw_open_world_task_item_C_GetTaskPointId__Overridden final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_open_world_task_item_C_GetTaskPointId__Overridden;
+
+// Function uw_open_world_task_item.uw_open_world_task_item_C.BP_OnItemExpansionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_open_world_task_item_C_BP_OnItemExpansionChanged final
+{
+public:
+	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_open_world_task_item_C_BP_OnItemExpansionChanged;
+
+// Function uw_open_world_task_item.uw_open_world_task_item_C.BP_OnItemSelectionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_open_world_task_item_C_BP_OnItemSelectionChanged final
+{
+public:
+	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_open_world_task_item_C_BP_OnItemSelectionChanged;
+
+// Function uw_open_world_task_item.uw_open_world_task_item_C.OnListItemObjectSet
+// 0x0008 (0x0008 - 0x0000)
+struct uw_open_world_task_item_C_OnListItemObjectSet final
+{
+public:
+	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_open_world_task_item_C_OnListItemObjectSet;
+
 // Function uw_open_world_task_item.uw_open_world_task_item_C.ExecuteUbergraph_uw_open_world_task_item
 // 0x0078 (0x0078 - 0x0000)
 struct uw_open_world_task_item_C_ExecuteUbergraph_uw_open_world_task_item final
@@ -38,42 +74,6 @@ public:
 	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_open_world_task_item_C_ExecuteUbergraph_uw_open_world_task_item;
-
-// Function uw_open_world_task_item.uw_open_world_task_item_C.OnListItemObjectSet
-// 0x0008 (0x0008 - 0x0000)
-struct uw_open_world_task_item_C_OnListItemObjectSet final
-{
-public:
-	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_open_world_task_item_C_OnListItemObjectSet;
-
-// Function uw_open_world_task_item.uw_open_world_task_item_C.BP_OnItemSelectionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_open_world_task_item_C_BP_OnItemSelectionChanged final
-{
-public:
-	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_open_world_task_item_C_BP_OnItemSelectionChanged;
-
-// Function uw_open_world_task_item.uw_open_world_task_item_C.BP_OnItemExpansionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_open_world_task_item_C_BP_OnItemExpansionChanged final
-{
-public:
-	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_open_world_task_item_C_BP_OnItemExpansionChanged;
-
-// Function uw_open_world_task_item.uw_open_world_task_item_C.GetTaskPointId__Overridden
-// 0x0010 (0x0010 - 0x0000)
-struct uw_open_world_task_item_C_GetTaskPointId__Overridden final
-{
-public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_open_world_task_item_C_GetTaskPointId__Overridden;
 
 // LuaFunction uw_open_world_task_item.uw_open_world_task_item_C.GetTaskPointId
 // 0x0010 (0x0010 - 0x0000)

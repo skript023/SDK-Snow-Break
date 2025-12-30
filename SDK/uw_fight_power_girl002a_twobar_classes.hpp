@@ -41,10 +41,10 @@ public:
 	class UProgressBar*                           Power2;                                            // 0x0410(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void PlayDepleteAnim(int32 Index_0);
-	void PlayFullAnim(int32 Index_0);
-	void PlayStartStateAnim(bool bPlay);
 	void ExecuteUbergraph_uw_fight_power_girl002a_twobar(int32 EntryPoint);
+	void PlayStartStateAnim(bool bPlay);
+	void PlayFullAnim(int32 Index_0);
+	void PlayDepleteAnim(int32 Index_0);
 
 public:
 	static class UClass* StaticClass()

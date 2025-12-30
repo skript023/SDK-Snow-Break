@@ -27,8 +27,8 @@ public:
 
 public:
 	void InitCrossHair(const struct FSoftClassPath& CrossPath, const struct FSoftClassPath& AmmunitionPath);
-	void Construct();
 	void K2_OnUpdate(float InDeltaTime);
+	void Construct();
 	void Destruct();
 
 	class FString GetModuleName() const;

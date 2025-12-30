@@ -25,11 +25,11 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_Explosive_Magnet_C;                 // 0x15C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_Explosive_Magnet(int32 EntryPoint);
-	void ReSpawn(bool IsValid);
-	bool IsStillValid();
-	void SetHpShowDistance();
 	void CheckCull();
+	void SetHpShowDistance();
+	bool IsStillValid();
+	void ReSpawn(bool IsValid);
+	void ExecuteUbergraph_Explosive_Magnet(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

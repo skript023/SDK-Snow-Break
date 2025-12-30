@@ -27,8 +27,8 @@ public:
 	bool                                          New_Var_0;                                         // 0x1451(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void ReceiveTick(float DeltaSeconds);
 	bool ReceiveCustomSpeedCurve(struct FCustomSpeedCurve* CustomSpeedCurve);
+	void ReceiveTick(float DeltaSeconds);
 	void ExecuteUbergraph_BP_Girl015_Movement(int32 EntryPoint);
 
 	struct FRotator ReceiveCustomRotation(const struct FRotator& CurrentRotation, const struct FRotator& TargetRotation, float DeltaTime) const;

@@ -16,15 +16,6 @@
 namespace SDK::Params
 {
 
-// Function ABP_girl002a_prop06_L.ABP_girl002a_prop06_L_C.ExecuteUbergraph_ABP_girl002a_prop06_L
-// 0x0004 (0x0004 - 0x0000)
-struct ABP_girl002a_prop06_L_C_ExecuteUbergraph_ABP_girl002a_prop06_L final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ABP_girl002a_prop06_L_C_ExecuteUbergraph_ABP_girl002a_prop06_L;
-
 // Function ABP_girl002a_prop06_L.ABP_girl002a_prop06_L_C.AnimGraph
 // 0x0010 (0x0010 - 0x0000)
 struct ABP_girl002a_prop06_L_C_AnimGraph final
@@ -33,6 +24,15 @@ public:
 	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
 };
 DUMPER7_ASSERTS_ABP_girl002a_prop06_L_C_AnimGraph;
+
+// Function ABP_girl002a_prop06_L.ABP_girl002a_prop06_L_C.ExecuteUbergraph_ABP_girl002a_prop06_L
+// 0x0004 (0x0004 - 0x0000)
+struct ABP_girl002a_prop06_L_C_ExecuteUbergraph_ABP_girl002a_prop06_L final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ABP_girl002a_prop06_L_C_ExecuteUbergraph_ABP_girl002a_prop06_L;
 
 }
 

@@ -22,9 +22,9 @@ namespace SDK
 class UEmitter_CastNewSkill_C final : public USkill_Emitter
 {
 public:
-	void EmitterDestroyLua();
 	void OnEmitEnd();
 	EEmitterResult OnEmit();
+	void EmitterDestroyLua();
 	TArray<struct FSoftObjectPath> OnGetAssetPath(const TArray<struct FParamInfo>& Values, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
 	void GetDefaultParamsValue(TArray<struct FParamInfo>* Values);
 

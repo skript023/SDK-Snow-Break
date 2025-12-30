@@ -21,8 +21,8 @@ namespace SDK
 class UInjuryTransmissionSimilar_C final : public UInjuryTransmissionSimilar
 {
 public:
-	void K2_ReceiveInitialize(const TArray<struct FParamInfo>& Info, const class UGameAbilityComponent* lpInstigator);
 	void K2_InjuryTransmission(class UAbilityComponentBase* lpTarget, const struct FPreDamageResultData& PreResultData, const struct FApplyDamageResultData& Info);
+	void K2_ReceiveInitialize(const TArray<struct FParamInfo>& Info, const class UGameAbilityComponent* lpInstigator);
 	TArray<struct FSoftObjectPath> OnGetAssetPath(const TArray<struct FParamInfo>& InParams, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
 
 	class FString GetModuleName() const;

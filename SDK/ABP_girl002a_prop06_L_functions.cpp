@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function ABP_girl002a_prop06_L.ABP_girl002a_prop06_L_C.ExecuteUbergraph_ABP_girl002a_prop06_L
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UABP_girl002a_prop06_L_C::ExecuteUbergraph_ABP_girl002a_prop06_L(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_girl002a_prop06_L_C", "ExecuteUbergraph_ABP_girl002a_prop06_L");
-
-	Params::ABP_girl002a_prop06_L_C_ExecuteUbergraph_ABP_girl002a_prop06_L Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function ABP_girl002a_prop06_L.ABP_girl002a_prop06_L_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -55,6 +35,26 @@ void UABP_girl002a_prop06_L_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 	if (AnimGraph_0 != nullptr)
 		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
+}
+
+
+// Function ABP_girl002a_prop06_L.ABP_girl002a_prop06_L_C.ExecuteUbergraph_ABP_girl002a_prop06_L
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_girl002a_prop06_L_C::ExecuteUbergraph_ABP_girl002a_prop06_L(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_girl002a_prop06_L_C", "ExecuteUbergraph_ABP_girl002a_prop06_L");
+
+	Params::ABP_girl002a_prop06_L_C_ExecuteUbergraph_ABP_girl002a_prop06_L Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

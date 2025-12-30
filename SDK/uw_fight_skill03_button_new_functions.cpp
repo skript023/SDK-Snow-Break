@@ -211,6 +211,56 @@ void Uuw_fight_skill03_button_new_C::K2_PlayFinishAnim(bool bPlayAnim)
 }
 
 
+// LuaFunction uw_fight_skill03_button_new.uw_fight_skill03_button_new_C.K2_PlayCDAnim
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bPlayCD                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_skill03_button_new_C::K2_PlayCDAnim(bool bPlayCD)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill03_button_new_C", "K2_PlayCDAnim");
+
+	Params::uw_fight_skill03_button_new_C_K2_PlayCDAnim Parms{};
+
+	Parms.bPlayCD = bPlayCD;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_skill03_button_new.uw_fight_skill03_button_new_C.K2_OnCustomUmgAnimFinished
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FName&                      AnimName                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_skill03_button_new_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill03_button_new_C", "K2_OnCustomUmgAnimFinished");
+
+	Params::uw_fight_skill03_button_new_C_K2_OnCustomUmgAnimFinished Parms{};
+
+	Parms.AnimName = AnimName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_skill03_button_new.uw_fight_skill03_button_new_C.Construct
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
@@ -272,56 +322,6 @@ void Uuw_fight_skill03_button_new_C::OnSkillStrengthening(bool bStart)
 	Params::uw_fight_skill03_button_new_C_OnSkillStrengthening Parms{};
 
 	Parms.bStart = bStart;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_skill03_button_new.uw_fight_skill03_button_new_C.K2_OnCustomUmgAnimFinished
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FName&                      AnimName                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_skill03_button_new_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill03_button_new_C", "K2_OnCustomUmgAnimFinished");
-
-	Params::uw_fight_skill03_button_new_C_K2_OnCustomUmgAnimFinished Parms{};
-
-	Parms.AnimName = AnimName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_skill03_button_new.uw_fight_skill03_button_new_C.K2_PlayCDAnim
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bPlayCD                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_skill03_button_new_C::K2_PlayCDAnim(bool bPlayCD)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill03_button_new_C", "K2_PlayCDAnim");
-
-	Params::uw_fight_skill03_button_new_C_K2_PlayCDAnim Parms{};
-
-	Parms.bPlayCD = bPlayCD;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

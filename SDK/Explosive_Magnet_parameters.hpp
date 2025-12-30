@@ -14,46 +14,6 @@
 namespace SDK::Params
 {
 
-// Function Explosive_Magnet.Explosive_Magnet_C.ExecuteUbergraph_Explosive_Magnet
-// 0x0008 (0x0008 - 0x0000)
-struct Explosive_Magnet_C_ExecuteUbergraph_Explosive_Magnet final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_IsValid;                              // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Explosive_Magnet_C_ExecuteUbergraph_Explosive_Magnet;
-
-// Function Explosive_Magnet.Explosive_Magnet_C.ReSpawn
-// 0x0001 (0x0001 - 0x0000)
-struct Explosive_Magnet_C_ReSpawn final
-{
-public:
-	bool                                          IsValid;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Explosive_Magnet_C_ReSpawn;
-
-// Function Explosive_Magnet.Explosive_Magnet_C.IsStillValid
-// 0x0002 (0x0002 - 0x0000)
-struct Explosive_Magnet_C_IsStillValid final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsVisible_ReturnValue;                    // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Explosive_Magnet_C_IsStillValid;
-
-// LuaFunction Explosive_Magnet.Explosive_Magnet_C.SetHpShowDistance
-// 0x0003 (0x0003 - 0x0000)
-struct Explosive_Magnet_C_SetHpShowDistance final
-{
-public:
-	bool                                          CallFunc_IsDedicatedServer_ReturnValue;            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SetShowDistance_ReturnValue;              // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Explosive_Magnet_C_SetHpShowDistance;
-
 // LuaFunction Explosive_Magnet.Explosive_Magnet_C.CheckCull
 // 0x0009 (0x0009 - 0x0000)
 struct Explosive_Magnet_C_CheckCull final
@@ -70,6 +30,46 @@ public:
 	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_Explosive_Magnet_C_CheckCull;
+
+// LuaFunction Explosive_Magnet.Explosive_Magnet_C.SetHpShowDistance
+// 0x0003 (0x0003 - 0x0000)
+struct Explosive_Magnet_C_SetHpShowDistance final
+{
+public:
+	bool                                          CallFunc_IsDedicatedServer_ReturnValue;            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SetShowDistance_ReturnValue;              // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Explosive_Magnet_C_SetHpShowDistance;
+
+// Function Explosive_Magnet.Explosive_Magnet_C.IsStillValid
+// 0x0002 (0x0002 - 0x0000)
+struct Explosive_Magnet_C_IsStillValid final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsVisible_ReturnValue;                    // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Explosive_Magnet_C_IsStillValid;
+
+// Function Explosive_Magnet.Explosive_Magnet_C.ReSpawn
+// 0x0001 (0x0001 - 0x0000)
+struct Explosive_Magnet_C_ReSpawn final
+{
+public:
+	bool                                          IsValid;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Explosive_Magnet_C_ReSpawn;
+
+// Function Explosive_Magnet.Explosive_Magnet_C.ExecuteUbergraph_Explosive_Magnet
+// 0x0008 (0x0008 - 0x0000)
+struct Explosive_Magnet_C_ExecuteUbergraph_Explosive_Magnet final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_IsValid;                              // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Explosive_Magnet_C_ExecuteUbergraph_Explosive_Magnet;
 
 }
 

@@ -20,24 +20,6 @@
 namespace SDK::Params
 {
 
-// LuaFunction BP_TaskActor.BP_TaskActor_C.ShouldCalcOnlineBehaviorPoint
-// 0x0001 (0x0001 - 0x0000)
-struct BP_TaskActor_C_ShouldCalcOnlineBehaviorPoint final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BP_TaskActor_C_ShouldCalcOnlineBehaviorPoint;
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.OnLevelPreFinish
-// 0x0001 (0x0001 - 0x0000)
-struct BP_TaskActor_C_OnLevelPreFinish final
-{
-public:
-	bool                                          bSuccess;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_TaskActor_C_OnLevelPreFinish;
-
 // LuaFunction BP_TaskActor.BP_TaskActor_C.TryStartTask
 // 0x0001 (0x0001 - 0x0000)
 struct BP_TaskActor_C_TryStartTask final
@@ -47,16 +29,36 @@ public:
 };
 DUMPER7_ASSERTS_BP_TaskActor_C_TryStartTask;
 
-// LuaFunction BP_TaskActor.BP_TaskActor_C.CloseActCondition
-// 0x0018 (0x0018 - 0x0000)
-struct BP_TaskActor_C_CloseActCondition final
+// LuaFunction BP_TaskActor.BP_TaskActor_C.GetCharacterTemplateId
+// 0x0010 (0x0010 - 0x0000)
+struct BP_TaskActor_C_GetCharacterTemplateId final
 {
 public:
-	int32                                         ConditionID;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 LogicName;                                         // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class AGamePlayer*                            Player;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         TemplateId;                                        // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_TaskActor_C_CloseActCondition;
+DUMPER7_ASSERTS_BP_TaskActor_C_GetCharacterTemplateId;
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.GetVictorySequence
+// 0x0020 (0x0020 - 0x0000)
+struct BP_TaskActor_C_GetVictorySequence final
+{
+public:
+	class ULevelSequence*                         AsLevel_Sequence;                                  // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 Return_Value_资源名修饰;                           // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+	class ULevelSequence*                         Sequence;                                          // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_TaskActor_C_GetVictorySequence;
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.ForceInterruptSkill
+// 0x0010 (0x0010 - 0x0000)
+struct BP_TaskActor_C_ForceInterruptSkill final
+{
+public:
+	class AGameSkill*                             GameSkill;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESkillInterruptedType                         InterruptedType;                                   // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_TaskActor_C_ForceInterruptSkill;
 
 // LuaFunction BP_TaskActor.BP_TaskActor_C.OnMultiKill
 // 0x0010 (0x0010 - 0x0000)
@@ -67,6 +69,17 @@ public:
 	class AActor*                                 Deceased;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_BP_TaskActor_C_OnMultiKill;
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.MultiDoSpawn
+// 0x0014 (0x0014 - 0x0000)
+struct BP_TaskActor_C_MultiDoSpawn final
+{
+public:
+	int32                                         InMonsterId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   InTag;                                             // 0x0004(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PointName;                                         // 0x000C(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BP_TaskActor_C_MultiDoSpawn;
 
 // LuaFunction BP_TaskActor.BP_TaskActor_C.CheckActCondition
 // 0x0020 (0x0020 - 0x0000)
@@ -80,35 +93,25 @@ public:
 };
 DUMPER7_ASSERTS_BP_TaskActor_C_CheckActCondition;
 
-// LuaFunction BP_TaskActor.BP_TaskActor_C.GetVictorySequence
-// 0x0020 (0x0020 - 0x0000)
-struct BP_TaskActor_C_GetVictorySequence final
+// LuaFunction BP_TaskActor.BP_TaskActor_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct BP_TaskActor_C_ReceiveEndPlay final
 {
 public:
-	class ULevelSequence*                         AsLevel_Sequence;                                  // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 Return_Value_资源名修饰;                           // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
-	class ULevelSequence*                         Sequence;                                          // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_TaskActor_C_GetVictorySequence;
+DUMPER7_ASSERTS_BP_TaskActor_C_ReceiveEndPlay;
 
-// LuaFunction BP_TaskActor.BP_TaskActor_C.FixSkill
-// 0x0008 (0x0008 - 0x0000)
-struct BP_TaskActor_C_FixSkill final
+// LuaFunction BP_TaskActor.BP_TaskActor_C.CloseActCondition
+// 0x0018 (0x0018 - 0x0000)
+struct BP_TaskActor_C_CloseActCondition final
 {
 public:
-	class AGameSkill*                             InSkill;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ConditionID;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 LogicName;                                         // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_TaskActor_C_FixSkill;
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.GetCharacterTemplateId
-// 0x0010 (0x0010 - 0x0000)
-struct BP_TaskActor_C_GetCharacterTemplateId final
-{
-public:
-	class AGamePlayer*                            Player;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         TemplateId;                                        // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_TaskActor_C_GetCharacterTemplateId;
+DUMPER7_ASSERTS_BP_TaskActor_C_CloseActCondition;
 
 // LuaFunction BP_TaskActor.BP_TaskActor_C.GetLevelConfigTime
 // 0x0010 (0x0010 - 0x0000)
@@ -120,15 +123,14 @@ public:
 };
 DUMPER7_ASSERTS_BP_TaskActor_C_GetLevelConfigTime;
 
-// LuaFunction BP_TaskActor.BP_TaskActor_C.ForceInterruptSkill
-// 0x0010 (0x0010 - 0x0000)
-struct BP_TaskActor_C_ForceInterruptSkill final
+// LuaFunction BP_TaskActor.BP_TaskActor_C.PlayTeleportAnim
+// 0x0008 (0x0008 - 0x0000)
+struct BP_TaskActor_C_PlayTeleportAnim final
 {
 public:
-	class AGameSkill*                             GameSkill;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ESkillInterruptedType                         InterruptedType;                                   // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 TeleportActor;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_TaskActor_C_ForceInterruptSkill;
+DUMPER7_ASSERTS_BP_TaskActor_C_PlayTeleportAnim;
 
 // LuaFunction BP_TaskActor.BP_TaskActor_C.OpenActCondition
 // 0x0018 (0x0018 - 0x0000)
@@ -141,14 +143,23 @@ public:
 };
 DUMPER7_ASSERTS_BP_TaskActor_C_OpenActCondition;
 
-// LuaFunction BP_TaskActor.BP_TaskActor_C.PlayTeleportAnim
-// 0x0008 (0x0008 - 0x0000)
-struct BP_TaskActor_C_PlayTeleportAnim final
+// LuaFunction BP_TaskActor.BP_TaskActor_C.IsMultiLevel
+// 0x0001 (0x0001 - 0x0000)
+struct BP_TaskActor_C_IsMultiLevel final
 {
 public:
-	class AActor*                                 TeleportActor;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_BP_TaskActor_C_PlayTeleportAnim;
+DUMPER7_ASSERTS_BP_TaskActor_C_IsMultiLevel;
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.OnLevelPreFinish
+// 0x0001 (0x0001 - 0x0000)
+struct BP_TaskActor_C_OnLevelPreFinish final
+{
+public:
+	bool                                          bSuccess;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_TaskActor_C_OnLevelPreFinish;
 
 // LuaFunction BP_TaskActor.BP_TaskActor_C.FightTip
 // 0x0030 (0x0030 - 0x0000)
@@ -163,43 +174,23 @@ public:
 };
 DUMPER7_ASSERTS_BP_TaskActor_C_FightTip;
 
-// LuaFunction BP_TaskActor.BP_TaskActor_C.ReceiveEndPlay
+// LuaFunction BP_TaskActor.BP_TaskActor_C.ShouldCalcOnlineBehaviorPoint
 // 0x0001 (0x0001 - 0x0000)
-struct BP_TaskActor_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_TaskActor_C_ReceiveEndPlay;
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.MultiDoSpawn
-// 0x0014 (0x0014 - 0x0000)
-struct BP_TaskActor_C_MultiDoSpawn final
-{
-public:
-	int32                                         InMonsterId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   InTag;                                             // 0x0004(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   PointName;                                         // 0x000C(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BP_TaskActor_C_MultiDoSpawn;
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.IsMultiLevel
-// 0x0001 (0x0001 - 0x0000)
-struct BP_TaskActor_C_IsMultiLevel final
+struct BP_TaskActor_C_ShouldCalcOnlineBehaviorPoint final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_BP_TaskActor_C_IsMultiLevel;
+DUMPER7_ASSERTS_BP_TaskActor_C_ShouldCalcOnlineBehaviorPoint;
 
-// LuaFunction BP_TaskActor.BP_TaskActor_C.NotifyStartMultiSubTask
-// 0x0040 (0x0040 - 0x0000)
-struct BP_TaskActor_C_NotifyStartMultiSubTask final
+// LuaFunction BP_TaskActor.BP_TaskActor_C.FixSkill
+// 0x0008 (0x0008 - 0x0000)
+struct BP_TaskActor_C_FixSkill final
 {
 public:
-	struct FMultiSubTask                          InSubTask;                                         // 0x0000(0x0040)(ConstParm, Parm, NativeAccessSpecifierPublic)
+	class AGameSkill*                             InSkill;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_TaskActor_C_NotifyStartMultiSubTask;
+DUMPER7_ASSERTS_BP_TaskActor_C_FixSkill;
 
 // LuaFunction BP_TaskActor.BP_TaskActor_C.ShouldCalcOnlineDesignation
 // 0x0001 (0x0001 - 0x0000)
@@ -209,6 +200,15 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_BP_TaskActor_C_ShouldCalcOnlineDesignation;
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.NotifyStartMultiSubTask
+// 0x0040 (0x0040 - 0x0000)
+struct BP_TaskActor_C_NotifyStartMultiSubTask final
+{
+public:
+	struct FMultiSubTask                          InSubTask;                                         // 0x0000(0x0040)(ConstParm, Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BP_TaskActor_C_NotifyStartMultiSubTask;
 
 // Function BP_TaskActor.BP_TaskActor_C.GetCharacterTemplateId__Overridden
 // 0x0010 (0x0010 - 0x0000)
@@ -1002,6 +1002,33 @@ public:
 };
 DUMPER7_ASSERTS_BP_TaskActor_C_ExecuteUbergraph_BP_TaskActor;
 
+// LuaFunction BP_TaskActor.BP_TaskActor_C.IsMultiSpecificLevel
+// 0x0001 (0x0001 - 0x0000)
+struct BP_TaskActor_C_IsMultiSpecificLevel final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BP_TaskActor_C_IsMultiSpecificLevel;
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.IsMultiDynamicLevel
+// 0x0001 (0x0001 - 0x0000)
+struct BP_TaskActor_C_IsMultiDynamicLevel final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BP_TaskActor_C_IsMultiDynamicLevel;
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.IsWaveControlLevel
+// 0x0001 (0x0001 - 0x0000)
+struct BP_TaskActor_C_IsWaveControlLevel final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BP_TaskActor_C_IsWaveControlLevel;
+
 // LuaFunction BP_TaskActor.BP_TaskActor_C.LevelAlwaysShowSuccess
 // 0x0001 (0x0001 - 0x0000)
 struct BP_TaskActor_C_LevelAlwaysShowSuccess final
@@ -1019,33 +1046,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_BP_TaskActor_C_IsMultiConstLevel;
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.IsWaveControlLevel
-// 0x0001 (0x0001 - 0x0000)
-struct BP_TaskActor_C_IsWaveControlLevel final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BP_TaskActor_C_IsWaveControlLevel;
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.IsMultiDynamicLevel
-// 0x0001 (0x0001 - 0x0000)
-struct BP_TaskActor_C_IsMultiDynamicLevel final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BP_TaskActor_C_IsMultiDynamicLevel;
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.IsMultiSpecificLevel
-// 0x0001 (0x0001 - 0x0000)
-struct BP_TaskActor_C_IsMultiSpecificLevel final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BP_TaskActor_C_IsMultiSpecificLevel;
 
 // Function BP_TaskActor.BP_TaskActor_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

@@ -37,17 +37,6 @@ public:
 };
 DUMPER7_ASSERTS_Condition_CaptainBirthed_C_K2_CheckCondition;
 
-// Function Condition_CaptainBirthed.Condition_CaptainBirthed_C.CustomEvent
-// 0x0010 (0x0010 - 0x0000)
-struct Condition_CaptainBirthed_C_CustomEvent final
-{
-public:
-	class AGameCharacter*                         CurCharacter;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECharacterActionState                         InType;                                            // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bSet;                                              // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Condition_CaptainBirthed_C_CustomEvent;
-
 // Function Condition_CaptainBirthed.Condition_CaptainBirthed_C.K2_BindEvent
 // 0x0010 (0x0010 - 0x0000)
 struct Condition_CaptainBirthed_C_K2_BindEvent final
@@ -67,6 +56,17 @@ public:
 	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Condition_CaptainBirthed_C_K2_UnbindEvent;
+
+// Function Condition_CaptainBirthed.Condition_CaptainBirthed_C.CustomEvent
+// 0x0010 (0x0010 - 0x0000)
+struct Condition_CaptainBirthed_C_CustomEvent final
+{
+public:
+	class AGameCharacter*                         CurCharacter;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECharacterActionState                         InType;                                            // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bSet;                                              // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Condition_CaptainBirthed_C_CustomEvent;
 
 // Function Condition_CaptainBirthed.Condition_CaptainBirthed_C.ExecuteUbergraph_Condition_CaptainBirthed
 // 0x0090 (0x0090 - 0x0000)

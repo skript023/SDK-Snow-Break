@@ -36,15 +36,15 @@ void Uuw_fight_laser_C::Construct()
 }
 
 
-// LuaFunction uw_fight_laser.uw_fight_laser_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_laser.uw_fight_laser_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_laser_C::OnConstruct()
+void Uuw_fight_laser_C::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_laser_C", "OnConstruct");
+		Func = Class->GetFunction("uw_fight_laser_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -55,15 +55,15 @@ void Uuw_fight_laser_C::OnConstruct()
 }
 
 
-// LuaFunction uw_fight_laser.uw_fight_laser_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_laser.uw_fight_laser_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_laser_C::Destruct()
+void Uuw_fight_laser_C::OnConstruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_laser_C", "Destruct");
+		Func = Class->GetFunction("uw_fight_laser_C", "OnConstruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

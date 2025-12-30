@@ -16,15 +16,6 @@
 namespace SDK::Params
 {
 
-// Function ShieldRecover.ShieldRecover_C.K2_ReceiveActive
-// 0x0008 (0x0008 - 0x0000)
-struct ShieldRecover_C_K2_ReceiveActive final
-{
-public:
-	const class UObject*                          Instigator;                                        // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ShieldRecover_C_K2_ReceiveActive;
-
 // Function ShieldRecover.ShieldRecover_C.ExecuteUbergraph_ShieldRecover
 // 0x00E8 (0x00E8 - 0x0000)
 struct ShieldRecover_C_ExecuteUbergraph_ShieldRecover final
@@ -41,6 +32,15 @@ public:
 	float                                         CallFunc_Multiply_IntFloat_ReturnValue;            // 0x00E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ShieldRecover_C_ExecuteUbergraph_ShieldRecover;
+
+// Function ShieldRecover.ShieldRecover_C.K2_ReceiveActive
+// 0x0008 (0x0008 - 0x0000)
+struct ShieldRecover_C_K2_ReceiveActive final
+{
+public:
+	const class UObject*                          Instigator;                                        // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ShieldRecover_C_K2_ReceiveActive;
 
 }
 

@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function BP_Girl015_Movement.BP_Girl015_Movement_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBP_Girl015_Movement_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Girl015_Movement_C", "ReceiveTick");
-
-	Params::BP_Girl015_Movement_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Girl015_Movement.BP_Girl015_Movement_C.ReceiveCustomSpeedCurve
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -58,6 +38,26 @@ bool UBP_Girl015_Movement_C::ReceiveCustomSpeedCurve(struct FCustomSpeedCurve* C
 		*CustomSpeedCurve = std::move(Parms.CustomSpeedCurve);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BP_Girl015_Movement.BP_Girl015_Movement_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_Girl015_Movement_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Girl015_Movement_C", "ReceiveTick");
+
+	Params::BP_Girl015_Movement_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

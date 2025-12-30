@@ -36,10 +36,10 @@ public:
 	int32                                         TryMoveTime;                                       // 0x00D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool CanInterruptFight();
 	void OnMoveFinished_27A515F04C10695563425C91883D3501(EPathFollowingResult Result, class AAIController* AIController_0);
 	void OnRequestFailed_27A515F04C10695563425C91883D3501();
 	void OnExecute(class AGameCharacter* Character);
+	bool CanInterruptFight();
 	void OnTick(float DeltaTime);
 	void ExecuteUbergraph_AIEvent_MoveTo(int32 EntryPoint);
 

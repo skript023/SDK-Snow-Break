@@ -31,8 +31,8 @@ public:
 	class UAnimSequenceBase*                      Sequence;                                          // 0x03C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_ABP_girl002a_prop06_L(int32 EntryPoint);
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void ExecuteUbergraph_ABP_girl002a_prop06_L(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

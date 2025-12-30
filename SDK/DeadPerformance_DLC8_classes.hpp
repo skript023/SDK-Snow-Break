@@ -26,8 +26,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0028(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void DeadPerformanceLogic(class AGameCharacter* DeadCharacter, class AGameCharacter* Killer, class UDeadPerformanceComponent* DeadComponent, const struct FHealthChangeValue& HealthChangeValue);
 	void ExecuteUbergraph_DeadPerformance_DLC8(int32 EntryPoint);
+	void DeadPerformanceLogic(class AGameCharacter* DeadCharacter, class AGameCharacter* Killer, class UDeadPerformanceComponent* DeadComponent, const struct FHealthChangeValue& HealthChangeValue);
 
 public:
 	static class UClass* StaticClass()

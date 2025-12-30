@@ -16,18 +16,6 @@
 namespace SDK::Params
 {
 
-// Function DeadPerformance_DLC8.DeadPerformance_DLC8_C.DeadPerformanceLogic
-// 0x01D0 (0x01D0 - 0x0000)
-struct DeadPerformance_DLC8_C_DeadPerformanceLogic final
-{
-public:
-	class AGameCharacter*                         DeadCharacter;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AGameCharacter*                         Killer;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UDeadPerformanceComponent*              DeadComponent;                                     // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0018(0x01B8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_DeadPerformance_DLC8_C_DeadPerformanceLogic;
-
 // Function DeadPerformance_DLC8.DeadPerformance_DLC8_C.ExecuteUbergraph_DeadPerformance_DLC8
 // 0x02A0 (0x02A0 - 0x0000)
 struct DeadPerformance_DLC8_C_ExecuteUbergraph_DeadPerformance_DLC8 final
@@ -87,6 +75,18 @@ public:
 	bool                                          CallFunc_GetIsInFloating_ReturnValue;              // 0x0298(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_DeadPerformance_DLC8_C_ExecuteUbergraph_DeadPerformance_DLC8;
+
+// Function DeadPerformance_DLC8.DeadPerformance_DLC8_C.DeadPerformanceLogic
+// 0x01D0 (0x01D0 - 0x0000)
+struct DeadPerformance_DLC8_C_DeadPerformanceLogic final
+{
+public:
+	class AGameCharacter*                         DeadCharacter;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameCharacter*                         Killer;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UDeadPerformanceComponent*              DeadComponent;                                     // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0018(0x01B8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_DeadPerformance_DLC8_C_DeadPerformanceLogic;
 
 }
 

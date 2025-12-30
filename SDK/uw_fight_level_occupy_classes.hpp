@@ -42,10 +42,10 @@ public:
 public:
 	void ExecuteUbergraph_uw_fight_level_occupy(int32 EntryPoint);
 	void Tick__Overridden(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void Construct();
-	void OnConstruct();
+	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void Destruct();
+	void OnConstruct();
 
 	class FString GetModuleName() const;
 

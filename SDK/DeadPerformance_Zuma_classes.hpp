@@ -27,8 +27,8 @@ public:
 	float                                         CustomDelay;                                       // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_DeadPerformance_Zuma(int32 EntryPoint);
 	void DeadPerformanceLogic(class AGameCharacter* DeadCharacter, class AGameCharacter* Killer, class UDeadPerformanceComponent* DeadComponent, const struct FHealthChangeValue& HealthChangeValue);
+	void ExecuteUbergraph_DeadPerformance_Zuma(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

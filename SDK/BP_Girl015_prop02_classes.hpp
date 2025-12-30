@@ -41,14 +41,22 @@ public:
 
 public:
 	void ShowWine();
+	void HideWine();
+	void OnRep_CastSkillID();
 	void SkinReplace();
 	TArray<struct FSoftObjectPath> OnGetAssetPath(TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs);
+	void OnNotifyEnd_BE4F4DDB4D2AB15C559C298FEAD543C2(class FName NotifyName);
 	void OnNotifyBegin_BE4F4DDB4D2AB15C559C298FEAD543C2(class FName NotifyName);
+	void OnInterrupted_BE4F4DDB4D2AB15C559C298FEAD543C2(class FName NotifyName);
 	void OnBlendOut_BE4F4DDB4D2AB15C559C298FEAD543C2(class FName NotifyName);
+	void OnCompleted_BE4F4DDB4D2AB15C559C298FEAD543C2(class FName NotifyName);
 	void OnNotifyEnd_DC6BDBB24C69D3BCC69F89A691593D90(class FName NotifyName);
+	void OnNotifyBegin_DC6BDBB24C69D3BCC69F89A691593D90(class FName NotifyName);
 	void OnInterrupted_DC6BDBB24C69D3BCC69F89A691593D90(class FName NotifyName);
+	void OnBlendOut_DC6BDBB24C69D3BCC69F89A691593D90(class FName NotifyName);
 	void OnCompleted_DC6BDBB24C69D3BCC69F89A691593D90(class FName NotifyName);
 	void OnNotifyEnd_15E405234E55C2A1E52DE99BCED7CB26(class FName NotifyName);
+	void OnNotifyBegin_15E405234E55C2A1E52DE99BCED7CB26(class FName NotifyName);
 	void OnInterrupted_15E405234E55C2A1E52DE99BCED7CB26(class FName NotifyName);
 	void OnBlendOut_15E405234E55C2A1E52DE99BCED7CB26(class FName NotifyName);
 	void OnCompleted_15E405234E55C2A1E52DE99BCED7CB26(class FName NotifyName);
@@ -61,17 +69,9 @@ public:
 	void SkillEnd(int32 SkillID);
 	void OnAbilityCastSkill_事件_0(int32 SkillID, const TArray<int32>& OriginSkills, class UGameAbilityComponent* AbilityRef);
 	void PlaySkillMontage();
+	void Aim(bool bInAiming);
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ExecuteUbergraph_BP_Girl015_prop02(int32 EntryPoint);
-	void HideWine();
-	void OnRep_CastSkillID();
-	void OnNotifyEnd_BE4F4DDB4D2AB15C559C298FEAD543C2(class FName NotifyName);
-	void OnInterrupted_BE4F4DDB4D2AB15C559C298FEAD543C2(class FName NotifyName);
-	void OnCompleted_BE4F4DDB4D2AB15C559C298FEAD543C2(class FName NotifyName);
-	void OnNotifyBegin_DC6BDBB24C69D3BCC69F89A691593D90(class FName NotifyName);
-	void OnBlendOut_DC6BDBB24C69D3BCC69F89A691593D90(class FName NotifyName);
-	void OnNotifyBegin_15E405234E55C2A1E52DE99BCED7CB26(class FName NotifyName);
-	void Aim(bool bInAiming);
 
 public:
 	static class UClass* StaticClass()

@@ -36,13 +36,13 @@ public:
 	class UGameCanvasPanel*                       Star3;                                             // 0x0408(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
+	void OnConstruct();
+	void Destruct();
 	void BP_OnEntryReleased();
 	void BP_OnItemExpansionChanged(bool bIsExpanded);
 	void BP_OnItemSelectionChanged(bool bIsSelected);
 	void OnListItemObjectSet(class UObject* ListItemObject);
 	void ExecuteUbergraph_uw_sevendays_stars(int32 EntryPoint);
-	void Destruct();
-	void OnConstruct();
 
 	class FString GetModuleName() const;
 

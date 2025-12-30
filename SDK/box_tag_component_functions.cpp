@@ -17,15 +17,35 @@
 namespace SDK
 {
 
-// Function box_tag_component.box_tag_component_C.OnActive
-// (BlueprintCallable, BlueprintEvent)
+// Function box_tag_component.box_tag_component_C.ExecuteUbergraph_box_tag_component
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Ubox_tag_component_C::OnActive()
+void Ubox_tag_component_C::ExecuteUbergraph_box_tag_component(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("box_tag_component_C", "OnActive");
+		Func = Class->GetFunction("box_tag_component_C", "ExecuteUbergraph_box_tag_component");
+
+	Params::box_tag_component_C_ExecuteUbergraph_box_tag_component Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function box_tag_component.box_tag_component_C.ReceiveBeginPlay
+// (Event, Public, BlueprintEvent)
+
+void Ubox_tag_component_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("box_tag_component_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -45,37 +65,17 @@ void Ubox_tag_component_C::OnOpen()
 }
 
 
-// Function box_tag_component.box_tag_component_C.ReceiveBeginPlay
-// (Event, Public, BlueprintEvent)
+// Function box_tag_component.box_tag_component_C.OnActive
+// (BlueprintCallable, BlueprintEvent)
 
-void Ubox_tag_component_C::ReceiveBeginPlay()
+void Ubox_tag_component_C::OnActive()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("box_tag_component_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("box_tag_component_C", "OnActive");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function box_tag_component.box_tag_component_C.ExecuteUbergraph_box_tag_component
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Ubox_tag_component_C::ExecuteUbergraph_box_tag_component(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("box_tag_component_C", "ExecuteUbergraph_box_tag_component");
-
-	Params::box_tag_component_C_ExecuteUbergraph_box_tag_component Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

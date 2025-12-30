@@ -31,6 +31,20 @@ void Agirl004b_skill03_C::ReceiveBeginPlay()
 }
 
 
+// Function girl004b_skill03.girl004b_skill03_C.ReceiveDestroyed
+// (Event, Public, BlueprintEvent)
+
+void Agirl004b_skill03_C::ReceiveDestroyed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("girl004b_skill03_C", "ReceiveDestroyed");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function girl004b_skill03.girl004b_skill03_C.ExecuteUbergraph_girl004b_skill03
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -48,20 +62,6 @@ void Agirl004b_skill03_C::ExecuteUbergraph_girl004b_skill03(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function girl004b_skill03.girl004b_skill03_C.ReceiveDestroyed
-// (Event, Public, BlueprintEvent)
-
-void Agirl004b_skill03_C::ReceiveDestroyed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("girl004b_skill03_C", "ReceiveDestroyed");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

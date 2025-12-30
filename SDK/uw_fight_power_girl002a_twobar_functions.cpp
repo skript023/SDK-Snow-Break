@@ -17,41 +17,21 @@
 namespace SDK
 {
 
-// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.PlayDepleteAnim
-// (Event, Protected, BlueprintEvent)
+// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.ExecuteUbergraph_uw_fight_power_girl002a_twobar
+// (Final, UbergraphFunction)
 // Parameters:
-// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void uw_fight_power_girl002a_twobar::Uuw_fight_power_girl002a_twobar_C::PlayDepleteAnim(int32 Index_0)
+void uw_fight_power_girl002a_twobar::Uuw_fight_power_girl002a_twobar_C::ExecuteUbergraph_uw_fight_power_girl002a_twobar(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_power_girl002a_twobar_C", "PlayDepleteAnim");
+		Func = Class->GetFunction("uw_fight_power_girl002a_twobar_C", "ExecuteUbergraph_uw_fight_power_girl002a_twobar");
 
-	Params::uw_fight_power_girl002a_twobar_C_PlayDepleteAnim Parms{};
+	Params::uw_fight_power_girl002a_twobar_C_ExecuteUbergraph_uw_fight_power_girl002a_twobar Parms{};
 
-	Parms.Index_0 = Index_0;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.PlayFullAnim
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void uw_fight_power_girl002a_twobar::Uuw_fight_power_girl002a_twobar_C::PlayFullAnim(int32 Index_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_power_girl002a_twobar_C", "PlayFullAnim");
-
-	Params::uw_fight_power_girl002a_twobar_C_PlayFullAnim Parms{};
-
-	Parms.Index_0 = Index_0;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -77,21 +57,41 @@ void uw_fight_power_girl002a_twobar::Uuw_fight_power_girl002a_twobar_C::PlayStar
 }
 
 
-// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.ExecuteUbergraph_uw_fight_power_girl002a_twobar
-// (Final, UbergraphFunction)
+// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.PlayFullAnim
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void uw_fight_power_girl002a_twobar::Uuw_fight_power_girl002a_twobar_C::ExecuteUbergraph_uw_fight_power_girl002a_twobar(int32 EntryPoint)
+void uw_fight_power_girl002a_twobar::Uuw_fight_power_girl002a_twobar_C::PlayFullAnim(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_power_girl002a_twobar_C", "ExecuteUbergraph_uw_fight_power_girl002a_twobar");
+		Func = Class->GetFunction("uw_fight_power_girl002a_twobar_C", "PlayFullAnim");
 
-	Params::uw_fight_power_girl002a_twobar_C_ExecuteUbergraph_uw_fight_power_girl002a_twobar Parms{};
+	Params::uw_fight_power_girl002a_twobar_C_PlayFullAnim Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.Index_0 = Index_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.PlayDepleteAnim
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void uw_fight_power_girl002a_twobar::Uuw_fight_power_girl002a_twobar_C::PlayDepleteAnim(int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_power_girl002a_twobar_C", "PlayDepleteAnim");
+
+	Params::uw_fight_power_girl002a_twobar_C_PlayDepleteAnim Parms{};
+
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

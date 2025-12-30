@@ -16,6 +16,27 @@
 namespace SDK::Params
 {
 
+// Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.SwitchCharacter
+// 0x0001 (0x0001 - 0x0000)
+struct SelfCheck_SwitchState_C_SwitchCharacter final
+{
+public:
+	bool                                          bEnter;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_SelfCheck_SwitchState_C_SwitchCharacter;
+
+// Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.OnDead
+// 0x01C8 (0x01C8 - 0x0000)
+struct SelfCheck_SwitchState_C_OnDead final
+{
+public:
+	bool                                          bDead;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilityComponentBase*                  InLauncher;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHealthChangeValue                     HealthChangeData;                                  // 0x0010(0x01B8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_SelfCheck_SwitchState_C_OnDead;
+
 // Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.PrepareCondition
 // 0x0001 (0x0001 - 0x0000)
 struct SelfCheck_SwitchState_C_PrepareCondition final
@@ -44,27 +65,6 @@ public:
 	class AGameCharacter*                         CurCharacter;                                      // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_SelfCheck_SwitchState_C_PrepareSwitchCharacter;
-
-// Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.SwitchCharacter
-// 0x0001 (0x0001 - 0x0000)
-struct SelfCheck_SwitchState_C_SwitchCharacter final
-{
-public:
-	bool                                          bEnter;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_SelfCheck_SwitchState_C_SwitchCharacter;
-
-// Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.OnDead
-// 0x01C8 (0x01C8 - 0x0000)
-struct SelfCheck_SwitchState_C_OnDead final
-{
-public:
-	bool                                          bDead;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbilityComponentBase*                  InLauncher;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeData;                                  // 0x0010(0x01B8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_SelfCheck_SwitchState_C_OnDead;
 
 // Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.ExecuteUbergraph_SelfCheck_SwitchState
 // 0x0248 (0x0248 - 0x0000)

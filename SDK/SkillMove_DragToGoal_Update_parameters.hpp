@@ -14,6 +14,34 @@
 namespace SDK::Params
 {
 
+// LuaFunction SkillMove_DragToGoal_Update.SkillMove_DragToGoal_Update_C.IsUsedToAddVelocityInsteadOverride
+// 0x0001 (0x0001 - 0x0000)
+struct SkillMove_DragToGoal_Update_C_IsUsedToAddVelocityInsteadOverride final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SkillMove_DragToGoal_Update_C_IsUsedToAddVelocityInsteadOverride;
+
+// LuaFunction SkillMove_DragToGoal_Update.SkillMove_DragToGoal_Update_C.OnMoveEnd
+// 0x0008 (0x0008 - 0x0000)
+struct SkillMove_DragToGoal_Update_C_OnMoveEnd final
+{
+public:
+	class UBaseMovementComponent*                 Movement;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SkillMove_DragToGoal_Update_C_OnMoveEnd;
+
+// LuaFunction SkillMove_DragToGoal_Update.SkillMove_DragToGoal_Update_C.OnMoveStart
+// 0x0010 (0x0010 - 0x0000)
+struct SkillMove_DragToGoal_Update_C_OnMoveStart final
+{
+public:
+	class AActor*                                 Launcher;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBaseMovementComponent*                 Movement;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SkillMove_DragToGoal_Update_C_OnMoveStart;
+
 // LuaFunction SkillMove_DragToGoal_Update.SkillMove_DragToGoal_Update_C.OnMoveTick
 // 0x0018 (0x0018 - 0x0000)
 struct SkillMove_DragToGoal_Update_C_OnMoveTick final
@@ -27,34 +55,6 @@ public:
 	class UBaseMovementComponent*                 Movement;                                          // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SkillMove_DragToGoal_Update_C_OnMoveTick;
-
-// LuaFunction SkillMove_DragToGoal_Update.SkillMove_DragToGoal_Update_C.IsUsedToAddVelocityInsteadOverride
-// 0x0001 (0x0001 - 0x0000)
-struct SkillMove_DragToGoal_Update_C_IsUsedToAddVelocityInsteadOverride final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SkillMove_DragToGoal_Update_C_IsUsedToAddVelocityInsteadOverride;
-
-// LuaFunction SkillMove_DragToGoal_Update.SkillMove_DragToGoal_Update_C.OnMoveStart
-// 0x0010 (0x0010 - 0x0000)
-struct SkillMove_DragToGoal_Update_C_OnMoveStart final
-{
-public:
-	class AActor*                                 Launcher;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UBaseMovementComponent*                 Movement;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SkillMove_DragToGoal_Update_C_OnMoveStart;
-
-// LuaFunction SkillMove_DragToGoal_Update.SkillMove_DragToGoal_Update_C.OnMoveEnd
-// 0x0008 (0x0008 - 0x0000)
-struct SkillMove_DragToGoal_Update_C_OnMoveEnd final
-{
-public:
-	class UBaseMovementComponent*                 Movement;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SkillMove_DragToGoal_Update_C_OnMoveEnd;
 
 // Function SkillMove_DragToGoal_Update.SkillMove_DragToGoal_Update_C.ReceiveActorBeginOverlap_1
 // 0x0008 (0x0008 - 0x0000)

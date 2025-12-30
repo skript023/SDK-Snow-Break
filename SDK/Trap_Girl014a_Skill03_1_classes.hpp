@@ -40,8 +40,8 @@ public:
 public:
 	void ReceiveBeginPlay();
 	void StartFallEffect(bool bIsServer);
-	void Client_OnActive();
 	void Server_OnActive();
+	void Client_OnActive();
 	void ExecuteUbergraph_Trap_Girl014a_Skill03_1(int32 EntryPoint);
 
 public:

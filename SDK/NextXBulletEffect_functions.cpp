@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function NextXBulletEffect.NextXBulletEffect_C.SetModifierNextBullet
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UNextXBulletEffect_C::SetModifierNextBullet()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NextXBulletEffect_C", "SetModifierNextBullet");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function NextXBulletEffect.NextXBulletEffect_C.CheckState
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -56,6 +70,26 @@ void UNextXBulletEffect_C::K2_ReceiveInitialize(const TArray<struct FParamInfo>&
 
 	Parms.Info = std::move(Info);
 	Parms.lpInstigator = lpInstigator;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function NextXBulletEffect.NextXBulletEffect_C.K2_ReceiveDeActive
+// (Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class UGameAbilityComponent*      Pawn                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UNextXBulletEffect_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NextXBulletEffect_C", "K2_ReceiveDeActive");
+
+	Params::NextXBulletEffect_C_K2_ReceiveDeActive Parms{};
+
+	Parms.Pawn = Pawn;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -101,6 +135,30 @@ void UNextXBulletEffect_C::K2_ReceiveActive(const class UObject* Instigator)
 }
 
 
+// Function NextXBulletEffect.NextXBulletEffect_C.OnPlayerActionFlay
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AGameCharacter*                   CurCharacter                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECharacterActionState                   InType                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bSet                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UNextXBulletEffect_C::OnPlayerActionFlay(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NextXBulletEffect_C", "OnPlayerActionFlay");
+
+	Params::NextXBulletEffect_C_OnPlayerActionFlay Parms{};
+
+	Parms.CurCharacter = CurCharacter;
+	Parms.InType = InType;
+	Parms.bSet = bSet;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function NextXBulletEffect.NextXBulletEffect_C.ReceiveOnPreWeaponFire
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -132,64 +190,6 @@ void UNextXBulletEffect_C::ReceiveOnOverlaid()
 		Func = Class->GetFunction("NextXBulletEffect_C", "ReceiveOnOverlaid");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function NextXBulletEffect.NextXBulletEffect_C.SetModifierNextBullet
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UNextXBulletEffect_C::SetModifierNextBullet()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NextXBulletEffect_C", "SetModifierNextBullet");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function NextXBulletEffect.NextXBulletEffect_C.K2_ReceiveDeActive
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class UGameAbilityComponent*      Pawn                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UNextXBulletEffect_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NextXBulletEffect_C", "K2_ReceiveDeActive");
-
-	Params::NextXBulletEffect_C_K2_ReceiveDeActive Parms{};
-
-	Parms.Pawn = Pawn;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function NextXBulletEffect.NextXBulletEffect_C.OnPlayerActionFlay
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AGameCharacter*                   CurCharacter                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECharacterActionState                   InType                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bSet                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UNextXBulletEffect_C::OnPlayerActionFlay(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NextXBulletEffect_C", "OnPlayerActionFlay");
-
-	Params::NextXBulletEffect_C_OnPlayerActionFlay Parms{};
-
-	Parms.CurCharacter = CurCharacter;
-	Parms.InType = InType;
-	Parms.bSet = bSet;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

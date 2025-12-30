@@ -17,25 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction Emitter_CastNewSkill.Emitter_CastNewSkill_C.EmitterDestroyLua
-// (Native, Event, Public, BlueprintEvent)
-
-void UEmitter_CastNewSkill_C::EmitterDestroyLua()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_CastNewSkill_C", "EmitterDestroyLua");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction Emitter_CastNewSkill.Emitter_CastNewSkill_C.OnEmitEnd
 // (Native, Event, Protected, BlueprintEvent)
 
@@ -77,6 +58,25 @@ EEmitterResult UEmitter_CastNewSkill_C::OnEmit()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// LuaFunction Emitter_CastNewSkill.Emitter_CastNewSkill_C.EmitterDestroyLua
+// (Native, Event, Public, BlueprintEvent)
+
+void UEmitter_CastNewSkill_C::EmitterDestroyLua()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Emitter_CastNewSkill_C", "EmitterDestroyLua");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

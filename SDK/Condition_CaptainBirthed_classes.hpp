@@ -28,11 +28,11 @@ public:
 public:
 	bool K2_CheckCondition(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void K2_InitCondition();
-	void BindEvent();
 	void UnbindEvent();
-	void CustomEvent(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet);
 	void K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void K2_UnbindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
+	void BindEvent();
+	void CustomEvent(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet);
 	void ExecuteUbergraph_Condition_CaptainBirthed(int32 EntryPoint);
 
 public:

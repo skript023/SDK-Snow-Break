@@ -17,25 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.TriggerInteract
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_fragmentstory_box_C::TriggerInteract()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "TriggerInteract");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.UpdateKeyShow
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
@@ -45,25 +26,6 @@ void Uuw_fight_fragmentstory_box_C::UpdateKeyShow()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "UpdateKeyShow");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.BindExitInteractEvent
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_fragmentstory_box_C::BindExitInteractEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "BindExitInteractEvent");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93,6 +55,44 @@ void Uuw_fight_fragmentstory_box_C::BindKeyBoardOnSettingChange()
 }
 
 
+// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.BindExitInteractEvent
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_fragmentstory_box_C::BindExitInteractEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "BindExitInteractEvent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.TriggerInteract
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_fragmentstory_box_C::TriggerInteract()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "TriggerInteract");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.InitGamepadLongPressUI
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
@@ -112,15 +112,15 @@ void Uuw_fight_fragmentstory_box_C::InitGamepadLongPressUI()
 }
 
 
-// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_fragmentstory_box_C::OnConstruct()
+void Uuw_fight_fragmentstory_box_C::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "OnConstruct");
+		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -131,15 +131,15 @@ void Uuw_fight_fragmentstory_box_C::OnConstruct()
 }
 
 
-// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_fragmentstory_box_C::Destruct()
+void Uuw_fight_fragmentstory_box_C::OnConstruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "Destruct");
+		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "OnConstruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

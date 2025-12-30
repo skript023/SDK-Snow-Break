@@ -178,15 +178,15 @@ public:
 	void PlayEffect(const EPlayerItemEffectType InEffectType, bool bQTEEndSwitchBack);
 	void Play_Activation(bool bForward);
 	void IsInFight(bool* InFight);
-	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
-	void NotifyDataChange();
-	void Construct();
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void UpdateKeyboard(int32 InIndex);
 	void OnAnimationFinished(const class UWidgetAnimation* Animation);
-	void NotifyReviveCdOK();
+	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
 	void NotifyClick(EPlayerBtnType BtnType);
 	void NotifyRefreshCharacter();
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void NotifyDataChange();
+	void NotifyReviveCdOK();
+	void Construct();
 	void Destruct();
 
 	class FString GetModuleName() const;

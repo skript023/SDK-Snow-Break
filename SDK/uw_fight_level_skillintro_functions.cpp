@@ -59,25 +59,6 @@ void Uuw_fight_level_skillintro_C::Tick__Overridden(const struct FGeometry& MyGe
 }
 
 
-// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_level_skillintro_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_skillintro_C", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -130,15 +111,15 @@ void Uuw_fight_level_skillintro_C::Tick(const struct FGeometry& MyGeometry, floa
 }
 
 
-// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_level_skillintro_C::OnConstruct()
+void Uuw_fight_level_skillintro_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_skillintro_C", "OnConstruct");
+		Func = Class->GetFunction("uw_fight_level_skillintro_C", "Construct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -158,6 +139,25 @@ void Uuw_fight_level_skillintro_C::Destruct()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_level_skillintro_C", "Destruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_level_skillintro_C::OnConstruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_skillintro_C", "OnConstruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

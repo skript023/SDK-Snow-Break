@@ -26,8 +26,8 @@ public:
 	bool                                          bHasTag;                                           // 0x03BC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 	void Construct();
 
 	class FString GetModuleName() const;

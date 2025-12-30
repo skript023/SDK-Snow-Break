@@ -24,7 +24,7 @@ class UPanel_Monster_Buff_C final : public UMonsterItemBuf
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UWidgetAnimation*                       Silent;                                            // 0x03E0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UWidgetAnimation*                       interrupt;                                         // 0x03E8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UWidgetAnimation*                       Interrupt;                                         // 0x03E8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Reset;                                             // 0x03F0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UCustomText*                            CustomText_361;                                    // 0x03F8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         Image_3;                                           // 0x0400(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -34,11 +34,11 @@ public:
 	class URedirectImage*                         Mask_2;                                            // 0x0420(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void K2_OnSkillBlockup(bool bInBlockUp);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
-	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void BP_OnEntryReleased_1();
 	void ExecuteUbergraph_Panel_Monster_Buff(int32 EntryPoint);
+	void BP_OnEntryReleased_1();
+	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void K2_OnSkillBlockup(bool bInBlockUp);
 
 public:
 	static class UClass* StaticClass()

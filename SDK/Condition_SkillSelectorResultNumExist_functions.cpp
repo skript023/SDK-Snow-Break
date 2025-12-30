@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function Condition_SkillSelectorResultNumExist.Condition_SkillSelectorResultNumExist_C.K2_InitCondition
-// (Event, Public, BlueprintEvent)
-
-void UCondition_SkillSelectorResultNumExist_C::K2_InitCondition()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Condition_SkillSelectorResultNumExist_C", "K2_InitCondition");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function Condition_SkillSelectorResultNumExist.Condition_SkillSelectorResultNumExist_C.K2_CheckCondition
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -53,6 +39,20 @@ bool UCondition_SkillSelectorResultNumExist_C::K2_CheckCondition(class UAbilityC
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Condition_SkillSelectorResultNumExist.Condition_SkillSelectorResultNumExist_C.K2_InitCondition
+// (Event, Public, BlueprintEvent)
+
+void UCondition_SkillSelectorResultNumExist_C::K2_InitCondition()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Condition_SkillSelectorResultNumExist_C", "K2_InitCondition");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

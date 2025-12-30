@@ -17,233 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction umg_fight.umg_fight_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uumg_fight_C::Destruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "Destruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction umg_fight.umg_fight_C.CheckFightPartShow
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// EFightWidgetPart                        InPart                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EFightWidgetPartHideReason              InReason                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-bool Uumg_fight_C::CheckFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "CheckFightPartShow");
-
-	Params::umg_fight_C_CheckFightPartShow Parms{};
-
-	Parms.InPart = InPart;
-	Parms.InReason = InReason;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// LuaFunction umg_fight.umg_fight_C.GetFightPartShow
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// EFightWidgetPart                        InPart                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-bool Uumg_fight_C::GetFightPartShow(EFightWidgetPart InPart)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "GetFightPartShow");
-
-	Params::umg_fight_C_GetFightPartShow Parms{};
-
-	Parms.InPart = InPart;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// LuaFunction umg_fight.umg_fight_C.SetFightPartShow
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// EFightWidgetPart                        InPart                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EFightWidgetPartHideReason              InReason                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bForce                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void Uumg_fight_C::SetFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason, bool bShow, bool bForce)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "SetFightPartShow");
-
-	Params::umg_fight_C_SetFightPartShow Parms{};
-
-	Parms.InPart = InPart;
-	Parms.InReason = InReason;
-	Parms.bShow = bShow;
-	Parms.bForce = bForce;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction umg_fight.umg_fight_C.UpdateInteractionProgress
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uumg_fight_C::UpdateInteractionProgress(float InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "UpdateInteractionProgress");
-
-	Params::umg_fight_C_UpdateInteractionProgress Parms{};
-
-	Parms.InValue = InValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction umg_fight.umg_fight_C.HideSkillSelector
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   SkillIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uumg_fight_C::HideSkillSelector(int32 SkillIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "HideSkillSelector");
-
-	Params::umg_fight_C_HideSkillSelector Parms{};
-
-	Parms.SkillIndex = SkillIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction umg_fight.umg_fight_C.UpdateControl
-// (Native, Event, Public, BlueprintEvent)
-
-void Uumg_fight_C::UpdateControl()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "UpdateControl");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction umg_fight.umg_fight_C.ShowOrHideCross
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void Uumg_fight_C::ShowOrHideCross(bool bShow)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "ShowOrHideCross");
-
-	Params::umg_fight_C_ShowOrHideCross Parms{};
-
-	Parms.bShow = bShow;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction umg_fight.umg_fight_C.ShowSkillSelector
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   SkillIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uumg_fight_C::ShowSkillSelector(int32 SkillIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "ShowSkillSelector");
-
-	Params::umg_fight_C_ShowSkillSelector Parms{};
-
-	Parms.SkillIndex = SkillIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function umg_fight.umg_fight_C.ExecuteUbergraph_umg_fight
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -494,26 +267,228 @@ class FText Uumg_fight_C::Get_TxtOnlineNum_Text_0()
 }
 
 
-// LuaFunction umg_fight.umg_fight_C.WidgetGeometryReadyFrame
-// (Native, Event, Public, BlueprintEvent, Const)
+// LuaFunction umg_fight.umg_fight_C.GetFightPartShow
+// (Native, Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   Frame                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EFightWidgetPart                        InPart                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-void Uumg_fight_C::WidgetGeometryReadyFrame(int32 Frame) const
+bool Uumg_fight_C::GetFightPartShow(EFightWidgetPart InPart)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "WidgetGeometryReadyFrame");
+		Func = Class->GetFunction("umg_fight_C", "GetFightPartShow");
 
-	Params::umg_fight_C_WidgetGeometryReadyFrame Parms{};
+	Params::umg_fight_C_GetFightPartShow Parms{};
 
-	Parms.Frame = Frame;
+	Parms.InPart = InPart;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// LuaFunction umg_fight.umg_fight_C.UpdateControl
+// (Native, Event, Public, BlueprintEvent)
+
+void Uumg_fight_C::UpdateControl()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_fight_C", "UpdateControl");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction umg_fight.umg_fight_C.CheckFightPartShow
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// EFightWidgetPart                        InPart                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EFightWidgetPartHideReason              InReason                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+bool Uumg_fight_C::CheckFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_fight_C", "CheckFightPartShow");
+
+	Params::umg_fight_C_CheckFightPartShow Parms{};
+
+	Parms.InPart = InPart;
+	Parms.InReason = InReason;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// LuaFunction umg_fight.umg_fight_C.SetFightPartShow
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// EFightWidgetPart                        InPart                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EFightWidgetPartHideReason              InReason                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    bForce                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void Uumg_fight_C::SetFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason, bool bShow, bool bForce)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_fight_C", "SetFightPartShow");
+
+	Params::umg_fight_C_SetFightPartShow Parms{};
+
+	Parms.InPart = InPart;
+	Parms.InReason = InReason;
+	Parms.bShow = bShow;
+	Parms.bForce = bForce;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction umg_fight.umg_fight_C.ShowOrHideCross
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void Uumg_fight_C::ShowOrHideCross(bool bShow)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_fight_C", "ShowOrHideCross");
+
+	Params::umg_fight_C_ShowOrHideCross Parms{};
+
+	Parms.bShow = bShow;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction umg_fight.umg_fight_C.UpdateInteractionProgress
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uumg_fight_C::UpdateInteractionProgress(float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_fight_C", "UpdateInteractionProgress");
+
+	Params::umg_fight_C_UpdateInteractionProgress Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction umg_fight.umg_fight_C.ShowSkillSelector
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   SkillIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uumg_fight_C::ShowSkillSelector(int32 SkillIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_fight_C", "ShowSkillSelector");
+
+	Params::umg_fight_C_ShowSkillSelector Parms{};
+
+	Parms.SkillIndex = SkillIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction umg_fight.umg_fight_C.HideSkillSelector
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   SkillIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uumg_fight_C::HideSkillSelector(int32 SkillIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_fight_C", "HideSkillSelector");
+
+	Params::umg_fight_C_HideSkillSelector Parms{};
+
+	Parms.SkillIndex = SkillIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction umg_fight.umg_fight_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uumg_fight_C::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_fight_C", "Destruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -536,6 +511,31 @@ class FString Uumg_fight_C::GetModuleName() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// LuaFunction umg_fight.umg_fight_C.WidgetGeometryReadyFrame
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// int32                                   Frame                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uumg_fight_C::WidgetGeometryReadyFrame(int32 Frame) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_fight_C", "WidgetGeometryReadyFrame");
+
+	Params::umg_fight_C_WidgetGeometryReadyFrame Parms{};
+
+	Parms.Frame = Frame;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 }

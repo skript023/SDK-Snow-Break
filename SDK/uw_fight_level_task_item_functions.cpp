@@ -17,35 +17,111 @@
 namespace SDK
 {
 
-// Function uw_fight_level_task_item.uw_fight_level_task_item_C.BP_OnEntryReleased
-// (Event, Protected, BlueprintEvent)
+// Function uw_fight_level_task_item.uw_fight_level_task_item_C.ExecuteUbergraph_uw_fight_level_task_item
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_level_task_item_C::BP_OnEntryReleased()
+void Uuw_fight_level_task_item_C::ExecuteUbergraph_uw_fight_level_task_item(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_item_C", "BP_OnEntryReleased");
+		Func = Class->GetFunction("uw_fight_level_task_item_C", "ExecuteUbergraph_uw_fight_level_task_item");
+
+	Params::uw_fight_level_task_item_C_ExecuteUbergraph_uw_fight_level_task_item Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_level_task_item.uw_fight_level_task_item_C.OnClickTask
+// (BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_level_task_item_C::OnClickTask()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_task_item_C", "OnClickTask");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function uw_fight_level_task_item.uw_fight_level_task_item_C.BP_OnItemExpansionChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// Function uw_fight_level_task_item.uw_fight_level_task_item_C.Destruct__Overridden
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void Uuw_fight_level_task_item_C::BP_OnItemExpansionChanged(bool bIsExpanded)
+void Uuw_fight_level_task_item_C::Destruct__Overridden()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_item_C", "BP_OnItemExpansionChanged");
+		Func = Class->GetFunction("uw_fight_level_task_item_C", "Destruct__Overridden");
 
-	Params::uw_fight_level_task_item_C_BP_OnItemExpansionChanged Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.bIsExpanded = bIsExpanded;
+
+// Function uw_fight_level_task_item.uw_fight_level_task_item_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_level_task_item_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_task_item_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_level_task_item.uw_fight_level_task_item_C.BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void Uuw_fight_level_task_item_C::BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_task_item_C", "BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_level_task_item.uw_fight_level_task_item_C.BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void Uuw_fight_level_task_item_C::BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_task_item_C", "BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_level_task_item.uw_fight_level_task_item_C.OnListItemObjectSet__Overridden
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UObject*                          ListItemObject                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_level_task_item_C::OnListItemObjectSet__Overridden(class UObject* ListItemObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_task_item_C", "OnListItemObjectSet__Overridden");
+
+	Params::uw_fight_level_task_item_C_OnListItemObjectSet__Overridden Parms{};
+
+	Parms.ListItemObject = ListItemObject;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -71,113 +147,37 @@ void Uuw_fight_level_task_item_C::BP_OnItemSelectionChanged(bool bIsSelected)
 }
 
 
-// Function uw_fight_level_task_item.uw_fight_level_task_item_C.OnListItemObjectSet__Overridden
+// Function uw_fight_level_task_item.uw_fight_level_task_item_C.BP_OnItemExpansionChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UObject*                          ListItemObject                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_level_task_item_C::OnListItemObjectSet__Overridden(class UObject* ListItemObject)
+void Uuw_fight_level_task_item_C::BP_OnItemExpansionChanged(bool bIsExpanded)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_item_C", "OnListItemObjectSet__Overridden");
+		Func = Class->GetFunction("uw_fight_level_task_item_C", "BP_OnItemExpansionChanged");
 
-	Params::uw_fight_level_task_item_C_OnListItemObjectSet__Overridden Parms{};
+	Params::uw_fight_level_task_item_C_BP_OnItemExpansionChanged Parms{};
 
-	Parms.ListItemObject = ListItemObject;
+	Parms.bIsExpanded = bIsExpanded;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_level_task_item.uw_fight_level_task_item_C.BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature
-// (BlueprintEvent)
+// Function uw_fight_level_task_item.uw_fight_level_task_item_C.BP_OnEntryReleased
+// (Event, Protected, BlueprintEvent)
 
-void Uuw_fight_level_task_item_C::BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature()
+void Uuw_fight_level_task_item_C::BP_OnEntryReleased()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_item_C", "BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature");
+		Func = Class->GetFunction("uw_fight_level_task_item_C", "BP_OnEntryReleased");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_level_task_item.uw_fight_level_task_item_C.BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void Uuw_fight_level_task_item_C::BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_item_C", "BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_level_task_item.uw_fight_level_task_item_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_level_task_item_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_item_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_level_task_item.uw_fight_level_task_item_C.Destruct__Overridden
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_level_task_item_C::Destruct__Overridden()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_item_C", "Destruct__Overridden");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_level_task_item.uw_fight_level_task_item_C.OnClickTask
-// (BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_level_task_item_C::OnClickTask()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_item_C", "OnClickTask");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_level_task_item.uw_fight_level_task_item_C.ExecuteUbergraph_uw_fight_level_task_item
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_level_task_item_C::ExecuteUbergraph_uw_fight_level_task_item(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_item_C", "ExecuteUbergraph_uw_fight_level_task_item");
-
-	Params::uw_fight_level_task_item_C_ExecuteUbergraph_uw_fight_level_task_item Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

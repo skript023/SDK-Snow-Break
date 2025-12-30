@@ -21,13 +21,13 @@ namespace SDK
 class Uuw_fight_enter_bunker_item_C final : public Uuw_fight_interactitem_C
 {
 public:
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 	void InitGamepadLongPressUI();
-	void BindKeyBoardOnSettingChange();
 	void BindExitInteractEvent();
-	void UpdateKeyShow();
 	void TriggerInteract();
+	void BindKeyBoardOnSettingChange();
+	void UpdateKeyShow();
 
 	class FString GetModuleName() const;
 

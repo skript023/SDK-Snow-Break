@@ -27,9 +27,9 @@ public:
 	bool                                          bContainQTE;                                       // 0x0111(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	bool K2_CheckCondition(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void K2_InitCondition();
 	void ExecuteUbergraph_Condition_CheckIsFightPlayer(int32 EntryPoint);
+	bool K2_CheckCondition(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 
 public:
 	static class UClass* StaticClass()

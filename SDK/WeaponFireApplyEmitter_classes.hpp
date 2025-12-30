@@ -27,12 +27,12 @@ public:
 
 public:
 	TArray<struct FSoftObjectPath> OnGetAssetPath(const TArray<struct FParamInfo>& InParams, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
+	void IsActive(bool* bActive);
 	void K2_ReceiveInitialize(const TArray<struct FParamInfo>& Info);
+	void K2_ReceiveActive();
 	void K2_ReceiveDeActive();
 	void ReceiveOnWeaponFire(uint8 ForceShootCount);
 	void ExecuteUbergraph_WeaponFireApplyEmitter(int32 EntryPoint);
-	void IsActive(bool* bActive);
-	void K2_ReceiveActive();
 
 public:
 	static class UClass* StaticClass()

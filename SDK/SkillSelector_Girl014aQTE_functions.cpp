@@ -99,6 +99,20 @@ void ASkillSelector_Girl014aQTE_C::GetAllTargets(TArray<struct FQueryResult>* Ou
 }
 
 
+// Function SkillSelector_Girl014aQTE.SkillSelector_Girl014aQTE_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ASkillSelector_Girl014aQTE_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillSelector_Girl014aQTE_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function SkillSelector_Girl014aQTE.SkillSelector_Girl014aQTE_C.ExecuteUbergraph_SkillSelector_Girl014aQTE
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -116,20 +130,6 @@ void ASkillSelector_Girl014aQTE_C::ExecuteUbergraph_SkillSelector_Girl014aQTE(in
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function SkillSelector_Girl014aQTE.SkillSelector_Girl014aQTE_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ASkillSelector_Girl014aQTE_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillSelector_Girl014aQTE_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

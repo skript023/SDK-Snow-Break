@@ -17,15 +17,6 @@
 namespace SDK::Params
 {
 
-// LuaFunction SkillSelector_YunZhuan_NormalSkill.SkillSelector_YunZhuan_NormalSkill_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct SkillSelector_YunZhuan_NormalSkill_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_SkillSelector_YunZhuan_NormalSkill_C_ReceiveTick;
-
 // LuaFunction SkillSelector_YunZhuan_NormalSkill.SkillSelector_YunZhuan_NormalSkill_C.GetPartitionMainPart
 // 0x0058 (0x0058 - 0x0000)
 struct SkillSelector_YunZhuan_NormalSkill_C_GetPartitionMainPart final
@@ -37,19 +28,6 @@ public:
 	struct FBoneResult                            BoneResult;                                        // 0x0030(0x0028)(Parm, OutParm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_SkillSelector_YunZhuan_NormalSkill_C_GetPartitionMainPart;
-
-// LuaFunction SkillSelector_YunZhuan_NormalSkill.SkillSelector_YunZhuan_NormalSkill_C.GetPartitionMainBone
-// 0x0060 (0x0060 - 0x0000)
-struct SkillSelector_YunZhuan_NormalSkill_C_GetPartitionMainBone final
-{
-public:
-	struct FBoneResult                            PartitionResult;                                   // 0x0000(0x0028)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
-	bool                                          IsValid;                                           // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBoneResult                            BoneResult;                                        // 0x0030(0x0028)(Parm, OutParm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
-	class AGameCharacter*                         GameCharacter;                                     // 0x0058(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_SkillSelector_YunZhuan_NormalSkill_C_GetPartitionMainBone;
 
 // LuaFunction SkillSelector_YunZhuan_NormalSkill.SkillSelector_YunZhuan_NormalSkill_C.GetAllTargetWithWeakResults
 // 0x0020 (0x0020 - 0x0000)
@@ -71,6 +49,28 @@ public:
 	TArray<struct FQueryResult>                   Results;                                           // 0x0018(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_SkillSelector_YunZhuan_NormalSkill_C_GetAllQueryResults;
+
+// LuaFunction SkillSelector_YunZhuan_NormalSkill.SkillSelector_YunZhuan_NormalSkill_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct SkillSelector_YunZhuan_NormalSkill_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SkillSelector_YunZhuan_NormalSkill_C_ReceiveTick;
+
+// LuaFunction SkillSelector_YunZhuan_NormalSkill.SkillSelector_YunZhuan_NormalSkill_C.GetPartitionMainBone
+// 0x0060 (0x0060 - 0x0000)
+struct SkillSelector_YunZhuan_NormalSkill_C_GetPartitionMainBone final
+{
+public:
+	struct FBoneResult                            PartitionResult;                                   // 0x0000(0x0028)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
+	bool                                          IsValid;                                           // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBoneResult                            BoneResult;                                        // 0x0030(0x0028)(Parm, OutParm, NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
+	class AGameCharacter*                         GameCharacter;                                     // 0x0058(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SkillSelector_YunZhuan_NormalSkill_C_GetPartitionMainBone;
 
 // LuaFunction SkillSelector_YunZhuan_NormalSkill.SkillSelector_YunZhuan_NormalSkill_C.GetSortedPartitions
 // 0x0018 (0x0018 - 0x0000)

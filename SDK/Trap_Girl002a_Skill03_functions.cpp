@@ -45,6 +45,20 @@ void ATrap_Girl002a_Skill03_C::Client_OnActive()
 }
 
 
+// Function Trap_Girl002a_Skill03.Trap_Girl002a_Skill03_C.Server_OnActive
+// (Event, Public, BlueprintEvent)
+
+void ATrap_Girl002a_Skill03_C::Server_OnActive()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Trap_Girl002a_Skill03_C", "Server_OnActive");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function Trap_Girl002a_Skill03.Trap_Girl002a_Skill03_C.ExecuteUbergraph_Trap_Girl002a_Skill03
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -62,20 +76,6 @@ void ATrap_Girl002a_Skill03_C::ExecuteUbergraph_Trap_Girl002a_Skill03(int32 Entr
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Trap_Girl002a_Skill03.Trap_Girl002a_Skill03_C.Server_OnActive
-// (Event, Public, BlueprintEvent)
-
-void ATrap_Girl002a_Skill03_C::Server_OnActive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Trap_Girl002a_Skill03_C", "Server_OnActive");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

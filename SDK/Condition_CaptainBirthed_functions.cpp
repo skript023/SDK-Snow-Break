@@ -56,20 +56,6 @@ void UCondition_CaptainBirthed_C::K2_InitCondition()
 }
 
 
-// Function Condition_CaptainBirthed.Condition_CaptainBirthed_C.BindEvent
-// (BlueprintCallable, BlueprintEvent)
-
-void UCondition_CaptainBirthed_C::BindEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Condition_CaptainBirthed_C", "BindEvent");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function Condition_CaptainBirthed.Condition_CaptainBirthed_C.UnbindEvent
 // (BlueprintCallable, BlueprintEvent)
 
@@ -81,30 +67,6 @@ void UCondition_CaptainBirthed_C::UnbindEvent()
 		Func = Class->GetFunction("Condition_CaptainBirthed_C", "UnbindEvent");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Condition_CaptainBirthed.Condition_CaptainBirthed_C.CustomEvent
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AGameCharacter*                   CurCharacter                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECharacterActionState                   InType                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bSet                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UCondition_CaptainBirthed_C::CustomEvent(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Condition_CaptainBirthed_C", "CustomEvent");
-
-	Params::Condition_CaptainBirthed_C_CustomEvent Parms{};
-
-	Parms.CurCharacter = CurCharacter;
-	Parms.InType = InType;
-	Parms.bSet = bSet;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -147,6 +109,44 @@ void UCondition_CaptainBirthed_C::K2_UnbindEvent(class UAbilityComponentBase* In
 
 	Parms.InCurLauncher = InCurLauncher;
 	Parms.InCurLauncherChara = InCurLauncherChara;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Condition_CaptainBirthed.Condition_CaptainBirthed_C.BindEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void UCondition_CaptainBirthed_C::BindEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Condition_CaptainBirthed_C", "BindEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Condition_CaptainBirthed.Condition_CaptainBirthed_C.CustomEvent
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AGameCharacter*                   CurCharacter                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECharacterActionState                   InType                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bSet                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UCondition_CaptainBirthed_C::CustomEvent(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Condition_CaptainBirthed_C", "CustomEvent");
+
+	Params::Condition_CaptainBirthed_C_CustomEvent Parms{};
+
+	Parms.CurCharacter = CurCharacter;
+	Parms.InType = InType;
+	Parms.bSet = bSet;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

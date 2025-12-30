@@ -17,16 +17,6 @@
 namespace SDK::Params
 {
 
-// LuaFunction InjuryTransmissionSimilar.InjuryTransmissionSimilar_C.K2_ReceiveInitialize
-// 0x0018 (0x0018 - 0x0000)
-struct InjuryTransmissionSimilar_C_K2_ReceiveInitialize final
-{
-public:
-	TArray<struct FParamInfo>                     Info;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	const class UGameAbilityComponent*            lpInstigator;                                      // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InjuryTransmissionSimilar_C_K2_ReceiveInitialize;
-
 // LuaFunction InjuryTransmissionSimilar.InjuryTransmissionSimilar_C.K2_InjuryTransmission
 // 0x02B8 (0x02B8 - 0x0000)
 struct InjuryTransmissionSimilar_C_K2_InjuryTransmission final
@@ -37,6 +27,16 @@ public:
 	struct FApplyDamageResultData                 Info;                                              // 0x01F8(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_InjuryTransmissionSimilar_C_K2_InjuryTransmission;
+
+// LuaFunction InjuryTransmissionSimilar.InjuryTransmissionSimilar_C.K2_ReceiveInitialize
+// 0x0018 (0x0018 - 0x0000)
+struct InjuryTransmissionSimilar_C_K2_ReceiveInitialize final
+{
+public:
+	TArray<struct FParamInfo>                     Info;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	const class UGameAbilityComponent*            lpInstigator;                                      // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InjuryTransmissionSimilar_C_K2_ReceiveInitialize;
 
 // Function InjuryTransmissionSimilar.InjuryTransmissionSimilar_C.OnGetAssetPath
 // 0x0088 (0x0088 - 0x0000)

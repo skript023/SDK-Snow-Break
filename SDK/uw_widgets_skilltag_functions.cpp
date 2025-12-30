@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function uw_widgets_skilltag.uw_widgets_skilltag_C.BP_OnEntryReleased
-// (Event, Protected, BlueprintEvent)
-
-void Uuw_widgets_skilltag_C::BP_OnEntryReleased()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_widgets_skilltag_C", "BP_OnEntryReleased");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function uw_widgets_skilltag.uw_widgets_skilltag_C.BP_OnItemExpansionChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -51,26 +37,6 @@ void Uuw_widgets_skilltag_C::BP_OnItemExpansionChanged(bool bIsExpanded)
 }
 
 
-// Function uw_widgets_skilltag.uw_widgets_skilltag_C.BP_OnItemSelectionChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bIsSelected                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_widgets_skilltag_C::BP_OnItemSelectionChanged(bool bIsSelected)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_widgets_skilltag_C", "BP_OnItemSelectionChanged");
-
-	Params::uw_widgets_skilltag_C_BP_OnItemSelectionChanged Parms{};
-
-	Parms.bIsSelected = bIsSelected;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_widgets_skilltag.uw_widgets_skilltag_C.OnListItemObjectSet__Overridden
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -86,6 +52,40 @@ void Uuw_widgets_skilltag_C::OnListItemObjectSet__Overridden(class UObject* List
 	Params::uw_widgets_skilltag_C_OnListItemObjectSet__Overridden Parms{};
 
 	Parms.ListItemObject = ListItemObject;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_widgets_skilltag.uw_widgets_skilltag_C.BP_OnEntryReleased
+// (Event, Protected, BlueprintEvent)
+
+void Uuw_widgets_skilltag_C::BP_OnEntryReleased()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_widgets_skilltag_C", "BP_OnEntryReleased");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_widgets_skilltag.uw_widgets_skilltag_C.BP_OnItemSelectionChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsSelected                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_widgets_skilltag_C::BP_OnItemSelectionChanged(bool bIsSelected)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_widgets_skilltag_C", "BP_OnItemSelectionChanged");
+
+	Params::uw_widgets_skilltag_C_BP_OnItemSelectionChanged Parms{};
+
+	Parms.bIsSelected = bIsSelected;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -136,15 +136,15 @@ void Uuw_widgets_skilltag_C::OnListItemObjectSet(class UObject* ListItemObject)
 }
 
 
-// LuaFunction uw_widgets_skilltag.uw_widgets_skilltag_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_widgets_skilltag.uw_widgets_skilltag_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_widgets_skilltag_C::OnConstruct()
+void Uuw_widgets_skilltag_C::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_widgets_skilltag_C", "OnConstruct");
+		Func = Class->GetFunction("uw_widgets_skilltag_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -155,15 +155,15 @@ void Uuw_widgets_skilltag_C::OnConstruct()
 }
 
 
-// LuaFunction uw_widgets_skilltag.uw_widgets_skilltag_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_widgets_skilltag.uw_widgets_skilltag_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
 
-void Uuw_widgets_skilltag_C::Destruct()
+void Uuw_widgets_skilltag_C::OnConstruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_widgets_skilltag_C", "Destruct");
+		Func = Class->GetFunction("uw_widgets_skilltag_C", "OnConstruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

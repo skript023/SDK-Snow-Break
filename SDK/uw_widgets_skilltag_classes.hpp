@@ -27,14 +27,14 @@ public:
 	class URedirectTextBlock*                     TxtType;                                           // 0x03C0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void BP_OnEntryReleased();
 	void BP_OnItemExpansionChanged(bool bIsExpanded);
-	void BP_OnItemSelectionChanged(bool bIsSelected);
 	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
+	void BP_OnEntryReleased();
+	void BP_OnItemSelectionChanged(bool bIsSelected);
 	void ExecuteUbergraph_uw_widgets_skilltag(int32 EntryPoint);
 	void OnListItemObjectSet(class UObject* ListItemObject);
-	void OnConstruct();
 	void Destruct();
+	void OnConstruct();
 
 	class FString GetModuleName() const;
 

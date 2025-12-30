@@ -36,26 +36,6 @@ void Uumg_pause_C::Destruct()
 }
 
 
-// Function umg_pause.umg_pause_C.GetModuleName
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-
-class FString Uumg_pause_C::GetModuleName() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_pause_C", "GetModuleName");
-
-	Params::umg_pause_C_GetModuleName Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // LuaFunction umg_pause.umg_pause_C.WidgetGeometryReadyFrame
 // (Native, Event, Public, BlueprintEvent, Const)
 // Parameters:
@@ -78,6 +58,26 @@ void Uumg_pause_C::WidgetGeometryReadyFrame(int32 Frame) const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function umg_pause.umg_pause_C.GetModuleName
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+
+class FString Uumg_pause_C::GetModuleName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_pause_C", "GetModuleName");
+
+	Params::umg_pause_C_GetModuleName Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 }

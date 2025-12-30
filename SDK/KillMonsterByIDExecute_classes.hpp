@@ -25,15 +25,15 @@ public:
 	int32                                         Mid;                                               // 0x022C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnActive_Client();
-	void OnActive();
-	class FString GetDescription();
-	void OnEnd();
 	void OnCountDown_Client();
 	void OnEnd_Client();
+	void OnActive();
+	void OnEnd();
+	class FString GetDescription();
+	void OnActive_Client();
 
-	class FString GetModuleName() const;
 	class FString GetSpecialStaticDescription() const;
+	class FString GetModuleName() const;
 
 public:
 	static class UClass* StaticClass()
