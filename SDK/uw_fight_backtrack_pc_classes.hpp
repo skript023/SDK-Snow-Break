@@ -84,18 +84,18 @@ public:
 	class UAlphaMaskImage*                        VXlensCap;                                         // 0x0458(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ConstructInLua__Overridden();
-	void Construct();
-	void OnMoveRightStart__Overridden();
-	void OnMoveLeftEnd__Overridden();
 	void ExecuteUbergraph_uw_fight_backtrack_pc(int32 EntryPoint);
-	void OnMoveLeftStart__Overridden();
 	void OnMoveRightEnd__Overridden();
+	void OnMoveLeftEnd__Overridden();
+	void OnMoveRightStart__Overridden();
+	void OnMoveLeftStart__Overridden();
+	void Construct();
+	void ConstructInLua__Overridden();
 	void OnMoveLeftStart();
 	void OnMoveLeftEnd();
-	void ConstructInLua();
 	void OnMoveRightEnd();
 	void OnMoveRightStart();
+	void ConstructInLua();
 	void Destruct();
 
 	class FString GetModuleName() const;

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_classes.hpp"
 #include "ChessMap_classes.hpp"
 #include "Engine_classes.hpp"
 #include "Richman_structs.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 namespace SDK

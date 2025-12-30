@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Landscape_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Landscape_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
@@ -426,6 +426,30 @@ public:
 };
 DUMPER7_ASSERTS_ULandscapeGrassType;
 
+// Class Landscape.LandscapeStreamingProxy
+// 0x0020 (0x05C0 - 0x05A0)
+class ALandscapeStreamingProxy final : public ALandscapeProxy
+{
+public:
+	TLazyObjectPtr<class ALandscape>              LandscapeActor;                                    // 0x05A0(0x001C)(Edit, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5BC[0x4];                                      // 0x05BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LandscapeStreamingProxy")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LandscapeStreamingProxy")
+	}
+	static class ALandscapeStreamingProxy* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ALandscapeStreamingProxy>();
+	}
+};
+DUMPER7_ASSERTS_ALandscapeStreamingProxy;
+
 // Class Landscape.LandscapeHeightfieldCollisionComponent
 // 0x00E0 (0x0540 - 0x0460)
 #pragma pack(push, 0x1)
@@ -497,6 +521,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ULandscapeInfo;
+
+// Class Landscape.LandscapeMeshProxyActor
+// 0x0008 (0x0230 - 0x0228)
+class ALandscapeMeshProxyActor final : public AActor
+{
+public:
+	class ULandscapeMeshProxyComponent*           LandscapeMeshProxyComponent;                       // 0x0228(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LandscapeMeshProxyActor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LandscapeMeshProxyActor")
+	}
+	static class ALandscapeMeshProxyActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ALandscapeMeshProxyActor>();
+	}
+};
+DUMPER7_ASSERTS_ALandscapeMeshProxyActor;
 
 // Class Landscape.LandscapeInfoMap
 // 0x0058 (0x0080 - 0x0028)
@@ -599,29 +646,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ULandscapeMeshCollisionComponent;
-
-// Class Landscape.LandscapeMeshProxyActor
-// 0x0008 (0x0230 - 0x0228)
-class ALandscapeMeshProxyActor final : public AActor
-{
-public:
-	class ULandscapeMeshProxyComponent*           LandscapeMeshProxyComponent;                       // 0x0228(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LandscapeMeshProxyActor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LandscapeMeshProxyActor")
-	}
-	static class ALandscapeMeshProxyActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ALandscapeMeshProxyActor>();
-	}
-};
-DUMPER7_ASSERTS_ALandscapeMeshProxyActor;
 
 // Class Landscape.LandscapeMeshProxyComponent
 // 0x0020 (0x0530 - 0x0510)
@@ -766,30 +790,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ULandscapeSplineSegment;
-
-// Class Landscape.LandscapeStreamingProxy
-// 0x0020 (0x05C0 - 0x05A0)
-class ALandscapeStreamingProxy final : public ALandscapeProxy
-{
-public:
-	TLazyObjectPtr<class ALandscape>              LandscapeActor;                                    // 0x05A0(0x001C)(Edit, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5BC[0x4];                                      // 0x05BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LandscapeStreamingProxy")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LandscapeStreamingProxy")
-	}
-	static class ALandscapeStreamingProxy* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ALandscapeStreamingProxy>();
-	}
-};
-DUMPER7_ASSERTS_ALandscapeStreamingProxy;
 
 // Class Landscape.LandscapeSubsystem
 // 0x0018 (0x0048 - 0x0030)

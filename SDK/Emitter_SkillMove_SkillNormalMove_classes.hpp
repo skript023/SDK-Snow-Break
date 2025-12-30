@@ -17,16 +17,16 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0C70 - 0x0C70)
 class UEmitter_SkillMove_SkillNormalMove_C final : public UEmitter_SkillMove_C
 {
 public:
-	void OnEmitterInterrupt();
-	void EmitterDestroyLua();
 	void GetDefaultParamsValue(TArray<struct FParamInfo>* Values);
 	void OnEmitBegin();
-	void OnEmitTick(float DeltaTime);
+	void EmitterDestroyLua();
+	void OnEmitterInterrupt();
 	void OnEmitEnd();
+	void OnEmitTick(float DeltaTime);
 
 public:
 	static class UClass* StaticClass()

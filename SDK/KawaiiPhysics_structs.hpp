@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SeasunAnimGraph_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SeasunAnimGraph_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
@@ -43,6 +43,17 @@ enum class EPlanarConstraint : uint8
 	EPlanarConstraint_MAX                    = 4,
 };
 
+// ScriptStruct KawaiiPhysics.AlphaInertialization
+// 0x001C (0x001C - 0x0000)
+struct FAlphaInertialization final
+{
+public:
+	int32                                         AlphaBlendNumberCount;                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AlphaBlendMaxNumber;                               // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AlphaBlendList[0x5];                               // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAlphaInertialization;
+
 // ScriptStruct KawaiiPhysics.KawaiiPhysicsModifyBone
 // 0x0120 (0x0120 - 0x0000)
 struct FKawaiiPhysicsModifyBone final
@@ -69,17 +80,6 @@ public:
 	float                                         BoneWorldDampingScale;                             // 0x011C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FKawaiiPhysicsModifyBone;
-
-// ScriptStruct KawaiiPhysics.AlphaInertialization
-// 0x001C (0x001C - 0x0000)
-struct FAlphaInertialization final
-{
-public:
-	int32                                         AlphaBlendNumberCount;                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AlphaBlendMaxNumber;                               // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AlphaBlendList[0x5];                               // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAlphaInertialization;
 
 // ScriptStruct KawaiiPhysics.AnimNode_KawaiiPhysics
 // 0x02C8 (0x0390 - 0x00C8)

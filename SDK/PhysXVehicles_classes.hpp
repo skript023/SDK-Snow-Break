@@ -20,35 +20,6 @@
 namespace SDK
 {
 
-// Class PhysXVehicles.VehicleAnimInstance
-// 0x0790 (0x0A50 - 0x02C0)
-#pragma pack(push, 0x1)
-class alignas(0x10) UVehicleAnimInstance : public UAnimInstance
-{
-public:
-	uint8                                         Pad_2B8[0x788];                                    // 0x02B8(0x0788)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWheeledVehicleMovementComponent*       WheeledVehicleMovementComponent;                   // 0x0A40(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	class AWheeledVehicle* GetVehicle();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("VehicleAnimInstance")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"VehicleAnimInstance")
-	}
-	static class UVehicleAnimInstance* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UVehicleAnimInstance>();
-	}
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_UVehicleAnimInstance;
-
 // Class PhysXVehicles.WheeledVehicleMovementComponent
 // 0x0158 (0x0290 - 0x0138)
 class UWheeledVehicleMovementComponent : public UPawnMovementComponent
@@ -157,31 +128,30 @@ public:
 };
 DUMPER7_ASSERTS_UWheeledVehicleMovementComponent;
 
-// Class PhysXVehicles.TireConfig
-// 0x0020 (0x0050 - 0x0030)
-class UTireConfig final : public UDataAsset
+// Class PhysXVehicles.SimpleWheeledVehicleMovementComponent
+// 0x0000 (0x0290 - 0x0290)
+class USimpleWheeledVehicleMovementComponent final : public UWheeledVehicleMovementComponent
 {
 public:
-	float                                         FrictionScale;                                     // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FTireConfigMaterialFriction>    TireFrictionScales;                                // 0x0038(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	void SetBrakeTorque(float BrakeTorque, int32 WheelIndex);
+	void SetDriveTorque(float DriveTorque, int32 WheelIndex);
+	void SetSteerAngle(float SteerAngle, int32 WheelIndex);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("TireConfig")
+		STATIC_CLASS_IMPL("SimpleWheeledVehicleMovementComponent")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"TireConfig")
+		STATIC_NAME_IMPL(L"SimpleWheeledVehicleMovementComponent")
 	}
-	static class UTireConfig* GetDefaultObj()
+	static class USimpleWheeledVehicleMovementComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UTireConfig>();
+		return GetDefaultObjImpl<USimpleWheeledVehicleMovementComponent>();
 	}
 };
-DUMPER7_ASSERTS_UTireConfig;
+DUMPER7_ASSERTS_USimpleWheeledVehicleMovementComponent;
 
 // Class PhysXVehicles.WheeledVehicleMovementComponent4W
 // 0x0180 (0x0410 - 0x0290)
@@ -235,6 +205,35 @@ public:
 	}
 };
 DUMPER7_ASSERTS_AWheeledVehicle;
+
+// Class PhysXVehicles.VehicleAnimInstance
+// 0x0790 (0x0A50 - 0x02C0)
+#pragma pack(push, 0x1)
+class alignas(0x10) UVehicleAnimInstance : public UAnimInstance
+{
+public:
+	uint8                                         Pad_2B8[0x788];                                    // 0x02B8(0x0788)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWheeledVehicleMovementComponent*       WheeledVehicleMovementComponent;                   // 0x0A40(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	class AWheeledVehicle* GetVehicle();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("VehicleAnimInstance")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"VehicleAnimInstance")
+	}
+	static class UVehicleAnimInstance* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UVehicleAnimInstance>();
+	}
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_UVehicleAnimInstance;
 
 // Class PhysXVehicles.VehicleWheel
 // 0x00C8 (0x00F0 - 0x0028)
@@ -304,30 +303,31 @@ public:
 };
 DUMPER7_ASSERTS_UVehicleWheel;
 
-// Class PhysXVehicles.SimpleWheeledVehicleMovementComponent
-// 0x0000 (0x0290 - 0x0290)
-class USimpleWheeledVehicleMovementComponent final : public UWheeledVehicleMovementComponent
+// Class PhysXVehicles.TireConfig
+// 0x0020 (0x0050 - 0x0030)
+class UTireConfig final : public UDataAsset
 {
 public:
-	void SetBrakeTorque(float BrakeTorque, int32 WheelIndex);
-	void SetDriveTorque(float DriveTorque, int32 WheelIndex);
-	void SetSteerAngle(float SteerAngle, int32 WheelIndex);
+	float                                         FrictionScale;                                     // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FTireConfigMaterialFriction>    TireFrictionScales;                                // 0x0038(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("SimpleWheeledVehicleMovementComponent")
+		STATIC_CLASS_IMPL("TireConfig")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"SimpleWheeledVehicleMovementComponent")
+		STATIC_NAME_IMPL(L"TireConfig")
 	}
-	static class USimpleWheeledVehicleMovementComponent* GetDefaultObj()
+	static class UTireConfig* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<USimpleWheeledVehicleMovementComponent>();
+		return GetDefaultObjImpl<UTireConfig>();
 	}
 };
-DUMPER7_ASSERTS_USimpleWheeledVehicleMovementComponent;
+DUMPER7_ASSERTS_UTireConfig;
 
 }
 

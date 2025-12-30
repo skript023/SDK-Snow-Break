@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass RandomBuff_4005.RandomBuff_4005_C
-// 0x0000 (0x0160 - 0x0160)
+// 0x0000 (0x0148 - 0x0148)
 class URandomBuff_4005_C final : public UAbilityBufferSkill
 {
 public:

@@ -36,6 +36,26 @@ void Uumg_common_connection_C::Destruct()
 }
 
 
+// Function umg_common_connection.umg_common_connection_C.GetModuleName
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+
+class FString Uumg_common_connection_C::GetModuleName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_common_connection_C", "GetModuleName");
+
+	Params::umg_common_connection_C_GetModuleName Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // LuaFunction umg_common_connection.umg_common_connection_C.WidgetGeometryReadyFrame
 // (Native, Event, Public, BlueprintEvent, Const)
 // Parameters:
@@ -58,26 +78,6 @@ void Uumg_common_connection_C::WidgetGeometryReadyFrame(int32 Frame) const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function umg_common_connection.umg_common_connection_C.GetModuleName
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-
-class FString Uumg_common_connection_C::GetModuleName() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_common_connection_C", "GetModuleName");
-
-	Params::umg_common_connection_C_GetModuleName Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 }

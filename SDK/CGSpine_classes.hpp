@@ -209,6 +209,7 @@ public:
 	void SetCameraLocation(const struct FVector& InValue);
 	void SetCameraRotation(const struct FVector& InValue);
 	void SetCameraZoomScale(float InValue);
+	void SetPerspective(bool bValue);
 
 public:
 	static class UClass* StaticClass()

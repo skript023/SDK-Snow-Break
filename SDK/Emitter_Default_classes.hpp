@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Emitter_Default.Emitter_Default_C
-// 0x0000 (0x0CA0 - 0x0CA0)
+// 0x0000 (0x0C80 - 0x0C80)
 class UEmitter_Default_C final : public USkill_Emitter_Default
 {
 public:

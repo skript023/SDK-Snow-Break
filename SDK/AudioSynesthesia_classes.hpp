@@ -18,26 +18,6 @@
 namespace SDK
 {
 
-// Class AudioSynesthesia.AudioSynesthesiaNRTSettings
-// 0x0000 (0x0028 - 0x0028)
-class UAudioSynesthesiaNRTSettings : public UAudioAnalyzerNRTSettings
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AudioSynesthesiaNRTSettings")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AudioSynesthesiaNRTSettings")
-	}
-	static class UAudioSynesthesiaNRTSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAudioSynesthesiaNRTSettings>();
-	}
-};
-DUMPER7_ASSERTS_UAudioSynesthesiaNRTSettings;
-
 // Class AudioSynesthesia.AudioSynesthesiaNRT
 // 0x0000 (0x0078 - 0x0078)
 class UAudioSynesthesiaNRT : public UAudioAnalyzerNRT
@@ -57,6 +37,53 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAudioSynesthesiaNRT;
+
+// Class AudioSynesthesia.OnsetNRT
+// 0x0008 (0x0080 - 0x0078)
+class UOnsetNRT final : public UAudioSynesthesiaNRT
+{
+public:
+	class UOnsetNRTSettings*                      Settings;                                          // 0x0078(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void GetChannelOnsetsBetweenTimes(const float InStartSeconds, const float InEndSeconds, const int32 InChannel, TArray<float>* OutOnsetTimestamps, TArray<float>* OutOnsetStrengths) const;
+	void GetNormalizedChannelOnsetsBetweenTimes(const float InStartSeconds, const float InEndSeconds, const int32 InChannel, TArray<float>* OutOnsetTimestamps, TArray<float>* OutOnsetStrengths) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OnsetNRT")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OnsetNRT")
+	}
+	static class UOnsetNRT* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOnsetNRT>();
+	}
+};
+DUMPER7_ASSERTS_UOnsetNRT;
+
+// Class AudioSynesthesia.AudioSynesthesiaNRTSettings
+// 0x0000 (0x0028 - 0x0028)
+class UAudioSynesthesiaNRTSettings : public UAudioAnalyzerNRTSettings
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AudioSynesthesiaNRTSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AudioSynesthesiaNRTSettings")
+	}
+	static class UAudioSynesthesiaNRTSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAudioSynesthesiaNRTSettings>();
+	}
+};
+DUMPER7_ASSERTS_UAudioSynesthesiaNRTSettings;
 
 // Class AudioSynesthesia.ConstantQNRTSettings
 // 0x0020 (0x0048 - 0x0028)
@@ -148,35 +175,6 @@ public:
 };
 DUMPER7_ASSERTS_ULoudnessNRTSettings;
 
-// Class AudioSynesthesia.OnsetNRTSettings
-// 0x0018 (0x0040 - 0x0028)
-class UOnsetNRTSettings final : public UAudioSynesthesiaNRTSettings
-{
-public:
-	bool                                          bDownmixToMono;                                    // 0x0028(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         GranularityInSeconds;                              // 0x002C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Sensitivity;                                       // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinimumFrequency;                                  // 0x0034(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaximumFrequency;                                  // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OnsetNRTSettings")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OnsetNRTSettings")
-	}
-	static class UOnsetNRTSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOnsetNRTSettings>();
-	}
-};
-DUMPER7_ASSERTS_UOnsetNRTSettings;
-
 // Class AudioSynesthesia.LoudnessNRT
 // 0x0008 (0x0080 - 0x0078)
 class ULoudnessNRT final : public UAudioSynesthesiaNRT
@@ -206,32 +204,34 @@ public:
 };
 DUMPER7_ASSERTS_ULoudnessNRT;
 
-// Class AudioSynesthesia.OnsetNRT
-// 0x0008 (0x0080 - 0x0078)
-class UOnsetNRT final : public UAudioSynesthesiaNRT
+// Class AudioSynesthesia.OnsetNRTSettings
+// 0x0018 (0x0040 - 0x0028)
+class UOnsetNRTSettings final : public UAudioSynesthesiaNRTSettings
 {
 public:
-	class UOnsetNRTSettings*                      Settings;                                          // 0x0078(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void GetChannelOnsetsBetweenTimes(const float InStartSeconds, const float InEndSeconds, const int32 InChannel, TArray<float>* OutOnsetTimestamps, TArray<float>* OutOnsetStrengths) const;
-	void GetNormalizedChannelOnsetsBetweenTimes(const float InStartSeconds, const float InEndSeconds, const int32 InChannel, TArray<float>* OutOnsetTimestamps, TArray<float>* OutOnsetStrengths) const;
+	bool                                          bDownmixToMono;                                    // 0x0028(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GranularityInSeconds;                              // 0x002C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Sensitivity;                                       // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinimumFrequency;                                  // 0x0034(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaximumFrequency;                                  // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("OnsetNRT")
+		STATIC_CLASS_IMPL("OnsetNRTSettings")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"OnsetNRT")
+		STATIC_NAME_IMPL(L"OnsetNRTSettings")
 	}
-	static class UOnsetNRT* GetDefaultObj()
+	static class UOnsetNRTSettings* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UOnsetNRT>();
+		return GetDefaultObjImpl<UOnsetNRTSettings>();
 	}
 };
-DUMPER7_ASSERTS_UOnsetNRT;
+DUMPER7_ASSERTS_UOnsetNRTSettings;
 
 }
 

@@ -14,25 +14,14 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_ammunition1.uw_fight_ammunition1_C.ExecuteUbergraph_uw_fight_ammunition1
-// 0x0024 (0x0024 - 0x0000)
-struct uw_fight_ammunition1_C_ExecuteUbergraph_uw_fight_ammunition1 final
+// Function uw_fight_ammunition1.uw_fight_ammunition1_C.SetBulletTimeEffect
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_ammunition1_C_SetBulletTimeEffect final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsAnimPlayingFromName_ReturnValue;        // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_Event_bShow_1;                              // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_Event_bShow;                                // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_7[0x1];                                        // 0x0007(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_Event_StartPercent;                         // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_EndPercent;                           // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_Start;                                // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_End;                                  // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_Event_InCurBullet;                          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_Event_InMaxBullet;                          // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_InPercent;                            // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bShow;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_uw_fight_ammunition1_C_ExecuteUbergraph_uw_fight_ammunition1;
+DUMPER7_ASSERTS_uw_fight_ammunition1_C_SetBulletTimeEffect;
 
 // Function uw_fight_ammunition1.uw_fight_ammunition1_C.OnBulletChange
 // 0x000C (0x000C - 0x0000)
@@ -44,36 +33,6 @@ public:
 	float                                         InPercent;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_ammunition1_C_OnBulletChange;
-
-// Function uw_fight_ammunition1.uw_fight_ammunition1_C.SetBulletCountEffect
-// 0x0010 (0x0010 - 0x0000)
-struct uw_fight_ammunition1_C_SetBulletCountEffect final
-{
-public:
-	float                                         StartPercent;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         EndPercent;                                        // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Start;                                             // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         End;                                               // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_ammunition1_C_SetBulletCountEffect;
-
-// Function uw_fight_ammunition1.uw_fight_ammunition1_C.SetBulletTimeEffect
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_ammunition1_C_SetBulletTimeEffect final
-{
-public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_ammunition1_C_SetBulletTimeEffect;
-
-// Function uw_fight_ammunition1.uw_fight_ammunition1_C.SetBulletEffect
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_ammunition1_C_SetBulletEffect final
-{
-public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_ammunition1_C_SetBulletEffect;
 
 // Function uw_fight_ammunition1.uw_fight_ammunition1_C.GetNextLeftCount
 // 0x0050 (0x0050 - 0x0000)
@@ -103,6 +62,47 @@ public:
 	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_ammunition1_C_GetNextLeftCount;
+
+// Function uw_fight_ammunition1.uw_fight_ammunition1_C.SetBulletEffect
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_ammunition1_C_SetBulletEffect final
+{
+public:
+	bool                                          bShow;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_ammunition1_C_SetBulletEffect;
+
+// Function uw_fight_ammunition1.uw_fight_ammunition1_C.SetBulletCountEffect
+// 0x0010 (0x0010 - 0x0000)
+struct uw_fight_ammunition1_C_SetBulletCountEffect final
+{
+public:
+	float                                         StartPercent;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         EndPercent;                                        // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Start;                                             // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         End;                                               // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_ammunition1_C_SetBulletCountEffect;
+
+// Function uw_fight_ammunition1.uw_fight_ammunition1_C.ExecuteUbergraph_uw_fight_ammunition1
+// 0x0024 (0x0024 - 0x0000)
+struct uw_fight_ammunition1_C_ExecuteUbergraph_uw_fight_ammunition1 final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsAnimPlayingFromName_ReturnValue;        // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_Event_bShow_1;                              // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_Event_bShow;                                // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7[0x1];                                        // 0x0007(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Event_StartPercent;                         // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_EndPercent;                           // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_Start;                                // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_End;                                  // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_Event_InCurBullet;                          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_Event_InMaxBullet;                          // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_InPercent;                            // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_ammunition1_C_ExecuteUbergraph_uw_fight_ammunition1;
 
 }
 

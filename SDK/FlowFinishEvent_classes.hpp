@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass FlowFinishEvent.FlowFinishEvent_C
-// 0x0000 (0x0158 - 0x0158)
+// 0x0000 (0x0168 - 0x0168)
 class UFlowFinishEvent_C final : public UGameTaskEvent_FlowFinish
 {
 public:

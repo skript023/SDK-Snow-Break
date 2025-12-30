@@ -10,17 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
+#include "Slate_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "UMG_structs.hpp"
+#include "UMG_classes.hpp"
+#include "Plot_structs.hpp"
 #include "GameCore_structs.hpp"
 #include "GameCore_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Plot_structs.hpp"
-#include "UMG_structs.hpp"
-#include "UMG_classes.hpp"
-#include "Slate_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK
@@ -62,6 +62,7 @@ public:
 
 	int32 GetChildrenCount() const;
 	int32 GetIndex() const;
+	bool GetIsFastPreview() const;
 	class UPlotItem* GetParent() const;
 	class UPlot* GetPlot() const;
 	class UPlotWidget* GetWidget() const;
@@ -84,74 +85,62 @@ public:
 };
 DUMPER7_ASSERTS_UPlotItem;
 
-// Class Plot.PlotItem_FindEvidence
-// 0x0048 (0x00D8 - 0x0090)
-class UPlotItem_FindEvidence final : public UPlotItem
+// Class Plot.PlotItem_Group
+// 0x0020 (0x00B0 - 0x0090)
+class UPlotItem_Group final : public UPlotItem
 {
 public:
-	struct FSoftClassPath                         UMGPath;                                           // 0x0090(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPlotWidgetOrderType                          ZOrder;                                            // 0x00A8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A9[0x3];                                       // 0x00A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         OrderOffset;                                       // 0x00AC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PlaceName;                                         // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 InitGroup;                                         // 0x00C0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D0[0x8];                                       // 0x00D0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 GroupName;                                         // 0x0090(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A0[0x10];                                      // 0x00A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PlotItem_FindEvidence")
+		STATIC_CLASS_IMPL("PlotItem_Group")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PlotItem_FindEvidence")
+		STATIC_NAME_IMPL(L"PlotItem_Group")
 	}
-	static class UPlotItem_FindEvidence* GetDefaultObj()
+	static class UPlotItem_Group* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPlotItem_FindEvidence>();
+		return GetDefaultObjImpl<UPlotItem_Group>();
 	}
 };
-DUMPER7_ASSERTS_UPlotItem_FindEvidence;
+DUMPER7_ASSERTS_UPlotItem_Group;
 
-// Class Plot.PlotLibrary
-// 0x0000 (0x0028 - 0x0028)
-class UPlotLibrary final : public UBlueprintFunctionLibrary
+// Class Plot.PlotSaveGame
+// 0x0018 (0x0040 - 0x0028)
+class UPlotSaveGame final : public USaveGame
 {
 public:
-	static void ClearSequencerWidgetCallBack(class UWidget* InChildWidget);
-	static void FindCameraEndLocationAndFOVInLevelSequence(class ULevelSequence* InSequence, struct FVector* OutEndLocation, float* OutFOV);
-	static class APlotRoleActor* FindRoleByName(class UObject* WorldContextObject, const class FString& InName);
-	static class FString GetCurrentPlotFileName(class UObject* WorldContextObject);
-	static class UPlotWidget* GetCurrentPlotWidget(class UObject* WorldContextObject);
-	static class USequencerUserWidget* GetCurrentSequencer(class UObject* WorldContextObject);
-	static class FString GetDefaultSpineAnimationNameFromData(const TArray<class FString>& InData);
-	static TArray<class UPlotItem*> GetPlotItemByClass(class UObject* WorldContextObject, class UClass* InClass);
-	static const struct FPlotName2Img GetPlotName2ImageData(const class FString& InKey);
-	static void GetPlotNameConfig(const class FString& InKey, class USpineAtlasAsset** OutAtlas, class USpineSkeletonDataAsset** OutSkeletonData);
-	static struct FPlotRoleInfo GetPlotRoleConfig(int32 InId);
-	static EDialogueOperationType GetTalkOperationType(class UPlotItem* InItem);
-	static int32 LuaGetDataTableRowFromName(class UDataTable* Table, class FName RowName);
-	static void RemoveLineBreaksInline(class FString& SourceString, class UPlot* InPlot);
-	static void ReplaceHyperColorTag(class FString& SourceString, class UPlot* InPlot);
-	static void SetNearClipPlaneForPlotSequencer(float InValue);
-	static void SetPlotRoleTexture(const class FString& InKey, class UMaterialInstanceDynamic* RoleMaterial);
-	static void SkipParentSequencerWidgetAnimation(class UWidget* InChildWidget);
+	TArray<class FString>                         SaveKeys;                                          // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	bool                                          bIsAutoPlay;                                       // 0x0038(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UPlotSaveGame* LoadPlotSaveGame();
+
+	void Save();
+	void SaveKey(const class FString& InKey);
+
+	bool HasKey(const class FString& InKey) const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PlotLibrary")
+		STATIC_CLASS_IMPL("PlotSaveGame")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PlotLibrary")
+		STATIC_NAME_IMPL(L"PlotSaveGame")
 	}
-	static class UPlotLibrary* GetDefaultObj()
+	static class UPlotSaveGame* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPlotLibrary>();
+		return GetDefaultObjImpl<UPlotSaveGame>();
 	}
 };
-DUMPER7_ASSERTS_UPlotLibrary;
+DUMPER7_ASSERTS_UPlotSaveGame;
 
 // Class Plot.SubtitlesTextInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -217,77 +206,60 @@ public:
 };
 DUMPER7_ASSERTS_UMovieClipBackgroundUserWidget;
 
-// Class Plot.PlotCondition
-// 0x0000 (0x0028 - 0x0028)
-class UPlotCondition : public UObject
+// Class Plot.MovieClipNormalSubtitlesText
+// 0x0020 (0x02E8 - 0x02C8)
+class UMovieClipNormalSubtitlesText final : public UTextBlock
 {
 public:
-	bool Check();
-
-	class UPlot* GetPlot() const;
+	uint8                                         Pad_2C8[0x8];                                      // 0x02C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Key;                                               // 0x02D0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2E0[0x8];                                      // 0x02E0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PlotCondition")
+		STATIC_CLASS_IMPL("MovieClipNormalSubtitlesText")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PlotCondition")
+		STATIC_NAME_IMPL(L"MovieClipNormalSubtitlesText")
 	}
-	static class UPlotCondition* GetDefaultObj()
+	static class UMovieClipNormalSubtitlesText* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPlotCondition>();
+		return GetDefaultObjImpl<UMovieClipNormalSubtitlesText>();
 	}
 };
-DUMPER7_ASSERTS_UPlotCondition;
+DUMPER7_ASSERTS_UMovieClipNormalSubtitlesText;
 
-// Class Plot.PlotSelectNumCondition
-// 0x0008 (0x0030 - 0x0028)
-class UPlotSelectNumCondition final : public UPlotCondition
+// Class Plot.PlotItem_LuaImpl
+// 0x0020 (0x00B0 - 0x0090)
+class UPlotItem_LuaImpl : public UPlotItem
 {
 public:
-	int32                                         Num;                                               // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EPlotWidgetOrderType                          OrderType;                                         // 0x0090(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_91[0x3];                                       // 0x0091(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         OrderOffset;                                       // 0x0094(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_98[0x18];                                      // 0x0098(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	bool IsSingleWidget();
+	void SetWait(bool InValue);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PlotSelectNumCondition")
+		STATIC_CLASS_IMPL("PlotItem_LuaImpl")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PlotSelectNumCondition")
+		STATIC_NAME_IMPL(L"PlotItem_LuaImpl")
 	}
-	static class UPlotSelectNumCondition* GetDefaultObj()
+	static class UPlotItem_LuaImpl* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPlotSelectNumCondition>();
+		return GetDefaultObjImpl<UPlotItem_LuaImpl>();
 	}
 };
-DUMPER7_ASSERTS_UPlotSelectNumCondition;
-
-// Class Plot.MovieClipSubUserWidget
-// 0x0010 (0x0290 - 0x0280)
-class UMovieClipSubUserWidget final : public UUserWidget
-{
-public:
-	class FString                                 SubtitlesPath;                                     // 0x0280(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MovieClipSubUserWidget")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MovieClipSubUserWidget")
-	}
-	static class UMovieClipSubUserWidget* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieClipSubUserWidget>();
-	}
-};
-DUMPER7_ASSERTS_UMovieClipSubUserWidget;
+DUMPER7_ASSERTS_UPlotItem_LuaImpl;
 
 // Class Plot.MovieClipCameraActor
 // 0x0010 (0x07D0 - 0x07C0)
@@ -313,6 +285,35 @@ public:
 };
 DUMPER7_ASSERTS_AMovieClipCameraActor;
 
+// Class Plot.MovieSkipWidget
+// 0x0020 (0x02A0 - 0x0280)
+class UMovieSkipWidget final : public UUserWidget
+{
+public:
+	class UMaterialInstanceDynamic*               SkipCircleInstance;                                // 0x0280(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStartingCount;                                    // 0x0288(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_289[0x3];                                      // 0x0289(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StartToNow;                                        // 0x028C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SkipIntervalTime;                                  // 0x0290(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InterpValue;                                       // 0x0294(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UImage*                                 SkipCircle;                                        // 0x0298(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MovieSkipWidget")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MovieSkipWidget")
+	}
+	static class UMovieSkipWidget* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSkipWidget>();
+	}
+};
+DUMPER7_ASSERTS_UMovieSkipWidget;
+
 // Class Plot.MovieClipCanvasPanel
 // 0x0000 (0x0150 - 0x0150)
 class UMovieClipCanvasPanel final : public UCanvasPanel
@@ -332,26 +333,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMovieClipCanvasPanel;
-
-// Class Plot.PlotItem_DisableAllScreenMessages
-// 0x0000 (0x0090 - 0x0090)
-class UPlotItem_DisableAllScreenMessages final : public UPlotItem
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PlotItem_DisableAllScreenMessages")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PlotItem_DisableAllScreenMessages")
-	}
-	static class UPlotItem_DisableAllScreenMessages* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPlotItem_DisableAllScreenMessages>();
-	}
-};
-DUMPER7_ASSERTS_UPlotItem_DisableAllScreenMessages;
 
 // Class Plot.MovieClipImage
 // 0x00E8 (0x0210 - 0x0128)
@@ -425,127 +406,92 @@ public:
 };
 DUMPER7_ASSERTS_UMovieClipMediaSourceImage;
 
-// Class Plot.PlotItem_LuaImpl
-// 0x0020 (0x00B0 - 0x0090)
-class UPlotItem_LuaImpl : public UPlotItem
+// Class Plot.PlotItem_FindEvidenceHide
+// 0x0010 (0x00A0 - 0x0090)
+class UPlotItem_FindEvidenceHide final : public UPlotItem
 {
 public:
-	EPlotWidgetOrderType                          OrderType;                                         // 0x0090(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_91[0x3];                                       // 0x0091(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         OrderOffset;                                       // 0x0094(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_98[0x18];                                      // 0x0098(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	bool IsSingleWidget();
-	void SetWait(bool InValue);
+	bool                                          IsShow;                                            // 0x0090(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_91[0xF];                                       // 0x0091(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PlotItem_LuaImpl")
+		STATIC_CLASS_IMPL("PlotItem_FindEvidenceHide")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PlotItem_LuaImpl")
+		STATIC_NAME_IMPL(L"PlotItem_FindEvidenceHide")
 	}
-	static class UPlotItem_LuaImpl* GetDefaultObj()
+	static class UPlotItem_FindEvidenceHide* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPlotItem_LuaImpl>();
+		return GetDefaultObjImpl<UPlotItem_FindEvidenceHide>();
 	}
 };
-DUMPER7_ASSERTS_UPlotItem_LuaImpl;
+DUMPER7_ASSERTS_UPlotItem_FindEvidenceHide;
 
-// Class Plot.PlotItem_TableGame
-// 0x0070 (0x0120 - 0x00B0)
-class UPlotItem_TableGame final : public UPlotItem_LuaImpl
+// Class Plot.PlotLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UPlotLibrary final : public UBlueprintFunctionLibrary
 {
 public:
-	class FString                                 TextKey;                                           // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DiceMin;                                           // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DiceMax;                                           // 0x00C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DestValue;                                         // 0x00C8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         GreatSuccess;                                      // 0x00CC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         EpicFail;                                          // 0x00D0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 SuccessGroup;                                      // 0x00D8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 GreatSuccessGroup;                                 // 0x00E8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 FailGroup;                                         // 0x00F8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 EpicFailGroup;                                     // 0x0108(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_118[0x8];                                      // 0x0118(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void GotoGroup(const class FString& InGroupName);
-	void OnGroupComplete();
+	static void ClearSequencerWidgetCallBack(class UWidget* InChildWidget);
+	static void FindCameraEndLocationAndFOVInLevelSequence(class ULevelSequence* InSequence, struct FVector* OutEndLocation, float* OutFOV);
+	static class APlotRoleActor* FindRoleByName(class UObject* WorldContextObject, const class FString& InName);
+	static class FString GetCurrentPlotFileName(class UObject* WorldContextObject);
+	static class UPlotWidget* GetCurrentPlotWidget(class UObject* WorldContextObject);
+	static class USequencerUserWidget* GetCurrentSequencer(class UObject* WorldContextObject);
+	static class FString GetDefaultSpineAnimationNameFromData(const TArray<class FString>& InData);
+	static TArray<class UPlotItem*> GetPlotItemByClass(class UObject* WorldContextObject, class UClass* InClass);
+	static const struct FPlotName2Img GetPlotName2ImageData(const class FString& InKey);
+	static void GetPlotNameConfig(const class FString& InKey, class USpineAtlasAsset** OutAtlas, class USpineSkeletonDataAsset** OutSkeletonData);
+	static struct FPlotRoleInfo GetPlotRoleConfig(int32 InId);
+	static EDialogueOperationType GetTalkOperationType(class UPlotItem* InItem);
+	static int32 LuaGetDataTableRowFromName(class UDataTable* Table, class FName RowName);
+	static void RemoveLineBreaksInline(class FString& SourceString, class UPlot* InPlot);
+	static void ReplaceHyperColorTag(class FString& SourceString, class UPlot* InPlot);
+	static void SetNearClipPlaneForPlotSequencer(float InValue);
+	static void SetPlotRoleTexture(const class FString& InKey, class UMaterialInstanceDynamic* RoleMaterial);
+	static void SkipParentSequencerWidgetAnimation(class UWidget* InChildWidget);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PlotItem_TableGame")
+		STATIC_CLASS_IMPL("PlotLibrary")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PlotItem_TableGame")
+		STATIC_NAME_IMPL(L"PlotLibrary")
 	}
-	static class UPlotItem_TableGame* GetDefaultObj()
+	static class UPlotLibrary* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPlotItem_TableGame>();
+		return GetDefaultObjImpl<UPlotLibrary>();
 	}
 };
-DUMPER7_ASSERTS_UPlotItem_TableGame;
+DUMPER7_ASSERTS_UPlotLibrary;
 
-// Class Plot.MovieClipNormalSubtitlesText
-// 0x0020 (0x02E8 - 0x02C8)
-class UMovieClipNormalSubtitlesText final : public UTextBlock
+// Class Plot.MovieClipSubUserWidget
+// 0x0010 (0x0290 - 0x0280)
+class UMovieClipSubUserWidget final : public UUserWidget
 {
 public:
-	uint8                                         Pad_2C8[0x8];                                      // 0x02C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Key;                                               // 0x02D0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2E0[0x8];                                      // 0x02E0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 SubtitlesPath;                                     // 0x0280(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MovieClipNormalSubtitlesText")
+		STATIC_CLASS_IMPL("MovieClipSubUserWidget")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MovieClipNormalSubtitlesText")
+		STATIC_NAME_IMPL(L"MovieClipSubUserWidget")
 	}
-	static class UMovieClipNormalSubtitlesText* GetDefaultObj()
+	static class UMovieClipSubUserWidget* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMovieClipNormalSubtitlesText>();
+		return GetDefaultObjImpl<UMovieClipSubUserWidget>();
 	}
 };
-DUMPER7_ASSERTS_UMovieClipNormalSubtitlesText;
-
-// Class Plot.MovieSkipWidget
-// 0x0020 (0x02A0 - 0x0280)
-class UMovieSkipWidget final : public UUserWidget
-{
-public:
-	class UMaterialInstanceDynamic*               SkipCircleInstance;                                // 0x0280(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStartingCount;                                    // 0x0288(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_289[0x3];                                      // 0x0289(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         StartToNow;                                        // 0x028C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SkipIntervalTime;                                  // 0x0290(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InterpValue;                                       // 0x0294(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UImage*                                 SkipCircle;                                        // 0x0298(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MovieSkipWidget")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MovieSkipWidget")
-	}
-	static class UMovieSkipWidget* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSkipWidget>();
-	}
-};
-DUMPER7_ASSERTS_UMovieSkipWidget;
+DUMPER7_ASSERTS_UMovieClipSubUserWidget;
 
 // Class Plot.Plot
 // 0x0278 (0x02A0 - 0x0028)
@@ -560,7 +506,8 @@ public:
 	TSubclassOf<class USequencerUserWidget>       StageAnimationWidgetClass;                         // 0x0058(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SpineAnimationBlendTime;                           // 0x0060(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Preload;                                           // 0x0064(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_65[0x3];                                       // 0x0065(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	EPlot2DUMGType                                Plot2DUMGType;                                     // 0x0065(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_66[0x2];                                       // 0x0066(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPlotItem*                              RootItem;                                          // 0x0068(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_70[0x118];                                     // 0x0070(0x0118)(Fixing Size After Last Property [ Dumper-7 ])
 	TWeakObjectPtr<class UPlotWidget>             Widget;                                            // 0x0188(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -641,52 +588,6 @@ public:
 };
 DUMPER7_ASSERTS_UPlotCameraObj;
 
-// Class Plot.PlotEvent
-// 0x0000 (0x0028 - 0x0028)
-class UPlotEvent : public UObject
-{
-public:
-	bool DoEvent();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PlotEvent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PlotEvent")
-	}
-	static class UPlotEvent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPlotEvent>();
-	}
-};
-DUMPER7_ASSERTS_UPlotEvent;
-
-// Class Plot.PlotEvent_JumpKey
-// 0x0010 (0x0038 - 0x0028)
-class UPlotEvent_JumpKey final : public UPlotEvent
-{
-public:
-	class FString                                 Key;                                               // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PlotEvent_JumpKey")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PlotEvent_JumpKey")
-	}
-	static class UPlotEvent_JumpKey* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPlotEvent_JumpKey>();
-	}
-};
-DUMPER7_ASSERTS_UPlotEvent_JumpKey;
-
 // Class Plot.PlotCharacter
 // 0x0050 (0x0510 - 0x04C0)
 class APlotCharacter final : public ACharacter
@@ -716,29 +617,30 @@ public:
 };
 DUMPER7_ASSERTS_APlotCharacter;
 
-// Class Plot.PlotItem_SetSkipEnabled
-// 0x0008 (0x00B8 - 0x00B0)
-class UPlotItem_SetSkipEnabled final : public UPlotItem_LuaImpl
+// Class Plot.PlotCondition
+// 0x0000 (0x0028 - 0x0028)
+class UPlotCondition : public UObject
 {
 public:
-	bool                                          Enabled;                                           // 0x00B0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool Check();
+
+	class UPlot* GetPlot() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PlotItem_SetSkipEnabled")
+		STATIC_CLASS_IMPL("PlotCondition")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PlotItem_SetSkipEnabled")
+		STATIC_NAME_IMPL(L"PlotCondition")
 	}
-	static class UPlotItem_SetSkipEnabled* GetDefaultObj()
+	static class UPlotCondition* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPlotItem_SetSkipEnabled>();
+		return GetDefaultObjImpl<UPlotCondition>();
 	}
 };
-DUMPER7_ASSERTS_UPlotItem_SetSkipEnabled;
+DUMPER7_ASSERTS_UPlotCondition;
 
 // Class Plot.PlotReadKeyCondition
 // 0x0018 (0x0040 - 0x0028)
@@ -765,6 +667,30 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPlotReadKeyCondition;
+
+// Class Plot.PlotSelectNumCondition
+// 0x0008 (0x0030 - 0x0028)
+class UPlotSelectNumCondition final : public UPlotCondition
+{
+public:
+	int32                                         Num;                                               // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotSelectNumCondition")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotSelectNumCondition")
+	}
+	static class UPlotSelectNumCondition* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotSelectNumCondition>();
+	}
+};
+DUMPER7_ASSERTS_UPlotSelectNumCondition;
 
 // Class Plot.PlotTimeoutCondition
 // 0x0010 (0x0038 - 0x0028)
@@ -815,6 +741,52 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPlotLuaImplWidget;
+
+// Class Plot.PlotEvent
+// 0x0000 (0x0028 - 0x0028)
+class UPlotEvent : public UObject
+{
+public:
+	bool DoEvent();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotEvent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotEvent")
+	}
+	static class UPlotEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotEvent>();
+	}
+};
+DUMPER7_ASSERTS_UPlotEvent;
+
+// Class Plot.PlotEvent_JumpKey
+// 0x0010 (0x0038 - 0x0028)
+class UPlotEvent_JumpKey final : public UPlotEvent
+{
+public:
+	class FString                                 Key;                                               // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotEvent_JumpKey")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotEvent_JumpKey")
+	}
+	static class UPlotEvent_JumpKey* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotEvent_JumpKey>();
+	}
+};
+DUMPER7_ASSERTS_UPlotEvent_JumpKey;
 
 // Class Plot.PlotImage
 // 0x0058 (0x0288 - 0x0230)
@@ -1268,6 +1240,32 @@ public:
 };
 DUMPER7_ASSERTS_UPlotItem_CGSpinePlayEffect;
 
+// Class Plot.PlotItem_CGSpine_New
+// 0x0038 (0x00C8 - 0x0090)
+class UPlotItem_CGSpine_New final : public UPlotItem
+{
+public:
+	class FName                                   SpineName;                                         // 0x0090(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCGSpineParameters                     CGSpineParameters;                                 // 0x0098(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	float                                         BlendTime;                                         // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotItem_CGSpine_New")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotItem_CGSpine_New")
+	}
+	static class UPlotItem_CGSpine_New* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotItem_CGSpine_New>();
+	}
+};
+DUMPER7_ASSERTS_UPlotItem_CGSpine_New;
+
 // Class Plot.PlotItem_CGSpineCameraAnimation
 // 0x0048 (0x00D8 - 0x0090)
 class UPlotItem_CGSpineCameraAnimation final : public UPlotItem
@@ -1297,6 +1295,38 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPlotItem_CGSpineCameraAnimation;
+
+// Class Plot.PlotItem_CGSpineCameraAnimation_New
+// 0x0050 (0x00E0 - 0x0090)
+class UPlotItem_CGSpineCameraAnimation_New final : public UPlotItem
+{
+public:
+	struct FVector2D                              StartLocation;                                     // 0x0090(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              TargetLocation;                                    // 0x0098(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartScale;                                        // 0x00A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EndScale;                                          // 0x00A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartFOV;                                          // 0x00A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EndFOV;                                            // 0x00AC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveTime;                                          // 0x00B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            SpeedCurve;                                        // 0x00B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C0[0x20];                                      // 0x00C0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotItem_CGSpineCameraAnimation_New")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotItem_CGSpineCameraAnimation_New")
+	}
+	static class UPlotItem_CGSpineCameraAnimation_New* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotItem_CGSpineCameraAnimation_New>();
+	}
+};
+DUMPER7_ASSERTS_UPlotItem_CGSpineCameraAnimation_New;
 
 // Class Plot.PlotItem_ColorTint
 // 0x0028 (0x00B8 - 0x0090)
@@ -1360,6 +1390,86 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPlotItem_ColorTint_New;
+
+// Class Plot.PlotItem_OpenCutIn
+// 0x0090 (0x0120 - 0x0090)
+class UPlotItem_OpenCutIn final : public UPlotItem
+{
+public:
+	EPlotCutInPos                                 Pos;                                               // 0x0090(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPlotWidgetOrderType                          OrderType;                                         // 0x0091(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_92[0x6];                                       // 0x0092(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftObjectPath                        BGPath;                                            // 0x0098(0x0018)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BgScale;                                           // 0x00B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              BgOffset;                                          // 0x00B4(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 RoleName;                                          // 0x00C0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSpineParameters                       SpineParameters;                                   // 0x00D0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotItem_OpenCutIn")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotItem_OpenCutIn")
+	}
+	static class UPlotItem_OpenCutIn* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotItem_OpenCutIn>();
+	}
+};
+DUMPER7_ASSERTS_UPlotItem_OpenCutIn;
+
+// Class Plot.PlotItem_UpdateCutInSpine
+// 0x0068 (0x00F8 - 0x0090)
+class UPlotItem_UpdateCutInSpine final : public UPlotItem
+{
+public:
+	EPlotCutInPos                                 Pos;                                               // 0x0090(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 RoleName;                                          // 0x0098(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSpineParameters                       SpineParameters;                                   // 0x00A8(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotItem_UpdateCutInSpine")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotItem_UpdateCutInSpine")
+	}
+	static class UPlotItem_UpdateCutInSpine* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotItem_UpdateCutInSpine>();
+	}
+};
+DUMPER7_ASSERTS_UPlotItem_UpdateCutInSpine;
+
+// Class Plot.PlotItem_CloseCutIn
+// 0x0010 (0x00A0 - 0x0090)
+class UPlotItem_CloseCutIn final : public UPlotItem
+{
+public:
+	TArray<EPlotCutInPos>                         PosGroup;                                          // 0x0090(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotItem_CloseCutIn")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotItem_CloseCutIn")
+	}
+	static class UPlotItem_CloseCutIn* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotItem_CloseCutIn>();
+	}
+};
+DUMPER7_ASSERTS_UPlotItem_CloseCutIn;
 
 // Class Plot.PlotItem_Delay
 // 0x0010 (0x00A0 - 0x0090)
@@ -1576,29 +1686,34 @@ public:
 };
 DUMPER7_ASSERTS_UPlotFindEvidenceWidget;
 
-// Class Plot.PlotItem_FindEvidenceHide
-// 0x0010 (0x00A0 - 0x0090)
-class UPlotItem_FindEvidenceHide final : public UPlotItem
+// Class Plot.PlotItem_FindEvidence
+// 0x0048 (0x00D8 - 0x0090)
+class UPlotItem_FindEvidence final : public UPlotItem
 {
 public:
-	bool                                          IsShow;                                            // 0x0090(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_91[0xF];                                       // 0x0091(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FSoftClassPath                         UMGPath;                                           // 0x0090(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPlotWidgetOrderType                          ZOrder;                                            // 0x00A8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A9[0x3];                                       // 0x00A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         OrderOffset;                                       // 0x00AC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlaceName;                                         // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InitGroup;                                         // 0x00C0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D0[0x8];                                       // 0x00D0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PlotItem_FindEvidenceHide")
+		STATIC_CLASS_IMPL("PlotItem_FindEvidence")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PlotItem_FindEvidenceHide")
+		STATIC_NAME_IMPL(L"PlotItem_FindEvidence")
 	}
-	static class UPlotItem_FindEvidenceHide* GetDefaultObj()
+	static class UPlotItem_FindEvidence* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPlotItem_FindEvidenceHide>();
+		return GetDefaultObjImpl<UPlotItem_FindEvidence>();
 	}
 };
-DUMPER7_ASSERTS_UPlotItem_FindEvidenceHide;
+DUMPER7_ASSERTS_UPlotItem_FindEvidence;
 
 // Class Plot.PlotItem_FullscreenSpine
 // 0x0080 (0x0110 - 0x0090)
@@ -1628,30 +1743,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPlotItem_FullscreenSpine;
-
-// Class Plot.PlotItem_Group
-// 0x0020 (0x00B0 - 0x0090)
-class UPlotItem_Group final : public UPlotItem
-{
-public:
-	class FString                                 GroupName;                                         // 0x0090(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A0[0x10];                                      // 0x00A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PlotItem_Group")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PlotItem_Group")
-	}
-	static class UPlotItem_Group* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPlotItem_Group>();
-	}
-};
-DUMPER7_ASSERTS_UPlotItem_Group;
 
 // Class Plot.PlotItem_LoadHandDraw
 // 0x0040 (0x00D0 - 0x0090)
@@ -1901,6 +1992,26 @@ public:
 };
 DUMPER7_ASSERTS_UPlotItem_DebugTip;
 
+// Class Plot.PlotItem_DisableAllScreenMessages
+// 0x0000 (0x0090 - 0x0090)
+class UPlotItem_DisableAllScreenMessages final : public UPlotItem
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotItem_DisableAllScreenMessages")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotItem_DisableAllScreenMessages")
+	}
+	static class UPlotItem_DisableAllScreenMessages* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotItem_DisableAllScreenMessages>();
+	}
+};
+DUMPER7_ASSERTS_UPlotItem_DisableAllScreenMessages;
+
 // Class Plot.PlotItem_AssignNpcName
 // 0x0010 (0x00C0 - 0x00B0)
 class UPlotItem_AssignNpcName final : public UPlotItem_LuaImpl
@@ -1924,6 +2035,30 @@ public:
 };
 DUMPER7_ASSERTS_UPlotItem_AssignNpcName;
 
+// Class Plot.PlotItem_SetSkipEnabled
+// 0x0008 (0x00B8 - 0x00B0)
+class UPlotItem_SetSkipEnabled final : public UPlotItem_LuaImpl
+{
+public:
+	bool                                          Enabled;                                           // 0x00B0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotItem_SetSkipEnabled")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotItem_SetSkipEnabled")
+	}
+	static class UPlotItem_SetSkipEnabled* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotItem_SetSkipEnabled>();
+	}
+};
+DUMPER7_ASSERTS_UPlotItem_SetSkipEnabled;
+
 // Class Plot.PlotItem_LuaWidget
 // 0x0010 (0x00C0 - 0x00B0)
 class UPlotItem_LuaWidget final : public UPlotItem_LuaImpl
@@ -1946,6 +2081,44 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPlotItem_LuaWidget;
+
+// Class Plot.PlotItem_TableGame
+// 0x0070 (0x0120 - 0x00B0)
+class UPlotItem_TableGame final : public UPlotItem_LuaImpl
+{
+public:
+	class FString                                 TextKey;                                           // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DiceMin;                                           // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DiceMax;                                           // 0x00C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DestValue;                                         // 0x00C8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GreatSuccess;                                      // 0x00CC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EpicFail;                                          // 0x00D0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SuccessGroup;                                      // 0x00D8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 GreatSuccessGroup;                                 // 0x00E8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 FailGroup;                                         // 0x00F8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 EpicFailGroup;                                     // 0x0108(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_118[0x8];                                      // 0x0118(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void GotoGroup(const class FString& InGroupName);
+	void OnGroupComplete();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotItem_TableGame")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotItem_TableGame")
+	}
+	static class UPlotItem_TableGame* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotItem_TableGame>();
+	}
+};
+DUMPER7_ASSERTS_UPlotItem_TableGame;
 
 // Class Plot.PlotItem_OpenCGSpine
 // 0x0038 (0x00C8 - 0x0090)
@@ -1975,6 +2148,35 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPlotItem_OpenCGSpine;
+
+// Class Plot.PlotItem_OpenCGSpine_New
+// 0x0038 (0x00C8 - 0x0090)
+class UPlotItem_OpenCGSpine_New final : public UPlotItem
+{
+public:
+	class UCGSpineData*                           CGSpineAsset;                                      // 0x0090(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlendParameters                       BlendParameters;                                   // 0x0098(0x0010)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         Scale;                                             // 0x00A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              Location;                                          // 0x00AC(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOpen;                                             // 0x00B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOpenBlur;                                         // 0x00B5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B6[0x12];                                      // 0x00B6(0x0012)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotItem_OpenCGSpine_New")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotItem_OpenCGSpine_New")
+	}
+	static class UPlotItem_OpenCGSpine_New* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotItem_OpenCGSpine_New>();
+	}
+};
+DUMPER7_ASSERTS_UPlotItem_OpenCGSpine_New;
 
 // Class Plot.PlotItem_OpenSequencerUserWidget
 // 0x0018 (0x00A8 - 0x0090)
@@ -3269,7 +3471,9 @@ public:
 	void OnAnimationCompleteHandler(class UObject* InDispatcher, class UTrackEntry* InEntry);
 	void OnEffectAnimationCompleteHandler(class UObject* InDispatcher, class UTrackEntry* InEntry);
 	void PlayDefaultSpine(const class FString& RoleName);
+	void PlayNormalSpineAsEffect(const class FString& RoleName, const struct FSpineParameters& InParameters, float InFadeTime, bool bIsHide);
 	void PlaySpine(const class FString& RoleName, const struct FSpineParameters& InParameters, bool bIsHide);
+	void ResetSpineSlot();
 
 public:
 	static class UClass* StaticClass()
@@ -3286,39 +3490,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPlotRoleEffectWidget;
-
-// Class Plot.PlotSaveGame
-// 0x0018 (0x0040 - 0x0028)
-class UPlotSaveGame final : public USaveGame
-{
-public:
-	TArray<class FString>                         SaveKeys;                                          // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	bool                                          bIsAutoPlay;                                       // 0x0038(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UPlotSaveGame* LoadPlotSaveGame();
-
-	void Save();
-	void SaveKey(const class FString& InKey);
-
-	bool HasKey(const class FString& InKey) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PlotSaveGame")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PlotSaveGame")
-	}
-	static class UPlotSaveGame* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPlotSaveGame>();
-	}
-};
-DUMPER7_ASSERTS_UPlotSaveGame;
 
 // Class Plot.SpineActor
 // 0x0078 (0x02A0 - 0x0228)
@@ -3370,6 +3541,7 @@ public:
 
 public:
 	void SetDataAndPlayAnimation(class USpineAtlasAsset* InAtlas, class USpineSkeletonDataAsset* InSkeletonData, const class FString& AnimationName, const struct FLinearColor& InColor, bool bLoop, float InSpineScale, const struct FVector2D& InAtlasOffset, float InBlendTime);
+	void SetSpineRenderRelativeLocation(float InOffsetX, float InOffsetY);
 
 public:
 	static class UClass* StaticClass()
@@ -3388,7 +3560,7 @@ public:
 DUMPER7_ASSERTS_UPlotSpineEffectImage;
 
 // Class Plot.PlotWidget
-// 0x0448 (0x06C8 - 0x0280)
+// 0x0468 (0x06E8 - 0x0280)
 class UPlotWidget : public UUserWidget
 {
 public:
@@ -3428,16 +3600,21 @@ public:
 	class UPlotWidgetCover*                       WidgetCover;                                       // 0x03E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UCanvasPanel*                           PanelKeyInfo;                                      // 0x03E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_3F0[0xA8];                                     // 0x03F0(0x00A8)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPlotWidgetInteractionGame*             InteractionGame;                                   // 0x0498(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UUserWidget*                            HandDrawWidget;                                    // 0x04A0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TextAreaMaxWidth;                                  // 0x04A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          DisableAddTalkRecords;                             // 0x04AC(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4AD[0x83];                                     // 0x04AD(0x0083)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPlotFindEvidenceWidget*                FindEvidenceWidget;                                // 0x0530(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, TWeakObjectPtr<class USpineWidget>> FullscreenSpineMap;                      // 0x0538(0x0050)(ExportObject, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_588[0x138];                                    // 0x0588(0x0138)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bPaused;                                           // 0x06C0(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_6C1[0x7];                                      // 0x06C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               ImageRoleMaterial;                                 // 0x0498(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_4A0[0x10];                                     // 0x04A0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPlotWidgetInteractionGame*             InteractionGame;                                   // 0x04B0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UUserWidget*                            HandDrawWidget;                                    // 0x04B8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TextAreaMaxWidth;                                  // 0x04C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          DisableAddTalkRecords;                             // 0x04C4(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C5[0x83];                                     // 0x04C5(0x0083)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPlotFindEvidenceWidget*                FindEvidenceWidget;                                // 0x0548(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, TWeakObjectPtr<class USpineWidget>> FullscreenSpineMap;                      // 0x0550(0x0050)(ExportObject, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_5A0[0x138];                                    // 0x05A0(0x0138)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bPaused;                                           // 0x06D8(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_6D9[0x2];                                      // 0x06D9(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          isCutin;                                           // 0x06DB(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6DC[0x4];                                      // 0x06DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPlotWidgetUMGSpineController*          UMGSpineController;                                // 0x06E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void Add2Root();
@@ -3723,6 +3900,33 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPlotItem_InteractionGame;
+
+// Class Plot.PlotWidgetUMGSpineController
+// 0x0010 (0x0290 - 0x0280)
+class UPlotWidgetUMGSpineController final : public UUserWidget
+{
+public:
+	class UUMGSpineController*                    SpineController;                                   // 0x0280(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidget*                                BackgroundBlur;                                    // 0x0288(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void SetBlur(bool InOpen);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotWidgetUMGSpineController")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotWidgetUMGSpineController")
+	}
+	static class UPlotWidgetUMGSpineController* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotWidgetUMGSpineController>();
+	}
+};
+DUMPER7_ASSERTS_UPlotWidgetUMGSpineController;
 
 // Class Plot.SequencerUserWidget
 // 0x0118 (0x0398 - 0x0280)

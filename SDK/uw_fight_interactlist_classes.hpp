@@ -25,8 +25,8 @@ public:
 	class URedirectScrollBox*                     ListInteractItems;                                 // 0x03B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void AddInteractItem(class UClass* InteractItemBaseClass, int32 Order, class UObject* ItemOwner, class Uuw_fight_interactitem_C** Child, int32* PriorityLevel);
 	void RemoveInteractItemOfOwner(class UObject* Owner);
+	void AddInteractItem(class UClass* InteractItemBaseClass, int32 Order, class UObject* ItemOwner, class Uuw_fight_interactitem_C** Child, int32* PriorityLevel);
 	void Construct();
 	void OnConstruct();
 	void Destruct();

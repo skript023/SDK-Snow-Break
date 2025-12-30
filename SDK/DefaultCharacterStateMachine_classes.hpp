@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 #include "CharacterStateId_structs.hpp"
 #include "FireStateEvent_structs.hpp"
 #include "CharacterStateEvent_structs.hpp"

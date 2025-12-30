@@ -17,35 +17,21 @@
 namespace SDK
 {
 
-// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.BP_OnEntryReleased
-// (Event, Protected, BlueprintEvent)
-
-void Uuw_open_world_task_list_item_C::BP_OnEntryReleased()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_open_world_task_list_item_C", "BP_OnEntryReleased");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.BP_OnItemSelectionChanged
-// (Event, Protected, BlueprintEvent)
+// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.ExecuteUbergraph_uw_open_world_task_list_item
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    bIsSelected                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_open_world_task_list_item_C::BP_OnItemSelectionChanged(bool bIsSelected)
+void Uuw_open_world_task_list_item_C::ExecuteUbergraph_uw_open_world_task_list_item(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_open_world_task_list_item_C", "BP_OnItemSelectionChanged");
+		Func = Class->GetFunction("uw_open_world_task_list_item_C", "ExecuteUbergraph_uw_open_world_task_list_item");
 
-	Params::uw_open_world_task_list_item_C_BP_OnItemSelectionChanged Parms{};
+	Params::uw_open_world_task_list_item_C_ExecuteUbergraph_uw_open_world_task_list_item Parms{};
 
-	Parms.bIsSelected = bIsSelected;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -71,41 +57,21 @@ void Uuw_open_world_task_list_item_C::OnListItemObjectSet__Overridden(class UObj
 }
 
 
-// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.ExecuteUbergraph_uw_open_world_task_list_item
-// (Final, UbergraphFunction)
+// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.BP_OnItemSelectionChanged
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsSelected                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_open_world_task_list_item_C::ExecuteUbergraph_uw_open_world_task_list_item(int32 EntryPoint)
+void Uuw_open_world_task_list_item_C::BP_OnItemSelectionChanged(bool bIsSelected)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_open_world_task_list_item_C", "ExecuteUbergraph_uw_open_world_task_list_item");
+		Func = Class->GetFunction("uw_open_world_task_list_item_C", "BP_OnItemSelectionChanged");
 
-	Params::uw_open_world_task_list_item_C_ExecuteUbergraph_uw_open_world_task_list_item Parms{};
+	Params::uw_open_world_task_list_item_C_BP_OnItemSelectionChanged Parms{};
 
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.SetState
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// uint8                                   InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_open_world_task_list_item_C::SetState(uint8 InState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_open_world_task_list_item_C", "SetState");
-
-	Params::uw_open_world_task_list_item_C_SetState Parms{};
-
-	Parms.InState = InState;
+	Parms.bIsSelected = bIsSelected;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -126,6 +92,40 @@ void Uuw_open_world_task_list_item_C::BP_OnItemExpansionChanged(bool bIsExpanded
 	Params::uw_open_world_task_list_item_C_BP_OnItemExpansionChanged Parms{};
 
 	Parms.bIsExpanded = bIsExpanded;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.BP_OnEntryReleased
+// (Event, Protected, BlueprintEvent)
+
+void Uuw_open_world_task_list_item_C::BP_OnEntryReleased()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_open_world_task_list_item_C", "BP_OnEntryReleased");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.SetState
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// uint8                                   InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_open_world_task_list_item_C::SetState(uint8 InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_open_world_task_list_item_C", "SetState");
+
+	Params::uw_open_world_task_list_item_C_SetState Parms{};
+
+	Parms.InState = InState;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

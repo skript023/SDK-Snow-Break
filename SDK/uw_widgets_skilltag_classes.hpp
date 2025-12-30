@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -28,10 +28,10 @@ public:
 
 public:
 	void BP_OnEntryReleased();
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
 	void BP_OnItemSelectionChanged(bool bIsSelected);
 	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
 	void ExecuteUbergraph_uw_widgets_skilltag(int32 EntryPoint);
-	void BP_OnItemExpansionChanged(bool bIsExpanded);
 	void OnListItemObjectSet(class UObject* ListItemObject);
 	void OnConstruct();
 	void Destruct();

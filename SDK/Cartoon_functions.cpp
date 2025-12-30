@@ -415,6 +415,31 @@ void ACartoonRuntime::OnBtnClickSkip()
 }
 
 
+// Function Cartoon.CartoonRuntime.SetIsHidden
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACartoonRuntime::SetIsHidden(bool InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CartoonRuntime", "SetIsHidden");
+
+	Params::CartoonRuntime_SetIsHidden Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Cartoon.CartoonSettingSystem.GetImagePath
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -763,6 +788,26 @@ void UCartoonWidget::LuaCloseCameraEffect(int32 InType, float InTime)
 }
 
 
+// Function Cartoon.CartoonWidget.LuaImpl_CallLuaFunc
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const class FString&                    Code                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCartoonWidget::LuaImpl_CallLuaFunc(const class FString& Code)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CartoonWidget", "LuaImpl_CallLuaFunc");
+
+	Params::CartoonWidget_LuaImpl_CallLuaFunc Parms{};
+
+	Parms.Code = std::move(Code);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Cartoon.CartoonWidget.LuaImpl_NotifyChoiceEnd
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -1057,6 +1102,31 @@ void UCartoonWidget::SetParallaxBlur(float InDistance)
 	Parms.InDistance = InDistance;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Cartoon.CartoonWidget.SetWaitEndAnimTime
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InTime                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCartoonWidget::SetWaitEndAnimTime(float InTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CartoonWidget", "SetWaitEndAnimTime");
+
+	Params::CartoonWidget_SetWaitEndAnimTime Parms{};
+
+	Parms.InTime = InTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

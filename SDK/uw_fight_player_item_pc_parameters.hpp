@@ -16,119 +16,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.StopEffect
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_item_pc_C_StopEffect final
-{
-public:
-	EPlayerItemEffectType                         InEffectType;                                      // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_StopEffect;
-
-// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnUIEffectSkillLongPress
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_item_pc_C_OnUIEffectSkillLongPress final
-{
-public:
-	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_OnUIEffectSkillLongPress;
-
-// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.IsInFight
-// 0x0018 (0x0018 - 0x0000)
-struct uw_fight_player_item_pc_C_IsInFight final
-{
-public:
-	bool                                          InFight;                                           // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AGameCharacter*                         CallFunc_GetCacheCharacter_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsCurrentCharacter_ReturnValue;           // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_IsInFight;
-
-// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.Play Activation
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_item_pc_C_Play_Activation final
-{
-public:
-	bool                                          bForward;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_Play_Activation;
-
-// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.PlayEffect
-// 0x0002 (0x0002 - 0x0000)
-struct uw_fight_player_item_pc_C_PlayEffect final
-{
-public:
-	EPlayerItemEffectType                         InEffectType;                                      // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bQTEEndSwitchBack;                                 // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_PlayEffect;
-
-// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.K2_PlaySwitchCDAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_item_pc_C_K2_PlaySwitchCDAnim final
-{
-public:
-	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_K2_PlaySwitchCDAnim;
-
-// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnNotNormalSwitch
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_item_pc_C_OnNotNormalSwitch final
-{
-public:
-	bool                                          bNotNormalSwitch;                                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_OnNotNormalSwitch;
-
-// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnBackSkillPress
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_item_pc_C_OnBackSkillPress final
-{
-public:
-	bool                                          bPress;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_OnBackSkillPress;
-
-// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.PlayPresentAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_item_pc_C_PlayPresentAnim final
-{
-public:
-	bool                                          bPresent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_PlayPresentAnim;
-
-// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.K2_NormalEnergyChange
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_item_pc_C_K2_NormalEnergyChange final
-{
-public:
-	bool                                          bFull;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_K2_NormalEnergyChange;
-
-// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.K2_PlaySustainAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_item_pc_C_K2_PlaySustainAnim final
-{
-public:
-	bool                                          bPlayAnim;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_K2_PlaySustainAnim;
-
-// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnSkillStrengthening
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_item_pc_C_OnSkillStrengthening final
-{
-public:
-	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_OnSkillStrengthening;
-
 // Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.ExecuteUbergraph_uw_fight_player_item_pc
 // 0x0018 (0x0018 - 0x0000)
 struct uw_fight_player_item_pc_C_ExecuteUbergraph_uw_fight_player_item_pc final
@@ -157,6 +44,138 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_player_item_pc_C_ExecuteUbergraph_uw_fight_player_item_pc;
 
+// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnUIEffectSkillLongPress
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_item_pc_C_OnUIEffectSkillLongPress final
+{
+public:
+	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_OnUIEffectSkillLongPress;
+
+// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnSkillStrengthening
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_item_pc_C_OnSkillStrengthening final
+{
+public:
+	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_OnSkillStrengthening;
+
+// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.K2_PlaySustainAnim
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_item_pc_C_K2_PlaySustainAnim final
+{
+public:
+	bool                                          bPlayAnim;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_K2_PlaySustainAnim;
+
+// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.K2_NormalEnergyChange
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_item_pc_C_K2_NormalEnergyChange final
+{
+public:
+	bool                                          bFull;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_K2_NormalEnergyChange;
+
+// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.PlayPresentAnim
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_item_pc_C_PlayPresentAnim final
+{
+public:
+	bool                                          bPresent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_PlayPresentAnim;
+
+// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnBackSkillPress
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_item_pc_C_OnBackSkillPress final
+{
+public:
+	bool                                          bPress;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_OnBackSkillPress;
+
+// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnNotNormalSwitch
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_item_pc_C_OnNotNormalSwitch final
+{
+public:
+	bool                                          bNotNormalSwitch;                                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_OnNotNormalSwitch;
+
+// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.K2_PlaySwitchCDAnim
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_item_pc_C_K2_PlaySwitchCDAnim final
+{
+public:
+	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_K2_PlaySwitchCDAnim;
+
+// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.StopEffect
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_item_pc_C_StopEffect final
+{
+public:
+	EPlayerItemEffectType                         InEffectType;                                      // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_StopEffect;
+
+// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.PlayEffect
+// 0x0002 (0x0002 - 0x0000)
+struct uw_fight_player_item_pc_C_PlayEffect final
+{
+public:
+	EPlayerItemEffectType                         InEffectType;                                      // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bQTEEndSwitchBack;                                 // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_PlayEffect;
+
+// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.Play Activation
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_item_pc_C_Play_Activation final
+{
+public:
+	bool                                          bForward;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_Play_Activation;
+
+// Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.IsInFight
+// 0x0018 (0x0018 - 0x0000)
+struct uw_fight_player_item_pc_C_IsInFight final
+{
+public:
+	bool                                          InFight;                                           // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGameCharacter*                         CallFunc_GetCacheCharacter_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsCurrentCharacter_ReturnValue;           // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_IsInFight;
+
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnChargeTimesChange
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_player_item_pc_C_OnChargeTimesChange final
+{
+public:
+	int32                                         InCurrentTimes;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InMaxTimes;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_OnChargeTimesChange;
+
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.K2_OnCustomUmgAnimFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_player_item_pc_C_K2_OnCustomUmgAnimFinished final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_uw_fight_player_item_pc_C_K2_OnCustomUmgAnimFinished;
+
 // LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.UpdateKeyboard
 // 0x0004 (0x0004 - 0x0000)
 struct uw_fight_player_item_pc_C_UpdateKeyboard final
@@ -183,25 +202,6 @@ public:
 	EPlayerBtnType                                BtnType;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_uw_fight_player_item_pc_C_NotifyClick;
-
-// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_player_item_pc_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_K2_OnCustomUmgAnimFinished;
-
-// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnChargeTimesChange
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_player_item_pc_C_OnChargeTimesChange final
-{
-public:
-	int32                                         InCurrentTimes;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InMaxTimes;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_uw_fight_player_item_pc_C_OnChargeTimesChange;
 
 // Function uw_fight_player_item_pc.uw_fight_player_item_pc_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

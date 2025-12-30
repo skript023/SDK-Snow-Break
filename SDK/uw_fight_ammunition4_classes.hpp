@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -74,8 +74,6 @@ public:
 	struct FLinearColor                           EffectColor;                                       // 0x0510(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	int32 GetNextLeftCount(class UModifier* InModifier);
-	void Set_Bullet_Image(int32 Start, int32 End, const struct FLinearColor& Color);
 	void SetBullet(class UWidget* BulletWidget, int32 InBulet);
 	void Construct();
 	void SetBulletEffect(bool bShow);
@@ -85,6 +83,8 @@ public:
 	void OnBulletChange(int32 InCurBullet, int32 InMaxBullet, float InPercent);
 	void K2_SkillCastBulletFail();
 	void ExecuteUbergraph_uw_fight_ammunition4(int32 EntryPoint);
+	int32 GetNextLeftCount(class UModifier* InModifier);
+	void Set_Bullet_Image(int32 Start, int32 End, const struct FLinearColor& Color);
 
 public:
 	static class UClass* StaticClass()

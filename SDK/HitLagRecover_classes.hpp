@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass HitLagRecover.HitLagRecover_C
-// 0x0000 (0x0160 - 0x0160)
+// 0x0000 (0x0148 - 0x0148)
 class UHitLagRecover_C final : public UHitLagAttribute
 {
 public:

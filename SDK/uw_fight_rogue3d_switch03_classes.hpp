@@ -52,22 +52,22 @@ public:
 	int32                                         EffectId2;                                         // 0x03B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_7();
-	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_5();
-	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_4();
-	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_3();
-	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_2();
-	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_1();
-	void SequenceEvent_0();
-	void SequenceEvent_2();
-	void OnInitialized();
-	void Destruct();
-	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_6();
-	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_0();
-	void EndPlayEffect();
-	void SequenceEvent_1();
-	void SequenceEvent_3();
 	void ExecuteUbergraph_uw_fight_rogue3d_switch03(int32 EntryPoint);
+	void Destruct();
+	void OnInitialized();
+	void SequenceEvent_3();
+	void SequenceEvent_2();
+	void SequenceEvent_1();
+	void SequenceEvent_0();
+	void EndPlayEffect();
+	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_0();
+	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_1();
+	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_2();
+	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_3();
+	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_4();
+	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_5();
+	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_6();
+	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_7();
 
 public:
 	static class UClass* StaticClass()

@@ -31,6 +31,40 @@ void USelfCheck_StartSwitch_C::K2_InitCondition()
 }
 
 
+// Function SelfCheck_StartSwitch.SelfCheck_StartSwitch_C.OnCharacterStartSwitch
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bDeadSwitch_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void USelfCheck_StartSwitch_C::OnCharacterStartSwitch(bool bDeadSwitch_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SelfCheck_StartSwitch_C", "OnCharacterStartSwitch");
+
+	Params::SelfCheck_StartSwitch_C_OnCharacterStartSwitch Parms{};
+
+	Parms.bDeadSwitch_0 = bDeadSwitch_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function SelfCheck_StartSwitch.SelfCheck_StartSwitch_C.OnCharacterStartQTE
+// (BlueprintCallable, BlueprintEvent)
+
+void USelfCheck_StartSwitch_C::OnCharacterStartQTE()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SelfCheck_StartSwitch_C", "OnCharacterStartQTE");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function SelfCheck_StartSwitch.SelfCheck_StartSwitch_C.K2_BindEvent
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -72,40 +106,6 @@ void USelfCheck_StartSwitch_C::K2_UnbindEvent(class UAbilityComponentBase* InCur
 	Parms.InCurLauncherChara = InCurLauncherChara;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function SelfCheck_StartSwitch.SelfCheck_StartSwitch_C.OnCharacterStartSwitch
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bDeadSwitch_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void USelfCheck_StartSwitch_C::OnCharacterStartSwitch(bool bDeadSwitch_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SelfCheck_StartSwitch_C", "OnCharacterStartSwitch");
-
-	Params::SelfCheck_StartSwitch_C_OnCharacterStartSwitch Parms{};
-
-	Parms.bDeadSwitch_0 = bDeadSwitch_0;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function SelfCheck_StartSwitch.SelfCheck_StartSwitch_C.OnCharacterStartQTE
-// (BlueprintCallable, BlueprintEvent)
-
-void USelfCheck_StartSwitch_C::OnCharacterStartQTE()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SelfCheck_StartSwitch_C", "OnCharacterStartQTE");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -143,6 +143,15 @@ public:
 };
 DUMPER7_ASSERTS_CartoonRuntime_IsFix;
 
+// Function Cartoon.CartoonRuntime.SetIsHidden
+// 0x0001 (0x0001 - 0x0000)
+struct CartoonRuntime_SetIsHidden final
+{
+public:
+	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CartoonRuntime_SetIsHidden;
+
 // Function Cartoon.CartoonSettingSystem.GetImagePath
 // 0x0028 (0x0028 - 0x0000)
 struct CartoonSettingSystem_GetImagePath final
@@ -282,6 +291,15 @@ public:
 };
 DUMPER7_ASSERTS_CartoonWidget_LuaCloseCameraEffect;
 
+// Function Cartoon.CartoonWidget.LuaImpl_CallLuaFunc
+// 0x0010 (0x0010 - 0x0000)
+struct CartoonWidget_LuaImpl_CallLuaFunc final
+{
+public:
+	class FString                                 Code;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CartoonWidget_LuaImpl_CallLuaFunc;
+
 // Function Cartoon.CartoonWidget.LuaImpl_NotifyChoiceEnd
 // 0x0004 (0x0004 - 0x0000)
 struct CartoonWidget_LuaImpl_NotifyChoiceEnd final
@@ -381,6 +399,15 @@ public:
 	float                                         InDistance;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CartoonWidget_SetParallaxBlur;
+
+// Function Cartoon.CartoonWidget.SetWaitEndAnimTime
+// 0x0004 (0x0004 - 0x0000)
+struct CartoonWidget_SetWaitEndAnimTime final
+{
+public:
+	float                                         InTime;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CartoonWidget_SetWaitEndAnimTime;
 
 // Function Cartoon.CartoonWidget.GetBackgroundSize
 // 0x0008 (0x0008 - 0x0000)

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -48,8 +48,8 @@ public:
 	void BP_OnItemSelectionChanged(bool bIsSelected);
 	void BP_OnItemExpansionChanged(bool bIsExpanded);
 	void BP_OnEntryReleased();
-	void OnListItemObjectSet(class UObject* ListItemObject);
 	void Construct();
+	void OnListItemObjectSet(class UObject* ListItemObject);
 	void OnConstruct();
 	void Destruct();
 

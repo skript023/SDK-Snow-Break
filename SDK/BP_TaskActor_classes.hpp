@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
+#include "Game_structs.hpp"
 #include "Engine_structs.hpp"
+#include "UMG_structs.hpp"
 #include "GameTask_structs.hpp"
 #include "GameTask_classes.hpp"
-#include "Game_structs.hpp"
 
 
 namespace SDK
@@ -61,6 +61,37 @@ public:
 	int32                                         B_Show_Subtitles_Type;                             // 0x0838(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	bool ShouldCalcOnlineBehaviorPoint();
+	void OnLevelPreFinish(bool bSuccess);
+	void OnMultiKillInfoUpdate();
+	void LeaveAllAI();
+	void ReceiveBeginPlay();
+	void TryStartTask(bool bOpenUI);
+	void CloseActCondition(int32 ConditionID, const class FString& LogicName);
+	void OnMultiKill(class AActor* Killer, class AActor* Deceased);
+	void CheckActCondition(int32 ConditionID, const class FString& LogicName, bool* ret);
+	void GetVictorySequence(class ULevelSequence** AsLevel_Sequence, class FString* Return_Value_资源名修饰);
+	void FixSkill(class AGameSkill* InSkill);
+	void OnDebugInit();
+	void SetGameTask();
+	void OnLevelSequcenceFinish();
+	void GetCharacterTemplateId(class AGamePlayer* Player, int32* TemplateId);
+	void DoSceneOnOff();
+	int32 GetLevelConfigTime(const class UGameTask* Cur);
+	void OnPlayerMove();
+	void ForceInterruptSkill(class AGameSkill* GameSkill, ESkillInterruptedType InterruptedType);
+	void OpenActCondition(int32 ConditionID, const class FString& LogicName);
+	void RequestTaskDataValueSync();
+	void PlayTeleportAnim(class AActor* TeleportActor);
+	void FightTip(const class FString& InKey, int32 InType, bool IsNodeId, const struct FRepExecuteDes& ExecuteData);
+	void NotifyMoveCameraComplete();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void MultiDoSpawn(int32 InMonsterId, class FName InTag, class FName PointName);
+	bool IsMultiLevel();
+	void UnBindGameTaskUIEvent();
+	void OnClientMultiTaskPathUpdate();
+	void NotifyStartMultiSubTask(const struct FMultiSubTask& InSubTask);
+	bool ShouldCalcOnlineDesignation();
 	void GetCharacterTemplateId__Overridden(class AGamePlayer* Player, int32* TemplateId);
 	void CloseActCondition__Overridden(int32 ConditionID, const class FString& LogicName);
 	void CheckActCondition__Overridden(int32 ConditionID, const class FString& LogicName, bool* ret);
@@ -108,43 +139,16 @@ public:
 	void TaskFinishExecute(const bool bDestroyAI, const bool bPlayFinishAnim_0, const float PlayerPerformDelay_0, const class FName IgnoreDestroyAITag_0);
 	void OnLevelPreFinish__Overridden(bool bSuccess);
 	void ForceInterruptSkill__Overridden(class AGameSkill* GameSkill, ESkillInterruptedType InterruptedType);
+	void ClientAsyncMultiTask();
+	void OnAsyncLoadComplete(class UObject* LoadedObject, const struct FSoftObjectPath& Path);
 	void ExecuteUbergraph_BP_TaskActor(int32 EntryPoint);
-	void ReceiveBeginPlay();
-	void MultiDoSpawn(int32 InMonsterId, class FName InTag, class FName PointName);
-	void GetVictorySequence(class ULevelSequence** AsLevel_Sequence, class FString* Return_Value_资源名修饰);
-	void OnMultiKill(class AActor* Killer, class AActor* Deceased);
-	void OpenActCondition(int32 ConditionID, const class FString& LogicName);
-	void OnMultiKillInfoUpdate();
-	void CloseActCondition(int32 ConditionID, const class FString& LogicName);
-	bool IsMultiLevel();
-	void TryStartTask(bool bOpenUI);
-	void OnDebugInit();
-	void UnBindGameTaskUIEvent();
-	void OnLevelSequcenceFinish();
-	void ForceInterruptSkill(class AGameSkill* GameSkill, ESkillInterruptedType InterruptedType);
-	void PlayTeleportAnim(class AActor* TeleportActor);
-	void NotifyStartMultiSubTask(const struct FMultiSubTask& InSubTask);
-	void GetCharacterTemplateId(class AGamePlayer* Player, int32* TemplateId);
-	void NotifyMoveCameraComplete();
-	void CheckActCondition(int32 ConditionID, const class FString& LogicName, bool* ret);
-	int32 GetLevelConfigTime(const class UGameTask* Cur);
-	bool ShouldCalcOnlineBehaviorPoint();
-	void FixSkill(class AGameSkill* InSkill);
-	void OnPlayerMove();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void RequestTaskDataValueSync();
-	void LeaveAllAI();
-	bool ShouldCalcOnlineDesignation();
-	void FightTip(const class FString& InKey, int32 InType, bool IsNodeId, const struct FRepExecuteDes& ExecuteData);
-	void DoSceneOnOff();
-	void OnLevelPreFinish(bool bSuccess);
-	void SetGameTask();
 
-	class FString GetModuleName() const;
+	bool LevelAlwaysShowSuccess() const;
 	bool IsMultiConstLevel() const;
-	bool IsMultiDynamicLevel() const;
 	bool IsWaveControlLevel() const;
+	bool IsMultiDynamicLevel() const;
 	bool IsMultiSpecificLevel() const;
+	class FString GetModuleName() const;
 
 public:
 	static class UClass* StaticClass()

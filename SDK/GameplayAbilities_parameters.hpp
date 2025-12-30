@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "GameplayAbilities_structs.hpp"
-#include "Engine_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
@@ -1615,53 +1615,6 @@ public:
 };
 DUMPER7_ASSERTS_AbilitySystemGlobals_ServerEndPlayerAbility;
 
-// Function GameplayAbilities.GameplayAbilityWorldReticle.FaceTowardSource
-// 0x0001 (0x0001 - 0x0000)
-struct GameplayAbilityWorldReticle_FaceTowardSource final
-{
-public:
-	bool                                          bFaceIn2D;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameplayAbilityWorldReticle_FaceTowardSource;
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.OnTargetingAnActor
-// 0x0001 (0x0001 - 0x0000)
-struct GameplayAbilityWorldReticle_OnTargetingAnActor final
-{
-public:
-	bool                                          bNewValue;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameplayAbilityWorldReticle_OnTargetingAnActor;
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.OnValidTargetChanged
-// 0x0001 (0x0001 - 0x0000)
-struct GameplayAbilityWorldReticle_OnValidTargetChanged final
-{
-public:
-	bool                                          bNewValue;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameplayAbilityWorldReticle_OnValidTargetChanged;
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamFloat
-// 0x000C (0x000C - 0x0000)
-struct GameplayAbilityWorldReticle_SetReticleMaterialParamFloat final
-{
-public:
-	class FName                                   ParamName;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Value;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameplayAbilityWorldReticle_SetReticleMaterialParamFloat;
-
-// Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamVector
-// 0x0014 (0x0014 - 0x0000)
-struct GameplayAbilityWorldReticle_SetReticleMaterialParamVector final
-{
-public:
-	class FName                                   ParamName;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Value;                                             // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameplayAbilityWorldReticle_SetReticleMaterialParamVector;
-
 // Function GameplayAbilities.AbilityTask_ApplyRootMotionConstantForce.ApplyRootMotionConstantForce
 // 0x0050 (0x0050 - 0x0000)
 struct AbilityTask_ApplyRootMotionConstantForce_ApplyRootMotionConstantForce final
@@ -1975,28 +1928,6 @@ public:
 };
 DUMPER7_ASSERTS_AbilityTask_StartAbilityState_StartAbilityState;
 
-// Function GameplayAbilities.AbilityTask_WaitGameplayEffectStackChange.WaitForGameplayEffectStackChange
-// 0x0018 (0x0018 - 0x0000)
-struct AbilityTask_WaitGameplayEffectStackChange_WaitForGameplayEffectStackChange final
-{
-public:
-	class UGameplayAbility*                       OwningAbility;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FActiveGameplayEffectHandle            Handle;                                            // 0x0008(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAbilityTask_WaitGameplayEffectStackChange* ReturnValue;                                   // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AbilityTask_WaitGameplayEffectStackChange_WaitForGameplayEffectStackChange;
-
-// Function GameplayAbilities.AbilityTask_WaitGameplayEffectStackChange.OnGameplayEffectStackChange
-// 0x0010 (0x0010 - 0x0000)
-struct AbilityTask_WaitGameplayEffectStackChange_OnGameplayEffectStackChange final
-{
-public:
-	struct FActiveGameplayEffectHandle            Handle;                                            // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NewCount;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         OldCount;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AbilityTask_WaitGameplayEffectStackChange_OnGameplayEffectStackChange;
-
 // Function GameplayAbilities.AbilityTask_VisualizeTargeting.VisualizeTargeting
 // 0x0028 (0x0028 - 0x0000)
 struct AbilityTask_VisualizeTargeting_VisualizeTargeting final
@@ -2099,18 +2030,6 @@ public:
 	class UGameplayAbility*                       ActivatedAbility;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AbilityTask_WaitAbilityActivate_OnAbilityActivate;
-
-// Function GameplayAbilities.AbilityTask_WaitDelay.WaitDelay
-// 0x0018 (0x0018 - 0x0000)
-struct AbilityTask_WaitDelay_WaitDelay final
-{
-public:
-	class UGameplayAbility*                       OwningAbility;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Time;                                              // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbilityTask_WaitDelay*                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AbilityTask_WaitDelay_WaitDelay;
 
 // Function GameplayAbilities.AbilityTask_WaitAbilityCommit.WaitForAbilityCommit
 // 0x0028 (0x0028 - 0x0000)
@@ -2218,21 +2137,6 @@ public:
 };
 DUMPER7_ASSERTS_AbilityTask_WaitAttributeChangeThreshold_WaitForAttributeChangeThreshold;
 
-// Function GameplayAbilities.AbilityTask_WaitGameplayEffectBlockedImmunity.WaitGameplayEffectBlockedByImmunity
-// 0x00A0 (0x00A0 - 0x0000)
-struct AbilityTask_WaitGameplayEffectBlockedImmunity_WaitGameplayEffectBlockedByImmunity final
-{
-public:
-	class UGameplayAbility*                       OwningAbility;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTagRequirements               SourceTagRequirements;                             // 0x0008(0x0040)(Parm, NativeAccessSpecifierPublic)
-	struct FGameplayTagRequirements               TargetTagRequirements;                             // 0x0048(0x0040)(Parm, NativeAccessSpecifierPublic)
-	class AActor*                                 OptionalExternalTarget;                            // 0x0088(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          OnlyTriggerOnce;                                   // 0x0090(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbilityTask_WaitGameplayEffectBlockedImmunity* ReturnValue;                               // 0x0098(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AbilityTask_WaitGameplayEffectBlockedImmunity_WaitGameplayEffectBlockedByImmunity;
-
 // Function GameplayAbilities.AbilityTask_WaitCancel.WaitCancel
 // 0x0010 (0x0010 - 0x0000)
 struct AbilityTask_WaitCancel_WaitCancel final
@@ -2271,6 +2175,18 @@ public:
 	class UAbilityTask_WaitConfirmCancel*         ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AbilityTask_WaitConfirmCancel_WaitConfirmCancel;
+
+// Function GameplayAbilities.AbilityTask_WaitDelay.WaitDelay
+// 0x0018 (0x0018 - 0x0000)
+struct AbilityTask_WaitDelay_WaitDelay final
+{
+public:
+	class UGameplayAbility*                       OwningAbility;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Time;                                              // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilityTask_WaitDelay*                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AbilityTask_WaitDelay_WaitDelay;
 
 // Function GameplayAbilities.AbilityTask_WaitGameplayEffectApplied.OnApplyGameplayEffectCallback
 // 0x02A8 (0x02A8 - 0x0000)
@@ -2355,6 +2271,21 @@ public:
 };
 DUMPER7_ASSERTS_AbilityTask_WaitGameplayEffectApplied_Target_WaitGameplayEffectAppliedToTarget_Query;
 
+// Function GameplayAbilities.AbilityTask_WaitGameplayEffectBlockedImmunity.WaitGameplayEffectBlockedByImmunity
+// 0x00A0 (0x00A0 - 0x0000)
+struct AbilityTask_WaitGameplayEffectBlockedImmunity_WaitGameplayEffectBlockedByImmunity final
+{
+public:
+	class UGameplayAbility*                       OwningAbility;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTagRequirements               SourceTagRequirements;                             // 0x0008(0x0040)(Parm, NativeAccessSpecifierPublic)
+	struct FGameplayTagRequirements               TargetTagRequirements;                             // 0x0048(0x0040)(Parm, NativeAccessSpecifierPublic)
+	class AActor*                                 OptionalExternalTarget;                            // 0x0088(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          OnlyTriggerOnce;                                   // 0x0090(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilityTask_WaitGameplayEffectBlockedImmunity* ReturnValue;                               // 0x0098(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AbilityTask_WaitGameplayEffectBlockedImmunity_WaitGameplayEffectBlockedByImmunity;
+
 // Function GameplayAbilities.AbilityTask_WaitGameplayEffectRemoved.WaitForGameplayEffectRemoved
 // 0x0018 (0x0018 - 0x0000)
 struct AbilityTask_WaitGameplayEffectRemoved_WaitForGameplayEffectRemoved final
@@ -2374,6 +2305,28 @@ public:
 	struct FGameplayEffectRemovalInfo             InGameplayEffectRemovalInfo;                       // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AbilityTask_WaitGameplayEffectRemoved_OnGameplayEffectRemoved;
+
+// Function GameplayAbilities.AbilityTask_WaitGameplayEffectStackChange.WaitForGameplayEffectStackChange
+// 0x0018 (0x0018 - 0x0000)
+struct AbilityTask_WaitGameplayEffectStackChange_WaitForGameplayEffectStackChange final
+{
+public:
+	class UGameplayAbility*                       OwningAbility;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FActiveGameplayEffectHandle            Handle;                                            // 0x0008(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAbilityTask_WaitGameplayEffectStackChange* ReturnValue;                                   // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AbilityTask_WaitGameplayEffectStackChange_WaitForGameplayEffectStackChange;
+
+// Function GameplayAbilities.AbilityTask_WaitGameplayEffectStackChange.OnGameplayEffectStackChange
+// 0x0010 (0x0010 - 0x0000)
+struct AbilityTask_WaitGameplayEffectStackChange_OnGameplayEffectStackChange final
+{
+public:
+	struct FActiveGameplayEffectHandle            Handle;                                            // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NewCount;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OldCount;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AbilityTask_WaitGameplayEffectStackChange_OnGameplayEffectStackChange;
 
 // Function GameplayAbilities.AbilityTask_WaitGameplayEvent.WaitGameplayEvent
 // 0x0028 (0x0028 - 0x0000)
@@ -3054,6 +3007,53 @@ public:
 	struct FGameplayEffectSpecHandle              ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GameplayAbility_MakeOutgoingGameplayEffectSpec;
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.FaceTowardSource
+// 0x0001 (0x0001 - 0x0000)
+struct GameplayAbilityWorldReticle_FaceTowardSource final
+{
+public:
+	bool                                          bFaceIn2D;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameplayAbilityWorldReticle_FaceTowardSource;
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.OnTargetingAnActor
+// 0x0001 (0x0001 - 0x0000)
+struct GameplayAbilityWorldReticle_OnTargetingAnActor final
+{
+public:
+	bool                                          bNewValue;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameplayAbilityWorldReticle_OnTargetingAnActor;
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.OnValidTargetChanged
+// 0x0001 (0x0001 - 0x0000)
+struct GameplayAbilityWorldReticle_OnValidTargetChanged final
+{
+public:
+	bool                                          bNewValue;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameplayAbilityWorldReticle_OnValidTargetChanged;
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamFloat
+// 0x000C (0x000C - 0x0000)
+struct GameplayAbilityWorldReticle_SetReticleMaterialParamFloat final
+{
+public:
+	class FName                                   ParamName;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameplayAbilityWorldReticle_SetReticleMaterialParamFloat;
+
+// Function GameplayAbilities.GameplayAbilityWorldReticle.SetReticleMaterialParamVector
+// 0x0014 (0x0014 - 0x0000)
+struct GameplayAbilityWorldReticle_SetReticleMaterialParamVector final
+{
+public:
+	class FName                                   ParamName;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Value;                                             // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameplayAbilityWorldReticle_SetReticleMaterialParamVector;
 
 // Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
 // 0x00C0 (0x00C0 - 0x0000)

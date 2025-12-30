@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass ClearLevelCountDownEvent.ClearLevelCountDownEvent_C
-// 0x0000 (0x0158 - 0x0158)
+// 0x0000 (0x0168 - 0x0168)
 class UClearLevelCountDownEvent_C final : public UGameTaskEvent
 {
 public:

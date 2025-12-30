@@ -74,15 +74,15 @@ void Uuw_fight_enter_bunker_item_C::InitGamepadLongPressUI()
 }
 
 
-// LuaFunction uw_fight_enter_bunker_item.uw_fight_enter_bunker_item_C.TriggerInteract
+// LuaFunction uw_fight_enter_bunker_item.uw_fight_enter_bunker_item_C.BindKeyBoardOnSettingChange
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_enter_bunker_item_C::TriggerInteract()
+void Uuw_fight_enter_bunker_item_C::BindKeyBoardOnSettingChange()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_enter_bunker_item_C", "TriggerInteract");
+		Func = Class->GetFunction("uw_fight_enter_bunker_item_C", "BindKeyBoardOnSettingChange");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -131,15 +131,15 @@ void Uuw_fight_enter_bunker_item_C::UpdateKeyShow()
 }
 
 
-// LuaFunction uw_fight_enter_bunker_item.uw_fight_enter_bunker_item_C.BindKeyBoardOnSettingChange
+// LuaFunction uw_fight_enter_bunker_item.uw_fight_enter_bunker_item_C.TriggerInteract
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_enter_bunker_item_C::BindKeyBoardOnSettingChange()
+void Uuw_fight_enter_bunker_item_C::TriggerInteract()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_enter_bunker_item_C", "BindKeyBoardOnSettingChange");
+		Func = Class->GetFunction("uw_fight_enter_bunker_item_C", "TriggerInteract");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

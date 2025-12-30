@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -27,15 +27,15 @@ public:
 	class URedirectTextBlock*                     TxtName;                                           // 0x03C0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void Destruct();
-	void OnConstruct();
-	void Construct();
-	void OnListItemObjectSet(class UObject* ListItemObject);
 	void BP_OnEntryReleased();
 	void BP_OnItemExpansionChanged(bool bIsExpanded);
 	void BP_OnItemSelectionChanged(bool bIsSelected);
 	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
 	void ExecuteUbergraph_uw_healthroom_minidiff(int32 EntryPoint);
+	void Destruct();
+	void OnConstruct();
+	void Construct();
+	void OnListItemObjectSet(class UObject* ListItemObject);
 
 	class FString GetModuleName() const;
 

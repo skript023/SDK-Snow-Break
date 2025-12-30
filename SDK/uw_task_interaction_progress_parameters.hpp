@@ -16,35 +16,6 @@
 namespace SDK::Params
 {
 
-// Function uw_task_interaction_progress.uw_task_interaction_progress_C.StopProgress
-// 0x0004 (0x0004 - 0x0000)
-struct uw_task_interaction_progress_C_StopProgress final
-{
-public:
-	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_task_interaction_progress_C_StopProgress;
-
-// Function uw_task_interaction_progress.uw_task_interaction_progress_C.StartProgress
-// 0x0008 (0x0008 - 0x0000)
-struct uw_task_interaction_progress_C_StartProgress final
-{
-public:
-	float                                         PerformTime;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_task_interaction_progress_C_StartProgress;
-
-// Function uw_task_interaction_progress.uw_task_interaction_progress_C.Tick
-// 0x003C (0x003C - 0x0000)
-struct uw_task_interaction_progress_C_Tick final
-{
-public:
-	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_task_interaction_progress_C_Tick;
-
 // Function uw_task_interaction_progress.uw_task_interaction_progress_C.ExecuteUbergraph_uw_task_interaction_progress
 // 0x004C (0x004C - 0x0000)
 struct uw_task_interaction_progress_C_ExecuteUbergraph_uw_task_interaction_progress final
@@ -58,6 +29,35 @@ public:
 	bool                                          CallFunc_GreaterEqual_FloatFloat_ReturnValue;      // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_task_interaction_progress_C_ExecuteUbergraph_uw_task_interaction_progress;
+
+// Function uw_task_interaction_progress.uw_task_interaction_progress_C.Tick
+// 0x003C (0x003C - 0x0000)
+struct uw_task_interaction_progress_C_Tick final
+{
+public:
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_task_interaction_progress_C_Tick;
+
+// Function uw_task_interaction_progress.uw_task_interaction_progress_C.StartProgress
+// 0x0008 (0x0008 - 0x0000)
+struct uw_task_interaction_progress_C_StartProgress final
+{
+public:
+	float                                         PerformTime;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_task_interaction_progress_C_StartProgress;
+
+// Function uw_task_interaction_progress.uw_task_interaction_progress_C.StopProgress
+// 0x0004 (0x0004 - 0x0000)
+struct uw_task_interaction_progress_C_StopProgress final
+{
+public:
+	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_task_interaction_progress_C_StopProgress;
 
 // Function uw_task_interaction_progress.uw_task_interaction_progress_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

@@ -32,9 +32,9 @@ public:
 
 public:
 	void CheckOverlaidRange(class UModifier* InModifier, bool* InRange);
+	bool K2_CheckCondition(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void K2_InitCondition();
 	void ExecuteUbergraph_Condition_CheckLauncherModifierOverlaidNum(int32 EntryPoint);
-	bool K2_CheckCondition(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 
 public:
 	static class UClass* StaticClass()

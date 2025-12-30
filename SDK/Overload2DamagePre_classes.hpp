@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Overload2DamagePre.Overload2DamagePre_C
-// 0x0000 (0x01C0 - 0x01C0)
+// 0x0000 (0x01A8 - 0x01A8)
 class UOverload2DamagePre_C final : public UInfluenceAbilityAttribute
 {
 public:

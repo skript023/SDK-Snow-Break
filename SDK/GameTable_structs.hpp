@@ -47,7 +47,7 @@ enum class EGameplayType : uint8
 };
 
 // Enum GameTable.EGameTableName
-// NumValues: 0x008E
+// NumValues: 0x008D
 enum class EGameTableName : uint8
 {
 	None                                     = 0,
@@ -189,9 +189,8 @@ enum class EGameTableName : uint8
 	OnlineSeaModSkillInfo                    = 136,
 	OnlineSeaShipInfo                        = 137,
 	OnlineSeaExpInfo                         = 138,
-	ArmoredRiderWeaponInfo                   = 139,
-	OnlinePurgeWaveInfo                      = 140,
-	EGameTableName_MAX                       = 141,
+	OnlinePurgeWaveInfo                      = 139,
+	EGameTableName_MAX                       = 140,
 };
 
 // ScriptStruct GameTable.DataTableItemConfig

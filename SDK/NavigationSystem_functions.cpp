@@ -797,6 +797,65 @@ void UNavigationSystemV1::UnregisterNavigationInvoker(class AActor* Invoker)
 }
 
 
+// Function NavigationSystem.NavModifierVolume.SetAreaClass
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UNavArea>             NewAreaClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ANavModifierVolume::SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavModifierVolume", "SetAreaClass");
+
+	Params::NavModifierVolume_SetAreaClass Parms{};
+
+	Parms.NewAreaClass = NewAreaClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function NavigationSystem.RecastNavMesh.K2_ReplaceAreaInTileBounds
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FBox&                      Bounds                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// TSubclassOf<class UNavArea>             OldArea                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UNavArea>             NewArea                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReplaceLinks                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ARecastNavMesh::K2_ReplaceAreaInTileBounds(const struct FBox& Bounds, TSubclassOf<class UNavArea> OldArea, TSubclassOf<class UNavArea> NewArea, bool ReplaceLinks)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RecastNavMesh", "K2_ReplaceAreaInTileBounds");
+
+	Params::RecastNavMesh_K2_ReplaceAreaInTileBounds Parms{};
+
+	Parms.Bounds = std::move(Bounds);
+	Parms.OldArea = OldArea;
+	Parms.NewArea = NewArea;
+	Parms.ReplaceLinks = ReplaceLinks;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function NavigationSystem.NavigationPath.EnableDebugDrawing
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -1046,65 +1105,6 @@ void UNavModifierComponent::SetAreaClass(TSubclassOf<class UNavArea> NewAreaClas
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function NavigationSystem.NavModifierVolume.SetAreaClass
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UNavArea>             NewAreaClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ANavModifierVolume::SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NavModifierVolume", "SetAreaClass");
-
-	Params::NavModifierVolume_SetAreaClass Parms{};
-
-	Parms.NewAreaClass = NewAreaClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function NavigationSystem.RecastNavMesh.K2_ReplaceAreaInTileBounds
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FBox&                      Bounds                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// TSubclassOf<class UNavArea>             OldArea                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UNavArea>             NewArea                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReplaceLinks                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ARecastNavMesh::K2_ReplaceAreaInTileBounds(const struct FBox& Bounds, TSubclassOf<class UNavArea> OldArea, TSubclassOf<class UNavArea> NewArea, bool ReplaceLinks)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RecastNavMesh", "K2_ReplaceAreaInTileBounds");
-
-	Params::RecastNavMesh_K2_ReplaceAreaInTileBounds Parms{};
-
-	Parms.Bounds = std::move(Bounds);
-	Parms.OldArea = OldArea;
-	Parms.NewArea = NewArea;
-	Parms.ReplaceLinks = ReplaceLinks;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 }

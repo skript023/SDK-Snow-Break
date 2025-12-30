@@ -13,8 +13,8 @@
 #include "UMG_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Cartoon_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -203,7 +203,7 @@ public:
 DUMPER7_ASSERTS_UCartoonCameraAnimSystem;
 
 // Class Cartoon.CartoonRuntime
-// 0x0848 (0x0A70 - 0x0228)
+// 0x0858 (0x0A80 - 0x0228)
 class ACartoonRuntime final : public AActor
 {
 public:
@@ -230,7 +230,7 @@ public:
 	TArray<class FString>                         AllSelectedBranches;                               // 0x0518(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
 	uint8                                         Pad_528[0x10];                                     // 0x0528(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 PlayerName;                                        // 0x0538(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_548[0x528];                                    // 0x0548(0x0528)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_548[0x538];                                    // 0x0548(0x0538)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool CheckGyroInput();
@@ -238,6 +238,7 @@ public:
 	bool IsFix();
 	void NotifyLevelSequencePlayEnd();
 	void OnBtnClickSkip();
+	void SetIsHidden(bool InValue);
 
 public:
 	static class UClass* StaticClass()
@@ -341,38 +342,40 @@ public:
 DUMPER7_ASSERTS_UCartoonSpineWidget;
 
 // Class Cartoon.CartoonWidget
-// 0x00F8 (0x0378 - 0x0280)
+// 0x0100 (0x0380 - 0x0280)
 class UCartoonWidget : public UUserWidget
 {
 public:
-	class UImage*                                 DefaultScreenImage;                                // 0x0280(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTextBlock*                             Speaker;                                           // 0x0288(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCanvasPanel*                           PanelMsg;                                          // 0x0290(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCanvasPanel*                           PanelLayer1;                                       // 0x0298(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCanvasPanel*                           PanelOptions;                                      // 0x02A0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCanvasPanel*                           PanelFullScreen;                                   // 0x02A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCanvasPanel*                           Pool_Images;                                       // 0x02B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UButton*                                Btn_hide;                                          // 0x02B8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidget*                                DialogueText;                                      // 0x02C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UImage*                                 ImgFullScreen;                                     // 0x02C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidget*                                ScrollFullText;                                    // 0x02D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidget*                                FullScreenText;                                    // 0x02D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GlobalApplicationScale;                            // 0x02E0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsSkip;                                            // 0x02E4(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsAutoPlay;                                        // 0x02E5(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsWindowMinized;                                   // 0x02E6(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2E7[0x1];                                      // 0x02E7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class UWidget*, class UWidget*>          WarpWidgets;                                       // 0x02E8(0x0050)(ExportObject, Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TArray<class UWidget*>                        ImageWidgetPool;                                   // 0x0338(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	bool                                          bIsTextAnimComplete;                               // 0x0348(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_349[0x7];                                      // 0x0349(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACartoonRuntime*                        Runtime;                                           // 0x0350(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class UCartoonBGImage>         BGImage;                                           // 0x0358(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ChoiceIndex;                                       // 0x0360(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsShowSkipUI;                                      // 0x0364(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_365[0x7];                                      // 0x0365(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CartoonType;                                       // 0x036C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_370[0x8];                                      // 0x0370(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         WaitEndAnimTime;                                   // 0x0280(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_284[0x4];                                      // 0x0284(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UImage*                                 DefaultScreenImage;                                // 0x0288(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTextBlock*                             Speaker;                                           // 0x0290(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCanvasPanel*                           PanelMsg;                                          // 0x0298(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCanvasPanel*                           PanelLayer1;                                       // 0x02A0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCanvasPanel*                           PanelOptions;                                      // 0x02A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCanvasPanel*                           PanelFullScreen;                                   // 0x02B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCanvasPanel*                           Pool_Images;                                       // 0x02B8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UButton*                                Btn_hide;                                          // 0x02C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidget*                                DialogueText;                                      // 0x02C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UImage*                                 ImgFullScreen;                                     // 0x02D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidget*                                ScrollFullText;                                    // 0x02D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidget*                                FullScreenText;                                    // 0x02E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GlobalApplicationScale;                            // 0x02E8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsSkip;                                            // 0x02EC(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsAutoPlay;                                        // 0x02ED(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsWindowMinized;                                   // 0x02EE(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2EF[0x1];                                      // 0x02EF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class UWidget*, class UWidget*>          WarpWidgets;                                       // 0x02F0(0x0050)(ExportObject, Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UWidget*>                        ImageWidgetPool;                                   // 0x0340(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bIsTextAnimComplete;                               // 0x0350(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_351[0x7];                                      // 0x0351(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACartoonRuntime*                        Runtime;                                           // 0x0358(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class UCartoonBGImage>         BGImage;                                           // 0x0360(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ChoiceIndex;                                       // 0x0368(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsShowSkipUI;                                      // 0x036C(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_36D[0x7];                                      // 0x036D(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CartoonType;                                       // 0x0374(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_378[0x8];                                      // 0x0378(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UCartoonActionWidget* AllocActionWidget(const class FString& InActionName);
@@ -384,6 +387,7 @@ public:
 	void FreeSpineWidget(class UCartoonSpineWidget* InWidget);
 	struct FVector2D GetBackgroundImageSize();
 	void LuaCloseCameraEffect(int32 InType, float InTime);
+	void LuaImpl_CallLuaFunc(const class FString& Code);
 	void LuaImpl_NotifyChoiceEnd(int32 ChoiceIndex_0);
 	void LuaImpl_NotifySkipEnabeld(bool InValue);
 	bool LuaImpl_UpdateBGSize(class UImage* InImage, class UTexture2D* InTexture);
@@ -399,6 +403,7 @@ public:
 	void OnTextInfoChange(class UWidget* InWidget, const class FText& InText);
 	void RegisterWrapWidget(class UWidget* InSrc, class UWidget* InWrap);
 	void SetParallaxBlur(float InDistance);
+	void SetWaitEndAnimTime(float InTime);
 
 	const struct FVector2D GetBackgroundSize() const;
 

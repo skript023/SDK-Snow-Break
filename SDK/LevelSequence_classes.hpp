@@ -22,6 +22,29 @@
 namespace SDK
 {
 
+// Class LevelSequence.LevelSequenceAnimSequenceLink
+// 0x0010 (0x0038 - 0x0028)
+class ULevelSequenceAnimSequenceLink final : public UAssetUserData
+{
+public:
+	TArray<struct FLevelSequenceAnimSequenceLinkItem> AnimSequenceLinks;                             // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LevelSequenceAnimSequenceLink")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LevelSequenceAnimSequenceLink")
+	}
+	static class ULevelSequenceAnimSequenceLink* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULevelSequenceAnimSequenceLink>();
+	}
+};
+DUMPER7_ASSERTS_ULevelSequenceAnimSequenceLink;
+
 // Class LevelSequence.LevelSequence
 // 0x0168 (0x01C8 - 0x0060)
 class ULevelSequence : public UMovieSceneSequence
@@ -244,29 +267,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ALevelSequenceActor;
-
-// Class LevelSequence.LevelSequenceAnimSequenceLink
-// 0x0010 (0x0038 - 0x0028)
-class ULevelSequenceAnimSequenceLink final : public UAssetUserData
-{
-public:
-	TArray<struct FLevelSequenceAnimSequenceLinkItem> AnimSequenceLinks;                             // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LevelSequenceAnimSequenceLink")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LevelSequenceAnimSequenceLink")
-	}
-	static class ULevelSequenceAnimSequenceLink* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULevelSequenceAnimSequenceLink>();
-	}
-};
-DUMPER7_ASSERTS_ULevelSequenceAnimSequenceLink;
 
 // Class LevelSequence.LevelSequenceBurnIn
 // 0x00C0 (0x0340 - 0x0280)

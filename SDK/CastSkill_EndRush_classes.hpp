@@ -17,13 +17,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CastSkill_EndRush.CastSkill_EndRush_C
-// 0x0010 (0x0A10 - 0x0A00)
+// 0x0010 (0x0A00 - 0x09F0)
 class ACastSkill_EndRush_C final : public AGameSkill
 {
 public:
-	uint8                                         Pad_9F8[0x8];                                      // 0x09F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStartRushComponent*                    StartRush;                                         // 0x0A00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0A08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9E8[0x8];                                      // 0x09E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStartRushComponent*                    StartRush;                                         // 0x09F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x09F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

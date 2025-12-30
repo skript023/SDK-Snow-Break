@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass State_HitRecoveryIgnore.State_HitRecoveryIgnore_C
-// 0x0000 (0x0128 - 0x0128)
+// 0x0000 (0x0110 - 0x0110)
 class UState_HitRecoveryIgnore_C final : public UCustomGameAbilityBuffer
 {
 public:

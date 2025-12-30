@@ -528,34 +528,6 @@ enum class EARCaptureType : uint8
 	EARCaptureType_MAX                       = 4,
 };
 
-// ScriptStruct AugmentedReality.ARSessionPayload
-// 0x0018 (0x0018 - 0x0000)
-struct FARSessionPayload final
-{
-public:
-	int32                                         ConfigFlags;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInterface*                     DefaultMeshMaterial;                               // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     DefaultWireframeMeshMaterial;                      // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FARSessionPayload;
-
-// ScriptStruct AugmentedReality.ARPlaneUpdatePayload
-// 0x0080 (0x0080 - 0x0000)
-struct FARPlaneUpdatePayload final
-{
-public:
-	struct FARSessionPayload                      SessionPayload;                                    // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             WorldTransform;                                    // 0x0020(0x0030)(BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                Center;                                            // 0x0050(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Extents;                                           // 0x005C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        BoundaryVertices;                                  // 0x0068(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	EARObjectClassification                       ObjectClassification;                              // 0x0078(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FARPlaneUpdatePayload;
-
 // ScriptStruct AugmentedReality.TrackedGeometryGroup
 // 0x0018 (0x0018 - 0x0000)
 struct FTrackedGeometryGroup final
@@ -567,16 +539,17 @@ public:
 };
 DUMPER7_ASSERTS_FTrackedGeometryGroup;
 
-// ScriptStruct AugmentedReality.ARVideoFormat
-// 0x000C (0x000C - 0x0000)
-struct FARVideoFormat final
+// ScriptStruct AugmentedReality.ARSessionPayload
+// 0x0018 (0x0018 - 0x0000)
+struct FARSessionPayload final
 {
 public:
-	int32                                         FPS;                                               // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Width;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Height;                                            // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ConfigFlags;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInterface*                     DefaultMeshMaterial;                               // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     DefaultWireframeMeshMaterial;                      // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FARVideoFormat;
+DUMPER7_ASSERTS_FARSessionPayload;
 
 // ScriptStruct AugmentedReality.ARGeoAnchorUpdatePayload
 // 0x0070 (0x0070 - 0x0000)
@@ -608,20 +581,6 @@ public:
 };
 DUMPER7_ASSERTS_FARMeshUpdatePayload;
 
-// ScriptStruct AugmentedReality.ARQRCodeUpdatePayload
-// 0x0070 (0x0070 - 0x0000)
-struct FARQRCodeUpdatePayload final
-{
-public:
-	struct FARSessionPayload                      SessionPayload;                                    // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             WorldTransform;                                    // 0x0020(0x0030)(BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                Extents;                                           // 0x0050(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 qrCode;                                            // 0x0060(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FARQRCodeUpdatePayload;
-
 // ScriptStruct AugmentedReality.ARObjectUpdatePayload
 // 0x0030 (0x0030 - 0x0000)
 struct FARObjectUpdatePayload final
@@ -649,6 +608,20 @@ public:
 	TArray<struct FTransform>                     JointTransforms;                                   // 0x0030(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FARPoseUpdatePayload;
+
+// ScriptStruct AugmentedReality.ARQRCodeUpdatePayload
+// 0x0070 (0x0070 - 0x0000)
+struct FARQRCodeUpdatePayload final
+{
+public:
+	struct FARSessionPayload                      SessionPayload;                                    // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             WorldTransform;                                    // 0x0020(0x0030)(BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                Extents;                                           // 0x0050(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 qrCode;                                            // 0x0060(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FARQRCodeUpdatePayload;
 
 // ScriptStruct AugmentedReality.ARImageUpdatePayload
 // 0x0060 (0x0060 - 0x0000)
@@ -684,6 +657,22 @@ public:
 	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FARPointUpdatePayload;
+
+// ScriptStruct AugmentedReality.ARPlaneUpdatePayload
+// 0x0080 (0x0080 - 0x0000)
+struct FARPlaneUpdatePayload final
+{
+public:
+	struct FARSessionPayload                      SessionPayload;                                    // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             WorldTransform;                                    // 0x0020(0x0030)(BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                Center;                                            // 0x0050(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Extents;                                           // 0x005C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        BoundaryVertices;                                  // 0x0068(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	EARObjectClassification                       ObjectClassification;                              // 0x0078(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FARPlaneUpdatePayload;
 
 // ScriptStruct AugmentedReality.ARSharedWorldReplicationState
 // 0x0008 (0x0008 - 0x0000)
@@ -755,6 +744,17 @@ public:
 	TArray<bool>                                  IsJointTracked;                                    // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FARPose2D;
+
+// ScriptStruct AugmentedReality.ARVideoFormat
+// 0x000C (0x000C - 0x0000)
+struct FARVideoFormat final
+{
+public:
+	int32                                         FPS;                                               // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Width;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Height;                                            // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FARVideoFormat;
 
 // ScriptStruct AugmentedReality.ARSessionStatus
 // 0x0018 (0x0018 - 0x0000)

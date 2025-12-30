@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass TDRandomBuff_138.TDRandomBuff_138_C
-// 0x0000 (0x0160 - 0x0160)
+// 0x0000 (0x0148 - 0x0148)
 class UTDRandomBuff_138_C final : public UAbilityBufferSkill
 {
 public:

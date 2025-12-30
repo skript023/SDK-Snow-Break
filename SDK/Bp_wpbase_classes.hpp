@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Bp_wpbase.Bp_wpbase_C
-// 0x0010 (0x1B40 - 0x1B30)
+// 0x0010 (0x1B70 - 0x1B60)
 class ABp_wpbase_C : public AWeaponBase_C
 {
 public:
-	class UNiagaraComponent*                      Niagara;                                           // 0x1B30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   wp001;                                             // 0x1B38(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      Niagara;                                           // 0x1B60(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   wp001;                                             // 0x1B68(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

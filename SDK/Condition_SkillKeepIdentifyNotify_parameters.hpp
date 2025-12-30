@@ -14,6 +14,17 @@
 namespace SDK::Params
 {
 
+// Function Condition_SkillKeepIdentifyNotify.Condition_SkillKeepIdentifyNotify_C.OnNotifySkillKeepIdentify
+// 0x000C (0x000C - 0x0000)
+struct Condition_SkillKeepIdentifyNotify_C_OnNotifySkillKeepIdentify final
+{
+public:
+	class FName                                   IdentifyName;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bStartKeeping;                                     // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bInterrupt;                                        // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Condition_SkillKeepIdentifyNotify_C_OnNotifySkillKeepIdentify;
+
 // Function Condition_SkillKeepIdentifyNotify.Condition_SkillKeepIdentifyNotify_C.K2_BindEvent
 // 0x0010 (0x0010 - 0x0000)
 struct Condition_SkillKeepIdentifyNotify_C_K2_BindEvent final
@@ -23,6 +34,16 @@ public:
 	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Condition_SkillKeepIdentifyNotify_C_K2_BindEvent;
+
+// Function Condition_SkillKeepIdentifyNotify.Condition_SkillKeepIdentifyNotify_C.K2_UnbindEvent
+// 0x0010 (0x0010 - 0x0000)
+struct Condition_SkillKeepIdentifyNotify_C_K2_UnbindEvent final
+{
+public:
+	class UAbilityComponentBase*                  InCurLauncher;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Condition_SkillKeepIdentifyNotify_C_K2_UnbindEvent;
 
 // Function Condition_SkillKeepIdentifyNotify.Condition_SkillKeepIdentifyNotify_C.ExecuteUbergraph_Condition_SkillKeepIdentifyNotify
 // 0x0070 (0x0070 - 0x0000)
@@ -54,27 +75,6 @@ public:
 	class AGameCharacter*                         K2Node_Event_InCurLauncherChara;                   // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Condition_SkillKeepIdentifyNotify_C_ExecuteUbergraph_Condition_SkillKeepIdentifyNotify;
-
-// Function Condition_SkillKeepIdentifyNotify.Condition_SkillKeepIdentifyNotify_C.OnNotifySkillKeepIdentify
-// 0x000C (0x000C - 0x0000)
-struct Condition_SkillKeepIdentifyNotify_C_OnNotifySkillKeepIdentify final
-{
-public:
-	class FName                                   IdentifyName;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bStartKeeping;                                     // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bInterrupt;                                        // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Condition_SkillKeepIdentifyNotify_C_OnNotifySkillKeepIdentify;
-
-// Function Condition_SkillKeepIdentifyNotify.Condition_SkillKeepIdentifyNotify_C.K2_UnbindEvent
-// 0x0010 (0x0010 - 0x0000)
-struct Condition_SkillKeepIdentifyNotify_C_K2_UnbindEvent final
-{
-public:
-	class UAbilityComponentBase*                  InCurLauncher;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Condition_SkillKeepIdentifyNotify_C_K2_UnbindEvent;
 
 }
 

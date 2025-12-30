@@ -32,14 +32,14 @@ public:
 	int32                                         EffectId;                                          // 0x02B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast_2();
-	void SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast_0();
-	void EndPlayEffect();
-	void SwitchEvent();
-	void BeginEvent();
-	void EndEvent();
 	void ExecuteUbergraph_uw_fight_scene_switch_fast(int32 EntryPoint);
+	void EndEvent();
+	void BeginEvent();
+	void SwitchEvent();
+	void EndPlayEffect();
+	void SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast_0();
 	void SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast_1();
+	void SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast_2();
 
 public:
 	static class UClass* StaticClass()

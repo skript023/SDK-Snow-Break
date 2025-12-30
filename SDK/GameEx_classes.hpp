@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "GameCore_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "GameEx_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "GameEx_structs.hpp"
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
-#include "UMG_classes.hpp"
 #include "GameLogicTree_structs.hpp"
 #include "GameLogicTree_classes.hpp"
+#include "UMG_classes.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK
@@ -1472,7 +1472,7 @@ public:
 DUMPER7_ASSERTS_UWaterParkAnimMetaData;
 
 // Class GameEx.GEGameCharacter
-// 0x1030 (0x14F0 - 0x04C0)
+// 0x0FF0 (0x14B0 - 0x04C0)
 class AGEGameCharacter final : public ACharacter
 {
 public:
@@ -1825,18 +1825,18 @@ public:
 	float                                         ZBugLaunchDmgToPerformScore;                       // 0x1410(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         TakeDmgToPerformScore;                             // 0x1414(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<int32, int32>                            SkillUseInfo;                                      // 0x1418(0x0050)(Transient, NativeAccessSpecifierPublic)
-	TMap<int32, int32>                            ItemUseInfo;                                       // 0x1468(0x0050)(Transient, NativeAccessSpecifierPublic)
-	int32                                         InitWeaponID;                                      // 0x14B8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsReborning;                                       // 0x14BC(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsReborningFinish;                                 // 0x14BD(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14BE[0x2];                                     // 0x14BE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RebornTimer;                                       // 0x14C0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RebornCD;                                          // 0x14C4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           RebornTag;                                         // 0x14C8(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           RebornStartTag;                                    // 0x14D0(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           RebornTransportTag;                                // 0x14D8(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class UGEFightEnemyHPBar>      EnemyHPBar;                                        // 0x14E0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14E8[0x8];                                     // 0x14E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<struct FWPCharItemUseInfo>             ItemUseInfo;                                       // 0x1468(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	int32                                         InitWeaponID;                                      // 0x1478(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsReborning;                                       // 0x147C(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsReborningFinish;                                 // 0x147D(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_147E[0x2];                                     // 0x147E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RebornTimer;                                       // 0x1480(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RebornCD;                                          // 0x1484(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           RebornTag;                                         // 0x1488(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           RebornStartTag;                                    // 0x1490(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           RebornTransportTag;                                // 0x1498(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class UGEFightEnemyHPBar>      EnemyHPBar;                                        // 0x14A0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14A8[0x8];                                     // 0x14A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ActivateBuff(int32 BuffId);

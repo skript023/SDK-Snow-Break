@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // Class SeasunAccount.Account
-// 0x0428 (0x0450 - 0x0028)
+// 0x0478 (0x04A0 - 0x0028)
 class UAccount final : public UObject
 {
 public:
@@ -39,7 +39,8 @@ public:
 	TMap<uint64, struct FFriendPieces>            FriendPieces;                                      // 0x0308(0x0050)(Transient, NativeAccessSpecifierPrivate)
 	TMap<class FString, class FString>            CustomRoster;                                      // 0x0358(0x0050)(Transient, NativeAccessSpecifierPrivate)
 	TMap<class FString, int64>                    GlobalAttrs;                                       // 0x03A8(0x0050)(Transient, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3F8[0x58];                                     // 0x03F8(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMap<class FString, class FString>            GlobalStrAttrs;                                    // 0x03F8(0x0050)(Transient, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_448[0x58];                                     // 0x0448(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void BreakConnect();
@@ -61,9 +62,11 @@ public:
 	void Badges(TArray<class UItem*>* OutItems);
 	void BuildTrialCharacters(int32 LocalAccountId, int64 InItemId);
 	void CallGS(const class FString& InCommand, const class FString& InJSON);
+	void CallGSWithDependParam(const class FString& InCommand, const class FString& InJSON, TArray<class FString>* InDependParams);
 	void ChangeWorldChannel(int32 InChannelID);
 	class FString Channel();
 	int32 Charged();
+	bool CheckTag(const int32 InIdx);
 	void Clear();
 	void Connect(const class FString& InAddr, int32 InPort);
 	class UItem* CreateItem(int32 G, int32 D, int32 P, int32 L, int32 InLevel, bool bAdd, int32 InSkinId, bool IsTrial);
@@ -97,6 +100,7 @@ public:
 	void GetFriendRequests(TArray<class UPlayerProfile*>* OutList);
 	void GetFriends(TArray<class UPlayerProfile*>* OutFriends);
 	int64 GetGlobalAttr(const class FString& InKey);
+	class FString GetGlobalStrAttr(const class FString& InKey);
 	int32 GetItemCount(int32 InG, int32 InD, int32 InP, int32 InL, bool InContainTrial);
 	void GetItems(TArray<class UItem*>* OutItems, bool InContainTrial);
 	void GetItemsByGDPL(int32 InG, int32 InD, int32 InP, int32 InL, TArray<class UItem*>* OutItems, bool InContainTrial);
@@ -125,6 +129,7 @@ public:
 	void GetSupporterCards(TArray<class USupporterCard*>* OutItems, bool InContainTrial);
 	void GetSupporterCardsForIndex(int32 InType, TArray<class USupporterCard*>* OutItems, bool InContainTrial);
 	void GetSupporterCardsForType(ECardSlotType InType, TArray<class USupporterCard*>* OutItems, bool InContainTrial);
+	void GetTags(TArray<int32>* OutList);
 	class UCharacterCard* GetTrialCard(int32 InId);
 	int64 GetTrialIDByItem(class UItem* InItem);
 	class UItem* GetTrialSkin(const TArray<int32>& InId);
@@ -167,6 +172,7 @@ public:
 	void OnlineUpdateLineup(int32 LineUpIndex);
 	int32 PlatId();
 	class FString Provider();
+	void QueryGlobalCounter(const class FString& InCounterName);
 	void QueryRank(const class FString& InRankName, const class FString& InMember);
 	void RankList(const class FString& InRankName);
 	void ReadItem(const TArray<int64>& itemList);
@@ -188,6 +194,7 @@ public:
 	void SetClientAttribute(int64 InGroup, int64 InSubId, int64 InValue);
 	void SetCustomRoster(const class FString& InKey, const class FString& InValue);
 	void SetGlobalAttr(const class FString& InKey, int64 InValue);
+	void SetGlobalStrAttr(const class FString& InKey, const class FString& InValue);
 	void SetNewGuide(int32 V);
 	void SetStrAttribute(int64 InGroup, int64 InSubId, const class FString& InValue);
 	class FString Sign();
@@ -851,10 +858,12 @@ public:
 
 public:
 	class FString AccountId();
+	bool CheckTag(const int32 InIdx);
 	int64 CreateTime();
 	void GetBadges(TArray<class UItem*>* inList);
 	void GetShowAttrs(TArray<int32>* inList);
 	void GetShowItems(TArray<class UItem*>* inList);
+	void GetTags(TArray<int32>* OutList);
 	bool HaveVigor();
 	int64 ID();
 	bool IsActive();

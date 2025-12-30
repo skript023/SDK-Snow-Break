@@ -16,6 +16,43 @@
 namespace SDK::Params
 {
 
+// Function OnHurt_Base.OnHurt_Base_C.ReceiverBind
+// 0x0008 (0x0008 - 0x0000)
+struct OnHurt_Base_C_ReceiverBind final
+{
+public:
+	class UAbilityComponentBase*                  BindTarget;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_OnHurt_Base_C_ReceiverBind;
+
+// Function OnHurt_Base.OnHurt_Base_C.ApplyDamage
+// 0x00C0 (0x00C0 - 0x0000)
+struct OnHurt_Base_C_ApplyDamage final
+{
+public:
+	struct FApplyDamageResultData                 DamageResultData;                                  // 0x0000(0x00C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_OnHurt_Base_C_ApplyDamage;
+
+// Function OnHurt_Base.OnHurt_Base_C.UnbindNotifySummon
+// 0x0008 (0x0008 - 0x0000)
+struct OnHurt_Base_C_UnbindNotifySummon final
+{
+public:
+	class AGameCharacter*                         InCharacter;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_OnHurt_Base_C_UnbindNotifySummon;
+
+// Function OnHurt_Base.OnHurt_Base_C.K2_UnbindEvent
+// 0x0010 (0x0010 - 0x0000)
+struct OnHurt_Base_C_K2_UnbindEvent final
+{
+public:
+	class UAbilityComponentBase*                  InCurLauncher;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_OnHurt_Base_C_K2_UnbindEvent;
+
 // Function OnHurt_Base.OnHurt_Base_C.CondtionCacheTarget
 // 0x0010 (0x0010 - 0x0000)
 struct OnHurt_Base_C_CondtionCacheTarget final
@@ -35,15 +72,6 @@ public:
 	bool                                          bCastAllowed;                                      // 0x00C0(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_OnHurt_Base_C_OnReceiveNotify;
-
-// Function OnHurt_Base.OnHurt_Base_C.ReceiverBind
-// 0x0008 (0x0008 - 0x0000)
-struct OnHurt_Base_C_ReceiverBind final
-{
-public:
-	class UAbilityComponentBase*                  BindTarget;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_OnHurt_Base_C_ReceiverBind;
 
 // Function OnHurt_Base.OnHurt_Base_C.ReceiverUnbind
 // 0x0008 (0x0008 - 0x0000)
@@ -81,15 +109,6 @@ public:
 };
 DUMPER7_ASSERTS_OnHurt_Base_C_ReceiveDamage;
 
-// Function OnHurt_Base.OnHurt_Base_C.ApplyDamage
-// 0x00C0 (0x00C0 - 0x0000)
-struct OnHurt_Base_C_ApplyDamage final
-{
-public:
-	struct FApplyDamageResultData                 DamageResultData;                                  // 0x0000(0x00C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_OnHurt_Base_C_ApplyDamage;
-
 // Function OnHurt_Base.OnHurt_Base_C.OnNotifySummon
 // 0x0008 (0x0008 - 0x0000)
 struct OnHurt_Base_C_OnNotifySummon final
@@ -108,15 +127,6 @@ public:
 };
 DUMPER7_ASSERTS_OnHurt_Base_C_BindNotifySummon;
 
-// Function OnHurt_Base.OnHurt_Base_C.UnbindNotifySummon
-// 0x0008 (0x0008 - 0x0000)
-struct OnHurt_Base_C_UnbindNotifySummon final
-{
-public:
-	class AGameCharacter*                         InCharacter;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_OnHurt_Base_C_UnbindNotifySummon;
-
 // Function OnHurt_Base.OnHurt_Base_C.K2_BindEvent
 // 0x0010 (0x0010 - 0x0000)
 struct OnHurt_Base_C_K2_BindEvent final
@@ -126,16 +136,6 @@ public:
 	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_OnHurt_Base_C_K2_BindEvent;
-
-// Function OnHurt_Base.OnHurt_Base_C.K2_UnbindEvent
-// 0x0010 (0x0010 - 0x0000)
-struct OnHurt_Base_C_K2_UnbindEvent final
-{
-public:
-	class UAbilityComponentBase*                  InCurLauncher;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_OnHurt_Base_C_K2_UnbindEvent;
 
 // Function OnHurt_Base.OnHurt_Base_C.ExecuteUbergraph_OnHurt_Base
 // 0x0340 (0x0340 - 0x0000)

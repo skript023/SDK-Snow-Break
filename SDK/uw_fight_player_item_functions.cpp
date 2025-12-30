@@ -364,125 +364,6 @@ void Uuw_fight_player_item_C::IsInFight(bool* InFight)
 }
 
 
-// LuaFunction uw_fight_player_item.uw_fight_player_item_C.UpdateKeyboard
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_player_item_C::UpdateKeyboard(int32 InIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "UpdateKeyboard");
-
-	Params::uw_fight_player_item_C_UpdateKeyboard Parms{};
-
-	Parms.InIndex = InIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_player_item.uw_fight_player_item_C.OnAnimationFinished
-// (BlueprintCosmetic, Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_player_item_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "OnAnimationFinished");
-
-	Params::uw_fight_player_item_C_OnAnimationFinished Parms{};
-
-	Parms.Animation = Animation;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_player_item.uw_fight_player_item_C.NotifyClick
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EPlayerBtnType                          BtnType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_player_item_C::NotifyClick(EPlayerBtnType BtnType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "NotifyClick");
-
-	Params::uw_fight_player_item_C_NotifyClick Parms{};
-
-	Parms.BtnType = BtnType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_player_item.uw_fight_player_item_C.K2_OnCustomUmgAnimFinished
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FName&                      AnimName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_player_item_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "K2_OnCustomUmgAnimFinished");
-
-	Params::uw_fight_player_item_C_K2_OnCustomUmgAnimFinished Parms{};
-
-	Parms.AnimName = AnimName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_player_item.uw_fight_player_item_C.NotifyRefreshCharacter
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_player_item_C::NotifyRefreshCharacter()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "NotifyRefreshCharacter");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_player_item.uw_fight_player_item_C.OnChargeTimesChange
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -548,6 +429,81 @@ void Uuw_fight_player_item_C::Construct()
 }
 
 
+// LuaFunction uw_fight_player_item.uw_fight_player_item_C.K2_OnCustomUmgAnimFinished
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FName&                      AnimName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_player_item_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "K2_OnCustomUmgAnimFinished");
+
+	Params::uw_fight_player_item_C_K2_OnCustomUmgAnimFinished Parms{};
+
+	Parms.AnimName = AnimName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_player_item.uw_fight_player_item_C.UpdateKeyboard
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_player_item_C::UpdateKeyboard(int32 InIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "UpdateKeyboard");
+
+	Params::uw_fight_player_item_C_UpdateKeyboard Parms{};
+
+	Parms.InIndex = InIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_player_item.uw_fight_player_item_C.OnAnimationFinished
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_player_item_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "OnAnimationFinished");
+
+	Params::uw_fight_player_item_C_OnAnimationFinished Parms{};
+
+	Parms.Animation = Animation;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_player_item.uw_fight_player_item_C.NotifyReviveCdOK
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -557,6 +513,50 @@ void Uuw_fight_player_item_C::NotifyReviveCdOK()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_player_item_C", "NotifyReviveCdOK");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_player_item.uw_fight_player_item_C.NotifyClick
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EPlayerBtnType                          BtnType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_player_item_C::NotifyClick(EPlayerBtnType BtnType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "NotifyClick");
+
+	Params::uw_fight_player_item_C_NotifyClick Parms{};
+
+	Parms.BtnType = BtnType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_player_item.uw_fight_player_item_C.NotifyRefreshCharacter
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_player_item_C::NotifyRefreshCharacter()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "NotifyRefreshCharacter");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

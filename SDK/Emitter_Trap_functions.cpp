@@ -17,6 +17,25 @@
 namespace SDK
 {
 
+// LuaFunction Emitter_Trap.Emitter_Trap_C.OnEmitEnd
+// (Native, Event, Protected, BlueprintEvent)
+
+void UEmitter_Trap_C::OnEmitEnd()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Emitter_Trap_C", "OnEmitEnd");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction Emitter_Trap.Emitter_Trap_C.EmitterDestroyLua
 // (Native, Event, Public, BlueprintEvent)
 
@@ -61,46 +80,6 @@ EEmitterResult UEmitter_Trap_C::OnEmit()
 }
 
 
-// Function Emitter_Trap.Emitter_Trap_C.GetDefaultParamsValue
-// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<struct FParamInfo>*              Values                                                 (Parm, OutParm)
-
-void UEmitter_Trap_C::GetDefaultParamsValue(TArray<struct FParamInfo>* Values)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_Trap_C", "GetDefaultParamsValue");
-
-	Params::Emitter_Trap_C_GetDefaultParamsValue Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Values != nullptr)
-		*Values = std::move(Parms.Values);
-}
-
-
-// LuaFunction Emitter_Trap.Emitter_Trap_C.OnEmitEnd
-// (Native, Event, Protected, BlueprintEvent)
-
-void UEmitter_Trap_C::OnEmitEnd()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_Trap_C", "OnEmitEnd");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Emitter_Trap.Emitter_Trap_C.OnGetAssetPath
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -134,6 +113,27 @@ TArray<struct FSoftObjectPath> UEmitter_Trap_C::OnGetAssetPath(const TArray<stru
 	EmitterIDs = std::move(Parms.EmitterIDs);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Emitter_Trap.Emitter_Trap_C.GetDefaultParamsValue
+// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<struct FParamInfo>*              Values                                                 (Parm, OutParm)
+
+void UEmitter_Trap_C::GetDefaultParamsValue(TArray<struct FParamInfo>* Values)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Emitter_Trap_C", "GetDefaultParamsValue");
+
+	Params::Emitter_Trap_C_GetDefaultParamsValue Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Values != nullptr)
+		*Values = std::move(Parms.Values);
 }
 
 

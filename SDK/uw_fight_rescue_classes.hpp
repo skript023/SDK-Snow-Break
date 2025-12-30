@@ -21,10 +21,10 @@ namespace SDK
 class Uuw_fight_rescue_C final : public Uuw_fight_interactitem_C
 {
 public:
-	void Destruct();
-	void OnConstruct();
 	void TriggerInteract();
 	void BindExitInteractEvent();
+	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

@@ -16,17 +16,6 @@
 namespace SDK::Params
 {
 
-// Function NextXBulletEffect.NextXBulletEffect_C.SetModifierNextBullet
-// 0x0010 (0x0010 - 0x0000)
-struct NextXBulletEffect_C_SetModifierNextBullet final
-{
-public:
-	class UModifier*                              CallFunc_GetModifierOwner_ReturnValue;             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_NextXBulletEffect_C_SetModifierNextBullet;
-
 // Function NextXBulletEffect.NextXBulletEffect_C.CheckState
 // 0x0005 (0x0005 - 0x0000)
 struct NextXBulletEffect_C_CheckState final
@@ -50,15 +39,6 @@ public:
 };
 DUMPER7_ASSERTS_NextXBulletEffect_C_K2_ReceiveInitialize;
 
-// Function NextXBulletEffect.NextXBulletEffect_C.K2_ReceiveDeActive
-// 0x0008 (0x0008 - 0x0000)
-struct NextXBulletEffect_C_K2_ReceiveDeActive final
-{
-public:
-	const class UGameAbilityComponent*            Pawn;                                              // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_NextXBulletEffect_C_K2_ReceiveDeActive;
-
 // Function NextXBulletEffect.NextXBulletEffect_C.ReceiveOnWeaponFire
 // 0x0004 (0x0004 - 0x0000)
 struct NextXBulletEffect_C_ReceiveOnWeaponFire final
@@ -77,6 +57,35 @@ public:
 };
 DUMPER7_ASSERTS_NextXBulletEffect_C_K2_ReceiveActive;
 
+// Function NextXBulletEffect.NextXBulletEffect_C.ReceiveOnPreWeaponFire
+// 0x0001 (0x0001 - 0x0000)
+struct NextXBulletEffect_C_ReceiveOnPreWeaponFire final
+{
+public:
+	EAttributeType                                BulletType_0;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_NextXBulletEffect_C_ReceiveOnPreWeaponFire;
+
+// Function NextXBulletEffect.NextXBulletEffect_C.SetModifierNextBullet
+// 0x0010 (0x0010 - 0x0000)
+struct NextXBulletEffect_C_SetModifierNextBullet final
+{
+public:
+	class UModifier*                              CallFunc_GetModifierOwner_ReturnValue;             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_NextXBulletEffect_C_SetModifierNextBullet;
+
+// Function NextXBulletEffect.NextXBulletEffect_C.K2_ReceiveDeActive
+// 0x0008 (0x0008 - 0x0000)
+struct NextXBulletEffect_C_K2_ReceiveDeActive final
+{
+public:
+	const class UGameAbilityComponent*            Pawn;                                              // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_NextXBulletEffect_C_K2_ReceiveDeActive;
+
 // Function NextXBulletEffect.NextXBulletEffect_C.OnPlayerActionFlay
 // 0x0010 (0x0010 - 0x0000)
 struct NextXBulletEffect_C_OnPlayerActionFlay final
@@ -87,15 +96,6 @@ public:
 	bool                                          bSet;                                              // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_NextXBulletEffect_C_OnPlayerActionFlay;
-
-// Function NextXBulletEffect.NextXBulletEffect_C.ReceiveOnPreWeaponFire
-// 0x0001 (0x0001 - 0x0000)
-struct NextXBulletEffect_C_ReceiveOnPreWeaponFire final
-{
-public:
-	EAttributeType                                BulletType_0;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_NextXBulletEffect_C_ReceiveOnPreWeaponFire;
 
 // Function NextXBulletEffect.NextXBulletEffect_C.ExecuteUbergraph_NextXBulletEffect
 // 0x0188 (0x0188 - 0x0000)

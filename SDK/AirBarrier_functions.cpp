@@ -339,31 +339,6 @@ void AAirBarrier_C::DoRegionCheck(bool* bPassCheck)
 }
 
 
-// LuaFunction AirBarrier.AirBarrier_C.ReceiveActorBeginOverlap
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AAirBarrier_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AirBarrier_C", "ReceiveActorBeginOverlap");
-
-	Params::AirBarrier_C_ReceiveActorBeginOverlap Parms{};
-
-	Parms.OtherActor = OtherActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction AirBarrier.AirBarrier_C.DoOnlineTDDutyCheck
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -387,6 +362,31 @@ void AAirBarrier_C::DoOnlineTDDutyCheck(bool* bPassCheck)
 
 	if (bPassCheck != nullptr)
 		*bPassCheck = Parms.bPassCheck;
+}
+
+
+// LuaFunction AirBarrier.AirBarrier_C.ReceiveActorBeginOverlap
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AAirBarrier_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AirBarrier_C", "ReceiveActorBeginOverlap");
+
+	Params::AirBarrier_C_ReceiveActorBeginOverlap Parms{};
+
+	Parms.OtherActor = OtherActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

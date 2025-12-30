@@ -81,6 +81,50 @@ void Uuw_fight_boss_hp_C::Tick(const struct FGeometry& MyGeometry, float InDelta
 }
 
 
+// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.K2_OnUpdate
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_boss_hp_C::K2_OnUpdate(float InDeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_boss_hp_C", "K2_OnUpdate");
+
+	Params::uw_fight_boss_hp_C_K2_OnUpdate Parms{};
+
+	Parms.InDeltaTime = InDeltaTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_boss_hp_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_boss_hp_C", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.K2_OnAppliedModifierChange
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -129,25 +173,6 @@ void Uuw_fight_boss_hp_C::K2_NotifyInitBindBoss()
 }
 
 
-// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_boss_hp_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_boss_hp_C", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.OnDamageNumChange
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -163,31 +188,6 @@ void Uuw_fight_boss_hp_C::OnDamageNumChange(float DamageTaken)
 	Params::uw_fight_boss_hp_C_OnDamageNumChange Parms{};
 
 	Parms.DamageTaken = DamageTaken;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.K2_OnUpdate
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_boss_hp_C::K2_OnUpdate(float InDeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_boss_hp_C", "K2_OnUpdate");
-
-	Params::uw_fight_boss_hp_C_K2_OnUpdate Parms{};
-
-	Parms.InDeltaTime = InDeltaTime;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

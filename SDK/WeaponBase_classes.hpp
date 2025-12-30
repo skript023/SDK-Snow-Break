@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass WeaponBase.WeaponBase_C
-// 0x0000 (0x1B30 - 0x1B30)
+// 0x0000 (0x1B60 - 0x1B60)
 class AWeaponBase_C : public APlayerWeapon
 {
 public:

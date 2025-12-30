@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass ReloadMontageAbilityState.ReloadMontageAbilityState_C
-// 0x0000 (0x0138 - 0x0138)
+// 0x0000 (0x0120 - 0x0120)
 class UReloadMontageAbilityState_C final : public UMontageAbilityState
 {
 public:

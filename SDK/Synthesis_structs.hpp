@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "AudioMixer_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK
@@ -561,20 +561,6 @@ public:
 };
 DUMPER7_ASSERTS_FModularSynthPresetBankEntry;
 
-// ScriptStruct Synthesis.SourceEffectPhaserSettings
-// 0x0010 (0x0010 - 0x0000)
-struct FSourceEffectPhaserSettings final
-{
-public:
-	float                                         WetLevel;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Frequency;                                         // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Feedback;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPhaserLFOType                                LFOType;                                           // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UseQuadraturePhase;                                // 0x000D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSourceEffectPhaserSettings;
-
 // ScriptStruct Synthesis.PatchId
 // 0x0004 (0x0004 - 0x0000)
 struct FPatchId final
@@ -621,19 +607,6 @@ public:
 	float                                         Spread;                                            // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSourceEffectChorusBaseSettings;
-
-// ScriptStruct Synthesis.SourceEffectMidSideSpreaderSettings
-// 0x0008 (0x0008 - 0x0000)
-struct FSourceEffectMidSideSpreaderSettings final
-{
-public:
-	float                                         SpreadAmount;                                      // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EStereoChannelMode                            InputMode;                                         // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EStereoChannelMode                            OutputMode;                                        // 0x0005(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEqualPower;                                       // 0x0006(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7[0x1];                                        // 0x0007(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSourceEffectMidSideSpreaderSettings;
 
 // ScriptStruct Synthesis.SourceEffectDynamicsProcessorSettings
 // 0x0028 (0x0028 - 0x0000)
@@ -736,6 +709,19 @@ public:
 };
 DUMPER7_ASSERTS_FSourceEffectFoldbackDistortionSettings;
 
+// ScriptStruct Synthesis.SourceEffectMidSideSpreaderSettings
+// 0x0008 (0x0008 - 0x0000)
+struct FSourceEffectMidSideSpreaderSettings final
+{
+public:
+	float                                         SpreadAmount;                                      // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EStereoChannelMode                            InputMode;                                         // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EStereoChannelMode                            OutputMode;                                        // 0x0005(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEqualPower;                                       // 0x0006(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7[0x1];                                        // 0x0007(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSourceEffectMidSideSpreaderSettings;
+
 // ScriptStruct Synthesis.SourceEffectPannerSettings
 // 0x0008 (0x0008 - 0x0000)
 struct FSourceEffectPannerSettings final
@@ -745,6 +731,20 @@ public:
 	float                                         Pan;                                               // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSourceEffectPannerSettings;
+
+// ScriptStruct Synthesis.SourceEffectPhaserSettings
+// 0x0010 (0x0010 - 0x0000)
+struct FSourceEffectPhaserSettings final
+{
+public:
+	float                                         WetLevel;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Frequency;                                         // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Feedback;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPhaserLFOType                                LFOType;                                           // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseQuadraturePhase;                                // 0x000D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSourceEffectPhaserSettings;
 
 // ScriptStruct Synthesis.SourceEffectRingModulationSettings
 // 0x0020 (0x0020 - 0x0000)

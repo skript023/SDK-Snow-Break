@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -35,9 +35,9 @@ public:
 	void Play();
 	void Stop();
 	void SetPlaySpeed(float InSpeedPre);
-	void Construct();
 	void ReceiveWarning(bool IsWarning, float InTotalTime);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void Construct();
 	void OnConstruct();
 	void Destruct();
 

@@ -55,6 +55,15 @@ enum class EMagicLeapPassableWorldError : uint8
 	EMagicLeapPassableWorldError_MAX         = 12,
 };
 
+// ScriptStruct MagicLeapARPin.MagicLeapARPinObjectIdList
+// 0x0050 (0x0050 - 0x0000)
+struct FMagicLeapARPinObjectIdList final
+{
+public:
+	TSet<class FString>                           ObjectIdList;                                      // 0x0000(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMagicLeapARPinObjectIdList;
+
 // ScriptStruct MagicLeapARPin.MagicLeapARPinState
 // 0x0014 (0x0014 - 0x0000)
 struct FMagicLeapARPinState final
@@ -82,15 +91,6 @@ public:
 	uint8                                         Pad_65[0x3];                                       // 0x0065(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMagicLeapARPinQuery;
-
-// ScriptStruct MagicLeapARPin.MagicLeapARPinObjectIdList
-// 0x0050 (0x0050 - 0x0000)
-struct FMagicLeapARPinObjectIdList final
-{
-public:
-	TSet<class FString>                           ObjectIdList;                                      // 0x0000(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMagicLeapARPinObjectIdList;
 
 }
 

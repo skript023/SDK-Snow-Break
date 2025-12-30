@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function SelfCheck_StartSwitch.SelfCheck_StartSwitch_C.OnCharacterStartSwitch
+// 0x0001 (0x0001 - 0x0000)
+struct SelfCheck_StartSwitch_C_OnCharacterStartSwitch final
+{
+public:
+	bool                                          bDeadSwitch_0;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_SelfCheck_StartSwitch_C_OnCharacterStartSwitch;
+
 // Function SelfCheck_StartSwitch.SelfCheck_StartSwitch_C.K2_BindEvent
 // 0x0010 (0x0010 - 0x0000)
 struct SelfCheck_StartSwitch_C_K2_BindEvent final
@@ -33,15 +42,6 @@ public:
 	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_SelfCheck_StartSwitch_C_K2_UnbindEvent;
-
-// Function SelfCheck_StartSwitch.SelfCheck_StartSwitch_C.OnCharacterStartSwitch
-// 0x0001 (0x0001 - 0x0000)
-struct SelfCheck_StartSwitch_C_OnCharacterStartSwitch final
-{
-public:
-	bool                                          bDeadSwitch_0;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_SelfCheck_StartSwitch_C_OnCharacterStartSwitch;
 
 // Function SelfCheck_StartSwitch.SelfCheck_StartSwitch_C.ExecuteUbergraph_SelfCheck_StartSwitch
 // 0x0078 (0x0078 - 0x0000)

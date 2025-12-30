@@ -19,17 +19,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BulletRecover.BulletRecover_C
-// 0x0050 (0x01A0 - 0x0150)
+// 0x0050 (0x0188 - 0x0138)
 class UBulletRecover_C final : public URecoverAbilityAttribute
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0150(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FBulletRecoverTemplate                 Config;                                            // 0x0158(0x0048)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0138(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FBulletRecoverTemplate                 Config;                                            // 0x0140(0x0048)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn);
-	void K2_ReceiveActive(const class UObject* Instigator);
 	bool K2_RecoverAttribute(class UAbilityComponentBase* InAbility, float InValue);
+	void K2_ReceiveActive(const class UObject* Instigator);
+	void K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn);
 	void InitConfig();
 	void ExecuteUbergraph_BulletRecover(int32 EntryPoint);
 

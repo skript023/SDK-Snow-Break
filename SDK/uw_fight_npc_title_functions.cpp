@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction uw_fight_npc_title.uw_fight_npc_title_C.AllocNewWidget
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UWidget* Uuw_fight_npc_title_C::AllocNewWidget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_npc_title_C", "AllocNewWidget");
-
-	Params::uw_fight_npc_title_C_AllocNewWidget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // LuaFunction uw_fight_npc_title.uw_fight_npc_title_C.Construct
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
@@ -112,6 +87,31 @@ void Uuw_fight_npc_title_C::SetNpcName(class UWidget* InWidget, class FString* N
 
 	if (Name_0 != nullptr)
 		*Name_0 = std::move(Parms.Name_0);
+}
+
+
+// LuaFunction uw_fight_npc_title.uw_fight_npc_title_C.AllocNewWidget
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UWidget* Uuw_fight_npc_title_C::AllocNewWidget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_npc_title_C", "AllocNewWidget");
+
+	Params::uw_fight_npc_title_C_AllocNewWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

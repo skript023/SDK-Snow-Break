@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass ReviveGodBuffer.ReviveGodBuffer_C
-// 0x0000 (0x0128 - 0x0128)
+// 0x0000 (0x0110 - 0x0110)
 class UReviveGodBuffer_C final : public UGameAbilityBuffer
 {
 public:

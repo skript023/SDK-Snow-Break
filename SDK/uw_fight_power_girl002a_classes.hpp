@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -19,7 +19,7 @@ namespace SDK
 
 // WidgetBlueprintGeneratedClass uw_fight_power_girl002a.uw_fight_power_girl002a_C
 // 0x0050 (0x0438 - 0x03E8)
-class Uuw_fight_power_girl002a_C final : public UFightBarGirl002a
+class uw_fight_power_girl002a::Uuw_fight_power_girl002a_C final : public UFightBarGirl002a
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -34,24 +34,24 @@ public:
 	class UGameCanvasPanel*                       RootPanel;                                         // 0x0430(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_power_girl002a(int32 EntryPoint);
 	void PlayAnim(bool StateType);
+	void ExecuteUbergraph_uw_fight_power_girl002a(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()
 	{
-		BP_STATIC_CLASS_IMPL("uw_fight_power_girl002a_C")
+		BP_STATIC_CLASS_IMPL_FULLNAME("WidgetBlueprintGeneratedClass uw_fight_power_girl002a.uw_fight_power_girl002a_C")
 	}
 	static const class FName& StaticName()
 	{
 		STATIC_NAME_IMPL(L"uw_fight_power_girl002a_C")
 	}
-	static class Uuw_fight_power_girl002a_C* GetDefaultObj()
+	static class uw_fight_power_girl002a::Uuw_fight_power_girl002a_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<Uuw_fight_power_girl002a_C>();
+		return GetDefaultObjImpl<uw_fight_power_girl002a::Uuw_fight_power_girl002a_C>();
 	}
 };
-DUMPER7_ASSERTS_Uuw_fight_power_girl002a_C;
+DUMPER7_ASSERTS_uw_fight_power_girl002a__Uuw_fight_power_girl002a_C;
 
 }
 

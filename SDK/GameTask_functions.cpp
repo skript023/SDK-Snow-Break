@@ -1939,6 +1939,33 @@ class AGameTaskActor* AGameTaskActor::GetGameTaskActor(const class UObject* Worl
 }
 
 
+// Function GameTask.GameTaskActor.AppendGameTaskCache
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    TaskPath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGameTask*                        InLoadedObject                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGameTaskActor::AppendGameTaskCache(const class FString& TaskPath, class UGameTask* InLoadedObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameTaskActor", "AppendGameTaskCache");
+
+	Params::GameTaskActor_AppendGameTaskCache Parms{};
+
+	Parms.TaskPath = std::move(TaskPath);
+	Parms.InLoadedObject = InLoadedObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameTask.GameTaskActor.ApplyMoveCamera
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -3205,6 +3232,39 @@ void AGameTaskActor::NotifyStartMultiSubTask(const struct FMultiSubTask& InSubTa
 	Parms.InSubTask = std::move(InSubTask);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameTask.GameTaskActor.OnClientMultiTaskAsyncLoadComplete
+// (Final, Native, Public, BlueprintCallable)
+
+void AGameTaskActor::OnClientMultiTaskAsyncLoadComplete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameTaskActor", "OnClientMultiTaskAsyncLoadComplete");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameTask.GameTaskActor.OnClientMultiTaskPathUpdate
+// (Event, Public, BlueprintEvent)
+
+void AGameTaskActor::OnClientMultiTaskPathUpdate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameTaskActor", "OnClientMultiTaskPathUpdate");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -4531,6 +4591,34 @@ void AGameTaskActor::UpdateFightLog_PlotLevel(int32 PlotID, int32 CompleteType)
 }
 
 
+// Function GameTask.GameTaskActor.CheckChildGameTaskExist
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class FString&                    TaskPath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGameTaskActor::CheckChildGameTaskExist(const class FString& TaskPath) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameTaskActor", "CheckChildGameTaskExist");
+
+	Params::GameTaskActor_CheckChildGameTaskExist Parms{};
+
+	Parms.TaskPath = std::move(TaskPath);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameTask.GameTaskActor.GetExactLevelTotalTime
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -5106,6 +5194,31 @@ bool AGameTaskActor::IsWaveControlLevel() const
 }
 
 
+// Function GameTask.GameTaskActor.LevelAlwaysShowSuccess
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGameTaskActor::LevelAlwaysShowSuccess() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameTaskActor", "LevelAlwaysShowSuccess");
+
+	Params::GameTaskActor_LevelAlwaysShowSuccess Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameTask.GameTaskComposite_Flow.Exit
 // (Native, Public, BlueprintCallable)
 
@@ -5222,6 +5335,25 @@ void UGameTaskComposite_Flow::OnExit()
 		Func = Class->GetFunction("GameTaskComposite_Flow", "OnExit");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameTask.GameTaskComposite_Flow.TryRestart
+// (Final, Native, Public, BlueprintCallable)
+
+void UGameTaskComposite_Flow::TryRestart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameTaskComposite_Flow", "TryRestart");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

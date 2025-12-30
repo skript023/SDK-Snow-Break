@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -19,7 +19,7 @@ namespace SDK
 
 // WidgetBlueprintGeneratedClass uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C
 // 0x0088 (0x0418 - 0x0390)
-class Uuw_fight_power_girl002a_twobar_C final : public UFightBarGirl002aItem2
+class uw_fight_power_girl002a_twobar::Uuw_fight_power_girl002a_twobar_C final : public UFightBarGirl002aItem2
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0390(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -35,32 +35,32 @@ public:
 	class URedirectImage*                         Img4;                                              // 0x03E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         ImgLight;                                          // 0x03E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         ImgLight1;                                         // 0x03F0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class URedirectImage*                         imgmask;                                           // 0x03F8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class URedirectImage*                         ImgMask;                                           // 0x03F8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UGameCanvasPanel*                       PanelPower1;                                       // 0x0400(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UProgressBar*                           Power1;                                            // 0x0408(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UProgressBar*                           Power2;                                            // 0x0410(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_power_girl002a_twobar(int32 EntryPoint);
-	void PlayStartStateAnim(bool bPlay);
-	void PlayFullAnim(int32 Index_0);
 	void PlayDepleteAnim(int32 Index_0);
+	void PlayFullAnim(int32 Index_0);
+	void PlayStartStateAnim(bool bPlay);
+	void ExecuteUbergraph_uw_fight_power_girl002a_twobar(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()
 	{
-		BP_STATIC_CLASS_IMPL("uw_fight_power_girl002a_twobar_C")
+		BP_STATIC_CLASS_IMPL_FULLNAME("WidgetBlueprintGeneratedClass uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C")
 	}
 	static const class FName& StaticName()
 	{
 		STATIC_NAME_IMPL(L"uw_fight_power_girl002a_twobar_C")
 	}
-	static class Uuw_fight_power_girl002a_twobar_C* GetDefaultObj()
+	static class uw_fight_power_girl002a_twobar::Uuw_fight_power_girl002a_twobar_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<Uuw_fight_power_girl002a_twobar_C>();
+		return GetDefaultObjImpl<uw_fight_power_girl002a_twobar::Uuw_fight_power_girl002a_twobar_C>();
 	}
 };
-DUMPER7_ASSERTS_Uuw_fight_power_girl002a_twobar_C;
+DUMPER7_ASSERTS_uw_fight_power_girl002a_twobar__Uuw_fight_power_girl002a_twobar_C;
 
 }
 

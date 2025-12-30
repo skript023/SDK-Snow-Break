@@ -17,44 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction uw_sevendays_stars.uw_sevendays_stars_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_sevendays_stars_C::Destruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_sevendays_stars_C", "Destruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_sevendays_stars.uw_sevendays_stars_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
-
-void Uuw_sevendays_stars_C::OnConstruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_sevendays_stars_C", "OnConstruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function uw_sevendays_stars.uw_sevendays_stars_C.BP_OnEntryReleased
 // (Event, Protected, BlueprintEvent)
 
@@ -146,6 +108,44 @@ void Uuw_sevendays_stars_C::ExecuteUbergraph_uw_sevendays_stars(int32 EntryPoint
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// LuaFunction uw_sevendays_stars.uw_sevendays_stars_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_sevendays_stars_C::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_sevendays_stars_C", "Destruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_sevendays_stars.uw_sevendays_stars_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
+
+void Uuw_sevendays_stars_C::OnConstruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_sevendays_stars_C", "OnConstruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

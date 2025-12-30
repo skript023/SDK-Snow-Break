@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function Condition_CheckIsFightPlayer.Condition_CheckIsFightPlayer_C.ExecuteUbergraph_Condition_CheckIsFightPlayer
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UCondition_CheckIsFightPlayer_C::ExecuteUbergraph_Condition_CheckIsFightPlayer(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Condition_CheckIsFightPlayer_C", "ExecuteUbergraph_Condition_CheckIsFightPlayer");
-
-	Params::Condition_CheckIsFightPlayer_C_ExecuteUbergraph_Condition_CheckIsFightPlayer Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function Condition_CheckIsFightPlayer.Condition_CheckIsFightPlayer_C.K2_CheckCondition
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -73,6 +53,26 @@ void UCondition_CheckIsFightPlayer_C::K2_InitCondition()
 		Func = Class->GetFunction("Condition_CheckIsFightPlayer_C", "K2_InitCondition");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Condition_CheckIsFightPlayer.Condition_CheckIsFightPlayer_C.ExecuteUbergraph_Condition_CheckIsFightPlayer
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCondition_CheckIsFightPlayer_C::ExecuteUbergraph_Condition_CheckIsFightPlayer(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Condition_CheckIsFightPlayer_C", "ExecuteUbergraph_Condition_CheckIsFightPlayer");
+
+	Params::Condition_CheckIsFightPlayer_C_ExecuteUbergraph_Condition_CheckIsFightPlayer Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

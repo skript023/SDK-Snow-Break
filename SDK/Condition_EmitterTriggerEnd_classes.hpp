@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -25,13 +25,13 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0108(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
-	void ExecuteUbergraph_Condition_EmitterTriggerEnd(int32 EntryPoint);
 	void K2_InitCondition();
 	void Bind(class UAbilityComponentBase* BindAbility);
 	void UnBind(class UAbilityComponentBase* BindAbility);
 	void EmitterTriggerEnd(int32 EmitterID, class UAbilityComponentBase* OwnerAbility);
+	void K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void K2_UnbindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
+	void ExecuteUbergraph_Condition_EmitterTriggerEnd(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

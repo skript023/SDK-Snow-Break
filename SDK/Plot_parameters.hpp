@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Plot_structs.hpp"
-#include "SlateCore_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "UMG_structs.hpp"
+#include "Plot_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK::Params
@@ -45,6 +45,15 @@ public:
 	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_PlotItem_GetIndex;
+
+// Function Plot.PlotItem.GetIsFastPreview
+// 0x0001 (0x0001 - 0x0000)
+struct PlotItem_GetIsFastPreview final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotItem_GetIsFastPreview;
 
 // Function Plot.PlotItem.GetParent
 // 0x0008 (0x0008 - 0x0000)
@@ -90,6 +99,116 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_PlotItem_IsTimeout;
+
+// Function Plot.PlotSaveGame.LoadPlotSaveGame
+// 0x0008 (0x0008 - 0x0000)
+struct PlotSaveGame_LoadPlotSaveGame final
+{
+public:
+	class UPlotSaveGame*                          ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotSaveGame_LoadPlotSaveGame;
+
+// Function Plot.PlotSaveGame.SaveKey
+// 0x0010 (0x0010 - 0x0000)
+struct PlotSaveGame_SaveKey final
+{
+public:
+	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotSaveGame_SaveKey;
+
+// Function Plot.PlotSaveGame.HasKey
+// 0x0018 (0x0018 - 0x0000)
+struct PlotSaveGame_HasKey final
+{
+public:
+	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlotSaveGame_HasKey;
+
+// Function Plot.MovieClipBackgroundUserWidget.ReplaceFontAsset
+// 0x0008 (0x0008 - 0x0000)
+struct MovieClipBackgroundUserWidget_ReplaceFontAsset final
+{
+public:
+	class UTextBlock*                             InTextBlock;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieClipBackgroundUserWidget_ReplaceFontAsset;
+
+// Function Plot.MovieClipBackgroundUserWidget.SetCurrentControlerType
+// 0x0001 (0x0001 - 0x0000)
+struct MovieClipBackgroundUserWidget_SetCurrentControlerType final
+{
+public:
+	EPlayControllerType                           TypeToSet;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieClipBackgroundUserWidget_SetCurrentControlerType;
+
+// Function Plot.MovieClipBackgroundUserWidget.SetVisible
+// 0x0001 (0x0001 - 0x0000)
+struct MovieClipBackgroundUserWidget_SetVisible final
+{
+public:
+	bool                                          bIsSetVisible;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieClipBackgroundUserWidget_SetVisible;
+
+// Function Plot.PlotItem_LuaImpl.IsSingleWidget
+// 0x0001 (0x0001 - 0x0000)
+struct PlotItem_LuaImpl_IsSingleWidget final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotItem_LuaImpl_IsSingleWidget;
+
+// Function Plot.PlotItem_LuaImpl.SetWait
+// 0x0001 (0x0001 - 0x0000)
+struct PlotItem_LuaImpl_SetWait final
+{
+public:
+	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotItem_LuaImpl_SetWait;
+
+// Function Plot.MovieClipImage.OnCameraCut
+// 0x0008 (0x0008 - 0x0000)
+struct MovieClipImage_OnCameraCut final
+{
+public:
+	class UCameraComponent*                       CameraComp;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieClipImage_OnCameraCut;
+
+// Function Plot.MovieClipMediaSourceImage.OnMediaOpenFailedHandler
+// 0x0010 (0x0010 - 0x0000)
+struct MovieClipMediaSourceImage_OnMediaOpenFailedHandler final
+{
+public:
+	class FString                                 DeviceUrl;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieClipMediaSourceImage_OnMediaOpenFailedHandler;
+
+// Function Plot.MovieClipMediaSourceImage.OnMediaSourceOpenedHandler
+// 0x0010 (0x0010 - 0x0000)
+struct MovieClipMediaSourceImage_OnMediaSourceOpenedHandler final
+{
+public:
+	class FString                                 DeviceUrl;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieClipMediaSourceImage_OnMediaSourceOpenedHandler;
+
+// Function Plot.MovieClipMediaSourceImage.GetFileList
+// 0x0010 (0x0010 - 0x0000)
+struct MovieClipMediaSourceImage_GetFileList final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieClipMediaSourceImage_GetFileList;
 
 // Function Plot.PlotLibrary.ClearSequencerWidgetCallBack
 // 0x0008 (0x0008 - 0x0000)
@@ -275,114 +394,6 @@ public:
 	class UWidget*                                InChildWidget;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_PlotLibrary_SkipParentSequencerWidgetAnimation;
-
-// Function Plot.MovieClipBackgroundUserWidget.ReplaceFontAsset
-// 0x0008 (0x0008 - 0x0000)
-struct MovieClipBackgroundUserWidget_ReplaceFontAsset final
-{
-public:
-	class UTextBlock*                             InTextBlock;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieClipBackgroundUserWidget_ReplaceFontAsset;
-
-// Function Plot.MovieClipBackgroundUserWidget.SetCurrentControlerType
-// 0x0001 (0x0001 - 0x0000)
-struct MovieClipBackgroundUserWidget_SetCurrentControlerType final
-{
-public:
-	EPlayControllerType                           TypeToSet;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieClipBackgroundUserWidget_SetCurrentControlerType;
-
-// Function Plot.MovieClipBackgroundUserWidget.SetVisible
-// 0x0001 (0x0001 - 0x0000)
-struct MovieClipBackgroundUserWidget_SetVisible final
-{
-public:
-	bool                                          bIsSetVisible;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieClipBackgroundUserWidget_SetVisible;
-
-// Function Plot.PlotCondition.Check
-// 0x0001 (0x0001 - 0x0000)
-struct PlotCondition_Check final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotCondition_Check;
-
-// Function Plot.PlotCondition.GetPlot
-// 0x0008 (0x0008 - 0x0000)
-struct PlotCondition_GetPlot final
-{
-public:
-	class UPlot*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotCondition_GetPlot;
-
-// Function Plot.MovieClipImage.OnCameraCut
-// 0x0008 (0x0008 - 0x0000)
-struct MovieClipImage_OnCameraCut final
-{
-public:
-	class UCameraComponent*                       CameraComp;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieClipImage_OnCameraCut;
-
-// Function Plot.MovieClipMediaSourceImage.OnMediaOpenFailedHandler
-// 0x0010 (0x0010 - 0x0000)
-struct MovieClipMediaSourceImage_OnMediaOpenFailedHandler final
-{
-public:
-	class FString                                 DeviceUrl;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieClipMediaSourceImage_OnMediaOpenFailedHandler;
-
-// Function Plot.MovieClipMediaSourceImage.OnMediaSourceOpenedHandler
-// 0x0010 (0x0010 - 0x0000)
-struct MovieClipMediaSourceImage_OnMediaSourceOpenedHandler final
-{
-public:
-	class FString                                 DeviceUrl;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieClipMediaSourceImage_OnMediaSourceOpenedHandler;
-
-// Function Plot.MovieClipMediaSourceImage.GetFileList
-// 0x0010 (0x0010 - 0x0000)
-struct MovieClipMediaSourceImage_GetFileList final
-{
-public:
-	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieClipMediaSourceImage_GetFileList;
-
-// Function Plot.PlotItem_LuaImpl.IsSingleWidget
-// 0x0001 (0x0001 - 0x0000)
-struct PlotItem_LuaImpl_IsSingleWidget final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotItem_LuaImpl_IsSingleWidget;
-
-// Function Plot.PlotItem_LuaImpl.SetWait
-// 0x0001 (0x0001 - 0x0000)
-struct PlotItem_LuaImpl_SetWait final
-{
-public:
-	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotItem_LuaImpl_SetWait;
-
-// Function Plot.PlotItem_TableGame.GotoGroup
-// 0x0010 (0x0010 - 0x0000)
-struct PlotItem_TableGame_GotoGroup final
-{
-public:
-	class FString                                 InGroupName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotItem_TableGame_GotoGroup;
 
 // Function Plot.Plot.SetPlotLanguageNames
 // 0x0010 (0x0010 - 0x0000)
@@ -571,15 +582,6 @@ public:
 };
 DUMPER7_ASSERTS_Plot_SaveKey;
 
-// Function Plot.PlotEvent.DoEvent
-// 0x0001 (0x0001 - 0x0000)
-struct PlotEvent_DoEvent final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotEvent_DoEvent;
-
 // Function Plot.PlotCharacter.GetCameraArgs
 // 0x0058 (0x0058 - 0x0000)
 struct PlotCharacter_GetCameraArgs final
@@ -599,6 +601,24 @@ public:
 };
 DUMPER7_ASSERTS_PlotCharacter_SetCameraArgs;
 
+// Function Plot.PlotCondition.Check
+// 0x0001 (0x0001 - 0x0000)
+struct PlotCondition_Check final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotCondition_Check;
+
+// Function Plot.PlotCondition.GetPlot
+// 0x0008 (0x0008 - 0x0000)
+struct PlotCondition_GetPlot final
+{
+public:
+	class UPlot*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotCondition_GetPlot;
+
 // Function Plot.PlotLuaImplWidget.NotifyStart
 // 0x0018 (0x0018 - 0x0000)
 struct PlotLuaImplWidget_NotifyStart final
@@ -610,6 +630,15 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_PlotLuaImplWidget_NotifyStart;
+
+// Function Plot.PlotEvent.DoEvent
+// 0x0001 (0x0001 - 0x0000)
+struct PlotEvent_DoEvent final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotEvent_DoEvent;
 
 // Function Plot.PlotSaveItem.GetContentFromSelectItemData
 // 0x0050 (0x0050 - 0x0000)
@@ -783,6 +812,15 @@ public:
 	float                                         InDeltaTime;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SpliceImgBG_TickMoveBG;
+
+// Function Plot.PlotItem_TableGame.GotoGroup
+// 0x0010 (0x0010 - 0x0000)
+struct PlotItem_TableGame_GotoGroup final
+{
+public:
+	class FString                                 InGroupName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotItem_TableGame_GotoGroup;
 
 // Function Plot.PlotItem_PlaySequence.OnSequenceFinishedHandler
 // 0x0004 (0x0004 - 0x0000)
@@ -999,6 +1037,19 @@ public:
 };
 DUMPER7_ASSERTS_PlotRoleEffectWidget_PlayDefaultSpine;
 
+// Function Plot.PlotRoleEffectWidget.PlayNormalSpineAsEffect
+// 0x0068 (0x0068 - 0x0000)
+struct PlotRoleEffectWidget_PlayNormalSpineAsEffect final
+{
+public:
+	class FString                                 RoleName;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSpineParameters                       InParameters;                                      // 0x0010(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	float                                         InFadeTime;                                        // 0x0060(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsHide;                                           // 0x0064(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_65[0x3];                                       // 0x0065(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlotRoleEffectWidget_PlayNormalSpineAsEffect;
+
 // Function Plot.PlotRoleEffectWidget.PlaySpine
 // 0x0068 (0x0068 - 0x0000)
 struct PlotRoleEffectWidget_PlaySpine final
@@ -1010,35 +1061,6 @@ public:
 	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_PlotRoleEffectWidget_PlaySpine;
-
-// Function Plot.PlotSaveGame.LoadPlotSaveGame
-// 0x0008 (0x0008 - 0x0000)
-struct PlotSaveGame_LoadPlotSaveGame final
-{
-public:
-	class UPlotSaveGame*                          ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotSaveGame_LoadPlotSaveGame;
-
-// Function Plot.PlotSaveGame.SaveKey
-// 0x0010 (0x0010 - 0x0000)
-struct PlotSaveGame_SaveKey final
-{
-public:
-	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotSaveGame_SaveKey;
-
-// Function Plot.PlotSaveGame.HasKey
-// 0x0018 (0x0018 - 0x0000)
-struct PlotSaveGame_HasKey final
-{
-public:
-	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_PlotSaveGame_HasKey;
 
 // Function Plot.PlotSpineEffectImage.SetDataAndPlayAnimation
 // 0x0048 (0x0048 - 0x0000)
@@ -1057,6 +1079,16 @@ public:
 	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_PlotSpineEffectImage_SetDataAndPlayAnimation;
+
+// Function Plot.PlotSpineEffectImage.SetSpineRenderRelativeLocation
+// 0x0008 (0x0008 - 0x0000)
+struct PlotSpineEffectImage_SetSpineRenderRelativeLocation final
+{
+public:
+	float                                         InOffsetX;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InOffsetY;                                         // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotSpineEffectImage_SetSpineRenderRelativeLocation;
 
 // Function Plot.PlotWidget.ControlHandDrawWidget
 // 0x0018 (0x0018 - 0x0000)
@@ -1715,6 +1747,15 @@ public:
 	class UWwiseComponent*                        InWwiseComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_PlotItem_InteractionGame_OnWwiseCompleteHandler;
+
+// Function Plot.PlotWidgetUMGSpineController.SetBlur
+// 0x0001 (0x0001 - 0x0000)
+struct PlotWidgetUMGSpineController_SetBlur final
+{
+public:
+	bool                                          InOpen;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotWidgetUMGSpineController_SetBlur;
 
 // Function Plot.SequencerUserWidget.AddSpecialName
 // 0x0010 (0x0010 - 0x0000)

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -27,8 +27,8 @@ public:
 	TMap<int32, struct FVector2D>                 Indexs;                                            // 0x0300(0x0050)(Edit, BlueprintVisible)
 
 public:
-	void ExecuteUbergraph_uw_fight_camera_op(int32 EntryPoint);
 	void OnZoomChange(float Value);
+	void ExecuteUbergraph_uw_fight_camera_op(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

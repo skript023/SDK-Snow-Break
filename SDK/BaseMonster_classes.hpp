@@ -10,36 +10,36 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BaseMonster.BaseMonster_C
-// 0x0100 (0x1440 - 0x1340)
-class ABaseMonster_C final : public AGameAICharacter
+// 0x0100 (0x14A0 - 0x13A0)
+class ABaseMonster_C : public AGameAICharacter
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1340(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	float                                         ____0______0_F099B516489440C18E75FAA222800AA7;     // 0x1348(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            ____0__Direction_F099B516489440C18E75FAA222800AA7; // 0x134C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_134D[0x3];                                     // 0x134D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     时间轴_0;                                          // 0x1350(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      SpecializedParticle01;                             // 0x1358(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      SpecializedParticle02;                             // 0x1360(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      SpecializedParticle03;                             // 0x1368(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         HitBlendWeight;                                    // 0x1370(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   Hit_Bone_Name;                                     // 0x1374(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Hit;                                               // 0x137C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_137D[0x3];                                     // 0x137D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, class FName>                HitBoneNameChose;                                  // 0x1380(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMap<class FName, float>                      HitBlendWeightChose;                               // 0x13D0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          bParticle;                                         // 0x1420(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1421[0x7];                                     // 0x1421(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      BlockSpecializedParticle;                          // 0x1428(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class UNiagaraComponent*>              SpecializedParticles;                              // 0x1430(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x13A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	float                                         ____0______0_F099B516489440C18E75FAA222800AA7;     // 0x13A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            ____0__Direction_F099B516489440C18E75FAA222800AA7; // 0x13AC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_13AD[0x3];                                     // 0x13AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     时间轴_0;                                          // 0x13B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      SpecializedParticle01;                             // 0x13B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      SpecializedParticle02;                             // 0x13C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      SpecializedParticle03;                             // 0x13C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         HitBlendWeight;                                    // 0x13D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   Hit_Bone_Name;                                     // 0x13D4(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Hit;                                               // 0x13DC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_13DD[0x3];                                     // 0x13DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, class FName>                HitBoneNameChose;                                  // 0x13E0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<class FName, float>                      HitBlendWeightChose;                               // 0x1430(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          bParticle;                                         // 0x1480(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1481[0x7];                                     // 0x1481(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      BlockSpecializedParticle;                          // 0x1488(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UNiagaraComponent*>              SpecializedParticles;                              // 0x1490(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
 	void TitanCheckTeammate(class UAbilityComponent* Ability_0);

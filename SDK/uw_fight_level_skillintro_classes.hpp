@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -57,8 +57,8 @@ public:
 public:
 	void ExecuteUbergraph_uw_fight_level_skillintro(int32 EntryPoint);
 	void Tick__Overridden(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void OnAnimationFinished(const class UWidgetAnimation* Animation);
 	void Construct();
+	void OnAnimationFinished(const class UWidgetAnimation* Animation);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void OnConstruct();
 	void Destruct();

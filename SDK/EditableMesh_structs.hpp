@@ -151,6 +151,25 @@ public:
 };
 DUMPER7_ASSERTS_FPolygonGroupForPolygon;
 
+// ScriptStruct EditableMesh.VertexIndexAndInstanceID
+// 0x0008 (0x0008 - 0x0000)
+struct FVertexIndexAndInstanceID final
+{
+public:
+	int32                                         ContourIndex;                                      // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVertexInstanceID                      VertexInstanceID;                                  // 0x0004(0x0004)(BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVertexIndexAndInstanceID;
+
+// ScriptStruct EditableMesh.VertexInstancesForPolygonHole
+// 0x0010 (0x0010 - 0x0000)
+struct FVertexInstancesForPolygonHole final
+{
+public:
+	TArray<struct FVertexIndexAndInstanceID>      VertexIndicesAndInstanceIDs;                       // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVertexInstancesForPolygonHole;
+
 // ScriptStruct EditableMesh.PolygonGroupToCreate
 // 0x0018 (0x0018 - 0x0000)
 struct FPolygonGroupToCreate final
@@ -171,25 +190,6 @@ public:
 	struct FVector                                NewVertexPosition;                                 // 0x0004(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FVertexToMove;
-
-// ScriptStruct EditableMesh.VertexIndexAndInstanceID
-// 0x0008 (0x0008 - 0x0000)
-struct FVertexIndexAndInstanceID final
-{
-public:
-	int32                                         ContourIndex;                                      // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVertexInstanceID                      VertexInstanceID;                                  // 0x0004(0x0004)(BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FVertexIndexAndInstanceID;
-
-// ScriptStruct EditableMesh.VertexInstancesForPolygonHole
-// 0x0010 (0x0010 - 0x0000)
-struct FVertexInstancesForPolygonHole final
-{
-public:
-	TArray<struct FVertexIndexAndInstanceID>      VertexIndicesAndInstanceIDs;                       // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FVertexInstancesForPolygonHole;
 
 // ScriptStruct EditableMesh.ChangeVertexInstancesForPolygon
 // 0x0028 (0x0028 - 0x0000)
@@ -340,6 +340,17 @@ public:
 };
 DUMPER7_ASSERTS_FVertexToCreate;
 
+// ScriptStruct EditableMesh.SubdividedWireEdge
+// 0x000C (0x000C - 0x0000)
+struct FSubdividedWireEdge final
+{
+public:
+	int32                                         EdgeVertex0PositionIndex;                          // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EdgeVertex1PositionIndex;                          // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x4];                                        // 0x0008(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSubdividedWireEdge;
+
 // ScriptStruct EditableMesh.SubdividedQuadVertex
 // 0x0034 (0x0034 - 0x0000)
 struct FSubdividedQuadVertex final
@@ -375,17 +386,6 @@ public:
 	TArray<struct FSubdividedQuad>                SubdividedQuads;                                   // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSubdivisionLimitSection;
-
-// ScriptStruct EditableMesh.SubdividedWireEdge
-// 0x000C (0x000C - 0x0000)
-struct FSubdividedWireEdge final
-{
-public:
-	int32                                         EdgeVertex0PositionIndex;                          // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         EdgeVertex1PositionIndex;                          // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x4];                                        // 0x0008(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSubdividedWireEdge;
 
 // ScriptStruct EditableMesh.SubdivisionLimitData
 // 0x0030 (0x0030 - 0x0000)

@@ -10,73 +10,54 @@
 
 #include "Basic.hpp"
 
-#include "PhysicsControl_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_classes.hpp"
+#include "PhysicsControl_structs.hpp"
 
 
 namespace SDK
 {
 
-// Class PhysicsControl.PhysControlDataProcessorInterface
-// 0x0010 (0x0038 - 0x0028)
-class UPhysControlDataProcessorInterface : public UObject
+// Class PhysicsControl.AnimRigidBodyControlDataSource
+// 0x0000 (0x0000 - 0x0000)
+class IAnimRigidBodyControlDataSource final
 {
 public:
-	bool                                          bIsWorldSpace;                                     // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPhysicsControlComponent*               ProcessorOwner;                                    // 0x0030(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	void AnimNode_SetModifierMovementType(const class FName& ModifierName, EPhysicsMovementType MovementType);
+	void GetAdditionalControlData(TArray<struct FAdditionalControlUpdateData>* ControlUpdateDatas);
+	void GetAnimNodeAddForce(TMap<class FName, struct FVector>* ForceMap);
+	void GetAnimNodeAddTorque(TMap<class FName, struct FVector>* TorqueMap);
+	void GetAnimNodeControlCreateData(struct FAnimRigidBodyControlCreationData* RigidBodyData);
+	void GetAnimNodeControlUpdateData(struct FRigidBodyKinematicTargets* KinematicTarget, struct FRigidBodyControlTargets* InControlTargets, struct FPhysicsControlControlAndModifierUpdates* ControlUpdates, TArray<class FName>* InControlAndModifierProfiles, TArray<class FName>* InConstraintProfiles);
+	void GetRigidBodyGrabUpdateData(TArray<struct FRigidBodyGrabUpdateData>* GrabUpdateDatas);
 
-public:
-	void EndProcessor();
-	void StartProcessor(class UPhysicsControlComponent* PhysicsControlComponent);
-	void TickPhysControlData(struct FControlUpdateData* UpdateData, const struct FPhysicsControlContextData& ControlData, float DeltaSeconds);
+	bool GetIsEnableAnimNodeControl(const class USkeletalMeshComponent* InOwnerMesh) const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PhysControlDataProcessorInterface")
+		STATIC_CLASS_IMPL("AnimRigidBodyControlDataSource")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PhysControlDataProcessorInterface")
+		STATIC_NAME_IMPL(L"AnimRigidBodyControlDataSource")
 	}
-	static class UPhysControlDataProcessorInterface* GetDefaultObj()
+	static class IAnimRigidBodyControlDataSource* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPhysControlDataProcessorInterface>();
+		return GetDefaultObjImpl<IAnimRigidBodyControlDataSource>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
-DUMPER7_ASSERTS_UPhysControlDataProcessorInterface;
-
-// Class PhysicsControl.PhysControlSingleUseProcessorInterface
-// 0x0008 (0x0040 - 0x0038)
-class UPhysControlSingleUseProcessorInterface : public UPhysControlDataProcessorInterface
-{
-public:
-	float                                         ApplyTime;                                         // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetDuration(float Duration);
-
-	bool IsExpired() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PhysControlSingleUseProcessorInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PhysControlSingleUseProcessorInterface")
-	}
-	static class UPhysControlSingleUseProcessorInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPhysControlSingleUseProcessorInterface>();
-	}
-};
-DUMPER7_ASSERTS_UPhysControlSingleUseProcessorInterface;
+DUMPER7_ASSERTS_IAnimRigidBodyControlDataSource;
 
 // Class PhysicsControl.PhysicsControlComponent
 // 0x0080 (0x0280 - 0x0200)
@@ -230,29 +211,6 @@ public:
 };
 DUMPER7_ASSERTS_UPhysicsControlComponent;
 
-// Class PhysicsControl.BasePhysControlsDataUpdateAsset
-// 0x0008 (0x0038 - 0x0030)
-class UBasePhysControlsDataUpdateAsset final : public UDataAsset
-{
-public:
-	class UPhysControlDataProcessorInterface*     Processor;                                         // 0x0030(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BasePhysControlsDataUpdateAsset")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BasePhysControlsDataUpdateAsset")
-	}
-	static class UBasePhysControlsDataUpdateAsset* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBasePhysControlsDataUpdateAsset>();
-	}
-};
-DUMPER7_ASSERTS_UBasePhysControlsDataUpdateAsset;
-
 // Class PhysicsControl.BaseGamePhysicsControlComponent
 // 0x0250 (0x04D0 - 0x0280)
 class UBaseGamePhysicsControlComponent : public UPhysicsControlComponent
@@ -309,46 +267,6 @@ public:
 };
 DUMPER7_ASSERTS_UBaseGamePhysicsControlComponent;
 
-// Class PhysicsControl.AnimRigidBodyControlDataSource
-// 0x0000 (0x0000 - 0x0000)
-class IAnimRigidBodyControlDataSource final
-{
-public:
-	void AnimNode_SetModifierMovementType(const class FName& ModifierName, EPhysicsMovementType MovementType);
-	void GetAdditionalControlData(TArray<struct FAdditionalControlUpdateData>* ControlUpdateDatas);
-	void GetAnimNodeAddForce(TMap<class FName, struct FVector>* ForceMap);
-	void GetAnimNodeAddTorque(TMap<class FName, struct FVector>* TorqueMap);
-	void GetAnimNodeControlCreateData(struct FAnimRigidBodyControlCreationData* RigidBodyData);
-	void GetAnimNodeControlUpdateData(struct FRigidBodyKinematicTargets* KinematicTarget, struct FRigidBodyControlTargets* InControlTargets, struct FPhysicsControlControlAndModifierUpdates* ControlUpdates, TArray<class FName>* InControlAndModifierProfiles, TArray<class FName>* InConstraintProfiles);
-	void GetRigidBodyGrabUpdateData(TArray<struct FRigidBodyGrabUpdateData>* GrabUpdateDatas);
-
-	bool GetIsEnableAnimNodeControl(const class USkeletalMeshComponent* InOwnerMesh) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AnimRigidBodyControlDataSource")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AnimRigidBodyControlDataSource")
-	}
-	static class IAnimRigidBodyControlDataSource* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IAnimRigidBodyControlDataSource>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IAnimRigidBodyControlDataSource;
-
 // Class PhysicsControl.PhysicsControlDataAsset
 // 0x0178 (0x01A8 - 0x0030)
 class UPhysicsControlDataAsset final : public UDataAsset
@@ -386,6 +304,88 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPhysicsControlDataAsset;
+
+// Class PhysicsControl.PhysControlDataProcessorInterface
+// 0x0010 (0x0038 - 0x0028)
+class UPhysControlDataProcessorInterface : public UObject
+{
+public:
+	bool                                          bIsWorldSpace;                                     // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPhysicsControlComponent*               ProcessorOwner;                                    // 0x0030(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void EndProcessor();
+	void StartProcessor(class UPhysicsControlComponent* PhysicsControlComponent);
+	void TickPhysControlData(struct FControlUpdateData* UpdateData, const struct FPhysicsControlContextData& ControlData, float DeltaSeconds);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PhysControlDataProcessorInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PhysControlDataProcessorInterface")
+	}
+	static class UPhysControlDataProcessorInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPhysControlDataProcessorInterface>();
+	}
+};
+DUMPER7_ASSERTS_UPhysControlDataProcessorInterface;
+
+// Class PhysicsControl.BasePhysControlsDataUpdateAsset
+// 0x0008 (0x0038 - 0x0030)
+class UBasePhysControlsDataUpdateAsset final : public UDataAsset
+{
+public:
+	class UPhysControlDataProcessorInterface*     Processor;                                         // 0x0030(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BasePhysControlsDataUpdateAsset")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BasePhysControlsDataUpdateAsset")
+	}
+	static class UBasePhysControlsDataUpdateAsset* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBasePhysControlsDataUpdateAsset>();
+	}
+};
+DUMPER7_ASSERTS_UBasePhysControlsDataUpdateAsset;
+
+// Class PhysicsControl.PhysControlSingleUseProcessorInterface
+// 0x0008 (0x0040 - 0x0038)
+class UPhysControlSingleUseProcessorInterface : public UPhysControlDataProcessorInterface
+{
+public:
+	float                                         ApplyTime;                                         // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetDuration(float Duration);
+
+	bool IsExpired() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PhysControlSingleUseProcessorInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PhysControlSingleUseProcessorInterface")
+	}
+	static class UPhysControlSingleUseProcessorInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPhysControlSingleUseProcessorInterface>();
+	}
+};
+DUMPER7_ASSERTS_UPhysControlSingleUseProcessorInterface;
 
 // Class PhysicsControl.PhysControlDataProcessorBase
 // 0x00A8 (0x00E0 - 0x0038)

@@ -17,15 +17,34 @@
 namespace SDK
 {
 
-// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.BindKeyBoardOnSettingChange
+// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.TriggerInteract
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_fragmentstory_box_C::BindKeyBoardOnSettingChange()
+void Uuw_fight_fragmentstory_box_C::TriggerInteract()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "BindKeyBoardOnSettingChange");
+		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "TriggerInteract");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.UpdateKeyShow
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_fragmentstory_box_C::UpdateKeyShow()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "UpdateKeyShow");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -55,34 +74,15 @@ void Uuw_fight_fragmentstory_box_C::BindExitInteractEvent()
 }
 
 
-// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.TriggerInteract
+// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.BindKeyBoardOnSettingChange
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_fragmentstory_box_C::TriggerInteract()
+void Uuw_fight_fragmentstory_box_C::BindKeyBoardOnSettingChange()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "TriggerInteract");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_fragmentstory_box.uw_fight_fragmentstory_box_C.UpdateKeyShow
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_fragmentstory_box_C::UpdateKeyShow()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "UpdateKeyShow");
+		Func = Class->GetFunction("uw_fight_fragmentstory_box_C", "BindKeyBoardOnSettingChange");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

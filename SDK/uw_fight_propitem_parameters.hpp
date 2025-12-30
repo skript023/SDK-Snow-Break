@@ -54,15 +54,6 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_propitem_C_BP_OnItemExpansionChanged;
 
-// LuaFunction uw_fight_propitem.uw_fight_propitem_C.OnListItemObjectSet
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_propitem_C_OnListItemObjectSet final
-{
-public:
-	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_propitem_C_OnListItemObjectSet;
-
 // LuaFunction uw_fight_propitem.uw_fight_propitem_C.K2_OnCustomUmgAnimFinished
 // 0x0008 (0x0008 - 0x0000)
 struct uw_fight_propitem_C_K2_OnCustomUmgAnimFinished final
@@ -71,6 +62,15 @@ public:
 	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_uw_fight_propitem_C_K2_OnCustomUmgAnimFinished;
+
+// LuaFunction uw_fight_propitem.uw_fight_propitem_C.OnListItemObjectSet
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_propitem_C_OnListItemObjectSet final
+{
+public:
+	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_propitem_C_OnListItemObjectSet;
 
 // Function uw_fight_propitem.uw_fight_propitem_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

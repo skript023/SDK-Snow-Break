@@ -30,8 +30,8 @@ public:
 	class UGameCanvasPanel*                       Power;                                             // 0x02A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void VisibilityChanged(ESlateVisibility InVisibility);
 	void ExecuteUbergraph_uw_fight_player_power_pc(int32 EntryPoint);
+	void VisibilityChanged(ESlateVisibility InVisibility);
 	void PreConstruct(bool IsDesignTime);
 
 public:

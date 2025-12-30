@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -29,8 +29,8 @@ public:
 
 public:
 	void ExecuteUbergraph_uw_fight_skill_panel_pc(int32 EntryPoint);
-	void OnWeaponChange(class APlayerWeapon* InWeapon);
 	void ShowOrHideCancelBtn(bool bShow);
+	void OnWeaponChange(class APlayerWeapon* InWeapon);
 
 public:
 	static class UClass* StaticClass()

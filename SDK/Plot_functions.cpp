@@ -177,6 +177,31 @@ int32 UPlotItem::GetIndex() const
 }
 
 
+// Function Plot.PlotItem.GetIsFastPreview
+// (Final, Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlotItem::GetIsFastPreview() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotItem", "GetIsFastPreview");
+
+	Params::PlotItem_GetIsFastPreview Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Plot.PlotItem.GetParent
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -290,6 +315,394 @@ bool UPlotItem::IsTimeout() const
 		Func = Class->GetFunction("PlotItem", "IsTimeout");
 
 	Params::PlotItem_IsTimeout Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotSaveGame.LoadPlotSaveGame
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UPlotSaveGame*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UPlotSaveGame* UPlotSaveGame::LoadPlotSaveGame()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotSaveGame", "LoadPlotSaveGame");
+
+	Params::PlotSaveGame_LoadPlotSaveGame Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotSaveGame.Save
+// (Final, Native, Public, BlueprintCallable)
+
+void UPlotSaveGame::Save()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotSaveGame", "Save");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.PlotSaveGame.SaveKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotSaveGame::SaveKey(const class FString& InKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotSaveGame", "SaveKey");
+
+	Params::PlotSaveGame_SaveKey Parms{};
+
+	Parms.InKey = std::move(InKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.PlotSaveGame.HasKey
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlotSaveGame::HasKey(const class FString& InKey) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotSaveGame", "HasKey");
+
+	Params::PlotSaveGame_HasKey Parms{};
+
+	Parms.InKey = std::move(InKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.MovieClipBackgroundUserWidget.ReplaceFontAsset
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UTextBlock*                       InTextBlock                                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieClipBackgroundUserWidget::ReplaceFontAsset(class UTextBlock* InTextBlock)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieClipBackgroundUserWidget", "ReplaceFontAsset");
+
+	Params::MovieClipBackgroundUserWidget_ReplaceFontAsset Parms{};
+
+	Parms.InTextBlock = InTextBlock;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Plot.MovieClipBackgroundUserWidget.SetCurrentControlerType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EPlayControllerType                     TypeToSet                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieClipBackgroundUserWidget::SetCurrentControlerType(EPlayControllerType TypeToSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieClipBackgroundUserWidget", "SetCurrentControlerType");
+
+	Params::MovieClipBackgroundUserWidget_SetCurrentControlerType Parms{};
+
+	Parms.TypeToSet = TypeToSet;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.MovieClipBackgroundUserWidget.SetSkipTipVisible
+// (Final, Native, Public, BlueprintCallable)
+
+void UMovieClipBackgroundUserWidget::SetSkipTipVisible()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieClipBackgroundUserWidget", "SetSkipTipVisible");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.MovieClipBackgroundUserWidget.SetVisible
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bIsSetVisible                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieClipBackgroundUserWidget::SetVisible(bool bIsSetVisible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieClipBackgroundUserWidget", "SetVisible");
+
+	Params::MovieClipBackgroundUserWidget_SetVisible Parms{};
+
+	Parms.bIsSetVisible = bIsSetVisible;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Plot.PlotItem_LuaImpl.IsSingleWidget
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlotItem_LuaImpl::IsSingleWidget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotItem_LuaImpl", "IsSingleWidget");
+
+	Params::PlotItem_LuaImpl_IsSingleWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotItem_LuaImpl.SetWait
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotItem_LuaImpl::SetWait(bool InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotItem_LuaImpl", "SetWait");
+
+	Params::PlotItem_LuaImpl_SetWait Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.MovieClipImage.OnCameraCut
+// (Final, Native, Private)
+// Parameters:
+// class UCameraComponent*                 CameraComp                                             (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieClipImage::OnCameraCut(class UCameraComponent* CameraComp)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieClipImage", "OnCameraCut");
+
+	Params::MovieClipImage_OnCameraCut Parms{};
+
+	Parms.CameraComp = CameraComp;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.MovieClipImage.PlayAnimation
+// (Final, Native, Public, BlueprintCallable)
+
+void UMovieClipImage::PlayAnimation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieClipImage", "PlayAnimation");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.MovieClipImage.StopAnimation
+// (Final, Native, Public, BlueprintCallable)
+
+void UMovieClipImage::StopAnimation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieClipImage", "StopAnimation");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.MovieClipMediaSourceImage.AutoSetPath
+// (Final, Native, Public)
+
+void UMovieClipMediaSourceImage::AutoSetPath()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieClipMediaSourceImage", "AutoSetPath");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.MovieClipMediaSourceImage.OnMediaOpenFailedHandler
+// (Final, Native, Protected)
+// Parameters:
+// const class FString&                    DeviceUrl                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieClipMediaSourceImage::OnMediaOpenFailedHandler(const class FString& DeviceUrl)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieClipMediaSourceImage", "OnMediaOpenFailedHandler");
+
+	Params::MovieClipMediaSourceImage_OnMediaOpenFailedHandler Parms{};
+
+	Parms.DeviceUrl = std::move(DeviceUrl);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.MovieClipMediaSourceImage.OnMediaSourceOpenedHandler
+// (Final, Native, Protected)
+// Parameters:
+// const class FString&                    DeviceUrl                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieClipMediaSourceImage::OnMediaSourceOpenedHandler(const class FString& DeviceUrl)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieClipMediaSourceImage", "OnMediaSourceOpenedHandler");
+
+	Params::MovieClipMediaSourceImage_OnMediaSourceOpenedHandler Parms{};
+
+	Parms.DeviceUrl = std::move(DeviceUrl);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.MovieClipMediaSourceImage.GetFileList
+// (Final, Native, Public, Const)
+// Parameters:
+// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FString> UMovieClipMediaSourceImage::GetFileList() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieClipMediaSourceImage", "GetFileList");
+
+	Params::MovieClipMediaSourceImage_GetFileList Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -809,391 +1222,6 @@ void UPlotLibrary::SkipParentSequencerWidgetAnimation(class UWidget* InChildWidg
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.MovieClipBackgroundUserWidget.ReplaceFontAsset
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UTextBlock*                       InTextBlock                                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieClipBackgroundUserWidget::ReplaceFontAsset(class UTextBlock* InTextBlock)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieClipBackgroundUserWidget", "ReplaceFontAsset");
-
-	Params::MovieClipBackgroundUserWidget_ReplaceFontAsset Parms{};
-
-	Parms.InTextBlock = InTextBlock;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Plot.MovieClipBackgroundUserWidget.SetCurrentControlerType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EPlayControllerType                     TypeToSet                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieClipBackgroundUserWidget::SetCurrentControlerType(EPlayControllerType TypeToSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieClipBackgroundUserWidget", "SetCurrentControlerType");
-
-	Params::MovieClipBackgroundUserWidget_SetCurrentControlerType Parms{};
-
-	Parms.TypeToSet = TypeToSet;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.MovieClipBackgroundUserWidget.SetSkipTipVisible
-// (Final, Native, Public, BlueprintCallable)
-
-void UMovieClipBackgroundUserWidget::SetSkipTipVisible()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieClipBackgroundUserWidget", "SetSkipTipVisible");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.MovieClipBackgroundUserWidget.SetVisible
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bIsSetVisible                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieClipBackgroundUserWidget::SetVisible(bool bIsSetVisible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieClipBackgroundUserWidget", "SetVisible");
-
-	Params::MovieClipBackgroundUserWidget_SetVisible Parms{};
-
-	Parms.bIsSetVisible = bIsSetVisible;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Plot.PlotCondition.Check
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPlotCondition::Check()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlotCondition", "Check");
-
-	Params::PlotCondition_Check Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotCondition.GetPlot
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UPlot*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UPlot* UPlotCondition::GetPlot() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlotCondition", "GetPlot");
-
-	Params::PlotCondition_GetPlot Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.MovieClipImage.OnCameraCut
-// (Final, Native, Private)
-// Parameters:
-// class UCameraComponent*                 CameraComp                                             (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieClipImage::OnCameraCut(class UCameraComponent* CameraComp)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieClipImage", "OnCameraCut");
-
-	Params::MovieClipImage_OnCameraCut Parms{};
-
-	Parms.CameraComp = CameraComp;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.MovieClipImage.PlayAnimation
-// (Final, Native, Public, BlueprintCallable)
-
-void UMovieClipImage::PlayAnimation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieClipImage", "PlayAnimation");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.MovieClipImage.StopAnimation
-// (Final, Native, Public, BlueprintCallable)
-
-void UMovieClipImage::StopAnimation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieClipImage", "StopAnimation");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.MovieClipMediaSourceImage.AutoSetPath
-// (Final, Native, Public)
-
-void UMovieClipMediaSourceImage::AutoSetPath()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieClipMediaSourceImage", "AutoSetPath");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.MovieClipMediaSourceImage.OnMediaOpenFailedHandler
-// (Final, Native, Protected)
-// Parameters:
-// const class FString&                    DeviceUrl                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieClipMediaSourceImage::OnMediaOpenFailedHandler(const class FString& DeviceUrl)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieClipMediaSourceImage", "OnMediaOpenFailedHandler");
-
-	Params::MovieClipMediaSourceImage_OnMediaOpenFailedHandler Parms{};
-
-	Parms.DeviceUrl = std::move(DeviceUrl);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.MovieClipMediaSourceImage.OnMediaSourceOpenedHandler
-// (Final, Native, Protected)
-// Parameters:
-// const class FString&                    DeviceUrl                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieClipMediaSourceImage::OnMediaSourceOpenedHandler(const class FString& DeviceUrl)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieClipMediaSourceImage", "OnMediaSourceOpenedHandler");
-
-	Params::MovieClipMediaSourceImage_OnMediaSourceOpenedHandler Parms{};
-
-	Parms.DeviceUrl = std::move(DeviceUrl);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.MovieClipMediaSourceImage.GetFileList
-// (Final, Native, Public, Const)
-// Parameters:
-// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FString> UMovieClipMediaSourceImage::GetFileList() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieClipMediaSourceImage", "GetFileList");
-
-	Params::MovieClipMediaSourceImage_GetFileList Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotItem_LuaImpl.IsSingleWidget
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPlotItem_LuaImpl::IsSingleWidget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlotItem_LuaImpl", "IsSingleWidget");
-
-	Params::PlotItem_LuaImpl_IsSingleWidget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotItem_LuaImpl.SetWait
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlotItem_LuaImpl::SetWait(bool InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlotItem_LuaImpl", "SetWait");
-
-	Params::PlotItem_LuaImpl_SetWait Parms{};
-
-	Parms.InValue = InValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.PlotItem_TableGame.GotoGroup
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    InGroupName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlotItem_TableGame::GotoGroup(const class FString& InGroupName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlotItem_TableGame", "GotoGroup");
-
-	Params::PlotItem_TableGame_GotoGroup Parms{};
-
-	Parms.InGroupName = std::move(InGroupName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.PlotItem_TableGame.OnGroupComplete
-// (Final, Native, Public)
-
-void UPlotItem_TableGame::OnGroupComplete()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlotItem_TableGame", "OnGroupComplete");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -1845,31 +1873,6 @@ void UPlot::SaveKey(const class FString& InKey) const
 }
 
 
-// Function Plot.PlotEvent.DoEvent
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPlotEvent::DoEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlotEvent", "DoEvent");
-
-	Params::PlotEvent_DoEvent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function Plot.PlotCharacter.GetCameraArgs
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -1922,6 +1925,56 @@ void APlotCharacter::SetCameraArgs(const struct FPlotCameraInfo& InArgs, class U
 }
 
 
+// Function Plot.PlotCondition.Check
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlotCondition::Check()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotCondition", "Check");
+
+	Params::PlotCondition_Check Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotCondition.GetPlot
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UPlot*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UPlot* UPlotCondition::GetPlot() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotCondition", "GetPlot");
+
+	Params::PlotCondition_GetPlot Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Plot.PlotLuaImplWidget.NotifyStart
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -1957,6 +2010,31 @@ void UPlotLuaImplWidget::NotifyStop()
 		Func = Class->GetFunction("PlotLuaImplWidget", "NotifyStop");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Plot.PlotEvent.DoEvent
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlotEvent::DoEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotEvent", "DoEvent");
+
+	Params::PlotEvent_DoEvent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -2558,6 +2636,50 @@ void USpliceImgBG::TickMoveBG(float InDeltaTime)
 	Parms.InDeltaTime = InDeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Plot.PlotItem_TableGame.GotoGroup
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    InGroupName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotItem_TableGame::GotoGroup(const class FString& InGroupName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotItem_TableGame", "GotoGroup");
+
+	Params::PlotItem_TableGame_GotoGroup Parms{};
+
+	Parms.InGroupName = std::move(InGroupName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.PlotItem_TableGame.OnGroupComplete
+// (Final, Native, Public)
+
+void UPlotItem_TableGame::OnGroupComplete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotItem_TableGame", "OnGroupComplete");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -3259,6 +3381,37 @@ void UPlotRoleEffectWidget::PlayDefaultSpine(const class FString& RoleName)
 }
 
 
+// Function Plot.PlotRoleEffectWidget.PlayNormalSpineAsEffect
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    RoleName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FSpineParameters&          InParameters                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// float                                   InFadeTime                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsHide                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotRoleEffectWidget::PlayNormalSpineAsEffect(const class FString& RoleName, const struct FSpineParameters& InParameters, float InFadeTime, bool bIsHide)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotRoleEffectWidget", "PlayNormalSpineAsEffect");
+
+	Params::PlotRoleEffectWidget_PlayNormalSpineAsEffect Parms{};
+
+	Parms.RoleName = std::move(RoleName);
+	Parms.InParameters = std::move(InParameters);
+	Parms.InFadeTime = InFadeTime;
+	Parms.bIsHide = bIsHide;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Plot.PlotRoleEffectWidget.PlaySpine
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -3288,40 +3441,15 @@ void UPlotRoleEffectWidget::PlaySpine(const class FString& RoleName, const struc
 }
 
 
-// Function Plot.PlotSaveGame.LoadPlotSaveGame
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UPlotSaveGame*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UPlotSaveGame* UPlotSaveGame::LoadPlotSaveGame()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotSaveGame", "LoadPlotSaveGame");
-
-	Params::PlotSaveGame_LoadPlotSaveGame Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotSaveGame.Save
+// Function Plot.PlotRoleEffectWidget.ResetSpineSlot
 // (Final, Native, Public, BlueprintCallable)
 
-void UPlotSaveGame::Save()
+void UPlotRoleEffectWidget::ResetSpineSlot()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlotSaveGame", "Save");
+		Func = Class->GetFunction("PlotRoleEffectWidget", "ResetSpineSlot");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3329,59 +3457,6 @@ void UPlotSaveGame::Save()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.PlotSaveGame.SaveKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlotSaveGame::SaveKey(const class FString& InKey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlotSaveGame", "SaveKey");
-
-	Params::PlotSaveGame_SaveKey Parms{};
-
-	Parms.InKey = std::move(InKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.PlotSaveGame.HasKey
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPlotSaveGame::HasKey(const class FString& InKey) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlotSaveGame", "HasKey");
-
-	Params::PlotSaveGame_HasKey Parms{};
-
-	Parms.InKey = std::move(InKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -3414,6 +3489,33 @@ void UPlotSpineEffectImage::SetDataAndPlayAnimation(class USpineAtlasAsset* InAt
 	Parms.InSpineScale = InSpineScale;
 	Parms.InAtlasOffset = std::move(InAtlasOffset);
 	Parms.InBlendTime = InBlendTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.PlotSpineEffectImage.SetSpineRenderRelativeLocation
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InOffsetX                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InOffsetY                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotSpineEffectImage::SetSpineRenderRelativeLocation(float InOffsetX, float InOffsetY)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotSpineEffectImage", "SetSpineRenderRelativeLocation");
+
+	Params::PlotSpineEffectImage_SetSpineRenderRelativeLocation Parms{};
+
+	Parms.InOffsetX = InOffsetX;
+	Parms.InOffsetY = InOffsetY;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5351,6 +5453,31 @@ void UPlotItem_InteractionGame::StopCurPlayWwiseByWidget()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.PlotWidgetUMGSpineController.SetBlur
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    InOpen                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotWidgetUMGSpineController::SetBlur(bool InOpen)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotWidgetUMGSpineController", "SetBlur");
+
+	Params::PlotWidgetUMGSpineController_SetBlur Parms{};
+
+	Parms.InOpen = InOpen;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

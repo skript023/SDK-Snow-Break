@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Game_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -26,23 +26,6 @@ public:
 	EEmitterResult                                ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_Emitter_Trap_C_OnEmit;
-
-// Function Emitter_Trap.Emitter_Trap_C.GetDefaultParamsValue
-// 0x0090 (0x0090 - 0x0000)
-struct Emitter_Trap_C_GetDefaultParamsValue final
-{
-public:
-	TArray<struct FParamInfo>                     Values;                                            // 0x0000(0x0010)(Parm, OutParm)
-	struct FParamInfo                             K2Node_MakeStruct_ParamInfo;                       // 0x0010(0x0010)()
-	struct FParamInfo                             K2Node_MakeStruct_ParamInfo_1;                     // 0x0020(0x0010)()
-	struct FParamInfo                             K2Node_MakeStruct_ParamInfo_2;                     // 0x0030(0x0010)()
-	struct FParamInfo                             K2Node_MakeStruct_ParamInfo_3;                     // 0x0040(0x0010)()
-	struct FParamInfo                             K2Node_MakeStruct_ParamInfo_4;                     // 0x0050(0x0010)()
-	struct FParamInfo                             K2Node_MakeStruct_ParamInfo_5;                     // 0x0060(0x0010)()
-	struct FParamInfo                             K2Node_MakeStruct_ParamInfo_6;                     // 0x0070(0x0010)()
-	TArray<struct FParamInfo>                     K2Node_MakeArray_Array;                            // 0x0080(0x0010)(ReferenceParm)
-};
-DUMPER7_ASSERTS_Emitter_Trap_C_GetDefaultParamsValue;
 
 // Function Emitter_Trap.Emitter_Trap_C.OnGetAssetPath
 // 0x01A0 (0x01A0 - 0x0000)
@@ -72,6 +55,23 @@ public:
 	int32                                         CallFunc_Array_AddUnique_ReturnValue;              // 0x0198(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Emitter_Trap_C_OnGetAssetPath;
+
+// Function Emitter_Trap.Emitter_Trap_C.GetDefaultParamsValue
+// 0x0090 (0x0090 - 0x0000)
+struct Emitter_Trap_C_GetDefaultParamsValue final
+{
+public:
+	TArray<struct FParamInfo>                     Values;                                            // 0x0000(0x0010)(Parm, OutParm)
+	struct FParamInfo                             K2Node_MakeStruct_ParamInfo;                       // 0x0010(0x0010)()
+	struct FParamInfo                             K2Node_MakeStruct_ParamInfo_1;                     // 0x0020(0x0010)()
+	struct FParamInfo                             K2Node_MakeStruct_ParamInfo_2;                     // 0x0030(0x0010)()
+	struct FParamInfo                             K2Node_MakeStruct_ParamInfo_3;                     // 0x0040(0x0010)()
+	struct FParamInfo                             K2Node_MakeStruct_ParamInfo_4;                     // 0x0050(0x0010)()
+	struct FParamInfo                             K2Node_MakeStruct_ParamInfo_5;                     // 0x0060(0x0010)()
+	struct FParamInfo                             K2Node_MakeStruct_ParamInfo_6;                     // 0x0070(0x0010)()
+	TArray<struct FParamInfo>                     K2Node_MakeArray_Array;                            // 0x0080(0x0010)(ReferenceParm)
+};
+DUMPER7_ASSERTS_Emitter_Trap_C_GetDefaultParamsValue;
 
 // Function Emitter_Trap.Emitter_Trap_C.ExecuteUbergraph_Emitter_Trap
 // 0x0004 (0x0004 - 0x0000)

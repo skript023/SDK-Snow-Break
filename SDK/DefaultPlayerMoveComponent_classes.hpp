@@ -10,25 +10,25 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass DefaultPlayerMoveComponent.DefaultPlayerMoveComponent_C
-// 0x0030 (0x1420 - 0x13F0)
+// 0x0030 (0x1450 - 0x1420)
 #pragma pack(push, 0x1)
 class alignas(0x10) UDefaultPlayerMoveComponent_C : public UPlayerMovementComponent
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x13F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          NewVar_0;                                          // 0x13F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_13F9[0x7];                                     // 0x13F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_GameController_C*                   PlayerController;                                  // 0x1400(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAbilityComponent*                      Ability;                                           // 0x1408(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AGameCharacter*                         GameCharacter;                                     // 0x1410(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1420(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          NewVar_0;                                          // 0x1428(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1429[0x7];                                     // 0x1429(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_GameController_C*                   PlayerController;                                  // 0x1430(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAbilityComponent*                      Ability;                                           // 0x1438(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameCharacter*                         GameCharacter;                                     // 0x1440(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool ReceiveCustomSpeedCurve(struct FCustomSpeedCurve* CustomSpeedCurve);

@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum EFightTipsType.EFightTipsType
-// NumValues: 0x000B
+// NumValues: 0x000F
 enum class EFightTipsType : uint8
 {
 	NewEnumerator0                           = 0,
@@ -28,7 +28,11 @@ enum class EFightTipsType : uint8
 	NewEnumerator7                           = 7,
 	NewEnumerator8                           = 8,
 	NewEnumerator9                           = 9,
-	EFightTipsType_MAX                       = 10,
+	NewEnumerator10                          = 10,
+	NewEnumerator11                          = 11,
+	NewEnumerator12                          = 12,
+	NewEnumerator13                          = 13,
+	EFightTipsType_MAX                       = 14,
 };
 
 }

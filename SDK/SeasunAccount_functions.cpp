@@ -506,6 +506,37 @@ void UAccount::CallGS(const class FString& InCommand, const class FString& InJSO
 }
 
 
+// Function SeasunAccount.Account.CallGSWithDependParam
+// (Final, BlueprintCosmetic, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    InCommand                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InJSON                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  InDependParams                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UAccount::CallGSWithDependParam(const class FString& InCommand, const class FString& InJSON, TArray<class FString>* InDependParams)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Account", "CallGSWithDependParam");
+
+	Params::Account_CallGSWithDependParam Parms{};
+
+	Parms.InCommand = std::move(InCommand);
+	Parms.InJSON = std::move(InJSON);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (InDependParams != nullptr)
+		*InDependParams = std::move(Parms.InDependParams);
+}
+
+
 // Function SeasunAccount.Account.ChangeWorldChannel
 // (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
 // Parameters:
@@ -569,6 +600,34 @@ int32 UAccount::Charged()
 		Func = Class->GetFunction("Account", "Charged");
 
 	Params::Account_Charged Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SeasunAccount.Account.CheckTag
+// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
+// Parameters:
+// const int32                             InIdx                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAccount::CheckTag(const int32 InIdx)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Account", "CheckTag");
+
+	Params::Account_CheckTag Parms{};
+
+	Parms.InIdx = InIdx;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1474,6 +1533,34 @@ int64 UAccount::GetGlobalAttr(const class FString& InKey)
 }
 
 
+// Function SeasunAccount.Account.GetGlobalStrAttr
+// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UAccount::GetGlobalStrAttr(const class FString& InKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Account", "GetGlobalStrAttr");
+
+	Params::Account_GetGlobalStrAttr Parms{};
+
+	Parms.InKey = std::move(InKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function SeasunAccount.Account.GetItemCount
 // (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
 // Parameters:
@@ -2256,6 +2343,32 @@ void UAccount::GetSupporterCardsForType(ECardSlotType InType, TArray<class USupp
 
 	if (OutItems != nullptr)
 		*OutItems = std::move(Parms.OutItems);
+}
+
+
+// Function SeasunAccount.Account.GetTags
+// (Final, BlueprintCosmetic, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<int32>*                          OutList                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UAccount::GetTags(TArray<int32>* OutList)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Account", "GetTags");
+
+	Params::Account_GetTags Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutList != nullptr)
+		*OutList = std::move(Parms.OutList);
 }
 
 
@@ -3337,6 +3450,31 @@ class FString UAccount::Provider()
 }
 
 
+// Function SeasunAccount.Account.QueryGlobalCounter
+// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    InCounterName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAccount::QueryGlobalCounter(const class FString& InCounterName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Account", "QueryGlobalCounter");
+
+	Params::Account_QueryGlobalCounter Parms{};
+
+	Parms.InCounterName = std::move(InCounterName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function SeasunAccount.Account.QueryRank
 // (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
 // Parameters:
@@ -3866,6 +4004,33 @@ void UAccount::SetGlobalAttr(const class FString& InKey, int64 InValue)
 
 	Parms.InKey = std::move(InKey);
 	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SeasunAccount.Account.SetGlobalStrAttr
+// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InValue                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAccount::SetGlobalStrAttr(const class FString& InKey, const class FString& InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Account", "SetGlobalStrAttr");
+
+	Params::Account_SetGlobalStrAttr Parms{};
+
+	Parms.InKey = std::move(InKey);
+	Parms.InValue = std::move(InValue);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15077,6 +15242,34 @@ class FString UPlayerProfile::AccountId()
 }
 
 
+// Function SeasunAccount.PlayerProfile.CheckTag
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const int32                             InIdx                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlayerProfile::CheckTag(const int32 InIdx)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerProfile", "CheckTag");
+
+	Params::PlayerProfile_CheckTag Parms{};
+
+	Parms.InIdx = InIdx;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function SeasunAccount.PlayerProfile.CreateTime
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -15177,6 +15370,32 @@ void UPlayerProfile::GetShowItems(TArray<class UItem*>* inList)
 
 	if (inList != nullptr)
 		*inList = std::move(Parms.inList);
+}
+
+
+// Function SeasunAccount.PlayerProfile.GetTags
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<int32>*                          OutList                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UPlayerProfile::GetTags(TArray<int32>* OutList)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerProfile", "GetTags");
+
+	Params::PlayerProfile_GetTags Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutList != nullptr)
+		*OutList = std::move(Parms.OutList);
 }
 
 

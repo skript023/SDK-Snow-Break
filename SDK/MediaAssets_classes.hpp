@@ -13,9 +13,9 @@
 #include "AudioMixer_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "MediaAssets_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "MediaAssets_structs.hpp"
 
 
 namespace SDK
@@ -53,28 +53,33 @@ public:
 };
 DUMPER7_ASSERTS_UMediaSource;
 
-// Class MediaAssets.BaseMediaSource
-// 0x0008 (0x0088 - 0x0080)
-class UBaseMediaSource : public UMediaSource
+// Class MediaAssets.MediaComponent
+// 0x0010 (0x00C0 - 0x00B0)
+class UMediaComponent final : public UActorComponent
 {
 public:
-	class FName                                   PlayerName;                                        // 0x0080(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMediaTexture*                          MediaTexture;                                      // 0x00B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMediaPlayer*                           MediaPlayer;                                       // 0x00B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, Interp, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	class UMediaPlayer* GetMediaPlayer() const;
+	class UMediaTexture* GetMediaTexture() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("BaseMediaSource")
+		STATIC_CLASS_IMPL("MediaComponent")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"BaseMediaSource")
+		STATIC_NAME_IMPL(L"MediaComponent")
 	}
-	static class UBaseMediaSource* GetDefaultObj()
+	static class UMediaComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBaseMediaSource>();
+		return GetDefaultObjImpl<UMediaComponent>();
 	}
 };
-DUMPER7_ASSERTS_UBaseMediaSource;
+DUMPER7_ASSERTS_UMediaComponent;
 
 // Class MediaAssets.MediaTimeStampInfo
 // 0x0010 (0x0038 - 0x0028)
@@ -99,6 +104,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMediaTimeStampInfo;
+
+// Class MediaAssets.BaseMediaSource
+// 0x0008 (0x0088 - 0x0080)
+class UBaseMediaSource : public UMediaSource
+{
+public:
+	class FName                                   PlayerName;                                        // 0x0080(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BaseMediaSource")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BaseMediaSource")
+	}
+	static class UBaseMediaSource* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBaseMediaSource>();
+	}
+};
+DUMPER7_ASSERTS_UBaseMediaSource;
 
 // Class MediaAssets.FileMediaSource
 // 0x0028 (0x00B0 - 0x0088)
@@ -152,34 +180,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMediaBlueprintFunctionLibrary;
-
-// Class MediaAssets.MediaComponent
-// 0x0010 (0x00C0 - 0x00B0)
-class UMediaComponent final : public UActorComponent
-{
-public:
-	class UMediaTexture*                          MediaTexture;                                      // 0x00B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UMediaPlayer*                           MediaPlayer;                                       // 0x00B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, Interp, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	class UMediaPlayer* GetMediaPlayer() const;
-	class UMediaTexture* GetMediaTexture() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MediaComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MediaComponent")
-	}
-	static class UMediaComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMediaComponent>();
-	}
-};
-DUMPER7_ASSERTS_UMediaComponent;
 
 // Class MediaAssets.MediaPlayer
 // 0x0110 (0x0138 - 0x0028)

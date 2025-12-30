@@ -678,6 +678,31 @@ void UUMGSpineController::SetCameraZoomScale(float InValue)
 }
 
 
+// Function CGSpine.UMGSpineController.SetPerspective
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bValue                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUMGSpineController::SetPerspective(bool bValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UMGSpineController", "SetPerspective");
+
+	Params::UMGSpineController_SetPerspective Parms{};
+
+	Parms.bValue = bValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function CGSpine.UMGSpineSection.AddScalarParameterKey
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:

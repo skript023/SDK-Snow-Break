@@ -39,11 +39,11 @@ public:
 	float                                         In_Delta_Time;                                     // 0x0320(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Construct();
-	void data_transmission_off();
 	void ExecuteUbergraph_uw_fight_scene_off(int32 EntryPoint);
-	void SceneOff();
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void data_transmission_off();
+	void Construct();
+	void SceneOff();
 
 public:
 	static class UClass* StaticClass()

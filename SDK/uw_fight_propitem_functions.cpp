@@ -130,31 +130,6 @@ void Uuw_fight_propitem_C::Construct()
 }
 
 
-// LuaFunction uw_fight_propitem.uw_fight_propitem_C.OnListItemObjectSet
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// class UObject*                          ListItemObject                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_propitem_C::OnListItemObjectSet(class UObject* ListItemObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_propitem_C", "OnListItemObjectSet");
-
-	Params::uw_fight_propitem_C_OnListItemObjectSet Parms{};
-
-	Parms.ListItemObject = ListItemObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_propitem.uw_fight_propitem_C.K2_OnCustomUmgAnimFinished
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -170,6 +145,31 @@ void Uuw_fight_propitem_C::K2_OnCustomUmgAnimFinished(const class FName& AnimNam
 	Params::uw_fight_propitem_C_K2_OnCustomUmgAnimFinished Parms{};
 
 	Parms.AnimName = AnimName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_propitem.uw_fight_propitem_C.OnListItemObjectSet
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// class UObject*                          ListItemObject                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_propitem_C::OnListItemObjectSet(class UObject* ListItemObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_propitem_C", "OnListItemObjectSet");
+
+	Params::uw_fight_propitem_C_OnListItemObjectSet Parms{};
+
+	Parms.ListItemObject = ListItemObject;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

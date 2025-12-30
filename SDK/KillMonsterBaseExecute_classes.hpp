@@ -17,28 +17,29 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass KillMonsterBaseExecute.KillMonsterBaseExecute_C
-// 0x0020 (0x0220 - 0x0200)
-class UKillMonsterBaseExecute_C final : public UGameTask_Execute
+// 0x0020 (0x0230 - 0x0210)
+#pragma pack(push, 0x1)
+class alignas(0x08) UKillMonsterBaseExecute_C : public UGameTask_Execute
 {
 public:
-	int32                                         Num;                                               // 0x0200(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IngnoreSuicide;                                    // 0x0204(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          IgnoreLeave;                                       // 0x0205(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_206[0x2];                                      // 0x0206(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 LeaveMonsterTag;                                   // 0x0208(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CheckPlayerKill;                                   // 0x0218(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          DoFuncImmediately;                                 // 0x0219(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         Num;                                               // 0x0210(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IngnoreSuicide;                                    // 0x0214(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IgnoreLeave;                                       // 0x0215(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_216[0x2];                                      // 0x0216(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 LeaveMonsterTag;                                   // 0x0218(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CheckPlayerKill;                                   // 0x0228(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DoFuncImmediately;                                 // 0x0229(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void OnEnd_Client();
+	void OnCountDown_Client();
+	void OnActive_Client();
 	class FString GetDescription();
 	void OnActive();
-	void OnActive_Client();
-	void OnCountDown_Client();
+	void OnEnd_Client();
 	void OnEnd();
 
-	class FString GetSpecialStaticDescription() const;
 	class FString GetModuleName() const;
+	class FString GetSpecialStaticDescription() const;
 
 public:
 	static class UClass* StaticClass()
@@ -54,6 +55,7 @@ public:
 		return GetDefaultObjImpl<UKillMonsterBaseExecute_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UKillMonsterBaseExecute_C;
 
 }

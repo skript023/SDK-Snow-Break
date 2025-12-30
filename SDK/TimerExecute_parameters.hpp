@@ -23,6 +23,15 @@ public:
 };
 DUMPER7_ASSERTS_TimerExecute_C_GetDescription;
 
+// Function TimerExecute.TimerExecute_C.GetModuleName
+// 0x0010 (0x0010 - 0x0000)
+struct TimerExecute_C_GetModuleName final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TimerExecute_C_GetModuleName;
+
 // Function TimerExecute.TimerExecute_C.GetSpecialStaticDescription
 // 0x0030 (0x0030 - 0x0000)
 struct TimerExecute_C_GetSpecialStaticDescription final
@@ -33,15 +42,6 @@ public:
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TimerExecute_C_GetSpecialStaticDescription;
-
-// Function TimerExecute.TimerExecute_C.GetModuleName
-// 0x0010 (0x0010 - 0x0000)
-struct TimerExecute_C_GetModuleName final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TimerExecute_C_GetModuleName;
 
 }
 

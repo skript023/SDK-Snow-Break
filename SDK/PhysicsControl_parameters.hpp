@@ -10,52 +10,93 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "PhysicsControl_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "PhysicsControl_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
 
-// Function PhysicsControl.PhysControlDataProcessorInterface.StartProcessor
-// 0x0008 (0x0008 - 0x0000)
-struct PhysControlDataProcessorInterface_StartProcessor final
+// Function PhysicsControl.AnimRigidBodyControlDataSource.AnimNode_SetModifierMovementType
+// 0x000C (0x000C - 0x0000)
+struct AnimRigidBodyControlDataSource_AnimNode_SetModifierMovementType final
 {
 public:
-	class UPhysicsControlComponent*               PhysicsControlComponent;                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ModifierName;                                      // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPhysicsMovementType                          MovementType;                                      // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_PhysControlDataProcessorInterface_StartProcessor;
+DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_AnimNode_SetModifierMovementType;
 
-// Function PhysicsControl.PhysControlDataProcessorInterface.TickPhysControlData
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAdditionalControlData
+// 0x0010 (0x0010 - 0x0000)
+struct AnimRigidBodyControlDataSource_GetAdditionalControlData final
+{
+public:
+	TArray<struct FAdditionalControlUpdateData>   ControlUpdateDatas;                                // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetAdditionalControlData;
+
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeAddForce
+// 0x0050 (0x0050 - 0x0000)
+struct AnimRigidBodyControlDataSource_GetAnimNodeAddForce final
+{
+public:
+	TMap<class FName, struct FVector>             ForceMap;                                          // 0x0000(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetAnimNodeAddForce;
+
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeAddTorque
+// 0x0050 (0x0050 - 0x0000)
+struct AnimRigidBodyControlDataSource_GetAnimNodeAddTorque final
+{
+public:
+	TMap<class FName, struct FVector>             TorqueMap;                                         // 0x0000(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetAnimNodeAddTorque;
+
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeControlCreateData
+// 0x0188 (0x0188 - 0x0000)
+struct AnimRigidBodyControlDataSource_GetAnimNodeControlCreateData final
+{
+public:
+	struct FAnimRigidBodyControlCreationData      RigidBodyData;                                     // 0x0000(0x0188)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetAnimNodeControlCreateData;
+
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeControlUpdateData
 // 0x00F0 (0x00F0 - 0x0000)
-struct PhysControlDataProcessorInterface_TickPhysControlData final
+struct AnimRigidBodyControlDataSource_GetAnimNodeControlUpdateData final
 {
 public:
-	struct FControlUpdateData                     UpdateData;                                        // 0x0000(0x00C8)(Parm, OutParm, NativeAccessSpecifierPublic)
-	struct FPhysicsControlContextData             ControlData;                                       // 0x00C8(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	float                                         DeltaSeconds;                                      // 0x00E8(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_EC[0x4];                                       // 0x00EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FRigidBodyKinematicTargets             KinematicTarget;                                   // 0x0000(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
+	struct FRigidBodyControlTargets               InControlTargets;                                  // 0x0050(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
+	struct FPhysicsControlControlAndModifierUpdates ControlUpdates;                                  // 0x00A0(0x0030)(Parm, OutParm, NativeAccessSpecifierPublic)
+	TArray<class FName>                           InControlAndModifierProfiles;                      // 0x00D0(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FName>                           InConstraintProfiles;                              // 0x00E0(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PhysControlDataProcessorInterface_TickPhysControlData;
+DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetAnimNodeControlUpdateData;
 
-// Function PhysicsControl.PhysControlSingleUseProcessorInterface.SetDuration
-// 0x0004 (0x0004 - 0x0000)
-struct PhysControlSingleUseProcessorInterface_SetDuration final
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetRigidBodyGrabUpdateData
+// 0x0010 (0x0010 - 0x0000)
+struct AnimRigidBodyControlDataSource_GetRigidBodyGrabUpdateData final
 {
 public:
-	float                                         Duration;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FRigidBodyGrabUpdateData>       GrabUpdateDatas;                                   // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PhysControlSingleUseProcessorInterface_SetDuration;
+DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetRigidBodyGrabUpdateData;
 
-// Function PhysicsControl.PhysControlSingleUseProcessorInterface.IsExpired
-// 0x0001 (0x0001 - 0x0000)
-struct PhysControlSingleUseProcessorInterface_IsExpired final
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetIsEnableAnimNodeControl
+// 0x0010 (0x0010 - 0x0000)
+struct AnimRigidBodyControlDataSource_GetIsEnableAnimNodeControl final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class USkeletalMeshComponent*           InOwnerMesh;                                       // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_PhysControlSingleUseProcessorInterface_IsExpired;
+DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetIsEnableAnimNodeControl;
 
 // Function PhysicsControl.PhysicsControlComponent.AddBodyModifiersToSet
 // 0x0028 (0x0028 - 0x0000)
@@ -1651,85 +1692,44 @@ public:
 };
 DUMPER7_ASSERTS_BaseGamePhysicsControlComponent_SetOverridePhysicsControlAsset;
 
-// Function PhysicsControl.AnimRigidBodyControlDataSource.AnimNode_SetModifierMovementType
-// 0x000C (0x000C - 0x0000)
-struct AnimRigidBodyControlDataSource_AnimNode_SetModifierMovementType final
+// Function PhysicsControl.PhysControlDataProcessorInterface.StartProcessor
+// 0x0008 (0x0008 - 0x0000)
+struct PhysControlDataProcessorInterface_StartProcessor final
 {
 public:
-	class FName                                   ModifierName;                                      // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPhysicsMovementType                          MovementType;                                      // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UPhysicsControlComponent*               PhysicsControlComponent;                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_AnimNode_SetModifierMovementType;
+DUMPER7_ASSERTS_PhysControlDataProcessorInterface_StartProcessor;
 
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAdditionalControlData
-// 0x0010 (0x0010 - 0x0000)
-struct AnimRigidBodyControlDataSource_GetAdditionalControlData final
-{
-public:
-	TArray<struct FAdditionalControlUpdateData>   ControlUpdateDatas;                                // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetAdditionalControlData;
-
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeAddForce
-// 0x0050 (0x0050 - 0x0000)
-struct AnimRigidBodyControlDataSource_GetAnimNodeAddForce final
-{
-public:
-	TMap<class FName, struct FVector>             ForceMap;                                          // 0x0000(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetAnimNodeAddForce;
-
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeAddTorque
-// 0x0050 (0x0050 - 0x0000)
-struct AnimRigidBodyControlDataSource_GetAnimNodeAddTorque final
-{
-public:
-	TMap<class FName, struct FVector>             TorqueMap;                                         // 0x0000(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetAnimNodeAddTorque;
-
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeControlCreateData
-// 0x0188 (0x0188 - 0x0000)
-struct AnimRigidBodyControlDataSource_GetAnimNodeControlCreateData final
-{
-public:
-	struct FAnimRigidBodyControlCreationData      RigidBodyData;                                     // 0x0000(0x0188)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetAnimNodeControlCreateData;
-
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeControlUpdateData
+// Function PhysicsControl.PhysControlDataProcessorInterface.TickPhysControlData
 // 0x00F0 (0x00F0 - 0x0000)
-struct AnimRigidBodyControlDataSource_GetAnimNodeControlUpdateData final
+struct PhysControlDataProcessorInterface_TickPhysControlData final
 {
 public:
-	struct FRigidBodyKinematicTargets             KinematicTarget;                                   // 0x0000(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
-	struct FRigidBodyControlTargets               InControlTargets;                                  // 0x0050(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
-	struct FPhysicsControlControlAndModifierUpdates ControlUpdates;                                  // 0x00A0(0x0030)(Parm, OutParm, NativeAccessSpecifierPublic)
-	TArray<class FName>                           InControlAndModifierProfiles;                      // 0x00D0(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FName>                           InConstraintProfiles;                              // 0x00E0(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FControlUpdateData                     UpdateData;                                        // 0x0000(0x00C8)(Parm, OutParm, NativeAccessSpecifierPublic)
+	struct FPhysicsControlContextData             ControlData;                                       // 0x00C8(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	float                                         DeltaSeconds;                                      // 0x00E8(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_EC[0x4];                                       // 0x00EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetAnimNodeControlUpdateData;
+DUMPER7_ASSERTS_PhysControlDataProcessorInterface_TickPhysControlData;
 
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetRigidBodyGrabUpdateData
-// 0x0010 (0x0010 - 0x0000)
-struct AnimRigidBodyControlDataSource_GetRigidBodyGrabUpdateData final
+// Function PhysicsControl.PhysControlSingleUseProcessorInterface.SetDuration
+// 0x0004 (0x0004 - 0x0000)
+struct PhysControlSingleUseProcessorInterface_SetDuration final
 {
 public:
-	TArray<struct FRigidBodyGrabUpdateData>       GrabUpdateDatas;                                   // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         Duration;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetRigidBodyGrabUpdateData;
+DUMPER7_ASSERTS_PhysControlSingleUseProcessorInterface_SetDuration;
 
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetIsEnableAnimNodeControl
-// 0x0010 (0x0010 - 0x0000)
-struct AnimRigidBodyControlDataSource_GetIsEnableAnimNodeControl final
+// Function PhysicsControl.PhysControlSingleUseProcessorInterface.IsExpired
+// 0x0001 (0x0001 - 0x0000)
+struct PhysControlSingleUseProcessorInterface_IsExpired final
 {
 public:
-	const class USkeletalMeshComponent*           InOwnerMesh;                                       // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_AnimRigidBodyControlDataSource_GetIsEnableAnimNodeControl;
+DUMPER7_ASSERTS_PhysControlSingleUseProcessorInterface_IsExpired;
 
 // Function PhysicsControl.BasePhysicsControlActorInterface.GetOwnerMesh
 // 0x0010 (0x0010 - 0x0000)

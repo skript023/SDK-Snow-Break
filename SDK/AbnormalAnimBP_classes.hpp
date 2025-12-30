@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "SeasunAnimGraph_structs.hpp"
-#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -21,7 +21,7 @@ namespace SDK
 
 // AnimBlueprintGeneratedClass AbnormalAnimBP.AbnormalAnimBP_C
 // 0x0300 (0x0850 - 0x0550)
-class UAbnormalAnimBP_C final : public UAbnormalAnimBase
+class UAbnormalAnimBP_C : public UAbnormalAnimBase
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0550(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

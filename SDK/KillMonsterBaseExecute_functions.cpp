@@ -17,15 +17,34 @@
 namespace SDK
 {
 
-// LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.OnEnd_Client
+// LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.OnCountDown_Client
 // (Native, Event, Public, BlueprintEvent)
 
-void UKillMonsterBaseExecute_C::OnEnd_Client()
+void UKillMonsterBaseExecute_C::OnCountDown_Client()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterBaseExecute_C", "OnEnd_Client");
+		Func = Class->GetFunction("KillMonsterBaseExecute_C", "OnCountDown_Client");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.OnActive_Client
+// (Native, Event, Public, BlueprintEvent)
+
+void UKillMonsterBaseExecute_C::OnActive_Client()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KillMonsterBaseExecute_C", "OnActive_Client");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -80,34 +99,15 @@ void UKillMonsterBaseExecute_C::OnActive()
 }
 
 
-// LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.OnActive_Client
+// LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.OnEnd_Client
 // (Native, Event, Public, BlueprintEvent)
 
-void UKillMonsterBaseExecute_C::OnActive_Client()
+void UKillMonsterBaseExecute_C::OnEnd_Client()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterBaseExecute_C", "OnActive_Client");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.OnCountDown_Client
-// (Native, Event, Public, BlueprintEvent)
-
-void UKillMonsterBaseExecute_C::OnCountDown_Client()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterBaseExecute_C", "OnCountDown_Client");
+		Func = Class->GetFunction("KillMonsterBaseExecute_C", "OnEnd_Client");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -137,26 +137,6 @@ void UKillMonsterBaseExecute_C::OnEnd()
 }
 
 
-// Function KillMonsterBaseExecute.KillMonsterBaseExecute_C.GetSpecialStaticDescription
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-
-class FString UKillMonsterBaseExecute_C::GetSpecialStaticDescription() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterBaseExecute_C", "GetSpecialStaticDescription");
-
-	Params::KillMonsterBaseExecute_C_GetSpecialStaticDescription Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function KillMonsterBaseExecute.KillMonsterBaseExecute_C.GetModuleName
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -170,6 +150,26 @@ class FString UKillMonsterBaseExecute_C::GetModuleName() const
 		Func = Class->GetFunction("KillMonsterBaseExecute_C", "GetModuleName");
 
 	Params::KillMonsterBaseExecute_C_GetModuleName Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KillMonsterBaseExecute.KillMonsterBaseExecute_C.GetSpecialStaticDescription
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+
+class FString UKillMonsterBaseExecute_C::GetSpecialStaticDescription() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KillMonsterBaseExecute_C", "GetSpecialStaticDescription");
+
+	Params::KillMonsterBaseExecute_C_GetSpecialStaticDescription Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

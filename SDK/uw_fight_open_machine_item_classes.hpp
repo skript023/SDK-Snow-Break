@@ -21,11 +21,11 @@ namespace SDK
 class Uuw_fight_open_machine_item_C final : public Uuw_fight_interactitem_C
 {
 public:
-	void BindKeyBoardOnSettingChange();
-	void TriggerInteract();
-	void DontRequireNormalState(bool* ret);
 	void BindExitInteractEvent();
+	void TriggerInteract();
 	void UpdateKeyShow();
+	void BindKeyBoardOnSettingChange();
+	void DontRequireNormalState(bool* ret);
 	void InitGamepadLongPressUI();
 	void OnConstruct();
 	void Destruct();

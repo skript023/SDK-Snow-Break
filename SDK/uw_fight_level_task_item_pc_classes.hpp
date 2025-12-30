@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -34,11 +34,11 @@ public:
 
 public:
 	void BP_OnEntryReleased();
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
 	void BP_OnItemSelectionChanged(bool bIsSelected);
 	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
-	void BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature();
-	void BP_OnItemExpansionChanged(bool bIsExpanded);
 	void BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature();
+	void BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature();
 	void Construct();
 	void Destruct__Overridden();
 	void OnClickTask();

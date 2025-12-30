@@ -257,6 +257,15 @@ public:
 };
 DUMPER7_ASSERTS_UMGSpineController_SetCameraZoomScale;
 
+// Function CGSpine.UMGSpineController.SetPerspective
+// 0x0001 (0x0001 - 0x0000)
+struct UMGSpineController_SetPerspective final
+{
+public:
+	bool                                          bValue;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_UMGSpineController_SetPerspective;
+
 // Function CGSpine.UMGSpineSection.AddScalarParameterKey
 // 0x0010 (0x0010 - 0x0000)
 struct UMGSpineSection_AddScalarParameterKey final

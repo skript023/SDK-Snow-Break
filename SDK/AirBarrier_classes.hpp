@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Game_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Game_structs.hpp"
 
 
 namespace SDK
@@ -65,8 +65,8 @@ public:
 	void ReceiveTick(float DeltaSeconds);
 	void ExecuteUbergraph_AirBarrier(int32 EntryPoint);
 	void DoRegionCheck(bool* bPassCheck);
-	void ReceiveActorBeginOverlap(class AActor* OtherActor);
 	void DoOnlineTDDutyCheck(bool* bPassCheck);
+	void ReceiveActorBeginOverlap(class AActor* OtherActor);
 
 	class FString GetModuleName() const;
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -47,8 +47,8 @@ public:
 	void BP_OnItemSelectionChanged(bool bIsSelected);
 	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
 	void TryPlay__Overridden();
-	void TryPlay();
 	void OnAnimationFinished(const class UWidgetAnimation* Animation);
+	void TryPlay();
 	void OnListItemObjectSet(class UObject* ListItemObject);
 	void Construct();
 	void OnConstruct();

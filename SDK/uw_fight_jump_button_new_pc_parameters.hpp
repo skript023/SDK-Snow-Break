@@ -16,16 +16,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_jump_button_new_pc.uw_fight_jump_button_new_pc_C.Tick
-// 0x003C (0x003C - 0x0000)
-struct uw_fight_jump_button_new_pc_C_Tick final
-{
-public:
-	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_jump_button_new_pc_C_Tick;
-
 // Function uw_fight_jump_button_new_pc.uw_fight_jump_button_new_pc_C.ExecuteUbergraph_uw_fight_jump_button_new_pc
 // 0x0044 (0x0044 - 0x0000)
 struct uw_fight_jump_button_new_pc_C_ExecuteUbergraph_uw_fight_jump_button_new_pc final
@@ -37,6 +27,16 @@ public:
 	bool                                          K2Node_Event_IsDesignTime;                         // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_jump_button_new_pc_C_ExecuteUbergraph_uw_fight_jump_button_new_pc;
+
+// Function uw_fight_jump_button_new_pc.uw_fight_jump_button_new_pc_C.Tick
+// 0x003C (0x003C - 0x0000)
+struct uw_fight_jump_button_new_pc_C_Tick final
+{
+public:
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_jump_button_new_pc_C_Tick;
 
 // Function uw_fight_jump_button_new_pc.uw_fight_jump_button_new_pc_C.PreConstruct
 // 0x0001 (0x0001 - 0x0000)

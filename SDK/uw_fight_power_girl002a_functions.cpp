@@ -17,32 +17,12 @@
 namespace SDK
 {
 
-// Function uw_fight_power_girl002a.uw_fight_power_girl002a_C.ExecuteUbergraph_uw_fight_power_girl002a
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_power_girl002a_C::ExecuteUbergraph_uw_fight_power_girl002a(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_power_girl002a_C", "ExecuteUbergraph_uw_fight_power_girl002a");
-
-	Params::uw_fight_power_girl002a_C_ExecuteUbergraph_uw_fight_power_girl002a Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_power_girl002a.uw_fight_power_girl002a_C.PlayAnim
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // bool                                    StateType                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_power_girl002a_C::PlayAnim(bool StateType)
+void uw_fight_power_girl002a::Uuw_fight_power_girl002a_C::PlayAnim(bool StateType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -52,6 +32,26 @@ void Uuw_fight_power_girl002a_C::PlayAnim(bool StateType)
 	Params::uw_fight_power_girl002a_C_PlayAnim Parms{};
 
 	Parms.StateType = StateType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_power_girl002a.uw_fight_power_girl002a_C.ExecuteUbergraph_uw_fight_power_girl002a
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void uw_fight_power_girl002a::Uuw_fight_power_girl002a_C::ExecuteUbergraph_uw_fight_power_girl002a(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_power_girl002a_C", "ExecuteUbergraph_uw_fight_power_girl002a");
+
+	Params::uw_fight_power_girl002a_C_ExecuteUbergraph_uw_fight_power_girl002a Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

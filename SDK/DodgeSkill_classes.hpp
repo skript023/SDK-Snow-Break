@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass DodgeSkill.DodgeSkill_C
-// 0x0000 (0x0A50 - 0x0A50)
-class ADodgeSkill_C final : public ACastSkill_C
+// 0x0000 (0x0A40 - 0x0A40)
+class ADodgeSkill_C : public ACastSkill_C
 {
 public:
-	class USkillDodgeComponent*                   SkillDodge;                                        // 0x0A48(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USkillDodgeComponent*                   SkillDodge;                                        // 0x0A38(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

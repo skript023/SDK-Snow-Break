@@ -29,10 +29,10 @@ public:
 	class URedirectTextBlock*                     TxtTalk;                                           // 0x0410(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void SwitchCurrentInfoTo(const int32& InInfoIndex);
 	void OnSwitch();
-	void PlaySoundInLua(const int32& SoundId);
+	void SwitchCurrentInfoTo(const int32& InInfoIndex);
 	void OnActive();
+	void PlaySoundInLua(const int32& SoundId);
 	void ResetInfo();
 	void Destruct();
 

@@ -19,48 +19,42 @@
 namespace SDK
 {
 
-// Class AudioMixer.QuartzClockHandle
-// 0x0168 (0x0190 - 0x0028)
-class UQuartzClockHandle final : public UObject
+// Class AudioMixer.QuartzSubsystem
+// 0x0050 (0x0080 - 0x0030)
+class UQuartzSubsystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_28[0x168];                                     // 0x0028(0x0168)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x50];                                      // 0x0030(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void PauseClock(const class UObject* WorldContextObject);
-	void ResetTransport(const class UObject* WorldContextObject, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& InDelegate);
-	void ResumeClock(const class UObject* WorldContextObject);
-	void SetBeatsPerMinute(const class UObject* WorldContextObject, const struct FQuartzQuantizationBoundary& QuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& Delegate, float BeatsPerMinute);
-	void SetMillisecondsPerTick(const class UObject* WorldContextObject, const struct FQuartzQuantizationBoundary& QuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& Delegate, float MillisecondsPerTick);
-	void SetSecondsPerTick(const class UObject* WorldContextObject, const struct FQuartzQuantizationBoundary& QuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& Delegate, float SecondsPerTick);
-	void SetThirtySecondNotesPerMinute(const class UObject* WorldContextObject, const struct FQuartzQuantizationBoundary& QuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& Delegate, float ThirtySecondsNotesPerMinute);
-	void SetTicksPerSecond(const class UObject* WorldContextObject, const struct FQuartzQuantizationBoundary& QuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& Delegate, float TicksPerSecond);
-	void SubscribeToAllQuantizationEvents(const class UObject* WorldContextObject, const TDelegate<void(class FName ClockName, EQuartzCommandQuantization QuantizationType, int32 NumBars, int32 Beat, float BeatFraction)>& OnQuantizationEvent);
-	void SubscribeToQuantizationEvent(const class UObject* WorldContextObject, EQuartzCommandQuantization InQuantizationBoundary, const TDelegate<void(class FName ClockName, EQuartzCommandQuantization QuantizationType, int32 NumBars, int32 Beat, float BeatFraction)>& OnQuantizationEvent);
-	void UnsubscribeFromAllTimeDivisions(const class UObject* WorldContextObject);
-	void UnsubscribeFromTimeDivision(const class UObject* WorldContextObject, EQuartzCommandQuantization InQuantizationBoundary);
-
-	float GetBeatsPerMinute(const class UObject* WorldContextObject) const;
-	float GetMillisecondsPerTick(const class UObject* WorldContextObject) const;
-	float GetSecondsPerTick(const class UObject* WorldContextObject) const;
-	float GetThirtySecondNotesPerMinute(const class UObject* WorldContextObject) const;
-	float GetTicksPerSecond(const class UObject* WorldContextObject) const;
+	class UQuartzClockHandle* CreateNewClock(const class UObject* WorldContextObject, class FName ClockName, const struct FQuartzClockSettings& InSettings, bool bOverrideSettingsIfClockExists);
+	bool DoesClockExist(const class UObject* WorldContextObject, class FName ClockName);
+	float GetAudioRenderThreadToGameThreadAverageLatency();
+	float GetAudioRenderThreadToGameThreadMaxLatency();
+	float GetAudioRenderThreadToGameThreadMinLatency();
+	float GetGameThreadToAudioRenderThreadAverageLatency(const class UObject* WorldContextObject);
+	float GetGameThreadToAudioRenderThreadMaxLatency(const class UObject* WorldContextObject);
+	float GetGameThreadToAudioRenderThreadMinLatency(const class UObject* WorldContextObject);
+	class UQuartzClockHandle* GetHandleForClock(const class UObject* WorldContextObject, class FName ClockName);
+	float GetRoundTripAverageLatency(const class UObject* WorldContextObject);
+	float GetRoundTripMaxLatency(const class UObject* WorldContextObject);
+	float GetRoundTripMinLatency(const class UObject* WorldContextObject);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("QuartzClockHandle")
+		STATIC_CLASS_IMPL("QuartzSubsystem")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"QuartzClockHandle")
+		STATIC_NAME_IMPL(L"QuartzSubsystem")
 	}
-	static class UQuartzClockHandle* GetDefaultObj()
+	static class UQuartzSubsystem* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UQuartzClockHandle>();
+		return GetDefaultObjImpl<UQuartzSubsystem>();
 	}
 };
-DUMPER7_ASSERTS_UQuartzClockHandle;
+DUMPER7_ASSERTS_UQuartzSubsystem;
 
 // Class AudioMixer.SynthComponent
 // 0x04C0 (0x06C0 - 0x0200)
@@ -123,32 +117,33 @@ public:
 };
 DUMPER7_ASSERTS_USynthComponent;
 
-// Class AudioMixer.SubmixEffectSubmixEQPreset
-// 0x0048 (0x00B0 - 0x0068)
-class USubmixEffectSubmixEQPreset final : public USoundEffectSubmixPreset
+// Class AudioMixer.SubmixEffectReverbPreset
+// 0x00A8 (0x0110 - 0x0068)
+class USubmixEffectReverbPreset final : public USoundEffectSubmixPreset
 {
 public:
-	uint8                                         Pad_68[0x38];                                      // 0x0068(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSubmixEffectSubmixEQSettings          Settings;                                          // 0x00A0(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	uint8                                         Pad_68[0x68];                                      // 0x0068(0x0068)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSubmixEffectReverbSettings            Settings;                                          // 0x00D0(0x0040)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
-	void SetSettings(const struct FSubmixEffectSubmixEQSettings& InSettings);
+	void SetSettings(const struct FSubmixEffectReverbSettings& InSettings);
+	void SetSettingsWithReverbEffect(const class UReverbEffect* InReverbEffect, const float WetLevel, const float DryLevel);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("SubmixEffectSubmixEQPreset")
+		STATIC_CLASS_IMPL("SubmixEffectReverbPreset")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"SubmixEffectSubmixEQPreset")
+		STATIC_NAME_IMPL(L"SubmixEffectReverbPreset")
 	}
-	static class USubmixEffectSubmixEQPreset* GetDefaultObj()
+	static class USubmixEffectReverbPreset* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<USubmixEffectSubmixEQPreset>();
+		return GetDefaultObjImpl<USubmixEffectReverbPreset>();
 	}
 };
-DUMPER7_ASSERTS_USubmixEffectSubmixEQPreset;
+DUMPER7_ASSERTS_USubmixEffectReverbPreset;
 
 // Class AudioMixer.AudioGenerator
 // 0x0080 (0x00A8 - 0x0028)
@@ -226,6 +221,49 @@ public:
 };
 DUMPER7_ASSERTS_UAudioMixerBlueprintLibrary;
 
+// Class AudioMixer.QuartzClockHandle
+// 0x0168 (0x0190 - 0x0028)
+class UQuartzClockHandle final : public UObject
+{
+public:
+	uint8                                         Pad_28[0x168];                                     // 0x0028(0x0168)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void PauseClock(const class UObject* WorldContextObject);
+	void ResetTransport(const class UObject* WorldContextObject, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& InDelegate);
+	void ResumeClock(const class UObject* WorldContextObject);
+	void SetBeatsPerMinute(const class UObject* WorldContextObject, const struct FQuartzQuantizationBoundary& QuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& Delegate, float BeatsPerMinute);
+	void SetMillisecondsPerTick(const class UObject* WorldContextObject, const struct FQuartzQuantizationBoundary& QuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& Delegate, float MillisecondsPerTick);
+	void SetSecondsPerTick(const class UObject* WorldContextObject, const struct FQuartzQuantizationBoundary& QuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& Delegate, float SecondsPerTick);
+	void SetThirtySecondNotesPerMinute(const class UObject* WorldContextObject, const struct FQuartzQuantizationBoundary& QuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& Delegate, float ThirtySecondsNotesPerMinute);
+	void SetTicksPerSecond(const class UObject* WorldContextObject, const struct FQuartzQuantizationBoundary& QuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& Delegate, float TicksPerSecond);
+	void SubscribeToAllQuantizationEvents(const class UObject* WorldContextObject, const TDelegate<void(class FName ClockName, EQuartzCommandQuantization QuantizationType, int32 NumBars, int32 Beat, float BeatFraction)>& OnQuantizationEvent);
+	void SubscribeToQuantizationEvent(const class UObject* WorldContextObject, EQuartzCommandQuantization InQuantizationBoundary, const TDelegate<void(class FName ClockName, EQuartzCommandQuantization QuantizationType, int32 NumBars, int32 Beat, float BeatFraction)>& OnQuantizationEvent);
+	void UnsubscribeFromAllTimeDivisions(const class UObject* WorldContextObject);
+	void UnsubscribeFromTimeDivision(const class UObject* WorldContextObject, EQuartzCommandQuantization InQuantizationBoundary);
+
+	float GetBeatsPerMinute(const class UObject* WorldContextObject) const;
+	float GetMillisecondsPerTick(const class UObject* WorldContextObject) const;
+	float GetSecondsPerTick(const class UObject* WorldContextObject) const;
+	float GetThirtySecondNotesPerMinute(const class UObject* WorldContextObject) const;
+	float GetTicksPerSecond(const class UObject* WorldContextObject) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("QuartzClockHandle")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"QuartzClockHandle")
+	}
+	static class UQuartzClockHandle* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UQuartzClockHandle>();
+	}
+};
+DUMPER7_ASSERTS_UQuartzClockHandle;
+
 // Class AudioMixer.SubmixEffectDynamicsProcessorPreset
 // 0x00C8 (0x0130 - 0x0068)
 class USubmixEffectDynamicsProcessorPreset final : public USoundEffectSubmixPreset
@@ -254,70 +292,32 @@ public:
 };
 DUMPER7_ASSERTS_USubmixEffectDynamicsProcessorPreset;
 
-// Class AudioMixer.SubmixEffectReverbPreset
-// 0x00A8 (0x0110 - 0x0068)
-class USubmixEffectReverbPreset final : public USoundEffectSubmixPreset
+// Class AudioMixer.SubmixEffectSubmixEQPreset
+// 0x0048 (0x00B0 - 0x0068)
+class USubmixEffectSubmixEQPreset final : public USoundEffectSubmixPreset
 {
 public:
-	uint8                                         Pad_68[0x68];                                      // 0x0068(0x0068)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSubmixEffectReverbSettings            Settings;                                          // 0x00D0(0x0040)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_68[0x38];                                      // 0x0068(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSubmixEffectSubmixEQSettings          Settings;                                          // 0x00A0(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
-	void SetSettings(const struct FSubmixEffectReverbSettings& InSettings);
-	void SetSettingsWithReverbEffect(const class UReverbEffect* InReverbEffect, const float WetLevel, const float DryLevel);
+	void SetSettings(const struct FSubmixEffectSubmixEQSettings& InSettings);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("SubmixEffectReverbPreset")
+		STATIC_CLASS_IMPL("SubmixEffectSubmixEQPreset")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"SubmixEffectReverbPreset")
+		STATIC_NAME_IMPL(L"SubmixEffectSubmixEQPreset")
 	}
-	static class USubmixEffectReverbPreset* GetDefaultObj()
+	static class USubmixEffectSubmixEQPreset* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<USubmixEffectReverbPreset>();
+		return GetDefaultObjImpl<USubmixEffectSubmixEQPreset>();
 	}
 };
-DUMPER7_ASSERTS_USubmixEffectReverbPreset;
-
-// Class AudioMixer.QuartzSubsystem
-// 0x0050 (0x0080 - 0x0030)
-class UQuartzSubsystem final : public UWorldSubsystem
-{
-public:
-	uint8                                         Pad_30[0x50];                                      // 0x0030(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class UQuartzClockHandle* CreateNewClock(const class UObject* WorldContextObject, class FName ClockName, const struct FQuartzClockSettings& InSettings, bool bOverrideSettingsIfClockExists);
-	bool DoesClockExist(const class UObject* WorldContextObject, class FName ClockName);
-	float GetAudioRenderThreadToGameThreadAverageLatency();
-	float GetAudioRenderThreadToGameThreadMaxLatency();
-	float GetAudioRenderThreadToGameThreadMinLatency();
-	float GetGameThreadToAudioRenderThreadAverageLatency(const class UObject* WorldContextObject);
-	float GetGameThreadToAudioRenderThreadMaxLatency(const class UObject* WorldContextObject);
-	float GetGameThreadToAudioRenderThreadMinLatency(const class UObject* WorldContextObject);
-	class UQuartzClockHandle* GetHandleForClock(const class UObject* WorldContextObject, class FName ClockName);
-	float GetRoundTripAverageLatency(const class UObject* WorldContextObject);
-	float GetRoundTripMaxLatency(const class UObject* WorldContextObject);
-	float GetRoundTripMinLatency(const class UObject* WorldContextObject);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("QuartzSubsystem")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"QuartzSubsystem")
-	}
-	static class UQuartzSubsystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UQuartzSubsystem>();
-	}
-};
-DUMPER7_ASSERTS_UQuartzSubsystem;
+DUMPER7_ASSERTS_USubmixEffectSubmixEQPreset;
 
 // Class AudioMixer.SynthSound
 // 0x0020 (0x03E0 - 0x03C0)

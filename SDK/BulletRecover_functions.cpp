@@ -17,21 +17,24 @@
 namespace SDK
 {
 
-// LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveDeActive
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// LuaFunction BulletRecover.BulletRecover_C.K2_RecoverAttribute
+// (Native, Event, Protected, BlueprintEvent)
 // Parameters:
-// const class UGameAbilityComponent*      Pawn                                                   (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityComponentBase*            InAbility                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-void UBulletRecover_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn)
+bool UBulletRecover_C::K2_RecoverAttribute(class UAbilityComponentBase* InAbility, float InValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BulletRecover_C", "K2_ReceiveDeActive");
+		Func = Class->GetFunction("BulletRecover_C", "K2_RecoverAttribute");
 
-	Params::BulletRecover_C_K2_ReceiveDeActive Parms{};
+	Params::BulletRecover_C_K2_RecoverAttribute Parms{};
 
-	Parms.Pawn = Pawn;
+	Parms.InAbility = InAbility;
+	Parms.InValue = InValue;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -39,6 +42,8 @@ void UBulletRecover_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Paw
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -67,24 +72,21 @@ void UBulletRecover_C::K2_ReceiveActive(const class UObject* Instigator)
 }
 
 
-// LuaFunction BulletRecover.BulletRecover_C.K2_RecoverAttribute
-// (Native, Event, Protected, BlueprintEvent)
+// LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveDeActive
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAbilityComponentBase*            InAbility                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const class UGameAbilityComponent*      Pawn                                                   (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBulletRecover_C::K2_RecoverAttribute(class UAbilityComponentBase* InAbility, float InValue)
+void UBulletRecover_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BulletRecover_C", "K2_RecoverAttribute");
+		Func = Class->GetFunction("BulletRecover_C", "K2_ReceiveDeActive");
 
-	Params::BulletRecover_C_K2_RecoverAttribute Parms{};
+	Params::BulletRecover_C_K2_ReceiveDeActive Parms{};
 
-	Parms.InAbility = InAbility;
-	Parms.InValue = InValue;
+	Parms.Pawn = Pawn;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92,8 +94,6 @@ bool UBulletRecover_C::K2_RecoverAttribute(class UAbilityComponentBase* InAbilit
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 

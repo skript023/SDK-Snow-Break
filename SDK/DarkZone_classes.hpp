@@ -21,6 +21,40 @@
 namespace SDK
 {
 
+// Class DarkZone.DarkZoneSpecialLogic
+// 0x0020 (0x0248 - 0x0228)
+class ADarkZoneSpecialLogic final : public AActor
+{
+public:
+	uint8                                         Pad_228[0x20];                                     // 0x0228(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	int32 AddGZ(int32 Val);
+	int32 GetGZ();
+	int32 GetGZLevel();
+	int32 GetGZMax();
+	int32 GetGZSpeed();
+	void SetGZ(const int32 Val);
+	void SetGZLevelAndSpeed(const int32 Level, const int32 Speed);
+	void SetGZMax(const int32 Val);
+	void SetGZRate(const float Val);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DarkZoneSpecialLogic")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DarkZoneSpecialLogic")
+	}
+	static class ADarkZoneSpecialLogic* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ADarkZoneSpecialLogic>();
+	}
+};
+DUMPER7_ASSERTS_ADarkZoneSpecialLogic;
+
 // Class DarkZone.DarkZoneActorInterface
 // 0x0000 (0x0000 - 0x0000)
 class IDarkZoneActorInterface final
@@ -52,6 +86,34 @@ public:
 	}
 };
 DUMPER7_ASSERTS_IDarkZoneActorInterface;
+
+// Class DarkZone.SlopeNavLinkProxy
+// 0x0008 (0x0280 - 0x0278)
+class ASlopeNavLinkProxy final : public ANavLinkProxy
+{
+public:
+	float                                         Interval;                                          // 0x0278(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_27C[0x4];                                      // 0x027C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AutoFill();
+	void Clear();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SlopeNavLinkProxy")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SlopeNavLinkProxy")
+	}
+	static class ASlopeNavLinkProxy* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ASlopeNavLinkProxy>();
+	}
+};
+DUMPER7_ASSERTS_ASlopeNavLinkProxy;
 
 // Class DarkZone.DarkZoneFogActor
 // 0x0018 (0x0240 - 0x0228)
@@ -144,6 +206,37 @@ public:
 };
 DUMPER7_ASSERTS_ADarkZoneGeneralTriggerRegion;
 
+// Class DarkZone.DarkZoneMapPoint
+// 0x0038 (0x0260 - 0x0228)
+class ADarkZoneMapPoint final : public AActor
+{
+public:
+	int32                                         Type;                                              // 0x0228(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ID;                                                // 0x022C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 CustomParam;                                       // 0x0230(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FDarkZonePointTypeComboBox             TypeComboBox;                                      // 0x0240(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FDarkZonePointInteractionComboBox      InteractionComboBox;                               // 0x0244(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FDarkZonePointExportButton             Export;                                            // 0x0248(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_249[0x7];                                      // 0x0249(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 SpawnActor;                                        // 0x0250(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ADarkZoneMapPointMgr*                   Mgr;                                               // 0x0258(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DarkZoneMapPoint")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DarkZoneMapPoint")
+	}
+	static class ADarkZoneMapPoint* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ADarkZoneMapPoint>();
+	}
+};
+DUMPER7_ASSERTS_ADarkZoneMapPoint;
+
 // Class DarkZone.DarkZoneMapPointMgr
 // 0x00F8 (0x0320 - 0x0228)
 class ADarkZoneMapPointMgr final : public AActor
@@ -232,37 +325,6 @@ public:
 };
 DUMPER7_ASSERTS_ADarkZonePatrolArea;
 
-// Class DarkZone.DarkZoneMapPoint
-// 0x0038 (0x0260 - 0x0228)
-class ADarkZoneMapPoint final : public AActor
-{
-public:
-	int32                                         Type;                                              // 0x0228(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ID;                                                // 0x022C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<int32>                                 CustomParam;                                       // 0x0230(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FDarkZonePointTypeComboBox             TypeComboBox;                                      // 0x0240(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FDarkZonePointInteractionComboBox      InteractionComboBox;                               // 0x0244(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FDarkZonePointExportButton             Export;                                            // 0x0248(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_249[0x7];                                      // 0x0249(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 SpawnActor;                                        // 0x0250(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ADarkZoneMapPointMgr*                   Mgr;                                               // 0x0258(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("DarkZoneMapPoint")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"DarkZoneMapPoint")
-	}
-	static class ADarkZoneMapPoint* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ADarkZoneMapPoint>();
-	}
-};
-DUMPER7_ASSERTS_ADarkZoneMapPoint;
-
 // Class DarkZone.DarkZoneNpcPoint
 // 0x0038 (0x0260 - 0x0228)
 class ADarkZoneNpcPoint final : public AActor
@@ -335,40 +397,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UDarkZoneSettingSystem;
-
-// Class DarkZone.DarkZoneSpecialLogic
-// 0x0020 (0x0248 - 0x0228)
-class ADarkZoneSpecialLogic final : public AActor
-{
-public:
-	uint8                                         Pad_228[0x20];                                     // 0x0228(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	int32 AddGZ(int32 Val);
-	int32 GetGZ();
-	int32 GetGZLevel();
-	int32 GetGZMax();
-	int32 GetGZSpeed();
-	void SetGZ(const int32 Val);
-	void SetGZLevelAndSpeed(const int32 Level, const int32 Speed);
-	void SetGZMax(const int32 Val);
-	void SetGZRate(const float Val);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("DarkZoneSpecialLogic")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"DarkZoneSpecialLogic")
-	}
-	static class ADarkZoneSpecialLogic* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ADarkZoneSpecialLogic>();
-	}
-};
-DUMPER7_ASSERTS_ADarkZoneSpecialLogic;
 
 // Class DarkZone.DarkZoneSystem
 // 0x0120 (0x0150 - 0x0030)
@@ -556,34 +584,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ADarkZoneTaskRegionExit;
-
-// Class DarkZone.SlopeNavLinkProxy
-// 0x0008 (0x0280 - 0x0278)
-class ASlopeNavLinkProxy final : public ANavLinkProxy
-{
-public:
-	float                                         Interval;                                          // 0x0278(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_27C[0x4];                                      // 0x027C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void AutoFill();
-	void Clear();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SlopeNavLinkProxy")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SlopeNavLinkProxy")
-	}
-	static class ASlopeNavLinkProxy* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ASlopeNavLinkProxy>();
-	}
-};
-DUMPER7_ASSERTS_ASlopeNavLinkProxy;
 
 }
 

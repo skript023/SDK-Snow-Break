@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass State_DisOutControllable.State_DisOutControllable_C
-// 0x0000 (0x0128 - 0x0128)
+// 0x0000 (0x0110 - 0x0110)
 class UState_DisOutControllable_C final : public UCustomGameAbilityBuffer
 {
 public:

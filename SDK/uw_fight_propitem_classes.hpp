@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -44,8 +44,8 @@ public:
 	void BP_OnItemExpansionChanged(bool bIsExpanded);
 	void BP_OnEntryReleased();
 	void Construct();
-	void OnListItemObjectSet(class UObject* ListItemObject);
 	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void OnListItemObjectSet(class UObject* ListItemObject);
 	void Destruct();
 
 	class FString GetModuleName() const;

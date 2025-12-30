@@ -93,9 +93,9 @@ public:
 	void ConstructInLua__Overridden();
 	void OnMoveLeftStart();
 	void OnMoveLeftEnd();
-	void ConstructInLua();
 	void OnMoveRightEnd();
 	void OnMoveRightStart();
+	void ConstructInLua();
 	void Destruct();
 
 	class FString GetModuleName() const;

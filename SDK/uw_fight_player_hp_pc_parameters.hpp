@@ -14,33 +14,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_player_hp_pc.uw_fight_player_hp_pc_C.K2_OnPlayHpLowAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_hp_pc_C_K2_OnPlayHpLowAnim final
-{
-public:
-	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_hp_pc_C_K2_OnPlayHpLowAnim;
-
-// Function uw_fight_player_hp_pc.uw_fight_player_hp_pc_C.K2_OnPlayEnergyFullLoopAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_hp_pc_C_K2_OnPlayEnergyFullLoopAnim final
-{
-public:
-	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_hp_pc_C_K2_OnPlayEnergyFullLoopAnim;
-
-// Function uw_fight_player_hp_pc.uw_fight_player_hp_pc_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_player_hp_pc_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_player_hp_pc_C_K2_OnCustomUmgAnimFinished;
-
 // Function uw_fight_player_hp_pc.uw_fight_player_hp_pc_C.ExecuteUbergraph_uw_fight_player_hp_pc
 // 0x0014 (0x0014 - 0x0000)
 struct uw_fight_player_hp_pc_C_ExecuteUbergraph_uw_fight_player_hp_pc final
@@ -56,14 +29,23 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_player_hp_pc_C_ExecuteUbergraph_uw_fight_player_hp_pc;
 
-// Function uw_fight_player_hp_pc.uw_fight_player_hp_pc_C.K2_OnPlayEnergyFullAnim
+// Function uw_fight_player_hp_pc.uw_fight_player_hp_pc_C.K2_OnCustomUmgAnimFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_player_hp_pc_C_K2_OnCustomUmgAnimFinished final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_player_hp_pc_C_K2_OnCustomUmgAnimFinished;
+
+// Function uw_fight_player_hp_pc.uw_fight_player_hp_pc_C.K2_OnPlayEnergyFullLoopAnim
 // 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_hp_pc_C_K2_OnPlayEnergyFullAnim final
+struct uw_fight_player_hp_pc_C_K2_OnPlayEnergyFullLoopAnim final
 {
 public:
 	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_uw_fight_player_hp_pc_C_K2_OnPlayEnergyFullAnim;
+DUMPER7_ASSERTS_uw_fight_player_hp_pc_C_K2_OnPlayEnergyFullLoopAnim;
 
 // Function uw_fight_player_hp_pc.uw_fight_player_hp_pc_C.PlayStateAnim
 // 0x0001 (0x0001 - 0x0000)
@@ -73,6 +55,24 @@ public:
 	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_player_hp_pc_C_PlayStateAnim;
+
+// Function uw_fight_player_hp_pc.uw_fight_player_hp_pc_C.K2_OnPlayEnergyFullAnim
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_hp_pc_C_K2_OnPlayEnergyFullAnim final
+{
+public:
+	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_hp_pc_C_K2_OnPlayEnergyFullAnim;
+
+// Function uw_fight_player_hp_pc.uw_fight_player_hp_pc_C.K2_OnPlayHpLowAnim
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_hp_pc_C_K2_OnPlayHpLowAnim final
+{
+public:
+	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_hp_pc_C_K2_OnPlayHpLowAnim;
 
 }
 

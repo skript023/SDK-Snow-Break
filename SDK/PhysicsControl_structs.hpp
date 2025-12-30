@@ -96,16 +96,6 @@ enum class ERigidBodyGrabUpdateType : uint8
 	ERigidBodyGrabUpdateType_MAX             = 3,
 };
 
-// ScriptStruct PhysicsControl.RigidBodyControlTarget
-// 0x0018 (0x0018 - 0x0000)
-struct FRigidBodyControlTarget final
-{
-public:
-	struct FVector                                TargetPosition;                                    // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               TargetOrientation;                                 // 0x000C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigidBodyControlTarget;
-
 // ScriptStruct PhysicsControl.PhysicsControlSettings
 // 0x0018 (0x0018 - 0x0000)
 struct FPhysicsControlSettings final
@@ -137,26 +127,15 @@ public:
 };
 DUMPER7_ASSERTS_FPhysicsControlData;
 
-// ScriptStruct PhysicsControl.RigidBodyControlTargets
-// 0x0050 (0x0050 - 0x0000)
-struct FRigidBodyControlTargets final
+// ScriptStruct PhysicsControl.RigidBodyControlTarget
+// 0x0018 (0x0018 - 0x0000)
+struct FRigidBodyControlTarget final
 {
 public:
-	TMap<class FName, struct FRigidBodyControlTarget> Targets;                                       // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FVector                                TargetPosition;                                    // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               TargetOrientation;                                 // 0x000C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigidBodyControlTargets;
-
-// ScriptStruct PhysicsControl.PhysicsControlLimbSetupData
-// 0x0014 (0x0014 - 0x0000)
-struct FPhysicsControlLimbSetupData final
-{
-public:
-	class FName                                   LimbName;                                          // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   StartBone;                                         // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIncludeParentBone;                                // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FPhysicsControlLimbSetupData;
+DUMPER7_ASSERTS_FRigidBodyControlTarget;
 
 // ScriptStruct PhysicsControl.PhysicsControlSparseData
 // 0x003C (0x003C - 0x0000)
@@ -300,6 +279,15 @@ public:
 };
 DUMPER7_ASSERTS_FPhysicsControlControlAndModifierUpdates;
 
+// ScriptStruct PhysicsControl.RigidBodyControlTargets
+// 0x0050 (0x0050 - 0x0000)
+struct FRigidBodyControlTargets final
+{
+public:
+	TMap<class FName, struct FRigidBodyControlTarget> Targets;                                       // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigidBodyControlTargets;
+
 // ScriptStruct PhysicsControl.RigidBodyKinematicTarget
 // 0x001C (0x001C - 0x0000)
 struct FRigidBodyKinematicTarget final
@@ -383,16 +371,26 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_RigidBodyWithControl;
 
-// ScriptStruct PhysicsControl.SetMovementDatas
-// 0x0018 (0x0018 - 0x0000)
-struct FSetMovementDatas final
+// ScriptStruct PhysicsControl.PhysicsControlLimbSetupData
+// 0x0014 (0x0014 - 0x0000)
+struct FPhysicsControlLimbSetupData final
 {
 public:
-	EPhysicsMovementType                          MovementType;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           SetNames;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   LimbName;                                          // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   StartBone;                                         // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeParentBone;                                // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FSetMovementDatas;
+DUMPER7_ASSERTS_FPhysicsControlLimbSetupData;
+
+// ScriptStruct PhysicsControl.PhysicsControlNames
+// 0x0010 (0x0010 - 0x0000)
+struct FPhysicsControlNames final
+{
+public:
+	TArray<class FName>                           Names;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPhysicsControlNames;
 
 // ScriptStruct PhysicsControl.PhysicsControlModifierData
 // 0x0010 (0x0010 - 0x0000)
@@ -410,14 +408,16 @@ public:
 };
 DUMPER7_ASSERTS_FPhysicsControlModifierData;
 
-// ScriptStruct PhysicsControl.PhysicsControlNames
-// 0x0010 (0x0010 - 0x0000)
-struct FPhysicsControlNames final
+// ScriptStruct PhysicsControl.SetMovementDatas
+// 0x0018 (0x0018 - 0x0000)
+struct FSetMovementDatas final
 {
 public:
-	TArray<class FName>                           Names;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	EPhysicsMovementType                          MovementType;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           SetNames;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FPhysicsControlNames;
+DUMPER7_ASSERTS_FSetMovementDatas;
 
 // ScriptStruct PhysicsControl.SetCustomControlDatas
 // 0x0028 (0x0028 - 0x0000)

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass FightPowerRecover.FightPowerRecover_C
-// 0x0000 (0x0198 - 0x0198)
+// 0x0000 (0x0180 - 0x0180)
 class UFightPowerRecover_C final : public UFightPowerRecoverBase
 {
 public:

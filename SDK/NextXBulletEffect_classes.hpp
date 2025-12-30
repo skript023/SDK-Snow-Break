@@ -10,40 +10,40 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass NextXBulletEffect.NextXBulletEffect_C
-// 0x0020 (0x0178 - 0x0158)
+// 0x0020 (0x0160 - 0x0140)
 class UNextXBulletEffect_C final : public UWeaponBulletEffectBase
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0158(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	int32                                         NextBulletCount;                                   // 0x0160(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         SpawnBulletCount;                                  // 0x0164(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bOnlyNormal;                                       // 0x0168(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          bOnlyAim;                                          // 0x0169(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          bStateActive;                                      // 0x016A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          bPreFire;                                          // 0x016B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	int32                                         BulletType;                                        // 0x016C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bNeedPreheat;                                      // 0x0170(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	EAttributeType                                InputBulletType;                                   // 0x0171(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0140(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	int32                                         NextBulletCount;                                   // 0x0148(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         SpawnBulletCount;                                  // 0x014C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bOnlyNormal;                                       // 0x0150(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          bOnlyAim;                                          // 0x0151(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          bStateActive;                                      // 0x0152(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          bPreFire;                                          // 0x0153(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	int32                                         BulletType;                                        // 0x0154(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bNeedPreheat;                                      // 0x0158(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	EAttributeType                                InputBulletType;                                   // 0x0159(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetModifierNextBullet();
 	void CheckState(ECharacterActionState InState, bool bSet);
 	void K2_ReceiveInitialize(const TArray<struct FParamInfo>& Info, const class UGameAbilityComponent* lpInstigator);
-	void K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn);
 	void ReceiveOnWeaponFire(int32 ForceShootCount);
 	void K2_ReceiveActive(const class UObject* Instigator);
-	void OnPlayerActionFlay(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet);
 	void ReceiveOnPreWeaponFire(EAttributeType BulletType_0);
 	void ReceiveOnOverlaid();
+	void SetModifierNextBullet();
+	void K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn);
+	void OnPlayerActionFlay(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet);
 	void ExecuteUbergraph_NextXBulletEffect(int32 EntryPoint);
 
 public:

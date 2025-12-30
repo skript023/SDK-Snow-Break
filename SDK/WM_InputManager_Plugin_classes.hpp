@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "InputCore_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_classes.hpp"
 #include "WM_InputManager_Plugin_structs.hpp"
-#include "InputCore_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "UMG_classes.hpp"
 

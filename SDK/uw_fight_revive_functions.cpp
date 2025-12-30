@@ -17,15 +17,15 @@
 namespace SDK
 {
 
-// LuaFunction uw_fight_revive.uw_fight_revive_C.BindExitInteractEvent
+// LuaFunction uw_fight_revive.uw_fight_revive_C.TriggerInteract
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_revive_C::BindExitInteractEvent()
+void Uuw_fight_revive_C::TriggerInteract()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_revive_C", "BindExitInteractEvent");
+		Func = Class->GetFunction("uw_fight_revive_C", "TriggerInteract");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -36,15 +36,15 @@ void Uuw_fight_revive_C::BindExitInteractEvent()
 }
 
 
-// LuaFunction uw_fight_revive.uw_fight_revive_C.TriggerInteract
+// LuaFunction uw_fight_revive.uw_fight_revive_C.BindExitInteractEvent
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_revive_C::TriggerInteract()
+void Uuw_fight_revive_C::BindExitInteractEvent()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_revive_C", "TriggerInteract");
+		Func = Class->GetFunction("uw_fight_revive_C", "BindExitInteractEvent");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

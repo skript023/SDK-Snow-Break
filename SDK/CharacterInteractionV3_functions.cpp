@@ -17,6 +17,75 @@
 namespace SDK
 {
 
+// Function CharacterInteractionV3.InteractionV3Event.DoAction
+// (Native, Event, Public, BlueprintEvent)
+
+void UInteractionV3Event::DoAction()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3Event", "DoAction");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3Event.CanTrigger
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInteractionV3Event::CanTrigger() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3Event", "CanTrigger");
+
+	Params::InteractionV3Event_CanTrigger Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3Event_Achievement.GetArchivementComponentV3
+// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UInteractionArchivementComponentV3*ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UInteractionArchivementComponentV3* UInteractionV3Event_Achievement::GetArchivementComponentV3() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3Event_Achievement", "GetArchivementComponentV3");
+
+	Params::InteractionV3Event_Achievement_GetArchivementComponentV3 Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function CharacterInteractionV3.ActorOperateAct.OnPause
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -296,115 +365,6 @@ bool UActorOperateAct::IsCompleteAndBlendOut() const
 }
 
 
-// Function CharacterInteractionV3.InteractionV3Event.DoAction
-// (Native, Event, Public, BlueprintEvent)
-
-void UInteractionV3Event::DoAction()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3Event", "DoAction");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3Event.CanTrigger
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInteractionV3Event::CanTrigger() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3Event", "CanTrigger");
-
-	Params::InteractionV3Event_CanTrigger Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3PhysicsControlComponent.ConditionalCreateMaintainWorldSpaceRelativeControl
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMeshComponent*                   ParentMeshComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName                       ParentBoneName                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMeshComponent*                   ChildMeshComponent                                     (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName                       ChildBoneName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName                       AdditionalSetName                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInteractionV3PhysicsControlComponent::ConditionalCreateMaintainWorldSpaceRelativeControl(class FName Name_0, class UMeshComponent* ParentMeshComponent, const class FName ParentBoneName, class UMeshComponent* ChildMeshComponent, const class FName ChildBoneName, const class FName Set, const class FName AdditionalSetName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3PhysicsControlComponent", "ConditionalCreateMaintainWorldSpaceRelativeControl");
-
-	Params::InteractionV3PhysicsControlComponent_ConditionalCreateMaintainWorldSpaceRelativeControl Parms{};
-
-	Parms.Name_0 = Name_0;
-	Parms.ParentMeshComponent = ParentMeshComponent;
-	Parms.ParentBoneName = ParentBoneName;
-	Parms.ChildMeshComponent = ChildMeshComponent;
-	Parms.ChildBoneName = ChildBoneName;
-	Parms.Set = Set;
-	Parms.AdditionalSetName = AdditionalSetName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3PhysicsControlComponent.ConditionalDestroyAllMaintainWorldSpaceRelativeControls
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInteractionV3PhysicsControlComponent::ConditionalDestroyAllMaintainWorldSpaceRelativeControls()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3PhysicsControlComponent", "ConditionalDestroyAllMaintainWorldSpaceRelativeControls");
-
-	Params::InteractionV3PhysicsControlComponent_ConditionalDestroyAllMaintainWorldSpaceRelativeControls Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function CharacterInteractionV3.InteractionMouseHoverInterface.OnMouseHover
 // (Native, Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
 // Parameters:
@@ -428,6 +388,87 @@ void IInteractionMouseHoverInterface::OnMouseHover(const TArray<class FName>& Bo
 	Parms.SlideVector = std::move(SlideVector);
 	Parms.SlideStartPos = std::move(SlideStartPos);
 	Parms.SlidEndPos = std::move(SlidEndPos);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3DragInterface.EndDrag
+// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FTransform&                TargetTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   DeltaLocation                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IInteractionV3DragInterface::EndDrag(const struct FTransform& TargetTransform, const struct FVector& DeltaLocation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("InteractionV3DragInterface", "EndDrag");
+
+	Params::InteractionV3DragInterface_EndDrag Parms{};
+
+	Parms.TargetTransform = std::move(TargetTransform);
+	Parms.DeltaLocation = std::move(DeltaLocation);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3DragInterface.StartDrag
+// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FTransform&                TargetTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   DeltaLocation                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IInteractionV3DragInterface::StartDrag(const struct FTransform& TargetTransform, const struct FVector& DeltaLocation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("InteractionV3DragInterface", "StartDrag");
+
+	Params::InteractionV3DragInterface_StartDrag Parms{};
+
+	Parms.TargetTransform = std::move(TargetTransform);
+	Parms.DeltaLocation = std::move(DeltaLocation);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3DragInterface.UpdateDrag
+// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FTransform&                TargetTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   DeltaLocation                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IInteractionV3DragInterface::UpdateDrag(const struct FTransform& TargetTransform, const struct FVector& DeltaLocation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("InteractionV3DragInterface", "UpdateDrag");
+
+	Params::InteractionV3DragInterface_UpdateDrag Parms{};
+
+	Parms.TargetTransform = std::move(TargetTransform);
+	Parms.DeltaLocation = std::move(DeltaLocation);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1552,324 +1593,6 @@ int32 UFennyGunFireLittleGame::RandomVoice()
 }
 
 
-// Function CharacterInteractionV3.InteractionV3DragInterface.EndDrag
-// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FTransform&                TargetTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// const struct FVector&                   DeltaLocation                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IInteractionV3DragInterface::EndDrag(const struct FTransform& TargetTransform, const struct FVector& DeltaLocation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("InteractionV3DragInterface", "EndDrag");
-
-	Params::InteractionV3DragInterface_EndDrag Parms{};
-
-	Parms.TargetTransform = std::move(TargetTransform);
-	Parms.DeltaLocation = std::move(DeltaLocation);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3DragInterface.StartDrag
-// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FTransform&                TargetTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// const struct FVector&                   DeltaLocation                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IInteractionV3DragInterface::StartDrag(const struct FTransform& TargetTransform, const struct FVector& DeltaLocation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("InteractionV3DragInterface", "StartDrag");
-
-	Params::InteractionV3DragInterface_StartDrag Parms{};
-
-	Parms.TargetTransform = std::move(TargetTransform);
-	Parms.DeltaLocation = std::move(DeltaLocation);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3DragInterface.UpdateDrag
-// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FTransform&                TargetTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// const struct FVector&                   DeltaLocation                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IInteractionV3DragInterface::UpdateDrag(const struct FTransform& TargetTransform, const struct FVector& DeltaLocation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("InteractionV3DragInterface", "UpdateDrag");
-
-	Params::InteractionV3DragInterface_UpdateDrag Parms{};
-
-	Parms.TargetTransform = std::move(TargetTransform);
-	Parms.DeltaLocation = std::move(DeltaLocation);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.PlayArchivement
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInteractionArchivementComponentV3::PlayArchivement(int32 InId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionArchivementComponentV3", "PlayArchivement");
-
-	Params::InteractionArchivementComponentV3_PlayArchivement Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetArchievementPlayed
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInteractionArchivementComponentV3::SetArchievementPlayed(int32 InId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionArchivementComponentV3", "SetArchievementPlayed");
-
-	Params::InteractionArchivementComponentV3_SetArchievementPlayed Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetArchivementComplete
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInteractionArchivementComponentV3::SetArchivementComplete(int32 InId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionArchivementComponentV3", "SetArchivementComplete");
-
-	Params::InteractionArchivementComponentV3_SetArchivementComplete Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetConditionComplete
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInteractionArchivementComponentV3::SetConditionComplete(int32 InId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionArchivementComponentV3", "SetConditionComplete");
-
-	Params::InteractionArchivementComponentV3_SetConditionComplete Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetConditionCompleteAdnRefresh
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInteractionArchivementComponentV3::SetConditionCompleteAdnRefresh(int32 InId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionArchivementComponentV3", "SetConditionCompleteAdnRefresh");
-
-	Params::InteractionArchivementComponentV3_SetConditionCompleteAdnRefresh Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.CanPlay
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInteractionArchivementComponentV3::CanPlay(int32 InId) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionArchivementComponentV3", "CanPlay");
-
-	Params::InteractionArchivementComponentV3_CanPlay Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.IsArchivementComplete
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInteractionArchivementComponentV3::IsArchivementComplete(int32 InId) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionArchivementComponentV3", "IsArchivementComplete");
-
-	Params::InteractionArchivementComponentV3_IsArchivementComplete Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.IsArchivementPlayed
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInteractionArchivementComponentV3::IsArchivementPlayed(int32 InId) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionArchivementComponentV3", "IsArchivementPlayed");
-
-	Params::InteractionArchivementComponentV3_IsArchivementPlayed Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.IsConditionComplete
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInteractionArchivementComponentV3::IsConditionComplete(int32 InId) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionArchivementComponentV3", "IsConditionComplete");
-
-	Params::InteractionArchivementComponentV3_IsConditionComplete Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function CharacterInteractionV3.FennyShowerLittleGame.GetCameraAdditivePitchAndYaw
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -2253,6 +1976,243 @@ void AInteractionActorV3::UnbindOperateActEvent(const class FString& ActorOperat
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.PlayArchivement
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionArchivementComponentV3::PlayArchivement(int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionArchivementComponentV3", "PlayArchivement");
+
+	Params::InteractionArchivementComponentV3_PlayArchivement Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetArchievementPlayed
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionArchivementComponentV3::SetArchievementPlayed(int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionArchivementComponentV3", "SetArchievementPlayed");
+
+	Params::InteractionArchivementComponentV3_SetArchievementPlayed Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetArchivementComplete
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionArchivementComponentV3::SetArchivementComplete(int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionArchivementComponentV3", "SetArchivementComplete");
+
+	Params::InteractionArchivementComponentV3_SetArchivementComplete Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetConditionComplete
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionArchivementComponentV3::SetConditionComplete(int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionArchivementComponentV3", "SetConditionComplete");
+
+	Params::InteractionArchivementComponentV3_SetConditionComplete Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetConditionCompleteAdnRefresh
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionArchivementComponentV3::SetConditionCompleteAdnRefresh(int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionArchivementComponentV3", "SetConditionCompleteAdnRefresh");
+
+	Params::InteractionArchivementComponentV3_SetConditionCompleteAdnRefresh Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.CanPlay
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInteractionArchivementComponentV3::CanPlay(int32 InId) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionArchivementComponentV3", "CanPlay");
+
+	Params::InteractionArchivementComponentV3_CanPlay Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.IsArchivementComplete
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInteractionArchivementComponentV3::IsArchivementComplete(int32 InId) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionArchivementComponentV3", "IsArchivementComplete");
+
+	Params::InteractionArchivementComponentV3_IsArchivementComplete Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.IsArchivementPlayed
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInteractionArchivementComponentV3::IsArchivementPlayed(int32 InId) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionArchivementComponentV3", "IsArchivementPlayed");
+
+	Params::InteractionArchivementComponentV3_IsArchivementPlayed Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.IsConditionComplete
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInteractionArchivementComponentV3::IsConditionComplete(int32 InId) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionArchivementComponentV3", "IsConditionComplete");
+
+	Params::InteractionArchivementComponentV3_IsConditionComplete Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -5057,31 +5017,6 @@ void UInteractionV3CharacterAnimInstance::StopLastFrameAnim()
 }
 
 
-// Function CharacterInteractionV3.InteractionV3Event_Achievement.GetArchivementComponentV3
-// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UInteractionArchivementComponentV3*ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UInteractionArchivementComponentV3* UInteractionV3Event_Achievement::GetArchivementComponentV3() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3Event_Achievement", "GetArchivementComponentV3");
-
-	Params::InteractionV3Event_Achievement_GetArchivementComponentV3 Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function CharacterInteractionV3.InteractionV3FaceAnimInstance.GetEyeBlend
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -6325,6 +6260,71 @@ void UInteractionV3Lib::SetInteractionStringStat(const class FString& StatName, 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3PhysicsControlComponent.ConditionalCreateMaintainWorldSpaceRelativeControl
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMeshComponent*                   ParentMeshComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ParentBoneName                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMeshComponent*                   ChildMeshComponent                                     (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ChildBoneName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       AdditionalSetName                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInteractionV3PhysicsControlComponent::ConditionalCreateMaintainWorldSpaceRelativeControl(class FName Name_0, class UMeshComponent* ParentMeshComponent, const class FName ParentBoneName, class UMeshComponent* ChildMeshComponent, const class FName ChildBoneName, const class FName Set, const class FName AdditionalSetName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3PhysicsControlComponent", "ConditionalCreateMaintainWorldSpaceRelativeControl");
+
+	Params::InteractionV3PhysicsControlComponent_ConditionalCreateMaintainWorldSpaceRelativeControl Parms{};
+
+	Parms.Name_0 = Name_0;
+	Parms.ParentMeshComponent = ParentMeshComponent;
+	Parms.ParentBoneName = ParentBoneName;
+	Parms.ChildMeshComponent = ChildMeshComponent;
+	Parms.ChildBoneName = ChildBoneName;
+	Parms.Set = Set;
+	Parms.AdditionalSetName = AdditionalSetName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3PhysicsControlComponent.ConditionalDestroyAllMaintainWorldSpaceRelativeControls
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInteractionV3PhysicsControlComponent::ConditionalDestroyAllMaintainWorldSpaceRelativeControls()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3PhysicsControlComponent", "ConditionalDestroyAllMaintainWorldSpaceRelativeControls");
+
+	Params::InteractionV3PhysicsControlComponent_ConditionalDestroyAllMaintainWorldSpaceRelativeControls Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

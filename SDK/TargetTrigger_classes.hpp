@@ -51,22 +51,22 @@ public:
 	float                                         OffsetZ;                                           // 0x02FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetEffectSize();
-	void Set_Border_with_New_Niagara(class UNiagaraSystem* NewNiagara);
-	void Set_Dissolve(int32 Value);
-	void SetBorderLength(int32 X, int32 Y);
-	void Set_View_Distance(TArray<class UNiagaraComponent*>& Borders_0);
-	void UserConstructionScript();
-	void ChangeBorderColor();
-	void OnActive();
-	void OnDeactive();
-	void OnSafeToDanger();
-	void OnDangerToSafe();
 	void ExecuteUbergraph_TargetTrigger(int32 EntryPoint);
+	void OnDangerToSafe();
+	void OnSafeToDanger();
+	void OnDeactive();
+	void OnActive();
+	void ChangeBorderColor();
+	void UserConstructionScript();
+	void Set_View_Distance(TArray<class UNiagaraComponent*>& Borders_0);
+	void SetBorderLength(int32 X, int32 Y);
+	void Set_Dissolve(int32 Value);
+	void Set_Border_with_New_Niagara(class UNiagaraSystem* NewNiagara);
+	void SetEffectSize();
 	void ReceiveActorEndOverlap(class AActor* OtherActor);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ReceiveActorBeginOverlap(class AActor* OtherActor);
 	void ReceiveTick(float DeltaSeconds);
+	void ReceiveActorBeginOverlap(class AActor* OtherActor);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 
 	class FString GetModuleName() const;
 

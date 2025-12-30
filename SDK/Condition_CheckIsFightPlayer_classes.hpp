@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -27,9 +27,9 @@ public:
 	bool                                          bContainQTE;                                       // 0x0111(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_Condition_CheckIsFightPlayer(int32 EntryPoint);
 	bool K2_CheckCondition(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void K2_InitCondition();
+	void ExecuteUbergraph_Condition_CheckIsFightPlayer(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -74,6 +74,29 @@ public:
 };
 DUMPER7_ASSERTS_FSMInfo_Base;
 
+// ScriptStruct SMSystem.SMTransitionInfo
+// 0x0030 (0x0090 - 0x0060)
+struct FSMTransitionInfo final : public FSMInfo_Base
+{
+public:
+	struct FGuid                                  FromStateGuid;                                     // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  ToStateGuid;                                       // 0x0070(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Priority;                                          // 0x0080(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_84[0xC];                                       // 0x0084(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSMTransitionInfo;
+
+// ScriptStruct SMSystem.SMStateInfo
+// 0x0020 (0x0080 - 0x0060)
+struct FSMStateInfo final : public FSMInfo_Base
+{
+public:
+	TArray<struct FSMTransitionInfo>              OutgoingTransitions;                               // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bIsEndState;                                       // 0x0070(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSMStateInfo;
+
 // ScriptStruct SMSystem.SMExposedFunctionHandler
 // 0x0020 (0x0020 - 0x0000)
 struct FSMExposedFunctionHandler final
@@ -162,114 +185,6 @@ public:
 };
 DUMPER7_ASSERTS_FSMConduit;
 
-// ScriptStruct SMSystem.SMNodeClassRule
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FSMNodeClassRule
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bIncludeChildren;                                  // 0x0008(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNOT;                                              // 0x0009(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSMNodeClassRule;
-
-// ScriptStruct SMSystem.SMStateClassRule
-// 0x0028 (0x0038 - 0x0010)
-struct FSMStateClassRule final : public FSMNodeClassRule
-{
-public:
-	TSoftClassPtr<class UClass>                   StateClass;                                        // 0x0010(0x0028)(Edit, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSMStateClassRule;
-
-// ScriptStruct SMSystem.SMStateMachineClassRule
-// 0x0028 (0x0038 - 0x0010)
-struct FSMStateMachineClassRule final : public FSMNodeClassRule
-{
-public:
-	TSoftClassPtr<class UClass>                   StateMachineClass;                                 // 0x0010(0x0028)(Edit, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSMStateMachineClassRule;
-
-// ScriptStruct SMSystem.SMNodeConnectionRule
-// 0x00A8 (0x00A8 - 0x0000)
-struct FSMNodeConnectionRule final
-{
-public:
-	struct FSMStateClassRule                      FromState;                                         // 0x0000(0x0038)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FSMStateClassRule                      ToState;                                           // 0x0038(0x0038)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FSMStateMachineClassRule               InStateMachine;                                    // 0x0070(0x0038)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSMNodeConnectionRule;
-
-// ScriptStruct SMSystem.SMConnectionValidator
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct alignas(0x01) FSMConnectionValidator
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FSMConnectionValidator;
-
-// ScriptStruct SMSystem.SMTransitionConnectionValidator
-// 0x0010 (0x0010 - 0x0000)
-struct FSMTransitionConnectionValidator final : public FSMConnectionValidator
-{
-public:
-	TArray<struct FSMNodeConnectionRule>          AllowedConnections;                                // 0x0000(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSMTransitionConnectionValidator;
-
-// ScriptStruct SMSystem.SMTransitionInfo
-// 0x0030 (0x0090 - 0x0060)
-struct FSMTransitionInfo final : public FSMInfo_Base
-{
-public:
-	struct FGuid                                  FromStateGuid;                                     // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  ToStateGuid;                                       // 0x0070(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Priority;                                          // 0x0080(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_84[0xC];                                       // 0x0084(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSMTransitionInfo;
-
-// ScriptStruct SMSystem.SMTransition
-// 0x00A0 (0x01A8 - 0x0108)
-struct FSMTransition final : public FSMNode_Base
-{
-public:
-	struct FSMExposedFunctionHandler              TransitionEnteredGraphEvaluator;                   // 0x0108(0x0020)(NoDestructor, NativeAccessSpecifierPublic)
-	struct FSMExposedFunctionHandler              TransitionPreEvaluateGraphEvaluator;               // 0x0128(0x0020)(NoDestructor, NativeAccessSpecifierPublic)
-	struct FSMExposedFunctionHandler              TransitionPostEvaluateGraphEvaluator;              // 0x0148(0x0020)(NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         Priority;                                          // 0x0168(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bCanEnterTransition : 1;                           // 0x016C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bCanEnterTransitionFromEvent : 1;                  // 0x016C(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bIsEvaluating : 1;                                 // 0x016C(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bCanEvaluate : 1;                                  // 0x016C(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bCanEvaluateFromEvent : 1;                         // 0x016C(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bRunParallel : 1;                                  // 0x016C(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bEvalIfNextStateActive : 1;                        // 0x016C(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bCanEvalWithStartState : 1;                        // 0x016C(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bAlwaysFalse : 1;                                  // 0x016D(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_16E[0x2];                                      // 0x016E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGuid                                  FromGuid;                                          // 0x0170(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  ToGuid;                                            // 0x0180(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESMConditionalEvaluationType                  ConditionalEvaluationType;                         // 0x0190(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_191[0x17];                                     // 0x0191(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSMTransition;
-
-// ScriptStruct SMSystem.SMStateInfo
-// 0x0020 (0x0080 - 0x0060)
-struct FSMStateInfo final : public FSMInfo_Base
-{
-public:
-	TArray<struct FSMTransitionInfo>              OutgoingTransitions;                               // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bIsEndState;                                       // 0x0070(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSMStateInfo;
-
 // ScriptStruct SMSystem.SMGraphProperty_Base
 // 0x00C0 (0x0110 - 0x0050)
 struct FSMGraphProperty_Base : public FSMGraphProperty_Base_Runtime
@@ -335,6 +250,36 @@ public:
 };
 DUMPER7_ASSERTS_FSMNodeDescription;
 
+// ScriptStruct SMSystem.SMConnectionValidator
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct alignas(0x01) FSMConnectionValidator
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FSMConnectionValidator;
+
+// ScriptStruct SMSystem.SMNodeClassRule
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FSMNodeClassRule
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bIncludeChildren;                                  // 0x0008(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNOT;                                              // 0x0009(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSMNodeClassRule;
+
+// ScriptStruct SMSystem.SMStateClassRule
+// 0x0028 (0x0038 - 0x0010)
+struct FSMStateClassRule final : public FSMNodeClassRule
+{
+public:
+	TSoftClassPtr<class UClass>                   StateClass;                                        // 0x0010(0x0028)(Edit, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSMStateClassRule;
+
 // ScriptStruct SMSystem.SMStateMachineNodePlacementValidator
 // 0x0018 (0x0018 - 0x0000)
 struct FSMStateMachineNodePlacementValidator final : public FSMConnectionValidator
@@ -347,6 +292,15 @@ public:
 };
 DUMPER7_ASSERTS_FSMStateMachineNodePlacementValidator;
 
+// ScriptStruct SMSystem.SMStateMachineClassRule
+// 0x0028 (0x0038 - 0x0010)
+struct FSMStateMachineClassRule final : public FSMNodeClassRule
+{
+public:
+	TSoftClassPtr<class UClass>                   StateMachineClass;                                 // 0x0010(0x0028)(Edit, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSMStateMachineClassRule;
+
 // ScriptStruct SMSystem.SMStateConnectionValidator
 // 0x0030 (0x0030 - 0x0000)
 struct FSMStateConnectionValidator final : public FSMConnectionValidator
@@ -358,6 +312,26 @@ public:
 };
 DUMPER7_ASSERTS_FSMStateConnectionValidator;
 
+// ScriptStruct SMSystem.SMNodeConnectionRule
+// 0x00A8 (0x00A8 - 0x0000)
+struct FSMNodeConnectionRule final
+{
+public:
+	struct FSMStateClassRule                      FromState;                                         // 0x0000(0x0038)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FSMStateClassRule                      ToState;                                           // 0x0038(0x0038)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FSMStateMachineClassRule               InStateMachine;                                    // 0x0070(0x0038)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSMNodeConnectionRule;
+
+// ScriptStruct SMSystem.SMTransitionConnectionValidator
+// 0x0010 (0x0010 - 0x0000)
+struct FSMTransitionConnectionValidator final : public FSMConnectionValidator
+{
+public:
+	TArray<struct FSMNodeConnectionRule>          AllowedConnections;                                // 0x0000(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSMTransitionConnectionValidator;
+
 // ScriptStruct SMSystem.SMNodeWidgetInfo
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
@@ -368,10 +342,12 @@ struct alignas(0x01) FSMNodeWidgetInfo
 DUMPER7_ASSERTS_FSMNodeWidgetInfo;
 
 // ScriptStruct SMSystem.SMTextDisplayWidgetInfo
-// 0x0000 (0x0000 - 0x0000)
+// 0x0001 (0x0001 - 0x0000)
 #pragma pack(push, 0x1)
 struct alignas(0x01) FSMTextDisplayWidgetInfo : public FSMNodeWidgetInfo
 {
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 #pragma pack(pop)
 DUMPER7_ASSERTS_FSMTextDisplayWidgetInfo;
@@ -411,6 +387,32 @@ public:
 	uint8                                         Pad_3A8[0x18];                                     // 0x03A8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSMStateMachine;
+
+// ScriptStruct SMSystem.SMTransition
+// 0x00A0 (0x01A8 - 0x0108)
+struct FSMTransition final : public FSMNode_Base
+{
+public:
+	struct FSMExposedFunctionHandler              TransitionEnteredGraphEvaluator;                   // 0x0108(0x0020)(NoDestructor, NativeAccessSpecifierPublic)
+	struct FSMExposedFunctionHandler              TransitionPreEvaluateGraphEvaluator;               // 0x0128(0x0020)(NoDestructor, NativeAccessSpecifierPublic)
+	struct FSMExposedFunctionHandler              TransitionPostEvaluateGraphEvaluator;              // 0x0148(0x0020)(NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         Priority;                                          // 0x0168(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bCanEnterTransition : 1;                           // 0x016C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCanEnterTransitionFromEvent : 1;                  // 0x016C(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bIsEvaluating : 1;                                 // 0x016C(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCanEvaluate : 1;                                  // 0x016C(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCanEvaluateFromEvent : 1;                         // 0x016C(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bRunParallel : 1;                                  // 0x016C(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bEvalIfNextStateActive : 1;                        // 0x016C(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCanEvalWithStartState : 1;                        // 0x016C(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bAlwaysFalse : 1;                                  // 0x016D(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_16E[0x2];                                      // 0x016E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGuid                                  FromGuid;                                          // 0x0170(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  ToGuid;                                            // 0x0180(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESMConditionalEvaluationType                  ConditionalEvaluationType;                         // 0x0190(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_191[0x17];                                     // 0x0191(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSMTransition;
 
 }
 

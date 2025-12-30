@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
-#include "Engine_structs.hpp"
 #include "Game_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
+#include "UMG_structs.hpp"
 
 
 namespace SDK
@@ -34,10 +34,10 @@ public:
 	ESlateVisibility                              Visibity;                                          // 0x04B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_cross(int32 EntryPoint);
-	void K2_OnReloading(bool bIsReload, EWeaponType Type, bool bInterrupt, float AnimTime);
-	void Construct();
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void Construct();
+	void K2_OnReloading(bool bIsReload, EWeaponType Type, bool bInterrupt, float AnimTime);
+	void ExecuteUbergraph_uw_fight_cross(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

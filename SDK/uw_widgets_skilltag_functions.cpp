@@ -31,6 +31,26 @@ void Uuw_widgets_skilltag_C::BP_OnEntryReleased()
 }
 
 
+// Function uw_widgets_skilltag.uw_widgets_skilltag_C.BP_OnItemExpansionChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_widgets_skilltag_C::BP_OnItemExpansionChanged(bool bIsExpanded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_widgets_skilltag_C", "BP_OnItemExpansionChanged");
+
+	Params::uw_widgets_skilltag_C_BP_OnItemExpansionChanged Parms{};
+
+	Parms.bIsExpanded = bIsExpanded;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function uw_widgets_skilltag.uw_widgets_skilltag_C.BP_OnItemSelectionChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -86,26 +106,6 @@ void Uuw_widgets_skilltag_C::ExecuteUbergraph_uw_widgets_skilltag(int32 EntryPoi
 	Params::uw_widgets_skilltag_C_ExecuteUbergraph_uw_widgets_skilltag Parms{};
 
 	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_widgets_skilltag.uw_widgets_skilltag_C.BP_OnItemExpansionChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_widgets_skilltag_C::BP_OnItemExpansionChanged(bool bIsExpanded)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_widgets_skilltag_C", "BP_OnItemExpansionChanged");
-
-	Params::uw_widgets_skilltag_C_BP_OnItemExpansionChanged Parms{};
-
-	Parms.bIsExpanded = bIsExpanded;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -17,6 +17,25 @@
 namespace SDK
 {
 
+// LuaFunction TimerExecute.TimerExecute_C.OnActive_Client
+// (Native, Event, Public, BlueprintEvent)
+
+void UTimerExecute_C::OnActive_Client()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimerExecute_C", "OnActive_Client");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction TimerExecute.TimerExecute_C.GetDescription
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -51,25 +70,6 @@ void UTimerExecute_C::OnActive()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("TimerExecute_C", "OnActive");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction TimerExecute.TimerExecute_C.OnActive_Client
-// (Native, Event, Public, BlueprintEvent)
-
-void UTimerExecute_C::OnActive_Client()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimerExecute_C", "OnActive_Client");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -118,26 +118,6 @@ void UTimerExecute_C::OnEnd()
 }
 
 
-// Function TimerExecute.TimerExecute_C.GetSpecialStaticDescription
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-
-class FString UTimerExecute_C::GetSpecialStaticDescription() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimerExecute_C", "GetSpecialStaticDescription");
-
-	Params::TimerExecute_C_GetSpecialStaticDescription Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function TimerExecute.TimerExecute_C.GetModuleName
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -151,6 +131,26 @@ class FString UTimerExecute_C::GetModuleName() const
 		Func = Class->GetFunction("TimerExecute_C", "GetModuleName");
 
 	Params::TimerExecute_C_GetModuleName Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TimerExecute.TimerExecute_C.GetSpecialStaticDescription
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+
+class FString UTimerExecute_C::GetSpecialStaticDescription() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimerExecute_C", "GetSpecialStaticDescription");
+
+	Params::TimerExecute_C_GetSpecialStaticDescription Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

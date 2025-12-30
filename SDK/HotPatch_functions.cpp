@@ -725,6 +725,25 @@ int32 UHotPatchLibrary::GetVerifiedCount()
 }
 
 
+// Function HotPatch.HotPatchLibrary.ResetAvailableFileServes
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UHotPatchLibrary::ResetAvailableFileServes()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("HotPatchLibrary", "ResetAvailableFileServes");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function HotPatch.HotPatchLibrary.SetNotification
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:

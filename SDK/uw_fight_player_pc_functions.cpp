@@ -37,26 +37,6 @@ void Uuw_fight_player_pc_C::ExecuteUbergraph_uw_fight_player_pc(int32 EntryPoint
 }
 
 
-// Function uw_fight_player_pc.uw_fight_player_pc_C.PlayPowerAnim
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bFull                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_player_pc_C::PlayPowerAnim(bool bFull)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_pc_C", "PlayPowerAnim");
-
-	Params::uw_fight_player_pc_C_PlayPowerAnim Parms{};
-
-	Parms.bFull = bFull;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_player_pc.uw_fight_player_pc_C.K2_OnCustomUmgAnimFinished
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -72,6 +52,26 @@ void Uuw_fight_player_pc_C::K2_OnCustomUmgAnimFinished(const class FName& AnimNa
 	Params::uw_fight_player_pc_C_K2_OnCustomUmgAnimFinished Parms{};
 
 	Parms.AnimName = AnimName;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_player_pc.uw_fight_player_pc_C.PlayPowerAnim
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bFull                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_player_pc_C::PlayPowerAnim(bool bFull)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_pc_C", "PlayPowerAnim");
+
+	Params::uw_fight_player_pc_C_PlayPowerAnim Parms{};
+
+	Parms.bFull = bFull;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

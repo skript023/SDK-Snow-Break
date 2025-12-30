@@ -10,39 +10,71 @@
 
 #include "Basic.hpp"
 
-#include "DeveloperSettings_classes.hpp"
-#include "CharacterInteractionV3_structs.hpp"
+#include "PhysicsControl_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "PhysicsControl_classes.hpp"
+#include "CharacterInteractionV3_structs.hpp"
 #include "CameraBlueprint_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "SeasunAnimGraph_structs.hpp"
+#include "DeveloperSettings_classes.hpp"
 
 
 namespace SDK
 {
 
-// Class CharacterInteractionV3.InteractionV3PhysHandleComponent
-// 0x0000 (0x0160 - 0x0160)
-class UInteractionV3PhysHandleComponent final : public UPhysicsHandleComponent
+// Class CharacterInteractionV3.InteractionV3Event
+// 0x0000 (0x0028 - 0x0028)
+class UInteractionV3Event : public UObject
 {
+public:
+	void DoAction();
+
+	bool CanTrigger() const;
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("InteractionV3PhysHandleComponent")
+		STATIC_CLASS_IMPL("InteractionV3Event")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"InteractionV3PhysHandleComponent")
+		STATIC_NAME_IMPL(L"InteractionV3Event")
 	}
-	static class UInteractionV3PhysHandleComponent* GetDefaultObj()
+	static class UInteractionV3Event* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UInteractionV3PhysHandleComponent>();
+		return GetDefaultObjImpl<UInteractionV3Event>();
 	}
 };
-DUMPER7_ASSERTS_UInteractionV3PhysHandleComponent;
+DUMPER7_ASSERTS_UInteractionV3Event;
+
+// Class CharacterInteractionV3.InteractionV3Event_Achievement
+// 0x0008 (0x0030 - 0x0028)
+class UInteractionV3Event_Achievement final : public UInteractionV3Event
+{
+public:
+	int32                                         AchievementID;                                     // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	class UInteractionArchivementComponentV3* GetArchivementComponentV3() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionV3Event_Achievement")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionV3Event_Achievement")
+	}
+	static class UInteractionV3Event_Achievement* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractionV3Event_Achievement>();
+	}
+};
+DUMPER7_ASSERTS_UInteractionV3Event_Achievement;
 
 // Class CharacterInteractionV3.ActorOperateAct
 // 0x0118 (0x0140 - 0x0028)
@@ -96,6 +128,29 @@ public:
 };
 DUMPER7_ASSERTS_UActorOperateAct;
 
+// Class CharacterInteractionV3.ShowElementV3Unit
+// 0x0008 (0x0030 - 0x0028)
+class UShowElementV3Unit : public UObject
+{
+public:
+	TSubclassOf<class UShowElementV3UnitPlayer>   PlayerType;                                        // 0x0028(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ShowElementV3Unit")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ShowElementV3Unit")
+	}
+	static class UShowElementV3Unit* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UShowElementV3Unit>();
+	}
+};
+DUMPER7_ASSERTS_UShowElementV3Unit;
+
 // Class CharacterInteractionV3.BlendSpaceOperateAct
 // 0x0030 (0x0170 - 0x0140)
 class UBlendSpaceOperateAct final : public UActorOperateAct
@@ -120,51 +175,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UBlendSpaceOperateAct;
-
-// Class CharacterInteractionV3.InteractionV3Event
-// 0x0000 (0x0028 - 0x0028)
-class UInteractionV3Event : public UObject
-{
-public:
-	void DoAction();
-
-	bool CanTrigger() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InteractionV3Event")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InteractionV3Event")
-	}
-	static class UInteractionV3Event* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInteractionV3Event>();
-	}
-};
-DUMPER7_ASSERTS_UInteractionV3Event;
-
-// Class CharacterInteractionV3.InteractionV3Event_EasterEgg
-// 0x0000 (0x0028 - 0x0028)
-class UInteractionV3Event_EasterEgg final : public UInteractionV3Event
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InteractionV3Event_EasterEgg")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InteractionV3Event_EasterEgg")
-	}
-	static class UInteractionV3Event_EasterEgg* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInteractionV3Event_EasterEgg>();
-	}
-};
-DUMPER7_ASSERTS_UInteractionV3Event_EasterEgg;
 
 // Class CharacterInteractionV3.SequenceEvaluatorOperateAct
 // 0x0078 (0x01B8 - 0x0140)
@@ -195,6 +205,44 @@ public:
 };
 DUMPER7_ASSERTS_USequenceEvaluatorOperateAct;
 
+// Class CharacterInteractionV3.PhysicalOffsetOperateAct
+// 0x0050 (0x0190 - 0x0140)
+class UPhysicalOffsetOperateAct final : public UActorOperateAct
+{
+public:
+	class UInteractionV3PhysHandleComponent*      PhysicsHandle;                                     // 0x0140(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsBlendingOut;                                    // 0x0148(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bMutiDrag;                                         // 0x0149(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bDragFixedBone;                                    // 0x014A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_14B[0x1];                                      // 0x014B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   DefaultDragBoneName;                               // 0x014C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   DefaultDragLocationBoneName;                       // 0x0154(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                DragScale;                                         // 0x015C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                DragStartLocation;                                 // 0x0168(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   CurDragBone;                                       // 0x0174(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bUseAnimNodePhysicsControl;                        // 0x017C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_17D[0x3];                                      // 0x017D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LinearStiffness;                                   // 0x0180(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         LinearDamping;                                     // 0x0184(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         AngularStiffness;                                  // 0x0188(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         AngularDamping;                                    // 0x018C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PhysicalOffsetOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PhysicalOffsetOperateAct")
+	}
+	static class UPhysicalOffsetOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPhysicalOffsetOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_UPhysicalOffsetOperateAct;
+
 // Class CharacterInteractionV3.AdditiveSequenceEvaluatorOperateAct
 // 0x0030 (0x0170 - 0x0140)
 class UAdditiveSequenceEvaluatorOperateAct final : public UActorOperateAct
@@ -218,36 +266,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAdditiveSequenceEvaluatorOperateAct;
-
-// Class CharacterInteractionV3.InteractionV3PhysicsControlComponent
-// 0x0050 (0x0520 - 0x04D0)
-class UInteractionV3PhysicsControlComponent final : public UBaseGamePhysicsControlComponent
-{
-public:
-	uint8                                         Pad_4D0[0x28];                                     // 0x04D0(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           MaintainWorldSpaceRelativeControlNames;            // 0x04F8(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FRigidBodyRelativeControlRecord> RigidBodyRelativeControls;                        // 0x0508(0x0010)(ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_518[0x8];                                      // 0x0518(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	bool ConditionalCreateMaintainWorldSpaceRelativeControl(class FName Name_0, class UMeshComponent* ParentMeshComponent, const class FName ParentBoneName, class UMeshComponent* ChildMeshComponent, const class FName ChildBoneName, const class FName Set, const class FName AdditionalSetName);
-	bool ConditionalDestroyAllMaintainWorldSpaceRelativeControls();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InteractionV3PhysicsControlComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InteractionV3PhysicsControlComponent")
-	}
-	static class UInteractionV3PhysicsControlComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInteractionV3PhysicsControlComponent>();
-	}
-};
-DUMPER7_ASSERTS_UInteractionV3PhysicsControlComponent;
 
 // Class CharacterInteractionV3.LoopSequenceOperateAct
 // 0x0038 (0x0178 - 0x0140)
@@ -298,6 +316,29 @@ public:
 };
 DUMPER7_ASSERTS_UIKRefPoseFixOperateAct;
 
+// Class CharacterInteractionV3.PhysicsAssetModifierEvent
+// 0x0010 (0x0038 - 0x0028)
+class UPhysicsAssetModifierEvent final : public UInteractionV3Event
+{
+public:
+	TArray<struct FCharacterPhysicsAssetModifier> PhysicsAssetModifiers;                             // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PhysicsAssetModifierEvent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PhysicsAssetModifierEvent")
+	}
+	static class UPhysicsAssetModifierEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPhysicsAssetModifierEvent>();
+	}
+};
+DUMPER7_ASSERTS_UPhysicsAssetModifierEvent;
+
 // Class CharacterInteractionV3.HeadModifyOperateAct
 // 0x0058 (0x01B8 - 0x0160)
 class UHeadModifyOperateAct final : public UIKRefPoseFixOperateAct
@@ -323,6 +364,41 @@ public:
 };
 DUMPER7_ASSERTS_UHeadModifyOperateAct;
 
+// Class CharacterInteractionV3.DragPropWorldSpaceOffsetOperateAct
+// 0x0070 (0x01B0 - 0x0140)
+class UDragPropWorldSpaceOffsetOperateAct final : public UActorOperateAct
+{
+public:
+	bool                                          bSpringInterp;                                     // 0x0140(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_141[0x3];                                      // 0x0141(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ErrorTolerance;                                    // 0x0144(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Stiffness;                                         // 0x0148(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CriticalDamping;                                   // 0x014C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   DragSocketName;                                    // 0x0150(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                DragLocation;                                      // 0x0158(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                DeltaLocation;                                     // 0x0164(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                TargetLocation;                                    // 0x0170(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                PreTargetLocation;                                 // 0x017C(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                InterpTarget;                                      // 0x0188(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         DragDistance;                                      // 0x0194(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVectorSpringState                     SpringState;                                       // 0x0198(0x0018)(NoDestructor, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DragPropWorldSpaceOffsetOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DragPropWorldSpaceOffsetOperateAct")
+	}
+	static class UDragPropWorldSpaceOffsetOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UDragPropWorldSpaceOffsetOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_UDragPropWorldSpaceOffsetOperateAct;
+
 // Class CharacterInteractionV3.IKMaintainWorldSpaceRelativeOperateAct
 // 0x0010 (0x0170 - 0x0160)
 class UIKMaintainWorldSpaceRelativeOperateAct final : public UIKRefPoseFixOperateAct
@@ -346,32 +422,25 @@ public:
 };
 DUMPER7_ASSERTS_UIKMaintainWorldSpaceRelativeOperateAct;
 
-// Class CharacterInteractionV3.DestroyPhysicsControlEvent
-// 0x0020 (0x0048 - 0x0028)
-class UDestroyPhysicsControlEvent final : public UInteractionV3Event
+// Class CharacterInteractionV3.InteractionV3PhysHandleComponent
+// 0x0000 (0x0160 - 0x0160)
+class UInteractionV3PhysHandleComponent final : public UPhysicsHandleComponent
 {
-public:
-	class FName                                   ControlName;                                       // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SetName;                                           // 0x0030(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ActorName;                                         // 0x0038(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsBody;                                           // 0x0040(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("DestroyPhysicsControlEvent")
+		STATIC_CLASS_IMPL("InteractionV3PhysHandleComponent")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"DestroyPhysicsControlEvent")
+		STATIC_NAME_IMPL(L"InteractionV3PhysHandleComponent")
 	}
-	static class UDestroyPhysicsControlEvent* GetDefaultObj()
+	static class UInteractionV3PhysHandleComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UDestroyPhysicsControlEvent>();
+		return GetDefaultObjImpl<UInteractionV3PhysHandleComponent>();
 	}
 };
-DUMPER7_ASSERTS_UDestroyPhysicsControlEvent;
+DUMPER7_ASSERTS_UInteractionV3PhysHandleComponent;
 
 // Class CharacterInteractionV3.IKWorldSpaceOffsetOperateAct
 // 0x0020 (0x0180 - 0x0160)
@@ -421,71 +490,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UEyesFollowOperateAct;
-
-// Class CharacterInteractionV3.PhysicalOffsetOperateAct
-// 0x0048 (0x0188 - 0x0140)
-class UPhysicalOffsetOperateAct final : public UActorOperateAct
-{
-public:
-	bool                                          bDragFixedBone;                                    // 0x0140(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_141[0x3];                                      // 0x0141(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   DefaultDragBoneName;                               // 0x0144(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   DefaultDragLocationBoneName;                       // 0x014C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                DragScale;                                         // 0x0154(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                DragStartLocation;                                 // 0x0160(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   CurDragBone;                                       // 0x016C(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bUseAnimNodePhysicsControl;                        // 0x0174(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_175[0x3];                                      // 0x0175(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LinearStiffness;                                   // 0x0178(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         LinearDamping;                                     // 0x017C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         AngularStiffness;                                  // 0x0180(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         AngularDamping;                                    // 0x0184(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PhysicalOffsetOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PhysicalOffsetOperateAct")
-	}
-	static class UPhysicalOffsetOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPhysicalOffsetOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_UPhysicalOffsetOperateAct;
-
-// Class CharacterInteractionV3.InteractionCameraInstanceBase
-// 0x0020 (0x03C0 - 0x03A0)
-#pragma pack(push, 0x1)
-class alignas(0x10) UInteractionCameraInstanceBase : public UCameraInstance
-{
-public:
-	bool                                          bActiveBlendOut;                                   // 0x03A0(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bForceBlendOut;                                    // 0x03A1(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bLockBlendOutChange;                               // 0x03A2(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3A3[0x1];                                      // 0x03A3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FViewTargetTransitionParams            CameraTransitionParams;                            // 0x03A4(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3B4[0x4];                                      // 0x03B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InteractionCameraInstanceBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InteractionCameraInstanceBase")
-	}
-	static class UInteractionCameraInstanceBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInteractionCameraInstanceBase>();
-	}
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_UInteractionCameraInstanceBase;
 
 // Class CharacterInteractionV3.InteractionMouseHoverInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -544,6 +548,91 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMouseHoverOperateAct;
+
+// Class CharacterInteractionV3.InteractionV3DragInterface
+// 0x0000 (0x0000 - 0x0000)
+class IInteractionV3DragInterface final
+{
+public:
+	void EndDrag(const struct FTransform& TargetTransform, const struct FVector& DeltaLocation);
+	void StartDrag(const struct FTransform& TargetTransform, const struct FVector& DeltaLocation);
+	void UpdateDrag(const struct FTransform& TargetTransform, const struct FVector& DeltaLocation);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionV3DragInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionV3DragInterface")
+	}
+	static class IInteractionV3DragInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IInteractionV3DragInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IInteractionV3DragInterface;
+
+// Class CharacterInteractionV3.AnimNotifyState_SubtitleStatus
+// 0x0010 (0x0040 - 0x0030)
+class UAnimNotifyState_SubtitleStatus final : public UAnimNotifyState
+{
+public:
+	class FString                                 SubtitleKey;                                       // 0x0030(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AnimNotifyState_SubtitleStatus")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AnimNotifyState_SubtitleStatus")
+	}
+	static class UAnimNotifyState_SubtitleStatus* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAnimNotifyState_SubtitleStatus>();
+	}
+};
+DUMPER7_ASSERTS_UAnimNotifyState_SubtitleStatus;
+
+// Class CharacterInteractionV3.FacialAnimUnit
+// 0x0018 (0x0048 - 0x0030)
+class UFacialAnimUnit final : public UShowElementV3Unit
+{
+public:
+	class UAnimSequence*                          Sequence;                                          // 0x0030(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BlendInTime;                                       // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BlendOutTime;                                      // 0x003C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BlendOutTriggerTime;                               // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableAutoBlendOut;                               // 0x0044(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("FacialAnimUnit")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"FacialAnimUnit")
+	}
+	static class UFacialAnimUnit* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UFacialAnimUnit>();
+	}
+};
+DUMPER7_ASSERTS_UFacialAnimUnit;
 
 // Class CharacterInteractionV3.ScenarioLittleGameBase
 // 0x0008 (0x0030 - 0x0028)
@@ -674,217 +763,6 @@ public:
 };
 DUMPER7_ASSERTS_UFennyGunFireLittleGame;
 
-// Class CharacterInteractionV3.InteractionV3DragInterface
-// 0x0000 (0x0000 - 0x0000)
-class IInteractionV3DragInterface final
-{
-public:
-	void EndDrag(const struct FTransform& TargetTransform, const struct FVector& DeltaLocation);
-	void StartDrag(const struct FTransform& TargetTransform, const struct FVector& DeltaLocation);
-	void UpdateDrag(const struct FTransform& TargetTransform, const struct FVector& DeltaLocation);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InteractionV3DragInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InteractionV3DragInterface")
-	}
-	static class IInteractionV3DragInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IInteractionV3DragInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IInteractionV3DragInterface;
-
-// Class CharacterInteractionV3.DragPropWorldSpaceOffsetOperateAct
-// 0x0070 (0x01B0 - 0x0140)
-class UDragPropWorldSpaceOffsetOperateAct final : public UActorOperateAct
-{
-public:
-	bool                                          bSpringInterp;                                     // 0x0140(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_141[0x3];                                      // 0x0141(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ErrorTolerance;                                    // 0x0144(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Stiffness;                                         // 0x0148(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CriticalDamping;                                   // 0x014C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   DragSocketName;                                    // 0x0150(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                DragLocation;                                      // 0x0158(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                DeltaLocation;                                     // 0x0164(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                TargetLocation;                                    // 0x0170(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                PreTargetLocation;                                 // 0x017C(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                InterpTarget;                                      // 0x0188(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         DragDistance;                                      // 0x0194(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVectorSpringState                     SpringState;                                       // 0x0198(0x0018)(NoDestructor, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("DragPropWorldSpaceOffsetOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"DragPropWorldSpaceOffsetOperateAct")
-	}
-	static class UDragPropWorldSpaceOffsetOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UDragPropWorldSpaceOffsetOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_UDragPropWorldSpaceOffsetOperateAct;
-
-// Class CharacterInteractionV3.AnimNotifyState_SubtitleStatus
-// 0x0010 (0x0040 - 0x0030)
-class UAnimNotifyState_SubtitleStatus final : public UAnimNotifyState
-{
-public:
-	class FString                                 SubtitleKey;                                       // 0x0030(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AnimNotifyState_SubtitleStatus")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AnimNotifyState_SubtitleStatus")
-	}
-	static class UAnimNotifyState_SubtitleStatus* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAnimNotifyState_SubtitleStatus>();
-	}
-};
-DUMPER7_ASSERTS_UAnimNotifyState_SubtitleStatus;
-
-// Class CharacterInteractionV3.ShowElementV3Unit
-// 0x0008 (0x0030 - 0x0028)
-class UShowElementV3Unit : public UObject
-{
-public:
-	TSubclassOf<class UShowElementV3UnitPlayer>   PlayerType;                                        // 0x0028(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ShowElementV3Unit")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ShowElementV3Unit")
-	}
-	static class UShowElementV3Unit* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UShowElementV3Unit>();
-	}
-};
-DUMPER7_ASSERTS_UShowElementV3Unit;
-
-// Class CharacterInteractionV3.InteractionArchivementComponentV3
-// 0x0040 (0x00F0 - 0x00B0)
-class UInteractionArchivementComponentV3 final : public UActorComponent
-{
-public:
-	TArray<struct FInteractionArchivementInfoV3>  Archivements;                                      // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TArray<int32>                                 CompleteConditions;                                // 0x00C0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<int32>                                 CompleteArchivements;                              // 0x00D0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<int32>                                 PlayedArchivements;                                // 0x00E0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-
-public:
-	void PlayArchivement(int32 InId);
-	void SetArchievementPlayed(int32 InId);
-	void SetArchivementComplete(int32 InId);
-	void SetConditionComplete(int32 InId);
-	void SetConditionCompleteAdnRefresh(int32 InId);
-
-	bool CanPlay(int32 InId) const;
-	bool IsArchivementComplete(int32 InId) const;
-	bool IsArchivementPlayed(int32 InId) const;
-	bool IsConditionComplete(int32 InId) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InteractionArchivementComponentV3")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InteractionArchivementComponentV3")
-	}
-	static class UInteractionArchivementComponentV3* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInteractionArchivementComponentV3>();
-	}
-};
-DUMPER7_ASSERTS_UInteractionArchivementComponentV3;
-
-// Class CharacterInteractionV3.FacialAnimUnit
-// 0x0018 (0x0048 - 0x0030)
-class UFacialAnimUnit final : public UShowElementV3Unit
-{
-public:
-	class UAnimSequence*                          Sequence;                                          // 0x0030(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BlendInTime;                                       // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BlendOutTime;                                      // 0x003C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BlendOutTriggerTime;                               // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableAutoBlendOut;                               // 0x0044(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("FacialAnimUnit")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"FacialAnimUnit")
-	}
-	static class UFacialAnimUnit* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UFacialAnimUnit>();
-	}
-};
-DUMPER7_ASSERTS_UFacialAnimUnit;
-
-// Class CharacterInteractionV3.AlignTransformToCharacterEvent
-// 0x0018 (0x0040 - 0x0028)
-class UAlignTransformToCharacterEvent final : public UInteractionV3Event
-{
-public:
-	class FName                                   MasterActorName;                                   // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AlignAllSubActor;                                  // 0x0030(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   SubActorName;                                      // 0x0034(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AlignTranslation;                                  // 0x003C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AlignRotation;                                     // 0x003D(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AlignScale;                                        // 0x003E(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3F[0x1];                                       // 0x003F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AlignTransformToCharacterEvent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AlignTransformToCharacterEvent")
-	}
-	static class UAlignTransformToCharacterEvent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAlignTransformToCharacterEvent>();
-	}
-};
-DUMPER7_ASSERTS_UAlignTransformToCharacterEvent;
-
 // Class CharacterInteractionV3.FennyShowerLittleGame
 // 0x0010 (0x0078 - 0x0068)
 class UFennyShowerLittleGame final : public UScenarioStandardLittleGame
@@ -980,6 +858,44 @@ public:
 };
 DUMPER7_ASSERTS_AInteractionActorV3;
 
+// Class CharacterInteractionV3.InteractionArchivementComponentV3
+// 0x0040 (0x00F0 - 0x00B0)
+class UInteractionArchivementComponentV3 final : public UActorComponent
+{
+public:
+	TArray<struct FInteractionArchivementInfoV3>  Archivements;                                      // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<int32>                                 CompleteConditions;                                // 0x00C0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<int32>                                 CompleteArchivements;                              // 0x00D0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<int32>                                 PlayedArchivements;                                // 0x00E0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+
+public:
+	void PlayArchivement(int32 InId);
+	void SetArchievementPlayed(int32 InId);
+	void SetArchivementComplete(int32 InId);
+	void SetConditionComplete(int32 InId);
+	void SetConditionCompleteAdnRefresh(int32 InId);
+
+	bool CanPlay(int32 InId) const;
+	bool IsArchivementComplete(int32 InId) const;
+	bool IsArchivementPlayed(int32 InId) const;
+	bool IsConditionComplete(int32 InId) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionArchivementComponentV3")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionArchivementComponentV3")
+	}
+	static class UInteractionArchivementComponentV3* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractionArchivementComponentV3>();
+	}
+};
+DUMPER7_ASSERTS_UInteractionArchivementComponentV3;
+
 // Class CharacterInteractionV3.InteractionCameraActor
 // 0x0608 (0x0830 - 0x0228)
 class alignas(0x10) AInteractionCameraActor final : public AActor
@@ -1015,6 +931,36 @@ public:
 	}
 };
 DUMPER7_ASSERTS_AInteractionCameraActor;
+
+// Class CharacterInteractionV3.InteractionCameraInstanceBase
+// 0x0020 (0x03C0 - 0x03A0)
+#pragma pack(push, 0x1)
+class alignas(0x10) UInteractionCameraInstanceBase : public UCameraInstance
+{
+public:
+	bool                                          bActiveBlendOut;                                   // 0x03A0(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bForceBlendOut;                                    // 0x03A1(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bLockBlendOutChange;                               // 0x03A2(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3A3[0x1];                                      // 0x03A3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FViewTargetTransitionParams            CameraTransitionParams;                            // 0x03A4(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3B4[0x4];                                      // 0x03B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionCameraInstanceBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionCameraInstanceBase")
+	}
+	static class UInteractionCameraInstanceBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractionCameraInstanceBase>();
+	}
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_UInteractionCameraInstanceBase;
 
 // Class CharacterInteractionV3.InteractionCameraInstance
 // 0x02C0 (0x0680 - 0x03C0)
@@ -1770,33 +1716,6 @@ public:
 };
 DUMPER7_ASSERTS_UInteractionV3CharacterAnimLayer;
 
-// Class CharacterInteractionV3.InteractionV3Event_Achievement
-// 0x0008 (0x0030 - 0x0028)
-class UInteractionV3Event_Achievement final : public UInteractionV3Event
-{
-public:
-	int32                                         AchievementID;                                     // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class UInteractionArchivementComponentV3* GetArchivementComponentV3() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InteractionV3Event_Achievement")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InteractionV3Event_Achievement")
-	}
-	static class UInteractionV3Event_Achievement* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInteractionV3Event_Achievement>();
-	}
-};
-DUMPER7_ASSERTS_UInteractionV3Event_Achievement;
-
 // Class CharacterInteractionV3.InteractionV3Event_ConditionCompleted
 // 0x0008 (0x0030 - 0x0028)
 class UInteractionV3Event_ConditionCompleted final : public UInteractionV3Event
@@ -1821,6 +1740,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UInteractionV3Event_ConditionCompleted;
+
+// Class CharacterInteractionV3.InteractionV3Event_EasterEgg
+// 0x0000 (0x0028 - 0x0028)
+class UInteractionV3Event_EasterEgg final : public UInteractionV3Event
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionV3Event_EasterEgg")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionV3Event_EasterEgg")
+	}
+	static class UInteractionV3Event_EasterEgg* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractionV3Event_EasterEgg>();
+	}
+};
+DUMPER7_ASSERTS_UInteractionV3Event_EasterEgg;
 
 // Class CharacterInteractionV3.InteractionV3FaceAnimInstance
 // 0x0020 (0x02E0 - 0x02C0)
@@ -1961,6 +1900,36 @@ public:
 };
 DUMPER7_ASSERTS_UInteractionV3Lib;
 
+// Class CharacterInteractionV3.InteractionV3PhysicsControlComponent
+// 0x0050 (0x0520 - 0x04D0)
+class UInteractionV3PhysicsControlComponent final : public UBaseGamePhysicsControlComponent
+{
+public:
+	uint8                                         Pad_4D0[0x28];                                     // 0x04D0(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           MaintainWorldSpaceRelativeControlNames;            // 0x04F8(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FRigidBodyRelativeControlRecord> RigidBodyRelativeControls;                        // 0x0508(0x0010)(ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_518[0x8];                                      // 0x0518(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	bool ConditionalCreateMaintainWorldSpaceRelativeControl(class FName Name_0, class UMeshComponent* ParentMeshComponent, const class FName ParentBoneName, class UMeshComponent* ChildMeshComponent, const class FName ChildBoneName, const class FName Set, const class FName AdditionalSetName);
+	bool ConditionalDestroyAllMaintainWorldSpaceRelativeControls();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionV3PhysicsControlComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionV3PhysicsControlComponent")
+	}
+	static class UInteractionV3PhysicsControlComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractionV3PhysicsControlComponent>();
+	}
+};
+DUMPER7_ASSERTS_UInteractionV3PhysicsControlComponent;
+
 // Class CharacterInteractionV3.OperateStandardCompelteEvent
 // 0x0028 (0x0050 - 0x0028)
 class UOperateStandardCompelteEvent final : public UInteractionV3Event
@@ -1986,29 +1955,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UOperateStandardCompelteEvent;
-
-// Class CharacterInteractionV3.PhysicsAssetModifierEvent
-// 0x0010 (0x0038 - 0x0028)
-class UPhysicsAssetModifierEvent final : public UInteractionV3Event
-{
-public:
-	TArray<struct FCharacterPhysicsAssetModifier> PhysicsAssetModifiers;                             // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PhysicsAssetModifierEvent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PhysicsAssetModifierEvent")
-	}
-	static class UPhysicsAssetModifierEvent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPhysicsAssetModifierEvent>();
-	}
-};
-DUMPER7_ASSERTS_UPhysicsAssetModifierEvent;
 
 // Class CharacterInteractionV3.CreatePhysicsControlEvent
 // 0x0038 (0x0060 - 0x0028)
@@ -2042,6 +1988,33 @@ public:
 };
 DUMPER7_ASSERTS_UCreatePhysicsControlEvent;
 
+// Class CharacterInteractionV3.DestroyPhysicsControlEvent
+// 0x0020 (0x0048 - 0x0028)
+class UDestroyPhysicsControlEvent final : public UInteractionV3Event
+{
+public:
+	class FName                                   ControlName;                                       // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SetName;                                           // 0x0030(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ActorName;                                         // 0x0038(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsBody;                                           // 0x0040(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DestroyPhysicsControlEvent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DestroyPhysicsControlEvent")
+	}
+	static class UDestroyPhysicsControlEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UDestroyPhysicsControlEvent>();
+	}
+};
+DUMPER7_ASSERTS_UDestroyPhysicsControlEvent;
+
 // Class CharacterInteractionV3.CreateMaintainWorldSpaceRelativeControlEvent
 // 0x0038 (0x0060 - 0x0028)
 class UCreateMaintainWorldSpaceRelativeControlEvent final : public UInteractionV3Event
@@ -2071,6 +2044,36 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCreateMaintainWorldSpaceRelativeControlEvent;
+
+// Class CharacterInteractionV3.AlignTransformToCharacterEvent
+// 0x0018 (0x0040 - 0x0028)
+class UAlignTransformToCharacterEvent final : public UInteractionV3Event
+{
+public:
+	class FName                                   MasterActorName;                                   // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AlignAllSubActor;                                  // 0x0030(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   SubActorName;                                      // 0x0034(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AlignTranslation;                                  // 0x003C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AlignRotation;                                     // 0x003D(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AlignScale;                                        // 0x003E(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3F[0x1];                                       // 0x003F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AlignTransformToCharacterEvent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AlignTransformToCharacterEvent")
+	}
+	static class UAlignTransformToCharacterEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAlignTransformToCharacterEvent>();
+	}
+};
+DUMPER7_ASSERTS_UAlignTransformToCharacterEvent;
 
 // Class CharacterInteractionV3.CallActorFunctionEvent
 // 0x0010 (0x0038 - 0x0028)

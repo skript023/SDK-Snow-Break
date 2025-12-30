@@ -74,6 +74,7 @@ public:
 	static int64 GetTotalPrimaryDownloadBytes();
 	static int32 GetTotalVerifyCount();
 	static int32 GetVerifiedCount();
+	static void ResetAvailableFileServes();
 	static void SetNotification(const class FString& InUpdating, const class FString& InComplete, const class FString& InFailed);
 	static void SetStage(const EHotPatchStage InStage);
 	static void Start(bool bVerifyLocalPak);

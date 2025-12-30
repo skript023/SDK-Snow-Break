@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function uw_fight_cross7.uw_fight_cross7_C.ExecuteUbergraph_uw_fight_cross7
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_cross7_C::ExecuteUbergraph_uw_fight_cross7(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_cross7_C", "ExecuteUbergraph_uw_fight_cross7");
+
+	Params::uw_fight_cross7_C_ExecuteUbergraph_uw_fight_cross7 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function uw_fight_cross7.uw_fight_cross7_C.K2_OnReloading
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -43,6 +63,20 @@ void Uuw_fight_cross7_C::K2_OnReloading(bool bIsReload, EWeaponType Type, bool b
 }
 
 
+// Function uw_fight_cross7.uw_fight_cross7_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_cross7_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_cross7_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function uw_fight_cross7.uw_fight_cross7_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
@@ -60,40 +94,6 @@ void Uuw_fight_cross7_C::Tick(const struct FGeometry& MyGeometry, float InDeltaT
 
 	Parms.MyGeometry = std::move(MyGeometry);
 	Parms.InDeltaTime = InDeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_cross7.uw_fight_cross7_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_cross7_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_cross7_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_cross7.uw_fight_cross7_C.ExecuteUbergraph_uw_fight_cross7
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_cross7_C::ExecuteUbergraph_uw_fight_cross7(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_cross7_C", "ExecuteUbergraph_uw_fight_cross7");
-
-	Params::uw_fight_cross7_C_ExecuteUbergraph_uw_fight_cross7 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

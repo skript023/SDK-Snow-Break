@@ -31,6 +31,26 @@ void Uuw_fight_level_task_item_pc_C::BP_OnEntryReleased()
 }
 
 
+// Function uw_fight_level_task_item_pc.uw_fight_level_task_item_pc_C.BP_OnItemExpansionChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_level_task_item_pc_C::BP_OnItemExpansionChanged(bool bIsExpanded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_task_item_pc_C", "BP_OnItemExpansionChanged");
+
+	Params::uw_fight_level_task_item_pc_C_BP_OnItemExpansionChanged Parms{};
+
+	Parms.bIsExpanded = bIsExpanded;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function uw_fight_level_task_item_pc.uw_fight_level_task_item_pc_C.BP_OnItemSelectionChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -71,40 +91,6 @@ void Uuw_fight_level_task_item_pc_C::OnListItemObjectSet__Overridden(class UObje
 }
 
 
-// Function uw_fight_level_task_item_pc.uw_fight_level_task_item_pc_C.BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void Uuw_fight_level_task_item_pc_C::BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_item_pc_C", "BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_level_task_item_pc.uw_fight_level_task_item_pc_C.BP_OnItemExpansionChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_level_task_item_pc_C::BP_OnItemExpansionChanged(bool bIsExpanded)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_task_item_pc_C", "BP_OnItemExpansionChanged");
-
-	Params::uw_fight_level_task_item_pc_C_BP_OnItemExpansionChanged Parms{};
-
-	Parms.bIsExpanded = bIsExpanded;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_level_task_item_pc.uw_fight_level_task_item_pc_C.BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature
 // (BlueprintEvent)
 
@@ -114,6 +100,20 @@ void Uuw_fight_level_task_item_pc_C::BndEvt__uw_fight_level_task_item_BtnTask_K2
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_level_task_item_pc_C", "BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_level_task_item_pc.uw_fight_level_task_item_pc_C.BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void Uuw_fight_level_task_item_pc_C::BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_task_item_pc_C", "BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

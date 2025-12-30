@@ -16,86 +16,6 @@
 namespace SDK::Params
 {
 
-// Function DarkZone.DarkZoneActorInterface.InitActor
-// 0x0018 (0x0018 - 0x0000)
-struct DarkZoneActorInterface_InitActor final
-{
-public:
-	int32                                         InActorId;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         State;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<float>                                 CustomParam;                                       // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DarkZoneActorInterface_InitActor;
-
-// Function DarkZone.DarkZoneFogSwitchActor.ActiveCustomFog
-// 0x0004 (0x0004 - 0x0000)
-struct DarkZoneFogSwitchActor_ActiveCustomFog final
-{
-public:
-	int32                                         InIndex;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DarkZoneFogSwitchActor_ActiveCustomFog;
-
-// Function DarkZone.DarkZoneFogSwitchActor.Switch
-// 0x000C (0x000C - 0x0000)
-struct DarkZoneFogSwitchActor_Switch final
-{
-public:
-	int32                                         A;                                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         B;                                                 // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InProgress;                                        // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DarkZoneFogSwitchActor_Switch;
-
-// Function DarkZone.DarkZoneGeneralTriggerRegion.GetList
-// 0x0010 (0x0010 - 0x0000)
-struct DarkZoneGeneralTriggerRegion_GetList final
-{
-public:
-	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DarkZoneGeneralTriggerRegion_GetList;
-
-// Function DarkZone.DarkZoneMapPointMgr.GetSpawnActor
-// 0x0010 (0x0010 - 0x0000)
-struct DarkZoneMapPointMgr_GetSpawnActor final
-{
-public:
-	int32                                         ActorId;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DarkZoneMapPointMgr_GetSpawnActor;
-
-// Function DarkZone.DarkZoneMapPointMgr.OnDestroyActor
-// 0x0004 (0x0004 - 0x0000)
-struct DarkZoneMapPointMgr_OnDestroyActor final
-{
-public:
-	int32                                         ActorId;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DarkZoneMapPointMgr_OnDestroyActor;
-
-// Function DarkZone.DarkZoneMapPointMgr.TrySpawnActor
-// 0x0010 (0x0010 - 0x0000)
-struct DarkZoneMapPointMgr_TrySpawnActor final
-{
-public:
-	int32                                         ActorId;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DarkZoneMapPointMgr_TrySpawnActor;
-
-// Function DarkZone.DarkZonePatrolArea.GetRandomPos
-// 0x000C (0x000C - 0x0000)
-struct DarkZonePatrolArea_GetRandomPos final
-{
-public:
-	struct FVector                                ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DarkZonePatrolArea_GetRandomPos;
-
 // Function DarkZone.DarkZoneSpecialLogic.AddGZ
 // 0x0008 (0x0008 - 0x0000)
 struct DarkZoneSpecialLogic_AddGZ final
@@ -178,6 +98,86 @@ public:
 	float                                         Val;                                               // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_DarkZoneSpecialLogic_SetGZRate;
+
+// Function DarkZone.DarkZoneActorInterface.InitActor
+// 0x0018 (0x0018 - 0x0000)
+struct DarkZoneActorInterface_InitActor final
+{
+public:
+	int32                                         InActorId;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         State;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<float>                                 CustomParam;                                       // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_DarkZoneActorInterface_InitActor;
+
+// Function DarkZone.DarkZoneFogSwitchActor.ActiveCustomFog
+// 0x0004 (0x0004 - 0x0000)
+struct DarkZoneFogSwitchActor_ActiveCustomFog final
+{
+public:
+	int32                                         InIndex;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_DarkZoneFogSwitchActor_ActiveCustomFog;
+
+// Function DarkZone.DarkZoneFogSwitchActor.Switch
+// 0x000C (0x000C - 0x0000)
+struct DarkZoneFogSwitchActor_Switch final
+{
+public:
+	int32                                         A;                                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         B;                                                 // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InProgress;                                        // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_DarkZoneFogSwitchActor_Switch;
+
+// Function DarkZone.DarkZoneGeneralTriggerRegion.GetList
+// 0x0010 (0x0010 - 0x0000)
+struct DarkZoneGeneralTriggerRegion_GetList final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_DarkZoneGeneralTriggerRegion_GetList;
+
+// Function DarkZone.DarkZoneMapPointMgr.GetSpawnActor
+// 0x0010 (0x0010 - 0x0000)
+struct DarkZoneMapPointMgr_GetSpawnActor final
+{
+public:
+	int32                                         ActorId;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_DarkZoneMapPointMgr_GetSpawnActor;
+
+// Function DarkZone.DarkZoneMapPointMgr.OnDestroyActor
+// 0x0004 (0x0004 - 0x0000)
+struct DarkZoneMapPointMgr_OnDestroyActor final
+{
+public:
+	int32                                         ActorId;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_DarkZoneMapPointMgr_OnDestroyActor;
+
+// Function DarkZone.DarkZoneMapPointMgr.TrySpawnActor
+// 0x0010 (0x0010 - 0x0000)
+struct DarkZoneMapPointMgr_TrySpawnActor final
+{
+public:
+	int32                                         ActorId;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_DarkZoneMapPointMgr_TrySpawnActor;
+
+// Function DarkZone.DarkZonePatrolArea.GetRandomPos
+// 0x000C (0x000C - 0x0000)
+struct DarkZonePatrolArea_GetRandomPos final
+{
+public:
+	struct FVector                                ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_DarkZonePatrolArea_GetRandomPos;
 
 // Function DarkZone.DarkZoneSystem.CanFreeRush
 // 0x0001 (0x0001 - 0x0000)

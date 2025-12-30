@@ -12,8 +12,8 @@
 
 #include "AnimGraphRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 #include "PhysicsCore_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -303,84 +303,6 @@ public:
 };
 DUMPER7_ASSERTS_FRecoilSetup;
 
-// ScriptStruct SeasunAnimGraph.AnimNode_BSPlayerWithRefBS
-// 0x0008 (0x00F0 - 0x00E8)
-struct FAnimNode_BSPlayerWithRefBS final : public FAnimNode_BlendSpacePlayer
-{
-public:
-	class UBlendSpaceBase*                        RefBlendSpace;                                     // 0x00E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAnimNode_BSPlayerWithRefBS;
-
-// ScriptStruct SeasunAnimGraph.CollisionLimitBase
-// 0x0050 (0x0050 - 0x0000)
-struct FCollisionLimitBase
-{
-public:
-	struct FBoneReference                         DrivingBone;                                       // 0x0000(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                OffsetLocation;                                    // 0x0010(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               OffsetRotation;                                    // 0x001C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x0028(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0xC];                                       // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  Rotation;                                          // 0x0040(0x0010)(IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCollisionLimitBase;
-
-// ScriptStruct SeasunAnimGraph.SphericalLimit
-// 0x0010 (0x0060 - 0x0050)
-struct FSphericalLimit final : public FCollisionLimitBase
-{
-public:
-	float                                         Radius;                                            // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESphericalLimitType                           LimitType;                                         // 0x0054(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_55[0xB];                                       // 0x0055(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSphericalLimit;
-
-// ScriptStruct SeasunAnimGraph.StandardBoneInfo
-// 0x0020 (0x0020 - 0x0000)
-struct FStandardBoneInfo final
-{
-public:
-	class FString                                 BoneName;                                          // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBoneReference                         BoneRef;                                           // 0x0010(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FStandardBoneInfo;
-
-// ScriptStruct SeasunAnimGraph.HitBoneConfig
-// 0x0050 (0x0050 - 0x0000)
-struct FHitBoneConfig final
-{
-public:
-	TMap<EStandardBone, struct FStandardBoneInfo> BoneMap;                                           // 0x0000(0x0050)(Edit, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FHitBoneConfig;
-
-// ScriptStruct SeasunAnimGraph.CapsuleLimit
-// 0x0010 (0x0060 - 0x0050)
-struct FCapsuleLimit final : public FCollisionLimitBase
-{
-public:
-	float                                         Radius;                                            // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Length;                                            // 0x0054(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCapsuleLimit;
-
-// ScriptStruct SeasunAnimGraph.HitReactCurveSequenceContainer
-// 0x0070 (0x0070 - 0x0000)
-struct FHitReactCurveSequenceContainer final
-{
-public:
-	TSet<class FName>                             HitBoneNames;                                      // 0x0000(0x0050)(Edit, NativeAccessSpecifierPublic)
-	struct FVector2D                              HitDirectionRange;                                 // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UHitReactCondition>         CustomConditionClass;                              // 0x0058(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveSequenceAsset*                    CurveSequenceAsset;                                // 0x0060(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIngoreCaclHitDirection;                           // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FHitReactCurveSequenceContainer;
-
 // ScriptStruct SeasunAnimGraph.KawaiiPhysicsSettings
 // 0x0088 (0x0088 - 0x0000)
 struct FKawaiiPhysicsSettings final
@@ -414,25 +336,37 @@ public:
 };
 DUMPER7_ASSERTS_FKawaiiPhysicsSettings;
 
-// ScriptStruct SeasunAnimGraph.PhysAnimBodyState
-// 0x0008 (0x0008 - 0x0000)
-struct FPhysAnimBodyState final
-{
-public:
-	EPhysicsType                                  PhysicsType;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BlendWeight;                                       // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPhysAnimBodyState;
-
-// ScriptStruct SeasunAnimGraph.PhysAnimCharState
+// ScriptStruct SeasunAnimGraph.CollisionLimitBase
 // 0x0050 (0x0050 - 0x0000)
-struct FPhysAnimCharState final
+struct FCollisionLimitBase
 {
 public:
-	TMap<int32, struct FPhysAnimBodyState>        BoneStates;                                        // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FBoneReference                         DrivingBone;                                       // 0x0000(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                OffsetLocation;                                    // 0x0010(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               OffsetRotation;                                    // 0x001C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x0028(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0xC];                                       // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  Rotation;                                          // 0x0040(0x0010)(IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FPhysAnimCharState;
+DUMPER7_ASSERTS_FCollisionLimitBase;
+
+// ScriptStruct SeasunAnimGraph.AnimNode_WeaponMatchWall
+// 0x00A8 (0x0170 - 0x00C8)
+struct FAnimNode_WeaponMatchWall final : public FAnimNode_SkeletalControlBase
+{
+public:
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBoneSocketTarget                      Gun;                                               // 0x00D0(0x0060)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FBoneReference                         WeaponHoldHand_Bone;                               // 0x0130(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FBoneReference                         WeaponAssistHand_Bone;                             // 0x0140(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         HandMove_Weight;                                   // 0x0150(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShoulderMove_Weight;                               // 0x0154(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MatchWallAlpha;                                    // 0x0158(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MatchWallDistance;                                 // 0x015C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               MeshToComponent;                                   // 0x0160(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_16C[0x4];                                      // 0x016C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAnimNode_WeaponMatchWall;
 
 // ScriptStruct SeasunAnimGraph.PlanarLimit
 // 0x0010 (0x0060 - 0x0050)
@@ -442,6 +376,69 @@ public:
 	struct FPlane                                 Plane;                                             // 0x0050(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FPlanarLimit;
+
+// ScriptStruct SeasunAnimGraph.CurveSequenceEffectorDataCollection
+// 0x0050 (0x0050 - 0x0000)
+struct alignas(0x10) FCurveSequenceEffectorDataCollection final
+{
+public:
+	uint8                                         Pad_0[0x30];                                       // 0x0000(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MaxTranslation_X;                                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxTranslation_Y;                                  // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxTranslation_Z;                                  // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAngle_Pitch;                                    // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAngle_Yaw;                                      // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAngle_Roll;                                     // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCurveSequenceEffectorDataCollection;
+
+// ScriptStruct SeasunAnimGraph.CapsuleLimit
+// 0x0010 (0x0060 - 0x0050)
+struct FCapsuleLimit final : public FCollisionLimitBase
+{
+public:
+	float                                         Radius;                                            // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Length;                                            // 0x0054(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCapsuleLimit;
+
+// ScriptStruct SeasunAnimGraph.HitReactCurveSequenceContainer
+// 0x0070 (0x0070 - 0x0000)
+struct FHitReactCurveSequenceContainer final
+{
+public:
+	TSet<class FName>                             HitBoneNames;                                      // 0x0000(0x0050)(Edit, NativeAccessSpecifierPublic)
+	struct FVector2D                              HitDirectionRange;                                 // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UHitReactCondition>         CustomConditionClass;                              // 0x0058(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveSequenceAsset*                    CurveSequenceAsset;                                // 0x0060(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIngoreCaclHitDirection;                           // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FHitReactCurveSequenceContainer;
+
+// ScriptStruct SeasunAnimGraph.HitReactCurveSequenceContainerMap
+// 0x0018 (0x0018 - 0x0000)
+struct FHitReactCurveSequenceContainerMap final
+{
+public:
+	EAnimMappingWeaponType                        WeaponType;                                        // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FHitReactCurveSequenceContainer> HitReactSequences;                                // 0x0008(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FHitReactCurveSequenceContainerMap;
+
+// ScriptStruct SeasunAnimGraph.SphericalLimit
+// 0x0010 (0x0060 - 0x0050)
+struct FSphericalLimit final : public FCollisionLimitBase
+{
+public:
+	float                                         Radius;                                            // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESphericalLimitType                           LimitType;                                         // 0x0054(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_55[0xB];                                       // 0x0055(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSphericalLimit;
 
 // ScriptStruct SeasunAnimGraph.BoneChainSetup
 // 0x0068 (0x0068 - 0x0000)
@@ -508,6 +505,41 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_BSPlayerEx;
 
+// ScriptStruct SeasunAnimGraph.AnimNode_BSPlayerWithRefBS
+// 0x0008 (0x00F0 - 0x00E8)
+struct FAnimNode_BSPlayerWithRefBS final : public FAnimNode_BlendSpacePlayer
+{
+public:
+	class UBlendSpaceBase*                        RefBlendSpace;                                     // 0x00E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAnimNode_BSPlayerWithRefBS;
+
+// ScriptStruct SeasunAnimGraph.HitBoneSimulationInfo
+// 0x0018 (0x0018 - 0x0000)
+struct FHitBoneSimulationInfo final
+{
+public:
+	class FString                                 BoneName;                                          // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPropagateToChildren;                              // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeSelf;                                      // 0x0011(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableSimulation;                                 // 0x0012(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_13[0x1];                                       // 0x0013(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BlendFactor;                                       // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FHitBoneSimulationInfo;
+
+// ScriptStruct SeasunAnimGraph.HitPhyConfig
+// 0x00F8 (0x00F8 - 0x0000)
+struct FHitPhyConfig final
+{
+public:
+	TArray<struct FHitBoneSimulationInfo>         SimulationInfos;                                   // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FRuntimeFloatCurve                     WeightCurve;                                       // 0x0010(0x0088)(Edit, NativeAccessSpecifierPublic)
+	float                                         PhysicalCoolDownTime;                              // 0x0098(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9C[0x5C];                                      // 0x009C(0x005C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FHitPhyConfig;
+
 // ScriptStruct SeasunAnimGraph.AnimNode_CurveSequenceSlot
 // 0x0028 (0x0038 - 0x0010)
 struct FAnimNode_CurveSequenceSlot : public FAnimNode_Base
@@ -562,6 +594,26 @@ public:
 };
 DUMPER7_ASSERTS_FGrounderLegData;
 
+// ScriptStruct SeasunAnimGraph.PhysAnimBodyState
+// 0x0008 (0x0008 - 0x0000)
+struct FPhysAnimBodyState final
+{
+public:
+	EPhysicsType                                  PhysicsType;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BlendWeight;                                       // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPhysAnimBodyState;
+
+// ScriptStruct SeasunAnimGraph.PhysAnimCharState
+// 0x0050 (0x0050 - 0x0000)
+struct FPhysAnimCharState final
+{
+public:
+	TMap<int32, struct FPhysAnimBodyState>        BoneStates;                                        // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPhysAnimCharState;
+
 // ScriptStruct SeasunAnimGraph.AnimNode_HandIKPosCaclulation
 // 0x00B8 (0x0180 - 0x00C8)
 struct FAnimNode_HandIKPosCaclulation final : public FAnimNode_SkeletalControlBase
@@ -577,6 +629,51 @@ public:
 	struct FGuid                                  VirtualBoneGuid;                                   // 0x0170(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FAnimNode_HandIKPosCaclulation;
+
+// ScriptStruct SeasunAnimGraph.CollisionLimitDataBase
+// 0x0050 (0x0050 - 0x0000)
+struct FCollisionLimitDataBase
+{
+public:
+	class FName                                   DrivingBoneName;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                OffsetLocation;                                    // 0x0008(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               OffsetRotation;                                    // 0x0014(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x0020(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  Rotation;                                          // 0x0030(0x0010)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGuid                                  Guid;                                              // 0x0040(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCollisionLimitDataBase;
+
+// ScriptStruct SeasunAnimGraph.SphericalLimitData
+// 0x0010 (0x0060 - 0x0050)
+struct FSphericalLimitData final : public FCollisionLimitDataBase
+{
+public:
+	float                                         Radius;                                            // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESphericalLimitType                           LimitType;                                         // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_55[0xB];                                       // 0x0055(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSphericalLimitData;
+
+// ScriptStruct SeasunAnimGraph.StandardBoneInfo
+// 0x0020 (0x0020 - 0x0000)
+struct FStandardBoneInfo final
+{
+public:
+	class FString                                 BoneName;                                          // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBoneReference                         BoneRef;                                           // 0x0010(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FStandardBoneInfo;
+
+// ScriptStruct SeasunAnimGraph.HitBoneConfig
+// 0x0050 (0x0050 - 0x0000)
+struct FHitBoneConfig final
+{
+public:
+	TMap<EStandardBone, struct FStandardBoneInfo> BoneMap;                                           // 0x0000(0x0050)(Edit, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FHitBoneConfig;
 
 // ScriptStruct SeasunAnimGraph.AnimNode_HitSequenceNode
 // 0x0050 (0x0118 - 0x00C8)
@@ -703,6 +800,22 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_Recoil;
 
+// ScriptStruct SeasunAnimGraph.AnimNode_TransitionBlend
+// 0x0088 (0x0098 - 0x0010)
+struct FAnimNode_TransitionBlend final : public FAnimNode_Base
+{
+public:
+	struct FPoseLink                              SourcePose;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPoseLink                              DestinationPose;                                   // 0x0020(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPoseLink                              TransitionPose;                                    // 0x0030(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_40[0x4];                                       // 0x0040(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TransitionDuration;                                // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TransitionInflectionTimePrecent_BlendInTime;       // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TransitionInflectionTimePrecent_BlendOut;          // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_50[0x48];                                      // 0x0050(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAnimNode_TransitionBlend;
+
 // ScriptStruct SeasunAnimGraph.CurveValueConstrain
 // 0x0014 (0x0014 - 0x0000)
 struct FCurveValueConstrain final
@@ -800,6 +913,57 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_ReLocMesh;
 
+// ScriptStruct SeasunAnimGraph.WeaponPoseCorrectionParams
+// 0x00E0 (0x00E0 - 0x0000)
+struct FWeaponPoseCorrectionParams final
+{
+public:
+	class UAnimSequence*                          ReferencePose;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELeftHandCorrectionType                       LeftHandCorrection;                                // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LeftHandWeight;                                    // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RightHandWeight;                                   // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RefPoseWeight;                                     // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bMeshSpaceRotationBlend : 1;                       // 0x0018(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RefPoseRotationWeight;                             // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BlendInTime;                                       // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bRefPoseHandRotation;                              // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0xB];                                       // 0x0025(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             LeftHandOffset;                                    // 0x0030(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTransform                             RightHandOffset;                                   // 0x0060(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         AimOffsetRotationWeight;                           // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOnlfyFixArms;                                     // 0x0094(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_95[0x4B];                                      // 0x0095(0x004B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FWeaponPoseCorrectionParams;
+
+// ScriptStruct SeasunAnimGraph.AnimNode_WeaponPoseCorrection
+// 0x0CA8 (0x0D70 - 0x00C8)
+struct FAnimNode_WeaponPoseCorrection final : public FAnimNode_SkeletalControlBase
+{
+public:
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FWeaponPoseCorrectionParams            CorrectionParams;                                  // 0x00D0(0x00E0)(Edit, NativeAccessSpecifierPublic)
+	uint8                                         bEnableCorrectionParamsBlending : 1;               // 0x01B0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_1B1[0xF];                                      // 0x01B1(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBoneSocketTarget                      LeftWeapon;                                        // 0x01C0(0x0060)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FBoneSocketTarget                      RightWeapon;                                       // 0x0220(0x0060)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FBoneReference                         LeftHand;                                          // 0x0280(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FBoneReference                         RightHand;                                         // 0x0290(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FBoneReference                         Head;                                              // 0x02A0(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FBoneReference                         LowerSpine;                                        // 0x02B0(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FBoneReference                         LeftShoulder;                                      // 0x02C0(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FBoneReference                         RightShoulder;                                     // 0x02D0(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         bDrawDebug : 1;                                    // 0x02E0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_2E1[0x7];                                      // 0x02E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FPerBoneBlendWeight>            BaseBoneBlendWeights;                              // 0x02E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	struct FGuid                                  SkeletonGuid;                                      // 0x02F8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FGuid                                  VirtualBoneGuid;                                   // 0x0308(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_318[0xA58];                                    // 0x0318(0x0A58)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAnimNode_WeaponPoseCorrection;
+
 // ScriptStruct SeasunAnimGraph.RuntimeSpineWeight
 // 0x0050 (0x0050 - 0x0000)
 struct FRuntimeSpineWeight final
@@ -846,6 +1010,15 @@ public:
 	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAnimNode_RotationWarping;
+
+// ScriptStruct SeasunAnimGraph.CurveSequenceControllerAnimInstanceProxy
+// 0x0200 (0x0960 - 0x0760)
+struct FCurveSequenceControllerAnimInstanceProxy final : public FAnimInstanceProxy
+{
+public:
+	uint8                                         Pad_760[0x200];                                    // 0x0760(0x0200)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCurveSequenceControllerAnimInstanceProxy;
 
 // ScriptStruct SeasunAnimGraph.SaveTransformBoneData
 // 0x0010 (0x0010 - 0x0000)
@@ -936,6 +1109,18 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_SkillAim;
 
+// ScriptStruct SeasunAnimGraph.GrounderHitData
+// 0x0094 (0x0094 - 0x0000)
+struct FGrounderHitData final
+{
+public:
+	struct FHitResult                             Hit;                                               // 0x0000(0x008C)(IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	float                                         LocCorrectionScale;                                // 0x008C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableAnkleRotation;                              // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_91[0x3];                                       // 0x0091(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGrounderHitData;
+
 // ScriptStruct SeasunAnimGraph.AnimNode_SpeedWarping
 // 0x0098 (0x0160 - 0x00C8)
 struct FAnimNode_SpeedWarping final : public FAnimNode_SkeletalControlBase
@@ -1024,22 +1209,6 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_StanceTransition;
 
-// ScriptStruct SeasunAnimGraph.AnimNode_TransitionBlend
-// 0x0088 (0x0098 - 0x0010)
-struct FAnimNode_TransitionBlend final : public FAnimNode_Base
-{
-public:
-	struct FPoseLink                              SourcePose;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FPoseLink                              DestinationPose;                                   // 0x0020(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FPoseLink                              TransitionPose;                                    // 0x0030(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_40[0x4];                                       // 0x0040(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TransitionDuration;                                // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TransitionInflectionTimePrecent_BlendInTime;       // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TransitionInflectionTimePrecent_BlendOut;          // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_50[0x48];                                      // 0x0050(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAnimNode_TransitionBlend;
-
 // ScriptStruct SeasunAnimGraph.AnimNode_UpperBodyMatchingUnder
 // 0x0078 (0x0088 - 0x0010)
 struct FAnimNode_UpperBodyMatchingUnder final : public FAnimNode_Base
@@ -1077,75 +1246,6 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_WeaponHandCorrection;
 
-// ScriptStruct SeasunAnimGraph.AnimNode_WeaponMatchWall
-// 0x00A8 (0x0170 - 0x00C8)
-struct FAnimNode_WeaponMatchWall final : public FAnimNode_SkeletalControlBase
-{
-public:
-	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBoneSocketTarget                      Gun;                                               // 0x00D0(0x0060)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FBoneReference                         WeaponHoldHand_Bone;                               // 0x0130(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FBoneReference                         WeaponAssistHand_Bone;                             // 0x0140(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         HandMove_Weight;                                   // 0x0150(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ShoulderMove_Weight;                               // 0x0154(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MatchWallAlpha;                                    // 0x0158(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MatchWallDistance;                                 // 0x015C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               MeshToComponent;                                   // 0x0160(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C[0x4];                                      // 0x016C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAnimNode_WeaponMatchWall;
-
-// ScriptStruct SeasunAnimGraph.WeaponPoseCorrectionParams
-// 0x00E0 (0x00E0 - 0x0000)
-struct FWeaponPoseCorrectionParams final
-{
-public:
-	class UAnimSequence*                          ReferencePose;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELeftHandCorrectionType                       LeftHandCorrection;                                // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LeftHandWeight;                                    // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RightHandWeight;                                   // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RefPoseWeight;                                     // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bMeshSpaceRotationBlend : 1;                       // 0x0018(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RefPoseRotationWeight;                             // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BlendInTime;                                       // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bRefPoseHandRotation;                              // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25[0xB];                                       // 0x0025(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             LeftHandOffset;                                    // 0x0030(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FTransform                             RightHandOffset;                                   // 0x0060(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         AimOffsetRotationWeight;                           // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOnlfyFixArms;                                     // 0x0094(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_95[0x4B];                                      // 0x0095(0x004B)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FWeaponPoseCorrectionParams;
-
-// ScriptStruct SeasunAnimGraph.AnimNode_WeaponPoseCorrection
-// 0x0CA8 (0x0D70 - 0x00C8)
-struct FAnimNode_WeaponPoseCorrection final : public FAnimNode_SkeletalControlBase
-{
-public:
-	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FWeaponPoseCorrectionParams            CorrectionParams;                                  // 0x00D0(0x00E0)(Edit, NativeAccessSpecifierPublic)
-	uint8                                         bEnableCorrectionParamsBlending : 1;               // 0x01B0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1B1[0xF];                                      // 0x01B1(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBoneSocketTarget                      LeftWeapon;                                        // 0x01C0(0x0060)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FBoneSocketTarget                      RightWeapon;                                       // 0x0220(0x0060)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FBoneReference                         LeftHand;                                          // 0x0280(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FBoneReference                         RightHand;                                         // 0x0290(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FBoneReference                         Head;                                              // 0x02A0(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FBoneReference                         LowerSpine;                                        // 0x02B0(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FBoneReference                         LeftShoulder;                                      // 0x02C0(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FBoneReference                         RightShoulder;                                     // 0x02D0(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         bDrawDebug : 1;                                    // 0x02E0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_2E1[0x7];                                      // 0x02E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FPerBoneBlendWeight>            BaseBoneBlendWeights;                              // 0x02E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	struct FGuid                                  SkeletonGuid;                                      // 0x02F8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FGuid                                  VirtualBoneGuid;                                   // 0x0308(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_318[0xA58];                                    // 0x0318(0x0A58)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAnimNode_WeaponPoseCorrection;
-
 // ScriptStruct SeasunAnimGraph.AnimNode_YYCFootIK
 // 0x0058 (0x0120 - 0x00C8)
 struct FAnimNode_YYCFootIK final : public FAnimNode_SkeletalControlBase
@@ -1170,15 +1270,6 @@ public:
 };
 DUMPER7_ASSERTS_FCurveSequenceEffectorSetup;
 
-// ScriptStruct SeasunAnimGraph.CurveSequenceControllerAnimInstanceProxy
-// 0x01E0 (0x0940 - 0x0760)
-struct FCurveSequenceControllerAnimInstanceProxy final : public FAnimInstanceProxy
-{
-public:
-	uint8                                         Pad_760[0x1E0];                                    // 0x0760(0x01E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCurveSequenceControllerAnimInstanceProxy;
-
 // ScriptStruct SeasunAnimGraph.CurveSequenceInstance
 // 0x0098 (0x0098 - 0x0000)
 struct FCurveSequenceInstance final
@@ -1197,22 +1288,6 @@ public:
 };
 DUMPER7_ASSERTS_FCurveSequenceInstance;
 
-// ScriptStruct SeasunAnimGraph.CurveSequenceEffectorDataCollection
-// 0x0050 (0x0050 - 0x0000)
-struct alignas(0x10) FCurveSequenceEffectorDataCollection final
-{
-public:
-	uint8                                         Pad_0[0x30];                                       // 0x0000(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MaxTranslation_X;                                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxTranslation_Y;                                  // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxTranslation_Z;                                  // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAngle_Pitch;                                    // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAngle_Yaw;                                      // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAngle_Roll;                                     // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCurveSequenceEffectorDataCollection;
-
 // ScriptStruct SeasunAnimGraph.CurveSequenceEffectorData
 // 0x0040 (0x0040 - 0x0000)
 struct FCurveSequenceEffectorData final
@@ -1223,18 +1298,6 @@ public:
 	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCurveSequenceEffectorData;
-
-// ScriptStruct SeasunAnimGraph.GrounderHitData
-// 0x0094 (0x0094 - 0x0000)
-struct FGrounderHitData final
-{
-public:
-	struct FHitResult                             Hit;                                               // 0x0000(0x008C)(IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	float                                         LocCorrectionScale;                                // 0x008C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableAnkleRotation;                              // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_91[0x3];                                       // 0x0091(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGrounderHitData;
 
 // ScriptStruct SeasunAnimGraph.CharHitPhysicalState
 // 0x0050 (0x0050 - 0x0000)
@@ -1253,43 +1316,6 @@ public:
 	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FHitPhysicalState;
-
-// ScriptStruct SeasunAnimGraph.HitBoneSimulationInfo
-// 0x0018 (0x0018 - 0x0000)
-struct FHitBoneSimulationInfo final
-{
-public:
-	class FString                                 BoneName;                                          // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPropagateToChildren;                              // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIncludeSelf;                                      // 0x0011(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableSimulation;                                 // 0x0012(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_13[0x1];                                       // 0x0013(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BlendFactor;                                       // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FHitBoneSimulationInfo;
-
-// ScriptStruct SeasunAnimGraph.HitPhyConfig
-// 0x00F8 (0x00F8 - 0x0000)
-struct FHitPhyConfig final
-{
-public:
-	TArray<struct FHitBoneSimulationInfo>         SimulationInfos;                                   // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FRuntimeFloatCurve                     WeightCurve;                                       // 0x0010(0x0088)(Edit, NativeAccessSpecifierPublic)
-	float                                         PhysicalCoolDownTime;                              // 0x0098(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9C[0x5C];                                      // 0x009C(0x005C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FHitPhyConfig;
-
-// ScriptStruct SeasunAnimGraph.HitReactCurveSequenceContainerMap
-// 0x0018 (0x0018 - 0x0000)
-struct FHitReactCurveSequenceContainerMap final
-{
-public:
-	EAnimMappingWeaponType                        WeaponType;                                        // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FHitReactCurveSequenceContainer> HitReactSequences;                                // 0x0008(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FHitReactCurveSequenceContainerMap;
 
 // ScriptStruct SeasunAnimGraph.SeasunBoneReference
 // 0x0008 (0x0008 - 0x0000)
@@ -1310,21 +1336,6 @@ public:
 };
 DUMPER7_ASSERTS_FCachedKawaiiPhysicsSetting;
 
-// ScriptStruct SeasunAnimGraph.CollisionLimitDataBase
-// 0x0050 (0x0050 - 0x0000)
-struct FCollisionLimitDataBase
-{
-public:
-	class FName                                   DrivingBoneName;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                OffsetLocation;                                    // 0x0008(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               OffsetRotation;                                    // 0x0014(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x0020(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  Rotation;                                          // 0x0030(0x0010)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FGuid                                  Guid;                                              // 0x0040(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCollisionLimitDataBase;
-
 // ScriptStruct SeasunAnimGraph.PlanarLimitData
 // 0x0010 (0x0060 - 0x0050)
 struct FPlanarLimitData final : public FCollisionLimitDataBase
@@ -1344,17 +1355,6 @@ public:
 	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCapsuleLimitData;
-
-// ScriptStruct SeasunAnimGraph.SphericalLimitData
-// 0x0010 (0x0060 - 0x0050)
-struct FSphericalLimitData final : public FCollisionLimitDataBase
-{
-public:
-	float                                         Radius;                                            // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESphericalLimitType                           LimitType;                                         // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_55[0xB];                                       // 0x0055(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSphericalLimitData;
 
 // ScriptStruct SeasunAnimGraph.MassPointCDInfo
 // 0x0008 (0x0008 - 0x0000)

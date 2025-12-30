@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
-#include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Game_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "UMG_structs.hpp"
 
 
 namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass umg_fight.umg_fight_C
-// 0x0310 (0x0960 - 0x0650)
+// 0x0318 (0x0968 - 0x0650)
 class Uumg_fight_C final : public UFightWidget
 {
 public:
@@ -102,19 +102,29 @@ public:
 	class Uuw_fight_msg_C*                        uw_fight_msg;                                      // 0x08A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class Uuw_fight_skill_aim_C*                  uw_fight_skill_aim;                                // 0x08A8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class Uuw_fight_special_ui_C*                 uw_fight_special_ui;                               // 0x08B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class Uumg_camerasetting_C*                   CameraSetting;                                     // 0x08B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class FString>                         Exclude;                                           // 0x08C0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          bHide;                                             // 0x08D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          bHideAll;                                          // 0x08D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_8D2[0x6];                                      // 0x08D2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class UWidget*, ESlateVisibility>        Cache;                                             // 0x08D8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	TArray<class FString>                         Exclude2;                                          // 0x0928(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<class FString>                         TempExclude;                                       // 0x0938(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FVector2D                              基础滑屏速度;                                      // 0x0948(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class Uumg_fight_C*                           Fight;                                             // 0x0950(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	bool                                          bResetJoyStick;                                    // 0x0958(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	class Uuw_fight_worldboss_score_C*            WorldBossScore;                                    // 0x08B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class Uumg_camerasetting_C*                   CameraSetting;                                     // 0x08C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class FString>                         Exclude;                                           // 0x08C8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          bHide;                                             // 0x08D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          bHideAll;                                          // 0x08D9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_8DA[0x6];                                      // 0x08DA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class UWidget*, ESlateVisibility>        Cache;                                             // 0x08E0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	TArray<class FString>                         Exclude2;                                          // 0x0930(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<class FString>                         TempExclude;                                       // 0x0940(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FVector2D                              基础滑屏速度;                                      // 0x0950(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class Uumg_fight_C*                           Fight;                                             // 0x0958(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	bool                                          bResetJoyStick;                                    // 0x0960(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
+	void Destruct();
+	bool CheckFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason);
+	bool GetFightPartShow(EFightWidgetPart InPart);
+	void SetFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason, bool bShow, bool bForce);
+	void UpdateInteractionProgress(float InValue);
+	void HideSkillSelector(int32 SkillIndex);
+	void UpdateControl();
+	void ShowOrHideCross(bool bShow);
+	void ShowSkillSelector(int32 SkillIndex);
 	void ExecuteUbergraph_umg_fight(int32 EntryPoint);
 	void UpdateControl__Overridden();
 	void CustomEvent_2(const struct FQTESwitchParam& SwitchParam);
@@ -129,18 +139,9 @@ public:
 	void IsContain(class UWidget* InWidget, bool* bContain);
 	void HideHP(bool bHide_0);
 	class FText Get_TxtOnlineNum_Text_0();
-	bool GetFightPartShow(EFightWidgetPart InPart);
-	bool CheckFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason);
-	void SetFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason, bool bShow, bool bForce);
-	void UpdateControl();
-	void HideSkillSelector(int32 SkillIndex);
-	void ShowSkillSelector(int32 SkillIndex);
-	void ShowOrHideCross(bool bShow);
-	void UpdateInteractionProgress(float InValue);
-	void Destruct();
 
-	class FString GetModuleName() const;
 	void WidgetGeometryReadyFrame(int32 Frame) const;
+	class FString GetModuleName() const;
 
 public:
 	static class UClass* StaticClass()

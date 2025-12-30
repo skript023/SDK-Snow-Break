@@ -496,6 +496,19 @@ public:
 };
 DUMPER7_ASSERTS_FGEBulletInfo;
 
+// ScriptStruct GameEx.GEAbilityCommonForceFeedback
+// 0x0028 (0x0028 - 0x0000)
+struct FGEAbilityCommonForceFeedback final
+{
+public:
+	struct FSoftObjectPath                        ForceFeedbackCurve;                                // 0x0000(0x0018)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BlendInTime;                                       // 0x0018(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BlendOutTime;                                      // 0x001C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ColdDownTime;                                      // 0x0020(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Priority;                                          // 0x0024(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGEAbilityCommonForceFeedback;
+
 // ScriptStruct GameEx.GEWeaponFireParam
 // 0x0158 (0x0158 - 0x0000)
 struct FGEWeaponFireParam final
@@ -541,19 +554,6 @@ public:
 	struct FSoftObjectPath                        CameraShakeCurvePath;                              // 0x0140(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGEWeaponFireParam;
-
-// ScriptStruct GameEx.GEAbilityCommonForceFeedback
-// 0x0028 (0x0028 - 0x0000)
-struct FGEAbilityCommonForceFeedback final
-{
-public:
-	struct FSoftObjectPath                        ForceFeedbackCurve;                                // 0x0000(0x0018)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BlendInTime;                                       // 0x0018(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BlendOutTime;                                      // 0x001C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ColdDownTime;                                      // 0x0020(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Priority;                                          // 0x0024(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGEAbilityCommonForceFeedback;
 
 // ScriptStruct GameEx.GEWeaponFollowInfo
 // 0x0078 (0x0078 - 0x0000)
@@ -778,6 +778,17 @@ public:
 	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FGEZBugRunSpeedModifierDataInfo;
+
+// ScriptStruct GameEx.WPCharItemUseInfo
+// 0x000C (0x000C - 0x0000)
+struct FWPCharItemUseInfo final
+{
+public:
+	int32                                         TeamID;                                            // 0x0000(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ItemId;                                            // 0x0004(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0008(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FWPCharItemUseInfo;
 
 // ScriptStruct GameEx.GEZBug_DamageRPCInfo
 // 0x0034 (0x0034 - 0x0000)

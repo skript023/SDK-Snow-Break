@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function uw_widgets_skilltag.uw_widgets_skilltag_C.BP_OnItemExpansionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_widgets_skilltag_C_BP_OnItemExpansionChanged final
+{
+public:
+	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_widgets_skilltag_C_BP_OnItemExpansionChanged;
+
 // Function uw_widgets_skilltag.uw_widgets_skilltag_C.BP_OnItemSelectionChanged
 // 0x0001 (0x0001 - 0x0000)
 struct uw_widgets_skilltag_C_BP_OnItemSelectionChanged final
@@ -44,15 +53,6 @@ public:
 	bool                                          K2Node_Event_bIsSelected;                          // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_widgets_skilltag_C_ExecuteUbergraph_uw_widgets_skilltag;
-
-// Function uw_widgets_skilltag.uw_widgets_skilltag_C.BP_OnItemExpansionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_widgets_skilltag_C_BP_OnItemExpansionChanged final
-{
-public:
-	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_widgets_skilltag_C_BP_OnItemExpansionChanged;
 
 // LuaFunction uw_widgets_skilltag.uw_widgets_skilltag_C.OnListItemObjectSet
 // 0x0008 (0x0008 - 0x0000)

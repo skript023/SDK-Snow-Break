@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass RecordSkillCostBuffer.RecordSkillCostBuffer_C
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0160 - 0x0160)
 class URecordSkillCostBuffer_C final : public URecordSkillCostBuffer
 {
 public:

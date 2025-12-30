@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass NormalEnergyRecover.NormalEnergyRecover_C
-// 0x0000 (0x0160 - 0x0160)
+// 0x0000 (0x0148 - 0x0148)
 class UNormalEnergyRecover_C final : public UNormalEnergyRecoverBase
 {
 public:

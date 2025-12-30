@@ -21,8 +21,8 @@ namespace SDK
 class Uuw_fight_revive_C final : public Uuw_fight_interactitem_C
 {
 public:
-	void BindExitInteractEvent();
 	void TriggerInteract();
+	void BindExitInteractEvent();
 	void OnConstruct();
 	void Destruct();
 

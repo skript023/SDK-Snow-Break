@@ -17,15 +17,15 @@
 namespace SDK
 {
 
-// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.BindKeyBoardOnSettingChange
+// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.BindExitInteractEvent
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_open_machine_item_C::BindKeyBoardOnSettingChange()
+void Uuw_fight_open_machine_item_C::BindExitInteractEvent()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_open_machine_item_C", "BindKeyBoardOnSettingChange");
+		Func = Class->GetFunction("uw_fight_open_machine_item_C", "BindExitInteractEvent");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -45,6 +45,44 @@ void Uuw_fight_open_machine_item_C::TriggerInteract()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_open_machine_item_C", "TriggerInteract");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.UpdateKeyShow
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_open_machine_item_C::UpdateKeyShow()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_open_machine_item_C", "UpdateKeyShow");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.BindKeyBoardOnSettingChange
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_open_machine_item_C::BindKeyBoardOnSettingChange()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_open_machine_item_C", "BindKeyBoardOnSettingChange");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -78,44 +116,6 @@ void Uuw_fight_open_machine_item_C::DontRequireNormalState(bool* ret)
 
 	if (ret != nullptr)
 		*ret = Parms.ret;
-}
-
-
-// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.BindExitInteractEvent
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_open_machine_item_C::BindExitInteractEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_open_machine_item_C", "BindExitInteractEvent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.UpdateKeyShow
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_open_machine_item_C::UpdateKeyShow()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_open_machine_item_C", "UpdateKeyShow");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 

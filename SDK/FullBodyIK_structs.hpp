@@ -99,6 +99,15 @@ public:
 };
 DUMPER7_ASSERTS_FFBIKDebugOption;
 
+// ScriptStruct FullBodyIK.RigUnit_FullbodyIK_WorkData
+// 0x0198 (0x0198 - 0x0000)
+struct alignas(0x08) FRigUnit_FullbodyIK_WorkData final
+{
+public:
+	uint8                                         Pad_0[0x198];                                      // 0x0000(0x0198)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_FullbodyIK_WorkData;
+
 // ScriptStruct FullBodyIK.FBIKEndEffector
 // 0x0040 (0x0040 - 0x0000)
 struct FFBIKEndEffector final
@@ -133,15 +142,6 @@ public:
 	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSolverInput;
-
-// ScriptStruct FullBodyIK.RigUnit_FullbodyIK_WorkData
-// 0x0198 (0x0198 - 0x0000)
-struct alignas(0x08) FRigUnit_FullbodyIK_WorkData final
-{
-public:
-	uint8                                         Pad_0[0x198];                                      // 0x0000(0x0198)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_FullbodyIK_WorkData;
 
 // ScriptStruct FullBodyIK.RigUnit_FullbodyIK
 // 0x0248 (0x02B0 - 0x0068)

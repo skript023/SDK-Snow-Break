@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// Function PhysXVehicles.VehicleAnimInstance.GetVehicle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AWheeledVehicle*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AWheeledVehicle* UVehicleAnimInstance::GetVehicle()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleAnimInstance", "GetVehicle");
-
-	Params::VehicleAnimInstance_GetVehicle Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function PhysXVehicles.WheeledVehicleMovementComponent.ServerUpdateState
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
 // Parameters:
@@ -602,6 +577,112 @@ bool UWheeledVehicleMovementComponent::GetUseAutoGears() const
 }
 
 
+// Function PhysXVehicles.SimpleWheeledVehicleMovementComponent.SetBrakeTorque
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   BrakeTorque                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   WheelIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USimpleWheeledVehicleMovementComponent::SetBrakeTorque(float BrakeTorque, int32 WheelIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleWheeledVehicleMovementComponent", "SetBrakeTorque");
+
+	Params::SimpleWheeledVehicleMovementComponent_SetBrakeTorque Parms{};
+
+	Parms.BrakeTorque = BrakeTorque;
+	Parms.WheelIndex = WheelIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PhysXVehicles.SimpleWheeledVehicleMovementComponent.SetDriveTorque
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   DriveTorque                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   WheelIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USimpleWheeledVehicleMovementComponent::SetDriveTorque(float DriveTorque, int32 WheelIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleWheeledVehicleMovementComponent", "SetDriveTorque");
+
+	Params::SimpleWheeledVehicleMovementComponent_SetDriveTorque Parms{};
+
+	Parms.DriveTorque = DriveTorque;
+	Parms.WheelIndex = WheelIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PhysXVehicles.SimpleWheeledVehicleMovementComponent.SetSteerAngle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   SteerAngle                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   WheelIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USimpleWheeledVehicleMovementComponent::SetSteerAngle(float SteerAngle, int32 WheelIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleWheeledVehicleMovementComponent", "SetSteerAngle");
+
+	Params::SimpleWheeledVehicleMovementComponent_SetSteerAngle Parms{};
+
+	Parms.SteerAngle = SteerAngle;
+	Parms.WheelIndex = WheelIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PhysXVehicles.VehicleAnimInstance.GetVehicle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AWheeledVehicle*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AWheeledVehicle* UVehicleAnimInstance::GetVehicle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleAnimInstance", "GetVehicle");
+
+	Params::VehicleAnimInstance_GetVehicle Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function PhysXVehicles.VehicleWheel.GetRotationAngle
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -699,87 +780,6 @@ bool UVehicleWheel::IsInAir() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function PhysXVehicles.SimpleWheeledVehicleMovementComponent.SetBrakeTorque
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   BrakeTorque                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   WheelIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USimpleWheeledVehicleMovementComponent::SetBrakeTorque(float BrakeTorque, int32 WheelIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleWheeledVehicleMovementComponent", "SetBrakeTorque");
-
-	Params::SimpleWheeledVehicleMovementComponent_SetBrakeTorque Parms{};
-
-	Parms.BrakeTorque = BrakeTorque;
-	Parms.WheelIndex = WheelIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PhysXVehicles.SimpleWheeledVehicleMovementComponent.SetDriveTorque
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   DriveTorque                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   WheelIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USimpleWheeledVehicleMovementComponent::SetDriveTorque(float DriveTorque, int32 WheelIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleWheeledVehicleMovementComponent", "SetDriveTorque");
-
-	Params::SimpleWheeledVehicleMovementComponent_SetDriveTorque Parms{};
-
-	Parms.DriveTorque = DriveTorque;
-	Parms.WheelIndex = WheelIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PhysXVehicles.SimpleWheeledVehicleMovementComponent.SetSteerAngle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   SteerAngle                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   WheelIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USimpleWheeledVehicleMovementComponent::SetSteerAngle(float SteerAngle, int32 WheelIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleWheeledVehicleMovementComponent", "SetSteerAngle");
-
-	Params::SimpleWheeledVehicleMovementComponent_SetSteerAngle Parms{};
-
-	Parms.SteerAngle = SteerAngle;
-	Parms.WheelIndex = WheelIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 }

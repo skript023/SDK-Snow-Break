@@ -37,26 +37,6 @@ void Uuw_fight_skill_panel_pc_C::ExecuteUbergraph_uw_fight_skill_panel_pc(int32 
 }
 
 
-// Function uw_fight_skill_panel_pc.uw_fight_skill_panel_pc_C.OnWeaponChange
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class APlayerWeapon*                    InWeapon                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_skill_panel_pc_C::OnWeaponChange(class APlayerWeapon* InWeapon)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_panel_pc_C", "OnWeaponChange");
-
-	Params::uw_fight_skill_panel_pc_C_OnWeaponChange Parms{};
-
-	Parms.InWeapon = InWeapon;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_skill_panel_pc.uw_fight_skill_panel_pc_C.ShowOrHideCancelBtn
 // (BlueprintEvent)
 // Parameters:
@@ -72,6 +52,26 @@ void Uuw_fight_skill_panel_pc_C::ShowOrHideCancelBtn(bool bShow)
 	Params::uw_fight_skill_panel_pc_C_ShowOrHideCancelBtn Parms{};
 
 	Parms.bShow = bShow;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_skill_panel_pc.uw_fight_skill_panel_pc_C.OnWeaponChange
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class APlayerWeapon*                    InWeapon                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_skill_panel_pc_C::OnWeaponChange(class APlayerWeapon* InWeapon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_panel_pc_C", "OnWeaponChange");
+
+	Params::uw_fight_skill_panel_pc_C_OnWeaponChange Parms{};
+
+	Parms.InWeapon = InWeapon;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

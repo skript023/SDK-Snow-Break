@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
-#include "Engine_structs.hpp"
 #include "Game_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
+#include "UMG_structs.hpp"
 
 
 namespace SDK
@@ -35,9 +35,9 @@ public:
 
 public:
 	void ExecuteUbergraph_uw_fight_cross5(int32 EntryPoint);
-	void K2_OnReloading(bool bIsReload, EWeaponType Type, bool bInterrupt, float AnimTime);
-	void Construct();
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void Construct();
+	void K2_OnReloading(bool bIsReload, EWeaponType Type, bool bInterrupt, float AnimTime);
 
 public:
 	static class UClass* StaticClass()

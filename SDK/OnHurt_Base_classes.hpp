@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -27,20 +27,20 @@ public:
 	bool                                          bCheckSummon;                                      // 0x0111(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void CondtionCacheTarget(class UAbilityComponentBase* InCaster, class UAbilityComponentBase* InTarget);
-	void OnReceiveNotify(const struct FApplyDamageResultData& Damage_Result, bool* bCastAllowed);
 	void K2_InitCondition();
 	void ReceiverBind(class UAbilityComponentBase* BindTarget);
+	void ApplyDamage(const struct FApplyDamageResultData& DamageResultData);
+	void UnbindNotifySummon(class AGameCharacter* InCharacter);
+	void K2_UnbindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
+	void CondtionCacheTarget(class UAbilityComponentBase* InCaster, class UAbilityComponentBase* InTarget);
+	void OnReceiveNotify(const struct FApplyDamageResultData& Damage_Result, bool* bCastAllowed);
 	void ReceiverUnbind(class UAbilityComponentBase* BindTarget);
 	void AttackerBind(class UAbilityComponentBase* BindTarget);
 	void AttackerUnbind(class UAbilityComponentBase* BindTarget);
 	void ReceiveDamage(const struct FApplyDamageResultData& DamageResultData);
-	void ApplyDamage(const struct FApplyDamageResultData& DamageResultData);
 	void OnNotifySummon(class AGameCharacter* Summon);
 	void BindNotifySummon(class AGameCharacter* InCharacter);
-	void UnbindNotifySummon(class AGameCharacter* InCharacter);
 	void K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
-	void K2_UnbindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void ExecuteUbergraph_OnHurt_Base(int32 EntryPoint);
 
 public:

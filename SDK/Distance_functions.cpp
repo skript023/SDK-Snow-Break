@@ -24,7 +24,7 @@ namespace SDK
 // TArray<struct FQueryResult>&            Results                                                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 // bool                                    Far                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    UseNearestDistance                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FQueryResult*                    Result                                                 (Parm, OutParm, ContainsInstancedReference)
+// struct FQueryResult*                    Result                                                 (Parm, OutParm, NoDestructor, ContainsInstancedReference)
 
 void UDistance_C::FindMinorMaxDistanceResult(const struct FVector& Center, TArray<struct FQueryResult>& Results, bool Far, bool UseNearestDistance, struct FQueryResult* Result) const
 {

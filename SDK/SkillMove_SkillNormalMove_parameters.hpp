@@ -17,40 +17,6 @@
 namespace SDK::Params
 {
 
-// LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveTickCheck
-// 0x0004 (0x0004 - 0x0000)
-struct SkillMove_SkillNormalMove_C_OnMoveTickCheck final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SkillMove_SkillNormalMove_C_OnMoveTickCheck;
-
-// LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveEnd
-// 0x0008 (0x0008 - 0x0000)
-struct SkillMove_SkillNormalMove_C_OnMoveEnd final
-{
-public:
-	class UBaseMovementComponent*                 Movement;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SkillMove_SkillNormalMove_C_OnMoveEnd;
-
-// Function SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnGetAssetPath
-// 0x0088 (0x0088 - 0x0000)
-struct SkillMove_SkillNormalMove_C_OnGetAssetPath final
-{
-public:
-	TArray<struct FParamInfo>                     InParamInfo;                                       // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<int32>                                 CharacterIDs;                                      // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<int32>                                 SkillIDs;                                          // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<int32>                                 ModifierIDs;                                       // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<int32>                                 EmitterIDs;                                        // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FSoftObjectPath>                ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ReturnParm)
-	struct FSoftObjectPath                        CallFunc_MakeSoftObjectPath_ReturnValue;           // 0x0060(0x0018)(ZeroConstructor, HasGetValueTypeHash)
-	TArray<struct FSoftObjectPath>                K2Node_MakeArray_Array;                            // 0x0078(0x0010)(ReferenceParm)
-};
-DUMPER7_ASSERTS_SkillMove_SkillNormalMove_C_OnGetAssetPath;
-
 // LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveTick
 // 0x0018 (0x0018 - 0x0000)
 struct SkillMove_SkillNormalMove_C_OnMoveTick final
@@ -83,6 +49,40 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SkillMove_SkillNormalMove_C_IsUsedToAddVelocityInsteadOverride;
+
+// LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveEnd
+// 0x0008 (0x0008 - 0x0000)
+struct SkillMove_SkillNormalMove_C_OnMoveEnd final
+{
+public:
+	class UBaseMovementComponent*                 Movement;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SkillMove_SkillNormalMove_C_OnMoveEnd;
+
+// LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveTickCheck
+// 0x0004 (0x0004 - 0x0000)
+struct SkillMove_SkillNormalMove_C_OnMoveTickCheck final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SkillMove_SkillNormalMove_C_OnMoveTickCheck;
+
+// Function SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnGetAssetPath
+// 0x0088 (0x0088 - 0x0000)
+struct SkillMove_SkillNormalMove_C_OnGetAssetPath final
+{
+public:
+	TArray<struct FParamInfo>                     InParamInfo;                                       // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<int32>                                 CharacterIDs;                                      // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<int32>                                 SkillIDs;                                          // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<int32>                                 ModifierIDs;                                       // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<int32>                                 EmitterIDs;                                        // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FSoftObjectPath>                ReturnValue;                                       // 0x0050(0x0010)(Parm, OutParm, ReturnParm)
+	struct FSoftObjectPath                        CallFunc_MakeSoftObjectPath_ReturnValue;           // 0x0060(0x0018)(ZeroConstructor, HasGetValueTypeHash)
+	TArray<struct FSoftObjectPath>                K2Node_MakeArray_Array;                            // 0x0078(0x0010)(ReferenceParm)
+};
+DUMPER7_ASSERTS_SkillMove_SkillNormalMove_C_OnGetAssetPath;
 
 // Function SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

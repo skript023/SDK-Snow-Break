@@ -616,6 +616,16 @@ public:
 };
 DUMPER7_ASSERTS_GameTaskActor_GetGameTaskActor;
 
+// Function GameTask.GameTaskActor.AppendGameTaskCache
+// 0x0018 (0x0018 - 0x0000)
+struct GameTaskActor_AppendGameTaskCache final
+{
+public:
+	class FString                                 TaskPath;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UGameTask*                              InLoadedObject;                                    // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameTaskActor_AppendGameTaskCache;
+
 // Function GameTask.GameTaskActor.ApplyMoveCamera
 // 0x0020 (0x0020 - 0x0000)
 struct GameTaskActor_ApplyMoveCamera final
@@ -1436,6 +1446,17 @@ public:
 };
 DUMPER7_ASSERTS_GameTaskActor_UpdateFightLog_PlotLevel;
 
+// Function GameTask.GameTaskActor.CheckChildGameTaskExist
+// 0x0018 (0x0018 - 0x0000)
+struct GameTaskActor_CheckChildGameTaskExist final
+{
+public:
+	class FString                                 TaskPath;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_GameTaskActor_CheckChildGameTaskExist;
+
 // Function GameTask.GameTaskActor.GetExactLevelTotalTime
 // 0x0004 (0x0004 - 0x0000)
 struct GameTaskActor_GetExactLevelTotalTime final
@@ -1642,6 +1663,15 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GameTaskActor_IsWaveControlLevel;
+
+// Function GameTask.GameTaskActor.LevelAlwaysShowSuccess
+// 0x0001 (0x0001 - 0x0000)
+struct GameTaskActor_LevelAlwaysShowSuccess final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameTaskActor_LevelAlwaysShowSuccess;
 
 // Function GameTask.GameTaskComposite_Flow.GetAllExecuteNodes
 // 0x0018 (0x0018 - 0x0000)

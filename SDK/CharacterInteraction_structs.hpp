@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "PhysicsControl_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "PhysicsControl_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 
 
@@ -389,16 +389,6 @@ public:
 };
 DUMPER7_ASSERTS_FInteractionPhysicsControlData;
 
-// ScriptStruct CharacterInteraction.IKFixRelativeTransformData
-// 0x0010 (0x0010 - 0x0000)
-struct FIKFixRelativeTransformData final
-{
-public:
-	class FName                                   BoneName;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   RefBoneName;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FIKFixRelativeTransformData;
-
 // ScriptStruct CharacterInteraction.LevelSequenceMapping
 // 0x0010 (0x0018 - 0x0008)
 struct FLevelSequenceMapping final : public FTableRowBase
@@ -409,16 +399,6 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FLevelSequenceMapping;
-
-// ScriptStruct CharacterInteraction.InteractionCollisionEventData
-// 0x0020 (0x0020 - 0x0000)
-struct FInteractionCollisionEventData final
-{
-public:
-	TArray<int32>                                 ForbiddenCollisionIDs;                             // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 EnabledCollisionIDs;                               // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInteractionCollisionEventData;
 
 // ScriptStruct CharacterInteraction.InteractionBlendSpaceData
 // 0x0018 (0x0018 - 0x0000)
@@ -470,6 +450,16 @@ public:
 };
 DUMPER7_ASSERTS_FJointIKTransformData;
 
+// ScriptStruct CharacterInteraction.IKFixRelativeTransformData
+// 0x0010 (0x0010 - 0x0000)
+struct FIKFixRelativeTransformData final
+{
+public:
+	class FName                                   BoneName;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   RefBoneName;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FIKFixRelativeTransformData;
+
 // ScriptStruct CharacterInteraction.IKFixEffectorLocationAndRotation
 // 0x0050 (0x0050 - 0x0000)
 struct FIKFixEffectorLocationAndRotation final
@@ -495,6 +485,16 @@ public:
 	TMap<class FName, struct FIKFixEffectorLocationAndRotation> EffectorLocationAndRotations;        // 0x0140(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FInteractionIKFixData;
+
+// ScriptStruct CharacterInteraction.InteractionCollisionEventData
+// 0x0020 (0x0020 - 0x0000)
+struct FInteractionCollisionEventData final
+{
+public:
+	TArray<int32>                                 ForbiddenCollisionIDs;                             // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 EnabledCollisionIDs;                               // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInteractionCollisionEventData;
 
 // ScriptStruct CharacterInteraction.WeightedShowSequence
 // 0x0030 (0x0030 - 0x0000)

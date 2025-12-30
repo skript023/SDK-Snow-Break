@@ -17,113 +17,35 @@
 namespace SDK
 {
 
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_7
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.ExecuteUbergraph_uw_fight_rogue3d_switch03
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_7()
+void Uuw_fight_rogue3d_switch03_C::ExecuteUbergraph_uw_fight_rogue3d_switch03(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_7");
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "ExecuteUbergraph_uw_fight_rogue3d_switch03");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::uw_fight_rogue3d_switch03_C_ExecuteUbergraph_uw_fight_rogue3d_switch03 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_5
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_5()
+void Uuw_fight_rogue3d_switch03_C::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_5");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_4
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_4()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_4");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_3
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_3()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_3");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_2
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_2()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_2");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_1
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_1");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent_0
-// (BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_rogue3d_switch03_C::SequenceEvent_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent_0");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent_2
-// (BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_rogue3d_switch03_C::SequenceEvent_2()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent_2");
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "Destruct");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -143,57 +65,29 @@ void Uuw_fight_rogue3d_switch03_C::OnInitialized()
 }
 
 
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.Destruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent_3
+// (BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_rogue3d_switch03_C::Destruct()
+void Uuw_fight_rogue3d_switch03_C::SequenceEvent_3()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "Destruct");
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent_3");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_6
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent_2
+// (BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_6()
+void Uuw_fight_rogue3d_switch03_C::SequenceEvent_2()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_6");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_0
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_0");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.EndPlayEffect
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_rogue3d_switch03_C::EndPlayEffect()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "EndPlayEffect");
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent_2");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -213,37 +107,143 @@ void Uuw_fight_rogue3d_switch03_C::SequenceEvent_1()
 }
 
 
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent_3
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent_0
 // (BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_rogue3d_switch03_C::SequenceEvent_3()
+void Uuw_fight_rogue3d_switch03_C::SequenceEvent_0()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent_3");
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent_0");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.ExecuteUbergraph_uw_fight_rogue3d_switch03
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.EndPlayEffect
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_rogue3d_switch03_C::ExecuteUbergraph_uw_fight_rogue3d_switch03(int32 EntryPoint)
+void Uuw_fight_rogue3d_switch03_C::EndPlayEffect()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "ExecuteUbergraph_uw_fight_rogue3d_switch03");
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "EndPlayEffect");
 
-	Params::uw_fight_rogue3d_switch03_C_ExecuteUbergraph_uw_fight_rogue3d_switch03 Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_0
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_0()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_0");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_1
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_1");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_2
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_2");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_3
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_3()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_3");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_4
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_4()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_4");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_5
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_5");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_6
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_6()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_6");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_rogue3d_switch03.uw_fight_rogue3d_switch03_C.SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_7
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_rogue3d_switch03_C::SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_7()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_rogue3d_switch03_C", "SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch03_7");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

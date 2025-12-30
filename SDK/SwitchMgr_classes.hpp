@@ -31,16 +31,16 @@ public:
 	bool                                          IsWaitSkillRelease;                                // 0x0254(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void OnSwitchEvent__Overridden();
-	void SwitchForce__Overridden();
-	void ReceiveTick__Overridden(float DeltaSeconds);
-	void OnBind__Overridden();
 	void ExecuteUbergraph_SwitchMgr(int32 EntryPoint);
+	void ReceiveTick__Overridden(float DeltaSeconds);
+	void SwitchForce__Overridden();
+	void OnBind__Overridden();
+	void OnSwitchEvent__Overridden();
+	void SwitchForce();
 	void OnSwitchEvent();
+	void ReceiveTick(float DeltaSeconds);
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void OnBind();
-	void SwitchForce();
-	void ReceiveTick(float DeltaSeconds);
 	void ReceiveBeginPlay();
 
 	class FString GetModuleName() const;

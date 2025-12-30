@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "MovieScene_classes.hpp"
 #include "Engine_classes.hpp"
 #include "ProceduralMeshComponent_classes.hpp"
 #include "SpinePlugin_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "UMG_classes.hpp"
 
 

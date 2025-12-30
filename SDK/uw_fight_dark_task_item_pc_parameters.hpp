@@ -14,24 +14,18 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_dark_task_item_pc.uw_fight_dark_task_item_pc_C.SetState
-// 0x0002 (0x0002 - 0x0000)
-struct uw_fight_dark_task_item_pc_C_SetState final
+// Function uw_fight_dark_task_item_pc.uw_fight_dark_task_item_pc_C.ExecuteUbergraph_uw_fight_dark_task_item_pc
+// 0x0018 (0x0018 - 0x0000)
+struct uw_fight_dark_task_item_pc_C_ExecuteUbergraph_uw_fight_dark_task_item_pc final
 {
 public:
-	uint8                                         InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                K2Node_Event_ListItemObject;                       // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_bIsExpanded;                          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_Event_bIsSelected;                          // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_uw_fight_dark_task_item_pc_C_SetState;
-
-// Function uw_fight_dark_task_item_pc.uw_fight_dark_task_item_pc_C.BP_OnItemExpansionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_dark_task_item_pc_C_BP_OnItemExpansionChanged final
-{
-public:
-	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_dark_task_item_pc_C_BP_OnItemExpansionChanged;
+DUMPER7_ASSERTS_uw_fight_dark_task_item_pc_C_ExecuteUbergraph_uw_fight_dark_task_item_pc;
 
 // Function uw_fight_dark_task_item_pc.uw_fight_dark_task_item_pc_C.OnListItemObjectSet__Overridden
 // 0x0008 (0x0008 - 0x0000)
@@ -51,18 +45,24 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_dark_task_item_pc_C_BP_OnItemSelectionChanged;
 
-// Function uw_fight_dark_task_item_pc.uw_fight_dark_task_item_pc_C.ExecuteUbergraph_uw_fight_dark_task_item_pc
-// 0x0018 (0x0018 - 0x0000)
-struct uw_fight_dark_task_item_pc_C_ExecuteUbergraph_uw_fight_dark_task_item_pc final
+// Function uw_fight_dark_task_item_pc.uw_fight_dark_task_item_pc_C.BP_OnItemExpansionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_dark_task_item_pc_C_BP_OnItemExpansionChanged final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                K2Node_Event_ListItemObject;                       // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_bIsExpanded;                          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_Event_bIsSelected;                          // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_uw_fight_dark_task_item_pc_C_ExecuteUbergraph_uw_fight_dark_task_item_pc;
+DUMPER7_ASSERTS_uw_fight_dark_task_item_pc_C_BP_OnItemExpansionChanged;
+
+// Function uw_fight_dark_task_item_pc.uw_fight_dark_task_item_pc_C.SetState
+// 0x0002 (0x0002 - 0x0000)
+struct uw_fight_dark_task_item_pc_C_SetState final
+{
+public:
+	uint8                                         InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_dark_task_item_pc_C_SetState;
 
 // LuaFunction uw_fight_dark_task_item_pc.uw_fight_dark_task_item_pc_C.OnListItemObjectSet
 // 0x0008 (0x0008 - 0x0000)

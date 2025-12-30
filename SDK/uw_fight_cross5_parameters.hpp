@@ -36,6 +36,16 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_cross5_C_ExecuteUbergraph_uw_fight_cross5;
 
+// Function uw_fight_cross5.uw_fight_cross5_C.Tick
+// 0x003C (0x003C - 0x0000)
+struct uw_fight_cross5_C_Tick final
+{
+public:
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_cross5_C_Tick;
+
 // Function uw_fight_cross5.uw_fight_cross5_C.K2_OnReloading
 // 0x0008 (0x0008 - 0x0000)
 struct uw_fight_cross5_C_K2_OnReloading final
@@ -48,16 +58,6 @@ public:
 	float                                         AnimTime;                                          // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_cross5_C_K2_OnReloading;
-
-// Function uw_fight_cross5.uw_fight_cross5_C.Tick
-// 0x003C (0x003C - 0x0000)
-struct uw_fight_cross5_C_Tick final
-{
-public:
-	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_cross5_C_Tick;
 
 }
 

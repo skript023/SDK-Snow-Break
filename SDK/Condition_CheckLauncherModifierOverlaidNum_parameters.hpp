@@ -49,19 +49,6 @@ public:
 };
 DUMPER7_ASSERTS_Condition_CheckLauncherModifierOverlaidNum_C_CheckOverlaidRange;
 
-// Function Condition_CheckLauncherModifierOverlaidNum.Condition_CheckLauncherModifierOverlaidNum_C.ExecuteUbergraph_Condition_CheckLauncherModifierOverlaidNum
-// 0x0010 (0x0010 - 0x0000)
-struct Condition_CheckLauncherModifierOverlaidNum_C_ExecuteUbergraph_Condition_CheckLauncherModifierOverlaidNum final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetParamintValue_ReturnValue;             // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetParamboolValue_ReturnValue;            // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_GetParamintValue_ReturnValue_1;           // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Condition_CheckLauncherModifierOverlaidNum_C_ExecuteUbergraph_Condition_CheckLauncherModifierOverlaidNum;
-
 // Function Condition_CheckLauncherModifierOverlaidNum.Condition_CheckLauncherModifierOverlaidNum_C.K2_CheckCondition
 // 0x0050 (0x0050 - 0x0000)
 struct Condition_CheckLauncherModifierOverlaidNum_C_K2_CheckCondition final
@@ -88,6 +75,19 @@ public:
 	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x004D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_Condition_CheckLauncherModifierOverlaidNum_C_K2_CheckCondition;
+
+// Function Condition_CheckLauncherModifierOverlaidNum.Condition_CheckLauncherModifierOverlaidNum_C.ExecuteUbergraph_Condition_CheckLauncherModifierOverlaidNum
+// 0x0010 (0x0010 - 0x0000)
+struct Condition_CheckLauncherModifierOverlaidNum_C_ExecuteUbergraph_Condition_CheckLauncherModifierOverlaidNum final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetParamintValue_ReturnValue;             // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetParamboolValue_ReturnValue;            // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_GetParamintValue_ReturnValue_1;           // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Condition_CheckLauncherModifierOverlaidNum_C_ExecuteUbergraph_Condition_CheckLauncherModifierOverlaidNum;
 
 }
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -132,11 +132,11 @@ public:
 	void OnModifyStateChange(const bool bModify);
 	void OnQTEStateChange(bool bActive);
 	void PreConstruct(bool IsDesignTime);
-	void K2_PlayCDAnim(bool bPlay);
-	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
 	void Construct();
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
 	void OnSkillStrengthening(bool bStart);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void K2_PlayCDAnim(bool bPlay);
 	void Destruct();
 
 	class FString GetModuleName() const;

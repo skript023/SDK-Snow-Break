@@ -126,7 +126,7 @@ DUMPER7_ASSERTS_IBlindageInteract;
 
 // Class Blindage.Blindage
 // 0x01B8 (0x03E0 - 0x0228)
-class ABlindage : public AActor
+class ABlindage final : public AActor
 {
 public:
 	uint8                                         Pad_228[0xA8];                                     // 0x0228(0x00A8)(Fixing Size After Last Property [ Dumper-7 ])

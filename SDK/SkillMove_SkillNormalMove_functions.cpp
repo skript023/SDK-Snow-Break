@@ -17,92 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveTickCheck
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkillMove_SkillNormalMove_C::OnMoveTickCheck(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_SkillNormalMove_C", "OnMoveTickCheck");
-
-	Params::SkillMove_SkillNormalMove_C_OnMoveTickCheck Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveEnd
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkillMove_SkillNormalMove_C::OnMoveEnd(class UBaseMovementComponent* Movement)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_SkillNormalMove_C", "OnMoveEnd");
-
-	Params::SkillMove_SkillNormalMove_C_OnMoveEnd Parms{};
-
-	Parms.Movement = Movement;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnGetAssetPath
-// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TArray<struct FParamInfo>&        InParamInfo                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<int32>&                          CharacterIDs                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<int32>&                          SkillIDs                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<int32>&                          ModifierIDs                                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<int32>&                          EmitterIDs                                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<struct FSoftObjectPath>          ReturnValue                                            (Parm, OutParm, ReturnParm)
-
-TArray<struct FSoftObjectPath> USkillMove_SkillNormalMove_C::OnGetAssetPath(const TArray<struct FParamInfo>& InParamInfo, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_SkillNormalMove_C", "OnGetAssetPath");
-
-	Params::SkillMove_SkillNormalMove_C_OnGetAssetPath Parms{};
-
-	Parms.InParamInfo = std::move(InParamInfo);
-	Parms.CharacterIDs = std::move(CharacterIDs);
-	Parms.SkillIDs = std::move(SkillIDs);
-	Parms.ModifierIDs = std::move(ModifierIDs);
-	Parms.EmitterIDs = std::move(EmitterIDs);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	CharacterIDs = std::move(Parms.CharacterIDs);
-	SkillIDs = std::move(Parms.SkillIDs);
-	ModifierIDs = std::move(Parms.ModifierIDs);
-	EmitterIDs = std::move(Parms.EmitterIDs);
-
-	return Parms.ReturnValue;
-}
-
-
 // LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveTick
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -183,6 +97,92 @@ bool USkillMove_SkillNormalMove_C::IsUsedToAddVelocityInsteadOverride()
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveEnd
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkillMove_SkillNormalMove_C::OnMoveEnd(class UBaseMovementComponent* Movement)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillMove_SkillNormalMove_C", "OnMoveEnd");
+
+	Params::SkillMove_SkillNormalMove_C_OnMoveEnd Parms{};
+
+	Parms.Movement = Movement;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveTickCheck
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkillMove_SkillNormalMove_C::OnMoveTickCheck(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillMove_SkillNormalMove_C", "OnMoveTickCheck");
+
+	Params::SkillMove_SkillNormalMove_C_OnMoveTickCheck Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnGetAssetPath
+// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TArray<struct FParamInfo>&        InParamInfo                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<int32>&                          CharacterIDs                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<int32>&                          SkillIDs                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<int32>&                          ModifierIDs                                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<int32>&                          EmitterIDs                                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSoftObjectPath>          ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+TArray<struct FSoftObjectPath> USkillMove_SkillNormalMove_C::OnGetAssetPath(const TArray<struct FParamInfo>& InParamInfo, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillMove_SkillNormalMove_C", "OnGetAssetPath");
+
+	Params::SkillMove_SkillNormalMove_C_OnGetAssetPath Parms{};
+
+	Parms.InParamInfo = std::move(InParamInfo);
+	Parms.CharacterIDs = std::move(CharacterIDs);
+	Parms.SkillIDs = std::move(SkillIDs);
+	Parms.ModifierIDs = std::move(ModifierIDs);
+	Parms.EmitterIDs = std::move(EmitterIDs);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	CharacterIDs = std::move(Parms.CharacterIDs);
+	SkillIDs = std::move(Parms.SkillIDs);
+	ModifierIDs = std::move(Parms.ModifierIDs);
+	EmitterIDs = std::move(Parms.EmitterIDs);
 
 	return Parms.ReturnValue;
 }

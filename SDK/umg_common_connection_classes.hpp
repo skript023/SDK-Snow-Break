@@ -32,8 +32,8 @@ public:
 public:
 	void Destruct();
 
-	void WidgetGeometryReadyFrame(int32 Frame) const;
 	class FString GetModuleName() const;
+	void WidgetGeometryReadyFrame(int32 Frame) const;
 
 public:
 	static class UClass* StaticClass()

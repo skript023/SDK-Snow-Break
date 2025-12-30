@@ -17,63 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction uw_fight_openbox_item.uw_fight_openbox_item_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_openbox_item_C::Destruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_openbox_item_C", "Destruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_openbox_item.uw_fight_openbox_item_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_openbox_item_C::OnConstruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_openbox_item_C", "OnConstruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_openbox_item.uw_fight_openbox_item_C.InitGamepadLongPressUI
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_openbox_item_C::InitGamepadLongPressUI()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_openbox_item_C", "InitGamepadLongPressUI");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_openbox_item.uw_fight_openbox_item_C.TriggerInteract
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
@@ -83,25 +26,6 @@ void Uuw_fight_openbox_item_C::TriggerInteract()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_openbox_item_C", "TriggerInteract");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_openbox_item.uw_fight_openbox_item_C.BindExitInteractEvent
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_openbox_item_C::BindExitInteractEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_openbox_item_C", "BindExitInteractEvent");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -131,6 +55,25 @@ void Uuw_fight_openbox_item_C::UpdateKeyShow()
 }
 
 
+// LuaFunction uw_fight_openbox_item.uw_fight_openbox_item_C.BindExitInteractEvent
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_openbox_item_C::BindExitInteractEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_openbox_item_C", "BindExitInteractEvent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_openbox_item.uw_fight_openbox_item_C.BindKeyBoardOnSettingChange
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
@@ -140,6 +83,63 @@ void Uuw_fight_openbox_item_C::BindKeyBoardOnSettingChange()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_openbox_item_C", "BindKeyBoardOnSettingChange");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_openbox_item.uw_fight_openbox_item_C.InitGamepadLongPressUI
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_openbox_item_C::InitGamepadLongPressUI()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_openbox_item_C", "InitGamepadLongPressUI");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_openbox_item.uw_fight_openbox_item_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_openbox_item_C::OnConstruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_openbox_item_C", "OnConstruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_openbox_item.uw_fight_openbox_item_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_openbox_item_C::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_openbox_item_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

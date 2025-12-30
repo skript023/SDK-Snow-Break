@@ -17,6 +17,236 @@
 namespace SDK
 {
 
+// Function DarkZone.DarkZoneSpecialLogic.AddGZ
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 ADarkZoneSpecialLogic::AddGZ(int32 Val)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DarkZoneSpecialLogic", "AddGZ");
+
+	Params::DarkZoneSpecialLogic_AddGZ Parms{};
+
+	Parms.Val = Val;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function DarkZone.DarkZoneSpecialLogic.GetGZ
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 ADarkZoneSpecialLogic::GetGZ()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DarkZoneSpecialLogic", "GetGZ");
+
+	Params::DarkZoneSpecialLogic_GetGZ Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function DarkZone.DarkZoneSpecialLogic.GetGZLevel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 ADarkZoneSpecialLogic::GetGZLevel()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DarkZoneSpecialLogic", "GetGZLevel");
+
+	Params::DarkZoneSpecialLogic_GetGZLevel Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function DarkZone.DarkZoneSpecialLogic.GetGZMax
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 ADarkZoneSpecialLogic::GetGZMax()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DarkZoneSpecialLogic", "GetGZMax");
+
+	Params::DarkZoneSpecialLogic_GetGZMax Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function DarkZone.DarkZoneSpecialLogic.GetGZSpeed
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 ADarkZoneSpecialLogic::GetGZSpeed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DarkZoneSpecialLogic", "GetGZSpeed");
+
+	Params::DarkZoneSpecialLogic_GetGZSpeed Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function DarkZone.DarkZoneSpecialLogic.SetGZ
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const int32                             Val                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ADarkZoneSpecialLogic::SetGZ(const int32 Val)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DarkZoneSpecialLogic", "SetGZ");
+
+	Params::DarkZoneSpecialLogic_SetGZ Parms{};
+
+	Parms.Val = Val;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function DarkZone.DarkZoneSpecialLogic.SetGZLevelAndSpeed
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const int32                             Level                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Speed                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ADarkZoneSpecialLogic::SetGZLevelAndSpeed(const int32 Level, const int32 Speed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DarkZoneSpecialLogic", "SetGZLevelAndSpeed");
+
+	Params::DarkZoneSpecialLogic_SetGZLevelAndSpeed Parms{};
+
+	Parms.Level = Level;
+	Parms.Speed = Speed;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function DarkZone.DarkZoneSpecialLogic.SetGZMax
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const int32                             Val                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ADarkZoneSpecialLogic::SetGZMax(const int32 Val)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DarkZoneSpecialLogic", "SetGZMax");
+
+	Params::DarkZoneSpecialLogic_SetGZMax Parms{};
+
+	Parms.Val = Val;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function DarkZone.DarkZoneSpecialLogic.SetGZRate
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             Val                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ADarkZoneSpecialLogic::SetGZRate(const float Val)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DarkZoneSpecialLogic", "SetGZRate");
+
+	Params::DarkZoneSpecialLogic_SetGZRate Parms{};
+
+	Parms.Val = Val;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function DarkZone.DarkZoneActorInterface.InitActor
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -41,6 +271,44 @@ void IDarkZoneActorInterface::InitActor(int32 InActorId, int32 State, const TArr
 	Func->FunctionFlags |= 0x400;
 
 	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function DarkZone.SlopeNavLinkProxy.AutoFill
+// (Final, Native, Public)
+
+void ASlopeNavLinkProxy::AutoFill()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SlopeNavLinkProxy", "AutoFill");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function DarkZone.SlopeNavLinkProxy.Clear
+// (Final, Native, Public)
+
+void ASlopeNavLinkProxy::Clear()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SlopeNavLinkProxy", "Clear");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -299,236 +567,6 @@ struct FVector ADarkZonePatrolArea::GetRandomPos()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function DarkZone.DarkZoneSpecialLogic.AddGZ
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 ADarkZoneSpecialLogic::AddGZ(int32 Val)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DarkZoneSpecialLogic", "AddGZ");
-
-	Params::DarkZoneSpecialLogic_AddGZ Parms{};
-
-	Parms.Val = Val;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function DarkZone.DarkZoneSpecialLogic.GetGZ
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 ADarkZoneSpecialLogic::GetGZ()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DarkZoneSpecialLogic", "GetGZ");
-
-	Params::DarkZoneSpecialLogic_GetGZ Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function DarkZone.DarkZoneSpecialLogic.GetGZLevel
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 ADarkZoneSpecialLogic::GetGZLevel()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DarkZoneSpecialLogic", "GetGZLevel");
-
-	Params::DarkZoneSpecialLogic_GetGZLevel Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function DarkZone.DarkZoneSpecialLogic.GetGZMax
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 ADarkZoneSpecialLogic::GetGZMax()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DarkZoneSpecialLogic", "GetGZMax");
-
-	Params::DarkZoneSpecialLogic_GetGZMax Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function DarkZone.DarkZoneSpecialLogic.GetGZSpeed
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 ADarkZoneSpecialLogic::GetGZSpeed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DarkZoneSpecialLogic", "GetGZSpeed");
-
-	Params::DarkZoneSpecialLogic_GetGZSpeed Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function DarkZone.DarkZoneSpecialLogic.SetGZ
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const int32                             Val                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ADarkZoneSpecialLogic::SetGZ(const int32 Val)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DarkZoneSpecialLogic", "SetGZ");
-
-	Params::DarkZoneSpecialLogic_SetGZ Parms{};
-
-	Parms.Val = Val;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function DarkZone.DarkZoneSpecialLogic.SetGZLevelAndSpeed
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const int32                             Level                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const int32                             Speed                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ADarkZoneSpecialLogic::SetGZLevelAndSpeed(const int32 Level, const int32 Speed)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DarkZoneSpecialLogic", "SetGZLevelAndSpeed");
-
-	Params::DarkZoneSpecialLogic_SetGZLevelAndSpeed Parms{};
-
-	Parms.Level = Level;
-	Parms.Speed = Speed;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function DarkZone.DarkZoneSpecialLogic.SetGZMax
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const int32                             Val                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ADarkZoneSpecialLogic::SetGZMax(const int32 Val)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DarkZoneSpecialLogic", "SetGZMax");
-
-	Params::DarkZoneSpecialLogic_SetGZMax Parms{};
-
-	Parms.Val = Val;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function DarkZone.DarkZoneSpecialLogic.SetGZRate
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const float                             Val                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ADarkZoneSpecialLogic::SetGZRate(const float Val)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DarkZoneSpecialLogic", "SetGZRate");
-
-	Params::DarkZoneSpecialLogic_SetGZRate Parms{};
-
-	Parms.Val = Val;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -1072,44 +1110,6 @@ void ADarkZoneTaskRegionExit::OnExitRegion()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("DarkZoneTaskRegionExit", "OnExitRegion");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function DarkZone.SlopeNavLinkProxy.AutoFill
-// (Final, Native, Public)
-
-void ASlopeNavLinkProxy::AutoFill()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SlopeNavLinkProxy", "AutoFill");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function DarkZone.SlopeNavLinkProxy.Clear
-// (Final, Native, Public)
-
-void ASlopeNavLinkProxy::Clear()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SlopeNavLinkProxy", "Clear");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

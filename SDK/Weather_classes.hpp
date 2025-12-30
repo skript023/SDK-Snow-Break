@@ -24,9 +24,8 @@ namespace SDK
 class URainConfig final : public UPrimaryDataAsset
 {
 public:
-	struct FRainParameter                         Parameter;                                         // 0x0030(0x00D8)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSkyParameter                          SkyParameter;                                      // 0x0108(0x009C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A4[0x4];                                      // 0x01A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRainParameter                         Parameter;                                         // 0x0030(0x00DC)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSkyParameter                          SkyParameter;                                      // 0x010C(0x009C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	class UCurveFloat*                            BlendInCurve;                                      // 0x01A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UCurveVector*                           LightingCurve;                                     // 0x01B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -76,14 +75,14 @@ public:
 DUMPER7_ASSERTS_AWeatherActorBase;
 
 // Class Weather.RainSource
-// 0x0180 (0x03C8 - 0x0248)
+// 0x0188 (0x03D0 - 0x0248)
 class ARainSource final : public AWeatherActorBase
 {
 public:
 	TMap<EWeatherQuality, class URainConfig*>     RainConfiges;                                      // 0x0248(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class ULightComponent*                        DirectionLightComponent;                           // 0x0298(0x0008)(Edit, ExportObject, ZeroConstructor, DisableEditOnTemplate, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UExponentialHeightFogComponent*         RawHeightFog;                                      // 0x02A0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnTemplate, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPostProcessComponent*                  PostProcess;                                       // 0x02A8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULightComponent*                        DirectionLightComponent;                           // 0x0298(0x0008)(Edit, ExportObject, ZeroConstructor, DisableEditOnTemplate, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UExponentialHeightFogComponent*         RawHeightFog;                                      // 0x02A0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnTemplate, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPostProcessComponent*                  PostProcess;                                       // 0x02A8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnTemplate, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UStaticMeshComponent*                   RainMesh;                                          // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UNiagaraComponent*                      RainParticle;                                      // 0x02B8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UNiagaraComponent*                      LightingParticle;                                  // 0x02C0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -120,6 +119,9 @@ public:
 	class UExponentialHeightFogComponent*         ExponentialHeightFog;                              // 0x03B8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         tempRainSoundVolume;                               // 0x03C0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         tempLightingSoundVolume;                           // 0x03C4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bEnablePreview;                                    // 0x03C8(0x0001)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bCurrentEnablePreview;                             // 0x03C9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3CA[0x6];                                      // 0x03CA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void BegineFastSwitch();

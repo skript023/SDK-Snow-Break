@@ -167,15 +167,6 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_skill_button_C_PreConstruct;
 
-// LuaFunction uw_fight_skill_button.uw_fight_skill_button_C.K2_PlayCDAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_C_K2_PlayCDAnim final
-{
-public:
-	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_C_K2_PlayCDAnim;
-
 // LuaFunction uw_fight_skill_button.uw_fight_skill_button_C.OnChargeTimesChange
 // 0x0008 (0x0008 - 0x0000)
 struct uw_fight_skill_button_C_OnChargeTimesChange final
@@ -186,6 +177,15 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_skill_button_C_OnChargeTimesChange;
 
+// LuaFunction uw_fight_skill_button.uw_fight_skill_button_C.OnSkillStrengthening
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_button_C_OnSkillStrengthening final
+{
+public:
+	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_C_OnSkillStrengthening;
+
 // LuaFunction uw_fight_skill_button.uw_fight_skill_button_C.K2_OnCustomUmgAnimFinished
 // 0x0008 (0x0008 - 0x0000)
 struct uw_fight_skill_button_C_K2_OnCustomUmgAnimFinished final
@@ -195,14 +195,14 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_skill_button_C_K2_OnCustomUmgAnimFinished;
 
-// LuaFunction uw_fight_skill_button.uw_fight_skill_button_C.OnSkillStrengthening
+// LuaFunction uw_fight_skill_button.uw_fight_skill_button_C.K2_PlayCDAnim
 // 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_button_C_OnSkillStrengthening final
+struct uw_fight_skill_button_C_K2_PlayCDAnim final
 {
 public:
-	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_uw_fight_skill_button_C_OnSkillStrengthening;
+DUMPER7_ASSERTS_uw_fight_skill_button_C_K2_PlayCDAnim;
 
 // Function uw_fight_skill_button.uw_fight_skill_button_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

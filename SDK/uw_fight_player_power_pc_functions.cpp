@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_player_power_pc.uw_fight_player_power_pc_C.VisibilityChanged
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ESlateVisibility                        InVisibility                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_player_power_pc_C::VisibilityChanged(ESlateVisibility InVisibility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_power_pc_C", "VisibilityChanged");
-
-	Params::uw_fight_player_power_pc_C_VisibilityChanged Parms{};
-
-	Parms.InVisibility = InVisibility;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_player_power_pc.uw_fight_player_power_pc_C.ExecuteUbergraph_uw_fight_player_power_pc
 // (Final, UbergraphFunction)
 // Parameters:
@@ -52,6 +32,26 @@ void Uuw_fight_player_power_pc_C::ExecuteUbergraph_uw_fight_player_power_pc(int3
 	Params::uw_fight_player_power_pc_C_ExecuteUbergraph_uw_fight_player_power_pc Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_player_power_pc.uw_fight_player_power_pc_C.VisibilityChanged
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ESlateVisibility                        InVisibility                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_player_power_pc_C::VisibilityChanged(ESlateVisibility InVisibility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_power_pc_C", "VisibilityChanged");
+
+	Params::uw_fight_player_power_pc_C_VisibilityChanged Parms{};
+
+	Parms.InVisibility = InVisibility;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

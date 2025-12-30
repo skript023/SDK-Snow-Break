@@ -194,6 +194,17 @@ public:
 };
 DUMPER7_ASSERTS_Account_CallGS;
 
+// Function SeasunAccount.Account.CallGSWithDependParam
+// 0x0030 (0x0030 - 0x0000)
+struct Account_CallGSWithDependParam final
+{
+public:
+	class FString                                 InCommand;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InJSON;                                            // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         InDependParams;                                    // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Account_CallGSWithDependParam;
+
 // Function SeasunAccount.Account.ChangeWorldChannel
 // 0x0004 (0x0004 - 0x0000)
 struct Account_ChangeWorldChannel final
@@ -220,6 +231,17 @@ public:
 	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_Account_Charged;
+
+// Function SeasunAccount.Account.CheckTag
+// 0x0008 (0x0008 - 0x0000)
+struct Account_CheckTag final
+{
+public:
+	int32                                         InIdx;                                             // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_Account_CheckTag;
 
 // Function SeasunAccount.Account.Connect
 // 0x0018 (0x0018 - 0x0000)
@@ -283,12 +305,12 @@ public:
 DUMPER7_ASSERTS_Account_DealFriendRequest;
 
 // Function SeasunAccount.Account.DebugCreateItem
-// 0x0138 (0x0138 - 0x0000)
+// 0x0148 (0x0148 - 0x0000)
 struct Account_DebugCreateItem final
 {
 public:
-	struct FItemTemplate                          InTempate;                                         // 0x0000(0x0130)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UItem*                                  ReturnValue;                                       // 0x0130(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FItemTemplate                          InTempate;                                         // 0x0000(0x0140)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UItem*                                  ReturnValue;                                       // 0x0140(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_Account_DebugCreateItem;
 
@@ -531,6 +553,16 @@ public:
 	int64                                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_Account_GetGlobalAttr;
+
+// Function SeasunAccount.Account.GetGlobalStrAttr
+// 0x0020 (0x0020 - 0x0000)
+struct Account_GetGlobalStrAttr final
+{
+public:
+	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Account_GetGlobalStrAttr;
 
 // Function SeasunAccount.Account.GetItemCount
 // 0x0018 (0x0018 - 0x0000)
@@ -828,6 +860,15 @@ public:
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_Account_GetSupporterCardsForType;
+
+// Function SeasunAccount.Account.GetTags
+// 0x0010 (0x0010 - 0x0000)
+struct Account_GetTags final
+{
+public:
+	TArray<int32>                                 OutList;                                           // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Account_GetTags;
 
 // Function SeasunAccount.Account.GetTrialCard
 // 0x0010 (0x0010 - 0x0000)
@@ -1194,6 +1235,15 @@ public:
 };
 DUMPER7_ASSERTS_Account_Provider;
 
+// Function SeasunAccount.Account.QueryGlobalCounter
+// 0x0010 (0x0010 - 0x0000)
+struct Account_QueryGlobalCounter final
+{
+public:
+	class FString                                 InCounterName;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Account_QueryGlobalCounter;
+
 // Function SeasunAccount.Account.QueryRank
 // 0x0020 (0x0020 - 0x0000)
 struct Account_QueryRank final
@@ -1379,6 +1429,16 @@ public:
 };
 DUMPER7_ASSERTS_Account_SetGlobalAttr;
 
+// Function SeasunAccount.Account.SetGlobalStrAttr
+// 0x0020 (0x0020 - 0x0000)
+struct Account_SetGlobalStrAttr final
+{
+public:
+	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InValue;                                           // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Account_SetGlobalStrAttr;
+
 // Function SeasunAccount.Account.SetNewGuide
 // 0x0004 (0x0004 - 0x0000)
 struct Account_SetNewGuide final
@@ -1475,7 +1535,7 @@ public:
 DUMPER7_ASSERTS_Account_IsOfflineLogin;
 
 // Function SeasunAccount.Item.FindTemplate
-// 0x0140 (0x0140 - 0x0000)
+// 0x0150 (0x0150 - 0x0000)
 struct Item_FindTemplate final
 {
 public:
@@ -1483,17 +1543,17 @@ public:
 	int32                                         InD;                                               // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         InP;                                               // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         InL;                                               // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FItemTemplate                          ReturnValue;                                       // 0x0010(0x0130)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FItemTemplate                          ReturnValue;                                       // 0x0010(0x0140)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_Item_FindTemplate;
 
 // Function SeasunAccount.Item.FindTemplateForID
-// 0x0138 (0x0138 - 0x0000)
+// 0x0148 (0x0148 - 0x0000)
 struct Item_FindTemplateForID final
 {
 public:
 	int64                                         InTemplateID;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FItemTemplate                          ReturnValue;                                       // 0x0008(0x0130)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FItemTemplate                          ReturnValue;                                       // 0x0008(0x0140)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_Item_FindTemplateForID;
 
@@ -5472,6 +5532,17 @@ public:
 };
 DUMPER7_ASSERTS_PlayerProfile_AccountId;
 
+// Function SeasunAccount.PlayerProfile.CheckTag
+// 0x0008 (0x0008 - 0x0000)
+struct PlayerProfile_CheckTag final
+{
+public:
+	int32                                         InIdx;                                             // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlayerProfile_CheckTag;
+
 // Function SeasunAccount.PlayerProfile.CreateTime
 // 0x0008 (0x0008 - 0x0000)
 struct PlayerProfile_CreateTime final
@@ -5507,6 +5578,15 @@ public:
 	TArray<class UItem*>                          inList;                                            // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_PlayerProfile_GetShowItems;
+
+// Function SeasunAccount.PlayerProfile.GetTags
+// 0x0010 (0x0010 - 0x0000)
+struct PlayerProfile_GetTags final
+{
+public:
+	TArray<int32>                                 OutList;                                           // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlayerProfile_GetTags;
 
 // Function SeasunAccount.PlayerProfile.HaveVigor
 // 0x0001 (0x0001 - 0x0000)

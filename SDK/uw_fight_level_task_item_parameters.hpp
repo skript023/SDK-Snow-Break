@@ -14,6 +14,33 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_level_task_item.uw_fight_level_task_item_C.BP_OnItemExpansionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_level_task_item_C_BP_OnItemExpansionChanged final
+{
+public:
+	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_level_task_item_C_BP_OnItemExpansionChanged;
+
+// Function uw_fight_level_task_item.uw_fight_level_task_item_C.BP_OnItemSelectionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_level_task_item_C_BP_OnItemSelectionChanged final
+{
+public:
+	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_level_task_item_C_BP_OnItemSelectionChanged;
+
+// Function uw_fight_level_task_item.uw_fight_level_task_item_C.OnListItemObjectSet__Overridden
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_level_task_item_C_OnListItemObjectSet__Overridden final
+{
+public:
+	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_level_task_item_C_OnListItemObjectSet__Overridden;
+
 // Function uw_fight_level_task_item.uw_fight_level_task_item_C.ExecuteUbergraph_uw_fight_level_task_item
 // 0x0058 (0x0058 - 0x0000)
 struct uw_fight_level_task_item_C_ExecuteUbergraph_uw_fight_level_task_item final
@@ -35,33 +62,6 @@ public:
 	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_level_task_item_C_ExecuteUbergraph_uw_fight_level_task_item;
-
-// Function uw_fight_level_task_item.uw_fight_level_task_item_C.OnListItemObjectSet__Overridden
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_level_task_item_C_OnListItemObjectSet__Overridden final
-{
-public:
-	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_level_task_item_C_OnListItemObjectSet__Overridden;
-
-// Function uw_fight_level_task_item.uw_fight_level_task_item_C.BP_OnItemSelectionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_level_task_item_C_BP_OnItemSelectionChanged final
-{
-public:
-	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_level_task_item_C_BP_OnItemSelectionChanged;
-
-// Function uw_fight_level_task_item.uw_fight_level_task_item_C.BP_OnItemExpansionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_level_task_item_C_BP_OnItemExpansionChanged final
-{
-public:
-	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_level_task_item_C_BP_OnItemExpansionChanged;
 
 // LuaFunction uw_fight_level_task_item.uw_fight_level_task_item_C.OnListItemObjectSet
 // 0x0008 (0x0008 - 0x0000)

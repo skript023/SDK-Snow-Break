@@ -10,27 +10,27 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass Emitter_Trap.Emitter_Trap_C
-// 0x0010 (0x0CA0 - 0x0C90)
+// 0x0010 (0x0C80 - 0x0C70)
 class UEmitter_Trap_C final : public USkill_Emitter
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0C90(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0C70(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
+	void OnEmitEnd();
 	void EmitterDestroyLua();
 	EEmitterResult OnEmit();
-	void GetDefaultParamsValue(TArray<struct FParamInfo>* Values);
-	void OnEmitEnd();
 	TArray<struct FSoftObjectPath> OnGetAssetPath(const TArray<struct FParamInfo>& Values, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
+	void GetDefaultParamsValue(TArray<struct FParamInfo>* Values);
 	void ExecuteUbergraph_Emitter_Trap(int32 EntryPoint);
 
 	class FString GetModuleName() const;

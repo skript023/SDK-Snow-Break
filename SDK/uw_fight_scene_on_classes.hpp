@@ -43,11 +43,11 @@ public:
 	float                                         EffectDelayTime;                                   // 0x033C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SceneOn();
-	void Construct();
 	void ExecuteUbergraph_uw_fight_scene_on(int32 EntryPoint);
-	void data_transmission_on();
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void data_transmission_on();
+	void Construct();
+	void SceneOn();
 
 public:
 	static class UClass* StaticClass()

@@ -56,6 +56,15 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_boss_hp_C_Tick;
 
+// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.K2_OnUpdate
+// 0x0004 (0x0004 - 0x0000)
+struct uw_fight_boss_hp_C_K2_OnUpdate final
+{
+public:
+	float                                         InDeltaTime;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_uw_fight_boss_hp_C_K2_OnUpdate;
+
 // LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.K2_OnAppliedModifierChange
 // 0x0010 (0x0010 - 0x0000)
 struct uw_fight_boss_hp_C_K2_OnAppliedModifierChange final
@@ -76,15 +85,6 @@ public:
 	float                                         DamageTaken;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_uw_fight_boss_hp_C_OnDamageNumChange;
-
-// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.K2_OnUpdate
-// 0x0004 (0x0004 - 0x0000)
-struct uw_fight_boss_hp_C_K2_OnUpdate final
-{
-public:
-	float                                         InDeltaTime;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_uw_fight_boss_hp_C_K2_OnUpdate;
 
 // Function uw_fight_boss_hp.uw_fight_boss_hp_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

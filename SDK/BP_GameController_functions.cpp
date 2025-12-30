@@ -192,15 +192,15 @@ void ABP_GameController_C::ResetAutoFireInBunker()
 }
 
 
-// Function BP_GameController.BP_GameController_C.ReceiveBeginPlay
+// Function BP_GameController.BP_GameController_C.ReceiveBeginPlay__Overridden
 // (Event, Protected, BlueprintEvent)
 
-void ABP_GameController_C::ReceiveBeginPlay()
+void ABP_GameController_C::ReceiveBeginPlay__Overridden()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GameController_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_GameController_C", "ReceiveBeginPlay__Overridden");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -246,19 +246,19 @@ void ABP_GameController_C::NotifyAutoFire(bool bFire)
 }
 
 
-// Function BP_GameController.BP_GameController_C.ReceiveEndPlay
+// Function BP_GameController.BP_GameController_C.ReceiveEndPlay__Overridden
 // (Event, Protected, BlueprintEvent)
 // Parameters:
 // EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GameController_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+void ABP_GameController_C::ReceiveEndPlay__Overridden(EEndPlayReason EndPlayReason)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GameController_C", "ReceiveEndPlay");
+		Func = Class->GetFunction("BP_GameController_C", "ReceiveEndPlay__Overridden");
 
-	Params::BP_GameController_C_ReceiveEndPlay Parms{};
+	Params::BP_GameController_C_ReceiveEndPlay__Overridden Parms{};
 
 	Parms.EndPlayReason = EndPlayReason;
 
@@ -370,23 +370,40 @@ void ABP_GameController_C::ExecuteUbergraph_BP_GameController(int32 EntryPoint)
 }
 
 
-// LuaFunction BP_GameController.BP_GameController_C.LuaImpl_CallDSExec
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   InCmd                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    InContent                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// LuaFunction BP_GameController.BP_GameController_C.ReceiveBeginPlay
+// (Native, Event, Protected, BlueprintEvent)
 
-void ABP_GameController_C::LuaImpl_CallDSExec(int32 InCmd, const class FString& InContent)
+void ABP_GameController_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GameController_C", "LuaImpl_CallDSExec");
+		Func = Class->GetFunction("BP_GameController_C", "ReceiveBeginPlay");
 
-	Params::BP_GameController_C_LuaImpl_CallDSExec Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.InCmd = InCmd;
-	Parms.InContent = std::move(InContent);
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_GameController.BP_GameController_C.ReceiveEndPlay
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GameController_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GameController_C", "ReceiveEndPlay");
+
+	Params::BP_GameController_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -397,30 +414,23 @@ void ABP_GameController_C::LuaImpl_CallDSExec(int32 InCmd, const class FString& 
 }
 
 
-// LuaFunction BP_GameController.BP_GameController_C.LuaImpl_CallClientExec
-// (Native, Event, Public, BlueprintEvent)
+// Function BP_GameController.BP_GameController_C.GetModuleName
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// int32                                   InCmd                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    InContent                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
-void ABP_GameController_C::LuaImpl_CallClientExec(int32 InCmd, const class FString& InContent)
+class FString ABP_GameController_C::GetModuleName() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GameController_C", "LuaImpl_CallClientExec");
+		Func = Class->GetFunction("BP_GameController_C", "GetModuleName");
 
-	Params::BP_GameController_C_LuaImpl_CallClientExec Parms{};
-
-	Parms.InCmd = InCmd;
-	Parms.InContent = std::move(InContent);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Params::BP_GameController_C_GetModuleName Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	Func->FunctionFlags = Flgs;
+	return Parms.ReturnValue;
 }
 
 }

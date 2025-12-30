@@ -10,19 +10,19 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass ShieldRecover.ShieldRecover_C
-// 0x0008 (0x0158 - 0x0150)
+// 0x0008 (0x0140 - 0x0138)
 class UShieldRecover_C final : public UHitDelayRecoverAttribute
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0150(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0138(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void K2_ReceiveActive(const class UObject* Instigator);

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Game_classes.hpp"
 #include "EnumInitSnow_structs.hpp"
+#include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK

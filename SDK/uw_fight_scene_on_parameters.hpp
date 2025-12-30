@@ -17,18 +17,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_scene_on.uw_fight_scene_on_C.SceneOn
-// 0x0028 (0x0028 - 0x0000)
-struct uw_fight_scene_on_C_SceneOn final
-{
-public:
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0008(0x0010)(ZeroConstructor, NoDestructor)
-	struct FTimerHandle                           CallFunc_K2_SetTimerDelegate_ReturnValue;          // 0x0018(0x0008)(NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterial_AsMaterial_Instance_Dynamic; // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_scene_on_C_SceneOn;
-
 // Function uw_fight_scene_on.uw_fight_scene_on_C.ExecuteUbergraph_uw_fight_scene_on
 // 0x0100 (0x0100 - 0x0000)
 struct uw_fight_scene_on_C_ExecuteUbergraph_uw_fight_scene_on final
@@ -60,6 +48,18 @@ public:
 	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_scene_on_C_Tick;
+
+// Function uw_fight_scene_on.uw_fight_scene_on_C.SceneOn
+// 0x0028 (0x0028 - 0x0000)
+struct uw_fight_scene_on_C_SceneOn final
+{
+public:
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0008(0x0010)(ZeroConstructor, NoDestructor)
+	struct FTimerHandle                           CallFunc_K2_SetTimerDelegate_ReturnValue;          // 0x0018(0x0008)(NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterial_AsMaterial_Instance_Dynamic; // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_scene_on_C_SceneOn;
 
 }
 

@@ -18,7 +18,7 @@ namespace SDK
 
 // BlueprintGeneratedClass GearBase.GearBase_C
 // 0x0010 (0x0240 - 0x0230)
-class AGearBase_C final : public ADarkArchiveElevatorActor
+class AGearBase_C : public ADarkArchiveElevatorActor
 {
 public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0230(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)

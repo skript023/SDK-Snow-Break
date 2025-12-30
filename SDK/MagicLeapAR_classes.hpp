@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "MagicLeapPlanes_structs.hpp"
 #include "Engine_classes.hpp"
+#include "CoreUObject_structs.hpp"
 #include "MagicLeapAR_structs.hpp"
 #include "AugmentedReality_classes.hpp"
 #include "MagicLeapImageTracker_structs.hpp"
-#include "CoreUObject_structs.hpp"
+#include "MagicLeapPlanes_structs.hpp"
 
 
 namespace SDK

@@ -16,15 +16,6 @@
 namespace SDK::Params
 {
 
-// Function PhysXVehicles.VehicleAnimInstance.GetVehicle
-// 0x0008 (0x0008 - 0x0000)
-struct VehicleAnimInstance_GetVehicle final
-{
-public:
-	class AWheeledVehicle*                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_VehicleAnimInstance_GetVehicle;
-
 // Function PhysXVehicles.WheeledVehicleMovementComponent.ServerUpdateState
 // 0x0014 (0x0014 - 0x0000)
 struct WheeledVehicleMovementComponent_ServerUpdateState final
@@ -229,6 +220,45 @@ public:
 };
 DUMPER7_ASSERTS_WheeledVehicleMovementComponent_GetUseAutoGears;
 
+// Function PhysXVehicles.SimpleWheeledVehicleMovementComponent.SetBrakeTorque
+// 0x0008 (0x0008 - 0x0000)
+struct SimpleWheeledVehicleMovementComponent_SetBrakeTorque final
+{
+public:
+	float                                         BrakeTorque;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WheelIndex;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SimpleWheeledVehicleMovementComponent_SetBrakeTorque;
+
+// Function PhysXVehicles.SimpleWheeledVehicleMovementComponent.SetDriveTorque
+// 0x0008 (0x0008 - 0x0000)
+struct SimpleWheeledVehicleMovementComponent_SetDriveTorque final
+{
+public:
+	float                                         DriveTorque;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WheelIndex;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SimpleWheeledVehicleMovementComponent_SetDriveTorque;
+
+// Function PhysXVehicles.SimpleWheeledVehicleMovementComponent.SetSteerAngle
+// 0x0008 (0x0008 - 0x0000)
+struct SimpleWheeledVehicleMovementComponent_SetSteerAngle final
+{
+public:
+	float                                         SteerAngle;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WheelIndex;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SimpleWheeledVehicleMovementComponent_SetSteerAngle;
+
+// Function PhysXVehicles.VehicleAnimInstance.GetVehicle
+// 0x0008 (0x0008 - 0x0000)
+struct VehicleAnimInstance_GetVehicle final
+{
+public:
+	class AWheeledVehicle*                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleAnimInstance_GetVehicle;
+
 // Function PhysXVehicles.VehicleWheel.GetRotationAngle
 // 0x0004 (0x0004 - 0x0000)
 struct VehicleWheel_GetRotationAngle final
@@ -264,36 +294,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_VehicleWheel_IsInAir;
-
-// Function PhysXVehicles.SimpleWheeledVehicleMovementComponent.SetBrakeTorque
-// 0x0008 (0x0008 - 0x0000)
-struct SimpleWheeledVehicleMovementComponent_SetBrakeTorque final
-{
-public:
-	float                                         BrakeTorque;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         WheelIndex;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SimpleWheeledVehicleMovementComponent_SetBrakeTorque;
-
-// Function PhysXVehicles.SimpleWheeledVehicleMovementComponent.SetDriveTorque
-// 0x0008 (0x0008 - 0x0000)
-struct SimpleWheeledVehicleMovementComponent_SetDriveTorque final
-{
-public:
-	float                                         DriveTorque;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         WheelIndex;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SimpleWheeledVehicleMovementComponent_SetDriveTorque;
-
-// Function PhysXVehicles.SimpleWheeledVehicleMovementComponent.SetSteerAngle
-// 0x0008 (0x0008 - 0x0000)
-struct SimpleWheeledVehicleMovementComponent_SetSteerAngle final
-{
-public:
-	float                                         SteerAngle;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         WheelIndex;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SimpleWheeledVehicleMovementComponent_SetSteerAngle;
 
 }
 

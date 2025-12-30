@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -172,21 +172,6 @@ enum class ELTDecorator_CompareOperation : uint8
 	ELTDecorator_MAX                         = 6,
 };
 
-// ScriptStruct GameLogicTree.LogicTree_BBContext
-// 0x0040 (0x0040 - 0x0000)
-struct FLogicTree_BBContext final
-{
-public:
-	class UObject*                                Object;                                            // 0x0000(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UObject*>                        ObjectArray;                                       // 0x0008(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	int32                                         IntValue;                                          // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FloatValue;                                        // 0x001C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Vector;                                            // 0x0020(0x000C)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  Rotation;                                          // 0x0030(0x0010)(Transient, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLogicTree_BBContext;
-
 // ScriptStruct GameLogicTree.LogicTree_MsgContext
 // 0x0058 (0x0058 - 0x0000)
 struct FLogicTree_MsgContext final
@@ -202,17 +187,6 @@ public:
 	uint8                                         Pad_50[0x8];                                       // 0x0050(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FLogicTree_MsgContext;
-
-// ScriptStruct GameLogicTree.LogicTreeActionBindData
-// 0x0010 (0x0010 - 0x0000)
-struct FLogicTreeActionBindData final
-{
-public:
-	EGameLogicTreeEvent                           TargetEvent;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULogicTree_ActionBase*                  ActionInfo;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLogicTreeActionBindData;
 
 // ScriptStruct GameLogicTree.LogicTreeBBValue
 // 0x0010 (0x0010 - 0x0000)
@@ -245,6 +219,32 @@ public:
 	class ULogicTree_EntityDataCom*               TargetDataCom;                                     // 0x0030(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLogicTree_DataAccessor;
+
+// ScriptStruct GameLogicTree.LogicTreeActionBindData
+// 0x0010 (0x0010 - 0x0000)
+struct FLogicTreeActionBindData final
+{
+public:
+	EGameLogicTreeEvent                           TargetEvent;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULogicTree_ActionBase*                  ActionInfo;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLogicTreeActionBindData;
+
+// ScriptStruct GameLogicTree.LogicTree_BBContext
+// 0x0040 (0x0040 - 0x0000)
+struct FLogicTree_BBContext final
+{
+public:
+	class UObject*                                Object;                                            // 0x0000(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UObject*>                        ObjectArray;                                       // 0x0008(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	int32                                         IntValue;                                          // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FloatValue;                                        // 0x001C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Vector;                                            // 0x0020(0x000C)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  Rotation;                                          // 0x0030(0x0010)(Transient, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLogicTree_BBContext;
 
 // ScriptStruct GameLogicTree.GameLogicTree_AttributeAccessor
 // 0x0050 (0x0050 - 0x0000)

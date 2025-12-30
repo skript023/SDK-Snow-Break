@@ -17,22 +17,22 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass TimerExecute.TimerExecute_C
-// 0x0008 (0x0210 - 0x0208)
+// 0x0008 (0x0220 - 0x0218)
 class UTimerExecute_C final : public UGameTaskExecute_Timer
 {
 public:
-	bool                                          bTimer;                                            // 0x0208(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bWarning;                                          // 0x0209(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bTimer;                                            // 0x0218(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bWarning;                                          // 0x0219(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
+	void OnActive_Client();
 	class FString GetDescription();
 	void OnActive();
-	void OnActive_Client();
 	void OnEnd_Client();
 	void OnEnd();
 
-	class FString GetSpecialStaticDescription() const;
 	class FString GetModuleName() const;
+	class FString GetSpecialStaticDescription() const;
 
 public:
 	static class UClass* StaticClass()

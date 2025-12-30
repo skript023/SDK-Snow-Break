@@ -10,15 +10,33 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
-#include "InputCore_structs.hpp"
-#include "CharacterInteractionV3_structs.hpp"
 #include "UniversalCameraPlugin_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "InputCore_structs.hpp"
+#include "Engine_structs.hpp"
+#include "CharacterInteractionV3_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function CharacterInteractionV3.InteractionV3Event.CanTrigger
+// 0x0001 (0x0001 - 0x0000)
+struct InteractionV3Event_CanTrigger final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3Event_CanTrigger;
+
+// Function CharacterInteractionV3.InteractionV3Event_Achievement.GetArchivementComponentV3
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionV3Event_Achievement_GetArchivementComponentV3 final
+{
+public:
+	class UInteractionArchivementComponentV3*     ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3Event_Achievement_GetArchivementComponentV3;
 
 // Function CharacterInteractionV3.ActorOperateAct.OnPause
 // 0x0008 (0x0008 - 0x0000)
@@ -122,41 +140,6 @@ public:
 };
 DUMPER7_ASSERTS_ActorOperateAct_IsCompleteAndBlendOut;
 
-// Function CharacterInteractionV3.InteractionV3Event.CanTrigger
-// 0x0001 (0x0001 - 0x0000)
-struct InteractionV3Event_CanTrigger final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3Event_CanTrigger;
-
-// Function CharacterInteractionV3.InteractionV3PhysicsControlComponent.ConditionalCreateMaintainWorldSpaceRelativeControl
-// 0x0040 (0x0040 - 0x0000)
-struct InteractionV3PhysicsControlComponent_ConditionalCreateMaintainWorldSpaceRelativeControl final
-{
-public:
-	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMeshComponent*                         ParentMeshComponent;                               // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ParentBoneName;                                    // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMeshComponent*                         ChildMeshComponent;                                // 0x0018(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ChildBoneName;                                     // 0x0020(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Set;                                               // 0x0028(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   AdditionalSetName;                                 // 0x0030(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_InteractionV3PhysicsControlComponent_ConditionalCreateMaintainWorldSpaceRelativeControl;
-
-// Function CharacterInteractionV3.InteractionV3PhysicsControlComponent.ConditionalDestroyAllMaintainWorldSpaceRelativeControls
-// 0x0001 (0x0001 - 0x0000)
-struct InteractionV3PhysicsControlComponent_ConditionalDestroyAllMaintainWorldSpaceRelativeControls final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3PhysicsControlComponent_ConditionalDestroyAllMaintainWorldSpaceRelativeControls;
-
 // Function CharacterInteractionV3.InteractionMouseHoverInterface.OnMouseHover
 // 0x0030 (0x0030 - 0x0000)
 struct InteractionMouseHoverInterface_OnMouseHover final
@@ -169,6 +152,39 @@ public:
 	struct FVector2D                              SlidEndPos;                                        // 0x0028(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_InteractionMouseHoverInterface_OnMouseHover;
+
+// Function CharacterInteractionV3.InteractionV3DragInterface.EndDrag
+// 0x0040 (0x0040 - 0x0000)
+struct InteractionV3DragInterface_EndDrag final
+{
+public:
+	struct FTransform                             TargetTransform;                                   // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                DeltaLocation;                                     // 0x0030(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionV3DragInterface_EndDrag;
+
+// Function CharacterInteractionV3.InteractionV3DragInterface.StartDrag
+// 0x0040 (0x0040 - 0x0000)
+struct InteractionV3DragInterface_StartDrag final
+{
+public:
+	struct FTransform                             TargetTransform;                                   // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                DeltaLocation;                                     // 0x0030(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionV3DragInterface_StartDrag;
+
+// Function CharacterInteractionV3.InteractionV3DragInterface.UpdateDrag
+// 0x0040 (0x0040 - 0x0000)
+struct InteractionV3DragInterface_UpdateDrag final
+{
+public:
+	struct FTransform                             TargetTransform;                                   // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                DeltaLocation;                                     // 0x0030(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionV3DragInterface_UpdateDrag;
 
 // Function CharacterInteractionV3.ScenarioLittleGameBase.OnUpdate
 // 0x0004 (0x0004 - 0x0000)
@@ -506,128 +522,6 @@ public:
 };
 DUMPER7_ASSERTS_FennyGunFireLittleGame_RandomVoice;
 
-// Function CharacterInteractionV3.InteractionV3DragInterface.EndDrag
-// 0x0040 (0x0040 - 0x0000)
-struct InteractionV3DragInterface_EndDrag final
-{
-public:
-	struct FTransform                             TargetTransform;                                   // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                DeltaLocation;                                     // 0x0030(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_InteractionV3DragInterface_EndDrag;
-
-// Function CharacterInteractionV3.InteractionV3DragInterface.StartDrag
-// 0x0040 (0x0040 - 0x0000)
-struct InteractionV3DragInterface_StartDrag final
-{
-public:
-	struct FTransform                             TargetTransform;                                   // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                DeltaLocation;                                     // 0x0030(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_InteractionV3DragInterface_StartDrag;
-
-// Function CharacterInteractionV3.InteractionV3DragInterface.UpdateDrag
-// 0x0040 (0x0040 - 0x0000)
-struct InteractionV3DragInterface_UpdateDrag final
-{
-public:
-	struct FTransform                             TargetTransform;                                   // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                DeltaLocation;                                     // 0x0030(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_InteractionV3DragInterface_UpdateDrag;
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.PlayArchivement
-// 0x0004 (0x0004 - 0x0000)
-struct InteractionArchivementComponentV3_PlayArchivement final
-{
-public:
-	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionArchivementComponentV3_PlayArchivement;
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetArchievementPlayed
-// 0x0004 (0x0004 - 0x0000)
-struct InteractionArchivementComponentV3_SetArchievementPlayed final
-{
-public:
-	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionArchivementComponentV3_SetArchievementPlayed;
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetArchivementComplete
-// 0x0004 (0x0004 - 0x0000)
-struct InteractionArchivementComponentV3_SetArchivementComplete final
-{
-public:
-	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionArchivementComponentV3_SetArchivementComplete;
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetConditionComplete
-// 0x0004 (0x0004 - 0x0000)
-struct InteractionArchivementComponentV3_SetConditionComplete final
-{
-public:
-	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionArchivementComponentV3_SetConditionComplete;
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetConditionCompleteAdnRefresh
-// 0x0004 (0x0004 - 0x0000)
-struct InteractionArchivementComponentV3_SetConditionCompleteAdnRefresh final
-{
-public:
-	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionArchivementComponentV3_SetConditionCompleteAdnRefresh;
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.CanPlay
-// 0x0008 (0x0008 - 0x0000)
-struct InteractionArchivementComponentV3_CanPlay final
-{
-public:
-	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_InteractionArchivementComponentV3_CanPlay;
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.IsArchivementComplete
-// 0x0008 (0x0008 - 0x0000)
-struct InteractionArchivementComponentV3_IsArchivementComplete final
-{
-public:
-	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_InteractionArchivementComponentV3_IsArchivementComplete;
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.IsArchivementPlayed
-// 0x0008 (0x0008 - 0x0000)
-struct InteractionArchivementComponentV3_IsArchivementPlayed final
-{
-public:
-	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_InteractionArchivementComponentV3_IsArchivementPlayed;
-
-// Function CharacterInteractionV3.InteractionArchivementComponentV3.IsConditionComplete
-// 0x0008 (0x0008 - 0x0000)
-struct InteractionArchivementComponentV3_IsConditionComplete final
-{
-public:
-	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_InteractionArchivementComponentV3_IsConditionComplete;
-
 // Function CharacterInteractionV3.FennyShowerLittleGame.GetCameraAdditivePitchAndYaw
 // 0x0008 (0x0008 - 0x0000)
 struct FennyShowerLittleGame_GetCameraAdditivePitchAndYaw final
@@ -754,6 +648,95 @@ public:
 	class FString                                 ActorOperateActName;                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_InteractionActorV3_UnbindOperateActEvent;
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.PlayArchivement
+// 0x0004 (0x0004 - 0x0000)
+struct InteractionArchivementComponentV3_PlayArchivement final
+{
+public:
+	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionArchivementComponentV3_PlayArchivement;
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetArchievementPlayed
+// 0x0004 (0x0004 - 0x0000)
+struct InteractionArchivementComponentV3_SetArchievementPlayed final
+{
+public:
+	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionArchivementComponentV3_SetArchievementPlayed;
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetArchivementComplete
+// 0x0004 (0x0004 - 0x0000)
+struct InteractionArchivementComponentV3_SetArchivementComplete final
+{
+public:
+	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionArchivementComponentV3_SetArchivementComplete;
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetConditionComplete
+// 0x0004 (0x0004 - 0x0000)
+struct InteractionArchivementComponentV3_SetConditionComplete final
+{
+public:
+	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionArchivementComponentV3_SetConditionComplete;
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.SetConditionCompleteAdnRefresh
+// 0x0004 (0x0004 - 0x0000)
+struct InteractionArchivementComponentV3_SetConditionCompleteAdnRefresh final
+{
+public:
+	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionArchivementComponentV3_SetConditionCompleteAdnRefresh;
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.CanPlay
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionArchivementComponentV3_CanPlay final
+{
+public:
+	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionArchivementComponentV3_CanPlay;
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.IsArchivementComplete
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionArchivementComponentV3_IsArchivementComplete final
+{
+public:
+	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionArchivementComponentV3_IsArchivementComplete;
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.IsArchivementPlayed
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionArchivementComponentV3_IsArchivementPlayed final
+{
+public:
+	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionArchivementComponentV3_IsArchivementPlayed;
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.IsConditionComplete
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionArchivementComponentV3_IsConditionComplete final
+{
+public:
+	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionArchivementComponentV3_IsConditionComplete;
 
 // Function CharacterInteractionV3.InteractionCameraActor.GetCameraActor
 // 0x0008 (0x0008 - 0x0000)
@@ -1641,15 +1624,6 @@ public:
 };
 DUMPER7_ASSERTS_InteractionV3CharacterAnimInstance_SetIdleAnimState;
 
-// Function CharacterInteractionV3.InteractionV3Event_Achievement.GetArchivementComponentV3
-// 0x0008 (0x0008 - 0x0000)
-struct InteractionV3Event_Achievement_GetArchivementComponentV3 final
-{
-public:
-	class UInteractionArchivementComponentV3*     ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3Event_Achievement_GetArchivementComponentV3;
-
 // Function CharacterInteractionV3.InteractionV3FaceAnimInstance.GetEyeBlend
 // 0x0008 (0x0008 - 0x0000)
 struct InteractionV3FaceAnimInstance_GetEyeBlend final
@@ -2103,6 +2077,32 @@ public:
 	class FString                                 StatValue;                                         // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_InteractionV3Lib_SetInteractionStringStat;
+
+// Function CharacterInteractionV3.InteractionV3PhysicsControlComponent.ConditionalCreateMaintainWorldSpaceRelativeControl
+// 0x0040 (0x0040 - 0x0000)
+struct InteractionV3PhysicsControlComponent_ConditionalCreateMaintainWorldSpaceRelativeControl final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMeshComponent*                         ParentMeshComponent;                               // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ParentBoneName;                                    // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMeshComponent*                         ChildMeshComponent;                                // 0x0018(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ChildBoneName;                                     // 0x0020(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Set;                                               // 0x0028(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   AdditionalSetName;                                 // 0x0030(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionV3PhysicsControlComponent_ConditionalCreateMaintainWorldSpaceRelativeControl;
+
+// Function CharacterInteractionV3.InteractionV3PhysicsControlComponent.ConditionalDestroyAllMaintainWorldSpaceRelativeControls
+// 0x0001 (0x0001 - 0x0000)
+struct InteractionV3PhysicsControlComponent_ConditionalDestroyAllMaintainWorldSpaceRelativeControls final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3PhysicsControlComponent_ConditionalDestroyAllMaintainWorldSpaceRelativeControls;
 
 // Function CharacterInteractionV3.InteractionV3Trigger.CanTrigger
 // 0x0001 (0x0001 - 0x0000)

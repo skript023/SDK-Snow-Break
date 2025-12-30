@@ -17,79 +17,107 @@
 namespace SDK
 {
 
-// Function TargetTrigger.TargetTrigger_C.SetEffectSize
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function TargetTrigger.TargetTrigger_C.ExecuteUbergraph_TargetTrigger
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ATargetTrigger_C::SetEffectSize()
+void ATargetTrigger_C::ExecuteUbergraph_TargetTrigger(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "SetEffectSize");
+		Func = Class->GetFunction("TargetTrigger_C", "ExecuteUbergraph_TargetTrigger");
+
+	Params::TargetTrigger_C_ExecuteUbergraph_TargetTrigger Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function TargetTrigger.TargetTrigger_C.OnDangerToSafe
+// (BlueprintCallable, BlueprintEvent)
+
+void ATargetTrigger_C::OnDangerToSafe()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetTrigger_C", "OnDangerToSafe");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function TargetTrigger.TargetTrigger_C.Set Border with New Niagara
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UNiagaraSystem*                   NewNiagara                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function TargetTrigger.TargetTrigger_C.OnSafeToDanger
+// (BlueprintCallable, BlueprintEvent)
 
-void ATargetTrigger_C::Set_Border_with_New_Niagara(class UNiagaraSystem* NewNiagara)
+void ATargetTrigger_C::OnSafeToDanger()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "Set Border with New Niagara");
+		Func = Class->GetFunction("TargetTrigger_C", "OnSafeToDanger");
 
-	Params::TargetTrigger_C_Set_Border_with_New_Niagara Parms{};
-
-	Parms.NewNiagara = NewNiagara;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function TargetTrigger.TargetTrigger_C.Set Dissolve
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function TargetTrigger.TargetTrigger_C.OnDeactive
+// (BlueprintCallable, BlueprintEvent)
 
-void ATargetTrigger_C::Set_Dissolve(int32 Value)
+void ATargetTrigger_C::OnDeactive()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "Set Dissolve");
+		Func = Class->GetFunction("TargetTrigger_C", "OnDeactive");
 
-	Params::TargetTrigger_C_Set_Dissolve Parms{};
-
-	Parms.Value = Value;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function TargetTrigger.TargetTrigger_C.SetBorderLength
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   X                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   Y                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function TargetTrigger.TargetTrigger_C.OnActive
+// (BlueprintCallable, BlueprintEvent)
 
-void ATargetTrigger_C::SetBorderLength(int32 X, int32 Y)
+void ATargetTrigger_C::OnActive()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "SetBorderLength");
+		Func = Class->GetFunction("TargetTrigger_C", "OnActive");
 
-	Params::TargetTrigger_C_SetBorderLength Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.X = X;
-	Parms.Y = Y;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function TargetTrigger.TargetTrigger_C.ChangeBorderColor
+// (BlueprintCallable, BlueprintEvent)
+
+void ATargetTrigger_C::ChangeBorderColor()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetTrigger_C", "ChangeBorderColor");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function TargetTrigger.TargetTrigger_C.UserConstructionScript
+// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ATargetTrigger_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetTrigger_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -115,107 +143,79 @@ void ATargetTrigger_C::Set_View_Distance(TArray<class UNiagaraComponent*>& Borde
 }
 
 
-// Function TargetTrigger.TargetTrigger_C.UserConstructionScript
-// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ATargetTrigger_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function TargetTrigger.TargetTrigger_C.ChangeBorderColor
-// (BlueprintCallable, BlueprintEvent)
-
-void ATargetTrigger_C::ChangeBorderColor()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "ChangeBorderColor");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function TargetTrigger.TargetTrigger_C.OnActive
-// (BlueprintCallable, BlueprintEvent)
-
-void ATargetTrigger_C::OnActive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "OnActive");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function TargetTrigger.TargetTrigger_C.OnDeactive
-// (BlueprintCallable, BlueprintEvent)
-
-void ATargetTrigger_C::OnDeactive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "OnDeactive");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function TargetTrigger.TargetTrigger_C.OnSafeToDanger
-// (BlueprintCallable, BlueprintEvent)
-
-void ATargetTrigger_C::OnSafeToDanger()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "OnSafeToDanger");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function TargetTrigger.TargetTrigger_C.OnDangerToSafe
-// (BlueprintCallable, BlueprintEvent)
-
-void ATargetTrigger_C::OnDangerToSafe()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "OnDangerToSafe");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function TargetTrigger.TargetTrigger_C.ExecuteUbergraph_TargetTrigger
-// (Final, UbergraphFunction, HasDefaults)
+// Function TargetTrigger.TargetTrigger_C.SetBorderLength
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   X                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Y                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ATargetTrigger_C::ExecuteUbergraph_TargetTrigger(int32 EntryPoint)
+void ATargetTrigger_C::SetBorderLength(int32 X, int32 Y)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "ExecuteUbergraph_TargetTrigger");
+		Func = Class->GetFunction("TargetTrigger_C", "SetBorderLength");
 
-	Params::TargetTrigger_C_ExecuteUbergraph_TargetTrigger Parms{};
+	Params::TargetTrigger_C_SetBorderLength Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.X = X;
+	Parms.Y = Y;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function TargetTrigger.TargetTrigger_C.Set Dissolve
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATargetTrigger_C::Set_Dissolve(int32 Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetTrigger_C", "Set Dissolve");
+
+	Params::TargetTrigger_C_Set_Dissolve Parms{};
+
+	Parms.Value = Value;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function TargetTrigger.TargetTrigger_C.Set Border with New Niagara
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UNiagaraSystem*                   NewNiagara                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATargetTrigger_C::Set_Border_with_New_Niagara(class UNiagaraSystem* NewNiagara)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetTrigger_C", "Set Border with New Niagara");
+
+	Params::TargetTrigger_C_Set_Border_with_New_Niagara Parms{};
+
+	Parms.NewNiagara = NewNiagara;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function TargetTrigger.TargetTrigger_C.SetEffectSize
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ATargetTrigger_C::SetEffectSize()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetTrigger_C", "SetEffectSize");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -244,21 +244,21 @@ void ATargetTrigger_C::ReceiveActorEndOverlap(class AActor* OtherActor)
 }
 
 
-// LuaFunction TargetTrigger.TargetTrigger_C.ReceiveEndPlay
-// (Native, Event, Protected, BlueprintEvent)
+// LuaFunction TargetTrigger.TargetTrigger_C.ReceiveTick
+// (Native, Event, Public, BlueprintEvent)
 // Parameters:
-// EEndPlayReason                          EndPlayReason                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ATargetTrigger_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+void ATargetTrigger_C::ReceiveTick(float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "ReceiveEndPlay");
+		Func = Class->GetFunction("TargetTrigger_C", "ReceiveTick");
 
-	Params::TargetTrigger_C_ReceiveEndPlay Parms{};
+	Params::TargetTrigger_C_ReceiveTick Parms{};
 
-	Parms.EndPlayReason = EndPlayReason;
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -294,21 +294,21 @@ void ATargetTrigger_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
 }
 
 
-// LuaFunction TargetTrigger.TargetTrigger_C.ReceiveTick
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction TargetTrigger.TargetTrigger_C.ReceiveEndPlay
+// (Native, Event, Protected, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEndPlayReason                          EndPlayReason                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ATargetTrigger_C::ReceiveTick(float DeltaSeconds)
+void ATargetTrigger_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "ReceiveTick");
+		Func = Class->GetFunction("TargetTrigger_C", "ReceiveEndPlay");
 
-	Params::TargetTrigger_C_ReceiveTick Parms{};
+	Params::TargetTrigger_C_ReceiveEndPlay Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.EndPlayReason = EndPlayReason;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

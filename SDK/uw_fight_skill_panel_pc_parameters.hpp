@@ -26,15 +26,6 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_skill_panel_pc_C_ExecuteUbergraph_uw_fight_skill_panel_pc;
 
-// Function uw_fight_skill_panel_pc.uw_fight_skill_panel_pc_C.OnWeaponChange
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_skill_panel_pc_C_OnWeaponChange final
-{
-public:
-	class APlayerWeapon*                          InWeapon;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_skill_panel_pc_C_OnWeaponChange;
-
 // Function uw_fight_skill_panel_pc.uw_fight_skill_panel_pc_C.ShowOrHideCancelBtn
 // 0x0001 (0x0001 - 0x0000)
 struct uw_fight_skill_panel_pc_C_ShowOrHideCancelBtn final
@@ -43,6 +34,15 @@ public:
 	bool                                          bShow;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_skill_panel_pc_C_ShowOrHideCancelBtn;
+
+// Function uw_fight_skill_panel_pc.uw_fight_skill_panel_pc_C.OnWeaponChange
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_skill_panel_pc_C_OnWeaponChange final
+{
+public:
+	class APlayerWeapon*                          InWeapon;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_skill_panel_pc_C_OnWeaponChange;
 
 }
 

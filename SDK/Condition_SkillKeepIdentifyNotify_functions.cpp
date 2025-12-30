@@ -45,48 +45,6 @@ void UCondition_SkillKeepIdentifyNotify_C::BindEvent()
 }
 
 
-// Function Condition_SkillKeepIdentifyNotify.Condition_SkillKeepIdentifyNotify_C.K2_BindEvent
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UAbilityComponentBase*            InCurLauncher                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AGameCharacter*                   InCurLauncherChara                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UCondition_SkillKeepIdentifyNotify_C::K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Condition_SkillKeepIdentifyNotify_C", "K2_BindEvent");
-
-	Params::Condition_SkillKeepIdentifyNotify_C_K2_BindEvent Parms{};
-
-	Parms.InCurLauncher = InCurLauncher;
-	Parms.InCurLauncherChara = InCurLauncherChara;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Condition_SkillKeepIdentifyNotify.Condition_SkillKeepIdentifyNotify_C.ExecuteUbergraph_Condition_SkillKeepIdentifyNotify
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UCondition_SkillKeepIdentifyNotify_C::ExecuteUbergraph_Condition_SkillKeepIdentifyNotify(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Condition_SkillKeepIdentifyNotify_C", "ExecuteUbergraph_Condition_SkillKeepIdentifyNotify");
-
-	Params::Condition_SkillKeepIdentifyNotify_C_ExecuteUbergraph_Condition_SkillKeepIdentifyNotify Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function Condition_SkillKeepIdentifyNotify.Condition_SkillKeepIdentifyNotify_C.UnbindEvent
 // (BlueprintCallable, BlueprintEvent)
 
@@ -125,6 +83,28 @@ void UCondition_SkillKeepIdentifyNotify_C::OnNotifySkillKeepIdentify(class FName
 }
 
 
+// Function Condition_SkillKeepIdentifyNotify.Condition_SkillKeepIdentifyNotify_C.K2_BindEvent
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UAbilityComponentBase*            InCurLauncher                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AGameCharacter*                   InCurLauncherChara                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCondition_SkillKeepIdentifyNotify_C::K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Condition_SkillKeepIdentifyNotify_C", "K2_BindEvent");
+
+	Params::Condition_SkillKeepIdentifyNotify_C_K2_BindEvent Parms{};
+
+	Parms.InCurLauncher = InCurLauncher;
+	Parms.InCurLauncherChara = InCurLauncherChara;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Condition_SkillKeepIdentifyNotify.Condition_SkillKeepIdentifyNotify_C.K2_UnbindEvent
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -142,6 +122,26 @@ void UCondition_SkillKeepIdentifyNotify_C::K2_UnbindEvent(class UAbilityComponen
 
 	Parms.InCurLauncher = InCurLauncher;
 	Parms.InCurLauncherChara = InCurLauncherChara;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Condition_SkillKeepIdentifyNotify.Condition_SkillKeepIdentifyNotify_C.ExecuteUbergraph_Condition_SkillKeepIdentifyNotify
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCondition_SkillKeepIdentifyNotify_C::ExecuteUbergraph_Condition_SkillKeepIdentifyNotify(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Condition_SkillKeepIdentifyNotify_C", "ExecuteUbergraph_Condition_SkillKeepIdentifyNotify");
+
+	Params::Condition_SkillKeepIdentifyNotify_C_ExecuteUbergraph_Condition_SkillKeepIdentifyNotify Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

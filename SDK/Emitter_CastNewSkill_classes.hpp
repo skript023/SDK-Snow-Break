@@ -18,15 +18,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Emitter_CastNewSkill.Emitter_CastNewSkill_C
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0C70 - 0x0C70)
 class UEmitter_CastNewSkill_C final : public USkill_Emitter
 {
 public:
+	void EmitterDestroyLua();
+	void OnEmitEnd();
 	EEmitterResult OnEmit();
 	TArray<struct FSoftObjectPath> OnGetAssetPath(const TArray<struct FParamInfo>& Values, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
 	void GetDefaultParamsValue(TArray<struct FParamInfo>* Values);
-	void EmitterDestroyLua();
-	void OnEmitEnd();
 
 	class FString GetModuleName() const;
 

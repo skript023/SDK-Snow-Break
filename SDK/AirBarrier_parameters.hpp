@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Game_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Game_structs.hpp"
 
 
 namespace SDK::Params
@@ -186,15 +186,6 @@ public:
 };
 DUMPER7_ASSERTS_AirBarrier_C_DoRegionCheck;
 
-// LuaFunction AirBarrier.AirBarrier_C.ReceiveActorBeginOverlap
-// 0x0008 (0x0008 - 0x0000)
-struct AirBarrier_C_ReceiveActorBeginOverlap final
-{
-public:
-	class AActor*                                 OtherActor;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AirBarrier_C_ReceiveActorBeginOverlap;
-
 // LuaFunction AirBarrier.AirBarrier_C.DoOnlineTDDutyCheck
 // 0x0001 (0x0001 - 0x0000)
 struct AirBarrier_C_DoOnlineTDDutyCheck final
@@ -203,6 +194,15 @@ public:
 	bool                                          bPassCheck;                                        // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_AirBarrier_C_DoOnlineTDDutyCheck;
+
+// LuaFunction AirBarrier.AirBarrier_C.ReceiveActorBeginOverlap
+// 0x0008 (0x0008 - 0x0000)
+struct AirBarrier_C_ReceiveActorBeginOverlap final
+{
+public:
+	class AActor*                                 OtherActor;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AirBarrier_C_ReceiveActorBeginOverlap;
 
 // Function AirBarrier.AirBarrier_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

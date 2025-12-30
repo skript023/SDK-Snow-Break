@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "MagicLeap_structs.hpp"
-#include "HeadMountedDisplay_classes.hpp"
 #include "Engine_classes.hpp"
+#include "HeadMountedDisplay_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -29,11 +29,11 @@ public:
 public:
 	void K2_InitCondition();
 	void BindEvent();
-	void K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
-	void ExecuteUbergraph_Condition_SkillKeepIdentifyNotify(int32 EntryPoint);
 	void UnbindEvent();
 	void OnNotifySkillKeepIdentify(class FName IdentifyName, bool bStartKeeping, bool bInterrupt);
+	void K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void K2_UnbindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
+	void ExecuteUbergraph_Condition_SkillKeepIdentifyNotify(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

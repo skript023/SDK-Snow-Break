@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass State_DodgeState.State_DodgeState_C
-// 0x0000 (0x0128 - 0x0128)
+// 0x0000 (0x0110 - 0x0110)
 class UState_DodgeState_C final : public UCustomGameAbilityBuffer
 {
 public:

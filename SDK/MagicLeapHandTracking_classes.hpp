@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "LiveLinkInterface_classes.hpp"
-#include "MagicLeapHandTracking_structs.hpp"
-#include "Engine_classes.hpp"
 #include "InputCore_structs.hpp"
+#include "Engine_classes.hpp"
+#include "MagicLeapHandTracking_structs.hpp"
 
 
 namespace SDK

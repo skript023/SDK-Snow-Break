@@ -151,6 +151,18 @@ public:
 };
 DUMPER7_ASSERTS_FTravelSpeedSettings;
 
+// ScriptStruct UniversalCameraPlugin.PlaceholderCameraInfos
+// 0x0018 (0x0018 - 0x0000)
+struct FPlaceholderCameraInfos final
+{
+public:
+	struct FVector                                Location;                                          // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Yaw;                                               // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Pitch;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Zoom;                                              // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPlaceholderCameraInfos;
+
 // ScriptStruct UniversalCameraPlugin.TargetFloat
 // 0x0008 (0x0008 - 0x0000)
 struct FTargetFloat final
@@ -161,6 +173,50 @@ public:
 	float                                         FloatValue;                                        // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FTargetFloat;
+
+// ScriptStruct UniversalCameraPlugin.TargetSettings_WithTemplates
+// 0x0028 (0x0028 - 0x0000)
+struct alignas(0x08) FTargetSettings_WithTemplates final
+{
+public:
+	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FTargetSettings_WithTemplates;
+
+// ScriptStruct UniversalCameraPlugin.OffsetSettings
+// 0x0010 (0x0010 - 0x0000)
+struct FOffsetSettings final
+{
+public:
+	int32                                         OffsetMod;                                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                OffsetValue;                                       // 0x0004(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FOffsetSettings;
+
+// ScriptStruct UniversalCameraPlugin.TargetVector
+// 0x0020 (0x0020 - 0x0000)
+struct FTargetVector final
+{
+public:
+	ETargetMod                                    TargetMod;                                         // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class USplineComponent*                       SplineComponent;                                   // 0x0008(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                VectorValue;                                       // 0x0010(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FTargetVector;
+
+// ScriptStruct UniversalCameraPlugin.TargetSettings
+// 0x0020 (0x0020 - 0x0000)
+struct FTargetSettings final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USceneComponent*                        SceneComponent;                                    // 0x0008(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMeshComponent*                         Mesh;                                              // 0x0010(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Socket;                                            // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTargetSettings;
 
 // ScriptStruct UniversalCameraPlugin.UniversalCameraPositionSaveFormat
 // 0x0040 (0x0040 - 0x0000)
@@ -176,38 +232,6 @@ public:
 };
 DUMPER7_ASSERTS_FUniversalCameraPositionSaveFormat;
 
-// ScriptStruct UniversalCameraPlugin.OffsetSettings
-// 0x0010 (0x0010 - 0x0000)
-struct FOffsetSettings final
-{
-public:
-	int32                                         OffsetMod;                                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                OffsetValue;                                       // 0x0004(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FOffsetSettings;
-
-// ScriptStruct UniversalCameraPlugin.TargetSettings_WithTemplates
-// 0x0028 (0x0028 - 0x0000)
-struct alignas(0x08) FTargetSettings_WithTemplates final
-{
-public:
-	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FTargetSettings_WithTemplates;
-
-// ScriptStruct UniversalCameraPlugin.TargetVector
-// 0x0020 (0x0020 - 0x0000)
-struct FTargetVector final
-{
-public:
-	ETargetMod                                    TargetMod;                                         // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class USplineComponent*                       SplineComponent;                                   // 0x0008(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                VectorValue;                                       // 0x0010(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FTargetVector;
-
 // ScriptStruct UniversalCameraPlugin.BoolRotation
 // 0x0003 (0x0003 - 0x0000)
 struct FBoolRotation final
@@ -218,30 +242,6 @@ public:
 	bool                                          Roll;                                              // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FBoolRotation;
-
-// ScriptStruct UniversalCameraPlugin.TargetSettings
-// 0x0020 (0x0020 - 0x0000)
-struct FTargetSettings final
-{
-public:
-	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USceneComponent*                        SceneComponent;                                    // 0x0008(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMeshComponent*                         Mesh;                                              // 0x0010(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Socket;                                            // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FTargetSettings;
-
-// ScriptStruct UniversalCameraPlugin.PlaceholderCameraInfos
-// 0x0018 (0x0018 - 0x0000)
-struct FPlaceholderCameraInfos final
-{
-public:
-	struct FVector                                Location;                                          // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Yaw;                                               // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Pitch;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Zoom;                                              // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPlaceholderCameraInfos;
 
 // ScriptStruct UniversalCameraPlugin.ConstrainVector2
 // 0x0003 (0x0003 - 0x0000)

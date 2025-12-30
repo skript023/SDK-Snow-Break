@@ -17,6 +17,745 @@
 namespace SDK
 {
 
+// LuaFunction BP_TaskActor.BP_TaskActor_C.ShouldCalcOnlineBehaviorPoint
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+bool ABP_TaskActor_C::ShouldCalcOnlineBehaviorPoint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "ShouldCalcOnlineBehaviorPoint");
+
+	Params::BP_TaskActor_C_ShouldCalcOnlineBehaviorPoint Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.OnLevelPreFinish
+// (Native, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bSuccess                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_TaskActor_C::OnLevelPreFinish(bool bSuccess)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "OnLevelPreFinish");
+
+	Params::BP_TaskActor_C_OnLevelPreFinish Parms{};
+
+	Parms.bSuccess = bSuccess;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.OnMultiKillInfoUpdate
+// (Native, Event, Public, BlueprintEvent)
+
+void ABP_TaskActor_C::OnMultiKillInfoUpdate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "OnMultiKillInfoUpdate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.LeaveAllAI
+// (Native, Event, Public, BlueprintEvent)
+
+void ABP_TaskActor_C::LeaveAllAI()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "LeaveAllAI");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.ReceiveBeginPlay
+// (Native, Event, Protected, BlueprintEvent)
+
+void ABP_TaskActor_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "ReceiveBeginPlay");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.TryStartTask
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bOpenUI                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void ABP_TaskActor_C::TryStartTask(bool bOpenUI)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "TryStartTask");
+
+	Params::BP_TaskActor_C_TryStartTask Parms{};
+
+	Parms.bOpenUI = bOpenUI;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.CloseActCondition
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   ConditionID                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    LogicName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void ABP_TaskActor_C::CloseActCondition(int32 ConditionID, const class FString& LogicName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "CloseActCondition");
+
+	Params::BP_TaskActor_C_CloseActCondition Parms{};
+
+	Parms.ConditionID = ConditionID;
+	Parms.LogicName = std::move(LogicName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.OnMultiKill
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// class AActor*                           Killer                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Deceased                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABP_TaskActor_C::OnMultiKill(class AActor* Killer, class AActor* Deceased)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "OnMultiKill");
+
+	Params::BP_TaskActor_C_OnMultiKill Parms{};
+
+	Parms.Killer = Killer;
+	Parms.Deceased = Deceased;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.CheckActCondition
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   ConditionID                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    LogicName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// bool*                                   ret                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_TaskActor_C::CheckActCondition(int32 ConditionID, const class FString& LogicName, bool* ret)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "CheckActCondition");
+
+	Params::BP_TaskActor_C_CheckActCondition Parms{};
+
+	Parms.ConditionID = ConditionID;
+	Parms.LogicName = std::move(LogicName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (ret != nullptr)
+		*ret = Parms.ret;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.GetVictorySequence
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class ULevelSequence**                  AsLevel_Sequence                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString*                          Return_Value_资源名修饰                                (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+
+void ABP_TaskActor_C::GetVictorySequence(class ULevelSequence** AsLevel_Sequence, class FString* Return_Value_资源名修饰)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "GetVictorySequence");
+
+	Params::BP_TaskActor_C_GetVictorySequence Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (AsLevel_Sequence != nullptr)
+		*AsLevel_Sequence = Parms.AsLevel_Sequence;
+
+	if (Return_Value_资源名修饰 != nullptr)
+		*Return_Value_资源名修饰 = std::move(Parms.Return_Value_资源名修饰);
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.FixSkill
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AGameSkill*                       InSkill                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_TaskActor_C::FixSkill(class AGameSkill* InSkill)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "FixSkill");
+
+	Params::BP_TaskActor_C_FixSkill Parms{};
+
+	Parms.InSkill = InSkill;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.OnDebugInit
+// (Native, Event, Public, BlueprintEvent)
+
+void ABP_TaskActor_C::OnDebugInit()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "OnDebugInit");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.SetGameTask
+// (Native, Event, Public, BlueprintEvent)
+
+void ABP_TaskActor_C::SetGameTask()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "SetGameTask");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.OnLevelSequcenceFinish
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_TaskActor_C::OnLevelSequcenceFinish()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "OnLevelSequcenceFinish");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.GetCharacterTemplateId
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AGamePlayer*                      Player                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  TemplateId                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_TaskActor_C::GetCharacterTemplateId(class AGamePlayer* Player, int32* TemplateId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "GetCharacterTemplateId");
+
+	Params::BP_TaskActor_C_GetCharacterTemplateId Parms{};
+
+	Parms.Player = Player;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (TemplateId != nullptr)
+		*TemplateId = Parms.TemplateId;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.DoSceneOnOff
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_TaskActor_C::DoSceneOnOff()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "DoSceneOnOff");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.GetLevelConfigTime
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// const class UGameTask*                  Cur                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 ABP_TaskActor_C::GetLevelConfigTime(const class UGameTask* Cur)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "GetLevelConfigTime");
+
+	Params::BP_TaskActor_C_GetLevelConfigTime Parms{};
+
+	Parms.Cur = Cur;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.OnPlayerMove
+// (Native, Event, Public, BlueprintEvent)
+
+void ABP_TaskActor_C::OnPlayerMove()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "OnPlayerMove");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.ForceInterruptSkill
+// (Native, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AGameSkill*                       GameSkill                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ESkillInterruptedType                   InterruptedType                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_TaskActor_C::ForceInterruptSkill(class AGameSkill* GameSkill, ESkillInterruptedType InterruptedType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "ForceInterruptSkill");
+
+	Params::BP_TaskActor_C_ForceInterruptSkill Parms{};
+
+	Parms.GameSkill = GameSkill;
+	Parms.InterruptedType = InterruptedType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.OpenActCondition
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   ConditionID                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    LogicName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void ABP_TaskActor_C::OpenActCondition(int32 ConditionID, const class FString& LogicName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "OpenActCondition");
+
+	Params::BP_TaskActor_C_OpenActCondition Parms{};
+
+	Parms.ConditionID = ConditionID;
+	Parms.LogicName = std::move(LogicName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.RequestTaskDataValueSync
+// (Native, Event, Public, BlueprintEvent)
+
+void ABP_TaskActor_C::RequestTaskDataValueSync()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "RequestTaskDataValueSync");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.PlayTeleportAnim
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           TeleportActor                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_TaskActor_C::PlayTeleportAnim(class AActor* TeleportActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "PlayTeleportAnim");
+
+	Params::BP_TaskActor_C_PlayTeleportAnim Parms{};
+
+	Parms.TeleportActor = TeleportActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.FightTip
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    IsNodeId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FRepExecuteDes&            ExecuteData                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void ABP_TaskActor_C::FightTip(const class FString& InKey, int32 InType, bool IsNodeId, const struct FRepExecuteDes& ExecuteData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "FightTip");
+
+	Params::BP_TaskActor_C_FightTip Parms{};
+
+	Parms.InKey = std::move(InKey);
+	Parms.InType = InType;
+	Parms.IsNodeId = IsNodeId;
+	Parms.ExecuteData = std::move(ExecuteData);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.NotifyMoveCameraComplete
+// (Native, Event, Public, BlueprintEvent)
+
+void ABP_TaskActor_C::NotifyMoveCameraComplete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "NotifyMoveCameraComplete");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.ReceiveEndPlay
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_TaskActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "ReceiveEndPlay");
+
+	Params::BP_TaskActor_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.MultiDoSpawn
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   InMonsterId                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             InTag                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             PointName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABP_TaskActor_C::MultiDoSpawn(int32 InMonsterId, class FName InTag, class FName PointName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "MultiDoSpawn");
+
+	Params::BP_TaskActor_C_MultiDoSpawn Parms{};
+
+	Parms.InMonsterId = InMonsterId;
+	Parms.InTag = InTag;
+	Parms.PointName = PointName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.IsMultiLevel
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+bool ABP_TaskActor_C::IsMultiLevel()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "IsMultiLevel");
+
+	Params::BP_TaskActor_C_IsMultiLevel Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.UnBindGameTaskUIEvent
+// (Native, Event, Public, BlueprintEvent)
+
+void ABP_TaskActor_C::UnBindGameTaskUIEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "UnBindGameTaskUIEvent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.OnClientMultiTaskPathUpdate
+// (Native, Event, Public, BlueprintEvent)
+
+void ABP_TaskActor_C::OnClientMultiTaskPathUpdate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "OnClientMultiTaskPathUpdate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.NotifyStartMultiSubTask
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// const struct FMultiSubTask&             InSubTask                                              (ConstParm, Parm, NativeAccessSpecifierPublic)
+
+void ABP_TaskActor_C::NotifyStartMultiSubTask(const struct FMultiSubTask& InSubTask)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "NotifyStartMultiSubTask");
+
+	Params::BP_TaskActor_C_NotifyStartMultiSubTask Parms{};
+
+	Parms.InSubTask = std::move(InSubTask);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_TaskActor.BP_TaskActor_C.ShouldCalcOnlineDesignation
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+bool ABP_TaskActor_C::ShouldCalcOnlineDesignation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "ShouldCalcOnlineDesignation");
+
+	Params::BP_TaskActor_C_ShouldCalcOnlineDesignation Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function BP_TaskActor.BP_TaskActor_C.GetCharacterTemplateId__Overridden
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -908,6 +1647,42 @@ void ABP_TaskActor_C::ForceInterruptSkill__Overridden(class AGameSkill* GameSkil
 }
 
 
+// Function BP_TaskActor.BP_TaskActor_C.ClientAsyncMultiTask
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_TaskActor_C::ClientAsyncMultiTask()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "ClientAsyncMultiTask");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_TaskActor.BP_TaskActor_C.OnAsyncLoadComplete
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          LoadedObject                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FSoftObjectPath&           Path                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void ABP_TaskActor_C::OnAsyncLoadComplete(class UObject* LoadedObject, const struct FSoftObjectPath& Path)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "OnAsyncLoadComplete");
+
+	Params::BP_TaskActor_C_OnAsyncLoadComplete Parms{};
+
+	Parms.LoadedObject = LoadedObject;
+	Parms.Path = std::move(Path);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_TaskActor.BP_TaskActor_C.ExecuteUbergraph_BP_TaskActor
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -928,197 +1703,19 @@ void ABP_TaskActor_C::ExecuteUbergraph_BP_TaskActor(int32 EntryPoint)
 }
 
 
-// LuaFunction BP_TaskActor.BP_TaskActor_C.ReceiveBeginPlay
-// (Native, Event, Protected, BlueprintEvent)
-
-void ABP_TaskActor_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "ReceiveBeginPlay");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.MultiDoSpawn
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   InMonsterId                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             InTag                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             PointName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ABP_TaskActor_C::MultiDoSpawn(int32 InMonsterId, class FName InTag, class FName PointName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "MultiDoSpawn");
-
-	Params::BP_TaskActor_C_MultiDoSpawn Parms{};
-
-	Parms.InMonsterId = InMonsterId;
-	Parms.InTag = InTag;
-	Parms.PointName = PointName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.GetVictorySequence
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class ULevelSequence**                  AsLevel_Sequence                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString*                          Return_Value_资源名修饰                                (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
-
-void ABP_TaskActor_C::GetVictorySequence(class ULevelSequence** AsLevel_Sequence, class FString* Return_Value_资源名修饰)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "GetVictorySequence");
-
-	Params::BP_TaskActor_C_GetVictorySequence Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (AsLevel_Sequence != nullptr)
-		*AsLevel_Sequence = Parms.AsLevel_Sequence;
-
-	if (Return_Value_资源名修饰 != nullptr)
-		*Return_Value_资源名修饰 = std::move(Parms.Return_Value_资源名修饰);
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.OnMultiKill
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// class AActor*                           Killer                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Deceased                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ABP_TaskActor_C::OnMultiKill(class AActor* Killer, class AActor* Deceased)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "OnMultiKill");
-
-	Params::BP_TaskActor_C_OnMultiKill Parms{};
-
-	Parms.Killer = Killer;
-	Parms.Deceased = Deceased;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.OpenActCondition
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   ConditionID                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    LogicName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-
-void ABP_TaskActor_C::OpenActCondition(int32 ConditionID, const class FString& LogicName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "OpenActCondition");
-
-	Params::BP_TaskActor_C_OpenActCondition Parms{};
-
-	Parms.ConditionID = ConditionID;
-	Parms.LogicName = std::move(LogicName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.OnMultiKillInfoUpdate
-// (Native, Event, Public, BlueprintEvent)
-
-void ABP_TaskActor_C::OnMultiKillInfoUpdate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "OnMultiKillInfoUpdate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.CloseActCondition
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   ConditionID                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    LogicName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-
-void ABP_TaskActor_C::CloseActCondition(int32 ConditionID, const class FString& LogicName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "CloseActCondition");
-
-	Params::BP_TaskActor_C_CloseActCondition Parms{};
-
-	Parms.ConditionID = ConditionID;
-	Parms.LogicName = std::move(LogicName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.IsMultiLevel
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// LuaFunction BP_TaskActor.BP_TaskActor_C.LevelAlwaysShowSuccess
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-bool ABP_TaskActor_C::IsMultiLevel()
+bool ABP_TaskActor_C::LevelAlwaysShowSuccess() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "IsMultiLevel");
+		Func = Class->GetFunction("BP_TaskActor_C", "LevelAlwaysShowSuccess");
 
-	Params::BP_TaskActor_C_IsMultiLevel Parms{};
+	Params::BP_TaskActor_C_LevelAlwaysShowSuccess Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1126,543 +1723,6 @@ bool ABP_TaskActor_C::IsMultiLevel()
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.TryStartTask
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bOpenUI                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void ABP_TaskActor_C::TryStartTask(bool bOpenUI)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "TryStartTask");
-
-	Params::BP_TaskActor_C_TryStartTask Parms{};
-
-	Parms.bOpenUI = bOpenUI;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.OnDebugInit
-// (Native, Event, Public, BlueprintEvent)
-
-void ABP_TaskActor_C::OnDebugInit()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "OnDebugInit");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.UnBindGameTaskUIEvent
-// (Native, Event, Public, BlueprintEvent)
-
-void ABP_TaskActor_C::UnBindGameTaskUIEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "UnBindGameTaskUIEvent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.OnLevelSequcenceFinish
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_TaskActor_C::OnLevelSequcenceFinish()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "OnLevelSequcenceFinish");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.ForceInterruptSkill
-// (Native, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AGameSkill*                       GameSkill                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ESkillInterruptedType                   InterruptedType                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_TaskActor_C::ForceInterruptSkill(class AGameSkill* GameSkill, ESkillInterruptedType InterruptedType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "ForceInterruptSkill");
-
-	Params::BP_TaskActor_C_ForceInterruptSkill Parms{};
-
-	Parms.GameSkill = GameSkill;
-	Parms.InterruptedType = InterruptedType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.PlayTeleportAnim
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AActor*                           TeleportActor                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_TaskActor_C::PlayTeleportAnim(class AActor* TeleportActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "PlayTeleportAnim");
-
-	Params::BP_TaskActor_C_PlayTeleportAnim Parms{};
-
-	Parms.TeleportActor = TeleportActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.NotifyStartMultiSubTask
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// const struct FMultiSubTask&             InSubTask                                              (ConstParm, Parm, NativeAccessSpecifierPublic)
-
-void ABP_TaskActor_C::NotifyStartMultiSubTask(const struct FMultiSubTask& InSubTask)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "NotifyStartMultiSubTask");
-
-	Params::BP_TaskActor_C_NotifyStartMultiSubTask Parms{};
-
-	Parms.InSubTask = std::move(InSubTask);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.GetCharacterTemplateId
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AGamePlayer*                      Player                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32*                                  TemplateId                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_TaskActor_C::GetCharacterTemplateId(class AGamePlayer* Player, int32* TemplateId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "GetCharacterTemplateId");
-
-	Params::BP_TaskActor_C_GetCharacterTemplateId Parms{};
-
-	Parms.Player = Player;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (TemplateId != nullptr)
-		*TemplateId = Parms.TemplateId;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.NotifyMoveCameraComplete
-// (Native, Event, Public, BlueprintEvent)
-
-void ABP_TaskActor_C::NotifyMoveCameraComplete()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "NotifyMoveCameraComplete");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.CheckActCondition
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   ConditionID                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    LogicName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// bool*                                   ret                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_TaskActor_C::CheckActCondition(int32 ConditionID, const class FString& LogicName, bool* ret)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "CheckActCondition");
-
-	Params::BP_TaskActor_C_CheckActCondition Parms{};
-
-	Parms.ConditionID = ConditionID;
-	Parms.LogicName = std::move(LogicName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (ret != nullptr)
-		*ret = Parms.ret;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.GetLevelConfigTime
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// const class UGameTask*                  Cur                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 ABP_TaskActor_C::GetLevelConfigTime(const class UGameTask* Cur)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "GetLevelConfigTime");
-
-	Params::BP_TaskActor_C_GetLevelConfigTime Parms{};
-
-	Parms.Cur = Cur;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.ShouldCalcOnlineBehaviorPoint
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-bool ABP_TaskActor_C::ShouldCalcOnlineBehaviorPoint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "ShouldCalcOnlineBehaviorPoint");
-
-	Params::BP_TaskActor_C_ShouldCalcOnlineBehaviorPoint Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.FixSkill
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AGameSkill*                       InSkill                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_TaskActor_C::FixSkill(class AGameSkill* InSkill)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "FixSkill");
-
-	Params::BP_TaskActor_C_FixSkill Parms{};
-
-	Parms.InSkill = InSkill;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.OnPlayerMove
-// (Native, Event, Public, BlueprintEvent)
-
-void ABP_TaskActor_C::OnPlayerMove()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "OnPlayerMove");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.ReceiveEndPlay
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_TaskActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "ReceiveEndPlay");
-
-	Params::BP_TaskActor_C_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason = EndPlayReason;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.RequestTaskDataValueSync
-// (Native, Event, Public, BlueprintEvent)
-
-void ABP_TaskActor_C::RequestTaskDataValueSync()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "RequestTaskDataValueSync");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.LeaveAllAI
-// (Native, Event, Public, BlueprintEvent)
-
-void ABP_TaskActor_C::LeaveAllAI()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "LeaveAllAI");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.ShouldCalcOnlineDesignation
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-bool ABP_TaskActor_C::ShouldCalcOnlineDesignation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "ShouldCalcOnlineDesignation");
-
-	Params::BP_TaskActor_C_ShouldCalcOnlineDesignation Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.FightTip
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    IsNodeId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// const struct FRepExecuteDes&            ExecuteData                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void ABP_TaskActor_C::FightTip(const class FString& InKey, int32 InType, bool IsNodeId, const struct FRepExecuteDes& ExecuteData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "FightTip");
-
-	Params::BP_TaskActor_C_FightTip Parms{};
-
-	Parms.InKey = std::move(InKey);
-	Parms.InType = InType;
-	Parms.IsNodeId = IsNodeId;
-	Parms.ExecuteData = std::move(ExecuteData);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.DoSceneOnOff
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_TaskActor_C::DoSceneOnOff()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "DoSceneOnOff");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.OnLevelPreFinish
-// (Native, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bSuccess                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_TaskActor_C::OnLevelPreFinish(bool bSuccess)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "OnLevelPreFinish");
-
-	Params::BP_TaskActor_C_OnLevelPreFinish Parms{};
-
-	Parms.bSuccess = bSuccess;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.SetGameTask
-// (Native, Event, Public, BlueprintEvent)
-
-void ABP_TaskActor_C::SetGameTask()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "SetGameTask");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BP_TaskActor.BP_TaskActor_C.GetModuleName
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-
-class FString ABP_TaskActor_C::GetModuleName() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "GetModuleName");
-
-	Params::BP_TaskActor_C_GetModuleName Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
 }
@@ -1681,31 +1741,6 @@ bool ABP_TaskActor_C::IsMultiConstLevel() const
 		Func = Class->GetFunction("BP_TaskActor_C", "IsMultiConstLevel");
 
 	Params::BP_TaskActor_C_IsMultiConstLevel Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// LuaFunction BP_TaskActor.BP_TaskActor_C.IsMultiDynamicLevel
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-bool ABP_TaskActor_C::IsMultiDynamicLevel() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TaskActor_C", "IsMultiDynamicLevel");
-
-	Params::BP_TaskActor_C_IsMultiDynamicLevel Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1743,6 +1778,31 @@ bool ABP_TaskActor_C::IsWaveControlLevel() const
 }
 
 
+// LuaFunction BP_TaskActor.BP_TaskActor_C.IsMultiDynamicLevel
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+bool ABP_TaskActor_C::IsMultiDynamicLevel() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "IsMultiDynamicLevel");
+
+	Params::BP_TaskActor_C_IsMultiDynamicLevel Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // LuaFunction BP_TaskActor.BP_TaskActor_C.IsMultiSpecificLevel
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
@@ -1763,6 +1823,26 @@ bool ABP_TaskActor_C::IsMultiSpecificLevel() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_TaskActor.BP_TaskActor_C.GetModuleName
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+
+class FString ABP_TaskActor_C::GetModuleName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TaskActor_C", "GetModuleName");
+
+	Params::BP_TaskActor_C_GetModuleName Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
 }

@@ -14,24 +14,6 @@
 namespace SDK::Params
 {
 
-// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.BP_OnItemSelectionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_open_world_task_list_item_C_BP_OnItemSelectionChanged final
-{
-public:
-	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_open_world_task_list_item_C_BP_OnItemSelectionChanged;
-
-// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.OnListItemObjectSet__Overridden
-// 0x0008 (0x0008 - 0x0000)
-struct uw_open_world_task_list_item_C_OnListItemObjectSet__Overridden final
-{
-public:
-	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_open_world_task_list_item_C_OnListItemObjectSet__Overridden;
-
 // Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.ExecuteUbergraph_uw_open_world_task_list_item
 // 0x0018 (0x0018 - 0x0000)
 struct uw_open_world_task_list_item_C_ExecuteUbergraph_uw_open_world_task_list_item final
@@ -45,15 +27,23 @@ public:
 };
 DUMPER7_ASSERTS_uw_open_world_task_list_item_C_ExecuteUbergraph_uw_open_world_task_list_item;
 
-// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.SetState
-// 0x0002 (0x0002 - 0x0000)
-struct uw_open_world_task_list_item_C_SetState final
+// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.OnListItemObjectSet__Overridden
+// 0x0008 (0x0008 - 0x0000)
+struct uw_open_world_task_list_item_C_OnListItemObjectSet__Overridden final
 {
 public:
-	uint8                                         InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_uw_open_world_task_list_item_C_SetState;
+DUMPER7_ASSERTS_uw_open_world_task_list_item_C_OnListItemObjectSet__Overridden;
+
+// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.BP_OnItemSelectionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_open_world_task_list_item_C_BP_OnItemSelectionChanged final
+{
+public:
+	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_open_world_task_list_item_C_BP_OnItemSelectionChanged;
 
 // Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.BP_OnItemExpansionChanged
 // 0x0001 (0x0001 - 0x0000)
@@ -63,6 +53,16 @@ public:
 	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_open_world_task_list_item_C_BP_OnItemExpansionChanged;
+
+// Function uw_open_world_task_list_item.uw_open_world_task_list_item_C.SetState
+// 0x0002 (0x0002 - 0x0000)
+struct uw_open_world_task_list_item_C_SetState final
+{
+public:
+	uint8                                         InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_open_world_task_list_item_C_SetState;
 
 // LuaFunction uw_open_world_task_list_item.uw_open_world_task_list_item_C.OnListItemObjectSet
 // 0x0008 (0x0008 - 0x0000)

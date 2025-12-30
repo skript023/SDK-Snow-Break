@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -47,8 +47,8 @@ public:
 
 public:
 	void ExecuteUbergraph_uw_fight_player_pc(int32 EntryPoint);
-	void PlayPowerAnim(bool bFull);
 	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void PlayPowerAnim(bool bFull);
 
 public:
 	static class UClass* StaticClass()

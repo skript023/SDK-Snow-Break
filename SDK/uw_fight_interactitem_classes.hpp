@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 #include "UMG_structs.hpp"
 
 
@@ -40,6 +40,11 @@ public:
 	int32                                         PriorityLevel;                                     // 0x0430(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void Destruct();
+	void OnConstruct();
+	void InitGamepadLongPressUI();
+	void Construct();
+	void UpdateKeyShow();
 	void DontRequireNormalState(bool* ret);
 	void InitGamepadLongPressUI__Overridden();
 	void BindKeyBoardOnSettingChange();
@@ -54,11 +59,6 @@ public:
 	void Finish();
 	void Destruct__Overridden();
 	void ExecuteUbergraph_uw_fight_interactitem(int32 EntryPoint);
-	void Destruct();
-	void OnConstruct();
-	void InitGamepadLongPressUI();
-	void UpdateKeyShow();
-	void Construct();
 
 	class FString GetModuleName() const;
 

@@ -10,19 +10,19 @@
 
 #include "Basic.hpp"
 
-#include "BP_Bunker_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BP_Bunker_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Bunker_WaterTank.BP_Bunker_WaterTank_C
-// 0x0010 (0x13C0 - 0x13B0)
+// 0x0010 (0x1420 - 0x1410)
 class ABP_Bunker_WaterTank_C final : public ABP_Bunker_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Bunker_WaterTank_C;              // 0x13B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Bunker_WaterTank_C;              // 0x1410(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue);

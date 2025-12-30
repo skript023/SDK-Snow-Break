@@ -128,15 +128,15 @@ void Uuw_fight_monster_hp_ordinary_C::K2_OnAppliedModifierChange(int32 ModifierI
 }
 
 
-// LuaFunction uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.K2_OnFree
+// LuaFunction uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.K2_OnReset
 // (Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_monster_hp_ordinary_C::K2_OnFree()
+void Uuw_fight_monster_hp_ordinary_C::K2_OnReset()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "K2_OnFree");
+		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "K2_OnReset");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -147,15 +147,15 @@ void Uuw_fight_monster_hp_ordinary_C::K2_OnFree()
 }
 
 
-// LuaFunction uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.K2_OnReset
+// LuaFunction uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.K2_OnFree
 // (Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_monster_hp_ordinary_C::K2_OnReset()
+void Uuw_fight_monster_hp_ordinary_C::K2_OnFree()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "K2_OnReset");
+		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "K2_OnFree");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -44,6 +44,16 @@ public:
 };
 DUMPER7_ASSERTS_FLiveLinkSourceHandle;
 
+// ScriptStruct LiveLinkInterface.LiveLinkMetaData
+// 0x0060 (0x0060 - 0x0000)
+struct FLiveLinkMetaData final
+{
+public:
+	TMap<class FName, class FString>              StringMetadata;                                    // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FQualifiedFrameTime                    SceneTime;                                         // 0x0050(0x0010)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLiveLinkMetaData;
+
 // ScriptStruct LiveLinkInterface.LiveLinkBaseBlueprintData
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FLiveLinkBaseBlueprintData
@@ -101,16 +111,6 @@ public:
 	double                                        Offset;                                            // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FLiveLinkWorldTime;
-
-// ScriptStruct LiveLinkInterface.LiveLinkMetaData
-// 0x0060 (0x0060 - 0x0000)
-struct FLiveLinkMetaData final
-{
-public:
-	TMap<class FName, class FString>              StringMetadata;                                    // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FQualifiedFrameTime                    SceneTime;                                         // 0x0050(0x0010)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLiveLinkMetaData;
 
 // ScriptStruct LiveLinkInterface.LiveLinkBaseFrameData
 // 0x00A0 (0x00A0 - 0x0000)

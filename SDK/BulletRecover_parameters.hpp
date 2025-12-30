@@ -16,24 +16,6 @@
 namespace SDK::Params
 {
 
-// LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveDeActive
-// 0x0008 (0x0008 - 0x0000)
-struct BulletRecover_C_K2_ReceiveDeActive final
-{
-public:
-	const class UGameAbilityComponent*            Pawn;                                              // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BulletRecover_C_K2_ReceiveDeActive;
-
-// LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveActive
-// 0x0008 (0x0008 - 0x0000)
-struct BulletRecover_C_K2_ReceiveActive final
-{
-public:
-	const class UObject*                          Instigator;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BulletRecover_C_K2_ReceiveActive;
-
 // LuaFunction BulletRecover.BulletRecover_C.K2_RecoverAttribute
 // 0x0010 (0x0010 - 0x0000)
 struct BulletRecover_C_K2_RecoverAttribute final
@@ -44,6 +26,24 @@ public:
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_BulletRecover_C_K2_RecoverAttribute;
+
+// LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveActive
+// 0x0008 (0x0008 - 0x0000)
+struct BulletRecover_C_K2_ReceiveActive final
+{
+public:
+	const class UObject*                          Instigator;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BulletRecover_C_K2_ReceiveActive;
+
+// LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveDeActive
+// 0x0008 (0x0008 - 0x0000)
+struct BulletRecover_C_K2_ReceiveDeActive final
+{
+public:
+	const class UGameAbilityComponent*            Pawn;                                              // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BulletRecover_C_K2_ReceiveDeActive;
 
 // Function BulletRecover.BulletRecover_C.ExecuteUbergraph_BulletRecover
 // 0x0058 (0x0058 - 0x0000)

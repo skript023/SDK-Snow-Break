@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass uw_fight_damage_num_base.uw_fight_damage_num_base_C
-// 0x0008 (0x05A8 - 0x05A0)
+// 0x0008 (0x05B0 - 0x05A8)
 class Uuw_fight_damage_num_base_C final : public UDamageFloat
 {
 public:
-	class UGameCanvasPanel*                       Root;                                              // 0x05A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UGameCanvasPanel*                       Root;                                              // 0x05A8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

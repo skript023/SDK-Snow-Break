@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "EnumInitSnow_structs.hpp"
 #include "Game_structs.hpp"
+#include "EnumInitSnow_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -28,10 +28,10 @@ public:
 
 public:
 	void K2_InitCondition();
-	void K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
-	void K2_UnbindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void OnCharacterStartSwitch(bool bDeadSwitch_0);
 	void OnCharacterStartQTE();
+	void K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
+	void K2_UnbindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void ExecuteUbergraph_SelfCheck_StartSwitch(int32 EntryPoint);
 
 public:

@@ -222,7 +222,7 @@ void ARainSource::BlendRainOnEvent()
 
 
 // Function Weather.RainSource.BlendScenePost
-// (Native, Public)
+// (Native, Public, BlueprintCallable)
 // Parameters:
 // float                                   _Alpha                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -247,7 +247,7 @@ void ARainSource::BlendScenePost(float _Alpha)
 
 
 // Function Weather.RainSource.BlendSky
-// (Native, Public)
+// (Native, Public, BlueprintCallable)
 // Parameters:
 // float                                   _Alpha                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 

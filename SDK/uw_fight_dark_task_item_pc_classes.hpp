@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -37,12 +37,12 @@ public:
 	class UGameCanvasPanel*                       PanelDirection;                                    // 0x0410(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void SetState(uint8 InState);
-	void BP_OnEntryReleased();
-	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void ExecuteUbergraph_uw_fight_dark_task_item_pc(int32 EntryPoint);
 	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
 	void BP_OnItemSelectionChanged(bool bIsSelected);
-	void ExecuteUbergraph_uw_fight_dark_task_item_pc(int32 EntryPoint);
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void BP_OnEntryReleased();
+	void SetState(uint8 InState);
 	void OnListItemObjectSet(class UObject* ListItemObject);
 	void OnConstruct();
 	void Destruct();

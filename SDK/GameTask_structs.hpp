@@ -87,7 +87,7 @@ enum class ESubGameTaskType : uint8
 };
 
 // Enum GameTask.ELevelType
-// NumValues: 0x0027
+// NumValues: 0x0028
 enum class ELevelType : uint8
 {
 	Normal                                   = 0,
@@ -126,6 +126,7 @@ enum class ELevelType : uint8
 	OnlinePurge_Race                         = 33,
 	OnlinePurge_Endless                      = 34,
 	WorldBoss                                = 35,
+	DonoRogue                                = 36,
 	HellDivers                               = 200,
 	LevelType_MAX                            = 201,
 	ELevelType_MAX                           = 202,
@@ -286,7 +287,8 @@ public:
 	int32                                         ID;                                                // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bOpenWhenLevelFinish;                              // 0x0004(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bTemporarily;                                      // 0x0005(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bClose;                                            // 0x0006(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7[0x1];                                        // 0x0007(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FTriggerConditionConfig;
 
