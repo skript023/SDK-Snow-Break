@@ -3010,13 +3010,13 @@ enum class EMovementFilter : uint8
 
 // Enum Game.BulletType
 // NumValues: 0x0004
-enum class Game::EBulletType : uint8
-{
-	NotSelect                                = 0,
-	Water                                    = 1,
-	Empty                                    = 2,
-	BulletType_MAX                           = 3,
-};
+// enum class Game::EBulletType : uint8
+// {
+// 	NotSelect                                = 0,
+// 	Water                                    = 1,
+// 	Empty                                    = 2,
+// 	BulletType_MAX                           = 3,
+// };
 
 // Enum Game.ENpcInteractType
 // NumValues: 0x0003
