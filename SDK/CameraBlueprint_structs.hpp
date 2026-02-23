@@ -110,6 +110,17 @@ public:
 };
 DUMPER7_ASSERTS_FCameraStateMachineStateDebugData;
 
+// ScriptStruct CameraBlueprint.CameraFixedPOVSettings
+// 0x001C (0x001C - 0x0000)
+struct FCameraFixedPOVSettings final
+{
+public:
+	struct FVector                                CameraLocation;                                    // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               CameraRotation;                                    // 0x000C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         FOV;                                               // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCameraFixedPOVSettings;
+
 // ScriptStruct CameraBlueprint.CameraLagSettings
 // 0x0050 (0x0050 - 0x0000)
 struct FCameraLagSettings final
@@ -363,6 +374,26 @@ public:
 };
 DUMPER7_ASSERTS_FCameraNode_Default;
 
+// ScriptStruct CameraBlueprint.CameraNode_FixedPOV
+// 0x00C0 (0x00D0 - 0x0010)
+struct FCameraNode_FixedPOV final : public FCameraNode_Base
+{
+public:
+	struct FCameraParameterLink                   Source;                                            // 0x0010(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCameraFixedPOVSettings                POVSettings;                                       // 0x0020(0x001C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         ActualAlpha;                                       // 0x003C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAnimAlphaInputType                           AlphaInputType;                                    // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Alpha;                                             // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FInputScaleBias                        AlphaScaleBias;                                    // 0x0048(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FInputAlphaBoolBlend                   AlphaBoolBlend;                                    // 0x0050(0x0048)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bEnabled;                                          // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_99[0x3];                                       // 0x0099(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FInputScaleBiasClamp                   AlphaScaleBiasClamp;                               // 0x009C(0x0030)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCameraNode_FixedPOV;
+
 // ScriptStruct CameraBlueprint.CameraNode_Framer
 // 0x0118 (0x0128 - 0x0010)
 struct FCameraNode_Framer final : public FCameraNode_Base
@@ -410,6 +441,20 @@ struct FCameraNode_InputCamera final : public FCameraNode_Base
 {
 };
 DUMPER7_ASSERTS_FCameraNode_InputCamera;
+
+// ScriptStruct CameraBlueprint.CameraNode_LevelSeqCut
+// 0x00D0 (0x00E0 - 0x0010)
+struct FCameraNode_LevelSeqCut final : public FCameraNode_Base
+{
+public:
+	TSoftObjectPtr<class ULevelSequence>          CameraSequenceAsset;                               // 0x0010(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CutTiming;                                         // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class ULevelSequence>          LevelSequence;                                     // 0x003C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCameraParameter                       previousCameraParameter;                           // 0x0044(0x0068)(NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             InitTransform;                                     // 0x00B0(0x0030)(IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCameraNode_LevelSeqCut;
 
 // ScriptStruct CameraBlueprint.CameraNode_Modify
 // 0x0108 (0x0118 - 0x0010)

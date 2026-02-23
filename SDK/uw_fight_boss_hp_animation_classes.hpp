@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -27,13 +27,13 @@ public:
 	class URedirectImage*                         Image_400;                                         // 0x0358(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_boss_hp_animation(int32 EntryPoint);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
-	void K2_Play(float InDelayTime);
-	void OnListItemObjectSet(class UObject* ListItemObject);
-	void BP_OnItemSelectionChanged(bool bIsSelected);
-	void BP_OnItemExpansionChanged(bool bIsExpanded);
 	void BP_OnEntryReleased();
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void BP_OnItemSelectionChanged(bool bIsSelected);
+	void OnListItemObjectSet(class UObject* ListItemObject);
+	void K2_Play(float InDelayTime);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void ExecuteUbergraph_uw_fight_boss_hp_animation(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

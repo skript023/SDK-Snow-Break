@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Game_structs.hpp"
 #include "Engine_structs.hpp"
 #include "DeadPerformance_BlueprintBase_classes.hpp"
+#include "Game_structs.hpp"
 
 
 namespace SDK
@@ -26,8 +26,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0028(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_DeadPerformance_DLC8(int32 EntryPoint);
 	void DeadPerformanceLogic(class AGameCharacter* DeadCharacter, class AGameCharacter* Killer, class UDeadPerformanceComponent* DeadComponent, const struct FHealthChangeValue& HealthChangeValue);
+	void ExecuteUbergraph_DeadPerformance_DLC8(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

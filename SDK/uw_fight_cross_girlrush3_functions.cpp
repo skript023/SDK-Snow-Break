@@ -17,23 +17,39 @@
 namespace SDK
 {
 
-// Function uw_fight_cross_girlrush3.uw_fight_cross_girlrush3_C.ExecuteUbergraph_uw_fight_cross_girlrush3
-// (Final, UbergraphFunction, HasDefaults)
+// Function uw_fight_cross_girlrush3.uw_fight_cross_girlrush3_C.Tick
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_cross_girlrush3_C::ExecuteUbergraph_uw_fight_cross_girlrush3(int32 EntryPoint)
+void Uuw_fight_cross_girlrush3_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_cross_girlrush3_C", "ExecuteUbergraph_uw_fight_cross_girlrush3");
+		Func = Class->GetFunction("uw_fight_cross_girlrush3_C", "Tick");
 
-	Params::uw_fight_cross_girlrush3_C_ExecuteUbergraph_uw_fight_cross_girlrush3 Parms{};
+	Params::uw_fight_cross_girlrush3_C_Tick Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.MyGeometry = std::move(MyGeometry);
+	Parms.InDeltaTime = InDeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_cross_girlrush3.uw_fight_cross_girlrush3_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_cross_girlrush3_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_cross_girlrush3_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -63,37 +79,21 @@ void Uuw_fight_cross_girlrush3_C::K2_OnReloading(bool bIsReload, EWeaponType Typ
 }
 
 
-// Function uw_fight_cross_girlrush3.uw_fight_cross_girlrush3_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_cross_girlrush3_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_cross_girlrush3_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_cross_girlrush3.uw_fight_cross_girlrush3_C.Tick
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function uw_fight_cross_girlrush3.uw_fight_cross_girlrush3_C.ExecuteUbergraph_uw_fight_cross_girlrush3
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_cross_girlrush3_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
+void Uuw_fight_cross_girlrush3_C::ExecuteUbergraph_uw_fight_cross_girlrush3(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_cross_girlrush3_C", "Tick");
+		Func = Class->GetFunction("uw_fight_cross_girlrush3_C", "ExecuteUbergraph_uw_fight_cross_girlrush3");
 
-	Params::uw_fight_cross_girlrush3_C_Tick Parms{};
+	Params::uw_fight_cross_girlrush3_C_ExecuteUbergraph_uw_fight_cross_girlrush3 Parms{};
 
-	Parms.MyGeometry = std::move(MyGeometry);
-	Parms.InDeltaTime = InDeltaTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

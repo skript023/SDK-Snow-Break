@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -30,7 +30,7 @@ public:
 	class UWidgetAnimation*                       ReduceCD;                                          // 0x05A8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Strong;                                            // 0x05B0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       oncdreset;                                         // 0x05B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UWidgetAnimation*                       oncd;                                              // 0x05C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UWidgetAnimation*                       Oncd;                                              // 0x05C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Finish;                                            // 0x05C8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Enough;                                            // 0x05D0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UProgressBar*                           BarCharging;                                       // 0x05D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -97,20 +97,20 @@ public:
 	class URedirectTextBlock*                     TxtTier;                                           // 0x07C0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_skill03_button(int32 EntryPoint);
-	void K2_OnCustomUmgAnimFinished__Overridden(const class FName& AnimName);
-	void OnSkillKeepInterrupt(bool bStart);
-	void K2_PlaySustainAnim(bool bPlay);
-	void OnReduceCD();
-	void OnSkillStrengthening__Overridden(bool bStart);
-	void K2_PlayCDAnim__Overridden(bool bPlay);
-	void K2_PlayEnoughAnim(bool bPlay);
 	void K2_PlayFinishAnim();
-	void K2_PlayCDAnim(bool bPlay);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
-	void Construct();
+	void K2_PlayEnoughAnim(bool bPlay);
+	void K2_PlayCDAnim__Overridden(bool bPlay);
+	void OnSkillStrengthening__Overridden(bool bStart);
+	void OnReduceCD();
+	void K2_PlaySustainAnim(bool bPlay);
+	void OnSkillKeepInterrupt(bool bStart);
+	void K2_OnCustomUmgAnimFinished__Overridden(const class FName& AnimName);
+	void ExecuteUbergraph_uw_fight_skill03_button(int32 EntryPoint);
 	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
 	void OnSkillStrengthening(bool bStart);
+	void Construct();
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void K2_PlayCDAnim(bool bPlay);
 	void Destruct();
 
 	class FString GetModuleName() const;

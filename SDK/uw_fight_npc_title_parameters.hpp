@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// LuaFunction uw_fight_npc_title.uw_fight_npc_title_C.AllocNewWidget
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_npc_title_C_AllocNewWidget final
+{
+public:
+	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_uw_fight_npc_title_C_AllocNewWidget;
+
 // LuaFunction uw_fight_npc_title.uw_fight_npc_title_C.SetNpcName
 // 0x0018 (0x0018 - 0x0000)
 struct uw_fight_npc_title_C_SetNpcName final
@@ -23,15 +32,6 @@ public:
 	class FString                                 Name_0;                                            // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_uw_fight_npc_title_C_SetNpcName;
-
-// LuaFunction uw_fight_npc_title.uw_fight_npc_title_C.AllocNewWidget
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_npc_title_C_AllocNewWidget final
-{
-public:
-	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_uw_fight_npc_title_C_AllocNewWidget;
 
 // LuaFunction uw_fight_npc_title.uw_fight_npc_title_C.FreeWidget
 // 0x0008 (0x0008 - 0x0000)

@@ -18,13 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Mon_802.BP_Mon_802_C
-// 0x0020 (0x14C0 - 0x14A0)
+// 0x0020 (0x1500 - 0x14E0)
 class ABP_Mon_802_C final : public ABaseMonster_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Mon_802_C;                       // 0x14A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCapsuleComponent*                      Capsule;                                           // 0x14A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	int32                                         TestStageMessage;                                  // 0x14B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Mon_802_C;                       // 0x14E0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UCapsuleComponent*                      Capsule;                                           // 0x14E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	int32                                         TestStageMessage;                                  // 0x14F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void Spwaned();

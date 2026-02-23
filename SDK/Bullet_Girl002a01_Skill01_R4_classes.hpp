@@ -18,17 +18,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Bullet_Girl002a01_Skill01_R4.Bullet_Girl002a01_Skill01_R4_C
-// 0x0020 (0x0A70 - 0x0A50)
+// 0x0020 (0x0AA0 - 0x0A80)
 class ABullet_Girl002a01_Skill01_R4_C final : public ABullet_Girl002a01_Skill01_all_C
 {
 public:
-	uint8                                         Pad_A45[0x3];                                      // 0x0A45(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_Bullet_Girl002a01_Skill01_R4_C;     // 0x0A48(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          HasFire_0;                                         // 0x0A50(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_A51[0x7];                                      // 0x0A51(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AActor*>                         Targets_0;                                         // 0x0A58(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	int32                                         RandomMin;                                         // 0x0A68(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         RandomMax;                                         // 0x0A6C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A75[0x3];                                      // 0x0A75(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame_Bullet_Girl002a01_Skill01_R4_C;     // 0x0A78(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          HasFire_0;                                         // 0x0A80(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A81[0x7];                                      // 0x0A81(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         Targets_0;                                         // 0x0A88(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	int32                                         RandomMin;                                         // 0x0A98(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         RandomMax;                                         // 0x0A9C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ReceiveBulletFire();

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -33,10 +33,10 @@ public:
 
 public:
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
-	void BlueprintUpdateAnimation(float DeltaTimeX);
 	void BlueprintBeginPlay();
-	void CustomEvent();
 	void ExecuteUbergraph_ABP_GirlBase_HeadBase(int32 EntryPoint);
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void CustomEvent();
 
 public:
 	static class UClass* StaticClass()

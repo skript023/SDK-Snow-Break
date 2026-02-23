@@ -99,44 +99,6 @@ void ASwitchMgr_C::ExecuteUbergraph_SwitchMgr(int32 EntryPoint)
 }
 
 
-// LuaFunction SwitchMgr.SwitchMgr_C.OnBind
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASwitchMgr_C::OnBind()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SwitchMgr_C", "OnBind");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction SwitchMgr.SwitchMgr_C.SwitchForce
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASwitchMgr_C::SwitchForce()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SwitchMgr_C", "SwitchForce");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction SwitchMgr.SwitchMgr_C.OnSwitchEvent
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
@@ -175,6 +137,25 @@ void ASwitchMgr_C::ReceiveBeginPlay()
 }
 
 
+// LuaFunction SwitchMgr.SwitchMgr_C.OnBind
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASwitchMgr_C::OnBind()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SwitchMgr_C", "OnBind");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction SwitchMgr.SwitchMgr_C.ReceiveTick
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -195,6 +176,25 @@ void ASwitchMgr_C::ReceiveTick(float DeltaSeconds)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction SwitchMgr.SwitchMgr_C.SwitchForce
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASwitchMgr_C::SwitchForce()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SwitchMgr_C", "SwitchForce");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

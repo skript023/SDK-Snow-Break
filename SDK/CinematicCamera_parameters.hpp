@@ -16,6 +16,24 @@
 namespace SDK::Params
 {
 
+// Function CinematicCamera.CineCameraActor.GetCineCameraComponent
+// 0x0008 (0x0008 - 0x0000)
+struct CineCameraActor_GetCineCameraComponent final
+{
+public:
+	class UCineCameraComponent*                   ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CineCameraActor_GetCineCameraComponent;
+
+// Function CinematicCamera.CameraRig_Rail.GetRailSplineComponent
+// 0x0008 (0x0008 - 0x0000)
+struct CameraRig_Rail_GetRailSplineComponent final
+{
+public:
+	class USplineComponent*                       ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CameraRig_Rail_GetRailSplineComponent;
+
 // Function CinematicCamera.CineCameraComponent.GetFilmbackPresetsCopy
 // 0x0010 (0x0010 - 0x0000)
 struct CineCameraComponent_GetFilmbackPresetsCopy final
@@ -105,24 +123,6 @@ public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CineCameraComponent_GetVerticalFieldOfView;
-
-// Function CinematicCamera.CineCameraActor.GetCineCameraComponent
-// 0x0008 (0x0008 - 0x0000)
-struct CineCameraActor_GetCineCameraComponent final
-{
-public:
-	class UCineCameraComponent*                   ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CineCameraActor_GetCineCameraComponent;
-
-// Function CinematicCamera.CameraRig_Rail.GetRailSplineComponent
-// 0x0008 (0x0008 - 0x0000)
-struct CameraRig_Rail_GetRailSplineComponent final
-{
-public:
-	class USplineComponent*                       ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CameraRig_Rail_GetRailSplineComponent;
 
 }
 

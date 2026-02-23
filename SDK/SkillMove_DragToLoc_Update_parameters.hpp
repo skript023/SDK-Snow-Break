@@ -32,16 +32,6 @@ public:
 };
 DUMPER7_ASSERTS_SkillMove_DragToLoc_Update_C_OnMoveEnd;
 
-// LuaFunction SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.OnMoveStart
-// 0x0010 (0x0010 - 0x0000)
-struct SkillMove_DragToLoc_Update_C_OnMoveStart final
-{
-public:
-	class AActor*                                 Launcher;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UBaseMovementComponent*                 Movement;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SkillMove_DragToLoc_Update_C_OnMoveStart;
-
 // LuaFunction SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.OnMoveTick
 // 0x0018 (0x0018 - 0x0000)
 struct SkillMove_DragToLoc_Update_C_OnMoveTick final
@@ -55,6 +45,16 @@ public:
 	class UBaseMovementComponent*                 Movement;                                          // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SkillMove_DragToLoc_Update_C_OnMoveTick;
+
+// LuaFunction SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.OnMoveStart
+// 0x0010 (0x0010 - 0x0000)
+struct SkillMove_DragToLoc_Update_C_OnMoveStart final
+{
+public:
+	class AActor*                                 Launcher;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBaseMovementComponent*                 Movement;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SkillMove_DragToLoc_Update_C_OnMoveStart;
 
 // Function SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

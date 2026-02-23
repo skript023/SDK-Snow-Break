@@ -33,8 +33,8 @@ public:
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x08C0(0x0030)()
 
 public:
-	void AnimGraph(const struct FPoseLink& InPose, struct FPoseLink* AnimGraph_0);
 	void ExecuteUbergraph_girl004b_abpp(int32 EntryPoint);
+	void AnimGraph(const struct FPoseLink& InPose, struct FPoseLink* AnimGraph_0);
 
 public:
 	static class UClass* StaticClass()

@@ -220,6 +220,42 @@ public:
 };
 DUMPER7_ASSERTS_WheeledVehicleMovementComponent_GetUseAutoGears;
 
+// Function PhysXVehicles.VehicleWheel.GetRotationAngle
+// 0x0004 (0x0004 - 0x0000)
+struct VehicleWheel_GetRotationAngle final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleWheel_GetRotationAngle;
+
+// Function PhysXVehicles.VehicleWheel.GetSteerAngle
+// 0x0004 (0x0004 - 0x0000)
+struct VehicleWheel_GetSteerAngle final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleWheel_GetSteerAngle;
+
+// Function PhysXVehicles.VehicleWheel.GetSuspensionOffset
+// 0x0004 (0x0004 - 0x0000)
+struct VehicleWheel_GetSuspensionOffset final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleWheel_GetSuspensionOffset;
+
+// Function PhysXVehicles.VehicleWheel.IsInAir
+// 0x0001 (0x0001 - 0x0000)
+struct VehicleWheel_IsInAir final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_VehicleWheel_IsInAir;
+
 // Function PhysXVehicles.SimpleWheeledVehicleMovementComponent.SetBrakeTorque
 // 0x0008 (0x0008 - 0x0000)
 struct SimpleWheeledVehicleMovementComponent_SetBrakeTorque final
@@ -258,42 +294,6 @@ public:
 	class AWheeledVehicle*                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_VehicleAnimInstance_GetVehicle;
-
-// Function PhysXVehicles.VehicleWheel.GetRotationAngle
-// 0x0004 (0x0004 - 0x0000)
-struct VehicleWheel_GetRotationAngle final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_VehicleWheel_GetRotationAngle;
-
-// Function PhysXVehicles.VehicleWheel.GetSteerAngle
-// 0x0004 (0x0004 - 0x0000)
-struct VehicleWheel_GetSteerAngle final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_VehicleWheel_GetSteerAngle;
-
-// Function PhysXVehicles.VehicleWheel.GetSuspensionOffset
-// 0x0004 (0x0004 - 0x0000)
-struct VehicleWheel_GetSuspensionOffset final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_VehicleWheel_GetSuspensionOffset;
-
-// Function PhysXVehicles.VehicleWheel.IsInAir
-// 0x0001 (0x0001 - 0x0000)
-struct VehicleWheel_IsInAir final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_VehicleWheel_IsInAir;
 
 }
 

@@ -10,22 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "Game_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Game_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function Trap_mon_902_Skill02.Trap_mon_902_Skill02_C.BP_OnDead
-// 0x0008 (0x0008 - 0x0000)
-struct Trap_mon_902_Skill02_C_BP_OnDead final
-{
-public:
-	class UAbilityComponentBase*                  Killer;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Trap_mon_902_Skill02_C_BP_OnDead;
 
 // Function Trap_mon_902_Skill02.Trap_mon_902_Skill02_C.BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature
 // 0x00B0 (0x00B0 - 0x0000)
@@ -41,6 +32,15 @@ public:
 	struct FHitResult                             SweepResult;                                       // 0x0020(0x008C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_Trap_mon_902_Skill02_C_BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature;
+
+// Function Trap_mon_902_Skill02.Trap_mon_902_Skill02_C.BP_OnDead
+// 0x0008 (0x0008 - 0x0000)
+struct Trap_mon_902_Skill02_C_BP_OnDead final
+{
+public:
+	class UAbilityComponentBase*                  Killer;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Trap_mon_902_Skill02_C_BP_OnDead;
 
 // Function Trap_mon_902_Skill02.Trap_mon_902_Skill02_C.ExecuteUbergraph_Trap_mon_902_Skill02
 // 0x01A8 (0x01A8 - 0x0000)

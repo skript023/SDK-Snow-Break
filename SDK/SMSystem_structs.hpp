@@ -59,6 +59,15 @@ enum class ESMConditionalEvaluationType : uint8
 	SM_MAX                                   = 4,
 };
 
+// ScriptStruct SMSystem.SMConnectionValidator
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct alignas(0x01) FSMConnectionValidator
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FSMConnectionValidator;
+
 // ScriptStruct SMSystem.SMInfo_Base
 // 0x0060 (0x0060 - 0x0000)
 struct FSMInfo_Base
@@ -73,6 +82,17 @@ public:
 	class USMNodeInstance*                        NodeInstance;                                      // 0x0058(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSMInfo_Base;
+
+// ScriptStruct SMSystem.SMNodeDescription
+// 0x0038 (0x0038 - 0x0000)
+struct FSMNodeDescription final
+{
+public:
+	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   Category;                                          // 0x0008(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class FText                                   Description;                                       // 0x0020(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSMNodeDescription;
 
 // ScriptStruct SMSystem.SMTransitionInfo
 // 0x0030 (0x0090 - 0x0060)
@@ -239,26 +259,6 @@ public:
 };
 DUMPER7_ASSERTS_FSMNetworkedTransaction;
 
-// ScriptStruct SMSystem.SMNodeDescription
-// 0x0038 (0x0038 - 0x0000)
-struct FSMNodeDescription final
-{
-public:
-	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   Category;                                          // 0x0008(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	class FText                                   Description;                                       // 0x0020(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSMNodeDescription;
-
-// ScriptStruct SMSystem.SMConnectionValidator
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct alignas(0x01) FSMConnectionValidator
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FSMConnectionValidator;
-
 // ScriptStruct SMSystem.SMNodeClassRule
 // 0x0010 (0x0010 - 0x0000)
 struct alignas(0x08) FSMNodeClassRule
@@ -342,12 +342,10 @@ struct alignas(0x01) FSMNodeWidgetInfo
 DUMPER7_ASSERTS_FSMNodeWidgetInfo;
 
 // ScriptStruct SMSystem.SMTextDisplayWidgetInfo
-// 0x0001 (0x0001 - 0x0000)
+// 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
 struct alignas(0x01) FSMTextDisplayWidgetInfo : public FSMNodeWidgetInfo
 {
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 #pragma pack(pop)
 DUMPER7_ASSERTS_FSMTextDisplayWidgetInfo;

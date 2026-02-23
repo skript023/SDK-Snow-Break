@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Wp22502_Muzzle.BP_Wp22502_Muzzle_C
-// 0x0000 (0x04F8 - 0x04F8)
+// 0x0000 (0x05D0 - 0x05D0)
 class ABP_Wp22502_Muzzle_C final : public ABp_wpbase_muzzle_C
 {
 public:

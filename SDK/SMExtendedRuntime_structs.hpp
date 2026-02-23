@@ -27,7 +27,7 @@ public:
 DUMPER7_ASSERTS_FSMTextSerializer;
 
 // ScriptStruct SMExtendedRuntime.SMTextNodeWidgetInfo
-// 0x0A77 (0x0A78 - 0x0001)
+// 0x0A78 (0x0A78 - 0x0000)
 struct FSMTextNodeWidgetInfo final : public FSMTextDisplayWidgetInfo
 {
 public:

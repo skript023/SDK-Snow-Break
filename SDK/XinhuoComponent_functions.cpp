@@ -75,48 +75,6 @@ void UXinhuoComponent_C::SetAttribute(class UAbilityComponentBase* InOwner, floa
 }
 
 
-// Function XinhuoComponent.XinhuoComponent_C.K2_ReceiveActive
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const class UObject*                    Instigator                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bReActive                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UXinhuoComponent_C::K2_ReceiveActive(const class UObject* Instigator, bool bReActive)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("XinhuoComponent_C", "K2_ReceiveActive");
-
-	Params::XinhuoComponent_C_K2_ReceiveActive Parms{};
-
-	Parms.Instigator = Instigator;
-	Parms.bReActive = bReActive;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function XinhuoComponent.XinhuoComponent_C.K2_ReceiveDeActive
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const class UGameAbilityComponent*      Pawn                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UXinhuoComponent_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("XinhuoComponent_C", "K2_ReceiveDeActive");
-
-	Params::XinhuoComponent_C_K2_ReceiveDeActive Parms{};
-
-	Parms.Pawn = Pawn;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function XinhuoComponent.XinhuoComponent_C.K2_ReceiveTick
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -139,6 +97,28 @@ void UXinhuoComponent_C::K2_ReceiveTick(float DeltaSeconds, const class UAbility
 }
 
 
+// Function XinhuoComponent.XinhuoComponent_C.K2_ReceiveActive
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const class UObject*                    Instigator                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bReActive                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UXinhuoComponent_C::K2_ReceiveActive(const class UObject* Instigator, bool bReActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("XinhuoComponent_C", "K2_ReceiveActive");
+
+	Params::XinhuoComponent_C_K2_ReceiveActive Parms{};
+
+	Parms.Instigator = Instigator;
+	Parms.bReActive = bReActive;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function XinhuoComponent.XinhuoComponent_C.OnApplyModifier
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -156,6 +136,26 @@ void UXinhuoComponent_C::OnApplyModifier(int32 ModifierID_0, bool IsApply)
 
 	Parms.ModifierID_0 = ModifierID_0;
 	Parms.IsApply = IsApply;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function XinhuoComponent.XinhuoComponent_C.K2_ReceiveDeActive
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const class UGameAbilityComponent*      Pawn                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UXinhuoComponent_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("XinhuoComponent_C", "K2_ReceiveDeActive");
+
+	Params::XinhuoComponent_C_K2_ReceiveDeActive Parms{};
+
+	Parms.Pawn = Pawn;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Game_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
@@ -28,7 +28,7 @@ public:
 DUMPER7_ASSERTS_BP_Girl015_prop02_C_ShowWine;
 
 // Function BP_Girl015_prop02.BP_Girl015_prop02_C.HideWine
-// 0x0128 (0x0128 - 0x0000)
+// 0x0138 (0x0138 - 0x0000)
 struct BP_Girl015_prop02_C_HideWine final
 {
 public:
@@ -36,8 +36,8 @@ public:
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AGameCharacter*                         CallFunc_GetGameCharacter_ReturnValue;             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class AActor*>                         K2Node_MakeArray_Array;                            // 0x0010(0x0010)(ReferenceParm)
-	struct FCharacterStateStartParam              K2Node_MakeStruct_CharacterStateStartParam;        // 0x0020(0x0100)(ContainsInstancedReference)
-	int32                                         CallFunc_StartCharacterStateParam_ReturnValue;     // 0x0120(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FCharacterStateStartParam              K2Node_MakeStruct_CharacterStateStartParam;        // 0x0020(0x0110)(ContainsInstancedReference)
+	int32                                         CallFunc_StartCharacterStateParam_ReturnValue;     // 0x0130(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Girl015_prop02_C_HideWine;
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -38,14 +38,14 @@ public:
 	class URedirectTextBlock*                     TxtTotalScore;                                     // 0x03B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_propitem(int32 EntryPoint);
-	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
-	void BP_OnItemSelectionChanged(bool bIsSelected);
-	void BP_OnItemExpansionChanged(bool bIsExpanded);
 	void BP_OnEntryReleased();
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void BP_OnItemSelectionChanged(bool bIsSelected);
+	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
+	void ExecuteUbergraph_uw_fight_propitem(int32 EntryPoint);
+	void OnListItemObjectSet(class UObject* ListItemObject);
 	void Construct();
 	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
-	void OnListItemObjectSet(class UObject* ListItemObject);
 	void Destruct();
 
 	class FString GetModuleName() const;

@@ -17,35 +17,15 @@
 namespace SDK
 {
 
-// Function uw_armor_subitem1.uw_armor_subitem1_C.ExecuteUbergraph_uw_armor_subitem1
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_armor_subitem1.uw_armor_subitem1_C.Play
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_armor_subitem1_C::ExecuteUbergraph_uw_armor_subitem1(int32 EntryPoint)
+void Uuw_armor_subitem1_C::Play()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_armor_subitem1_C", "ExecuteUbergraph_uw_armor_subitem1");
-
-	Params::uw_armor_subitem1_C_ExecuteUbergraph_uw_armor_subitem1 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_armor_subitem1.uw_armor_subitem1_C.CustomEvent_0
-// (BlueprintCallable, BlueprintEvent)
-
-void Uuw_armor_subitem1_C::CustomEvent_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_armor_subitem1_C", "CustomEvent_0");
+		Func = Class->GetFunction("uw_armor_subitem1_C", "Play");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -65,17 +45,37 @@ void Uuw_armor_subitem1_C::Construct()
 }
 
 
-// Function uw_armor_subitem1.uw_armor_subitem1_C.Play
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function uw_armor_subitem1.uw_armor_subitem1_C.CustomEvent_0
+// (BlueprintCallable, BlueprintEvent)
 
-void Uuw_armor_subitem1_C::Play()
+void Uuw_armor_subitem1_C::CustomEvent_0()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_armor_subitem1_C", "Play");
+		Func = Class->GetFunction("uw_armor_subitem1_C", "CustomEvent_0");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_armor_subitem1.uw_armor_subitem1_C.ExecuteUbergraph_uw_armor_subitem1
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_armor_subitem1_C::ExecuteUbergraph_uw_armor_subitem1(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_armor_subitem1_C", "ExecuteUbergraph_uw_armor_subitem1");
+
+	Params::uw_armor_subitem1_C_ExecuteUbergraph_uw_armor_subitem1 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

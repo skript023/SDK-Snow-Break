@@ -282,6 +282,40 @@ void UFieldSystemComponent::ResetFieldSystem()
 }
 
 
+// Function FieldSystemEngine.OperatorField.SetOperatorField
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// float                                   Magnitude_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UFieldNodeBase*             RightField_0                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UFieldNodeBase*             LeftField_0                                            (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EFieldOperationType                     Operation_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UOperatorField*                   ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UOperatorField* UOperatorField::SetOperatorField(float Magnitude_0, const class UFieldNodeBase* RightField_0, const class UFieldNodeBase* LeftField_0, EFieldOperationType Operation_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OperatorField", "SetOperatorField");
+
+	Params::OperatorField_SetOperatorField Parms{};
+
+	Parms.Magnitude_0 = Magnitude_0;
+	Parms.RightField_0 = RightField_0;
+	Parms.LeftField_0 = LeftField_0;
+	Parms.Operation_0 = Operation_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function FieldSystemEngine.FieldSystemMetaDataIteration.SetMetaDataIteration
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -326,6 +360,31 @@ class UFieldSystemMetaDataProcessingResolution* UFieldSystemMetaDataProcessingRe
 	Params::FieldSystemMetaDataProcessingResolution_SetMetaDataaProcessingResolutionType Parms{};
 
 	Parms.ResolutionType_0 = ResolutionType_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function FieldSystemEngine.ReturnResultsTerminal.SetReturnResultsTerminal
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UReturnResultsTerminal*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UReturnResultsTerminal* UReturnResultsTerminal::SetReturnResultsTerminal()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ReturnResultsTerminal", "SetReturnResultsTerminal");
+
+	Params::ReturnResultsTerminal_SetReturnResultsTerminal Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -670,40 +729,6 @@ class URandomVector* URandomVector::SetRandomVector(float Magnitude_0)
 }
 
 
-// Function FieldSystemEngine.OperatorField.SetOperatorField
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// float                                   Magnitude_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class UFieldNodeBase*             RightField_0                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class UFieldNodeBase*             LeftField_0                                            (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EFieldOperationType                     Operation_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UOperatorField*                   ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UOperatorField* UOperatorField::SetOperatorField(float Magnitude_0, const class UFieldNodeBase* RightField_0, const class UFieldNodeBase* LeftField_0, EFieldOperationType Operation_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("OperatorField", "SetOperatorField");
-
-	Params::OperatorField_SetOperatorField Parms{};
-
-	Parms.Magnitude_0 = Magnitude_0;
-	Parms.RightField_0 = RightField_0;
-	Parms.LeftField_0 = LeftField_0;
-	Parms.Operation_0 = Operation_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function FieldSystemEngine.ToIntegerField.SetToIntegerField
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -780,31 +805,6 @@ class UCullingField* UCullingField::SetCullingField(const class UFieldNodeBase* 
 	Parms.Culling_0 = Culling_0;
 	Parms.Field_0 = Field_0;
 	Parms.Operation_0 = Operation_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function FieldSystemEngine.ReturnResultsTerminal.SetReturnResultsTerminal
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class UReturnResultsTerminal*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UReturnResultsTerminal* UReturnResultsTerminal::SetReturnResultsTerminal()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ReturnResultsTerminal", "SetReturnResultsTerminal");
-
-	Params::ReturnResultsTerminal_SetReturnResultsTerminal Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

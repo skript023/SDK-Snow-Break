@@ -42,31 +42,6 @@ bool USkillMove_SkillNormalMove_C::IsUsedToAddVelocityInsteadOverride()
 }
 
 
-// LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveTickCheck
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkillMove_SkillNormalMove_C::OnMoveTickCheck(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_SkillNormalMove_C", "OnMoveTickCheck");
-
-	Params::SkillMove_SkillNormalMove_C_OnMoveTickCheck Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveEnd
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -81,6 +56,39 @@ void USkillMove_SkillNormalMove_C::OnMoveEnd(class UBaseMovementComponent* Movem
 
 	Params::SkillMove_SkillNormalMove_C_OnMoveEnd Parms{};
 
+	Parms.Movement = Movement;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveTick
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Friction                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFluid                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   BrakingDeceleration                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkillMove_SkillNormalMove_C::OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillMove_SkillNormalMove_C", "OnMoveTick");
+
+	Params::SkillMove_SkillNormalMove_C_OnMoveTick Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+	Parms.Friction = Friction;
+	Parms.bFluid = bFluid;
+	Parms.BrakingDeceleration = BrakingDeceleration;
 	Parms.Movement = Movement;
 
 	auto Flgs = Func->FunctionFlags;
@@ -119,29 +127,21 @@ void USkillMove_SkillNormalMove_C::OnMoveStart(class AActor* Launcher, class UBa
 }
 
 
-// LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveTick
+// LuaFunction SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C.OnMoveTickCheck
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
 // float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Friction                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFluid                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   BrakingDeceleration                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USkillMove_SkillNormalMove_C::OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement)
+void USkillMove_SkillNormalMove_C::OnMoveTickCheck(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_SkillNormalMove_C", "OnMoveTick");
+		Func = Class->GetFunction("SkillMove_SkillNormalMove_C", "OnMoveTickCheck");
 
-	Params::SkillMove_SkillNormalMove_C_OnMoveTick Parms{};
+	Params::SkillMove_SkillNormalMove_C_OnMoveTickCheck Parms{};
 
 	Parms.DeltaTime = DeltaTime;
-	Parms.Friction = Friction;
-	Parms.bFluid = bFluid;
-	Parms.BrakingDeceleration = BrakingDeceleration;
-	Parms.Movement = Movement;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

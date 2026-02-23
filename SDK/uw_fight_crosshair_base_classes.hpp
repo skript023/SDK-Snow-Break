@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -25,8 +25,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0450(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_uw_fight_crosshair_base(int32 EntryPoint);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void ExecuteUbergraph_uw_fight_crosshair_base(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

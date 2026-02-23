@@ -17,41 +17,21 @@
 namespace SDK
 {
 
-// Function uw_fight_power.uw_fight_power_C.ExecuteUbergraph_uw_fight_power
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_power_C::ExecuteUbergraph_uw_fight_power(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_power_C", "ExecuteUbergraph_uw_fight_power");
-
-	Params::uw_fight_power_C_ExecuteUbergraph_uw_fight_power Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_power.uw_fight_power_C.OnPowerTimeStrengthening
+// Function uw_fight_power.uw_fight_power_C.K2_PlayAnim
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bStart                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// float                                   InValue                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_power_C::OnPowerTimeStrengthening(bool bStart)
+void Uuw_fight_power_C::K2_PlayAnim(float InValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_power_C", "OnPowerTimeStrengthening");
+		Func = Class->GetFunction("uw_fight_power_C", "K2_PlayAnim");
 
-	Params::uw_fight_power_C_OnPowerTimeStrengthening Parms{};
+	Params::uw_fight_power_C_K2_PlayAnim Parms{};
 
-	Parms.bStart = bStart;
+	Parms.InValue = InValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -81,21 +61,41 @@ void Uuw_fight_power_C::OnPowerStrengthening(bool bStart, float Start, float End
 }
 
 
-// Function uw_fight_power.uw_fight_power_C.K2_PlayAnim
+// Function uw_fight_power.uw_fight_power_C.OnPowerTimeStrengthening
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   InValue                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bStart                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_power_C::K2_PlayAnim(float InValue)
+void Uuw_fight_power_C::OnPowerTimeStrengthening(bool bStart)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_power_C", "K2_PlayAnim");
+		Func = Class->GetFunction("uw_fight_power_C", "OnPowerTimeStrengthening");
 
-	Params::uw_fight_power_C_K2_PlayAnim Parms{};
+	Params::uw_fight_power_C_OnPowerTimeStrengthening Parms{};
 
-	Parms.InValue = InValue;
+	Parms.bStart = bStart;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_power.uw_fight_power_C.ExecuteUbergraph_uw_fight_power
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_power_C::ExecuteUbergraph_uw_fight_power(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_power_C", "ExecuteUbergraph_uw_fight_power");
+
+	Params::uw_fight_power_C_ExecuteUbergraph_uw_fight_power Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

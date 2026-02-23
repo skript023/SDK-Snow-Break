@@ -24,8 +24,8 @@ public:
 	void OnConstruct();
 	void Destruct();
 	void InitGamepadLongPressUI();
-	void BindExitInteractEvent();
 	void TriggerInteract();
+	void BindExitInteractEvent();
 	void BindKeyBoardOnSettingChange();
 	void UpdateKeyShow();
 

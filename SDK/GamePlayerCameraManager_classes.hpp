@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "EnumInitSnow_structs.hpp"
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
+#include "EnumInitSnow_structs.hpp"
 
 
 namespace SDK
@@ -37,6 +37,8 @@ public:
 	void ReceiveBeginPlay();
 	void Set_Snow(float Rate_0, float Size_0, float Velocity_0, const struct FVector& VelocityMax, const struct FVector& VelocityMin);
 	void ActiveSnow(bool Active, EnumInitSnow Snow);
+	void CreateSnow();
+	void DestroySnow();
 
 public:
 	static class UClass* StaticClass()

@@ -10,32 +10,32 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass Trap_Girl014a_Skill03_1.Trap_Girl014a_Skill03_1_C
-// 0x0060 (0x1870 - 0x1810)
+// 0x0060 (0x18B0 - 0x1850)
 class ATrap_Girl014a_Skill03_1_C final : public ATrap
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1810(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UAbilityCollision_Box*                  AbilityCollision_Box;                              // 0x1818(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UParticleSystem*                        EndParticle;                                       // 0x1820(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          HotStart;                                          // 0x1828(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1829[0x3];                                     // 0x1829(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              AngleRange;                                        // 0x182C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         RandomRadius;                                      // 0x1834(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         FallInterval;                                      // 0x1838(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         FallMaxCount;                                      // 0x183C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         FallCurCount;                                      // 0x1840(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1844[0x4];                                     // 0x1844(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 RandomQuadrant;                                    // 0x1848(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FVector                                Scale;                                             // 0x1858(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1850(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UAbilityCollision_Box*                  AbilityCollision_Box;                              // 0x1858(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UParticleSystem*                        EndParticle;                                       // 0x1860(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          HotStart;                                          // 0x1868(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1869[0x3];                                     // 0x1869(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              AngleRange;                                        // 0x186C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         RandomRadius;                                      // 0x1874(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         FallInterval;                                      // 0x1878(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         FallMaxCount;                                      // 0x187C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         FallCurCount;                                      // 0x1880(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1884[0x4];                                     // 0x1884(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 RandomQuadrant;                                    // 0x1888(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FVector                                Scale;                                             // 0x1898(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ReceiveBeginPlay();

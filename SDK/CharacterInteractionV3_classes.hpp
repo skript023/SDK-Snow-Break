@@ -10,93 +10,106 @@
 
 #include "Basic.hpp"
 
-#include "PhysicsControl_classes.hpp"
+#include "CharacterInteractionV3_structs.hpp"
+#include "SeasunAnimGraph_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "CharacterInteractionV3_structs.hpp"
+#include "CameraBlueprint_structs.hpp"
 #include "CameraBlueprint_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "SeasunAnimGraph_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
+#include "PhysicsControl_classes.hpp"
 
 
 namespace SDK
 {
 
-// Class CharacterInteractionV3.InteractionV3Event
-// 0x0000 (0x0028 - 0x0028)
-class UInteractionV3Event : public UObject
+// Class CharacterInteractionV3.InteractionRuntimeSupport
+// 0x0130 (0x0160 - 0x0030)
+class UInteractionRuntimeSupport final : public UDataAsset
 {
 public:
-	void DoAction();
-
-	bool CanTrigger() const;
+	TMap<class FName, struct FInteractionActorStaticInfo> StaticActorInfoMap;                        // 0x0030(0x0050)(Edit, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FInteractionScenarioShowElementStaticInfo> ShowElementActors;           // 0x0080(0x0050)(Edit, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FInteractionActorNames> ScenarioActors;                                 // 0x00D0(0x0050)(Edit, NativeAccessSpecifierPublic)
+	TArray<struct FInteractionStandByActortStaticInfo> ScenarioStandByActors;                        // 0x0120(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        SceneActorHideComConfig;                           // 0x0130(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          PreloadingShowElements;                            // 0x0148(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_149[0x7];                                      // 0x0149(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSoftObjectPtr<class UObject>>         AdditionalPreLoadedResources;                      // 0x0150(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("InteractionV3Event")
+		STATIC_CLASS_IMPL("InteractionRuntimeSupport")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"InteractionV3Event")
+		STATIC_NAME_IMPL(L"InteractionRuntimeSupport")
 	}
-	static class UInteractionV3Event* GetDefaultObj()
+	static class UInteractionRuntimeSupport* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UInteractionV3Event>();
+		return GetDefaultObjImpl<UInteractionRuntimeSupport>();
 	}
 };
-DUMPER7_ASSERTS_UInteractionV3Event;
+DUMPER7_ASSERTS_UInteractionRuntimeSupport;
 
-// Class CharacterInteractionV3.InteractionV3Event_Achievement
-// 0x0008 (0x0030 - 0x0028)
-class UInteractionV3Event_Achievement final : public UInteractionV3Event
+// Class CharacterInteractionV3.ShowElementV3UnitPlayerConfigAsset
+// 0x00A0 (0x00D0 - 0x0030)
+class UShowElementV3UnitPlayerConfigAsset final : public UDataAsset
 {
 public:
-	int32                                         AchievementID;                                     // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class UInteractionArchivementComponentV3* GetArchivementComponentV3() const;
+	TMap<TSubclassOf<class UShowElementV3Unit>, class UShowElementV3UnitPlayer*> UnitPlayerMap;      // 0x0030(0x0050)(Edit, ExportObject, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TMap<class FName, class UShowElementV3UnitPlayer*> TagPlayerMap;                                 // 0x0080(0x0050)(Edit, ExportObject, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("InteractionV3Event_Achievement")
+		STATIC_CLASS_IMPL("ShowElementV3UnitPlayerConfigAsset")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"InteractionV3Event_Achievement")
+		STATIC_NAME_IMPL(L"ShowElementV3UnitPlayerConfigAsset")
 	}
-	static class UInteractionV3Event_Achievement* GetDefaultObj()
+	static class UShowElementV3UnitPlayerConfigAsset* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UInteractionV3Event_Achievement>();
+		return GetDefaultObjImpl<UShowElementV3UnitPlayerConfigAsset>();
 	}
 };
-DUMPER7_ASSERTS_UInteractionV3Event_Achievement;
+DUMPER7_ASSERTS_UShowElementV3UnitPlayerConfigAsset;
 
 // Class CharacterInteractionV3.ActorOperateAct
-// 0x0118 (0x0140 - 0x0028)
+// 0x01E0 (0x0208 - 0x0028)
 class UActorOperateAct : public UObject
 {
 public:
-	struct FInteractionVoiceConfig                VoiceConfig;                                       // 0x0028(0x0048)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FInteractionV3OperateWwise             OperateWwiseData;                                  // 0x0070(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FString                                 ActorOperateActName;                               // 0x0080(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UAnimSequence>           FacialAnim;                                        // 0x0090(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector2D                              BlendInAndOut;                                     // 0x00B8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UAnimMontage*                           FacialAnimMontage;                                 // 0x00C0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsBlush;                                          // 0x00C8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bForceEyeLookAtCamera;                             // 0x00C9(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_CA[0x2];                                       // 0x00CA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              EyesLookAtPosition;                                // 0x00CC(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FInteractionV3PhysProfileModifier      ProfileModifier;                                   // 0x00D4(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	bool                                          bPhysicsBlendOut;                                  // 0x0134(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bAllPerformerPhysicsBlendOut;                      // 0x0135(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bOverrideKawaiiBlendOut;                           // 0x0136(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_137[0x1];                                      // 0x0137(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCurveFloat*                            OverrideDisableKawaiiBlendCurve;                   // 0x0138(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bEnableHintVoice;                                  // 0x0028(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FInteractionV3WeightedVoice>    HintWeightedVoice;                                 // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         HintVoiceInterval;                                 // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FInteractionVoiceConfig                VoiceConfig;                                       // 0x0048(0x0048)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FInteractionV3OperateWwise             OperateWwiseData;                                  // 0x0090(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FString                                 ActorOperateActName;                               // 0x00A0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UAnimSequence>           FacialAnim;                                        // 0x00B0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector2D                              BlendInAndOut;                                     // 0x00D8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UAnimMontage*                           FacialAnimMontage;                                 // 0x00E0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TSet<class FName>                             HavePlayedHintCharacters;                          // 0x00E8(0x0050)(Transient, Protected, NativeAccessSpecifierProtected)
+	TMap<class FName, int32>                      HintVoiceOperateCounter;                           // 0x0138(0x0050)(Transient, Protected, NativeAccessSpecifierProtected)
+	bool                                          bIsBlush;                                          // 0x0188(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bForceEyeLookAtCamera;                             // 0x0189(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_18A[0x2];                                      // 0x018A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              EyesLookAtPosition;                                // 0x018C(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FInteractionV3PhysProfileModifier      ProfileModifier;                                   // 0x0194(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	bool                                          bPhysicsBlendOut;                                  // 0x01F4(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bAllPerformerPhysicsBlendOut;                      // 0x01F5(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         bPhysicsBlendIn : 1;                               // 0x01F6(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_1F7[0x1];                                      // 0x01F7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BlendInTime;                                       // 0x01F8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bOverrideKawaiiBlendOut;                           // 0x01FC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1FD[0x3];                                      // 0x01FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            OverrideDisableKawaiiBlendCurve;                   // 0x0200(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	void OnPause(class AInteractionSkeletalActorV3* Actor);
@@ -127,427 +140,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UActorOperateAct;
-
-// Class CharacterInteractionV3.ShowElementV3Unit
-// 0x0008 (0x0030 - 0x0028)
-class UShowElementV3Unit : public UObject
-{
-public:
-	TSubclassOf<class UShowElementV3UnitPlayer>   PlayerType;                                        // 0x0028(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ShowElementV3Unit")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ShowElementV3Unit")
-	}
-	static class UShowElementV3Unit* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UShowElementV3Unit>();
-	}
-};
-DUMPER7_ASSERTS_UShowElementV3Unit;
-
-// Class CharacterInteractionV3.BlendSpaceOperateAct
-// 0x0030 (0x0170 - 0x0140)
-class UBlendSpaceOperateAct final : public UActorOperateAct
-{
-public:
-	TSoftObjectPtr<class UBlendSpace>             BlendSpace;                                        // 0x0140(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EInteractionV3BlendSpaceSlot                  SlotType;                                          // 0x0168(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_169[0x7];                                      // 0x0169(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BlendSpaceOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BlendSpaceOperateAct")
-	}
-	static class UBlendSpaceOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBlendSpaceOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_UBlendSpaceOperateAct;
-
-// Class CharacterInteractionV3.SequenceEvaluatorOperateAct
-// 0x0078 (0x01B8 - 0x0140)
-class USequenceEvaluatorOperateAct final : public UActorOperateAct
-{
-public:
-	TSoftObjectPtr<class UAnimSequence>           InteractionAnim;                                   // 0x0140(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UAnimSequence>           BreathAdditiveAnim;                                // 0x0168(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bControlFacialAnim;                                // 0x0190(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_191[0x7];                                      // 0x0191(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAnimMontage*                           InteractionMontage;                                // 0x0198(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UAnimMontage*                           BreathAdditiveMontage;                             // 0x01A0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<struct FAnimNotifyEvent>               ActiveFacialAnimNotifyState;                       // 0x01A8(0x0010)(ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SequenceEvaluatorOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SequenceEvaluatorOperateAct")
-	}
-	static class USequenceEvaluatorOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USequenceEvaluatorOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_USequenceEvaluatorOperateAct;
-
-// Class CharacterInteractionV3.PhysicalOffsetOperateAct
-// 0x0050 (0x0190 - 0x0140)
-class UPhysicalOffsetOperateAct final : public UActorOperateAct
-{
-public:
-	class UInteractionV3PhysHandleComponent*      PhysicsHandle;                                     // 0x0140(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsBlendingOut;                                    // 0x0148(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bMutiDrag;                                         // 0x0149(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bDragFixedBone;                                    // 0x014A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_14B[0x1];                                      // 0x014B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   DefaultDragBoneName;                               // 0x014C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   DefaultDragLocationBoneName;                       // 0x0154(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                DragScale;                                         // 0x015C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                DragStartLocation;                                 // 0x0168(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   CurDragBone;                                       // 0x0174(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bUseAnimNodePhysicsControl;                        // 0x017C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_17D[0x3];                                      // 0x017D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LinearStiffness;                                   // 0x0180(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         LinearDamping;                                     // 0x0184(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         AngularStiffness;                                  // 0x0188(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         AngularDamping;                                    // 0x018C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PhysicalOffsetOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PhysicalOffsetOperateAct")
-	}
-	static class UPhysicalOffsetOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPhysicalOffsetOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_UPhysicalOffsetOperateAct;
-
-// Class CharacterInteractionV3.AdditiveSequenceEvaluatorOperateAct
-// 0x0030 (0x0170 - 0x0140)
-class UAdditiveSequenceEvaluatorOperateAct final : public UActorOperateAct
-{
-public:
-	TSoftObjectPtr<class UAnimSequence>           BreathAdditiveAnim;                                // 0x0140(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAnimMontage*                           BreathAdditiveMontage;                             // 0x0168(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AdditiveSequenceEvaluatorOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AdditiveSequenceEvaluatorOperateAct")
-	}
-	static class UAdditiveSequenceEvaluatorOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAdditiveSequenceEvaluatorOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_UAdditiveSequenceEvaluatorOperateAct;
-
-// Class CharacterInteractionV3.LoopSequenceOperateAct
-// 0x0038 (0x0178 - 0x0140)
-class ULoopSequenceOperateAct final : public UActorOperateAct
-{
-public:
-	TSoftObjectPtr<class UAnimSequence>           InteractionAnim;                                   // 0x0140(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StartLoopTime;                                     // 0x0168(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EndLoopTime;                                       // 0x016C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAnimMontage*                           InteractionMontage;                                // 0x0170(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LoopSequenceOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LoopSequenceOperateAct")
-	}
-	static class ULoopSequenceOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULoopSequenceOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_ULoopSequenceOperateAct;
-
-// Class CharacterInteractionV3.IKRefPoseFixOperateAct
-// 0x0020 (0x0160 - 0x0140)
-class UIKRefPoseFixOperateAct : public UActorOperateAct
-{
-public:
-	struct FIKRefPoseFixData                      RefPoseFixData;                                    // 0x0140(0x0020)(Edit, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKRefPoseFixOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKRefPoseFixOperateAct")
-	}
-	static class UIKRefPoseFixOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKRefPoseFixOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_UIKRefPoseFixOperateAct;
-
-// Class CharacterInteractionV3.PhysicsAssetModifierEvent
-// 0x0010 (0x0038 - 0x0028)
-class UPhysicsAssetModifierEvent final : public UInteractionV3Event
-{
-public:
-	TArray<struct FCharacterPhysicsAssetModifier> PhysicsAssetModifiers;                             // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PhysicsAssetModifierEvent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PhysicsAssetModifierEvent")
-	}
-	static class UPhysicsAssetModifierEvent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPhysicsAssetModifierEvent>();
-	}
-};
-DUMPER7_ASSERTS_UPhysicsAssetModifierEvent;
-
-// Class CharacterInteractionV3.HeadModifyOperateAct
-// 0x0058 (0x01B8 - 0x0160)
-class UHeadModifyOperateAct final : public UIKRefPoseFixOperateAct
-{
-public:
-	bool                                          UseYawChange;                                      // 0x0160(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_161[0x7];                                      // 0x0161(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRuntimeSpineWeight                    RuntimeSpineDatas;                                 // 0x0168(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("HeadModifyOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"HeadModifyOperateAct")
-	}
-	static class UHeadModifyOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UHeadModifyOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_UHeadModifyOperateAct;
-
-// Class CharacterInteractionV3.DragPropWorldSpaceOffsetOperateAct
-// 0x0070 (0x01B0 - 0x0140)
-class UDragPropWorldSpaceOffsetOperateAct final : public UActorOperateAct
-{
-public:
-	bool                                          bSpringInterp;                                     // 0x0140(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_141[0x3];                                      // 0x0141(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ErrorTolerance;                                    // 0x0144(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Stiffness;                                         // 0x0148(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CriticalDamping;                                   // 0x014C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   DragSocketName;                                    // 0x0150(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                DragLocation;                                      // 0x0158(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                DeltaLocation;                                     // 0x0164(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                TargetLocation;                                    // 0x0170(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                PreTargetLocation;                                 // 0x017C(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                InterpTarget;                                      // 0x0188(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         DragDistance;                                      // 0x0194(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVectorSpringState                     SpringState;                                       // 0x0198(0x0018)(NoDestructor, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("DragPropWorldSpaceOffsetOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"DragPropWorldSpaceOffsetOperateAct")
-	}
-	static class UDragPropWorldSpaceOffsetOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UDragPropWorldSpaceOffsetOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_UDragPropWorldSpaceOffsetOperateAct;
-
-// Class CharacterInteractionV3.IKMaintainWorldSpaceRelativeOperateAct
-// 0x0010 (0x0170 - 0x0160)
-class UIKMaintainWorldSpaceRelativeOperateAct final : public UIKRefPoseFixOperateAct
-{
-public:
-	struct FIKMaintainWorldSpaceRelativeData      MaintainRelativeData;                              // 0x0160(0x0010)(Edit, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKMaintainWorldSpaceRelativeOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKMaintainWorldSpaceRelativeOperateAct")
-	}
-	static class UIKMaintainWorldSpaceRelativeOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKMaintainWorldSpaceRelativeOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_UIKMaintainWorldSpaceRelativeOperateAct;
-
-// Class CharacterInteractionV3.InteractionV3PhysHandleComponent
-// 0x0000 (0x0160 - 0x0160)
-class UInteractionV3PhysHandleComponent final : public UPhysicsHandleComponent
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InteractionV3PhysHandleComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InteractionV3PhysHandleComponent")
-	}
-	static class UInteractionV3PhysHandleComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInteractionV3PhysHandleComponent>();
-	}
-};
-DUMPER7_ASSERTS_UInteractionV3PhysHandleComponent;
-
-// Class CharacterInteractionV3.IKWorldSpaceOffsetOperateAct
-// 0x0020 (0x0180 - 0x0160)
-class UIKWorldSpaceOffsetOperateAct final : public UIKRefPoseFixOperateAct
-{
-public:
-	struct FIKWorldSpaceOffsetData                WorldSpaceOffsetData;                              // 0x0160(0x0020)(Edit, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKWorldSpaceOffsetOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKWorldSpaceOffsetOperateAct")
-	}
-	static class UIKWorldSpaceOffsetOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKWorldSpaceOffsetOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_UIKWorldSpaceOffsetOperateAct;
-
-// Class CharacterInteractionV3.EyesFollowOperateAct
-// 0x0010 (0x0150 - 0x0140)
-class UEyesFollowOperateAct final : public UActorOperateAct
-{
-public:
-	struct FVector2D                              HeadRotationScale;                                 // 0x0140(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bInterpHead;                                       // 0x0148(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_149[0x3];                                      // 0x0149(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         HeadInterpSpeed;                                   // 0x014C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("EyesFollowOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"EyesFollowOperateAct")
-	}
-	static class UEyesFollowOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEyesFollowOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_UEyesFollowOperateAct;
-
-// Class CharacterInteractionV3.InteractionMouseHoverInterface
-// 0x0000 (0x0000 - 0x0000)
-class IInteractionMouseHoverInterface final
-{
-public:
-	void OnMouseHover(const TArray<class FName>& BoneNames, const class UCurveFloat* CurveScale, const struct FVector2D& SlideVector, const struct FVector2D& SlideStartPos, const struct FVector2D& SlidEndPos);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InteractionMouseHoverInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InteractionMouseHoverInterface")
-	}
-	static class IInteractionMouseHoverInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IInteractionMouseHoverInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IInteractionMouseHoverInterface;
-
-// Class CharacterInteractionV3.MouseHoverOperateAct
-// 0x0020 (0x0160 - 0x0140)
-class UMouseHoverOperateAct final : public UActorOperateAct
-{
-public:
-	TArray<class FName>                           BoneNames;                                         // 0x0140(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	class UCurveFloat*                            CurveTorqueScale;                                  // 0x0150(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         SampleInterval;                                    // 0x0158(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_15C[0x4];                                      // 0x015C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MouseHoverOperateAct")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MouseHoverOperateAct")
-	}
-	static class UMouseHoverOperateAct* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMouseHoverOperateAct>();
-	}
-};
-DUMPER7_ASSERTS_UMouseHoverOperateAct;
 
 // Class CharacterInteractionV3.InteractionV3DragInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -583,6 +175,520 @@ public:
 };
 DUMPER7_ASSERTS_IInteractionV3DragInterface;
 
+// Class CharacterInteractionV3.BlendSpaceOperateAct
+// 0x0068 (0x0270 - 0x0208)
+class UBlendSpaceOperateAct final : public UActorOperateAct
+{
+public:
+	TSoftObjectPtr<class UBlendSpace>             BlendSpace;                                        // 0x0208(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EInteractionV3BlendSpaceSlot                  SlotType;                                          // 0x0230(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableSingleClickMode;                            // 0x0231(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_232[0x2];                                      // 0x0232(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              BSRandomRange;                                     // 0x0234(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              BlendTime;                                         // 0x023C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsInClickMode;                                    // 0x0244(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsInDragMode;                                     // 0x0245(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsBlendingToRandom;                               // 0x0246(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_247[0x1];                                      // 0x0247(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ClickModeTimer;                                    // 0x0248(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector2D                              RandomBlendSpaceValue;                             // 0x024C(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector2D                              InitialBlendSpaceValue;                            // 0x0254(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_25C[0x4];                                      // 0x025C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTimerHandle                           ClickModeTimerHandle;                              // 0x0260(0x0008)(Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AInteractionSkeletalActorV3> ClickModeActor;                                // 0x0268(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BlendSpaceOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BlendSpaceOperateAct")
+	}
+	static class UBlendSpaceOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBlendSpaceOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_UBlendSpaceOperateAct;
+
+// Class CharacterInteractionV3.InteractionV3CableFunctionLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UInteractionV3CableFunctionLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static float GetCableLengthRuntime(const TArray<struct FVector>& CablePoints);
+	static float GetCableLengthRuntimeAtIndex(const TArray<struct FVector>& CablePoints, int32 Index_0);
+	static TArray<struct FVector> GetCablePoints(const class UCableComponent* CableComponent, const TArray<struct FVector>& AdditionalPoints, bool bToEnd);
+	static struct FVector GetLocationOnCableByPercentage(const TArray<struct FVector>& CablePoints, float _percentage);
+	static int32 GetLowestLocationIndexOnCable(const TArray<struct FVector>& CablePoints);
+	static struct FVector GetLowestLocationOnCable(const TArray<struct FVector>& CablePoints);
+	static float GetPercentageByParticleIndex(const TArray<struct FVector>& CablePoints, int32 _Index);
+	static TArray<struct FVector> GetSideLocationOnCableByPercentage(const TArray<struct FVector>& CablePoints, float _percentage);
+	static float SpringInterpFloat(float DeltaTime, float _Target, float _Current, float* _Velocity, const TArray<struct FVector>& CablePoints, float _Stiffness, float _Damping, float _VelocityClamp, float _HeightScale);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionV3CableFunctionLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionV3CableFunctionLibrary")
+	}
+	static class UInteractionV3CableFunctionLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractionV3CableFunctionLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UInteractionV3CableFunctionLibrary;
+
+// Class CharacterInteractionV3.SequenceEvaluatorOperateAct
+// 0x00C8 (0x02D0 - 0x0208)
+class USequenceEvaluatorOperateAct final : public UActorOperateAct
+{
+public:
+	TSoftObjectPtr<class ULevelSequence>          InteractionCameraLevelSeq;                         // 0x0208(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StartFrame;                                        // 0x0230(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EndFrame;                                          // 0x0234(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_238[0x18];                                     // 0x0238(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UAnimSequence>           InteractionAnim;                                   // 0x0250(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UAnimSequence>           BreathAdditiveAnim;                                // 0x0278(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bControlFacialAnim;                                // 0x02A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A1[0x7];                                      // 0x02A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimMontage*                           InteractionMontage;                                // 0x02A8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UInteractionCameraInstance*             InteractionCameraInstance;                         // 0x02B0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UAnimMontage*                           BreathAdditiveMontage;                             // 0x02B8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<struct FAnimNotifyEvent>               ActiveFacialAnimNotifyState;                       // 0x02C0(0x0010)(ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SequenceEvaluatorOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SequenceEvaluatorOperateAct")
+	}
+	static class USequenceEvaluatorOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USequenceEvaluatorOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_USequenceEvaluatorOperateAct;
+
+// Class CharacterInteractionV3.IKRefPoseFixOperateAct
+// 0x0020 (0x0228 - 0x0208)
+class UIKRefPoseFixOperateAct : public UActorOperateAct
+{
+public:
+	struct FIKRefPoseFixData                      RefPoseFixData;                                    // 0x0208(0x0020)(Edit, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRefPoseFixOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRefPoseFixOperateAct")
+	}
+	static class UIKRefPoseFixOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRefPoseFixOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_UIKRefPoseFixOperateAct;
+
+// Class CharacterInteractionV3.IKWorldSpaceOffsetOperateAct
+// 0x0020 (0x0248 - 0x0228)
+class UIKWorldSpaceOffsetOperateAct final : public UIKRefPoseFixOperateAct
+{
+public:
+	struct FIKWorldSpaceOffsetData                WorldSpaceOffsetData;                              // 0x0228(0x0020)(Edit, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKWorldSpaceOffsetOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKWorldSpaceOffsetOperateAct")
+	}
+	static class UIKWorldSpaceOffsetOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKWorldSpaceOffsetOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_UIKWorldSpaceOffsetOperateAct;
+
+// Class CharacterInteractionV3.AdditiveSequenceWeightCalculator
+// 0x0000 (0x0028 - 0x0028)
+class UAdditiveSequenceWeightCalculator : public UObject
+{
+public:
+	float CalcWeight(float DeltaSeconds, class AInteractionSkeletalActorV3* Actor, class UAnimMontage* InAdditiveMontage) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AdditiveSequenceWeightCalculator")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AdditiveSequenceWeightCalculator")
+	}
+	static class UAdditiveSequenceWeightCalculator* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAdditiveSequenceWeightCalculator>();
+	}
+};
+DUMPER7_ASSERTS_UAdditiveSequenceWeightCalculator;
+
+// Class CharacterInteractionV3.AdditiveSequenceWeightBasedOnCamera
+// 0x0020 (0x0048 - 0x0028)
+class UAdditiveSequenceWeightBasedOnCamera final : public UAdditiveSequenceWeightCalculator
+{
+public:
+	float                                         BlendSpeed;                                        // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftObjectPath                        CurveTargetWeight_Yaw;                             // 0x0030(0x0018)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AdditiveSequenceWeightBasedOnCamera")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AdditiveSequenceWeightBasedOnCamera")
+	}
+	static class UAdditiveSequenceWeightBasedOnCamera* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAdditiveSequenceWeightBasedOnCamera>();
+	}
+};
+DUMPER7_ASSERTS_UAdditiveSequenceWeightBasedOnCamera;
+
+// Class CharacterInteractionV3.AdditiveSequenceEvaluatorOperateAct
+// 0x0038 (0x0240 - 0x0208)
+class UAdditiveSequenceEvaluatorOperateAct final : public UActorOperateAct
+{
+public:
+	TSoftObjectPtr<class UAnimSequence>           BreathAdditiveAnim;                                // 0x0208(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAdditiveSequenceWeightCalculator*      WeightCalculator;                                  // 0x0230(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimMontage*                           BreathAdditiveMontage;                             // 0x0238(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AdditiveSequenceEvaluatorOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AdditiveSequenceEvaluatorOperateAct")
+	}
+	static class UAdditiveSequenceEvaluatorOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAdditiveSequenceEvaluatorOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_UAdditiveSequenceEvaluatorOperateAct;
+
+// Class CharacterInteractionV3.LoopSequenceOperateAct
+// 0x0038 (0x0240 - 0x0208)
+class ULoopSequenceOperateAct final : public UActorOperateAct
+{
+public:
+	TSoftObjectPtr<class UAnimSequence>           InteractionAnim;                                   // 0x0208(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartLoopTime;                                     // 0x0230(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EndLoopTime;                                       // 0x0234(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimMontage*                           InteractionMontage;                                // 0x0238(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LoopSequenceOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LoopSequenceOperateAct")
+	}
+	static class ULoopSequenceOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULoopSequenceOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_ULoopSequenceOperateAct;
+
+// Class CharacterInteractionV3.MouseHoverOperateAct
+// 0x0020 (0x0228 - 0x0208)
+class UMouseHoverOperateAct final : public UActorOperateAct
+{
+public:
+	TArray<class FName>                           BoneNames;                                         // 0x0208(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	class UCurveFloat*                            CurveTorqueScale;                                  // 0x0218(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         SampleInterval;                                    // 0x0220(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_224[0x4];                                      // 0x0224(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MouseHoverOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MouseHoverOperateAct")
+	}
+	static class UMouseHoverOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMouseHoverOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_UMouseHoverOperateAct;
+
+// Class CharacterInteractionV3.InteractionV3FaceAnimInstance
+// 0x0020 (0x02E0 - 0x02C0)
+class UInteractionV3FaceAnimInstance final : public UAnimInstance
+{
+public:
+	struct FVector2D                              MouseFollowEyeOffset;                              // 0x02B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UAnimSequence*                          IdleAnim;                                          // 0x02C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UBlendSpace*                            EyeBlend;                                          // 0x02C8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UAnimMontage*                           LastFrameMontage;                                  // 0x02D0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UAnimMontage*                           ConfessionMontage;                                 // 0x02D8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	class UBlendSpace* GetEyeBlend();
+	void PlayConfessionAnim(class UAnimSequence* InConfessionAnim, float InBlendInTime, float InBlendOutTime);
+	void PlayLastFrameAnim(class UAnimSequence* InLastFrameAnim);
+	void SetEyeBlend(class UBlendSpace* NewBlend);
+	void SetFaceIdleAnim(class UAnimSequence* InAnimSequence);
+	void SetMouseFollowEyeOffset(const struct FVector2D& InMouseFollowEyeOffset);
+	void StopConfessionAnim();
+	void StopLastFrameAnim();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionV3FaceAnimInstance")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionV3FaceAnimInstance")
+	}
+	static class UInteractionV3FaceAnimInstance* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractionV3FaceAnimInstance>();
+	}
+};
+DUMPER7_ASSERTS_UInteractionV3FaceAnimInstance;
+
+// Class CharacterInteractionV3.HeadModifyOperateAct
+// 0x0058 (0x0280 - 0x0228)
+class UHeadModifyOperateAct final : public UIKRefPoseFixOperateAct
+{
+public:
+	bool                                          UseYawChange;                                      // 0x0228(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_229[0x7];                                      // 0x0229(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRuntimeSpineWeight                    RuntimeSpineDatas;                                 // 0x0230(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("HeadModifyOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"HeadModifyOperateAct")
+	}
+	static class UHeadModifyOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UHeadModifyOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_UHeadModifyOperateAct;
+
+// Class CharacterInteractionV3.IKMaintainWorldSpaceRelativeOperateAct
+// 0x0010 (0x0238 - 0x0228)
+class UIKMaintainWorldSpaceRelativeOperateAct final : public UIKRefPoseFixOperateAct
+{
+public:
+	struct FIKMaintainWorldSpaceRelativeData      MaintainRelativeData;                              // 0x0228(0x0010)(Edit, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKMaintainWorldSpaceRelativeOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKMaintainWorldSpaceRelativeOperateAct")
+	}
+	static class UIKMaintainWorldSpaceRelativeOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKMaintainWorldSpaceRelativeOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_UIKMaintainWorldSpaceRelativeOperateAct;
+
+// Class CharacterInteractionV3.EyesFollowOperateAct
+// 0x0010 (0x0218 - 0x0208)
+class UEyesFollowOperateAct final : public UActorOperateAct
+{
+public:
+	struct FVector2D                              HeadRotationScale;                                 // 0x0208(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bInterpHead;                                       // 0x0210(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_211[0x3];                                      // 0x0211(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         HeadInterpSpeed;                                   // 0x0214(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("EyesFollowOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"EyesFollowOperateAct")
+	}
+	static class UEyesFollowOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEyesFollowOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_UEyesFollowOperateAct;
+
+// Class CharacterInteractionV3.PhysicalOffsetOperateAct
+// 0x0050 (0x0258 - 0x0208)
+class UPhysicalOffsetOperateAct final : public UActorOperateAct
+{
+public:
+	class UInteractionV3PhysHandleComponent*      PhysicsHandle;                                     // 0x0208(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsBlendingOut;                                    // 0x0210(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bMutiDrag;                                         // 0x0211(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bDragFixedBone;                                    // 0x0212(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_213[0x1];                                      // 0x0213(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   DefaultDragBoneName;                               // 0x0214(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   DefaultDragLocationBoneName;                       // 0x021C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                DragScale;                                         // 0x0224(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                DragStartLocation;                                 // 0x0230(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   CurDragBone;                                       // 0x023C(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bUseAnimNodePhysicsControl;                        // 0x0244(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_245[0x3];                                      // 0x0245(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LinearStiffness;                                   // 0x0248(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         LinearDamping;                                     // 0x024C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         AngularStiffness;                                  // 0x0250(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         AngularDamping;                                    // 0x0254(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PhysicalOffsetOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PhysicalOffsetOperateAct")
+	}
+	static class UPhysicalOffsetOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPhysicalOffsetOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_UPhysicalOffsetOperateAct;
+
+// Class CharacterInteractionV3.InteractionMouseHoverInterface
+// 0x0000 (0x0000 - 0x0000)
+class IInteractionMouseHoverInterface final
+{
+public:
+	void OnMouseHover(const TArray<class FName>& BoneNames, const class UCurveFloat* CurveScale, const struct FVector2D& SlideVector, const struct FVector2D& SlideStartPos, const struct FVector2D& SlidEndPos);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionMouseHoverInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionMouseHoverInterface")
+	}
+	static class IInteractionMouseHoverInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IInteractionMouseHoverInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IInteractionMouseHoverInterface;
+
+// Class CharacterInteractionV3.MousePressFacialOperateAct
+// 0x0008 (0x0210 - 0x0208)
+class UMousePressFacialOperateAct final : public UActorOperateAct
+{
+public:
+	bool                                          bFacialTriggered;                                  // 0x0208(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_209[0x7];                                      // 0x0209(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MousePressFacialOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MousePressFacialOperateAct")
+	}
+	static class UMousePressFacialOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMousePressFacialOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_UMousePressFacialOperateAct;
+
+// Class CharacterInteractionV3.DragPropWorldSpaceOffsetOperateAct
+// 0x0070 (0x0278 - 0x0208)
+class UDragPropWorldSpaceOffsetOperateAct final : public UActorOperateAct
+{
+public:
+	bool                                          bSpringInterp;                                     // 0x0208(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_209[0x3];                                      // 0x0209(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ErrorTolerance;                                    // 0x020C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Stiffness;                                         // 0x0210(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CriticalDamping;                                   // 0x0214(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   DragSocketName;                                    // 0x0218(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                DragLocation;                                      // 0x0220(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                DeltaLocation;                                     // 0x022C(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                TargetLocation;                                    // 0x0238(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                PreTargetLocation;                                 // 0x0244(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                InterpTarget;                                      // 0x0250(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         DragDistance;                                      // 0x025C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVectorSpringState                     SpringState;                                       // 0x0260(0x0018)(NoDestructor, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DragPropWorldSpaceOffsetOperateAct")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DragPropWorldSpaceOffsetOperateAct")
+	}
+	static class UDragPropWorldSpaceOffsetOperateAct* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UDragPropWorldSpaceOffsetOperateAct>();
+	}
+};
+DUMPER7_ASSERTS_UDragPropWorldSpaceOffsetOperateAct;
+
 // Class CharacterInteractionV3.AnimNotifyState_SubtitleStatus
 // 0x0010 (0x0040 - 0x0030)
 class UAnimNotifyState_SubtitleStatus final : public UAnimNotifyState
@@ -605,6 +711,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAnimNotifyState_SubtitleStatus;
+
+// Class CharacterInteractionV3.ShowElementV3Unit
+// 0x0008 (0x0030 - 0x0028)
+class UShowElementV3Unit : public UObject
+{
+public:
+	TSubclassOf<class UShowElementV3UnitPlayer>   PlayerType;                                        // 0x0028(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ShowElementV3Unit")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ShowElementV3Unit")
+	}
+	static class UShowElementV3Unit* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UShowElementV3Unit>();
+	}
+};
+DUMPER7_ASSERTS_UShowElementV3Unit;
 
 // Class CharacterInteractionV3.FacialAnimUnit
 // 0x0018 (0x0048 - 0x0030)
@@ -672,22 +801,29 @@ public:
 DUMPER7_ASSERTS_UScenarioLittleGameBase;
 
 // Class CharacterInteractionV3.ScenarioStandardLittleGame
-// 0x0038 (0x0068 - 0x0030)
+// 0x00E8 (0x0118 - 0x0030)
 class UScenarioStandardLittleGame : public UScenarioLittleGameBase
 {
 public:
 	TSoftClassPtr<class UClass>                   LittleGameWidget;                                  // 0x0030(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EScenarioLittleGameUIState                    UIState;                                           // 0x0058(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AUniversalCameraActor*                  UniversalCharacter;                                // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            PhysicsBlendOutCurve;                              // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EScenarioLittleGameUIState                    UIState;                                           // 0x0060(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PhysicsAlpha;                                      // 0x0064(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FTimeline                              Timeline;                                          // 0x0068(0x0098)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TArray<class AInteractionSkeletalActorV3*>    Performers;                                        // 0x0100(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	class AUniversalCameraActor*                  UniversalCharacter;                                // 0x0110(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
+	void AllPerformerPhysicsBlendOut(class UCurveFloat* OverrideBlendCurve);
 	void GameInput(const struct FLittleGameInputEvent& InputEvent);
+	void InitTineLine();
 	void MouseClick(const struct FLittleGameInputEvent& InputEvent);
 	void MousePress(const struct FLittleGameInputEvent& InputEvent);
 	void MouseRelease(const struct FLittleGameInputEvent& InputEvent);
 	void OnGameInput(const struct FLittleGameInputEvent& InputEvent);
 	void OnInitCameraSequenceFinished();
+	void OnInitShowElementFinish();
 	void OnLookAround(float InValue);
 	void OnLookUp(float InValue);
 	void OnMouseClick(const struct FLittleGameInputEvent& InputEvent);
@@ -695,6 +831,9 @@ public:
 	void OnMouseRelease(const struct FLittleGameInputEvent& InputEvent);
 	void OnMoveForward(float InValue);
 	void OnMoveRight(float InValue);
+	void OnTimelineFinished();
+	void PerformerPhysicsBlendOut(class UCurveFloat* OverrideBlendCurve);
+	void PhysicsBlendOut(float Value);
 	void PlayShowElement(const class FString& ElementName, const class FString& NextState, bool bEndLastShowElement);
 	void PlayShowElementList(const TArray<class FString>& InElements, const class FString& NextState, bool bEndLastShowElement);
 	void SetUIState(EScenarioLittleGameUIState NewState);
@@ -736,12 +875,12 @@ public:
 DUMPER7_ASSERTS_UScenarioStandardLittleGame;
 
 // Class CharacterInteractionV3.FennyGunFireLittleGame
-// 0x0018 (0x0080 - 0x0068)
+// 0x0018 (0x0130 - 0x0118)
 class UFennyGunFireLittleGame final : public UScenarioStandardLittleGame
 {
 public:
-	TArray<struct FFennyVoiceTipCfg>              VoiceTipCfgs;                                      // 0x0068(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FVector2D                              FirstRoundDelayTime;                               // 0x0078(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FFennyVoiceTipCfg>              VoiceTipCfgs;                                      // 0x0118(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FVector2D                              FirstRoundDelayTime;                               // 0x0128(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	const struct FFennyVoiceTipCfg GetVoiceTipCfg(int32 InId);
@@ -764,11 +903,11 @@ public:
 DUMPER7_ASSERTS_UFennyGunFireLittleGame;
 
 // Class CharacterInteractionV3.FennyShowerLittleGame
-// 0x0010 (0x0078 - 0x0068)
+// 0x0010 (0x0128 - 0x0118)
 class UFennyShowerLittleGame final : public UScenarioStandardLittleGame
 {
 public:
-	TArray<struct FFennyShowerStandbyCfg>         StandbyCfgs;                                       // 0x0068(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FFennyShowerStandbyCfg>         StandbyCfgs;                                       // 0x0118(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 
 public:
 	void GetCameraAdditivePitchAndYaw(float* OutPitch, float* OutYaw) const;
@@ -818,19 +957,24 @@ public:
 DUMPER7_ASSERTS_UHolyLightV3Component;
 
 // Class CharacterInteractionV3.InteractionActorV3
-// 0x0170 (0x0398 - 0x0228)
+// 0x0180 (0x03A8 - 0x0228)
 class AInteractionActorV3 : public AActor
 {
 public:
 	class FName                                   ActorName;                                         // 0x0228(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UShowElementV3UnitPlayerConfigAsset> SEUintPlayConfig;                      // 0x0230(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TMap<TSubclassOf<class UShowElementV3Unit>, class UShowElementV3UnitPlayer*> PlayerMapByType;    // 0x0258(0x0050)(BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
-	TMap<TSubclassOf<class UShowElementV3UnitPlayer>, class UShowElementV3UnitPlayer*> PlayerMapByClass; // 0x02A8(0x0050)(BlueprintVisible, BlueprintReadOnly, Transient, Protected, NativeAccessSpecifierProtected)
-	TMap<class UShowElementV3Unit*, class UShowElementV3UnitPlayer*> ElementUnitPlayerContext;       // 0x02F8(0x0050)(Transient, Protected, NativeAccessSpecifierProtected)
-	TMap<class FString, TDelegate<void()>>        OperateDelegateMap;                                // 0x0348(0x0050)(Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	bool                                          bShowAtPlayStandby;                                // 0x0230(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_231[0x3];                                      // 0x0231(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   CurrentShowElementName;                            // 0x0234(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_23C[0x4];                                      // 0x023C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UShowElementV3UnitPlayerConfigAsset> SEUintPlayConfig;                      // 0x0240(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TMap<TSubclassOf<class UShowElementV3Unit>, class UShowElementV3UnitPlayer*> PlayerMapByType;    // 0x0268(0x0050)(BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	TMap<TSubclassOf<class UShowElementV3UnitPlayer>, class UShowElementV3UnitPlayer*> PlayerMapByClass; // 0x02B8(0x0050)(BlueprintVisible, BlueprintReadOnly, Transient, Protected, NativeAccessSpecifierProtected)
+	TMap<class UShowElementV3Unit*, class UShowElementV3UnitPlayer*> ElementUnitPlayerContext;       // 0x0308(0x0050)(Transient, Protected, NativeAccessSpecifierProtected)
+	TMap<class FString, TDelegate<void()>>        OperateDelegateMap;                                // 0x0358(0x0050)(Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 
 public:
 	void BindOperateActEvent(const class FString& ActorOperateActName, const TDelegate<void(const class FString& ActorOperateActName, float DeltaSeconds, class UActorOperateAct* ActorOperateAct, EInteractionV3OperateEventType EventType)>& Delegate);
+	void OnOperateBlendOut(const class FString& ActorOperateActName, class UActorOperateAct* ActorOperateAct);
 	void OnOperateEnd(const class FString& ActorOperateActName, class UActorOperateAct* ActorOperateAct);
 	void OnOperateStart(const class FString& ActorOperateActName, class UActorOperateAct* ActorOperateAct);
 	void OnOperateUpdate(const class FString& ActorOperateActName, float DeltaSeconds, class UActorOperateAct* ActorOperateAct);
@@ -869,7 +1013,9 @@ public:
 	TArray<int32>                                 PlayedArchivements;                                // 0x00E0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 
 public:
+	void ClearConditionComplete(int32 InId);
 	void PlayArchivement(int32 InId);
+	void RefreshArchivements(bool bAllowRevoke);
 	void SetArchievementPlayed(int32 InId);
 	void SetArchivementComplete(int32 InId);
 	void SetConditionComplete(int32 InId);
@@ -909,9 +1055,12 @@ public:
 	static class AInteractionCameraActor* GetCameraActor();
 
 	void ActiveCamera();
+	void ActiveCameraByStandbyID(class FName ID);
 	void GetAdditivePitchAndYaw(float* OutPitch, float* OutYaw);
 	void SetOperateConfig(class FName ID);
 	void SetStandbyConfig(class FName ID);
+	void SwitchToFixedCamera(class FName InCameraName);
+	void SwitchToFreeCamera();
 	void ToggleDebugCameraModifierInfo();
 
 	const struct FMinimalViewInfo GetDefaultViewInfo() const;
@@ -963,26 +1112,40 @@ public:
 DUMPER7_ASSERTS_UInteractionCameraInstanceBase;
 
 // Class CharacterInteractionV3.InteractionCameraInstance
-// 0x02C0 (0x0680 - 0x03C0)
+// 0x0450 (0x0810 - 0x03C0)
 class UInteractionCameraInstance final : public UInteractionCameraInstanceBase
 {
 public:
 	int32                                         MaxInputSubStep;                                   // 0x03B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         MaxSubStepInputDist;                               // 0x03BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FStandbyCameraConfig                   StandbyCameraConfig;                               // 0x03C0(0x00F0)(Transient, Protected, NativeAccessSpecifierProtected)
-	struct FInteractionCameraModifierInfo         StandbyModifierInfo;                               // 0x04B0(0x0028)(BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4D8[0x40];                                     // 0x04D8(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FStandbyCameraConfig                   OperateCameraConfig;                               // 0x0518(0x00F0)(Transient, Protected, NativeAccessSpecifierProtected)
-	struct FInteractionCameraModifierInfo         OperateModifierInfo;                               // 0x0608(0x0028)(BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_630[0x44];                                     // 0x0630(0x0044)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bAllowCameraMove;                                  // 0x0674(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsOperateCamera;                                  // 0x0675(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_676[0xA];                                      // 0x0676(0x000A)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FStandbyCameraConfig                   StandbyCameraConfig;                               // 0x03C0(0x0190)(Transient, Protected, NativeAccessSpecifierProtected)
+	struct FInteractionCameraModifierInfo         StandbyModifierInfo;                               // 0x0550(0x0028)(BlueprintVisible, BlueprintReadOnly, Transient, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	TSoftObjectPtr<class ULevelSequence>          CameraSequenceAsset;                               // 0x0578(0x0028)(BlueprintVisible, BlueprintReadOnly, Transient, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         LevelSeqCutTiming;                                 // 0x05A0(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5A4[0x3C];                                     // 0x05A4(0x003C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FStandbyCameraConfig                   OperateCameraConfig;                               // 0x05E0(0x0190)(Transient, Protected, NativeAccessSpecifierProtected)
+	struct FInteractionCameraModifierInfo         OperateModifierInfo;                               // 0x0770(0x0028)(BlueprintVisible, BlueprintReadOnly, Transient, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_798[0x44];                                     // 0x0798(0x0044)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bAllowCameraMove;                                  // 0x07DC(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsOperateCamera;                                  // 0x07DD(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsValidCameraSequence;                            // 0x07DE(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7DF[0x1];                                      // 0x07DF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint32                                        DisableInputType;                                  // 0x07E0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ShowElementToStandbyCameraAlpha;                   // 0x07E4(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FCameraFixedPOVSettings                ShowElementPOV;                                    // 0x07E8(0x001C)(BlueprintVisible, BlueprintReadOnly, Transient, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_804[0xC];                                      // 0x0804(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddInput(const struct FVector2D& Value);
+	void DisableInput(bool bDisable, EInteractionCameraDisableInputType InType);
+	void SetLevelSequence(TSoftObjectPtr<class ULevelSequence> LevelSequence);
+	void SetLevelSequenceInputCut(float Times);
 	void SetOperateConfig(class FName ID);
 	void SetStandbyConfig(class FName ID);
+	void SwitchToFixedCamera(class FName InCameraName);
+	void SwitchToFreeCamera();
+
+	bool IsInputDisabled() const;
 
 public:
 	static class UClass* StaticClass()
@@ -1001,19 +1164,23 @@ public:
 DUMPER7_ASSERTS_UInteractionCameraInstance;
 
 // Class CharacterInteractionV3.InteractionSkeletalActorV3
-// 0x0030 (0x03C8 - 0x0398)
+// 0x0060 (0x0408 - 0x03A8)
 class AInteractionSkeletalActorV3 : public AInteractionActorV3
 {
 public:
-	uint8                                         Pad_398[0x8];                                      // 0x0398(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x03A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UBaseGamePhysicsControlComponent*       BodyPhysicsControlComponent;                       // 0x03A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UBaseGamePhysicsControlComponent*       BodyAnimNodePhysicsControlComponent;               // 0x03B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UPhysicsHandleComponent*                PhysicsHandleComponent;                            // 0x03B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bSyncBodyAnim;                                     // 0x03C0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C1[0x7];                                      // 0x03C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A8[0x8];                                      // 0x03A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x03B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UBaseGamePhysicsControlComponent*       BodyPhysicsControlComponent;                       // 0x03B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UBaseGamePhysicsControlComponent*       BodyAnimNodePhysicsControlComponent;               // 0x03C0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UPhysicsHandleComponent*                PhysicsHandleComponent;                            // 0x03C8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3D0[0x31];                                     // 0x03D0(0x0031)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bSyncBodyAnim;                                     // 0x0401(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSetMasterComponent;                               // 0x0402(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_403[0x5];                                      // 0x0403(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	void StartPhysicsBlendOut(float InTime);
+
 	class UInteractionV3CharacterAnimInstance* GetInteractionCharacterAnimInstance() const;
 
 public:
@@ -1033,42 +1200,45 @@ public:
 DUMPER7_ASSERTS_AInteractionSkeletalActorV3;
 
 // Class CharacterInteractionV3.InteractionCharacterV3
-// 0x0090 (0x0458 - 0x03C8)
+// 0x0098 (0x04A0 - 0x0408)
 class AInteractionCharacterV3 : public AInteractionSkeletalActorV3
 {
 public:
-	bool                                          bForceEyeLookAtCamera;                             // 0x03C8(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C9[0x3];                                      // 0x03C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              EyesLookAtPosition;                                // 0x03CC(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FInteractionLookAtBoneData             EyeLookAtBoneInfo;                                 // 0x03D4(0x0010)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector2D                              OperatingCurrentHeadRotScale;                      // 0x03E4(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              OperatingTargetHeadRotScale;                       // 0x03EC(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         OperatingHeadRotInterpSpeed;                       // 0x03F4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            CurrentDisableKawaiiBlendCurve;                    // 0x03F8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USkeletalMeshComponent*                 FaceComponent;                                     // 0x0400(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class USkeletalMeshComponent*                 LeftShoeComponent;                                 // 0x0408(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class USkeletalMeshComponent*                 RightShoeComponent;                                // 0x0410(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UOVRLipSyncPlaybackActorComponent*      LipSyncComponent;                                  // 0x0418(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UBaseGamePhysicsControlComponent*       FacePhysicsControlComponent;                       // 0x0420(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bShutDownKawaii;                                   // 0x0428(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_429[0x3];                                      // 0x0429(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         KawaiiAlpha;                                       // 0x042C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         KawaiiBlendDuration;                               // 0x0430(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         KawaiiShutdownSpeed;                               // 0x0434(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsEnableKawaiiBlendCurve;                         // 0x0438(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_439[0x7];                                      // 0x0439(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCurveFloat*                            EnableKawaiiBlendCurve;                            // 0x0440(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UCurveFloat*                            DisableKawaiiBlendCurve;                           // 0x0448(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_450[0x4];                                      // 0x0450(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         KawaiBlendSpeedScale;                              // 0x0454(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bForceEyeLookAtCamera;                             // 0x0408(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_409[0x3];                                      // 0x0409(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              EyesLookAtPosition;                                // 0x040C(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FInteractionLookAtBoneData             EyeLookAtBoneInfo;                                 // 0x0414(0x0010)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector2D                              OperatingCurrentHeadRotScale;                      // 0x0424(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              OperatingTargetHeadRotScale;                       // 0x042C(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OperatingHeadRotInterpSpeed;                       // 0x0434(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            CurrentDisableKawaiiBlendCurve;                    // 0x0438(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USkeletalMeshComponent*                 FaceComponent;                                     // 0x0440(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class USkeletalMeshComponent*                 LeftShoeComponent;                                 // 0x0448(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class USkeletalMeshComponent*                 RightShoeComponent;                                // 0x0450(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UOVRLipSyncPlaybackActorComponent*      LipSyncComponent;                                  // 0x0458(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UBaseGamePhysicsControlComponent*       FacePhysicsControlComponent;                       // 0x0460(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bShutDownKawaii;                                   // 0x0468(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_469[0x3];                                      // 0x0469(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         KawaiiAlpha;                                       // 0x046C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         KawaiiBlendDuration;                               // 0x0470(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         KawaiiShutdownSpeed;                               // 0x0474(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsEnableKawaiiBlendCurve;                         // 0x0478(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_479[0x7];                                      // 0x0479(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            EnableKawaiiBlendCurve;                            // 0x0480(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UCurveFloat*                            DisableKawaiiBlendCurve;                           // 0x0488(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_490[0x4];                                      // 0x0490(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         KawaiBlendSpeedScale;                              // 0x0494(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_498[0x8];                                      // 0x0498(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void InteractionStartBlush();
 	void InteractionStopBlush();
 	void OnLipSyncDataReady();
+	void SetAllowEyesFollow(bool bNewValue);
 	void SetKawaiiBlendScale(float KawaiiBlendScaleValue);
 	void StartKawaiiBlend();
 
+	bool GetAllowEyesFollow() const;
 	class UInteractionV3FaceAnimInstance* GetInteractionCharacterFaceAnimInstance() const;
 	float GetKawaiiAlphaValue() const;
 
@@ -1171,7 +1341,7 @@ DUMPER7_ASSERTS_UInteractionV3SpartialInputCollision;
 
 // Class CharacterInteractionV3.InteractionV3SphereCollisionInput
 // 0x0008 (0x0090 - 0x0088)
-class UInteractionV3SphereCollisionInput final : public UInteractionV3SpartialInputCollision
+class UInteractionV3SphereCollisionInput : public UInteractionV3SpartialInputCollision
 {
 public:
 	float                                         Radius;                                            // 0x0088(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1222,8 +1392,28 @@ public:
 };
 DUMPER7_ASSERTS_UInteractionV3CapsuleCollisionInput;
 
+// Class CharacterInteractionV3.InteractionV3AutoTriggerSphereCollisionInput
+// 0x0000 (0x0090 - 0x0090)
+class UInteractionV3AutoTriggerSphereCollisionInput final : public UInteractionV3SphereCollisionInput
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionV3AutoTriggerSphereCollisionInput")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionV3AutoTriggerSphereCollisionInput")
+	}
+	static class UInteractionV3AutoTriggerSphereCollisionInput* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractionV3AutoTriggerSphereCollisionInput>();
+	}
+};
+DUMPER7_ASSERTS_UInteractionV3AutoTriggerSphereCollisionInput;
+
 // Class CharacterInteractionV3.InteractionDirectorV3
-// 0x0180 (0x03A8 - 0x0228)
+// 0x01D8 (0x0400 - 0x0228)
 class AInteractionDirectorV3 final : public AActor
 {
 public:
@@ -1234,7 +1424,9 @@ public:
 	class UHolyLightV3Component*                  HolyLightComponent;                                // 0x0250(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TArray<class UInteractionV3InputCollision*>   InputCollisions;                                   // 0x0258(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	TMap<class FName, class AInteractionActorV3*> Performers;                                        // 0x0268(0x0050)(Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2B8[0xF0];                                     // 0x02B8(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B8[0x140];                                    // 0x02B8(0x0140)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bUseFrustumDetection : 1;                          // 0x03F8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_3F9[0x7];                                      // 0x03F9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class AInteractionDirectorV3* GetInstance();
@@ -1247,6 +1439,7 @@ public:
 	bool EnterScenario(const class FString& ScenarioName);
 	void OnEnterScenario(const class FString& ScenarioName);
 	TArray<struct FShowElementsAnim> PlayScenarioShowElement(const class FName& ShowElementName);
+	void PreloadShowElements(const class FName& ScName);
 	void QuitScenarioShowElement(const class FName& ShowElementName);
 	void RemoveInteractionActor(const class FName& Name_0);
 	void RemoveInteractionActorInScenario(const class FName& ScenarioName);
@@ -1254,6 +1447,7 @@ public:
 	void ShowActorsComponents(const class FString& ScName, bool bReset);
 	void ToggleDebugOperateCollision();
 
+	class UScenarioStateMachine* GetActiveStateMachine() const;
 	class UScenarioStateNode* GetActiveStateNode() const;
 	TArray<class AInteractionActorV3*> GetAllInteractionActor() const;
 	class UInteractionArchivementComponentV3* GetArchivementComponent() const;
@@ -1284,6 +1478,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_AInteractionDirectorV3;
+
+// Class CharacterInteractionV3.InteractionFixedCameraNode
+// 0x0008 (0x0130 - 0x0128)
+class UInteractionFixedCameraNode final : public UCameraDynamicNode
+{
+public:
+	uint8                                         Pad_128[0x8];                                      // 0x0128(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionFixedCameraNode")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionFixedCameraNode")
+	}
+	static class UInteractionFixedCameraNode* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractionFixedCameraNode>();
+	}
+};
+DUMPER7_ASSERTS_UInteractionFixedCameraNode;
 
 // Class CharacterInteractionV3.InteractionFPSCameraActor
 // 0x0618 (0x0840 - 0x0228)
@@ -1360,7 +1577,7 @@ public:
 DUMPER7_ASSERTS_UInteractionFPSCameraInstance;
 
 // Class CharacterInteractionV3.InteractionInputComponent
-// 0x00B0 (0x0160 - 0x00B0)
+// 0x00C0 (0x0170 - 0x00B0)
 class UInteractionInputComponent final : public UActorComponent
 {
 public:
@@ -1371,16 +1588,23 @@ public:
 	TArray<struct FInteractionPreInputInfo>       PreInputEvents;                                    // 0x0118(0x0010)(ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_128[0x1F];                                     // 0x0128(0x001F)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bOperatePressed;                                   // 0x0147(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_148[0x18];                                     // 0x0148(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_148[0x20];                                     // 0x0148(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         DisableAxisNum;                                    // 0x0168(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_16C[0x4];                                      // 0x016C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddBlockInteractionOperate(const class FString& InReason);
 	int32 AddMouseButtonEvent(bool bDown, TDelegate<void()> InAction);
+	void DisableGamepadAxisInput(int32 InAxisNum);
+	void EnableGamepadAllAxisInput();
+	void EnableGamepadAxisInput(int32 InAxisNum);
 	bool HandleMouseButtonEvent(bool bDown);
 	int32 ListenForInputAction(class FName ActionName, EInputEvent EventType, bool bConsume, TDelegate<void()> Callback);
 	void ListenForKeyAction(const struct FKey& InKey, EInputEvent EventType, bool bConsume, TDelegate<void()> Callback);
 	void LookAround(float InValue);
 	void LookUp(float InValue);
+	void ManualMoveForward(float InValue);
+	void ManualMoveRight(float InValue);
 	void MoveForward(float InValue);
 	void MoveRight(float InValue);
 	void RemoveAllBlockInteractionOperate();
@@ -1400,6 +1624,7 @@ public:
 	struct FVector2D GetPressedMouseMove() const;
 	bool HasBlockInteractionOperate(const class FString& InReason) const;
 	bool IsBlockInteractionOperate() const;
+	bool IsGamepadAxisInputEnabled(int32 InAxisNum) const;
 	bool IsListeningForInputAction(class FName ActionName) const;
 	bool IsMouseInScreen() const;
 	bool IsMousePressed() const;
@@ -1457,8 +1682,9 @@ public:
 DUMPER7_ASSERTS_UInteractionV3InputControl;
 
 // Class CharacterInteractionV3.InteractionV3DragControl
-// 0x00B0 (0x00E0 - 0x0030)
-class UInteractionV3DragControl : public UInteractionV3InputControl
+// 0x00D0 (0x0100 - 0x0030)
+#pragma pack(push, 0x1)
+class alignas(0x10) UInteractionV3DragControl : public UInteractionV3InputControl
 {
 public:
 	struct FDragControlDataV3                     DragControl;                                       // 0x0030(0x0050)(Edit, NoDestructor, NativeAccessSpecifierPublic)
@@ -1472,7 +1698,9 @@ public:
 	uint8                                         Pad_8E[0x2];                                       // 0x008E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Velocity;                                          // 0x0090(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractionV3SpringInterpolation      SpringInterpolation;                               // 0x0094(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A4[0x3C];                                      // 0x00A4(0x003C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVectorSpringState                     DragSpringState;                                   // 0x00A4(0x0018)(Transient, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         SpringMass;                                        // 0x00BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C0[0x38];                                      // 0x00C0(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1488,22 +1716,31 @@ public:
 		return GetDefaultObjImpl<UInteractionV3DragControl>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UInteractionV3DragControl;
 
 // Class CharacterInteractionV3.InteractionV3SequenceControl
-// 0x0020 (0x0100 - 0x00E0)
+// 0x0050 (0x0150 - 0x0100)
 class UInteractionV3SequenceControl final : public UInteractionV3DragControl
 {
 public:
-	struct FVector2D                              ProjectDirection;                                  // 0x00E0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RecoverPlaySpeed;                                  // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOpenAutoPlay;                                     // 0x00EC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_ED[0x3];                                       // 0x00ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AutoPlayPercent;                                   // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOpenAutoBackPlay;                                 // 0x00F4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F5[0x3];                                       // 0x00F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Percentage;                                        // 0x00F8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              ProjectDirection;                                  // 0x00F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_100[0x8];                                      // 0x0100(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bUseMultiProjectDirection;                         // 0x0108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_109[0x3];                                      // 0x0109(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SegmentedTolerance;                                // 0x010C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ClampMouseDeltaPercentTolerance;                   // 0x0110(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ClampIterationsCount;                              // 0x0114(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FSegmentedDirectionData>        SegmentedDirections;                               // 0x0118(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         RecoverPlaySpeed;                                  // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOpenAutoPlay;                                     // 0x012C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12D[0x3];                                      // 0x012D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AutoPlayPercent;                                   // 0x0130(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOpenAutoBackPlay;                                 // 0x0134(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_135[0x3];                                      // 0x0135(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         InitPercentage;                                    // 0x0138(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Percentage;                                        // 0x013C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_140[0x10];                                     // 0x0140(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1548,26 +1785,28 @@ DUMPER7_ASSERTS_UInteractionV3EyesFollowControl;
 
 // Class CharacterInteractionV3.InteractionPlayV3
 // 0x0088 (0x02B0 - 0x0228)
-class AInteractionPlayV3 final : public AActor
+class AInteractionPlayV3 : public AActor
 {
 public:
 	TArray<TSoftObjectPtr<class UScenarioStateMachine>> StateMachineTemplates;                       // 0x0228(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	TSoftClassPtr<class UClass>                   DirectorClass;                                     // 0x0238(0x0028)(Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TSoftClassPtr<class UClass>                   CameraActorClass;                                  // 0x0260(0x0028)(Edit, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AInteractionDirectorV3>  Director;                                          // 0x0288(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TArray<class UScenarioStateMachine*>          StateMachinesInstances;                            // 0x0290(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TWeakObjectPtr<class AInteractionCameraActor> CameraActor;                                       // 0x02A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UInteractionRuntimeSupport*             InteractionRuntimeSupport;                         // 0x02A8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UInteractionRuntimeSupport*             InteractionRuntimeSupport;                         // 0x0288(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AInteractionDirectorV3>  Director;                                          // 0x0290(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<class UScenarioStateMachine*>          StateMachinesInstances;                            // 0x0298(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TWeakObjectPtr<class AInteractionCameraActor> CameraActor;                                       // 0x02A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	class UScenarioStateMachine* GetScenarioStateMachine(const class FString& InScenarioName);
 	class UDataTable* GetSceneActorHideComConfig();
+	int32 LoadShowElementsInName(const class FName& ScenarioName);
 	bool Start(const class FString& InScenarioName);
 
 	void Clear() const;
 	bool GetActorStaticInfo(const class FName& ActorName, struct FInteractionActorStaticInfo* OutInfo) const;
 	void GetCharacterActors(TArray<class AInteractionCharacterV3*>* OutCharacters) const;
 	class AInteractionDirectorV3* GetInteractionDirector() const;
+	class FName GetPrefixFromName(const class FName& InName) const;
 	bool GetScenarioActors(const class FName& ScenarioName, TSet<class FName>* OutNames) const;
 	bool GetScenarioShowElementStaticInfo(const class FName& ShowElementName, struct FInteractionScenarioShowElementStaticInfo* OutInfo) const;
 	bool GetStateStandByActors(const class FName& ScenaioName, const class FName& StateName, TSet<class FName>* ActorNames) const;
@@ -1587,33 +1826,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_AInteractionPlayV3;
-
-// Class CharacterInteractionV3.InteractionRuntimeSupport
-// 0x0118 (0x0148 - 0x0030)
-class UInteractionRuntimeSupport final : public UDataAsset
-{
-public:
-	TMap<class FName, struct FInteractionActorStaticInfo> StaticActorInfoMap;                        // 0x0030(0x0050)(Edit, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FInteractionScenarioShowElementStaticInfo> ShowElementActors;           // 0x0080(0x0050)(Edit, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FInteractionActorNames> ScenarioActors;                                 // 0x00D0(0x0050)(Edit, NativeAccessSpecifierPublic)
-	TArray<struct FInteractionStandByActortStaticInfo> ScenarioStandByActors;                        // 0x0120(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        SceneActorHideComConfig;                           // 0x0130(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InteractionRuntimeSupport")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InteractionRuntimeSupport")
-	}
-	static class UInteractionRuntimeSupport* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInteractionRuntimeSupport>();
-	}
-};
-DUMPER7_ASSERTS_UInteractionRuntimeSupport;
 
 // Class CharacterInteractionV3.InteractionSettingsV3
 // 0x0048 (0x0080 - 0x0038)
@@ -1716,6 +1928,58 @@ public:
 };
 DUMPER7_ASSERTS_UInteractionV3CharacterAnimLayer;
 
+// Class CharacterInteractionV3.InteractionV3Event
+// 0x0000 (0x0028 - 0x0028)
+class UInteractionV3Event : public UObject
+{
+public:
+	void DoAction();
+
+	bool CanTrigger() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionV3Event")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionV3Event")
+	}
+	static class UInteractionV3Event* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractionV3Event>();
+	}
+};
+DUMPER7_ASSERTS_UInteractionV3Event;
+
+// Class CharacterInteractionV3.InteractionV3Event_Achievement
+// 0x0008 (0x0030 - 0x0028)
+class UInteractionV3Event_Achievement final : public UInteractionV3Event
+{
+public:
+	int32                                         AchievementID;                                     // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	class UInteractionArchivementComponentV3* GetArchivementComponentV3() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionV3Event_Achievement")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionV3Event_Achievement")
+	}
+	static class UInteractionV3Event_Achievement* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractionV3Event_Achievement>();
+	}
+};
+DUMPER7_ASSERTS_UInteractionV3Event_Achievement;
+
 // Class CharacterInteractionV3.InteractionV3Event_ConditionCompleted
 // 0x0008 (0x0030 - 0x0028)
 class UInteractionV3Event_ConditionCompleted final : public UInteractionV3Event
@@ -1761,43 +2025,6 @@ public:
 };
 DUMPER7_ASSERTS_UInteractionV3Event_EasterEgg;
 
-// Class CharacterInteractionV3.InteractionV3FaceAnimInstance
-// 0x0020 (0x02E0 - 0x02C0)
-class UInteractionV3FaceAnimInstance final : public UAnimInstance
-{
-public:
-	struct FVector2D                              MouseFollowEyeOffset;                              // 0x02B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UAnimSequence*                          IdleAnim;                                          // 0x02C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UBlendSpace*                            EyeBlend;                                          // 0x02C8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UAnimMontage*                           LastFrameMontage;                                  // 0x02D0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UAnimMontage*                           ConfessionMontage;                                 // 0x02D8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	class UBlendSpace* GetEyeBlend();
-	void PlayConfessionAnim(class UAnimSequence* InConfessionAnim, float InBlendInTime, float InBlendOutTime);
-	void PlayLastFrameAnim(class UAnimSequence* InLastFrameAnim);
-	void SetEyeBlend(class UBlendSpace* NewBlend);
-	void SetFaceIdleAnim(class UAnimSequence* InAnimSequence);
-	void SetMouseFollowEyeOffset(const struct FVector2D& InMouseFollowEyeOffset);
-	void StopConfessionAnim();
-	void StopLastFrameAnim();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InteractionV3FaceAnimInstance")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InteractionV3FaceAnimInstance")
-	}
-	static class UInteractionV3FaceAnimInstance* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInteractionV3FaceAnimInstance>();
-	}
-};
-DUMPER7_ASSERTS_UInteractionV3FaceAnimInstance;
-
 // Class CharacterInteractionV3.InteractionV3FunctionLibrary
 // 0x0000 (0x0028 - 0x0028)
 class UInteractionV3FunctionLibrary final : public UBlueprintFunctionLibrary
@@ -1805,6 +2032,7 @@ class UInteractionV3FunctionLibrary final : public UBlueprintFunctionLibrary
 public:
 	static void ActiveCameraBlendOut(const class UObject* WorldContextObject, bool bInForceCameraBlend);
 	static struct FVector CalculateBezierPoint(float T, const struct FVector& Current, const struct FVector& Target);
+	static void ClearAchievementConditionComplete(int32 ConditionID, bool bRefresh, bool bAllowRevoke);
 	static class AUniversalCameraActor* CreateUniversalCamera(class UObject* WorldContextObject);
 	static void DeactiveCameraBlendOut(const class UObject* WorldContextObject);
 	static EScenarioNodeInnerState GetActiveScenarioNodeInnerState();
@@ -1816,10 +2044,14 @@ public:
 	static struct FVector GetTiltOffset(const struct FVector& InOffset, const struct FRotator& CameraRotation, const float& OffsetAdditiveRot_Pitch, const float& OffsetAdditiveRot_Yaw);
 	static bool LineTraceComponentOnMousePos(class UObject* WorldContextObject, struct FHitResult* OutHit, class UPrimitiveComponent* InPrimitiveComp, bool bUsePressedPos);
 	static void LockCameraBlendOutChange(const class UObject* WorldContextObject, bool bNewValue);
+	static void RefreshAchievements(bool bAllowRevoke);
+	static void SetAchievementConditionComplete(int32 ConditionID, bool bRefresh);
+	static void SetActorHiddenByName(class FName ActorName, bool bHidden);
 	static void SetActorHiddenInGame(class AInteractionActorV3* InteractionActorV3, bool bHidden);
 	static class AUniversalCameraActor* SetViewTargetToUniversalCamera(class UObject* WorldContextObject, struct FUniversalCameraInfo* CameraInfo, class FName ModeName);
 	static float SimpleFloatSpringInterp(float Current, float Target, float& Velocity, float Stiffness, float Damping, float DeltaTime, float VelocityClamp);
 	static struct FVector SimpleVectorSpringInterp(const struct FVector& Current, const struct FVector& Target, struct FVector& Velocity, const struct FVector& Stiffness, const struct FVector& Damping, float DeltaTime, float VelocityClamp);
+	static void TryPlayAchievement(int32 AchievementID);
 
 public:
 	static class UClass* StaticClass()
@@ -1837,37 +2069,6 @@ public:
 };
 DUMPER7_ASSERTS_UInteractionV3FunctionLibrary;
 
-// Class CharacterInteractionV3.InteractionV3CableFunctionLibrary
-// 0x0000 (0x0028 - 0x0028)
-class UInteractionV3CableFunctionLibrary final : public UBlueprintFunctionLibrary
-{
-public:
-	static float GetCableLengthRuntime(const TArray<struct FVector>& CablePoints);
-	static float GetCableLengthRuntimeAtIndex(const TArray<struct FVector>& CablePoints, int32 Index_0);
-	static TArray<struct FVector> GetCablePoints(const class UCableComponent* CableComponent, const TArray<struct FVector>& AdditionalPoints, bool bToEnd);
-	static struct FVector GetLocationOnCableByPercentage(const TArray<struct FVector>& CablePoints, float _percentage);
-	static int32 GetLowestLocationIndexOnCable(const TArray<struct FVector>& CablePoints);
-	static struct FVector GetLowestLocationOnCable(const TArray<struct FVector>& CablePoints);
-	static float GetPercentageByParticleIndex(const TArray<struct FVector>& CablePoints, int32 _Index);
-	static TArray<struct FVector> GetSideLocationOnCableByPercentage(const TArray<struct FVector>& CablePoints, float _percentage);
-	static float SpringInterpFloat(float DeltaTime, float _Target, float _Current, float* _Velocity, const TArray<struct FVector>& CablePoints, float _Stiffness, float _Damping, float _VelocityClamp, float _HeightScale);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InteractionV3CableFunctionLibrary")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InteractionV3CableFunctionLibrary")
-	}
-	static class UInteractionV3CableFunctionLibrary* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInteractionV3CableFunctionLibrary>();
-	}
-};
-DUMPER7_ASSERTS_UInteractionV3CableFunctionLibrary;
-
 // Class CharacterInteractionV3.InteractionV3Lib
 // 0x0000 (0x0028 - 0x0028)
 class UInteractionV3Lib final : public UBlueprintFunctionLibrary
@@ -1880,6 +2081,7 @@ public:
 	static bool HasInteractionBoolStat(const class FString& StatName);
 	static bool HasInteractionIntStat(const class FString& StatName);
 	static bool HasInteractionStringStat(const class FString& StatName);
+	static bool IsComponentInFrustum(class UPrimitiveComponent* Component);
 	static void SetInteractionBoolStat(const class FString& StatName, bool StatValue);
 	static void SetInteractionIntStat(const class FString& StatName, int32 StatValue);
 	static void SetInteractionStringStat(const class FString& StatName, const class FString& StatValue);
@@ -1899,6 +2101,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UInteractionV3Lib;
+
+// Class CharacterInteractionV3.InteractionV3PhysHandleComponent
+// 0x0000 (0x0160 - 0x0160)
+class UInteractionV3PhysHandleComponent final : public UPhysicsHandleComponent
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractionV3PhysHandleComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractionV3PhysHandleComponent")
+	}
+	static class UInteractionV3PhysHandleComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractionV3PhysHandleComponent>();
+	}
+};
+DUMPER7_ASSERTS_UInteractionV3PhysHandleComponent;
 
 // Class CharacterInteractionV3.InteractionV3PhysicsControlComponent
 // 0x0050 (0x0520 - 0x04D0)
@@ -1956,6 +2178,29 @@ public:
 };
 DUMPER7_ASSERTS_UOperateStandardCompelteEvent;
 
+// Class CharacterInteractionV3.PhysicsAssetModifierEvent
+// 0x0010 (0x0038 - 0x0028)
+class UPhysicsAssetModifierEvent final : public UInteractionV3Event
+{
+public:
+	TArray<struct FCharacterPhysicsAssetModifier> PhysicsAssetModifiers;                             // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PhysicsAssetModifierEvent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PhysicsAssetModifierEvent")
+	}
+	static class UPhysicsAssetModifierEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPhysicsAssetModifierEvent>();
+	}
+};
+DUMPER7_ASSERTS_UPhysicsAssetModifierEvent;
+
 // Class CharacterInteractionV3.CreatePhysicsControlEvent
 // 0x0038 (0x0060 - 0x0028)
 class UCreatePhysicsControlEvent final : public UInteractionV3Event
@@ -1997,7 +2242,8 @@ public:
 	class FName                                   SetName;                                           // 0x0030(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   ActorName;                                         // 0x0038(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsBody;                                           // 0x0040(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bIsAnimNode;                                       // 0x0041(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_42[0x6];                                       // 0x0042(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2016,7 +2262,7 @@ public:
 DUMPER7_ASSERTS_UDestroyPhysicsControlEvent;
 
 // Class CharacterInteractionV3.CreateMaintainWorldSpaceRelativeControlEvent
-// 0x0038 (0x0060 - 0x0028)
+// 0x0048 (0x0070 - 0x0028)
 class UCreateMaintainWorldSpaceRelativeControlEvent final : public UInteractionV3Event
 {
 public:
@@ -2026,8 +2272,9 @@ public:
 	class FName                                   ParentBoneName;                                    // 0x0040(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   ChildActorName;                                    // 0x0048(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   ChildBoneName;                                     // 0x0050(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsChildAnimNode;                                  // 0x0058(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<struct FBonePair>                      BoneNamePairs;                                     // 0x0058(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bIsChildAnimNode;                                  // 0x0068(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2044,6 +2291,33 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCreateMaintainWorldSpaceRelativeControlEvent;
+
+// Class CharacterInteractionV3.AnimNodeCreatePhysicsControlEvent
+// 0x0028 (0x0050 - 0x0028)
+class UAnimNodeCreatePhysicsControlEvent final : public UInteractionV3Event
+{
+public:
+	class FName                                   ControlName;                                       // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SetName;                                           // 0x0030(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ActorName;                                         // 0x0038(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ParentBoneName;                                    // 0x0040(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ChildBoneName;                                     // 0x0048(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AnimNodeCreatePhysicsControlEvent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AnimNodeCreatePhysicsControlEvent")
+	}
+	static class UAnimNodeCreatePhysicsControlEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAnimNodeCreatePhysicsControlEvent>();
+	}
+};
+DUMPER7_ASSERTS_UAnimNodeCreatePhysicsControlEvent;
 
 // Class CharacterInteractionV3.AlignTransformToCharacterEvent
 // 0x0018 (0x0040 - 0x0028)
@@ -2171,6 +2445,31 @@ public:
 	}
 };
 DUMPER7_ASSERTS_USetCharacterShoeEvent;
+
+// Class CharacterInteractionV3.SetCharacterVisibilityEvent
+// 0x0010 (0x0038 - 0x0028)
+class USetCharacterVisibilityEvent final : public UInteractionV3Event
+{
+public:
+	class FName                                   ActorName;                                         // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHidden;                                           // 0x0030(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SetCharacterVisibilityEvent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SetCharacterVisibilityEvent")
+	}
+	static class USetCharacterVisibilityEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USetCharacterVisibilityEvent>();
+	}
+};
+DUMPER7_ASSERTS_USetCharacterVisibilityEvent;
 
 // Class CharacterInteractionV3.InteractionV3Trigger
 // 0x0000 (0x0028 - 0x0028)
@@ -2427,7 +2726,7 @@ public:
 DUMPER7_ASSERTS_UPlaceHolderAsset;
 
 // Class CharacterInteractionV3.ScenarioMagicCardLittleGame
-// 0x0000 (0x0068 - 0x0068)
+// 0x0000 (0x0118 - 0x0118)
 class UScenarioMagicCardLittleGame final : public UScenarioStandardLittleGame
 {
 public:
@@ -2494,7 +2793,7 @@ public:
 DUMPER7_ASSERTS_UScenarioOperate;
 
 // Class CharacterInteractionV3.ScenarioPropLittleGame
-// 0x0000 (0x0068 - 0x0068)
+// 0x0000 (0x0118 - 0x0118)
 class UScenarioPropLittleGame final : public UScenarioStandardLittleGame
 {
 public:
@@ -2773,7 +3072,7 @@ public:
 DUMPER7_ASSERTS_UScenarioStateNodeBase;
 
 // Class CharacterInteractionV3.ScenarioStateNode
-// 0x0170 (0x0200 - 0x0090)
+// 0x0178 (0x0208 - 0x0090)
 class UScenarioStateNode : public UScenarioStateNodeBase
 {
 public:
@@ -2805,7 +3104,9 @@ public:
 	bool                                          bBlockInput;                                       // 0x0198(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_199[0x7];                                      // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FString, struct FAddHolyLightDataInfo> AddHolyLightDataInfos;                         // 0x01A0(0x0050)(Transient, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1F0[0x10];                                     // 0x01F0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1F0[0x10];                                     // 0x01F0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bIgnoreCameraFix;                                  // 0x0200(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_201[0x7];                                      // 0x0201(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ActiveStandbyCamera();
@@ -2834,6 +3135,7 @@ public:
 	void PlayStandBy();
 	void RemoveAllAddHolyLightData();
 	void RemoveFromExecutableOperates(const TArray<class UInteractionOperateV3*>& InOperates);
+	void SetIgnoreCameraFix(bool bIgnore);
 	void SetNodeInnerState(const EScenarioNodeInnerState InNewState);
 	void StopAllListenForKeyAction();
 	void StopAllListeningForHandle();
@@ -2873,15 +3175,15 @@ public:
 DUMPER7_ASSERTS_UScenarioStateNode;
 
 // Class CharacterInteractionV3.ScenarioStateNode_Confession
-// 0x0028 (0x0228 - 0x0200)
+// 0x0028 (0x0230 - 0x0208)
 class UScenarioStateNode_Confession : public UScenarioStateNode
 {
 public:
-	TArray<struct FConfessionFlowInfo>            FlowList;                                          // 0x0200(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FConfessionStateActorInfo>      ConfessionActorInfos;                              // 0x0210(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	EConfessionNodeEndType                        EndType;                                           // 0x0220(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EConfessionInnerState                         ConfessionState;                                   // 0x0221(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_222[0x6];                                      // 0x0222(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<struct FConfessionFlowInfo>            FlowList;                                          // 0x0208(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FConfessionStateActorInfo>      ConfessionActorInfos;                              // 0x0218(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	EConfessionNodeEndType                        EndType;                                           // 0x0228(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EConfessionInnerState                         ConfessionState;                                   // 0x0229(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_22A[0x6];                                      // 0x022A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetConfessionState(const EConfessionInnerState NewState);
@@ -2907,7 +3209,7 @@ public:
 DUMPER7_ASSERTS_UScenarioStateNode_Confession;
 
 // Class CharacterInteractionV3.ScenarioStateNode_ConfessionEntry
-// 0x0000 (0x0228 - 0x0228)
+// 0x0000 (0x0230 - 0x0230)
 class UScenarioStateNode_ConfessionEntry final : public UScenarioStateNode_Confession
 {
 public:
@@ -2930,7 +3232,7 @@ public:
 DUMPER7_ASSERTS_UScenarioStateNode_ConfessionEntry;
 
 // Class CharacterInteractionV3.ScenarioStateNode_Entry
-// 0x0000 (0x0200 - 0x0200)
+// 0x0000 (0x0208 - 0x0208)
 class UScenarioStateNode_Entry final : public UScenarioStateNode
 {
 public:
@@ -2950,14 +3252,14 @@ public:
 DUMPER7_ASSERTS_UScenarioStateNode_Entry;
 
 // Class CharacterInteractionV3.ScenarioStateNode_LittleGame
-// 0x0038 (0x0238 - 0x0200)
+// 0x0038 (0x0240 - 0x0208)
 class UScenarioStateNode_LittleGame : public UScenarioStateNode
 {
 public:
-	TSoftClassPtr<class UClass>                   LittleGameTemplate;                                // 0x0200(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCanActiveStandbyCamera;                           // 0x0228(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_229[0x7];                                      // 0x0229(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UScenarioStandardLittleGame*            LittleGameInstance;                                // 0x0230(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TSoftClassPtr<class UClass>                   LittleGameTemplate;                                // 0x0208(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCanActiveStandbyCamera;                           // 0x0230(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_231[0x7];                                      // 0x0231(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UScenarioStandardLittleGame*            LittleGameInstance;                                // 0x0238(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	class UScenarioStandardLittleGame* GetLittleGameInstance() const;
@@ -2979,9 +3281,12 @@ public:
 DUMPER7_ASSERTS_UScenarioStateNode_LittleGame;
 
 // Class CharacterInteractionV3.ScenarioStateNode_LittleGameEntry
-// 0x0000 (0x0238 - 0x0238)
+// 0x0000 (0x0240 - 0x0240)
 class UScenarioStateNode_LittleGameEntry final : public UScenarioStateNode_LittleGame
 {
+public:
+	void OnInitShowElementFinish();
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -3206,30 +3511,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UShowElementV3SkeletalMeshPlayer_Confession;
-
-// Class CharacterInteractionV3.ShowElementV3UnitPlayerConfigAsset
-// 0x00A0 (0x00D0 - 0x0030)
-class UShowElementV3UnitPlayerConfigAsset final : public UDataAsset
-{
-public:
-	TMap<TSubclassOf<class UShowElementV3Unit>, class UShowElementV3UnitPlayer*> UnitPlayerMap;      // 0x0030(0x0050)(Edit, ExportObject, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TMap<class FName, class UShowElementV3UnitPlayer*> TagPlayerMap;                                 // 0x0080(0x0050)(Edit, ExportObject, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ShowElementV3UnitPlayerConfigAsset")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ShowElementV3UnitPlayerConfigAsset")
-	}
-	static class UShowElementV3UnitPlayerConfigAsset* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UShowElementV3UnitPlayerConfigAsset>();
-	}
-};
-DUMPER7_ASSERTS_UShowElementV3UnitPlayerConfigAsset;
 
 // Class CharacterInteractionV3.SkeletalAnimationUnit
 // 0x0018 (0x0048 - 0x0030)

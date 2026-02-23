@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Game_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "Game_structs.hpp"
 
 
 namespace SDK
@@ -46,9 +46,9 @@ public:
 	bool                                          HideEffect;                                        // 0x0282(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
+	void DoRegionCheck(bool* bPassCheck);
 	void DoOnlineTDDutyCheck(bool* bPassCheck);
 	void ReceiveActorBeginOverlap(class AActor* OtherActor);
-	void DoRegionCheck(bool* bPassCheck);
 	void ShouldOpenTick();
 	void Update();
 	void CheckTDDuty();

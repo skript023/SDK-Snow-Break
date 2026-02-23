@@ -87,18 +87,6 @@ public:
 };
 DUMPER7_ASSERTS_BP_Girl004b_C_NotifyRefreshPlayerSkinMesh;
 
-// Function BP_Girl004b.BP_Girl004b_C.OnAbilityCast
-// 0x0020 (0x0020 - 0x0000)
-struct BP_Girl004b_C_OnAbilityCast final
-{
-public:
-	int32                                         SkillID;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 OriginSkills;                                      // 0x0008(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UGameAbilityComponent*                  AbilityRef;                                        // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Girl004b_C_OnAbilityCast;
-
 // Function BP_Girl004b.BP_Girl004b_C.RunServerAttributeChange
 // 0x0018 (0x0018 - 0x0000)
 struct BP_Girl004b_C_RunServerAttributeChange final
@@ -127,6 +115,18 @@ public:
 	const class APlayerWeapon*                    InCurWeapon;                                       // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Girl004b_C_CustomEvent_0;
+
+// Function BP_Girl004b.BP_Girl004b_C.OnAbilityCast
+// 0x0020 (0x0020 - 0x0000)
+struct BP_Girl004b_C_OnAbilityCast final
+{
+public:
+	int32                                         SkillID;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 OriginSkills;                                      // 0x0008(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UGameAbilityComponent*                  AbilityRef;                                        // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Girl004b_C_OnAbilityCast;
 
 // Function BP_Girl004b.BP_Girl004b_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)

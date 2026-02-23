@@ -13,10 +13,10 @@
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CharacterInteraction_structs.hpp"
-#include "PhysicsControl_structs.hpp"
+#include "SeasunAnimGraph_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "SeasunAnimGraph_structs.hpp"
+#include "PhysicsControl_structs.hpp"
 
 
 namespace SDK
@@ -940,12 +940,15 @@ class UInteractionLib final : public UBlueprintFunctionLibrary
 public:
 	static struct FVector CalculateQuadraticBezierPoint(float T, const struct FVector& P0, const struct FVector& P1, const struct FVector& P2);
 	static class UAnimSequence* GetCharacterAnimation(const class FString& AnimName, const class FString& GirlName, const class FString& SkinAnimNameSuffix);
-	static TArray<struct FCanvasUVTri> GetSkeletonMeshTriangle(class USkeletalMeshComponent* Mesh, const struct FVector2D& CanvasSize, const struct FVector& WorldPosition, const struct FVector& Dir, struct FVector2D* HitPosition, bool* Hit, int32 LOD);
+	static TArray<struct FCanvasUVTri> GetSkeletonMeshTriangle(class USkeletalMeshComponent* Mesh, const struct FVector2D& CanvasSize, const struct FVector& WorldPosition, const struct FVector& Dir, struct FVector2D* HitPosition, bool* Hit, int32 LOD, int32 UVIndex);
+	static TArray<struct FCanvasUVTri> GetSkeletonMeshTriangleMarkByVertexColor(class USkeletalMeshComponent* Mesh, const struct FVector2D& CanvasSize, const struct FVector& WorldPosition, const struct FVector& Dir, struct FVector2D* HitPosition, bool* Hit, int32 LOD, int32 UVIndex);
 	static void GetSkeletonTriangleInfo(class USkeletalMeshComponent* Mesh, const struct FVector& WorldPosition, const struct FVector& Dir, struct FVector2D* HitUV, struct FLinearColor* HitColor, bool* Hit, int32 LOD);
 	static void NotifyEasterEggSequence(const class ULevelSequence* EasterEgg);
 	static void NotifyLeaveFeatureScenario();
 	static void NotifyOperateState(int32 State);
 	static void NotifyTutorialPlayShowSequence();
+	static void PrepareIndexByVertexColor(class USkeletalMeshComponent* Mesh, const struct FVector2D& CanvasSize, const struct FVector& WorldPosition, const struct FVector& Dir, struct FVector2D* HitPosition, bool* Hit, int32 LOD, float Threshold);
+	static TArray<struct FVector> ReadJsonDataFromFileByPathRecursionInterface(const class FString& Path, const class FString& JsonName, bool* IsSuccess);
 
 public:
 	static class UClass* StaticClass()

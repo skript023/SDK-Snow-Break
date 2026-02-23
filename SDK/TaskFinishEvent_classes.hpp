@@ -17,14 +17,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass TaskFinishEvent.TaskFinishEvent_C
-// 0x0008 (0x0170 - 0x0168)
+// 0x0008 (0x0178 - 0x0170)
 class UTaskFinishEvent_C final : public UGameTaskEvent
 {
 public:
-	bool                                          bDestroyAI;                                        // 0x0168(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          bPlayFinishAnim;                                   // 0x0169(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_16A[0x2];                                      // 0x016A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         PlayerPerformDelay;                                // 0x016C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bDestroyAI;                                        // 0x0170(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          bPlayFinishAnim;                                   // 0x0171(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_172[0x2];                                      // 0x0172(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PlayerPerformDelay;                                // 0x0174(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool OnTrigger();

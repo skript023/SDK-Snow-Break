@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Game_structs.hpp"
 #include "Engine_structs.hpp"
 #include "SkillSelectorBase_classes.hpp"
+#include "Game_structs.hpp"
 
 
 namespace SDK

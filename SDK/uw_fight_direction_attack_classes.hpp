@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 #include "UMG_structs.hpp"
 
 
@@ -33,15 +33,15 @@ public:
 	class URedirectImage*                         ImgHeight;                                         // 0x0838(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_direction_attack(int32 EntryPoint);
-	void PlayTypeAnim();
-	void OnAnimationFinished(const class UWidgetAnimation* Animation);
-	void AppearFinish(class UWidgetAnimation* Animation);
-	void PlayDieAnim();
-	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);
-	void SetDefendTargetPercent(float Value);
-	void StartLoop(const class UObject* Object, bool HasAppear);
 	void SequenceEvent__ENTRYPOINTuw_fight_direction_attack_0();
+	void StartLoop(const class UObject* Object, bool HasAppear);
+	void SetDefendTargetPercent(float Value);
+	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);
+	void PlayDieAnim();
+	void AppearFinish(class UWidgetAnimation* Animation);
+	void OnAnimationFinished(const class UWidgetAnimation* Animation);
+	void PlayTypeAnim();
+	void ExecuteUbergraph_uw_fight_direction_attack(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

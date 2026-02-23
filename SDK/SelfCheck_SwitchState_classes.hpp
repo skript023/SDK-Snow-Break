@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -28,14 +28,14 @@ public:
 	float                                         KeepTime;                                          // 0x0114(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void K2_InitCondition();
-	void UnbindEvent();
-	void SwitchCharacter(bool bEnter);
-	void OnDead(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData);
 	bool PrepareCondition();
 	bool ResetCondition();
+	void K2_InitCondition();
 	void BindEvent();
+	void UnbindEvent();
 	void PrepareSwitchCharacter(bool bEnter, class AGameCharacter* CurCharacter);
+	void SwitchCharacter(bool bEnter);
+	void OnDead(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData);
 	void ExecuteUbergraph_SelfCheck_SwitchState(int32 EntryPoint);
 
 public:

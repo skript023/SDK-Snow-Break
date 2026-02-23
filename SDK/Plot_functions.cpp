@@ -327,100 +327,171 @@ bool UPlotItem::IsTimeout() const
 }
 
 
-// Function Plot.PlotSaveGame.LoadPlotSaveGame
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UPlotSaveGame*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Plot.PlotItem_LoadAndSetMultiImg.LoadMultiImgs
+// (Event, Public, BlueprintEvent)
 
-class UPlotSaveGame* UPlotSaveGame::LoadPlotSaveGame()
+void UPlotItem_LoadAndSetMultiImg::LoadMultiImgs()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotSaveGame", "LoadPlotSaveGame");
-
-	Params::PlotSaveGame_LoadPlotSaveGame Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotSaveGame.Save
-// (Final, Native, Public, BlueprintCallable)
-
-void UPlotSaveGame::Save()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlotSaveGame", "Save");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+		Func = Class->GetFunction("PlotItem_LoadAndSetMultiImg", "LoadMultiImgs");
 
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Plot.PlotSaveGame.SaveKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Plot.SpliceImgBG.DeleteSpliceBG
+// (Event, Public, BlueprintEvent)
 
-void UPlotSaveGame::SaveKey(const class FString& InKey)
+void USpliceImgBG::DeleteSpliceBG()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlotSaveGame", "SaveKey");
+		Func = Class->GetFunction("SpliceImgBG", "DeleteSpliceBG");
 
-	Params::PlotSaveGame_SaveKey Parms{};
-
-	Parms.InKey = std::move(InKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function Plot.PlotSaveGame.HasKey
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function Plot.SpliceImgBG.OnInit
+// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
 // Parameters:
-// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ESpliceType*                            SpliceType                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UTexture2D*>*              TexturesArray                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// struct FBlendParameters*                BlendParameters                                        (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    bHide                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D*                       RelativeAnchors                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D*                       FocusPosition                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  ScaleMultiplier                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UWidget*                          InWidget                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPlotSaveGame::HasKey(const class FString& InKey) const
+void USpliceImgBG::OnInit(ESpliceType* SpliceType, TArray<class UTexture2D*>* TexturesArray, struct FBlendParameters* BlendParameters, bool bHide, struct FVector2D* RelativeAnchors, struct FVector2D* FocusPosition, float* ScaleMultiplier, class UWidget* InWidget)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlotSaveGame", "HasKey");
+		Func = Class->GetFunction("SpliceImgBG", "OnInit");
 
-	Params::PlotSaveGame_HasKey Parms{};
+	Params::SpliceImgBG_OnInit Parms{};
 
-	Parms.InKey = std::move(InKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Parms.bHide = bHide;
+	Parms.InWidget = InWidget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	Func->FunctionFlags = Flgs;
+	if (SpliceType != nullptr)
+		*SpliceType = Parms.SpliceType;
 
-	return Parms.ReturnValue;
+	if (TexturesArray != nullptr)
+		*TexturesArray = std::move(Parms.TexturesArray);
+
+	if (BlendParameters != nullptr)
+		*BlendParameters = std::move(Parms.BlendParameters);
+
+	if (RelativeAnchors != nullptr)
+		*RelativeAnchors = std::move(Parms.RelativeAnchors);
+
+	if (FocusPosition != nullptr)
+		*FocusPosition = std::move(Parms.FocusPosition);
+
+	if (ScaleMultiplier != nullptr)
+		*ScaleMultiplier = Parms.ScaleMultiplier;
+}
+
+
+// Function Plot.SpliceImgBG.OnMoveComplete
+// (Event, Public, BlueprintEvent)
+
+void USpliceImgBG::OnMoveComplete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpliceImgBG", "OnMoveComplete");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Plot.SpliceImgBG.RemoveAllEffect
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    Recover                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    FastComplete                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USpliceImgBG::RemoveAllEffect(bool Recover, bool FastComplete)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpliceImgBG", "RemoveAllEffect");
+
+	Params::SpliceImgBG_RemoveAllEffect Parms{};
+
+	Parms.Recover = Recover;
+	Parms.FastComplete = FastComplete;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Plot.SpliceImgBG.SetAndMoveBG
+// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
+// Parameters:
+// bool                                    bHide                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D*                       RelativeAnchors                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D*                       FocusPosition                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  ScaleMultiplier                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    IsLoop                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   LoopTimes                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USpliceImgBG::SetAndMoveBG(bool bHide, struct FVector2D* RelativeAnchors, struct FVector2D* FocusPosition, float* ScaleMultiplier, float Duration, bool IsLoop, int32 LoopTimes)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpliceImgBG", "SetAndMoveBG");
+
+	Params::SpliceImgBG_SetAndMoveBG Parms{};
+
+	Parms.bHide = bHide;
+	Parms.Duration = Duration;
+	Parms.IsLoop = IsLoop;
+	Parms.LoopTimes = LoopTimes;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (RelativeAnchors != nullptr)
+		*RelativeAnchors = std::move(Parms.RelativeAnchors);
+
+	if (FocusPosition != nullptr)
+		*FocusPosition = std::move(Parms.FocusPosition);
+
+	if (ScaleMultiplier != nullptr)
+		*ScaleMultiplier = Parms.ScaleMultiplier;
+}
+
+
+// Function Plot.SpliceImgBG.TickMoveBG
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USpliceImgBG::TickMoveBG(float InDeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpliceImgBG", "TickMoveBG");
+
+	Params::SpliceImgBG_TickMoveBG Parms{};
+
+	Parms.InDeltaTime = InDeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -712,518 +783,6 @@ TArray<class FString> UMovieClipMediaSourceImage::GetFileList() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotLibrary.ClearSequencerWidgetCallBack
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UWidget*                          InChildWidget                                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlotLibrary::ClearSequencerWidgetCallBack(class UWidget* InChildWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "ClearSequencerWidgetCallBack");
-
-	Params::PlotLibrary_ClearSequencerWidgetCallBack Parms{};
-
-	Parms.InChildWidget = InChildWidget;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.PlotLibrary.FindCameraEndLocationAndFOVInLevelSequence
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// class ULevelSequence*                   InSequence                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector*                         OutEndLocation                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float*                                  OutFOV                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlotLibrary::FindCameraEndLocationAndFOVInLevelSequence(class ULevelSequence* InSequence, struct FVector* OutEndLocation, float* OutFOV)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "FindCameraEndLocationAndFOVInLevelSequence");
-
-	Params::PlotLibrary_FindCameraEndLocationAndFOVInLevelSequence Parms{};
-
-	Parms.InSequence = InSequence;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutEndLocation != nullptr)
-		*OutEndLocation = std::move(Parms.OutEndLocation);
-
-	if (OutFOV != nullptr)
-		*OutFOV = Parms.OutFOV;
-}
-
-
-// Function Plot.PlotLibrary.FindRoleByName
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    InName                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class APlotRoleActor*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class APlotRoleActor* UPlotLibrary::FindRoleByName(class UObject* WorldContextObject, const class FString& InName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "FindRoleByName");
-
-	Params::PlotLibrary_FindRoleByName Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.InName = std::move(InName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotLibrary.GetCurrentPlotFileName
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UPlotLibrary::GetCurrentPlotFileName(class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "GetCurrentPlotFileName");
-
-	Params::PlotLibrary_GetCurrentPlotFileName Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotLibrary.GetCurrentPlotWidget
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPlotWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UPlotWidget* UPlotLibrary::GetCurrentPlotWidget(class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "GetCurrentPlotWidget");
-
-	Params::PlotLibrary_GetCurrentPlotWidget Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotLibrary.GetCurrentSequencer
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USequencerUserWidget*             ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class USequencerUserWidget* UPlotLibrary::GetCurrentSequencer(class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "GetCurrentSequencer");
-
-	Params::PlotLibrary_GetCurrentSequencer Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotLibrary.GetDefaultSpineAnimationNameFromData
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<class FString>&            InData                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UPlotLibrary::GetDefaultSpineAnimationNameFromData(const TArray<class FString>& InData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "GetDefaultSpineAnimationNameFromData");
-
-	Params::PlotLibrary_GetDefaultSpineAnimationNameFromData Parms{};
-
-	Parms.InData = std::move(InData);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotLibrary.GetPlotItemByClass
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                           InClass                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UPlotItem*>                ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-TArray<class UPlotItem*> UPlotLibrary::GetPlotItemByClass(class UObject* WorldContextObject, class UClass* InClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "GetPlotItemByClass");
-
-	Params::PlotLibrary_GetPlotItemByClass Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.InClass = InClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotLibrary.GetPlotName2ImageData
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FPlotName2Img              ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const struct FPlotName2Img UPlotLibrary::GetPlotName2ImageData(const class FString& InKey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "GetPlotName2ImageData");
-
-	Params::PlotLibrary_GetPlotName2ImageData Parms{};
-
-	Parms.InKey = std::move(InKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotLibrary.GetPlotNameConfig
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USpineAtlasAsset**                OutAtlas                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USpineSkeletonDataAsset**         OutSkeletonData                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlotLibrary::GetPlotNameConfig(const class FString& InKey, class USpineAtlasAsset** OutAtlas, class USpineSkeletonDataAsset** OutSkeletonData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "GetPlotNameConfig");
-
-	Params::PlotLibrary_GetPlotNameConfig Parms{};
-
-	Parms.InKey = std::move(InKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutAtlas != nullptr)
-		*OutAtlas = Parms.OutAtlas;
-
-	if (OutSkeletonData != nullptr)
-		*OutSkeletonData = Parms.OutSkeletonData;
-}
-
-
-// Function Plot.PlotLibrary.GetPlotRoleConfig
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPlotRoleInfo                    ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FPlotRoleInfo UPlotLibrary::GetPlotRoleConfig(int32 InId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "GetPlotRoleConfig");
-
-	Params::PlotLibrary_GetPlotRoleConfig Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotLibrary.GetTalkOperationType
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UPlotItem*                        InItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EDialogueOperationType                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EDialogueOperationType UPlotLibrary::GetTalkOperationType(class UPlotItem* InItem)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "GetTalkOperationType");
-
-	Params::PlotLibrary_GetTalkOperationType Parms{};
-
-	Parms.InItem = InItem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotLibrary.LuaGetDataTableRowFromName
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UDataTable*                       Table                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             RowName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UPlotLibrary::LuaGetDataTableRowFromName(class UDataTable* Table, class FName RowName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "LuaGetDataTableRowFromName");
-
-	Params::PlotLibrary_LuaGetDataTableRowFromName Parms{};
-
-	Parms.Table = Table;
-	Parms.RowName = RowName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Plot.PlotLibrary.RemoveLineBreaksInline
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class FString&                          SourceString                                           (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPlot*                            InPlot                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlotLibrary::RemoveLineBreaksInline(class FString& SourceString, class UPlot* InPlot)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "RemoveLineBreaksInline");
-
-	Params::PlotLibrary_RemoveLineBreaksInline Parms{};
-
-	Parms.SourceString = std::move(SourceString);
-	Parms.InPlot = InPlot;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	SourceString = std::move(Parms.SourceString);
-}
-
-
-// Function Plot.PlotLibrary.ReplaceHyperColorTag
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class FString&                          SourceString                                           (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPlot*                            InPlot                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlotLibrary::ReplaceHyperColorTag(class FString& SourceString, class UPlot* InPlot)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "ReplaceHyperColorTag");
-
-	Params::PlotLibrary_ReplaceHyperColorTag Parms{};
-
-	Parms.SourceString = std::move(SourceString);
-	Parms.InPlot = InPlot;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	SourceString = std::move(Parms.SourceString);
-}
-
-
-// Function Plot.PlotLibrary.SetNearClipPlaneForPlotSequencer
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlotLibrary::SetNearClipPlaneForPlotSequencer(float InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "SetNearClipPlaneForPlotSequencer");
-
-	Params::PlotLibrary_SetNearClipPlaneForPlotSequencer Parms{};
-
-	Parms.InValue = InValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.PlotLibrary.SetPlotRoleTexture
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMaterialInstanceDynamic*         RoleMaterial                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlotLibrary::SetPlotRoleTexture(const class FString& InKey, class UMaterialInstanceDynamic* RoleMaterial)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "SetPlotRoleTexture");
-
-	Params::PlotLibrary_SetPlotRoleTexture Parms{};
-
-	Parms.InKey = std::move(InKey);
-	Parms.RoleMaterial = RoleMaterial;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Plot.PlotLibrary.SkipParentSequencerWidgetAnimation
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UWidget*                          InChildWidget                                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlotLibrary::SkipParentSequencerWidgetAnimation(class UWidget* InChildWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PlotLibrary", "SkipParentSequencerWidgetAnimation");
-
-	Params::PlotLibrary_SkipParentSequencerWidgetAnimation Parms{};
-
-	Parms.InChildWidget = InChildWidget;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -2471,174 +2030,6 @@ void UPlotFindEvidenceWidget::OnStart()
 }
 
 
-// Function Plot.PlotItem_LoadAndSetMultiImg.LoadMultiImgs
-// (Event, Public, BlueprintEvent)
-
-void UPlotItem_LoadAndSetMultiImg::LoadMultiImgs()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlotItem_LoadAndSetMultiImg", "LoadMultiImgs");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Plot.SpliceImgBG.DeleteSpliceBG
-// (Event, Public, BlueprintEvent)
-
-void USpliceImgBG::DeleteSpliceBG()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpliceImgBG", "DeleteSpliceBG");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Plot.SpliceImgBG.OnInit
-// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
-// Parameters:
-// ESpliceType*                            SpliceType                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UTexture2D*>*              TexturesArray                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// struct FBlendParameters*                BlendParameters                                        (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bHide                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D*                       RelativeAnchors                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D*                       FocusPosition                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float*                                  ScaleMultiplier                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UWidget*                          InWidget                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USpliceImgBG::OnInit(ESpliceType* SpliceType, TArray<class UTexture2D*>* TexturesArray, struct FBlendParameters* BlendParameters, bool bHide, struct FVector2D* RelativeAnchors, struct FVector2D* FocusPosition, float* ScaleMultiplier, class UWidget* InWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpliceImgBG", "OnInit");
-
-	Params::SpliceImgBG_OnInit Parms{};
-
-	Parms.bHide = bHide;
-	Parms.InWidget = InWidget;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (SpliceType != nullptr)
-		*SpliceType = Parms.SpliceType;
-
-	if (TexturesArray != nullptr)
-		*TexturesArray = std::move(Parms.TexturesArray);
-
-	if (BlendParameters != nullptr)
-		*BlendParameters = std::move(Parms.BlendParameters);
-
-	if (RelativeAnchors != nullptr)
-		*RelativeAnchors = std::move(Parms.RelativeAnchors);
-
-	if (FocusPosition != nullptr)
-		*FocusPosition = std::move(Parms.FocusPosition);
-
-	if (ScaleMultiplier != nullptr)
-		*ScaleMultiplier = Parms.ScaleMultiplier;
-}
-
-
-// Function Plot.SpliceImgBG.OnMoveComplete
-// (Event, Public, BlueprintEvent)
-
-void USpliceImgBG::OnMoveComplete()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpliceImgBG", "OnMoveComplete");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Plot.SpliceImgBG.RemoveAllEffect
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    Recover                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    FastComplete                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USpliceImgBG::RemoveAllEffect(bool Recover, bool FastComplete)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpliceImgBG", "RemoveAllEffect");
-
-	Params::SpliceImgBG_RemoveAllEffect Parms{};
-
-	Parms.Recover = Recover;
-	Parms.FastComplete = FastComplete;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Plot.SpliceImgBG.SetAndMoveBG
-// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
-// Parameters:
-// bool                                    bHide                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D*                       RelativeAnchors                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D*                       FocusPosition                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float*                                  ScaleMultiplier                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    IsLoop                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   LoopTimes                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USpliceImgBG::SetAndMoveBG(bool bHide, struct FVector2D* RelativeAnchors, struct FVector2D* FocusPosition, float* ScaleMultiplier, float Duration, bool IsLoop, int32 LoopTimes)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpliceImgBG", "SetAndMoveBG");
-
-	Params::SpliceImgBG_SetAndMoveBG Parms{};
-
-	Parms.bHide = bHide;
-	Parms.Duration = Duration;
-	Parms.IsLoop = IsLoop;
-	Parms.LoopTimes = LoopTimes;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (RelativeAnchors != nullptr)
-		*RelativeAnchors = std::move(Parms.RelativeAnchors);
-
-	if (FocusPosition != nullptr)
-		*FocusPosition = std::move(Parms.FocusPosition);
-
-	if (ScaleMultiplier != nullptr)
-		*ScaleMultiplier = Parms.ScaleMultiplier;
-}
-
-
-// Function Plot.SpliceImgBG.TickMoveBG
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USpliceImgBG::TickMoveBG(float InDeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpliceImgBG", "TickMoveBG");
-
-	Params::SpliceImgBG_TickMoveBG Parms{};
-
-	Parms.InDeltaTime = InDeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function Plot.PlotItem_TableGame.GotoGroup
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -3249,6 +2640,518 @@ class FString UPlotItem_Talk::GetSpeakerName() const
 }
 
 
+// Function Plot.PlotLibrary.ClearSequencerWidgetCallBack
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UWidget*                          InChildWidget                                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotLibrary::ClearSequencerWidgetCallBack(class UWidget* InChildWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "ClearSequencerWidgetCallBack");
+
+	Params::PlotLibrary_ClearSequencerWidgetCallBack Parms{};
+
+	Parms.InChildWidget = InChildWidget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.PlotLibrary.FindCameraEndLocationAndFOVInLevelSequence
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class ULevelSequence*                   InSequence                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutEndLocation                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  OutFOV                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotLibrary::FindCameraEndLocationAndFOVInLevelSequence(class ULevelSequence* InSequence, struct FVector* OutEndLocation, float* OutFOV)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "FindCameraEndLocationAndFOVInLevelSequence");
+
+	Params::PlotLibrary_FindCameraEndLocationAndFOVInLevelSequence Parms{};
+
+	Parms.InSequence = InSequence;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutEndLocation != nullptr)
+		*OutEndLocation = std::move(Parms.OutEndLocation);
+
+	if (OutFOV != nullptr)
+		*OutFOV = Parms.OutFOV;
+}
+
+
+// Function Plot.PlotLibrary.FindRoleByName
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InName                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APlotRoleActor*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class APlotRoleActor* UPlotLibrary::FindRoleByName(class UObject* WorldContextObject, const class FString& InName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "FindRoleByName");
+
+	Params::PlotLibrary_FindRoleByName Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InName = std::move(InName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotLibrary.GetCurrentPlotFileName
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UPlotLibrary::GetCurrentPlotFileName(class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "GetCurrentPlotFileName");
+
+	Params::PlotLibrary_GetCurrentPlotFileName Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotLibrary.GetCurrentPlotWidget
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPlotWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UPlotWidget* UPlotLibrary::GetCurrentPlotWidget(class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "GetCurrentPlotWidget");
+
+	Params::PlotLibrary_GetCurrentPlotWidget Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotLibrary.GetCurrentSequencer
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USequencerUserWidget*             ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USequencerUserWidget* UPlotLibrary::GetCurrentSequencer(class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "GetCurrentSequencer");
+
+	Params::PlotLibrary_GetCurrentSequencer Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotLibrary.GetDefaultSpineAnimationNameFromData
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<class FString>&            InData                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UPlotLibrary::GetDefaultSpineAnimationNameFromData(const TArray<class FString>& InData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "GetDefaultSpineAnimationNameFromData");
+
+	Params::PlotLibrary_GetDefaultSpineAnimationNameFromData Parms{};
+
+	Parms.InData = std::move(InData);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotLibrary.GetPlotItemByClass
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           InClass                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UPlotItem*>                ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UPlotItem*> UPlotLibrary::GetPlotItemByClass(class UObject* WorldContextObject, class UClass* InClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "GetPlotItemByClass");
+
+	Params::PlotLibrary_GetPlotItemByClass Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InClass = InClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotLibrary.GetPlotName2ImageData
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPlotName2Img              ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const struct FPlotName2Img UPlotLibrary::GetPlotName2ImageData(const class FString& InKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "GetPlotName2ImageData");
+
+	Params::PlotLibrary_GetPlotName2ImageData Parms{};
+
+	Parms.InKey = std::move(InKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotLibrary.GetPlotNameConfig
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USpineAtlasAsset**                OutAtlas                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USpineSkeletonDataAsset**         OutSkeletonData                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotLibrary::GetPlotNameConfig(const class FString& InKey, class USpineAtlasAsset** OutAtlas, class USpineSkeletonDataAsset** OutSkeletonData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "GetPlotNameConfig");
+
+	Params::PlotLibrary_GetPlotNameConfig Parms{};
+
+	Parms.InKey = std::move(InKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutAtlas != nullptr)
+		*OutAtlas = Parms.OutAtlas;
+
+	if (OutSkeletonData != nullptr)
+		*OutSkeletonData = Parms.OutSkeletonData;
+}
+
+
+// Function Plot.PlotLibrary.GetPlotRoleConfig
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FPlotRoleInfo                    ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FPlotRoleInfo UPlotLibrary::GetPlotRoleConfig(int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "GetPlotRoleConfig");
+
+	Params::PlotLibrary_GetPlotRoleConfig Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotLibrary.GetTalkOperationType
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UPlotItem*                        InItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EDialogueOperationType                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EDialogueOperationType UPlotLibrary::GetTalkOperationType(class UPlotItem* InItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "GetTalkOperationType");
+
+	Params::PlotLibrary_GetTalkOperationType Parms{};
+
+	Parms.InItem = InItem;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotLibrary.LuaGetDataTableRowFromName
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UDataTable*                       Table                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             RowName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UPlotLibrary::LuaGetDataTableRowFromName(class UDataTable* Table, class FName RowName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "LuaGetDataTableRowFromName");
+
+	Params::PlotLibrary_LuaGetDataTableRowFromName Parms{};
+
+	Parms.Table = Table;
+	Parms.RowName = RowName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotLibrary.RemoveLineBreaksInline
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FString&                          SourceString                                           (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPlot*                            InPlot                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotLibrary::RemoveLineBreaksInline(class FString& SourceString, class UPlot* InPlot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "RemoveLineBreaksInline");
+
+	Params::PlotLibrary_RemoveLineBreaksInline Parms{};
+
+	Parms.SourceString = std::move(SourceString);
+	Parms.InPlot = InPlot;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	SourceString = std::move(Parms.SourceString);
+}
+
+
+// Function Plot.PlotLibrary.ReplaceHyperColorTag
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FString&                          SourceString                                           (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPlot*                            InPlot                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotLibrary::ReplaceHyperColorTag(class FString& SourceString, class UPlot* InPlot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "ReplaceHyperColorTag");
+
+	Params::PlotLibrary_ReplaceHyperColorTag Parms{};
+
+	Parms.SourceString = std::move(SourceString);
+	Parms.InPlot = InPlot;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	SourceString = std::move(Parms.SourceString);
+}
+
+
+// Function Plot.PlotLibrary.SetNearClipPlaneForPlotSequencer
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotLibrary::SetNearClipPlaneForPlotSequencer(float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "SetNearClipPlaneForPlotSequencer");
+
+	Params::PlotLibrary_SetNearClipPlaneForPlotSequencer Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.PlotLibrary.SetPlotRoleTexture
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMaterialInstanceDynamic*         RoleMaterial                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotLibrary::SetPlotRoleTexture(const class FString& InKey, class UMaterialInstanceDynamic* RoleMaterial)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "SetPlotRoleTexture");
+
+	Params::PlotLibrary_SetPlotRoleTexture Parms{};
+
+	Parms.InKey = std::move(InKey);
+	Parms.RoleMaterial = RoleMaterial;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.PlotLibrary.SkipParentSequencerWidgetAnimation
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UWidget*                          InChildWidget                                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotLibrary::SkipParentSequencerWidgetAnimation(class UWidget* InChildWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotLibrary", "SkipParentSequencerWidgetAnimation");
+
+	Params::PlotLibrary_SkipParentSequencerWidgetAnimation Parms{};
+
+	Parms.InChildWidget = InChildWidget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Plot.PlotRoleEffectWidget.GetSpineDefaultAnimName
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -3457,6 +3360,103 @@ void UPlotRoleEffectWidget::ResetSpineSlot()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.PlotSaveGame.LoadPlotSaveGame
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UPlotSaveGame*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UPlotSaveGame* UPlotSaveGame::LoadPlotSaveGame()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotSaveGame", "LoadPlotSaveGame");
+
+	Params::PlotSaveGame_LoadPlotSaveGame Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Plot.PlotSaveGame.Save
+// (Final, Native, Public, BlueprintCallable)
+
+void UPlotSaveGame::Save()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotSaveGame", "Save");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.PlotSaveGame.SaveKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotSaveGame::SaveKey(const class FString& InKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotSaveGame", "SaveKey");
+
+	Params::PlotSaveGame_SaveKey Parms{};
+
+	Parms.InKey = std::move(InKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.PlotSaveGame.HasKey
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlotSaveGame::HasKey(const class FString& InKey) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotSaveGame", "HasKey");
+
+	Params::PlotSaveGame_HasKey Parms{};
+
+	Parms.InKey = std::move(InKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -3915,6 +3915,28 @@ void UPlotWidget::LuaImpl_NotifyPlaySequenceWidget(class USequencerUserWidget* S
 
 	Parms.SequencerWidget = SequencerWidget;
 	Parms.InItem = InItem;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Plot.PlotWidget.LuaImpl_SetEffectIntensity
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UWidget*                          InWidget                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   EffectIntensity                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotWidget::LuaImpl_SetEffectIntensity(class UWidget* InWidget, float EffectIntensity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotWidget", "LuaImpl_SetEffectIntensity");
+
+	Params::PlotWidget_LuaImpl_SetEffectIntensity Parms{};
+
+	Parms.InWidget = InWidget;
+	Parms.EffectIntensity = EffectIntensity;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

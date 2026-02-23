@@ -21,8 +21,8 @@ namespace SDK
 class UBP_UMGMaterialLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void UpdateMateiralScaleParameter(const TMap<class FName, float>& Values, class UMaterialInstanceDynamic* DynamicMat, class UObject* __WorldContext);
 	static void CreateDynamicMaterial(class UMaterialInterface* mat, class UObject* __WorldContext, class UMaterialInstanceDynamic** AsMaterial_Instance_Dynamic);
+	static void UpdateMateiralScaleParameter(const TMap<class FName, float>& Values, class UMaterialInstanceDynamic* DynamicMat, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

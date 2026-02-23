@@ -67,33 +67,6 @@ void USkillMove_DragToGoal_Update_C::OnMoveEnd(class UBaseMovementComponent* Mov
 }
 
 
-// LuaFunction SkillMove_DragToGoal_Update.SkillMove_DragToGoal_Update_C.OnMoveStart
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// class AActor*                           Launcher                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkillMove_DragToGoal_Update_C::OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_DragToGoal_Update_C", "OnMoveStart");
-
-	Params::SkillMove_DragToGoal_Update_C_OnMoveStart Parms{};
-
-	Parms.Launcher = Launcher;
-	Parms.Movement = Movement;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction SkillMove_DragToGoal_Update.SkillMove_DragToGoal_Update_C.OnMoveTick
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -116,6 +89,33 @@ void USkillMove_DragToGoal_Update_C::OnMoveTick(float DeltaTime, float Friction,
 	Parms.Friction = Friction;
 	Parms.bFluid = bFluid;
 	Parms.BrakingDeceleration = BrakingDeceleration;
+	Parms.Movement = Movement;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction SkillMove_DragToGoal_Update.SkillMove_DragToGoal_Update_C.OnMoveStart
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// class AActor*                           Launcher                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkillMove_DragToGoal_Update_C::OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillMove_DragToGoal_Update_C", "OnMoveStart");
+
+	Params::SkillMove_DragToGoal_Update_C_OnMoveStart Parms{};
+
+	Parms.Launcher = Launcher;
 	Parms.Movement = Movement;
 
 	auto Flgs = Func->FunctionFlags;

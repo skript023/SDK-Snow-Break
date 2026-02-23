@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -30,10 +30,10 @@ public:
 	class UProgressBar*                           ProgressBar_Cooling;                               // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_ammunition5(int32 EntryPoint);
-	void K2_SkillCastBulletFail();
-	void OnBulletChange(int32 InCurBullet, int32 InMaxBullet, float InPercent);
 	void Construct();
+	void OnBulletChange(int32 InCurBullet, int32 InMaxBullet, float InPercent);
+	void K2_SkillCastBulletFail();
+	void ExecuteUbergraph_uw_fight_ammunition5(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -17,20 +17,20 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass SkillMove_SkillNormalMove.SkillMove_SkillNormalMove_C
-// 0x0010 (0x01E8 - 0x01D8)
+// 0x0010 (0x01F0 - 0x01E0)
 class USkillMove_SkillNormalMove_C final : public USkillMove
 {
 public:
-	float                                         ActiveTime;                                        // 0x01D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1DC[0x4];                                      // 0x01DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCurveFloat*                            SpeedRatioCurve;                                   // 0x01E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ActiveTime;                                        // 0x01E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1E4[0x4];                                      // 0x01E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            SpeedRatioCurve;                                   // 0x01E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool IsUsedToAddVelocityInsteadOverride();
-	void OnMoveTickCheck(float DeltaTime);
 	void OnMoveEnd(class UBaseMovementComponent* Movement);
-	void OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement);
 	void OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement);
+	void OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement);
+	void OnMoveTickCheck(float DeltaTime);
 	TArray<struct FSoftObjectPath> OnGetAssetPath(const TArray<struct FParamInfo>& InParamInfo, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
 
 	class FString GetModuleName() const;

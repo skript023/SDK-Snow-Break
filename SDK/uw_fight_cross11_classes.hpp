@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Game_structs.hpp"
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
 #include "UMG_structs.hpp"
+#include "Game_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -36,8 +36,8 @@ public:
 public:
 	void ExecuteUbergraph_uw_fight_cross11(int32 EntryPoint);
 	void K2_OnReloading(bool bIsReload, EWeaponType Type, bool bInterrupt, float AnimTime);
-	void K2_OnUpdate(float InDeltaTime);
 	void Construct();
+	void K2_OnUpdate(float InDeltaTime);
 
 	class FString GetModuleName() const;
 

@@ -818,6 +818,25 @@ void ASandstormSource::EndQualityChange(EWeatherQuality InQuality)
 }
 
 
+// Function Weather.SandstormSource.ForceEndBlendParameter
+// (Final, Native, Public, BlueprintCallable)
+
+void ASandstormSource::ForceEndBlendParameter()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SandstormSource", "ForceEndBlendParameter");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Weather.SandstormSource.GetQuality
 // (Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:

@@ -100,5 +100,33 @@ void AGamePlayerCameraManager_C::ActiveSnow(bool Active, EnumInitSnow Snow)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
+
+// Function GamePlayerCameraManager.GamePlayerCameraManager_C.CreateSnow
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void AGamePlayerCameraManager_C::CreateSnow()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GamePlayerCameraManager_C", "CreateSnow");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GamePlayerCameraManager.GamePlayerCameraManager_C.DestroySnow
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void AGamePlayerCameraManager_C::DestroySnow()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GamePlayerCameraManager_C", "DestroySnow");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
 }
 

@@ -16,6 +16,24 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_player_power.uw_fight_player_power_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_power_C_PreConstruct final
+{
+public:
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_power_C_PreConstruct;
+
+// Function uw_fight_player_power.uw_fight_player_power_C.VisibilityChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_power_C_VisibilityChanged final
+{
+public:
+	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_player_power_C_VisibilityChanged;
+
 // Function uw_fight_player_power.uw_fight_player_power_C.ExecuteUbergraph_uw_fight_player_power
 // 0x0018 (0x0018 - 0x0000)
 struct uw_fight_player_power_C_ExecuteUbergraph_uw_fight_player_power final
@@ -27,24 +45,6 @@ public:
 	ESlateVisibility                              K2Node_CustomEvent_InVisibility;                   // 0x0015(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_player_power_C_ExecuteUbergraph_uw_fight_player_power;
-
-// Function uw_fight_player_power.uw_fight_player_power_C.VisibilityChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_power_C_VisibilityChanged final
-{
-public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_player_power_C_VisibilityChanged;
-
-// Function uw_fight_player_power.uw_fight_player_power_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_power_C_PreConstruct final
-{
-public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_power_C_PreConstruct;
 
 }
 

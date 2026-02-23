@@ -21,7 +21,6 @@ namespace SDK
 class ACrossSkill_C final : public AGameSkill
 {
 public:
-	uint8                                         Pad_9E8[0x8];                                      // 0x09E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkillProhibitComponent*                SkillProhibit;                                     // 0x09F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USkillStorageComponent*                 SkillStorage;                                      // 0x09F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UMontageStateComponent*                 MontageState;                                      // 0x0A00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)

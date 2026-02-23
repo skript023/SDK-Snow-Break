@@ -140,29 +140,6 @@ public:
 };
 DUMPER7_ASSERTS_USlateWidgetStyleAsset;
 
-// Class SlateCore.SlateWidgetStyleContainerBase
-// 0x0008 (0x0030 - 0x0028)
-class USlateWidgetStyleContainerBase : public UObject
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SlateWidgetStyleContainerBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SlateWidgetStyleContainerBase")
-	}
-	static class USlateWidgetStyleContainerBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USlateWidgetStyleContainerBase>();
-	}
-};
-DUMPER7_ASSERTS_USlateWidgetStyleContainerBase;
-
 // Class SlateCore.SlateWidgetStyleContainerInterface
 // 0x0000 (0x0000 - 0x0000)
 class ISlateWidgetStyleContainerInterface final
@@ -191,6 +168,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ISlateWidgetStyleContainerInterface;
+
+// Class SlateCore.SlateWidgetStyleContainerBase
+// 0x0008 (0x0030 - 0x0028)
+class USlateWidgetStyleContainerBase : public UObject
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SlateWidgetStyleContainerBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SlateWidgetStyleContainerBase")
+	}
+	static class USlateWidgetStyleContainerBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USlateWidgetStyleContainerBase>();
+	}
+};
+DUMPER7_ASSERTS_USlateWidgetStyleContainerBase;
 
 }
 

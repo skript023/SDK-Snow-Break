@@ -22,7 +22,7 @@ class Uuw_fight_operatebox_skill_C final : public UNewSkillButton
 {
 public:
 	class UWidgetAnimation*                       oncdreset;                                         // 0x0580(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UWidgetAnimation*                       oncd;                                              // 0x0588(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UWidgetAnimation*                       Oncd;                                              // 0x0588(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       qta_cd;                                            // 0x0590(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UGameCanvasPanel*                       CanvasPanel;                                       // 0x0598(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UGameCanvasPanel*                       Container;                                         // 0x05A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -43,11 +43,11 @@ public:
 	class URedirectTextBlock*                     TxtCD;                                             // 0x0618(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void K2_PlayCDAnim(bool bPlayCD);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
-	void Construct();
 	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
 	void OnSkillStrengthening(bool bStart);
+	void Construct();
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void K2_PlayCDAnim(bool bPlayCD);
 	void Destruct();
 
 	class FString GetModuleName() const;

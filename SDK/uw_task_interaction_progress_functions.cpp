@@ -17,21 +17,35 @@
 namespace SDK
 {
 
-// Function uw_task_interaction_progress.uw_task_interaction_progress_C.ExecuteUbergraph_uw_task_interaction_progress
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_task_interaction_progress.uw_task_interaction_progress_C.StopProgress
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_task_interaction_progress_C::ExecuteUbergraph_uw_task_interaction_progress(int32 EntryPoint)
+void Uuw_task_interaction_progress_C::StopProgress()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_task_interaction_progress_C", "ExecuteUbergraph_uw_task_interaction_progress");
+		Func = Class->GetFunction("uw_task_interaction_progress_C", "StopProgress");
 
-	Params::uw_task_interaction_progress_C_ExecuteUbergraph_uw_task_interaction_progress Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function uw_task_interaction_progress.uw_task_interaction_progress_C.StartProgress
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   PerformTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_task_interaction_progress_C::StartProgress(float PerformTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_task_interaction_progress_C", "StartProgress");
+
+	Params::uw_task_interaction_progress_C_StartProgress Parms{};
+
+	Parms.PerformTime = PerformTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -59,37 +73,23 @@ void Uuw_task_interaction_progress_C::Tick(const struct FGeometry& MyGeometry, f
 }
 
 
-// Function uw_task_interaction_progress.uw_task_interaction_progress_C.StartProgress
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function uw_task_interaction_progress.uw_task_interaction_progress_C.ExecuteUbergraph_uw_task_interaction_progress
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// float                                   PerformTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_task_interaction_progress_C::StartProgress(float PerformTime)
+void Uuw_task_interaction_progress_C::ExecuteUbergraph_uw_task_interaction_progress(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_task_interaction_progress_C", "StartProgress");
+		Func = Class->GetFunction("uw_task_interaction_progress_C", "ExecuteUbergraph_uw_task_interaction_progress");
 
-	Params::uw_task_interaction_progress_C_StartProgress Parms{};
+	Params::uw_task_interaction_progress_C_ExecuteUbergraph_uw_task_interaction_progress Parms{};
 
-	Parms.PerformTime = PerformTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_task_interaction_progress.uw_task_interaction_progress_C.StopProgress
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_task_interaction_progress_C::StopProgress()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_task_interaction_progress_C", "StopProgress");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

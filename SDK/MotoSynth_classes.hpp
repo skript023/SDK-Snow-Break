@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "MotoSynth_structs.hpp"
 #include "AudioMixer_classes.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK

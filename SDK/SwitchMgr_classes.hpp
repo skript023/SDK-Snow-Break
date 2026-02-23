@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass SwitchMgr.SwitchMgr_C
-// 0x0030 (0x0258 - 0x0228)
+// 0x0038 (0x0260 - 0x0228)
 class ASwitchMgr_C final : public AActor
 {
 public:
@@ -29,6 +29,8 @@ public:
 	TArray<class FString>                         TargetPoints;                                      // 0x0240(0x0010)(Edit, BlueprintVisible)
 	float                                         SwitchCoolDown;                                    // 0x0250(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsWaitSkillRelease;                                // 0x0254(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_255[0x3];                                      // 0x0255(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         TeleportDirection;                                 // 0x0258(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void OnSwitchEvent__Overridden();
@@ -36,11 +38,11 @@ public:
 	void SwitchForce__Overridden();
 	void ReceiveTick__Overridden(float DeltaSeconds);
 	void ExecuteUbergraph_SwitchMgr(int32 EntryPoint);
-	void OnBind();
-	void SwitchForce();
 	void OnSwitchEvent();
 	void ReceiveBeginPlay();
+	void OnBind();
 	void ReceiveTick(float DeltaSeconds);
+	void SwitchForce();
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 
 	class FString GetModuleName() const;

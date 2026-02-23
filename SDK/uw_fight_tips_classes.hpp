@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -57,8 +57,8 @@ public:
 public:
 	void OnConstruct();
 	void Destruct();
-	void AddTipsPool(const class FText& Title, const class FText& Desc, float Duration, uint8 Type, const class FString& tableStr, const class FString& SoundEffect, bool* Result);
 	void CloseCurrent();
+	void AddTipsPool(const class FText& Title, const class FText& Desc, float Duration, uint8 Type, const class FString& tableStr, const class FString& SoundEffect, bool* Result);
 	void Construct();
 	void CloseCurrent__Overridden();
 	void AddTipsPool__Overridden(const class FText& Title, const class FText& Desc, float Duration, uint8 Type, const class FString& tableStr, const class FString& SoundEffect, bool* Result);

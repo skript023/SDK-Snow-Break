@@ -10,26 +10,26 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass SkillMove_DragToGoal_Update.SkillMove_DragToGoal_Update_C
-// 0x0010 (0x01E8 - 0x01D8)
+// 0x0010 (0x01F0 - 0x01E0)
 class USkillMove_DragToGoal_Update_C final : public USkillMove
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x01D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	float                                         ActiveTime;                                        // 0x01E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x01E0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	float                                         ActiveTime;                                        // 0x01E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool IsUsedToAddVelocityInsteadOverride();
 	void OnMoveEnd(class UBaseMovementComponent* Movement);
-	void OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement);
 	void OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement);
+	void OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement);
 	void ReceiveBeginPlay_1();
 	void ReceiveActorBeginOverlap_1(class AActor* OtherActor);
 	void ReceiveTick_1(float DeltaSeconds);

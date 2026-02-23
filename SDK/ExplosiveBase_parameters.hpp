@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Game_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Game_structs.hpp"
 
 
 namespace SDK::Params
@@ -249,13 +249,13 @@ public:
 DUMPER7_ASSERTS_ExplosiveBase_C_NotifyAim;
 
 // Function ExplosiveBase.ExplosiveBase_C.OnDie
-// 0x01C8 (0x01C8 - 0x0000)
+// 0x01D0 (0x01D0 - 0x0000)
 struct ExplosiveBase_C_OnDie final
 {
 public:
 	class AGameCharacter*                         Who;                                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AGameCharacter*                         Killer;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0010(0x01B8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0010(0x01C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_ExplosiveBase_C_OnDie;
 
@@ -280,7 +280,7 @@ public:
 DUMPER7_ASSERTS_ExplosiveBase_C_OnSwitchWarn;
 
 // Function ExplosiveBase.ExplosiveBase_C.ExecuteUbergraph_ExplosiveBase
-// 0x01F0 (0x01F0 - 0x0000)
+// 0x01F8 (0x01F8 - 0x0000)
 struct ExplosiveBase_C_ExecuteUbergraph_ExplosiveBase final
 {
 public:
@@ -289,20 +289,20 @@ public:
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class AGameCharacter*                         K2Node_Event_Who;                                  // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AGameCharacter*                         K2Node_Event_Killer;                               // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     K2Node_Event_HealthChangeValue;                    // 0x0018(0x01B8)(ConstParm, ContainsInstancedReference)
-	bool                                          K2Node_CustomEvent_ShowCollision;                  // 0x01D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_CustomEvent_OldMesh;                        // 0x01D1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_CustomEvent_NewMesh;                        // 0x01D2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_Event_InWarn;                               // 0x01D3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x01D4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x01D5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x01D6(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1D7[0x1];                                      // 0x01D7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(bool bAim)>                    K2Node_CreateDelegate_OutputDelegate;              // 0x01D8(0x0010)(ZeroConstructor, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x01E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x01E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_5;                    // 0x01EA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_6;                    // 0x01EB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FHealthChangeValue                     K2Node_Event_HealthChangeValue;                    // 0x0018(0x01C0)(ConstParm, ContainsInstancedReference)
+	bool                                          K2Node_CustomEvent_ShowCollision;                  // 0x01D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_CustomEvent_OldMesh;                        // 0x01D9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_CustomEvent_NewMesh;                        // 0x01DA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_Event_InWarn;                               // 0x01DB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x01DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x01DD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x01DE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1DF[0x1];                                      // 0x01DF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(bool bAim)>                    K2Node_CreateDelegate_OutputDelegate;              // 0x01E0(0x0010)(ZeroConstructor, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x01F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x01F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_5;                    // 0x01F2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_6;                    // 0x01F3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_ExplosiveBase_C_ExecuteUbergraph_ExplosiveBase;
 

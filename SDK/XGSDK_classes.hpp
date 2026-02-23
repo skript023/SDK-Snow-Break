@@ -211,11 +211,11 @@ public:
 DUMPER7_ASSERTS_AtestGameModeBase;
 
 // Class XGSDK.WhaleSDK
-// 0x0408 (0x0430 - 0x0028)
+// 0x0418 (0x0440 - 0x0028)
 class UWhaleSDK final : public UObject
 {
 public:
-	uint8                                         Pad_28[0x408];                                     // 0x0028(0x0408)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x418];                                     // 0x0028(0x0418)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -297,11 +297,11 @@ public:
 DUMPER7_ASSERTS_UXGSDKSaveDataMonitorV2;
 
 // Class XGSDK.XGSDKDataMonitorV2
-// 0x0098 (0x00C0 - 0x0028)
+// 0x00A8 (0x00D0 - 0x0028)
 class UXGSDKDataMonitorV2 final : public UObject
 {
 public:
-	uint8                                         Pad_28[0x98];                                      // 0x0028(0x0098)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0xA8];                                      // 0x0028(0x00A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

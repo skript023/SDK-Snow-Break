@@ -17,21 +17,37 @@
 namespace SDK
 {
 
-// Function uw_fight_mla_frame.uw_fight_mla_frame_C.ExecuteUbergraph_uw_fight_mla_frame
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_mla_frame.uw_fight_mla_frame_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void Uuw_fight_mla_frame_C::ExecuteUbergraph_uw_fight_mla_frame(int32 EntryPoint)
+void Uuw_fight_mla_frame_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_mla_frame_C", "ExecuteUbergraph_uw_fight_mla_frame");
+		Func = Class->GetFunction("uw_fight_mla_frame_C", "Construct");
 
-	Params::uw_fight_mla_frame_C_ExecuteUbergraph_uw_fight_mla_frame Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function uw_fight_mla_frame.uw_fight_mla_frame_C.Tick
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_mla_frame_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_mla_frame_C", "Tick");
+
+	Params::uw_fight_mla_frame_C_Tick Parms{};
+
+	Parms.MyGeometry = std::move(MyGeometry);
+	Parms.InDeltaTime = InDeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -63,39 +79,23 @@ void Uuw_fight_mla_frame_C::K2_OnReloading(bool bIsReload, EWeaponType Type, boo
 }
 
 
-// Function uw_fight_mla_frame.uw_fight_mla_frame_C.Tick
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function uw_fight_mla_frame.uw_fight_mla_frame_C.ExecuteUbergraph_uw_fight_mla_frame
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_mla_frame_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
+void Uuw_fight_mla_frame_C::ExecuteUbergraph_uw_fight_mla_frame(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_mla_frame_C", "Tick");
+		Func = Class->GetFunction("uw_fight_mla_frame_C", "ExecuteUbergraph_uw_fight_mla_frame");
 
-	Params::uw_fight_mla_frame_C_Tick Parms{};
+	Params::uw_fight_mla_frame_C_ExecuteUbergraph_uw_fight_mla_frame Parms{};
 
-	Parms.MyGeometry = std::move(MyGeometry);
-	Parms.InDeltaTime = InDeltaTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_mla_frame.uw_fight_mla_frame_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_mla_frame_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_mla_frame_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

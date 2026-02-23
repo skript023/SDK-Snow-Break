@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SeasunAccount_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SeasunAccount_structs.hpp"
 #include "Game_structs.hpp"
 
 
@@ -24,15 +24,17 @@ struct FPropertyCollector final
 {
 public:
 	class UCanvasPanel3D*                         None;                                              // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         None_0;                                            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPlayerProfile*                         None_1;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMail*                                  None_2;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FItemTemplate                          None_3;                                            // 0x0000(0x0140)(HasGetValueTypeHash)
-	class UWeaponItem*                            None_4;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UItem*                                  None_5;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UCharacterCard*                         None_6;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                None_7;                                            // 0x0000(0x000C)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FUIInfo                                None_8;                                            // 0x0000(0x0058)(HasGetValueTypeHash)
+	class USupporterCard*                         None_0;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWeaponParts*                           None_1;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWeaponItem*                            None_2;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         None_3;                                            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPlayerProfile*                         None_4;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMail*                                  None_5;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FItemTemplate                          None_6;                                            // 0x0000(0x0140)(HasGetValueTypeHash)
+	class UItem*                                  None_7;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCharacterCard*                         None_8;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                None_9;                                            // 0x0000(0x000C)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FUIInfo                                None_10;                                           // 0x0000(0x0058)(HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FPropertyCollector;
 

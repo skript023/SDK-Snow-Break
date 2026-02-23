@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -40,8 +40,8 @@ public:
 	class URedirectTextBlock*                     TxtRed;                                            // 0x0428(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_level_occupy(int32 EntryPoint);
 	void Tick__Overridden(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void ExecuteUbergraph_uw_fight_level_occupy(int32 EntryPoint);
 	void Construct();
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void Destruct();

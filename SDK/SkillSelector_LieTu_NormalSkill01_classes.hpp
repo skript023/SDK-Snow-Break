@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Game_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Game_structs.hpp"
 #include "SkillSelectorBase_classes.hpp"
 
 
@@ -45,14 +45,14 @@ public:
 	class UFightModifierSpecialSignaItem*         TargetUI;                                          // 0x05E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void GetPartitionMainPart(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult);
-	void ReceiveDestroyed();
 	void ReceiveTick(float DeltaSeconds);
-	void GetPartMainBone(const struct FBoneResult& PartResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
 	void GetAllTargetWithWeakResults(TArray<struct FBoneResult>* NewResults);
-	void ReceiveBeginPlay();
+	void GetPartMainBone(const struct FBoneResult& PartResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
+	void ReceiveDestroyed();
 	void GetAllQueryResults(TArray<struct FQueryResult>* OutResults);
+	void GetPartitionMainPart(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult);
 	void GetPartitionMainBone(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
+	void ReceiveBeginPlay();
 	void GetPartMainBone__Overridden(const struct FBoneResult& PartResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
 	TArray<struct FSoftObjectPath> OnGetAssetPath(int32 InId, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs);
 	void GetRemainSelectTargetCount(int32* Count);

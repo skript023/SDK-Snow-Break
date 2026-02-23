@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
-#include "KawaiiPhysics_structs.hpp"
-#include "AnimGraphRuntime_structs.hpp"
 #include "SeasunAnimGraph_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
+#include "KawaiiPhysics_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -150,9 +150,9 @@ public:
 	struct FAnimNode_KawaiiPhysics                AnimGraphNode_KawaiiPhysics;                       // 0x17A50(0x0390)()
 
 public:
+	void ExecuteUbergraph_ABP_Girl004b_Phy(int32 EntryPoint);
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Girl004b_Phy_AnimGraphNode_BlendListByBool_C6E4B3F3427071A2784EDC8A4EBA5988();
-	void ExecuteUbergraph_ABP_Girl004b_Phy(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

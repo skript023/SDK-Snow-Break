@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
+#include "UMG_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Game_structs.hpp"
 #include "Game_classes.hpp"
-#include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "UMG_structs.hpp"
 
 
 namespace SDK
@@ -131,13 +131,13 @@ public:
 	void HideHP(bool bHide_0);
 	class FText Get_TxtOnlineNum_Text_0();
 	bool GetFightPartShow(EFightWidgetPart InPart);
+	void HideSkillSelector(int32 SkillIndex);
+	void ShowSkillSelector(int32 SkillIndex);
 	void UpdateControl();
 	bool CheckFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason);
 	void SetFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason, bool bShow, bool bForce);
 	void ShowOrHideCross(bool bShow);
 	void UpdateInteractionProgress(float InValue);
-	void ShowSkillSelector(int32 SkillIndex);
-	void HideSkillSelector(int32 SkillIndex);
 	void Destruct();
 
 	class FString GetModuleName() const;

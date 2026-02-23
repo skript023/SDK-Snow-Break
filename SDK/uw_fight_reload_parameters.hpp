@@ -17,7 +17,7 @@ namespace SDK::Params
 {
 
 // Function uw_fight_reload.uw_fight_reload_C.ExecuteUbergraph_uw_fight_reload
-// 0x09D0 (0x09D0 - 0x0000)
+// 0x09D8 (0x09D8 - 0x0000)
 struct uw_fight_reload_C_ExecuteUbergraph_uw_fight_reload final
 {
 public:
@@ -41,7 +41,15 @@ public:
 	struct FWeaponTemplate                        CallFunc_GetWeaponTemplate_ReturnValue;            // 0x0068(0x0960)(ConstParm)
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x09C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x09C9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x09CA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_2;        // 0x09CA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_3;        // 0x09CB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x09CC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_4;        // 0x09CD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_1;                  // 0x09CE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_5;        // 0x09CF(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_2;                  // 0x09D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_3;                  // 0x09D1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_4;                  // 0x09D2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_reload_C_ExecuteUbergraph_uw_fight_reload;
 

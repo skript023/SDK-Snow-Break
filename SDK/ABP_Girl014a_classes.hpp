@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_Girl014a.ABP_Girl014a_C
-// 0x0000 (0x1BDD0 - 0x1BDD0)
+// 0x0000 (0x1BE70 - 0x1BE70)
 class UABP_Girl014a_C final : public UABP_GirlBase_C
 {
 public:

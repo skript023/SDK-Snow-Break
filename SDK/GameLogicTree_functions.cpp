@@ -36,405 +36,6 @@ void ULogicTree_Decorator::ReCheckAndBreakChild()
 }
 
 
-// Function GameLogicTree.LogicTree_Decorator_BP.CheckCondition_BP
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ULogicTree_Decorator_BP::CheckCondition_BP()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_Decorator_BP", "CheckCondition_BP");
-
-	Params::LogicTree_Decorator_BP_CheckCondition_BP Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.AddData
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   BaseValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bReplicated                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULogicTree_EntityDataCom::AddData(class FName Name_0, float BaseValue, bool bReplicated)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "AddData");
-
-	Params::LogicTree_EntityDataCom_AddData Parms{};
-
-	Parms.Name_0 = Name_0;
-	Parms.BaseValue = BaseValue;
-	Parms.bReplicated = bReplicated;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.AddTag
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULogicTree_EntityDataCom::AddTag(const struct FGameplayTag& Tag, int32 Count)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "AddTag");
-
-	Params::LogicTree_EntityDataCom_AddTag Parms{};
-
-	Parms.Tag = std::move(Tag);
-	Parms.Count = Count;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.GetBaseData
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float ULogicTree_EntityDataCom::GetBaseData(class FName Name_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "GetBaseData");
-
-	Params::LogicTree_EntityDataCom_GetBaseData Parms{};
-
-	Parms.Name_0 = Name_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.GetCurData
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float ULogicTree_EntityDataCom::GetCurData(class FName Name_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "GetCurData");
-
-	Params::LogicTree_EntityDataCom_GetCurData Parms{};
-
-	Parms.Name_0 = Name_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.IsPosInLagAABB
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector&                   InCheckPos                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ULogicTree_EntityDataCom::IsPosInLagAABB(const struct FVector& InCheckPos)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "IsPosInLagAABB");
-
-	Params::LogicTree_EntityDataCom_IsPosInLagAABB Parms{};
-
-	Parms.InCheckPos = std::move(InCheckPos);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.OnRep_Data
-// (Final, Native, Public)
-
-void ULogicTree_EntityDataCom::OnRep_Data()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "OnRep_Data");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.OnRep_ReplicatedTags
-// (Final, Native, Public)
-
-void ULogicTree_EntityDataCom::OnRep_ReplicatedTags()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "OnRep_ReplicatedTags");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.RegisterTagChangeCallback
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TDelegate<void(const struct FGameplayTag& Tag, bool IsContain)>&Callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ULogicTree_EntityDataCom::RegisterTagChangeCallback(const struct FGameplayTag& Tag, const TDelegate<void(const struct FGameplayTag& Tag, bool IsContain)>& Callback)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "RegisterTagChangeCallback");
-
-	Params::LogicTree_EntityDataCom_RegisterTagChangeCallback Parms{};
-
-	Parms.Tag = std::move(Tag);
-	Parms.Callback = Callback;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.RemoveTag
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULogicTree_EntityDataCom::RemoveTag(const struct FGameplayTag& Tag, int32 Count)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "RemoveTag");
-
-	Params::LogicTree_EntityDataCom_RemoveTag Parms{};
-
-	Parms.Tag = std::move(Tag);
-	Parms.Count = Count;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.SetBaseData
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULogicTree_EntityDataCom::SetBaseData(class FName Name_0, float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "SetBaseData");
-
-	Params::LogicTree_EntityDataCom_SetBaseData Parms{};
-
-	Parms.Name_0 = Name_0;
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.SetCurrentData
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULogicTree_EntityDataCom::SetCurrentData(class FName Name_0, float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "SetCurrentData");
-
-	Params::LogicTree_EntityDataCom_SetCurrentData Parms{};
-
-	Parms.Name_0 = Name_0;
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.UnregisterTagChangeCallback
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UObject*                          BoundObject                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             FunctionName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULogicTree_EntityDataCom::UnregisterTagChangeCallback(const struct FGameplayTag& Tag, class UObject* BoundObject, class FName FunctionName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "UnregisterTagChangeCallback");
-
-	Params::LogicTree_EntityDataCom_UnregisterTagChangeCallback Parms{};
-
-	Parms.Tag = std::move(Tag);
-	Parms.BoundObject = BoundObject;
-	Parms.FunctionName = FunctionName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.GetData
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float*                                  OutBase                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float*                                  OutCurrent                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ULogicTree_EntityDataCom::GetData(class FName Name_0, float* OutBase, float* OutCurrent) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "GetData");
-
-	Params::LogicTree_EntityDataCom_GetData Parms{};
-
-	Parms.Name_0 = Name_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutBase != nullptr)
-		*OutBase = Parms.OutBase;
-
-	if (OutCurrent != nullptr)
-		*OutCurrent = Parms.OutCurrent;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameLogicTree.LogicTree_EntityDataCom.HasTag
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ULogicTree_EntityDataCom::HasTag(const struct FGameplayTag& Tag) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LogicTree_EntityDataCom", "HasTag");
-
-	Params::LogicTree_EntityDataCom_HasTag Parms{};
-
-	Parms.Tag = std::move(Tag);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function GameLogicTree.LogicTree_LogicHandleCom.Client_NotifyExecuteFail
 // (Net, NetReliable, Native, Event, Public, NetClient)
 // Parameters:
@@ -695,23 +296,23 @@ void ULogicTree_LogicHandleCom::TryStopLogic_FromClient(int32 LogicId)
 }
 
 
-// Function GameLogicTree.LT_Decorator_CheckOwnerTag.OnTagChange
-// (Final, Native, Public)
+// Function GameLogicTree.GameLogicTreeRoot.CompileTree
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    IsContain                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   BeginIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   DataBeginIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULT_Decorator_CheckOwnerTag::OnTagChange(const struct FGameplayTag& Tag, bool IsContain)
+void UGameLogicTreeRoot::CompileTree(int32 BeginIndex, int32 DataBeginIndex)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("LT_Decorator_CheckOwnerTag", "OnTagChange");
+		Func = Class->GetFunction("GameLogicTreeRoot", "CompileTree");
 
-	Params::LT_Decorator_CheckOwnerTag_OnTagChange Parms{};
+	Params::GameLogicTreeRoot_CompileTree Parms{};
 
-	Parms.Tag = std::move(Tag);
-	Parms.IsContain = IsContain;
+	Parms.BeginIndex = BeginIndex;
+	Parms.DataBeginIndex = DataBeginIndex;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1119,6 +720,35 @@ void UGameLogicTree_EntityMgr::Static_SendLogicTreeMsgToActor(class AActor* Targ
 }
 
 
+// Function GameLogicTree.GameLogicTree_EntityMgr.Static_SendLogicTreeMsgToBpActor
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FLogicTree_MsgContext&           Msg                                                    (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UGameLogicTree_EntityMgr::Static_SendLogicTreeMsgToBpActor(class AActor* TargetActor, struct FLogicTree_MsgContext& Msg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GameLogicTree_EntityMgr", "Static_SendLogicTreeMsgToBpActor");
+
+	Params::GameLogicTree_EntityMgr_Static_SendLogicTreeMsgToBpActor Parms{};
+
+	Parms.TargetActor = TargetActor;
+	Parms.Msg = std::move(Msg);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Msg = std::move(Parms.Msg);
+}
+
+
 // Function GameLogicTree.GameLogicTree_EntityMgr.AddTagToActor
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -1185,9 +815,10 @@ class UGameLogicTreeEntity* UGameLogicTree_EntityMgr::GetLogicByStrPath(const cl
 // bool                                    bReplicate                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    DefaultActive                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ExecuteImmediately                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Launcher                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FLogicTree_LogicHandle           ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-struct FLogicTree_LogicHandle UGameLogicTree_EntityMgr::InstallLogicTreeEntity(class AActor* OwnerActor, int32 InId, TSubclassOf<class ULogicTree_LogicHandleCom> InHandleComClass, bool bReplicate, bool DefaultActive, bool ExecuteImmediately)
+struct FLogicTree_LogicHandle UGameLogicTree_EntityMgr::InstallLogicTreeEntity(class AActor* OwnerActor, int32 InId, TSubclassOf<class ULogicTree_LogicHandleCom> InHandleComClass, bool bReplicate, bool DefaultActive, bool ExecuteImmediately, class AActor* Launcher)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1202,6 +833,7 @@ struct FLogicTree_LogicHandle UGameLogicTree_EntityMgr::InstallLogicTreeEntity(c
 	Parms.bReplicate = bReplicate;
 	Parms.DefaultActive = DefaultActive;
 	Parms.ExecuteImmediately = ExecuteImmediately;
+	Parms.Launcher = Launcher;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1222,9 +854,10 @@ struct FLogicTree_LogicHandle UGameLogicTree_EntityMgr::InstallLogicTreeEntity(c
 // bool                                    bReplicate                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    DefaultActive                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ExecuteImmediately                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Launcher                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FLogicTree_LogicHandle           ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-struct FLogicTree_LogicHandle UGameLogicTree_EntityMgr::InstallLogicTreeEntityByObjPath(class AActor* OwnerActor, const struct FSoftObjectPath& InPath, bool bReplicate, bool DefaultActive, bool ExecuteImmediately)
+struct FLogicTree_LogicHandle UGameLogicTree_EntityMgr::InstallLogicTreeEntityByObjPath(class AActor* OwnerActor, const struct FSoftObjectPath& InPath, bool bReplicate, bool DefaultActive, bool ExecuteImmediately, class AActor* Launcher)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1238,6 +871,7 @@ struct FLogicTree_LogicHandle UGameLogicTree_EntityMgr::InstallLogicTreeEntityBy
 	Parms.bReplicate = bReplicate;
 	Parms.DefaultActive = DefaultActive;
 	Parms.ExecuteImmediately = ExecuteImmediately;
+	Parms.Launcher = Launcher;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1333,6 +967,25 @@ void UGameLogicTreeEntity::ActivateDataHandlersByTag(const struct FGameplayTag& 
 }
 
 
+// Function GameLogicTree.GameLogicTreeEntity.CompileEntity
+// (Final, Native, Public, BlueprintCallable)
+
+void UGameLogicTreeEntity::CompileEntity()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameLogicTreeEntity", "CompileEntity");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameLogicTree.GameLogicTreeEntity.DeActivateDataHandlersByTag
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -1367,6 +1020,25 @@ void UGameLogicTreeEntity::FinishLogic()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GameLogicTreeEntity", "FinishLogic");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameLogicTree.GameLogicTreeEntity.FinishLogic_SingleTemp
+// (Final, Native, Public)
+
+void UGameLogicTreeEntity::FinishLogic_SingleTemp()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameLogicTreeEntity", "FinishLogic_SingleTemp");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1440,6 +1112,489 @@ class ULogicTreeMessageBus* UGameLogicTreeEntity::GetMessageBus() const
 }
 
 
+// Function GameLogicTree.LogicTree_Decorator_BP.CheckCondition_BP
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULogicTree_Decorator_BP::CheckCondition_BP()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_Decorator_BP", "CheckCondition_BP");
+
+	Params::LogicTree_Decorator_BP_CheckCondition_BP Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.AddData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   BaseValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bReplicated                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULogicTree_EntityDataCom::AddData(class FName Name_0, float BaseValue, bool bReplicated)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "AddData");
+
+	Params::LogicTree_EntityDataCom_AddData Parms{};
+
+	Parms.Name_0 = Name_0;
+	Parms.BaseValue = BaseValue;
+	Parms.bReplicated = bReplicated;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.AddTag
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULogicTree_EntityDataCom::AddTag(const struct FGameplayTag& Tag, int32 Count)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "AddTag");
+
+	Params::LogicTree_EntityDataCom_AddTag Parms{};
+
+	Parms.Tag = std::move(Tag);
+	Parms.Count = Count;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.GetBaseData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float ULogicTree_EntityDataCom::GetBaseData(class FName Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "GetBaseData");
+
+	Params::LogicTree_EntityDataCom_GetBaseData Parms{};
+
+	Parms.Name_0 = Name_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.GetCurData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float ULogicTree_EntityDataCom::GetCurData(class FName Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "GetCurData");
+
+	Params::LogicTree_EntityDataCom_GetCurData Parms{};
+
+	Parms.Name_0 = Name_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.GetMsgBus
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ULogicTreeMessageBus*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULogicTreeMessageBus* ULogicTree_EntityDataCom::GetMsgBus()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "GetMsgBus");
+
+	Params::LogicTree_EntityDataCom_GetMsgBus Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.IsPosInLagAABB
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   InCheckPos                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULogicTree_EntityDataCom::IsPosInLagAABB(const struct FVector& InCheckPos)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "IsPosInLagAABB");
+
+	Params::LogicTree_EntityDataCom_IsPosInLagAABB Parms{};
+
+	Parms.InCheckPos = std::move(InCheckPos);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.OnRep_Data
+// (Final, Native, Public)
+
+void ULogicTree_EntityDataCom::OnRep_Data()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "OnRep_Data");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.OnRep_ReplicatedTags
+// (Final, Native, Public)
+
+void ULogicTree_EntityDataCom::OnRep_ReplicatedTags()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "OnRep_ReplicatedTags");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.RegisterTagChangeCallback
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FGameplayTag& Tag, bool IsContain)>&Callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void ULogicTree_EntityDataCom::RegisterTagChangeCallback(const struct FGameplayTag& Tag, const TDelegate<void(const struct FGameplayTag& Tag, bool IsContain)>& Callback)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "RegisterTagChangeCallback");
+
+	Params::LogicTree_EntityDataCom_RegisterTagChangeCallback Parms{};
+
+	Parms.Tag = std::move(Tag);
+	Parms.Callback = Callback;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.RemoveTag
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULogicTree_EntityDataCom::RemoveTag(const struct FGameplayTag& Tag, int32 Count)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "RemoveTag");
+
+	Params::LogicTree_EntityDataCom_RemoveTag Parms{};
+
+	Parms.Tag = std::move(Tag);
+	Parms.Count = Count;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.SetBaseData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULogicTree_EntityDataCom::SetBaseData(class FName Name_0, float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "SetBaseData");
+
+	Params::LogicTree_EntityDataCom_SetBaseData Parms{};
+
+	Parms.Name_0 = Name_0;
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.SetCurrentData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULogicTree_EntityDataCom::SetCurrentData(class FName Name_0, float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "SetCurrentData");
+
+	Params::LogicTree_EntityDataCom_SetCurrentData Parms{};
+
+	Parms.Name_0 = Name_0;
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.UnregisterTagChangeCallback
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          BoundObject                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             FunctionName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULogicTree_EntityDataCom::UnregisterTagChangeCallback(const struct FGameplayTag& Tag, class UObject* BoundObject, class FName FunctionName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "UnregisterTagChangeCallback");
+
+	Params::LogicTree_EntityDataCom_UnregisterTagChangeCallback Parms{};
+
+	Parms.Tag = std::move(Tag);
+	Parms.BoundObject = BoundObject;
+	Parms.FunctionName = FunctionName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.GetData
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  OutBase                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  OutCurrent                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULogicTree_EntityDataCom::GetData(class FName Name_0, float* OutBase, float* OutCurrent) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "GetData");
+
+	Params::LogicTree_EntityDataCom_GetData Parms{};
+
+	Parms.Name_0 = Name_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutBase != nullptr)
+		*OutBase = Parms.OutBase;
+
+	if (OutCurrent != nullptr)
+		*OutCurrent = Parms.OutCurrent;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameLogicTree.LogicTree_EntityDataCom.HasTag
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULogicTree_EntityDataCom::HasTag(const struct FGameplayTag& Tag) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_EntityDataCom", "HasTag");
+
+	Params::LogicTree_EntityDataCom_HasTag Parms{};
+
+	Parms.Tag = std::move(Tag);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameLogicTree.LogicTreeMessageBus.Broadcast_BP
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FLogicTree_MsgContext&     Msg                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void ULogicTreeMessageBus::Broadcast_BP(const struct FLogicTree_MsgContext& Msg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTreeMessageBus", "Broadcast_BP");
+
+	Params::LogicTreeMessageBus_Broadcast_BP Parms{};
+
+	Parms.Msg = std::move(Msg);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameLogicTree.LogicTree_TaskNode_BP.BP_TaskNode_Finish
+// (Event, Public, BlueprintEvent)
+
+void ULogicTree_TaskNode_BP::BP_TaskNode_Finish()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_TaskNode_BP", "BP_TaskNode_Finish");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameLogicTree.LogicTree_TaskNode_BP.BP_TaskNode_Tick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULogicTree_TaskNode_BP::BP_TaskNode_Tick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_TaskNode_BP", "BP_TaskNode_Tick");
+
+	Params::LogicTree_TaskNode_BP_BP_TaskNode_Tick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function GameLogicTree.LogicTree_TaskNode_BP.ExecuteBP
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -1463,6 +1618,58 @@ ELogicTreeNodeStatus ULogicTree_TaskNode_BP::ExecuteBP(class ULogicTree_BlackBoa
 }
 
 
+// Function GameLogicTree.LogicTree_TaskNode_BP.FinishTaskFromBP
+// (Final, Native, Private, BlueprintCallable)
+// Parameters:
+// bool                                    IsSuccess                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULogicTree_TaskNode_BP::FinishTaskFromBP(bool IsSuccess)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LogicTree_TaskNode_BP", "FinishTaskFromBP");
+
+	Params::LogicTree_TaskNode_BP_FinishTaskFromBP Parms{};
+
+	Parms.IsSuccess = IsSuccess;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameLogicTree.LT_Decorator_CheckOwnerTag.OnTagChange
+// (Final, Native, Public)
+// Parameters:
+// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    IsContain                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULT_Decorator_CheckOwnerTag::OnTagChange(const struct FGameplayTag& Tag, bool IsContain)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LT_Decorator_CheckOwnerTag", "OnTagChange");
+
+	Params::LT_Decorator_CheckOwnerTag_OnTagChange Parms{};
+
+	Parms.Tag = std::move(Tag);
+	Parms.IsContain = IsContain;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameLogicTree.LT_Decorator_TriggerOnMsg.OnReceiveLogicMsg
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
@@ -1476,6 +1683,31 @@ void ULT_Decorator_TriggerOnMsg::OnReceiveLogicMsg(const struct FLogicTree_MsgCo
 		Func = Class->GetFunction("LT_Decorator_TriggerOnMsg", "OnReceiveLogicMsg");
 
 	Params::LT_Decorator_TriggerOnMsg_OnReceiveLogicMsg Parms{};
+
+	Parms.Msg = std::move(Msg);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameLogicTree.LT_Decorator_TriggerOnMsg.OnReceiveLogicMsg_SingleTemp
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FLogicTree_MsgContext&     Msg                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void ULT_Decorator_TriggerOnMsg::OnReceiveLogicMsg_SingleTemp(const struct FLogicTree_MsgContext& Msg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LT_Decorator_TriggerOnMsg", "OnReceiveLogicMsg_SingleTemp");
+
+	Params::LT_Decorator_TriggerOnMsg_OnReceiveLogicMsg_SingleTemp Parms{};
 
 	Parms.Msg = std::move(Msg);
 

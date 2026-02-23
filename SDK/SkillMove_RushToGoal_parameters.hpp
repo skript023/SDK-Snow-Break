@@ -25,14 +25,15 @@ public:
 };
 DUMPER7_ASSERTS_SkillMove_RushToGoal_C_IsUsedToAddVelocityInsteadOverride;
 
-// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveBlock
-// 0x008C (0x008C - 0x0000)
-struct SkillMove_RushToGoal_C_OnMoveBlock final
+// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveStart
+// 0x0010 (0x0010 - 0x0000)
+struct SkillMove_RushToGoal_C_OnMoveStart final
 {
 public:
-	struct FHitResult                             HitResult;                                         // 0x0000(0x008C)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class AActor*                                 Launcher;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBaseMovementComponent*                 Movement;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_SkillMove_RushToGoal_C_OnMoveBlock;
+DUMPER7_ASSERTS_SkillMove_RushToGoal_C_OnMoveStart;
 
 // LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveTouchTargetCheck
 // 0x0010 (0x0010 - 0x0000)
@@ -53,25 +54,6 @@ public:
 };
 DUMPER7_ASSERTS_SkillMove_RushToGoal_C_OnMoveEnd;
 
-// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveTickCheck
-// 0x0004 (0x0004 - 0x0000)
-struct SkillMove_RushToGoal_C_OnMoveTickCheck final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SkillMove_RushToGoal_C_OnMoveTickCheck;
-
-// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveStart
-// 0x0010 (0x0010 - 0x0000)
-struct SkillMove_RushToGoal_C_OnMoveStart final
-{
-public:
-	class AActor*                                 Launcher;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UBaseMovementComponent*                 Movement;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SkillMove_RushToGoal_C_OnMoveStart;
-
 // LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveTick
 // 0x0018 (0x0018 - 0x0000)
 struct SkillMove_RushToGoal_C_OnMoveTick final
@@ -85,6 +67,24 @@ public:
 	class UBaseMovementComponent*                 Movement;                                          // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SkillMove_RushToGoal_C_OnMoveTick;
+
+// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveBlock
+// 0x008C (0x008C - 0x0000)
+struct SkillMove_RushToGoal_C_OnMoveBlock final
+{
+public:
+	struct FHitResult                             HitResult;                                         // 0x0000(0x008C)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SkillMove_RushToGoal_C_OnMoveBlock;
+
+// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveTickCheck
+// 0x0004 (0x0004 - 0x0000)
+struct SkillMove_RushToGoal_C_OnMoveTickCheck final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SkillMove_RushToGoal_C_OnMoveTickCheck;
 
 // Function SkillMove_RushToGoal.SkillMove_RushToGoal_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

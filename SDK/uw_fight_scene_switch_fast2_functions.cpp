@@ -17,91 +17,15 @@
 namespace SDK
 {
 
-// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.ExecuteUbergraph_uw_fight_scene_switch_fast2
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_scene_switch_fast2_C::ExecuteUbergraph_uw_fight_scene_switch_fast2(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "ExecuteUbergraph_uw_fight_scene_switch_fast2");
-
-	Params::uw_fight_scene_switch_fast2_C_ExecuteUbergraph_uw_fight_scene_switch_fast2 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.EndEvent
-// (BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_scene_switch_fast2_C::EndEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "EndEvent");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.BeginEvent
-// (BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_scene_switch_fast2_C::BeginEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "BeginEvent");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.SwitchEvent
-// (BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_scene_switch_fast2_C::SwitchEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "SwitchEvent");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.EndPlayEffect
+// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast2_2
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_scene_switch_fast2_C::EndPlayEffect()
+void Uuw_fight_scene_switch_fast2_C::SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast2_2()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "EndPlayEffect");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast2_0
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_scene_switch_fast2_C::SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast2_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast2_0");
+		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast2_2");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -121,17 +45,93 @@ void Uuw_fight_scene_switch_fast2_C::SequenceEvent__ENTRYPOINTuw_fight_scene_swi
 }
 
 
-// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast2_2
+// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast2_0
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_scene_switch_fast2_C::SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast2_2()
+void Uuw_fight_scene_switch_fast2_C::SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast2_0()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast2_2");
+		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "SequenceEvent__ENTRYPOINTuw_fight_scene_switch_fast2_0");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.EndPlayEffect
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_scene_switch_fast2_C::EndPlayEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "EndPlayEffect");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.SwitchEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_scene_switch_fast2_C::SwitchEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "SwitchEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.BeginEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_scene_switch_fast2_C::BeginEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "BeginEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.EndEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_scene_switch_fast2_C::EndEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "EndEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_scene_switch_fast2.uw_fight_scene_switch_fast2_C.ExecuteUbergraph_uw_fight_scene_switch_fast2
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_scene_switch_fast2_C::ExecuteUbergraph_uw_fight_scene_switch_fast2(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_scene_switch_fast2_C", "ExecuteUbergraph_uw_fight_scene_switch_fast2");
+
+	Params::uw_fight_scene_switch_fast2_C_ExecuteUbergraph_uw_fight_scene_switch_fast2 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

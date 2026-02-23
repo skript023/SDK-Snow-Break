@@ -16,6 +16,55 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_direction_shop.uw_fight_direction_shop_C.StartLoop
+// 0x0028 (0x0028 - 0x0000)
+struct uw_fight_direction_shop_C_StartLoop final
+{
+public:
+	const class UObject*                          Object;                                            // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          HasAppear;                                         // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetDisplayName_ReturnValue;               // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_direction_shop_C_StartLoop;
+
+// Function uw_fight_direction_shop.uw_fight_direction_shop_C.SetDefendTargetPercent
+// 0x0004 (0x0004 - 0x0000)
+struct uw_fight_direction_shop_C_SetDefendTargetPercent final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_direction_shop_C_SetDefendTargetPercent;
+
+// Function uw_fight_direction_shop.uw_fight_direction_shop_C.OnVisibilityChanged_Event_0
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_direction_shop_C_OnVisibilityChanged_Event_0 final
+{
+public:
+	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_direction_shop_C_OnVisibilityChanged_Event_0;
+
+// Function uw_fight_direction_shop.uw_fight_direction_shop_C.AppearFinish
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_direction_shop_C_AppearFinish final
+{
+public:
+	class UWidgetAnimation*                       Animation;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_direction_shop_C_AppearFinish;
+
+// Function uw_fight_direction_shop.uw_fight_direction_shop_C.OnAnimationFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_direction_shop_C_OnAnimationFinished final
+{
+public:
+	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_direction_shop_C_OnAnimationFinished;
+
 // Function uw_fight_direction_shop.uw_fight_direction_shop_C.ExecuteUbergraph_uw_fight_direction_shop
 // 0x0028 (0x0028 - 0x0000)
 struct uw_fight_direction_shop_C_ExecuteUbergraph_uw_fight_direction_shop final
@@ -37,55 +86,6 @@ public:
 	bool                                          CallFunc_BooleanAND_ReturnValue_2;                 // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_direction_shop_C_ExecuteUbergraph_uw_fight_direction_shop;
-
-// Function uw_fight_direction_shop.uw_fight_direction_shop_C.OnAnimationFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_direction_shop_C_OnAnimationFinished final
-{
-public:
-	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_direction_shop_C_OnAnimationFinished;
-
-// Function uw_fight_direction_shop.uw_fight_direction_shop_C.AppearFinish
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_direction_shop_C_AppearFinish final
-{
-public:
-	class UWidgetAnimation*                       Animation;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_direction_shop_C_AppearFinish;
-
-// Function uw_fight_direction_shop.uw_fight_direction_shop_C.OnVisibilityChanged_Event_0
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_direction_shop_C_OnVisibilityChanged_Event_0 final
-{
-public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_direction_shop_C_OnVisibilityChanged_Event_0;
-
-// Function uw_fight_direction_shop.uw_fight_direction_shop_C.SetDefendTargetPercent
-// 0x0004 (0x0004 - 0x0000)
-struct uw_fight_direction_shop_C_SetDefendTargetPercent final
-{
-public:
-	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_direction_shop_C_SetDefendTargetPercent;
-
-// Function uw_fight_direction_shop.uw_fight_direction_shop_C.StartLoop
-// 0x0028 (0x0028 - 0x0000)
-struct uw_fight_direction_shop_C_StartLoop final
-{
-public:
-	const class UObject*                          Object;                                            // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          HasAppear;                                         // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetDisplayName_ReturnValue;               // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_direction_shop_C_StartLoop;
 
 }
 

@@ -229,6 +229,24 @@ public:
 };
 DUMPER7_ASSERTS_umg_fight_pc_C_GetFightPartShow;
 
+// LuaFunction umg_fight_pc.umg_fight_pc_C.HideSkillSelector
+// 0x0004 (0x0004 - 0x0000)
+struct umg_fight_pc_C_HideSkillSelector final
+{
+public:
+	int32                                         SkillIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_pc_C_HideSkillSelector;
+
+// LuaFunction umg_fight_pc.umg_fight_pc_C.ShowSkillSelector
+// 0x0004 (0x0004 - 0x0000)
+struct umg_fight_pc_C_ShowSkillSelector final
+{
+public:
+	int32                                         SkillIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_pc_C_ShowSkillSelector;
+
 // LuaFunction umg_fight_pc.umg_fight_pc_C.CheckFightPartShow
 // 0x0003 (0x0003 - 0x0000)
 struct umg_fight_pc_C_CheckFightPartShow final
@@ -269,24 +287,6 @@ public:
 	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_umg_fight_pc_C_UpdateInteractionProgress;
-
-// LuaFunction umg_fight_pc.umg_fight_pc_C.ShowSkillSelector
-// 0x0004 (0x0004 - 0x0000)
-struct umg_fight_pc_C_ShowSkillSelector final
-{
-public:
-	int32                                         SkillIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_pc_C_ShowSkillSelector;
-
-// LuaFunction umg_fight_pc.umg_fight_pc_C.HideSkillSelector
-// 0x0004 (0x0004 - 0x0000)
-struct umg_fight_pc_C_HideSkillSelector final
-{
-public:
-	int32                                         SkillIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_pc_C_HideSkillSelector;
 
 // Function umg_fight_pc.umg_fight_pc_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

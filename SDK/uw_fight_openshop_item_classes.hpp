@@ -21,9 +21,9 @@ namespace SDK
 class Uuw_fight_openshop_item_C final : public Uuw_fight_interactitem_C
 {
 public:
-	void BindExitInteractEvent();
 	void UpdateKeyShow();
 	void BindKeyBoardOnSettingChange();
+	void BindExitInteractEvent();
 	void TriggerInteract();
 	void InitGamepadLongPressUI();
 	void Destruct();

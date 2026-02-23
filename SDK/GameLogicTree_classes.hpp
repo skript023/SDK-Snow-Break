@@ -20,59 +20,69 @@
 namespace SDK
 {
 
-// Class GameLogicTree.GameLogic_DataHandler
-// 0x0038 (0x0060 - 0x0028)
-class UGameLogic_DataHandler : public UObject
+// Class GameLogicTree.LogicTreeNode
+// 0x0090 (0x00B8 - 0x0028)
+class ULogicTreeNode : public UObject
 {
 public:
-	class ULogicTree_BlackBoard*                  TargetBlackBoard;                                  // 0x0028(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           HandlerTag;                                        // 0x0030(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   TargetKey;                                         // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ExecuteInterval;                                   // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_44[0xC];                                       // 0x0044(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameLogicTreeEntity*                   OwnEntity;                                         // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULogicTreeNode*                         OwnerNode;                                         // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UGameLogicTreeEntity*                   OwnEntity;                                         // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UNodeExecuteHelper>         ExecuteHelperClass;                                // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGameLogic_NodeBlackBoardOwner                BlackBoardOwner;                                   // 0x0038(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULogicTree_BlackBoard*                  NodeBlackBoard;                                    // 0x0040(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULogicTreeNode*                         Parent;                                            // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         IndexInParent;                                     // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameLogicTreeRoot*                     Root;                                              // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULogicTree_BlackBoard*                  ExecuteParentBBCache;                              // 0x0060(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class ULogicTree_Decorator*>           Decorators;                                        // 0x0068(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_78[0x8];                                       // 0x0078(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UGameLogic_DataHandler*>         Services;                                          // 0x0080(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_90[0x5];                                       // 0x0090(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	ELogicTree_NodeExecuteNet                     ExecuteNetMode;                                    // 0x0095(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_96[0x2];                                       // 0x0096(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULogicTree_BlackBoard*                  RuntimeBlackBoard;                                 // 0x0098(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bSingleTemp;                                       // 0x00A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A1[0x3];                                       // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CompiledIndex;                                     // 0x00A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CompiledDataIndex;                                 // 0x00A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AC[0xC];                                       // 0x00AC(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("GameLogic_DataHandler")
+		STATIC_CLASS_IMPL("LogicTreeNode")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"GameLogic_DataHandler")
+		STATIC_NAME_IMPL(L"LogicTreeNode")
 	}
-	static class UGameLogic_DataHandler* GetDefaultObj()
+	static class ULogicTreeNode* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UGameLogic_DataHandler>();
+		return GetDefaultObjImpl<ULogicTreeNode>();
 	}
 };
-DUMPER7_ASSERTS_UGameLogic_DataHandler;
+DUMPER7_ASSERTS_ULogicTreeNode;
 
-// Class GameLogicTree.LT_DataHandler_AccumulateTime
-// 0x0048 (0x00A8 - 0x0060)
-class ULT_DataHandler_AccumulateTime final : public UGameLogic_DataHandler
+// Class GameLogicTree.LogicTree_TaskNode
+// 0x0000 (0x00B8 - 0x00B8)
+class ULogicTree_TaskNode : public ULogicTreeNode
 {
-public:
-	struct FLogicTree_DataAccessor                Timeout;                                           // 0x0060(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_98[0x8];                                       // 0x0098(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULogicTreeNode*                         CacheNode;                                         // 0x00A0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LT_DataHandler_AccumulateTime")
+		STATIC_CLASS_IMPL("LogicTree_TaskNode")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LT_DataHandler_AccumulateTime")
+		STATIC_NAME_IMPL(L"LogicTree_TaskNode")
 	}
-	static class ULT_DataHandler_AccumulateTime* GetDefaultObj()
+	static class ULogicTree_TaskNode* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULT_DataHandler_AccumulateTime>();
+		return GetDefaultObjImpl<ULogicTree_TaskNode>();
 	}
 };
-DUMPER7_ASSERTS_ULT_DataHandler_AccumulateTime;
+DUMPER7_ASSERTS_ULogicTree_TaskNode;
 
 // Class GameLogicTree.LogicTree_Decorator
 // 0x0010 (0x0038 - 0x0028)
@@ -105,114 +115,28 @@ public:
 };
 DUMPER7_ASSERTS_ULogicTree_Decorator;
 
-// Class GameLogicTree.LogicTree_Decorator_BP
-// 0x0000 (0x0038 - 0x0038)
-class ULogicTree_Decorator_BP final : public ULogicTree_Decorator
+// Class GameLogicTree.LT_Decorator_RandomCompareFloatData
+// 0x0038 (0x0070 - 0x0038)
+class ULT_Decorator_RandomCompareFloatData final : public ULogicTree_Decorator
 {
 public:
-	bool CheckCondition_BP();
+	struct FLogicTree_DataAccessor                ProbabilityData;                                   // 0x0038(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LogicTree_Decorator_BP")
+		STATIC_CLASS_IMPL("LT_Decorator_RandomCompareFloatData")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LogicTree_Decorator_BP")
+		STATIC_NAME_IMPL(L"LT_Decorator_RandomCompareFloatData")
 	}
-	static class ULogicTree_Decorator_BP* GetDefaultObj()
+	static class ULT_Decorator_RandomCompareFloatData* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULogicTree_Decorator_BP>();
+		return GetDefaultObjImpl<ULT_Decorator_RandomCompareFloatData>();
 	}
 };
-DUMPER7_ASSERTS_ULogicTree_Decorator_BP;
-
-// Class GameLogicTree.LogicTreeNode
-// 0x0078 (0x00A0 - 0x0028)
-class ULogicTreeNode : public UObject
-{
-public:
-	class UGameLogicTreeEntity*                   OwnEntity;                                         // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UNodeExecuteHelper>         ExecuteHelperClass;                                // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGameLogic_NodeBlackBoardOwner                BlackBoardOwner;                                   // 0x0038(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULogicTree_BlackBoard*                  NodeBlackBoard;                                    // 0x0040(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULogicTreeNode*                         Parent;                                            // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         IndexInParent;                                     // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameLogicTreeRoot*                     Root;                                              // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULogicTree_BlackBoard*                  ExecuteParentBBCache;                              // 0x0060(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class ULogicTree_Decorator*>           Decorators;                                        // 0x0068(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_78[0x8];                                       // 0x0078(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UGameLogic_DataHandler*>         Services;                                          // 0x0080(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_90[0x5];                                       // 0x0090(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	ELogicTree_NodeExecuteNet                     ExecuteNetMode;                                    // 0x0095(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_96[0x2];                                       // 0x0096(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULogicTree_BlackBoard*                  RuntimeBlackBoard;                                 // 0x0098(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LogicTreeNode")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LogicTreeNode")
-	}
-	static class ULogicTreeNode* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULogicTreeNode>();
-	}
-};
-DUMPER7_ASSERTS_ULogicTreeNode;
-
-// Class GameLogicTree.LogicTree_CompositeNode
-// 0x0018 (0x00B8 - 0x00A0)
-class ULogicTree_CompositeNode : public ULogicTreeNode
-{
-public:
-	TArray<class ULogicTreeNode*>                 Children;                                          // 0x00A0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B0[0x8];                                       // 0x00B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LogicTree_CompositeNode")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LogicTree_CompositeNode")
-	}
-	static class ULogicTree_CompositeNode* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULogicTree_CompositeNode>();
-	}
-};
-DUMPER7_ASSERTS_ULogicTree_CompositeNode;
-
-// Class GameLogicTree.LogicTree_SelectorNode
-// 0x0008 (0x00C0 - 0x00B8)
-class ULogicTree_SelectorNode final : public ULogicTree_CompositeNode
-{
-public:
-	class ULogicTreeNode*                         JumpTickNode;                                      // 0x00B8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LogicTree_SelectorNode")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LogicTree_SelectorNode")
-	}
-	static class ULogicTree_SelectorNode* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULogicTree_SelectorNode>();
-	}
-};
-DUMPER7_ASSERTS_ULogicTree_SelectorNode;
+DUMPER7_ASSERTS_ULT_Decorator_RandomCompareFloatData;
 
 // Class GameLogicTree.LogicTree_DataFormula
 // 0x0018 (0x0040 - 0x0028)
@@ -237,6 +161,78 @@ public:
 };
 DUMPER7_ASSERTS_ULogicTree_DataFormula;
 
+// Class GameLogicTree.LT_TaskNode_SetContextObj
+// 0x0070 (0x0128 - 0x00B8)
+class ULT_TaskNode_SetContextObj final : public ULogicTree_TaskNode
+{
+public:
+	struct FLogicTree_DataAccessor                Origin;                                            // 0x00B8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FLogicTree_DataAccessor                SetTarget;                                         // 0x00F0(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LT_TaskNode_SetContextObj")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LT_TaskNode_SetContextObj")
+	}
+	static class ULT_TaskNode_SetContextObj* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULT_TaskNode_SetContextObj>();
+	}
+};
+DUMPER7_ASSERTS_ULT_TaskNode_SetContextObj;
+
+// Class GameLogicTree.LT_TaskNode_ChangeFloatData
+// 0x0040 (0x00F8 - 0x00B8)
+class ULT_TaskNode_ChangeFloatData final : public ULogicTree_TaskNode
+{
+public:
+	struct FLogicTree_DataAccessor                TargetData;                                        // 0x00B8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	float                                         TargetValue;                                       // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_F4[0x4];                                       // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LT_TaskNode_ChangeFloatData")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LT_TaskNode_ChangeFloatData")
+	}
+	static class ULT_TaskNode_ChangeFloatData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULT_TaskNode_ChangeFloatData>();
+	}
+};
+DUMPER7_ASSERTS_ULT_TaskNode_ChangeFloatData;
+
+// Class GameLogicTree.LogicTree_DmgFormula
+// 0x0018 (0x0040 - 0x0028)
+class ULogicTree_DmgFormula : public UObject
+{
+public:
+	uint8                                         Pad_28[0x18];                                      // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LogicTree_DmgFormula")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LogicTree_DmgFormula")
+	}
+	static class ULogicTree_DmgFormula* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULogicTree_DmgFormula>();
+	}
+};
+DUMPER7_ASSERTS_ULogicTree_DmgFormula;
+
 // Class GameLogicTree.LogicTree_ActionBase
 // 0x0008 (0x0030 - 0x0028)
 class ULogicTree_ActionBase : public UObject
@@ -260,106 +256,40 @@ public:
 };
 DUMPER7_ASSERTS_ULogicTree_ActionBase;
 
-// Class GameLogicTree.LogicTree_DestroyAction
-// 0x0040 (0x0070 - 0x0030)
-class ULogicTree_DestroyAction final : public ULogicTree_ActionBase
+// Class GameLogicTree.LogicTree_ChangeAttributeNode
+// 0x0010 (0x00C8 - 0x00B8)
+class ULogicTree_ChangeAttributeNode final : public ULogicTree_TaskNode
 {
 public:
-	class FName                                   Key;                                               // 0x0030(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLogicTree_DataAccessor                DataAccessor;                                      // 0x0038(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class ULogicTree_ChangeAttrAction*            Action;                                            // 0x00B8(0x0008)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LogicTree_DestroyAction")
+		STATIC_CLASS_IMPL("LogicTree_ChangeAttributeNode")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LogicTree_DestroyAction")
+		STATIC_NAME_IMPL(L"LogicTree_ChangeAttributeNode")
 	}
-	static class ULogicTree_DestroyAction* GetDefaultObj()
+	static class ULogicTree_ChangeAttributeNode* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULogicTree_DestroyAction>();
+		return GetDefaultObjImpl<ULogicTree_ChangeAttributeNode>();
 	}
 };
-DUMPER7_ASSERTS_ULogicTree_DestroyAction;
-
-// Class GameLogicTree.LogicTree_TaskNode
-// 0x0000 (0x00A0 - 0x00A0)
-class ULogicTree_TaskNode : public ULogicTreeNode
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LogicTree_TaskNode")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LogicTree_TaskNode")
-	}
-	static class ULogicTree_TaskNode* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULogicTree_TaskNode>();
-	}
-};
-DUMPER7_ASSERTS_ULogicTree_TaskNode;
-
-// Class GameLogicTree.LogicTree_EntityDataCom
-// 0x0408 (0x04B8 - 0x00B0)
-class ULogicTree_EntityDataCom final : public UActorComponent
-{
-public:
-	struct FLogicTree_EntityDataContainer         ReplicatedData;                                    // 0x00B0(0x0168)(Net, RepNotify, NativeAccessSpecifierPublic)
-	uint8                                         Pad_218[0x1B8];                                    // 0x0218(0x01B8)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  ReplicatedTags;                                    // 0x03D0(0x0020)(Net, RepNotify, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3F0[0x70];                                     // 0x03F0(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULogicTreeMessageBus*                   MsgBus;                                            // 0x0460(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PosLagRecordTime;                                  // 0x0468(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                PosLagOffset;                                      // 0x046C(0x000C)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_478[0x40];                                     // 0x0478(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void AddData(class FName Name_0, float BaseValue, bool bReplicated);
-	void AddTag(const struct FGameplayTag& Tag, int32 Count);
-	float GetBaseData(class FName Name_0);
-	float GetCurData(class FName Name_0);
-	bool IsPosInLagAABB(const struct FVector& InCheckPos);
-	void OnRep_Data();
-	void OnRep_ReplicatedTags();
-	void RegisterTagChangeCallback(const struct FGameplayTag& Tag, const TDelegate<void(const struct FGameplayTag& Tag, bool IsContain)>& Callback);
-	void RemoveTag(const struct FGameplayTag& Tag, int32 Count);
-	void SetBaseData(class FName Name_0, float NewValue);
-	void SetCurrentData(class FName Name_0, float NewValue);
-	void UnregisterTagChangeCallback(const struct FGameplayTag& Tag, class UObject* BoundObject, class FName FunctionName);
-
-	bool GetData(class FName Name_0, float* OutBase, float* OutCurrent) const;
-	bool HasTag(const struct FGameplayTag& Tag) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LogicTree_EntityDataCom")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LogicTree_EntityDataCom")
-	}
-	static class ULogicTree_EntityDataCom* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULogicTree_EntityDataCom>();
-	}
-};
-DUMPER7_ASSERTS_ULogicTree_EntityDataCom;
+DUMPER7_ASSERTS_ULogicTree_ChangeAttributeNode;
 
 // Class GameLogicTree.LogicTree_LogicHandleCom
-// 0x0418 (0x04C8 - 0x00B0)
+// 0x0428 (0x04D8 - 0x00B0)
 class ULogicTree_LogicHandleCom : public UActorComponent
 {
 public:
 	struct FLogicTree_LogicHandleContainer        ReplicatedHandles;                                 // 0x00B0(0x0180)(Net, RepNotify, NativeAccessSpecifierPublic)
 	uint8                                         Pad_230[0x1D8];                                    // 0x0230(0x01D8)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<int32, class UGameLogicTreeEntity*>      Entities;                                          // 0x0408(0x0050)(Transient, NativeAccessSpecifierPublic)
-	uint8                                         Pad_458[0x70];                                     // 0x0458(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class UGameLogicTreeEntity*>           SingleTempEntities;                                // 0x0458(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	uint8                                         Pad_468[0x70];                                     // 0x0468(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void Client_NotifyExecuteFail(int32 LogicId, int32 PredictionId);
@@ -389,37 +319,20 @@ public:
 };
 DUMPER7_ASSERTS_ULogicTree_LogicHandleCom;
 
-// Class GameLogicTree.LogicTree_CustomContext
-// 0x0000 (0x0028 - 0x0028)
-class ULogicTree_CustomContext final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LogicTree_CustomContext")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LogicTree_CustomContext")
-	}
-	static class ULogicTree_CustomContext* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULogicTree_CustomContext>();
-	}
-};
-DUMPER7_ASSERTS_ULogicTree_CustomContext;
-
 // Class GameLogicTree.LogicTree_SpawnAction
-// 0x0048 (0x0078 - 0x0030)
+// 0x0088 (0x00B8 - 0x0030)
 class ULogicTree_SpawnAction : public ULogicTree_ActionBase
 {
 public:
 	bool                                          bAttached;                                         // 0x0030(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   AttachSocket;                                      // 0x0034(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ControlByEntity;                                   // 0x003C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSpawnToOthers;                                    // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLogicTree_DataAccessor                DataAccessor;                                      // 0x0040(0x0038)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FLogicTree_DataAccessor                TargetDataAccessor;                                // 0x0040(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          ControlByEntity;                                   // 0x0078(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLogicTree_DataAccessor                ControlDataAccessor;                               // 0x0080(0x0038)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -437,43 +350,79 @@ public:
 };
 DUMPER7_ASSERTS_ULogicTree_SpawnAction;
 
-// Class GameLogicTree.LT_Decorator_CheckOwnerTag
-// 0x0018 (0x0050 - 0x0038)
-class ULT_Decorator_CheckOwnerTag final : public ULogicTree_Decorator
+// Class GameLogicTree.GameLogicTreeRoot
+// 0x0078 (0x0130 - 0x00B8)
+class UGameLogicTreeRoot final : public ULogicTreeNode
 {
 public:
-	struct FGameplayTag                           CheckTag;                                          // 0x0038(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_40[0x8];                                       // 0x0040(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULogicTree_EntityDataCom*               OwnerDataComCache;                                 // 0x0048(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          RunOnBegin;                                        // 0x00B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B9[0x3];                                       // 0x00B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   TreeName;                                          // 0x00BC(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULogicTree_CompositeNode*               Child;                                             // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLogicTreeRuntimeLayout                RuntimeLayout;                                     // 0x00D0(0x0008)(NoDestructor, NativeAccessSpecifierPublic)
+	struct FLogicTreeInstancePool                 RuntimePool;                                       // 0x00D8(0x0048)(Transient, NativeAccessSpecifierPublic)
+	TArray<class ULogicTreeNode*>                 CompiledNodes;                                     // 0x0120(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
 
 public:
-	void OnTagChange(const struct FGameplayTag& Tag, bool IsContain);
+	void CompileTree(int32 BeginIndex, int32 DataBeginIndex);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LT_Decorator_CheckOwnerTag")
+		STATIC_CLASS_IMPL("GameLogicTreeRoot")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LT_Decorator_CheckOwnerTag")
+		STATIC_NAME_IMPL(L"GameLogicTreeRoot")
 	}
-	static class ULT_Decorator_CheckOwnerTag* GetDefaultObj()
+	static class UGameLogicTreeRoot* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULT_Decorator_CheckOwnerTag>();
+		return GetDefaultObjImpl<UGameLogicTreeRoot>();
 	}
 };
-DUMPER7_ASSERTS_ULT_Decorator_CheckOwnerTag;
+DUMPER7_ASSERTS_UGameLogicTreeRoot;
+
+// Class GameLogicTree.GameLogic_DataHandler
+// 0x0038 (0x0060 - 0x0028)
+class UGameLogic_DataHandler : public UObject
+{
+public:
+	class ULogicTree_BlackBoard*                  TargetBlackBoard;                                  // 0x0028(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           HandlerTag;                                        // 0x0030(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   TargetKey;                                         // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ExecuteInterval;                                   // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0xC];                                       // 0x0044(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameLogicTreeEntity*                   OwnEntity;                                         // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULogicTreeNode*                         OwnerNode;                                         // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameLogic_DataHandler")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameLogic_DataHandler")
+	}
+	static class UGameLogic_DataHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGameLogic_DataHandler>();
+	}
+};
+DUMPER7_ASSERTS_UGameLogic_DataHandler;
 
 // Class GameLogicTree.GameLogicTree_EntityMgr
-// 0x00B0 (0x00E0 - 0x0030)
+// 0x0110 (0x0140 - 0x0030)
 class UGameLogicTree_EntityMgr final : public UWorldSubsystem
 {
 public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class AActor*, int32>                    ActorLookUp;                                       // 0x0038(0x0050)(Transient, Protected, NativeAccessSpecifierProtected)
 	TMap<int32, class ULogicTree_EntityDataCom*>  DataComLookUp;                                     // 0x0088(0x0050)(ExportObject, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_D8[0x8];                                       // 0x00D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D8[0x8];                                       // 0x00D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UGameLogicTreeEntity*>           SingleTempEntities;                                // 0x00E0(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	TMap<class FName, class UGameLogicTreeEntity*> SingleTempEntitiesMap;                            // 0x00F0(0x0050)(Transient, NativeAccessSpecifierPublic)
 
 public:
 	static bool CheckActorHasTagByStr(class AActor* TargetActor, class FName InTagStr);
@@ -489,11 +438,12 @@ public:
 	static void Static_AddTagToActor(class AActor* TargetActor, struct FGameplayTag* InTag);
 	static void Static_RemoveActorTag(class AActor* TargetActor, struct FGameplayTag* InTag);
 	static void Static_SendLogicTreeMsgToActor(class AActor* TargetActor, struct FLogicTree_MsgContext& Msg);
+	static void Static_SendLogicTreeMsgToBpActor(class AActor* TargetActor, struct FLogicTree_MsgContext& Msg);
 
 	void AddTagToActor(class AActor* TargetActor, struct FGameplayTag* InTag);
 	class UGameLogicTreeEntity* GetLogicByStrPath(const class FString& InPath);
-	struct FLogicTree_LogicHandle InstallLogicTreeEntity(class AActor* OwnerActor, int32 InId, TSubclassOf<class ULogicTree_LogicHandleCom> InHandleComClass, bool bReplicate, bool DefaultActive, bool ExecuteImmediately);
-	struct FLogicTree_LogicHandle InstallLogicTreeEntityByObjPath(class AActor* OwnerActor, const struct FSoftObjectPath& InPath, bool bReplicate, bool DefaultActive, bool ExecuteImmediately);
+	struct FLogicTree_LogicHandle InstallLogicTreeEntity(class AActor* OwnerActor, int32 InId, TSubclassOf<class ULogicTree_LogicHandleCom> InHandleComClass, bool bReplicate, bool DefaultActive, bool ExecuteImmediately, class AActor* Launcher);
+	struct FLogicTree_LogicHandle InstallLogicTreeEntityByObjPath(class AActor* OwnerActor, const struct FSoftObjectPath& InPath, bool bReplicate, bool DefaultActive, bool ExecuteImmediately, class AActor* Launcher);
 	void RemoveActorTag(class AActor* TargetActor, struct FGameplayTag* InTag);
 	void SendLogicTreeMsgToActor(class AActor* TargetActor, struct FLogicTree_MsgContext& Msg);
 
@@ -514,7 +464,7 @@ public:
 DUMPER7_ASSERTS_UGameLogicTree_EntityMgr;
 
 // Class GameLogicTree.GameLogicTreeEntity
-// 0x00A8 (0x00D0 - 0x0028)
+// 0x0100 (0x0128 - 0x0028)
 class UGameLogicTreeEntity final : public UObject
 {
 public:
@@ -536,12 +486,17 @@ public:
 	bool                                          HasAuthority;                                      // 0x00C8(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsStandalone;                                      // 0x00C9(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsLocalControl;                                    // 0x00CA(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_CB[0x5];                                       // 0x00CB(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_CB[0x5];                                       // 0x00CB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class AActor*, struct FInsLogicArray>    ActorInsCache;                                     // 0x00D0(0x0050)(Transient, NativeAccessSpecifierPublic)
+	bool                                          bSingleTemplate;                                   // 0x0120(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ActivateDataHandlersByTag(const struct FGameplayTag& InTag);
+	void CompileEntity();
 	void DeActivateDataHandlersByTag(const struct FGameplayTag& InTag);
 	void FinishLogic();
+	void FinishLogic_SingleTemp();
 	void OnLogicEnd();
 	void RequestExecute();
 
@@ -562,34 +517,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGameLogicTreeEntity;
-
-// Class GameLogicTree.GameLogicTreeRoot
-// 0x0020 (0x00C0 - 0x00A0)
-class UGameLogicTreeRoot final : public ULogicTreeNode
-{
-public:
-	bool                                          RunOnBegin;                                        // 0x00A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A1[0x3];                                       // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   TreeName;                                          // 0x00A4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULogicTree_CompositeNode*               RootCompositeNode;                                 // 0x00B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULogicTree_CompositeNode*               Child;                                             // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameLogicTreeRoot")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameLogicTreeRoot")
-	}
-	static class UGameLogicTreeRoot* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGameLogicTreeRoot>();
-	}
-};
-DUMPER7_ASSERTS_UGameLogicTreeRoot;
 
 // Class GameLogicTree.LogicTree_AddBuffAction
 // 0x0018 (0x0048 - 0x0030)
@@ -615,11 +542,11 @@ public:
 DUMPER7_ASSERTS_ULogicTree_AddBuffAction;
 
 // Class GameLogicTree.LogicTree_BindActionToEvent
-// 0x0010 (0x00B0 - 0x00A0)
+// 0x0010 (0x00C8 - 0x00B8)
 class ULogicTree_BindActionToEvent final : public ULogicTree_TaskNode
 {
 public:
-	TArray<struct FLogicTreeActionBindData>       ActionDatas;                                       // 0x00A0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TArray<struct FLogicTreeActionBindData>       ActionDatas;                                       // 0x00B8(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
@@ -696,38 +623,87 @@ public:
 };
 DUMPER7_ASSERTS_ULogicTree_ChangeAttrAction;
 
-// Class GameLogicTree.LogicTree_ChangeAttributeNode
-// 0x0010 (0x00B0 - 0x00A0)
-class ULogicTree_ChangeAttributeNode final : public ULogicTree_TaskNode
+// Class GameLogicTree.LogicTree_CompositeNode
+// 0x0018 (0x00D0 - 0x00B8)
+class ULogicTree_CompositeNode : public ULogicTreeNode
 {
 public:
-	class ULogicTree_ChangeAttrAction*            Action;                                            // 0x00A0(0x0008)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_A8[0x8];                                       // 0x00A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class ULogicTreeNode*>                 Children;                                          // 0x00B8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LogicTree_ChangeAttributeNode")
+		STATIC_CLASS_IMPL("LogicTree_CompositeNode")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LogicTree_ChangeAttributeNode")
+		STATIC_NAME_IMPL(L"LogicTree_CompositeNode")
 	}
-	static class ULogicTree_ChangeAttributeNode* GetDefaultObj()
+	static class ULogicTree_CompositeNode* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULogicTree_ChangeAttributeNode>();
+		return GetDefaultObjImpl<ULogicTree_CompositeNode>();
 	}
 };
-DUMPER7_ASSERTS_ULogicTree_ChangeAttributeNode;
+DUMPER7_ASSERTS_ULogicTree_CompositeNode;
+
+// Class GameLogicTree.LogicTree_Decorator_BP
+// 0x0000 (0x0038 - 0x0038)
+class ULogicTree_Decorator_BP final : public ULogicTree_Decorator
+{
+public:
+	bool CheckCondition_BP();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LogicTree_Decorator_BP")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LogicTree_Decorator_BP")
+	}
+	static class ULogicTree_Decorator_BP* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULogicTree_Decorator_BP>();
+	}
+};
+DUMPER7_ASSERTS_ULogicTree_Decorator_BP;
+
+// Class GameLogicTree.LogicTree_DestroyAction
+// 0x0048 (0x0078 - 0x0030)
+class ULogicTree_DestroyAction final : public ULogicTree_ActionBase
+{
+public:
+	class FName                                   Key;                                               // 0x0030(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDestroyOwner;                                     // 0x0038(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLogicTree_DataAccessor                DataAccessor;                                      // 0x0040(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LogicTree_DestroyAction")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LogicTree_DestroyAction")
+	}
+	static class ULogicTree_DestroyAction* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULogicTree_DestroyAction>();
+	}
+};
+DUMPER7_ASSERTS_ULogicTree_DestroyAction;
 
 // Class GameLogicTree.LogicTree_DoAction
-// 0x0010 (0x00B0 - 0x00A0)
+// 0x0010 (0x00C8 - 0x00B8)
 class ULogicTree_DoAction final : public ULogicTree_TaskNode
 {
 public:
-	class ULogicTree_ActionBase*                  Action;                                            // 0x00A0(0x0008)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          isOneExecute;                                      // 0x00A8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class ULogicTree_ActionBase*                  Action;                                            // 0x00B8(0x0008)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          isOneExecute;                                      // 0x00C0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -746,13 +722,13 @@ public:
 DUMPER7_ASSERTS_ULogicTree_DoAction;
 
 // Class GameLogicTree.LogicTree_DoActionList
-// 0x0018 (0x00B8 - 0x00A0)
+// 0x0018 (0x00D0 - 0x00B8)
 class ULogicTree_DoActionList final : public ULogicTree_TaskNode
 {
 public:
-	TArray<class ULogicTree_ActionBase*>          actions;                                           // 0x00A0(0x0010)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	bool                                          isOneExecute;                                      // 0x00B0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class ULogicTree_ActionBase*>          actions;                                           // 0x00B8(0x0010)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	bool                                          isOneExecute;                                      // 0x00C8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -770,14 +746,66 @@ public:
 };
 DUMPER7_ASSERTS_ULogicTree_DoActionList;
 
+// Class GameLogicTree.LogicTree_EntityDataCom
+// 0x0408 (0x04B8 - 0x00B0)
+class ULogicTree_EntityDataCom final : public UActorComponent
+{
+public:
+	struct FLogicTree_EntityDataContainer         ReplicatedData;                                    // 0x00B0(0x0168)(Net, RepNotify, NativeAccessSpecifierPublic)
+	uint8                                         Pad_218[0x1B8];                                    // 0x0218(0x01B8)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  ReplicatedTags;                                    // 0x03D0(0x0020)(Net, RepNotify, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3F0[0x70];                                     // 0x03F0(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULogicTreeMessageBus*                   MsgBus;                                            // 0x0460(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PosLagRecordTime;                                  // 0x0468(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                PosLagOffset;                                      // 0x046C(0x000C)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_478[0x40];                                     // 0x0478(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AddData(class FName Name_0, float BaseValue, bool bReplicated);
+	void AddTag(const struct FGameplayTag& Tag, int32 Count);
+	float GetBaseData(class FName Name_0);
+	float GetCurData(class FName Name_0);
+	class ULogicTreeMessageBus* GetMsgBus();
+	bool IsPosInLagAABB(const struct FVector& InCheckPos);
+	void OnRep_Data();
+	void OnRep_ReplicatedTags();
+	void RegisterTagChangeCallback(const struct FGameplayTag& Tag, const TDelegate<void(const struct FGameplayTag& Tag, bool IsContain)>& Callback);
+	void RemoveTag(const struct FGameplayTag& Tag, int32 Count);
+	void SetBaseData(class FName Name_0, float NewValue);
+	void SetCurrentData(class FName Name_0, float NewValue);
+	void UnregisterTagChangeCallback(const struct FGameplayTag& Tag, class UObject* BoundObject, class FName FunctionName);
+
+	bool GetData(class FName Name_0, float* OutBase, float* OutCurrent) const;
+	bool HasTag(const struct FGameplayTag& Tag) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LogicTree_EntityDataCom")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LogicTree_EntityDataCom")
+	}
+	static class ULogicTree_EntityDataCom* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULogicTree_EntityDataCom>();
+	}
+};
+DUMPER7_ASSERTS_ULogicTree_EntityDataCom;
+
 // Class GameLogicTree.LogicTreeMessageBus
-// 0x00F8 (0x0120 - 0x0028)
+// 0x0108 (0x0130 - 0x0028)
 class ULogicTreeMessageBus final : public UObject
 {
 public:
 	uint8                                         Pad_28[0x58];                                      // 0x0028(0x0058)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<struct FGameplayTag, struct FLogicTree_MsgContext> CachedMessages;                          // 0x0080(0x0050)(Transient, NativeAccessSpecifierPrivate)
 	TMap<struct FGameplayTag, TMulticastInlineDelegate<void()>> DynamicDelegates;                    // 0x00D0(0x0050)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(const struct FLogicTree_MsgContext& Msg)> BP_MsgDelegate;          // 0x0120(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+
+public:
+	void Broadcast_BP(const struct FLogicTree_MsgContext& Msg);
 
 public:
 	static class UClass* StaticClass()
@@ -795,6 +823,26 @@ public:
 };
 DUMPER7_ASSERTS_ULogicTreeMessageBus;
 
+// Class GameLogicTree.LogicTree_CustomContext
+// 0x0000 (0x0028 - 0x0028)
+class ULogicTree_CustomContext final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LogicTree_CustomContext")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LogicTree_CustomContext")
+	}
+	static class ULogicTree_CustomContext* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULogicTree_CustomContext>();
+	}
+};
+DUMPER7_ASSERTS_ULogicTree_CustomContext;
+
 // Class GameLogicTree.LogicTree_PlayWwiseAction
 // 0x0050 (0x0080 - 0x0030)
 class ULogicTree_PlayWwiseAction final : public ULogicTree_ActionBase
@@ -802,8 +850,9 @@ class ULogicTree_PlayWwiseAction final : public ULogicTree_ActionBase
 public:
 	class FString                                 WwiseKey;                                          // 0x0030(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          is2DAudio;                                         // 0x0040(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          needCacheWwiseCom;                                 // 0x0041(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_42[0x6];                                       // 0x0042(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          isAttach;                                          // 0x0041(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          needCacheWwiseCom;                                 // 0x0042(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_43[0x5];                                       // 0x0043(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLogicTree_DataAccessor                WwiseDataAccessor;                                 // 0x0048(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
@@ -822,12 +871,35 @@ public:
 };
 DUMPER7_ASSERTS_ULogicTree_PlayWwiseAction;
 
+// Class GameLogicTree.LogicTree_SelectorNode
+// 0x0008 (0x00D8 - 0x00D0)
+class ULogicTree_SelectorNode final : public ULogicTree_CompositeNode
+{
+public:
+	class ULogicTreeNode*                         JumpTickNode;                                      // 0x00D0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LogicTree_SelectorNode")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LogicTree_SelectorNode")
+	}
+	static class ULogicTree_SelectorNode* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULogicTree_SelectorNode>();
+	}
+};
+DUMPER7_ASSERTS_ULogicTree_SelectorNode;
+
 // Class GameLogicTree.LogicTree_SequenceNode
-// 0x0008 (0x00C0 - 0x00B8)
+// 0x0008 (0x00D8 - 0x00D0)
 class ULogicTree_SequenceNode final : public ULogicTree_CompositeNode
 {
 public:
-	class ULogicTreeNode*                         JumpTickNode;                                      // 0x00B8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class ULogicTreeNode*                         JumpTickNode;                                      // 0x00D0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
@@ -846,7 +918,7 @@ public:
 DUMPER7_ASSERTS_ULogicTree_SequenceNode;
 
 // Class GameLogicTree.LogicTree_SimpleParallel
-// 0x0000 (0x00B8 - 0x00B8)
+// 0x0000 (0x00D0 - 0x00D0)
 class ULogicTree_SimpleParallel final : public ULogicTree_CompositeNode
 {
 public:
@@ -866,11 +938,13 @@ public:
 DUMPER7_ASSERTS_ULogicTree_SimpleParallel;
 
 // Class GameLogicTree.LogicTree_SpawnActorAction
-// 0x0008 (0x0080 - 0x0078)
+// 0x0018 (0x00D0 - 0x00B8)
 class ULogicTree_SpawnActorAction final : public ULogicTree_SpawnAction
 {
 public:
-	TSubclassOf<class AActor>                     TargetClass;                                       // 0x0078(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AActor>                     TargetClass;                                       // 0x00B8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                SpawnOffset;                                       // 0x00C0(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -912,11 +986,14 @@ public:
 DUMPER7_ASSERTS_ULogicTree_StopWwiseAction;
 
 // Class GameLogicTree.LogicTree_TaskNode_BP
-// 0x0000 (0x00A0 - 0x00A0)
+// 0x0000 (0x00B8 - 0x00B8)
 class ULogicTree_TaskNode_BP final : public ULogicTree_TaskNode
 {
 public:
+	void BP_TaskNode_Finish();
+	void BP_TaskNode_Tick(float DeltaSeconds);
 	ELogicTreeNodeStatus ExecuteBP(class ULogicTree_BlackBoard* TargetBlackBoard);
+	void FinishTaskFromBP(bool IsSuccess);
 
 public:
 	static class UClass* StaticClass()
@@ -935,15 +1012,17 @@ public:
 DUMPER7_ASSERTS_ULogicTree_TaskNode_BP;
 
 // Class GameLogicTree.LogicTree_WaitTask
-// 0x0048 (0x00E8 - 0x00A0)
+// 0x0088 (0x0140 - 0x00B8)
 class ULogicTree_WaitTask final : public ULogicTree_TaskNode
 {
 public:
-	bool                                          isUseCustomVal;                                    // 0x00A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_A1[0x3];                                       // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaitTime;                                          // 0x00A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FLogicTree_DataAccessor                DataAccessor;                                      // 0x00A8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_E0[0x8];                                       // 0x00E0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          isUseCustomVal;                                    // 0x00B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_B9[0x3];                                       // 0x00B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WaitTime;                                          // 0x00BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FLogicTree_DataAccessor                DataAccessor;                                      // 0x00C0(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	struct FLogicTree_DataAccessor                NowTime_DA;                                        // 0x00F8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	bool                                          bResetTimeWhenRunning;                             // 0x0130(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_131[0xF];                                      // 0x0131(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -980,6 +1059,31 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UNodeExecuteHelper;
+
+// Class GameLogicTree.LT_DataHandler_AccumulateTime
+// 0x0048 (0x00A8 - 0x0060)
+class ULT_DataHandler_AccumulateTime final : public UGameLogic_DataHandler
+{
+public:
+	struct FLogicTree_DataAccessor                Timeout;                                           // 0x0060(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_98[0x8];                                       // 0x0098(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULogicTreeNode*                         CacheNode;                                         // 0x00A0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LT_DataHandler_AccumulateTime")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LT_DataHandler_AccumulateTime")
+	}
+	static class ULT_DataHandler_AccumulateTime* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULT_DataHandler_AccumulateTime>();
+	}
+};
+DUMPER7_ASSERTS_ULT_DataHandler_AccumulateTime;
 
 // Class GameLogicTree.LT_Decorator_CheckContextArrayContainsObj
 // 0x0070 (0x00A8 - 0x0038)
@@ -1081,6 +1185,34 @@ public:
 };
 DUMPER7_ASSERTS_ULT_Decorator_CheckContextObjHeightOffsetWithOwner;
 
+// Class GameLogicTree.LT_Decorator_CheckOwnerTag
+// 0x0018 (0x0050 - 0x0038)
+class ULT_Decorator_CheckOwnerTag final : public ULogicTree_Decorator
+{
+public:
+	struct FGameplayTag                           CheckTag;                                          // 0x0038(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_40[0x8];                                       // 0x0040(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULogicTree_EntityDataCom*               OwnerDataComCache;                                 // 0x0048(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void OnTagChange(const struct FGameplayTag& Tag, bool IsContain);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LT_Decorator_CheckOwnerTag")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LT_Decorator_CheckOwnerTag")
+	}
+	static class ULT_Decorator_CheckOwnerTag* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULT_Decorator_CheckOwnerTag>();
+	}
+};
+DUMPER7_ASSERTS_ULT_Decorator_CheckOwnerTag;
+
 // Class GameLogicTree.LT_Decorator_CompareFloatData
 // 0x0078 (0x00B0 - 0x0038)
 class ULT_Decorator_CompareFloatData final : public ULogicTree_Decorator
@@ -1133,27 +1265,52 @@ public:
 };
 DUMPER7_ASSERTS_ULT_Decorator_CompareIntData;
 
+// Class GameLogicTree.LT_Decorator_RandomCompareIntData
+// 0x0038 (0x0070 - 0x0038)
+class ULT_Decorator_RandomCompareIntData final : public ULogicTree_Decorator
+{
+public:
+	struct FLogicTree_DataAccessor                ProbabilityData;                                   // 0x0038(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LT_Decorator_RandomCompareIntData")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LT_Decorator_RandomCompareIntData")
+	}
+	static class ULT_Decorator_RandomCompareIntData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULT_Decorator_RandomCompareIntData>();
+	}
+};
+DUMPER7_ASSERTS_ULT_Decorator_RandomCompareIntData;
+
 // Class GameLogicTree.LT_Decorator_TriggerOnMsg
-// 0x0050 (0x0108 - 0x00B8)
+// 0x0088 (0x0158 - 0x00D0)
 class ULT_Decorator_TriggerOnMsg final : public ULogicTree_CompositeNode
 {
 public:
-	struct FGameplayTag                           TriggerMsgTag;                                     // 0x00B8(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          CanFinish;                                         // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          CanReExecuteRunningChild;                          // 0x00C1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C2[0x2];                                       // 0x00C2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         NeedChildFinishNum;                                // 0x00C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          CacheContext;                                      // 0x00C8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCacheByValue;                                     // 0x00C9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCheckByData;                                      // 0x00CA(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_CB[0x5];                                       // 0x00CB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FLogicTree_MsgConditionCheck>   CheckDataInt;                                      // 0x00D0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E0[0x10];                                      // 0x00E0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULogicTreeNode*                         CacheChild;                                        // 0x00F0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_F8[0x10];                                      // 0x00F8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           TriggerMsgTag;                                     // 0x00D0(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          CanFinish;                                         // 0x00D8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          CanReExecuteRunningChild;                          // 0x00D9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DA[0x2];                                       // 0x00DA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         NeedChildFinishNum;                                // 0x00DC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          CacheContext;                                      // 0x00E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCacheByValue;                                     // 0x00E1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCheckByData;                                      // 0x00E2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E3[0x5];                                       // 0x00E3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLogicTree_MsgConditionCheck>   CheckDataInt;                                      // 0x00E8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F8[0x10];                                      // 0x00F8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULogicTreeNode*                         CacheChild;                                        // 0x0108(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_110[0x10];                                     // 0x0110(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLogicTree_DataAccessor                ChildFinishNum_DA;                                 // 0x0120(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	void OnReceiveLogicMsg(const struct FLogicTree_MsgContext& Msg);
+	void OnReceiveLogicMsg_SingleTemp(const struct FLogicTree_MsgContext& Msg);
 
 public:
 	static class UClass* StaticClass()
@@ -1172,13 +1329,14 @@ public:
 DUMPER7_ASSERTS_ULT_Decorator_TriggerOnMsg;
 
 // Class GameLogicTree.LT_DecoratorNode_Loop
-// 0x0010 (0x00C8 - 0x00B8)
+// 0x0048 (0x0118 - 0x00D0)
 class ULT_DecoratorNode_Loop final : public ULogicTree_CompositeNode
 {
 public:
-	int32                                         LoopNum;                                           // 0x00B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULogicTreeNode*                         CacheChild;                                        // 0x00C0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LoopNum;                                           // 0x00D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULogicTreeNode*                         CacheChild;                                        // 0x00D8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLogicTree_DataAccessor                NowLoopNum_DA;                                     // 0x00E0(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1196,181 +1354,138 @@ public:
 };
 DUMPER7_ASSERTS_ULT_DecoratorNode_Loop;
 
-// Class GameLogicTree.LT_TaskNode_AddObjToContextArray
-// 0x0070 (0x0110 - 0x00A0)
-class ULT_TaskNode_AddObjToContextArray final : public ULogicTree_TaskNode
+// Class GameLogicTree.LT_Task_PrintMsg
+// 0x0010 (0x00C8 - 0x00B8)
+class ULT_Task_PrintMsg final : public ULogicTree_TaskNode
 {
 public:
-	struct FLogicTree_DataAccessor                ObjToAdd;                                          // 0x00A0(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FLogicTree_DataAccessor                TargetArray;                                       // 0x00D8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class FString                                 PrintMsg;                                          // 0x00B8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LT_TaskNode_AddObjToContextArray")
+		STATIC_CLASS_IMPL("LT_Task_PrintMsg")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LT_TaskNode_AddObjToContextArray")
+		STATIC_NAME_IMPL(L"LT_Task_PrintMsg")
 	}
-	static class ULT_TaskNode_AddObjToContextArray* GetDefaultObj()
+	static class ULT_Task_PrintMsg* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULT_TaskNode_AddObjToContextArray>();
+		return GetDefaultObjImpl<ULT_Task_PrintMsg>();
 	}
 };
-DUMPER7_ASSERTS_ULT_TaskNode_AddObjToContextArray;
+DUMPER7_ASSERTS_ULT_Task_PrintMsg;
 
-// Class GameLogicTree.LT_TaskNode_AddOrRemoveOwnerTag
-// 0x0010 (0x00B0 - 0x00A0)
-class ULT_TaskNode_AddOrRemoveOwnerTag final : public ULogicTree_TaskNode
+// Class GameLogicTree.LT_Task_QueryTargets
+// 0x0040 (0x00F8 - 0x00B8)
+class ULT_Task_QueryTargets : public ULogicTree_TaskNode
 {
 public:
-	bool                                          isAdd;                                             // 0x00A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_A1[0x3];                                       // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTag                           TargetTag;                                         // 0x00A4(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class AActor>                     TargetClass;                                       // 0x00B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLogicTree_DataAccessor                OutPutRes;                                         // 0x00C0(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LT_TaskNode_AddOrRemoveOwnerTag")
+		STATIC_CLASS_IMPL("LT_Task_QueryTargets")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LT_TaskNode_AddOrRemoveOwnerTag")
+		STATIC_NAME_IMPL(L"LT_Task_QueryTargets")
 	}
-	static class ULT_TaskNode_AddOrRemoveOwnerTag* GetDefaultObj()
+	static class ULT_Task_QueryTargets* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULT_TaskNode_AddOrRemoveOwnerTag>();
+		return GetDefaultObjImpl<ULT_Task_QueryTargets>();
 	}
 };
-DUMPER7_ASSERTS_ULT_TaskNode_AddOrRemoveOwnerTag;
+DUMPER7_ASSERTS_ULT_Task_QueryTargets;
 
-// Class GameLogicTree.LT_TaskNode_BindActionToMsg
-// 0x0060 (0x0100 - 0x00A0)
-class ULT_TaskNode_BindActionToMsg final : public ULogicTree_TaskNode
+// Class GameLogicTree.LT_TaskNode_TickUpdateMatParam
+// 0x0030 (0x00E8 - 0x00B8)
+class ULT_TaskNode_TickUpdateMatParam final : public ULogicTree_TaskNode
 {
 public:
-	TArray<struct FLogicTree_BindActionToMsg>     BindMsgs;                                          // 0x00A0(0x0010)(Edit, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_B0[0x50];                                      // 0x00B0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   ParamName;                                         // 0x00B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Duration;                                          // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            ParamCurve;                                        // 0x00C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartVal;                                          // 0x00D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EndVal;                                            // 0x00D4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Timer;                                             // 0x00D8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMeshComponent*                         CacheMesh;                                         // 0x00E0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LT_TaskNode_BindActionToMsg")
+		STATIC_CLASS_IMPL("LT_TaskNode_TickUpdateMatParam")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LT_TaskNode_BindActionToMsg")
+		STATIC_NAME_IMPL(L"LT_TaskNode_TickUpdateMatParam")
 	}
-	static class ULT_TaskNode_BindActionToMsg* GetDefaultObj()
+	static class ULT_TaskNode_TickUpdateMatParam* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULT_TaskNode_BindActionToMsg>();
+		return GetDefaultObjImpl<ULT_TaskNode_TickUpdateMatParam>();
 	}
 };
-DUMPER7_ASSERTS_ULT_TaskNode_BindActionToMsg;
+DUMPER7_ASSERTS_ULT_TaskNode_TickUpdateMatParam;
 
-// Class GameLogicTree.LT_TaskNode_ChangeBoolData
-// 0x0040 (0x00E0 - 0x00A0)
-class ULT_TaskNode_ChangeBoolData final : public ULogicTree_TaskNode
+// Class GameLogicTree.LT_Task_QueryTargetsInRange
+// 0x0078 (0x0170 - 0x00F8)
+class ULT_Task_QueryTargetsInRange final : public ULT_Task_QueryTargets
 {
 public:
-	struct FLogicTree_DataAccessor                TargetData;                                        // 0x00A0(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	bool                                          TargetValue;                                       // 0x00D8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FLogicTree_DataAccessor                CenterPos;                                         // 0x00F8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FLogicTree_DataAccessor                RangeSquared;                                      // 0x0130(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bUseOwnerCenter;                                   // 0x0168(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_169[0x7];                                      // 0x0169(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LT_TaskNode_ChangeBoolData")
+		STATIC_CLASS_IMPL("LT_Task_QueryTargetsInRange")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LT_TaskNode_ChangeBoolData")
+		STATIC_NAME_IMPL(L"LT_Task_QueryTargetsInRange")
 	}
-	static class ULT_TaskNode_ChangeBoolData* GetDefaultObj()
+	static class ULT_Task_QueryTargetsInRange* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULT_TaskNode_ChangeBoolData>();
+		return GetDefaultObjImpl<ULT_Task_QueryTargetsInRange>();
 	}
 };
-DUMPER7_ASSERTS_ULT_TaskNode_ChangeBoolData;
+DUMPER7_ASSERTS_ULT_Task_QueryTargetsInRange;
 
-// Class GameLogicTree.LT_TaskNode_ChangeFloatData
-// 0x0040 (0x00E0 - 0x00A0)
-class ULT_TaskNode_ChangeFloatData final : public ULogicTree_TaskNode
+// Class GameLogicTree.LT_Task_QueryOneTarget
+// 0x0048 (0x0100 - 0x00B8)
+class ULT_Task_QueryOneTarget final : public ULogicTree_TaskNode
 {
 public:
-	struct FLogicTree_DataAccessor                TargetData;                                        // 0x00A0(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	float                                         TargetValue;                                       // 0x00D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class AActor>                     TargetClass;                                       // 0x00B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          SpawnOneIfNotFound;                                // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLogicTree_DataAccessor                OutPutRes;                                         // 0x00C8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LT_TaskNode_ChangeFloatData")
+		STATIC_CLASS_IMPL("LT_Task_QueryOneTarget")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LT_TaskNode_ChangeFloatData")
+		STATIC_NAME_IMPL(L"LT_Task_QueryOneTarget")
 	}
-	static class ULT_TaskNode_ChangeFloatData* GetDefaultObj()
+	static class ULT_Task_QueryOneTarget* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULT_TaskNode_ChangeFloatData>();
+		return GetDefaultObjImpl<ULT_Task_QueryOneTarget>();
 	}
 };
-DUMPER7_ASSERTS_ULT_TaskNode_ChangeFloatData;
-
-// Class GameLogicTree.LT_TaskNode_AddOwnerFloatData
-// 0x0010 (0x00B0 - 0x00A0)
-class ULT_TaskNode_AddOwnerFloatData final : public ULogicTree_TaskNode
-{
-public:
-	class FName                                   TargetName;                                        // 0x00A0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         TargetValue;                                       // 0x00A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bReplicate;                                        // 0x00AC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_AD[0x3];                                       // 0x00AD(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LT_TaskNode_AddOwnerFloatData")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LT_TaskNode_AddOwnerFloatData")
-	}
-	static class ULT_TaskNode_AddOwnerFloatData* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULT_TaskNode_AddOwnerFloatData>();
-	}
-};
-DUMPER7_ASSERTS_ULT_TaskNode_AddOwnerFloatData;
-
-// Class GameLogicTree.LT_TaskNode_ClearContext
-// 0x0008 (0x00A8 - 0x00A0)
-class ULT_TaskNode_ClearContext final : public ULogicTree_TaskNode
-{
-public:
-	class FName                                   ContextName;                                       // 0x00A0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LT_TaskNode_ClearContext")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LT_TaskNode_ClearContext")
-	}
-	static class ULT_TaskNode_ClearContext* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULT_TaskNode_ClearContext>();
-	}
-};
-DUMPER7_ASSERTS_ULT_TaskNode_ClearContext;
+DUMPER7_ASSERTS_ULT_Task_QueryOneTarget;
 
 // Class GameLogicTree.LT_TaskNode_FinishLogic
-// 0x0000 (0x00A0 - 0x00A0)
+// 0x0000 (0x00B8 - 0x00B8)
 class ULT_TaskNode_FinishLogic final : public ULogicTree_TaskNode
 {
 public:
@@ -1389,13 +1504,165 @@ public:
 };
 DUMPER7_ASSERTS_ULT_TaskNode_FinishLogic;
 
+// Class GameLogicTree.LT_TaskNode_AddObjToContextArray
+// 0x0070 (0x0128 - 0x00B8)
+class ULT_TaskNode_AddObjToContextArray final : public ULogicTree_TaskNode
+{
+public:
+	struct FLogicTree_DataAccessor                ObjToAdd;                                          // 0x00B8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FLogicTree_DataAccessor                TargetArray;                                       // 0x00F0(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LT_TaskNode_AddObjToContextArray")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LT_TaskNode_AddObjToContextArray")
+	}
+	static class ULT_TaskNode_AddObjToContextArray* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULT_TaskNode_AddObjToContextArray>();
+	}
+};
+DUMPER7_ASSERTS_ULT_TaskNode_AddObjToContextArray;
+
+// Class GameLogicTree.LT_TaskNode_AddOrRemoveOwnerTag
+// 0x0010 (0x00C8 - 0x00B8)
+class ULT_TaskNode_AddOrRemoveOwnerTag final : public ULogicTree_TaskNode
+{
+public:
+	bool                                          isAdd;                                             // 0x00B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_B9[0x3];                                       // 0x00B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           TargetTag;                                         // 0x00BC(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LT_TaskNode_AddOrRemoveOwnerTag")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LT_TaskNode_AddOrRemoveOwnerTag")
+	}
+	static class ULT_TaskNode_AddOrRemoveOwnerTag* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULT_TaskNode_AddOrRemoveOwnerTag>();
+	}
+};
+DUMPER7_ASSERTS_ULT_TaskNode_AddOrRemoveOwnerTag;
+
+// Class GameLogicTree.LT_TaskNode_BindActionToMsg
+// 0x0060 (0x0118 - 0x00B8)
+class ULT_TaskNode_BindActionToMsg final : public ULogicTree_TaskNode
+{
+public:
+	TArray<struct FLogicTree_BindActionToMsg>     BindMsgs;                                          // 0x00B8(0x0010)(Edit, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_C8[0x50];                                      // 0x00C8(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LT_TaskNode_BindActionToMsg")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LT_TaskNode_BindActionToMsg")
+	}
+	static class ULT_TaskNode_BindActionToMsg* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULT_TaskNode_BindActionToMsg>();
+	}
+};
+DUMPER7_ASSERTS_ULT_TaskNode_BindActionToMsg;
+
+// Class GameLogicTree.LT_TaskNode_ChangeBoolData
+// 0x0040 (0x00F8 - 0x00B8)
+class ULT_TaskNode_ChangeBoolData final : public ULogicTree_TaskNode
+{
+public:
+	struct FLogicTree_DataAccessor                TargetData;                                        // 0x00B8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	bool                                          TargetValue;                                       // 0x00F0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_F1[0x7];                                       // 0x00F1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LT_TaskNode_ChangeBoolData")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LT_TaskNode_ChangeBoolData")
+	}
+	static class ULT_TaskNode_ChangeBoolData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULT_TaskNode_ChangeBoolData>();
+	}
+};
+DUMPER7_ASSERTS_ULT_TaskNode_ChangeBoolData;
+
+// Class GameLogicTree.LT_TaskNode_AddOwnerFloatData
+// 0x0010 (0x00C8 - 0x00B8)
+class ULT_TaskNode_AddOwnerFloatData final : public ULogicTree_TaskNode
+{
+public:
+	class FName                                   TargetName;                                        // 0x00B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         TargetValue;                                       // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bReplicate;                                        // 0x00C4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_C5[0x3];                                       // 0x00C5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LT_TaskNode_AddOwnerFloatData")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LT_TaskNode_AddOwnerFloatData")
+	}
+	static class ULT_TaskNode_AddOwnerFloatData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULT_TaskNode_AddOwnerFloatData>();
+	}
+};
+DUMPER7_ASSERTS_ULT_TaskNode_AddOwnerFloatData;
+
+// Class GameLogicTree.LT_TaskNode_ClearContext
+// 0x0008 (0x00C0 - 0x00B8)
+class ULT_TaskNode_ClearContext final : public ULogicTree_TaskNode
+{
+public:
+	class FName                                   ContextName;                                       // 0x00B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LT_TaskNode_ClearContext")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LT_TaskNode_ClearContext")
+	}
+	static class ULT_TaskNode_ClearContext* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULT_TaskNode_ClearContext>();
+	}
+};
+DUMPER7_ASSERTS_ULT_TaskNode_ClearContext;
+
 // Class GameLogicTree.LT_TaskNode_OwnerPlayMontage
-// 0x0040 (0x00E0 - 0x00A0)
+// 0x0080 (0x0138 - 0x00B8)
 class ULT_TaskNode_OwnerPlayMontage final : public ULogicTree_TaskNode
 {
 public:
-	struct FLogicTree_DataAccessor                TargetMontage;                                     // 0x00A0(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	class UAnimMontage*                           MontageCache;                                      // 0x00D8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLogicTree_DataAccessor                TargetMontage;                                     // 0x00B8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          UseCustomRate;                                     // 0x00F0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F1[0x3];                                       // 0x00F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PlayRate;                                          // 0x00F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLogicTree_DataAccessor                PlayRate_DA;                                       // 0x00F8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class UAnimMontage*                           MontageCache;                                      // 0x0130(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1414,13 +1681,13 @@ public:
 DUMPER7_ASSERTS_ULT_TaskNode_OwnerPlayMontage;
 
 // Class GameLogicTree.LT_TaskNode_RandomInt
-// 0x00A8 (0x0148 - 0x00A0)
+// 0x00A8 (0x0160 - 0x00B8)
 class ULT_TaskNode_RandomInt final : public ULogicTree_TaskNode
 {
 public:
-	struct FLogicTree_DataAccessor                RandMin;                                           // 0x00A0(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FLogicTree_DataAccessor                RandMax;                                           // 0x00D8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FLogicTree_DataAccessor                OutRes;                                            // 0x0110(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FLogicTree_DataAccessor                RandMin;                                           // 0x00B8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FLogicTree_DataAccessor                RandMax;                                           // 0x00F0(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FLogicTree_DataAccessor                OutRes;                                            // 0x0128(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1439,14 +1706,18 @@ public:
 DUMPER7_ASSERTS_ULT_TaskNode_RandomInt;
 
 // Class GameLogicTree.LT_TaskNode_SendMsgToActor
-// 0x0098 (0x0138 - 0x00A0)
+// 0x0118 (0x01D0 - 0x00B8)
 class ULT_TaskNode_SendMsgToActor final : public ULogicTree_TaskNode
 {
 public:
-	bool                                          SendToOwner;                                       // 0x00A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A1[0x7];                                       // 0x00A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLogicTree_DataAccessor                TargetActor;                                       // 0x00A8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FLogicTree_MsgContext                  TargetMsg;                                         // 0x00E0(0x0058)(Edit, NativeAccessSpecifierPublic)
+	bool                                          SendToOwner;                                       // 0x00B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          SendBpMsg;                                         // 0x00B9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BA[0x6];                                       // 0x00BA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLogicTree_DataAccessor                TargetActor;                                       // 0x00C0(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FLogicTree_MsgContext                  TargetMsg;                                         // 0x00F8(0x0080)(Edit, NativeAccessSpecifierPublic)
+	struct FLogicTree_DataAccessor                CustomObjDA;                                       // 0x0178(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FLogicTree_DataAccessor>        CustomFloatArr;                                    // 0x01B0(0x0010)(Edit, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FLogicTree_DataAccessor>        CustomIntArr;                                      // 0x01C0(0x0010)(Edit, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1464,39 +1735,15 @@ public:
 };
 DUMPER7_ASSERTS_ULT_TaskNode_SendMsgToActor;
 
-// Class GameLogicTree.LT_TaskNode_SetContextObj
-// 0x0070 (0x0110 - 0x00A0)
-class ULT_TaskNode_SetContextObj final : public ULogicTree_TaskNode
-{
-public:
-	struct FLogicTree_DataAccessor                Origin;                                            // 0x00A0(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FLogicTree_DataAccessor                SetTarget;                                         // 0x00D8(0x0038)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LT_TaskNode_SetContextObj")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LT_TaskNode_SetContextObj")
-	}
-	static class ULT_TaskNode_SetContextObj* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULT_TaskNode_SetContextObj>();
-	}
-};
-DUMPER7_ASSERTS_ULT_TaskNode_SetContextObj;
-
 // Class GameLogicTree.LT_TaskNode_SwitchDataHandlers
-// 0x0010 (0x00B0 - 0x00A0)
+// 0x0010 (0x00C8 - 0x00B8)
 class ULT_TaskNode_SwitchDataHandlers final : public ULogicTree_TaskNode
 {
 public:
-	bool                                          StateToSwitch;                                     // 0x00A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A1[0x3];                                       // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTag                           TargetTag;                                         // 0x00A4(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          StateToSwitch;                                     // 0x00B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B9[0x3];                                       // 0x00B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           TargetTag;                                         // 0x00BC(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1515,14 +1762,14 @@ public:
 DUMPER7_ASSERTS_ULT_TaskNode_SwitchDataHandlers;
 
 // Class GameLogicTree.LT_TaskNode_WaitDataComRep
-// 0x0018 (0x00B8 - 0x00A0)
+// 0x0018 (0x00D0 - 0x00B8)
 class ULT_TaskNode_WaitDataComRep final : public ULogicTree_TaskNode
 {
 public:
-	float                                         CheckInternal;                                     // 0x00A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 OwnActorCache;                                     // 0x00A8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B0[0x8];                                       // 0x00B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         CheckInternal;                                     // 0x00B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 OwnActorCache;                                     // 0x00C0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1601,12 +1848,12 @@ public:
 DUMPER7_ASSERTS_UMyDataHandler3;
 
 // Class GameLogicTree.TestLogicTreeNode
-// 0x0008 (0x00A8 - 0x00A0)
+// 0x0008 (0x00C0 - 0x00B8)
 class UTestLogicTreeNode final : public ULogicTreeNode
 {
 public:
-	int32                                         TestIntValue;                                      // 0x00A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         TestIntValue;                                      // 0x00B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

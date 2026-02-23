@@ -175,6 +175,27 @@ public:
 };
 DUMPER7_ASSERTS_FRigVMExecuteContext;
 
+// ScriptStruct RigVM.RigVMInstruction
+// 0x0010 (0x0010 - 0x0000)
+struct FRigVMInstruction final
+{
+public:
+	uint64                                        ByteCodeIndex;                                     // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMOpCode                                  OpCode;                                            // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         OperandAlignment;                                  // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigVMInstruction;
+
+// ScriptStruct RigVM.RigVMInstructionArray
+// 0x0010 (0x0010 - 0x0000)
+struct FRigVMInstructionArray final
+{
+public:
+	TArray<struct FRigVMInstruction>              Instructions;                                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FRigVMInstructionArray;
+
 // ScriptStruct RigVM.RigVMStruct
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FRigVMStruct
@@ -206,27 +227,6 @@ public:
 	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRigVMByteCode;
-
-// ScriptStruct RigVM.RigVMInstruction
-// 0x0010 (0x0010 - 0x0000)
-struct FRigVMInstruction final
-{
-public:
-	uint64                                        ByteCodeIndex;                                     // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMOpCode                                  OpCode;                                            // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         OperandAlignment;                                  // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigVMInstruction;
-
-// ScriptStruct RigVM.RigVMInstructionArray
-// 0x0010 (0x0010 - 0x0000)
-struct FRigVMInstructionArray final
-{
-public:
-	TArray<struct FRigVMInstruction>              Instructions;                                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FRigVMInstructionArray;
 
 // ScriptStruct RigVM.RigVMBaseOp
 // 0x0001 (0x0001 - 0x0000)

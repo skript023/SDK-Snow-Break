@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass OpenDoorEvent.OpenDoorEvent_C
-// 0x0018 (0x0180 - 0x0168)
+// 0x0018 (0x0188 - 0x0170)
 class UOpenDoorEvent_C final : public UGameTaskEvent
 {
 public:
-	class FString                                 funName;                                           // 0x0168(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	float                                         Delay;                                             // 0x0178(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 funName;                                           // 0x0170(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	float                                         Delay;                                             // 0x0180(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void OpenEvent();

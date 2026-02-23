@@ -18,143 +18,6 @@
 namespace SDK::Params
 {
 
-// Function GameLogicTree.LogicTree_Decorator_BP.CheckCondition_BP
-// 0x0001 (0x0001 - 0x0000)
-struct LogicTree_Decorator_BP_CheckCondition_BP final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LogicTree_Decorator_BP_CheckCondition_BP;
-
-// Function GameLogicTree.LogicTree_EntityDataCom.AddData
-// 0x0010 (0x0010 - 0x0000)
-struct LogicTree_EntityDataCom_AddData final
-{
-public:
-	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BaseValue;                                         // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bReplicated;                                       // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_LogicTree_EntityDataCom_AddData;
-
-// Function GameLogicTree.LogicTree_EntityDataCom.AddTag
-// 0x000C (0x000C - 0x0000)
-struct LogicTree_EntityDataCom_AddTag final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LogicTree_EntityDataCom_AddTag;
-
-// Function GameLogicTree.LogicTree_EntityDataCom.GetBaseData
-// 0x000C (0x000C - 0x0000)
-struct LogicTree_EntityDataCom_GetBaseData final
-{
-public:
-	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LogicTree_EntityDataCom_GetBaseData;
-
-// Function GameLogicTree.LogicTree_EntityDataCom.GetCurData
-// 0x000C (0x000C - 0x0000)
-struct LogicTree_EntityDataCom_GetCurData final
-{
-public:
-	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LogicTree_EntityDataCom_GetCurData;
-
-// Function GameLogicTree.LogicTree_EntityDataCom.IsPosInLagAABB
-// 0x0010 (0x0010 - 0x0000)
-struct LogicTree_EntityDataCom_IsPosInLagAABB final
-{
-public:
-	struct FVector                                InCheckPos;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_LogicTree_EntityDataCom_IsPosInLagAABB;
-
-// Function GameLogicTree.LogicTree_EntityDataCom.RegisterTagChangeCallback
-// 0x0018 (0x0018 - 0x0000)
-struct LogicTree_EntityDataCom_RegisterTagChangeCallback final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FGameplayTag& Tag, bool IsContain)> Callback;                        // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LogicTree_EntityDataCom_RegisterTagChangeCallback;
-
-// Function GameLogicTree.LogicTree_EntityDataCom.RemoveTag
-// 0x000C (0x000C - 0x0000)
-struct LogicTree_EntityDataCom_RemoveTag final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LogicTree_EntityDataCom_RemoveTag;
-
-// Function GameLogicTree.LogicTree_EntityDataCom.SetBaseData
-// 0x000C (0x000C - 0x0000)
-struct LogicTree_EntityDataCom_SetBaseData final
-{
-public:
-	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NewValue;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LogicTree_EntityDataCom_SetBaseData;
-
-// Function GameLogicTree.LogicTree_EntityDataCom.SetCurrentData
-// 0x000C (0x000C - 0x0000)
-struct LogicTree_EntityDataCom_SetCurrentData final
-{
-public:
-	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NewValue;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LogicTree_EntityDataCom_SetCurrentData;
-
-// Function GameLogicTree.LogicTree_EntityDataCom.UnregisterTagChangeCallback
-// 0x0018 (0x0018 - 0x0000)
-struct LogicTree_EntityDataCom_UnregisterTagChangeCallback final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                BoundObject;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   FunctionName;                                      // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LogicTree_EntityDataCom_UnregisterTagChangeCallback;
-
-// Function GameLogicTree.LogicTree_EntityDataCom.GetData
-// 0x0014 (0x0014 - 0x0000)
-struct LogicTree_EntityDataCom_GetData final
-{
-public:
-	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         OutBase;                                           // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         OutCurrent;                                        // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_LogicTree_EntityDataCom_GetData;
-
-// Function GameLogicTree.LogicTree_EntityDataCom.HasTag
-// 0x000C (0x000C - 0x0000)
-struct LogicTree_EntityDataCom_HasTag final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_LogicTree_EntityDataCom_HasTag;
-
 // Function GameLogicTree.LogicTree_LogicHandleCom.Client_NotifyExecuteFail
 // 0x0008 (0x0008 - 0x0000)
 struct LogicTree_LogicHandleCom_Client_NotifyExecuteFail final
@@ -244,16 +107,15 @@ public:
 };
 DUMPER7_ASSERTS_LogicTree_LogicHandleCom_TryStopLogic_FromClient;
 
-// Function GameLogicTree.LT_Decorator_CheckOwnerTag.OnTagChange
-// 0x000C (0x000C - 0x0000)
-struct LT_Decorator_CheckOwnerTag_OnTagChange final
+// Function GameLogicTree.GameLogicTreeRoot.CompileTree
+// 0x0008 (0x0008 - 0x0000)
+struct GameLogicTreeRoot_CompileTree final
 {
 public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsContain;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         BeginIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DataBeginIndex;                                    // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_LT_Decorator_CheckOwnerTag_OnTagChange;
+DUMPER7_ASSERTS_GameLogicTreeRoot_CompileTree;
 
 // Function GameLogicTree.GameLogicTree_EntityMgr.CheckActorHasTagByStr
 // 0x0018 (0x0018 - 0x0000)
@@ -392,14 +254,24 @@ public:
 DUMPER7_ASSERTS_GameLogicTree_EntityMgr_Static_RemoveActorTag;
 
 // Function GameLogicTree.GameLogicTree_EntityMgr.Static_SendLogicTreeMsgToActor
-// 0x0060 (0x0060 - 0x0000)
+// 0x0088 (0x0088 - 0x0000)
 struct GameLogicTree_EntityMgr_Static_SendLogicTreeMsgToActor final
 {
 public:
 	class AActor*                                 TargetActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLogicTree_MsgContext                  Msg;                                               // 0x0008(0x0058)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FLogicTree_MsgContext                  Msg;                                               // 0x0008(0x0080)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GameLogicTree_EntityMgr_Static_SendLogicTreeMsgToActor;
+
+// Function GameLogicTree.GameLogicTree_EntityMgr.Static_SendLogicTreeMsgToBpActor
+// 0x0088 (0x0088 - 0x0000)
+struct GameLogicTree_EntityMgr_Static_SendLogicTreeMsgToBpActor final
+{
+public:
+	class AActor*                                 TargetActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLogicTree_MsgContext                  Msg;                                               // 0x0008(0x0080)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameLogicTree_EntityMgr_Static_SendLogicTreeMsgToBpActor;
 
 // Function GameLogicTree.GameLogicTree_EntityMgr.AddTagToActor
 // 0x0010 (0x0010 - 0x0000)
@@ -422,7 +294,7 @@ public:
 DUMPER7_ASSERTS_GameLogicTree_EntityMgr_GetLogicByStrPath;
 
 // Function GameLogicTree.GameLogicTree_EntityMgr.InstallLogicTreeEntity
-// 0x0028 (0x0028 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct GameLogicTree_EntityMgr_InstallLogicTreeEntity final
 {
 public:
@@ -433,13 +305,14 @@ public:
 	bool                                          bReplicate;                                        // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          DefaultActive;                                     // 0x0019(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ExecuteImmediately;                                // 0x001A(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B[0x1];                                       // 0x001B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLogicTree_LogicHandle                 ReturnValue;                                       // 0x001C(0x000C)(Parm, OutParm, ReturnParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1B[0x5];                                       // 0x001B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Launcher;                                          // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLogicTree_LogicHandle                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ReturnParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GameLogicTree_EntityMgr_InstallLogicTreeEntity;
 
 // Function GameLogicTree.GameLogicTree_EntityMgr.InstallLogicTreeEntityByObjPath
-// 0x0030 (0x0030 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct GameLogicTree_EntityMgr_InstallLogicTreeEntityByObjPath final
 {
 public:
@@ -448,8 +321,9 @@ public:
 	bool                                          bReplicate;                                        // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          DefaultActive;                                     // 0x0021(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ExecuteImmediately;                                // 0x0022(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23[0x1];                                       // 0x0023(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLogicTree_LogicHandle                 ReturnValue;                                       // 0x0024(0x000C)(Parm, OutParm, ReturnParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	uint8                                         Pad_23[0x5];                                       // 0x0023(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Launcher;                                          // 0x0028(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLogicTree_LogicHandle                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ReturnParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GameLogicTree_EntityMgr_InstallLogicTreeEntityByObjPath;
 
@@ -464,12 +338,12 @@ public:
 DUMPER7_ASSERTS_GameLogicTree_EntityMgr_RemoveActorTag;
 
 // Function GameLogicTree.GameLogicTree_EntityMgr.SendLogicTreeMsgToActor
-// 0x0060 (0x0060 - 0x0000)
+// 0x0088 (0x0088 - 0x0000)
 struct GameLogicTree_EntityMgr_SendLogicTreeMsgToActor final
 {
 public:
 	class AActor*                                 TargetActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLogicTree_MsgContext                  Msg;                                               // 0x0008(0x0058)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FLogicTree_MsgContext                  Msg;                                               // 0x0008(0x0080)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GameLogicTree_EntityMgr_SendLogicTreeMsgToActor;
 
@@ -500,6 +374,170 @@ public:
 };
 DUMPER7_ASSERTS_GameLogicTreeEntity_GetMessageBus;
 
+// Function GameLogicTree.LogicTree_Decorator_BP.CheckCondition_BP
+// 0x0001 (0x0001 - 0x0000)
+struct LogicTree_Decorator_BP_CheckCondition_BP final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LogicTree_Decorator_BP_CheckCondition_BP;
+
+// Function GameLogicTree.LogicTree_EntityDataCom.AddData
+// 0x0010 (0x0010 - 0x0000)
+struct LogicTree_EntityDataCom_AddData final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BaseValue;                                         // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bReplicated;                                       // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LogicTree_EntityDataCom_AddData;
+
+// Function GameLogicTree.LogicTree_EntityDataCom.AddTag
+// 0x000C (0x000C - 0x0000)
+struct LogicTree_EntityDataCom_AddTag final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LogicTree_EntityDataCom_AddTag;
+
+// Function GameLogicTree.LogicTree_EntityDataCom.GetBaseData
+// 0x000C (0x000C - 0x0000)
+struct LogicTree_EntityDataCom_GetBaseData final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LogicTree_EntityDataCom_GetBaseData;
+
+// Function GameLogicTree.LogicTree_EntityDataCom.GetCurData
+// 0x000C (0x000C - 0x0000)
+struct LogicTree_EntityDataCom_GetCurData final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LogicTree_EntityDataCom_GetCurData;
+
+// Function GameLogicTree.LogicTree_EntityDataCom.GetMsgBus
+// 0x0008 (0x0008 - 0x0000)
+struct LogicTree_EntityDataCom_GetMsgBus final
+{
+public:
+	class ULogicTreeMessageBus*                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LogicTree_EntityDataCom_GetMsgBus;
+
+// Function GameLogicTree.LogicTree_EntityDataCom.IsPosInLagAABB
+// 0x0010 (0x0010 - 0x0000)
+struct LogicTree_EntityDataCom_IsPosInLagAABB final
+{
+public:
+	struct FVector                                InCheckPos;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LogicTree_EntityDataCom_IsPosInLagAABB;
+
+// Function GameLogicTree.LogicTree_EntityDataCom.RegisterTagChangeCallback
+// 0x0018 (0x0018 - 0x0000)
+struct LogicTree_EntityDataCom_RegisterTagChangeCallback final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FGameplayTag& Tag, bool IsContain)> Callback;                        // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LogicTree_EntityDataCom_RegisterTagChangeCallback;
+
+// Function GameLogicTree.LogicTree_EntityDataCom.RemoveTag
+// 0x000C (0x000C - 0x0000)
+struct LogicTree_EntityDataCom_RemoveTag final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LogicTree_EntityDataCom_RemoveTag;
+
+// Function GameLogicTree.LogicTree_EntityDataCom.SetBaseData
+// 0x000C (0x000C - 0x0000)
+struct LogicTree_EntityDataCom_SetBaseData final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewValue;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LogicTree_EntityDataCom_SetBaseData;
+
+// Function GameLogicTree.LogicTree_EntityDataCom.SetCurrentData
+// 0x000C (0x000C - 0x0000)
+struct LogicTree_EntityDataCom_SetCurrentData final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewValue;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LogicTree_EntityDataCom_SetCurrentData;
+
+// Function GameLogicTree.LogicTree_EntityDataCom.UnregisterTagChangeCallback
+// 0x0018 (0x0018 - 0x0000)
+struct LogicTree_EntityDataCom_UnregisterTagChangeCallback final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                BoundObject;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   FunctionName;                                      // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LogicTree_EntityDataCom_UnregisterTagChangeCallback;
+
+// Function GameLogicTree.LogicTree_EntityDataCom.GetData
+// 0x0014 (0x0014 - 0x0000)
+struct LogicTree_EntityDataCom_GetData final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OutBase;                                           // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OutCurrent;                                        // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LogicTree_EntityDataCom_GetData;
+
+// Function GameLogicTree.LogicTree_EntityDataCom.HasTag
+// 0x000C (0x000C - 0x0000)
+struct LogicTree_EntityDataCom_HasTag final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LogicTree_EntityDataCom_HasTag;
+
+// Function GameLogicTree.LogicTreeMessageBus.Broadcast_BP
+// 0x0080 (0x0080 - 0x0000)
+struct LogicTreeMessageBus_Broadcast_BP final
+{
+public:
+	struct FLogicTree_MsgContext                  Msg;                                               // 0x0000(0x0080)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LogicTreeMessageBus_Broadcast_BP;
+
+// Function GameLogicTree.LogicTree_TaskNode_BP.BP_TaskNode_Tick
+// 0x0004 (0x0004 - 0x0000)
+struct LogicTree_TaskNode_BP_BP_TaskNode_Tick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LogicTree_TaskNode_BP_BP_TaskNode_Tick;
+
 // Function GameLogicTree.LogicTree_TaskNode_BP.ExecuteBP
 // 0x0010 (0x0010 - 0x0000)
 struct LogicTree_TaskNode_BP_ExecuteBP final
@@ -511,14 +549,43 @@ public:
 };
 DUMPER7_ASSERTS_LogicTree_TaskNode_BP_ExecuteBP;
 
+// Function GameLogicTree.LogicTree_TaskNode_BP.FinishTaskFromBP
+// 0x0001 (0x0001 - 0x0000)
+struct LogicTree_TaskNode_BP_FinishTaskFromBP final
+{
+public:
+	bool                                          IsSuccess;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LogicTree_TaskNode_BP_FinishTaskFromBP;
+
+// Function GameLogicTree.LT_Decorator_CheckOwnerTag.OnTagChange
+// 0x000C (0x000C - 0x0000)
+struct LT_Decorator_CheckOwnerTag_OnTagChange final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsContain;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LT_Decorator_CheckOwnerTag_OnTagChange;
+
 // Function GameLogicTree.LT_Decorator_TriggerOnMsg.OnReceiveLogicMsg
-// 0x0058 (0x0058 - 0x0000)
+// 0x0080 (0x0080 - 0x0000)
 struct LT_Decorator_TriggerOnMsg_OnReceiveLogicMsg final
 {
 public:
-	struct FLogicTree_MsgContext                  Msg;                                               // 0x0000(0x0058)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FLogicTree_MsgContext                  Msg;                                               // 0x0000(0x0080)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LT_Decorator_TriggerOnMsg_OnReceiveLogicMsg;
+
+// Function GameLogicTree.LT_Decorator_TriggerOnMsg.OnReceiveLogicMsg_SingleTemp
+// 0x0080 (0x0080 - 0x0000)
+struct LT_Decorator_TriggerOnMsg_OnReceiveLogicMsg_SingleTemp final
+{
+public:
+	struct FLogicTree_MsgContext                  Msg;                                               // 0x0000(0x0080)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LT_Decorator_TriggerOnMsg_OnReceiveLogicMsg_SingleTemp;
 
 }
 

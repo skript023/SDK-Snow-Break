@@ -17,15 +17,15 @@
 namespace SDK
 {
 
-// LuaFunction uw_fight_rescue.uw_fight_rescue_C.BindExitInteractEvent
+// LuaFunction uw_fight_rescue.uw_fight_rescue_C.TriggerInteract
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_rescue_C::BindExitInteractEvent()
+void Uuw_fight_rescue_C::TriggerInteract()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rescue_C", "BindExitInteractEvent");
+		Func = Class->GetFunction("uw_fight_rescue_C", "TriggerInteract");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -36,15 +36,15 @@ void Uuw_fight_rescue_C::BindExitInteractEvent()
 }
 
 
-// LuaFunction uw_fight_rescue.uw_fight_rescue_C.TriggerInteract
+// LuaFunction uw_fight_rescue.uw_fight_rescue_C.BindExitInteractEvent
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_rescue_C::TriggerInteract()
+void Uuw_fight_rescue_C::BindExitInteractEvent()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rescue_C", "TriggerInteract");
+		Func = Class->GetFunction("uw_fight_rescue_C", "BindExitInteractEvent");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

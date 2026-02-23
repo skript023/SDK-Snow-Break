@@ -16,6 +16,15 @@
 namespace SDK::Params
 {
 
+// Function BP_Girl002a.BP_Girl002a_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_Girl002a_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Girl002a_C_ReceiveTick;
+
 // Function BP_Girl002a.BP_Girl002a_C.OnSwitchLeave
 // 0x0030 (0x0030 - 0x0000)
 struct BP_Girl002a_C_OnSwitchLeave final
@@ -33,15 +42,6 @@ public:
 	struct FTransform                             Trans;                                             // 0x0000(0x0030)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_Girl002a_C_OnSwitchEnter;
-
-// Function BP_Girl002a.BP_Girl002a_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_Girl002a_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Girl002a_C_ReceiveTick;
 
 // Function BP_Girl002a.BP_Girl002a_C.ExecuteUbergraph_BP_Girl002a
 // 0x0080 (0x0080 - 0x0000)

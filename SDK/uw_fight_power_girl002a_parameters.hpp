@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_power_girl002a.uw_fight_power_girl002a_C.PlayAnim
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_power_girl002a_C_PlayAnim final
+{
+public:
+	bool                                          StateType;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_power_girl002a_C_PlayAnim;
+
 // Function uw_fight_power_girl002a.uw_fight_power_girl002a_C.ExecuteUbergraph_uw_fight_power_girl002a
 // 0x0008 (0x0008 - 0x0000)
 struct uw_fight_power_girl002a_C_ExecuteUbergraph_uw_fight_power_girl002a final
@@ -23,15 +32,6 @@ public:
 	bool                                          K2Node_Event_StateType;                            // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_power_girl002a_C_ExecuteUbergraph_uw_fight_power_girl002a;
-
-// Function uw_fight_power_girl002a.uw_fight_power_girl002a_C.PlayAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_power_girl002a_C_PlayAnim final
-{
-public:
-	bool                                          StateType;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_power_girl002a_C_PlayAnim;
 
 }
 

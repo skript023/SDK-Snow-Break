@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -39,7 +39,7 @@ enum class EGameLogicTreeEvent : uint8
 };
 
 // Enum GameLogicTree.EGameLogicTreeAction
-// NumValues: 0x0007
+// NumValues: 0x0009
 enum class EGameLogicTreeAction : uint8
 {
 	None                                     = 0,
@@ -48,7 +48,9 @@ enum class EGameLogicTreeAction : uint8
 	DataMultiply                             = 3,
 	DataDivision                             = 4,
 	DataCover                                = 5,
-	EGameLogicTreeAction_MAX                 = 6,
+	DataMax                                  = 6,
+	DataMin                                  = 7,
+	EGameLogicTreeAction_MAX                 = 8,
 };
 
 // Enum GameLogicTree.ELogicTreeBBUnionType
@@ -91,6 +93,18 @@ enum class ELogicTreeDecoratorAbortType : uint8
 	ELogicTreeDecoratorAbortType_MAX         = 4,
 };
 
+// Enum GameLogicTree.ELogicTreeNodeStatus
+// NumValues: 0x0006
+enum class ELogicTreeNodeStatus : uint8
+{
+	NotStarted                               = 0,
+	Running                                  = 1,
+	Success                                  = 2,
+	Aborted                                  = 3,
+	Failed                                   = 4,
+	ELogicTreeNodeStatus_MAX                 = 5,
+};
+
 // Enum GameLogicTree.ELogicTree_NodeExecuteNet
 // NumValues: 0x0006
 enum class ELogicTree_NodeExecuteNet : uint8
@@ -113,18 +127,19 @@ enum class ELogicTree_ExecuteMsg : uint8
 };
 
 // Enum GameLogicTree.EGameLogic_NodeBBContextType
-// NumValues: 0x0005
+// NumValues: 0x0006
 enum class EGameLogic_NodeBBContextType : uint8
 {
 	Object                                   = 0,
 	ObjectArray                              = 1,
 	Int                                      = 2,
-	Vector                                   = 3,
-	EGameLogic_MAX                           = 4,
+	Float                                    = 3,
+	Vector                                   = 4,
+	EGameLogic_MAX                           = 5,
 };
 
 // Enum GameLogicTree.EGameLogic_NodeDataOwner
-// NumValues: 0x0007
+// NumValues: 0x0009
 enum class EGameLogic_NodeDataOwner : uint8
 {
 	UseBB                                    = 0,
@@ -133,7 +148,9 @@ enum class EGameLogic_NodeDataOwner : uint8
 	UseBBContext                             = 3,
 	UseEntityBB                              = 4,
 	UseContext_OwnerData                     = 5,
-	EGameLogic_MAX                           = 6,
+	UseInsCustomData                         = 6,
+	UseInsTreeData                           = 7,
+	EGameLogic_MAX                           = 8,
 };
 
 // Enum GameLogicTree.EGameLogic_NodeBlackBoardOwner
@@ -145,18 +162,6 @@ enum class EGameLogic_NodeBlackBoardOwner : uint8
 	UseSelf                                  = 2,
 	UseOwner                                 = 3,
 	EGameLogic_MAX                           = 4,
-};
-
-// Enum GameLogicTree.ELogicTreeNodeStatus
-// NumValues: 0x0006
-enum class ELogicTreeNodeStatus : uint8
-{
-	NotStarted                               = 0,
-	Running                                  = 1,
-	Success                                  = 2,
-	Aborted                                  = 3,
-	Failed                                   = 4,
-	ELogicTreeNodeStatus_MAX                 = 5,
 };
 
 // Enum GameLogicTree.ELTDecorator_CompareOperation
@@ -171,22 +176,6 @@ enum class ELTDecorator_CompareOperation : uint8
 	LessOrEqual                              = 5,
 	ELTDecorator_MAX                         = 6,
 };
-
-// ScriptStruct GameLogicTree.LogicTree_MsgContext
-// 0x0058 (0x0058 - 0x0000)
-struct FLogicTree_MsgContext final
-{
-public:
-	struct FGameplayTag                           MsgTag;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AActor>                  Launcher;                                          // 0x0008(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                CustomObj1;                                        // 0x0010(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<int32>                                 CustomIntArr;                                      // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector_NetQuantize>            CustomVecArr;                                      // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	class ULogicTree_CustomContext*               CustomContext;                                     // 0x0038(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FQuat>                          CustomRotArr;                                      // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_50[0x8];                                       // 0x0050(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLogicTree_MsgContext;
 
 // ScriptStruct GameLogicTree.LogicTreeBBValue
 // 0x0010 (0x0010 - 0x0000)
@@ -213,12 +202,40 @@ public:
 	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   DataName;                                          // 0x0004(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLogicTreeBBValue                      CacheValue;                                        // 0x000C(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	class FName                                   OwnerNameInContext;                                // 0x001C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         DataTypeIndex;                                     // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   OwnerNameInContext;                                // 0x0020(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ULogicTree_BlackBoard*                  TargetBB;                                          // 0x0028(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ULogicTree_EntityDataCom*               TargetDataCom;                                     // 0x0030(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLogicTree_DataAccessor;
+
+// ScriptStruct GameLogicTree.LogicTree_MsgContext
+// 0x0080 (0x0080 - 0x0000)
+struct FLogicTree_MsgContext final
+{
+public:
+	struct FGameplayTag                           MsgTag;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AActor>                  Launcher;                                          // 0x0008(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                CustomObj1;                                        // 0x0010(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UObject*>                        CustomObjList;                                     // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	TArray<int32>                                 CustomIntArr;                                      // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 CustomFloatArr;                                    // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector_NetQuantize>            CustomVecArr;                                      // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class ULogicTree_CustomContext*               CustomContext;                                     // 0x0058(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FQuat>                          CustomRotArr;                                      // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   CacheContextObjName;                               // 0x0070(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_78[0x8];                                       // 0x0078(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLogicTree_MsgContext;
+
+// ScriptStruct GameLogicTree.InsLogicArray
+// 0x0010 (0x0010 - 0x0000)
+struct FInsLogicArray final
+{
+public:
+	TArray<int32>                                 InsIds;                                            // 0x0000(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInsLogicArray;
 
 // ScriptStruct GameLogicTree.LogicTreeActionBindData
 // 0x0010 (0x0010 - 0x0000)
@@ -285,12 +302,14 @@ public:
 DUMPER7_ASSERTS_FLogicTree_EntityDataContainer;
 
 // ScriptStruct GameLogicTree.LogicTree_LogicHandle
-// 0x000C (0x000C - 0x0000)
+// 0x0010 (0x0010 - 0x0000)
 struct FLogicTree_LogicHandle final
 {
 public:
 	TWeakObjectPtr<class ULogicTree_LogicHandleCom> OwnerComponent;                                  // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         LogicId;                                           // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsSingleTempIns;                                   // 0x000C(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FLogicTree_LogicHandle;
 
@@ -339,6 +358,74 @@ public:
 	TArray<int32>                                 CustomInsArr;                                      // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLogicTree_NodeExecutionData;
+
+// ScriptStruct GameLogicTree.LogicTreeRuntimeLayout
+// 0x0008 (0x0008 - 0x0000)
+struct FLogicTreeRuntimeLayout final
+{
+public:
+	int32                                         NumStates;                                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumCustomData;                                     // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLogicTreeRuntimeLayout;
+
+// ScriptStruct GameLogicTree.LogicTreeInstanceData
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x04) FLogicTreeInstanceData final
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLogicTreeInstanceData;
+
+// ScriptStruct GameLogicTree.LogicTreeNodeInstanceData
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x04) FLogicTreeNodeInstanceData final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLogicTreeNodeInstanceData;
+
+// ScriptStruct GameLogicTree.LogicTreeNodeInstanceState
+// 0x0018 (0x0018 - 0x0000)
+struct FLogicTreeNodeInstanceState final
+{
+public:
+	ELogicTreeNodeStatus                          status;                                            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint32                                        ReEnterId;                                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CurrentChildIndex;                                 // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULogicTreeNode*                         JumpTickNode;                                      // 0x0010(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLogicTreeNodeInstanceState;
+
+// ScriptStruct GameLogicTree.LogicTreeInstanceContext
+// 0x0088 (0x0088 - 0x0000)
+struct FLogicTreeInstanceContext final
+{
+public:
+	class UGameLogicTreeRoot*                     Tree;                                              // 0x0000(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AActor>                  ActorOwner;                                        // 0x0008(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AActor>                  Launcher;                                          // 0x0010(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x70];                                      // 0x0018(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLogicTreeInstanceContext;
+
+// ScriptStruct GameLogicTree.LogicTreeInstancePool
+// 0x0048 (0x0048 - 0x0000)
+struct FLogicTreeInstancePool final
+{
+public:
+	int32                                         MaxInstances;                                      // 0x0000(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LiveInstances;                                     // 0x0004(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FLogicTreeNodeInstanceState>    States;                                            // 0x0008(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	TArray<struct FLogicTreeNodeInstanceData>     NodeData;                                          // 0x0018(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	TArray<struct FLogicTreeInstanceContext>      InsCtxArr;                                         // 0x0028(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	TArray<int32>                                 FreeInstanceIndices;                               // 0x0038(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLogicTreeInstancePool;
 
 // ScriptStruct GameLogicTree.LogicTree_BindActionToMsg
 // 0x0020 (0x0020 - 0x0000)

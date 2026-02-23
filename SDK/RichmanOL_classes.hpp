@@ -12,9 +12,9 @@
 
 #include "Engine_classes.hpp"
 #include "RichmanOL_structs.hpp"
-#include "MiniGame_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "ChessMap_classes.hpp"
+#include "MiniGame_classes.hpp"
 
 
 namespace SDK

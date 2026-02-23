@@ -11,28 +11,15 @@
 #include "Basic.hpp"
 
 #include "Game_classes.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass Condition_ModifierExist.Condition_ModifierExist_C
-// 0x0028 (0x0130 - 0x0108)
-class UCondition_ModifierExist_C final : public UCastConditionCheck
+// 0x0000 (0x0108 - 0x0108)
+class UCondition_ModifierExist_C final : public UCastConditionCheck_ModifierExist
 {
-public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0108(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class AGameCharacter*                         TempLauncher;                                      // 0x0110(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 Tag;                                               // 0x0118(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	int32                                         ModifierID;                                        // 0x0128(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-public:
-	bool Check(class UAbilityComponentBase* InAbility);
-	bool K2_CheckCondition(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
-	void K2_InitCondition();
-	void ExecuteUbergraph_Condition_ModifierExist(int32 EntryPoint);
-
 public:
 	static class UClass* StaticClass()
 	{

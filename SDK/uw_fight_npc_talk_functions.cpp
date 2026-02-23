@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.PlaySoundInLua
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const int32&                            SoundId                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_npc_talk_C::PlaySoundInLua(const int32& SoundId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_npc_talk_C", "PlaySoundInLua");
-
-	Params::uw_fight_npc_talk_C_PlaySoundInLua Parms{};
-
-	Parms.SoundId = SoundId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.ResetInfo
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -51,6 +26,25 @@ void Uuw_fight_npc_talk_C::ResetInfo()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_npc_talk_C", "ResetInfo");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.OnActive
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_npc_talk_C::OnActive()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_npc_talk_C", "OnActive");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -105,20 +99,26 @@ void Uuw_fight_npc_talk_C::SwitchCurrentInfoTo(const int32& InInfoIndex)
 }
 
 
-// LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.OnActive
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.PlaySoundInLua
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const int32&                            SoundId                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void Uuw_fight_npc_talk_C::OnActive()
+void Uuw_fight_npc_talk_C::PlaySoundInLua(const int32& SoundId)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_npc_talk_C", "OnActive");
+		Func = Class->GetFunction("uw_fight_npc_talk_C", "PlaySoundInLua");
+
+	Params::uw_fight_npc_talk_C_PlaySoundInLua Parms{};
+
+	Parms.SoundId = SoundId;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

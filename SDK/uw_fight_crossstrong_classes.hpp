@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -46,9 +46,9 @@ public:
 	bool                                          bPlayCross;                                        // 0x03F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_uw_fight_crossstrong(int32 EntryPoint);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void OnFireStrengthening(bool bStart, bool bSmall);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void ExecuteUbergraph_uw_fight_crossstrong(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

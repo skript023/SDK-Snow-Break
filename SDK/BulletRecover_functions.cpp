@@ -17,70 +17,6 @@
 namespace SDK
 {
 
-// Function BulletRecover.BulletRecover_C.InitConfig
-// (BlueprintCallable, BlueprintEvent)
-
-void UBulletRecover_C::InitConfig()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BulletRecover_C", "InitConfig");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BulletRecover.BulletRecover_C.ExecuteUbergraph_BulletRecover
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBulletRecover_C::ExecuteUbergraph_BulletRecover(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BulletRecover_C", "ExecuteUbergraph_BulletRecover");
-
-	Params::BulletRecover_C_ExecuteUbergraph_BulletRecover Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// LuaFunction BulletRecover.BulletRecover_C.K2_RecoverAttribute
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// class UAbilityComponentBase*            InAbility                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-bool UBulletRecover_C::K2_RecoverAttribute(class UAbilityComponentBase* InAbility, float InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BulletRecover_C", "K2_RecoverAttribute");
-
-	Params::BulletRecover_C_K2_RecoverAttribute Parms{};
-
-	Parms.InAbility = InAbility;
-	Parms.InValue = InValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveActive
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -128,6 +64,70 @@ void UBulletRecover_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Paw
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BulletRecover.BulletRecover_C.K2_RecoverAttribute
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// class UAbilityComponentBase*            InAbility                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+bool UBulletRecover_C::K2_RecoverAttribute(class UAbilityComponentBase* InAbility, float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BulletRecover_C", "K2_RecoverAttribute");
+
+	Params::BulletRecover_C_K2_RecoverAttribute Parms{};
+
+	Parms.InAbility = InAbility;
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BulletRecover.BulletRecover_C.InitConfig
+// (BlueprintCallable, BlueprintEvent)
+
+void UBulletRecover_C::InitConfig()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BulletRecover_C", "InitConfig");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BulletRecover.BulletRecover_C.ExecuteUbergraph_BulletRecover
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBulletRecover_C::ExecuteUbergraph_BulletRecover(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BulletRecover_C", "ExecuteUbergraph_BulletRecover");
+
+	Params::BulletRecover_C_ExecuteUbergraph_BulletRecover Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

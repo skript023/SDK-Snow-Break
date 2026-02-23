@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
 #include "Plot_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
 
 
@@ -100,34 +100,59 @@ public:
 };
 DUMPER7_ASSERTS_PlotItem_IsTimeout;
 
-// Function Plot.PlotSaveGame.LoadPlotSaveGame
-// 0x0008 (0x0008 - 0x0000)
-struct PlotSaveGame_LoadPlotSaveGame final
+// Function Plot.SpliceImgBG.OnInit
+// 0x0048 (0x0048 - 0x0000)
+struct SpliceImgBG_OnInit final
 {
 public:
-	class UPlotSaveGame*                          ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESpliceType                                   SpliceType;                                        // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UTexture2D*>                     TexturesArray;                                     // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FBlendParameters                       BlendParameters;                                   // 0x0018(0x0010)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bHide;                                             // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              RelativeAnchors;                                   // 0x002C(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              FocusPosition;                                     // 0x0034(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ScaleMultiplier;                                   // 0x003C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidget*                                InWidget;                                          // 0x0040(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PlotSaveGame_LoadPlotSaveGame;
+DUMPER7_ASSERTS_SpliceImgBG_OnInit;
 
-// Function Plot.PlotSaveGame.SaveKey
-// 0x0010 (0x0010 - 0x0000)
-struct PlotSaveGame_SaveKey final
+// Function Plot.SpliceImgBG.RemoveAllEffect
+// 0x0002 (0x0002 - 0x0000)
+struct SpliceImgBG_RemoveAllEffect final
 {
 public:
-	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Recover;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          FastComplete;                                      // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PlotSaveGame_SaveKey;
+DUMPER7_ASSERTS_SpliceImgBG_RemoveAllEffect;
 
-// Function Plot.PlotSaveGame.HasKey
-// 0x0018 (0x0018 - 0x0000)
-struct PlotSaveGame_HasKey final
+// Function Plot.SpliceImgBG.SetAndMoveBG
+// 0x0024 (0x0024 - 0x0000)
+struct SpliceImgBG_SetAndMoveBG final
 {
 public:
-	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bHide;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              RelativeAnchors;                                   // 0x0004(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              FocusPosition;                                     // 0x000C(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ScaleMultiplier;                                   // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Duration;                                          // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsLoop;                                            // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         LoopTimes;                                         // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PlotSaveGame_HasKey;
+DUMPER7_ASSERTS_SpliceImgBG_SetAndMoveBG;
+
+// Function Plot.SpliceImgBG.TickMoveBG
+// 0x0004 (0x0004 - 0x0000)
+struct SpliceImgBG_TickMoveBG final
+{
+public:
+	float                                         InDeltaTime;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SpliceImgBG_TickMoveBG;
 
 // Function Plot.MovieClipBackgroundUserWidget.ReplaceFontAsset
 // 0x0008 (0x0008 - 0x0000)
@@ -209,191 +234,6 @@ public:
 	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MovieClipMediaSourceImage_GetFileList;
-
-// Function Plot.PlotLibrary.ClearSequencerWidgetCallBack
-// 0x0008 (0x0008 - 0x0000)
-struct PlotLibrary_ClearSequencerWidgetCallBack final
-{
-public:
-	class UWidget*                                InChildWidget;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_ClearSequencerWidgetCallBack;
-
-// Function Plot.PlotLibrary.FindCameraEndLocationAndFOVInLevelSequence
-// 0x0018 (0x0018 - 0x0000)
-struct PlotLibrary_FindCameraEndLocationAndFOVInLevelSequence final
-{
-public:
-	class ULevelSequence*                         InSequence;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                OutEndLocation;                                    // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         OutFOV;                                            // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_FindCameraEndLocationAndFOVInLevelSequence;
-
-// Function Plot.PlotLibrary.FindRoleByName
-// 0x0020 (0x0020 - 0x0000)
-struct PlotLibrary_FindRoleByName final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 InName;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class APlotRoleActor*                         ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_FindRoleByName;
-
-// Function Plot.PlotLibrary.GetCurrentPlotFileName
-// 0x0018 (0x0018 - 0x0000)
-struct PlotLibrary_GetCurrentPlotFileName final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_GetCurrentPlotFileName;
-
-// Function Plot.PlotLibrary.GetCurrentPlotWidget
-// 0x0010 (0x0010 - 0x0000)
-struct PlotLibrary_GetCurrentPlotWidget final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPlotWidget*                            ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_GetCurrentPlotWidget;
-
-// Function Plot.PlotLibrary.GetCurrentSequencer
-// 0x0010 (0x0010 - 0x0000)
-struct PlotLibrary_GetCurrentSequencer final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USequencerUserWidget*                   ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_GetCurrentSequencer;
-
-// Function Plot.PlotLibrary.GetDefaultSpineAnimationNameFromData
-// 0x0020 (0x0020 - 0x0000)
-struct PlotLibrary_GetDefaultSpineAnimationNameFromData final
-{
-public:
-	TArray<class FString>                         InData;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_GetDefaultSpineAnimationNameFromData;
-
-// Function Plot.PlotLibrary.GetPlotItemByClass
-// 0x0020 (0x0020 - 0x0000)
-struct PlotLibrary_GetPlotItemByClass final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                 InClass;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UPlotItem*>                      ReturnValue;                                       // 0x0010(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_GetPlotItemByClass;
-
-// Function Plot.PlotLibrary.GetPlotName2ImageData
-// 0x0138 (0x0138 - 0x0000)
-struct PlotLibrary_GetPlotName2ImageData final
-{
-public:
-	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPlotName2Img                          ReturnValue;                                       // 0x0010(0x0128)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_GetPlotName2ImageData;
-
-// Function Plot.PlotLibrary.GetPlotNameConfig
-// 0x0020 (0x0020 - 0x0000)
-struct PlotLibrary_GetPlotNameConfig final
-{
-public:
-	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USpineAtlasAsset*                       OutAtlas;                                          // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USpineSkeletonDataAsset*                OutSkeletonData;                                   // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_GetPlotNameConfig;
-
-// Function Plot.PlotLibrary.GetPlotRoleConfig
-// 0x0068 (0x0068 - 0x0000)
-struct PlotLibrary_GetPlotRoleConfig final
-{
-public:
-	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPlotRoleInfo                          ReturnValue;                                       // 0x0008(0x0060)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_GetPlotRoleConfig;
-
-// Function Plot.PlotLibrary.GetTalkOperationType
-// 0x0010 (0x0010 - 0x0000)
-struct PlotLibrary_GetTalkOperationType final
-{
-public:
-	class UPlotItem*                              InItem;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EDialogueOperationType                        ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_PlotLibrary_GetTalkOperationType;
-
-// Function Plot.PlotLibrary.LuaGetDataTableRowFromName
-// 0x0018 (0x0018 - 0x0000)
-struct PlotLibrary_LuaGetDataTableRowFromName final
-{
-public:
-	class UDataTable*                             Table;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   RowName;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_PlotLibrary_LuaGetDataTableRowFromName;
-
-// Function Plot.PlotLibrary.RemoveLineBreaksInline
-// 0x0018 (0x0018 - 0x0000)
-struct PlotLibrary_RemoveLineBreaksInline final
-{
-public:
-	class FString                                 SourceString;                                      // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPlot*                                  InPlot;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_RemoveLineBreaksInline;
-
-// Function Plot.PlotLibrary.ReplaceHyperColorTag
-// 0x0018 (0x0018 - 0x0000)
-struct PlotLibrary_ReplaceHyperColorTag final
-{
-public:
-	class FString                                 SourceString;                                      // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPlot*                                  InPlot;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_ReplaceHyperColorTag;
-
-// Function Plot.PlotLibrary.SetNearClipPlaneForPlotSequencer
-// 0x0004 (0x0004 - 0x0000)
-struct PlotLibrary_SetNearClipPlaneForPlotSequencer final
-{
-public:
-	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_SetNearClipPlaneForPlotSequencer;
-
-// Function Plot.PlotLibrary.SetPlotRoleTexture
-// 0x0018 (0x0018 - 0x0000)
-struct PlotLibrary_SetPlotRoleTexture final
-{
-public:
-	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInstanceDynamic*               RoleMaterial;                                      // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_SetPlotRoleTexture;
-
-// Function Plot.PlotLibrary.SkipParentSequencerWidgetAnimation
-// 0x0008 (0x0008 - 0x0000)
-struct PlotLibrary_SkipParentSequencerWidgetAnimation final
-{
-public:
-	class UWidget*                                InChildWidget;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PlotLibrary_SkipParentSequencerWidgetAnimation;
 
 // Function Plot.Plot.SetPlotLanguageNames
 // 0x0010 (0x0010 - 0x0000)
@@ -759,60 +599,6 @@ public:
 };
 DUMPER7_ASSERTS_PlotFindEvidenceWidget_NotifyComplete;
 
-// Function Plot.SpliceImgBG.OnInit
-// 0x0048 (0x0048 - 0x0000)
-struct SpliceImgBG_OnInit final
-{
-public:
-	ESpliceType                                   SpliceType;                                        // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UTexture2D*>                     TexturesArray;                                     // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FBlendParameters                       BlendParameters;                                   // 0x0018(0x0010)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bHide;                                             // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              RelativeAnchors;                                   // 0x002C(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              FocusPosition;                                     // 0x0034(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ScaleMultiplier;                                   // 0x003C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidget*                                InWidget;                                          // 0x0040(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SpliceImgBG_OnInit;
-
-// Function Plot.SpliceImgBG.RemoveAllEffect
-// 0x0002 (0x0002 - 0x0000)
-struct SpliceImgBG_RemoveAllEffect final
-{
-public:
-	bool                                          Recover;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          FastComplete;                                      // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SpliceImgBG_RemoveAllEffect;
-
-// Function Plot.SpliceImgBG.SetAndMoveBG
-// 0x0024 (0x0024 - 0x0000)
-struct SpliceImgBG_SetAndMoveBG final
-{
-public:
-	bool                                          bHide;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              RelativeAnchors;                                   // 0x0004(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              FocusPosition;                                     // 0x000C(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ScaleMultiplier;                                   // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Duration;                                          // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsLoop;                                            // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         LoopTimes;                                         // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SpliceImgBG_SetAndMoveBG;
-
-// Function Plot.SpliceImgBG.TickMoveBG
-// 0x0004 (0x0004 - 0x0000)
-struct SpliceImgBG_TickMoveBG final
-{
-public:
-	float                                         InDeltaTime;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SpliceImgBG_TickMoveBG;
-
 // Function Plot.PlotItem_TableGame.GotoGroup
 // 0x0010 (0x0010 - 0x0000)
 struct PlotItem_TableGame_GotoGroup final
@@ -989,6 +775,191 @@ public:
 };
 DUMPER7_ASSERTS_PlotItem_Talk_GetSpeakerName;
 
+// Function Plot.PlotLibrary.ClearSequencerWidgetCallBack
+// 0x0008 (0x0008 - 0x0000)
+struct PlotLibrary_ClearSequencerWidgetCallBack final
+{
+public:
+	class UWidget*                                InChildWidget;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_ClearSequencerWidgetCallBack;
+
+// Function Plot.PlotLibrary.FindCameraEndLocationAndFOVInLevelSequence
+// 0x0018 (0x0018 - 0x0000)
+struct PlotLibrary_FindCameraEndLocationAndFOVInLevelSequence final
+{
+public:
+	class ULevelSequence*                         InSequence;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                OutEndLocation;                                    // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OutFOV;                                            // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_FindCameraEndLocationAndFOVInLevelSequence;
+
+// Function Plot.PlotLibrary.FindRoleByName
+// 0x0020 (0x0020 - 0x0000)
+struct PlotLibrary_FindRoleByName final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InName;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APlotRoleActor*                         ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_FindRoleByName;
+
+// Function Plot.PlotLibrary.GetCurrentPlotFileName
+// 0x0018 (0x0018 - 0x0000)
+struct PlotLibrary_GetCurrentPlotFileName final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_GetCurrentPlotFileName;
+
+// Function Plot.PlotLibrary.GetCurrentPlotWidget
+// 0x0010 (0x0010 - 0x0000)
+struct PlotLibrary_GetCurrentPlotWidget final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPlotWidget*                            ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_GetCurrentPlotWidget;
+
+// Function Plot.PlotLibrary.GetCurrentSequencer
+// 0x0010 (0x0010 - 0x0000)
+struct PlotLibrary_GetCurrentSequencer final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USequencerUserWidget*                   ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_GetCurrentSequencer;
+
+// Function Plot.PlotLibrary.GetDefaultSpineAnimationNameFromData
+// 0x0020 (0x0020 - 0x0000)
+struct PlotLibrary_GetDefaultSpineAnimationNameFromData final
+{
+public:
+	TArray<class FString>                         InData;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_GetDefaultSpineAnimationNameFromData;
+
+// Function Plot.PlotLibrary.GetPlotItemByClass
+// 0x0020 (0x0020 - 0x0000)
+struct PlotLibrary_GetPlotItemByClass final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                 InClass;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UPlotItem*>                      ReturnValue;                                       // 0x0010(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_GetPlotItemByClass;
+
+// Function Plot.PlotLibrary.GetPlotName2ImageData
+// 0x0138 (0x0138 - 0x0000)
+struct PlotLibrary_GetPlotName2ImageData final
+{
+public:
+	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPlotName2Img                          ReturnValue;                                       // 0x0010(0x0128)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_GetPlotName2ImageData;
+
+// Function Plot.PlotLibrary.GetPlotNameConfig
+// 0x0020 (0x0020 - 0x0000)
+struct PlotLibrary_GetPlotNameConfig final
+{
+public:
+	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USpineAtlasAsset*                       OutAtlas;                                          // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USpineSkeletonDataAsset*                OutSkeletonData;                                   // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_GetPlotNameConfig;
+
+// Function Plot.PlotLibrary.GetPlotRoleConfig
+// 0x0068 (0x0068 - 0x0000)
+struct PlotLibrary_GetPlotRoleConfig final
+{
+public:
+	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPlotRoleInfo                          ReturnValue;                                       // 0x0008(0x0060)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_GetPlotRoleConfig;
+
+// Function Plot.PlotLibrary.GetTalkOperationType
+// 0x0010 (0x0010 - 0x0000)
+struct PlotLibrary_GetTalkOperationType final
+{
+public:
+	class UPlotItem*                              InItem;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EDialogueOperationType                        ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlotLibrary_GetTalkOperationType;
+
+// Function Plot.PlotLibrary.LuaGetDataTableRowFromName
+// 0x0018 (0x0018 - 0x0000)
+struct PlotLibrary_LuaGetDataTableRowFromName final
+{
+public:
+	class UDataTable*                             Table;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   RowName;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlotLibrary_LuaGetDataTableRowFromName;
+
+// Function Plot.PlotLibrary.RemoveLineBreaksInline
+// 0x0018 (0x0018 - 0x0000)
+struct PlotLibrary_RemoveLineBreaksInline final
+{
+public:
+	class FString                                 SourceString;                                      // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPlot*                                  InPlot;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_RemoveLineBreaksInline;
+
+// Function Plot.PlotLibrary.ReplaceHyperColorTag
+// 0x0018 (0x0018 - 0x0000)
+struct PlotLibrary_ReplaceHyperColorTag final
+{
+public:
+	class FString                                 SourceString;                                      // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPlot*                                  InPlot;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_ReplaceHyperColorTag;
+
+// Function Plot.PlotLibrary.SetNearClipPlaneForPlotSequencer
+// 0x0004 (0x0004 - 0x0000)
+struct PlotLibrary_SetNearClipPlaneForPlotSequencer final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_SetNearClipPlaneForPlotSequencer;
+
+// Function Plot.PlotLibrary.SetPlotRoleTexture
+// 0x0018 (0x0018 - 0x0000)
+struct PlotLibrary_SetPlotRoleTexture final
+{
+public:
+	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInstanceDynamic*               RoleMaterial;                                      // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_SetPlotRoleTexture;
+
+// Function Plot.PlotLibrary.SkipParentSequencerWidgetAnimation
+// 0x0008 (0x0008 - 0x0000)
+struct PlotLibrary_SkipParentSequencerWidgetAnimation final
+{
+public:
+	class UWidget*                                InChildWidget;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotLibrary_SkipParentSequencerWidgetAnimation;
+
 // Function Plot.PlotRoleEffectWidget.GetSpineDefaultAnimName
 // 0x0020 (0x0020 - 0x0000)
 struct PlotRoleEffectWidget_GetSpineDefaultAnimName final
@@ -1061,6 +1032,35 @@ public:
 	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_PlotRoleEffectWidget_PlaySpine;
+
+// Function Plot.PlotSaveGame.LoadPlotSaveGame
+// 0x0008 (0x0008 - 0x0000)
+struct PlotSaveGame_LoadPlotSaveGame final
+{
+public:
+	class UPlotSaveGame*                          ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotSaveGame_LoadPlotSaveGame;
+
+// Function Plot.PlotSaveGame.SaveKey
+// 0x0010 (0x0010 - 0x0000)
+struct PlotSaveGame_SaveKey final
+{
+public:
+	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotSaveGame_SaveKey;
+
+// Function Plot.PlotSaveGame.HasKey
+// 0x0018 (0x0018 - 0x0000)
+struct PlotSaveGame_HasKey final
+{
+public:
+	class FString                                 InKey;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlotSaveGame_HasKey;
 
 // Function Plot.PlotSpineEffectImage.SetDataAndPlayAnimation
 // 0x0048 (0x0048 - 0x0000)
@@ -1237,6 +1237,17 @@ public:
 	class UPlotItem*                              InItem;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_PlotWidget_LuaImpl_NotifyPlaySequenceWidget;
+
+// Function Plot.PlotWidget.LuaImpl_SetEffectIntensity
+// 0x0010 (0x0010 - 0x0000)
+struct PlotWidget_LuaImpl_SetEffectIntensity final
+{
+public:
+	class UWidget*                                InWidget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EffectIntensity;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PlotWidget_LuaImpl_SetEffectIntensity;
 
 // Function Plot.PlotWidget.NotifyBeginLuaImpl
 // 0x0028 (0x0028 - 0x0000)

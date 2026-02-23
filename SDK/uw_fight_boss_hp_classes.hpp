@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -96,11 +96,11 @@ public:
 	void ExecuteUbergraph_uw_fight_boss_hp(int32 EntryPoint);
 	void StageBreakProgressPlayAnim(float Precent, bool bBreak);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void K2_OnAppliedModifierChange(int32 ModifierID, bool IsApply, int64 InLauncherCharacterHashIndex);
-	void K2_OnUpdate(float InDeltaTime);
 	void Construct();
-	void OnDamageNumChange(float DamageTaken);
 	void K2_NotifyInitBindBoss();
+	void K2_OnUpdate(float InDeltaTime);
+	void K2_OnAppliedModifierChange(int32 ModifierID, bool IsApply, int64 InLauncherCharacterHashIndex);
+	void OnDamageNumChange(float DamageTaken);
 	void Destruct();
 
 	class FString GetModuleName() const;

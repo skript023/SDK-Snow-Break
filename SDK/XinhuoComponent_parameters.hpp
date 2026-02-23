@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Game_structs.hpp"
 
 
 namespace SDK::Params
@@ -70,25 +70,6 @@ public:
 };
 DUMPER7_ASSERTS_XinhuoComponent_C_SetAttribute;
 
-// Function XinhuoComponent.XinhuoComponent_C.K2_ReceiveActive
-// 0x0010 (0x0010 - 0x0000)
-struct XinhuoComponent_C_K2_ReceiveActive final
-{
-public:
-	const class UObject*                          Instigator;                                        // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bReActive;                                         // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_XinhuoComponent_C_K2_ReceiveActive;
-
-// Function XinhuoComponent.XinhuoComponent_C.K2_ReceiveDeActive
-// 0x0008 (0x0008 - 0x0000)
-struct XinhuoComponent_C_K2_ReceiveDeActive final
-{
-public:
-	const class UGameAbilityComponent*            Pawn;                                              // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_XinhuoComponent_C_K2_ReceiveDeActive;
-
 // Function XinhuoComponent.XinhuoComponent_C.K2_ReceiveTick
 // 0x0010 (0x0010 - 0x0000)
 struct XinhuoComponent_C_K2_ReceiveTick final
@@ -100,6 +81,16 @@ public:
 };
 DUMPER7_ASSERTS_XinhuoComponent_C_K2_ReceiveTick;
 
+// Function XinhuoComponent.XinhuoComponent_C.K2_ReceiveActive
+// 0x0010 (0x0010 - 0x0000)
+struct XinhuoComponent_C_K2_ReceiveActive final
+{
+public:
+	const class UObject*                          Instigator;                                        // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bReActive;                                         // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_XinhuoComponent_C_K2_ReceiveActive;
+
 // Function XinhuoComponent.XinhuoComponent_C.OnApplyModifier
 // 0x0008 (0x0008 - 0x0000)
 struct XinhuoComponent_C_OnApplyModifier final
@@ -109,6 +100,15 @@ public:
 	bool                                          IsApply;                                           // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_XinhuoComponent_C_OnApplyModifier;
+
+// Function XinhuoComponent.XinhuoComponent_C.K2_ReceiveDeActive
+// 0x0008 (0x0008 - 0x0000)
+struct XinhuoComponent_C_K2_ReceiveDeActive final
+{
+public:
+	const class UGameAbilityComponent*            Pawn;                                              // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_XinhuoComponent_C_K2_ReceiveDeActive;
 
 // Function XinhuoComponent.XinhuoComponent_C.ExecuteUbergraph_XinhuoComponent
 // 0x0060 (0x0060 - 0x0000)

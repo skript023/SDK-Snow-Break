@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Wp10302_Magazine.BP_Wp10302_Magazine_C
-// 0x0000 (0x04F8 - 0x04F8)
+// 0x0000 (0x05D0 - 0x05D0)
 class ABP_Wp10302_Magazine_C final : public Abp_wpbase_magazine_C
 {
 public:

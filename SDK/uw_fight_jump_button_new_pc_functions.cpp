@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function uw_fight_jump_button_new_pc.uw_fight_jump_button_new_pc_C.ExecuteUbergraph_uw_fight_jump_button_new_pc
-// (Final, UbergraphFunction, HasDefaults)
+// Function uw_fight_jump_button_new_pc.uw_fight_jump_button_new_pc_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_jump_button_new_pc_C::ExecuteUbergraph_uw_fight_jump_button_new_pc(int32 EntryPoint)
+void Uuw_fight_jump_button_new_pc_C::PreConstruct(bool IsDesignTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_jump_button_new_pc_C", "ExecuteUbergraph_uw_fight_jump_button_new_pc");
+		Func = Class->GetFunction("uw_fight_jump_button_new_pc_C", "PreConstruct");
 
-	Params::uw_fight_jump_button_new_pc_C_ExecuteUbergraph_uw_fight_jump_button_new_pc Parms{};
+	Params::uw_fight_jump_button_new_pc_C_PreConstruct Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.IsDesignTime = IsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -59,21 +59,21 @@ void Uuw_fight_jump_button_new_pc_C::Tick(const struct FGeometry& MyGeometry, fl
 }
 
 
-// Function uw_fight_jump_button_new_pc.uw_fight_jump_button_new_pc_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function uw_fight_jump_button_new_pc.uw_fight_jump_button_new_pc_C.ExecuteUbergraph_uw_fight_jump_button_new_pc
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_jump_button_new_pc_C::PreConstruct(bool IsDesignTime)
+void Uuw_fight_jump_button_new_pc_C::ExecuteUbergraph_uw_fight_jump_button_new_pc(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_jump_button_new_pc_C", "PreConstruct");
+		Func = Class->GetFunction("uw_fight_jump_button_new_pc_C", "ExecuteUbergraph_uw_fight_jump_button_new_pc");
 
-	Params::uw_fight_jump_button_new_pc_C_PreConstruct Parms{};
+	Params::uw_fight_jump_button_new_pc_C_ExecuteUbergraph_uw_fight_jump_button_new_pc Parms{};
 
-	Parms.IsDesignTime = IsDesignTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

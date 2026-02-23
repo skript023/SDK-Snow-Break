@@ -36,8 +36,8 @@ public:
 	class URedirectImage*                         Img_Bg;                                            // 0x02D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_joystick_cover(int32 EntryPoint);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void ExecuteUbergraph_uw_fight_joystick_cover(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

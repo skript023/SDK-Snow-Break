@@ -2567,9 +2567,10 @@ class UAnimSequence* UInteractionLib::GetCharacterAnimation(const class FString&
 // struct FVector2D*                       HitPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool*                                   Hit                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   LOD                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   UVIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FCanvasUVTri>             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FCanvasUVTri> UInteractionLib::GetSkeletonMeshTriangle(class USkeletalMeshComponent* Mesh, const struct FVector2D& CanvasSize, const struct FVector& WorldPosition, const struct FVector& Dir, struct FVector2D* HitPosition, bool* Hit, int32 LOD)
+TArray<struct FCanvasUVTri> UInteractionLib::GetSkeletonMeshTriangle(class USkeletalMeshComponent* Mesh, const struct FVector2D& CanvasSize, const struct FVector& WorldPosition, const struct FVector& Dir, struct FVector2D* HitPosition, bool* Hit, int32 LOD, int32 UVIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2583,6 +2584,53 @@ TArray<struct FCanvasUVTri> UInteractionLib::GetSkeletonMeshTriangle(class USkel
 	Parms.WorldPosition = std::move(WorldPosition);
 	Parms.Dir = std::move(Dir);
 	Parms.LOD = LOD;
+	Parms.UVIndex = UVIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (HitPosition != nullptr)
+		*HitPosition = std::move(Parms.HitPosition);
+
+	if (Hit != nullptr)
+		*Hit = Parms.Hit;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteraction.InteractionLib.GetSkeletonMeshTriangleMarkByVertexColor
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class USkeletalMeshComponent*           Mesh                                                   (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 CanvasSize                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   WorldPosition                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Dir                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D*                       HitPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   Hit                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   LOD                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   UVIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FCanvasUVTri>             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FCanvasUVTri> UInteractionLib::GetSkeletonMeshTriangleMarkByVertexColor(class USkeletalMeshComponent* Mesh, const struct FVector2D& CanvasSize, const struct FVector& WorldPosition, const struct FVector& Dir, struct FVector2D* HitPosition, bool* Hit, int32 LOD, int32 UVIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionLib", "GetSkeletonMeshTriangleMarkByVertexColor");
+
+	Params::InteractionLib_GetSkeletonMeshTriangleMarkByVertexColor Parms{};
+
+	Parms.Mesh = Mesh;
+	Parms.CanvasSize = std::move(CanvasSize);
+	Parms.WorldPosition = std::move(WorldPosition);
+	Parms.Dir = std::move(Dir);
+	Parms.LOD = LOD;
+	Parms.UVIndex = UVIndex;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2729,6 +2777,83 @@ void UInteractionLib::NotifyTutorialPlayShowSequence()
 	GetDefaultObj()->ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteraction.InteractionLib.PrepareIndexByVertexColor
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class USkeletalMeshComponent*           Mesh                                                   (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 CanvasSize                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   WorldPosition                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Dir                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D*                       HitPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   Hit                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   LOD                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Threshold                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionLib::PrepareIndexByVertexColor(class USkeletalMeshComponent* Mesh, const struct FVector2D& CanvasSize, const struct FVector& WorldPosition, const struct FVector& Dir, struct FVector2D* HitPosition, bool* Hit, int32 LOD, float Threshold)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionLib", "PrepareIndexByVertexColor");
+
+	Params::InteractionLib_PrepareIndexByVertexColor Parms{};
+
+	Parms.Mesh = Mesh;
+	Parms.CanvasSize = std::move(CanvasSize);
+	Parms.WorldPosition = std::move(WorldPosition);
+	Parms.Dir = std::move(Dir);
+	Parms.LOD = LOD;
+	Parms.Threshold = Threshold;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (HitPosition != nullptr)
+		*HitPosition = std::move(Parms.HitPosition);
+
+	if (Hit != nullptr)
+		*Hit = Parms.Hit;
+}
+
+
+// Function CharacterInteraction.InteractionLib.ReadJsonDataFromFileByPathRecursionInterface
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    JsonName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   IsSuccess                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FVector> UInteractionLib::ReadJsonDataFromFileByPathRecursionInterface(const class FString& Path, const class FString& JsonName, bool* IsSuccess)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionLib", "ReadJsonDataFromFileByPathRecursionInterface");
+
+	Params::InteractionLib_ReadJsonDataFromFileByPathRecursionInterface Parms{};
+
+	Parms.Path = std::move(Path);
+	Parms.JsonName = std::move(JsonName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (IsSuccess != nullptr)
+		*IsSuccess = Parms.IsSuccess;
+
+	return Parms.ReturnValue;
 }
 
 

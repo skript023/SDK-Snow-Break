@@ -81,30 +81,39 @@ void Uuw_fight_boss_hp_C::Tick(const struct FGeometry& MyGeometry, float InDelta
 }
 
 
-// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.K2_OnAppliedModifierChange
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   ModifierID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    IsApply                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// int64                                   InLauncherCharacterHashIndex                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_boss_hp_C::K2_OnAppliedModifierChange(int32 ModifierID, bool IsApply, int64 InLauncherCharacterHashIndex)
+void Uuw_fight_boss_hp_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_boss_hp_C", "K2_OnAppliedModifierChange");
-
-	Params::uw_fight_boss_hp_C_K2_OnAppliedModifierChange Parms{};
-
-	Parms.ModifierID = ModifierID;
-	Parms.IsApply = IsApply;
-	Parms.InLauncherCharacterHashIndex = InLauncherCharacterHashIndex;
+		Func = Class->GetFunction("uw_fight_boss_hp_C", "Construct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.K2_NotifyInitBindBoss
+// (Native, Event, Protected, BlueprintEvent)
+
+void Uuw_fight_boss_hp_C::K2_NotifyInitBindBoss()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_boss_hp_C", "K2_NotifyInitBindBoss");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -135,20 +144,30 @@ void Uuw_fight_boss_hp_C::K2_OnUpdate(float InDeltaTime)
 }
 
 
-// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.K2_OnAppliedModifierChange
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   ModifierID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    IsApply                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// int64                                   InLauncherCharacterHashIndex                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void Uuw_fight_boss_hp_C::Construct()
+void Uuw_fight_boss_hp_C::K2_OnAppliedModifierChange(int32 ModifierID, bool IsApply, int64 InLauncherCharacterHashIndex)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_boss_hp_C", "Construct");
+		Func = Class->GetFunction("uw_fight_boss_hp_C", "K2_OnAppliedModifierChange");
+
+	Params::uw_fight_boss_hp_C_K2_OnAppliedModifierChange Parms{};
+
+	Parms.ModifierID = ModifierID;
+	Parms.IsApply = IsApply;
+	Parms.InLauncherCharacterHashIndex = InLauncherCharacterHashIndex;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -174,25 +193,6 @@ void Uuw_fight_boss_hp_C::OnDamageNumChange(float DamageTaken)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_boss_hp.uw_fight_boss_hp_C.K2_NotifyInitBindBoss
-// (Native, Event, Protected, BlueprintEvent)
-
-void Uuw_fight_boss_hp_C::K2_NotifyInitBindBoss()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_boss_hp_C", "K2_NotifyInitBindBoss");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

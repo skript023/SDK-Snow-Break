@@ -10,40 +10,40 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Game_structs.hpp"
 #include "Game_classes.hpp"
-#include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass Trap_mon_902_Skill02.Trap_mon_902_Skill02_C
-// 0x0060 (0x1870 - 0x1810)
+// 0x0060 (0x18B0 - 0x1850)
 class ATrap_mon_902_Skill02_C final : public ATrap
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1810(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USphereComponent*                       Sphere;                                            // 0x1818(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                Location1;                                         // 0x1820(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                Location2;                                         // 0x182C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bBombed;                                           // 0x1838(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          bOverlap;                                          // 0x1839(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_183A[0x6];                                     // 0x183A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UParticleSystemComponent*               BombParticle1;                                     // 0x1840(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UParticleSystemComponent*               BombParticle2;                                     // 0x1848(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UWwiseComponent*                        Sound;                                             // 0x1850(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UWwiseComponent*                        Sound2;                                            // 0x1858(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UWwiseComponent*                        Sound1;                                            // 0x1860(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1850(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USphereComponent*                       Sphere;                                            // 0x1858(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                Location1;                                         // 0x1860(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                Location2;                                         // 0x186C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bBombed;                                           // 0x1878(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          bOverlap;                                          // 0x1879(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_187A[0x6];                                     // 0x187A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UParticleSystemComponent*               BombParticle1;                                     // 0x1880(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UParticleSystemComponent*               BombParticle2;                                     // 0x1888(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWwiseComponent*                        Sound;                                             // 0x1890(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWwiseComponent*                        Sound2;                                            // 0x1898(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWwiseComponent*                        Sound1;                                            // 0x18A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ReceiveBeginPlay();
-	void BP_OnDead(class UAbilityComponentBase* Killer);
-	void BP_ClientPlayTrapEndExhibition();
 	void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
+	void BP_OnDead(class UAbilityComponentBase* Killer);
 	void Server_OnActive();
 	void Client_OnActive();
+	void BP_ClientPlayTrapEndExhibition();
 	void OnRecycle();
 	void ExecuteUbergraph_Trap_mon_902_Skill02(int32 EntryPoint);
 

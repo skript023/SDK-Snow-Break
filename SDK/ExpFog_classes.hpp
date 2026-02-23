@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -94,6 +94,7 @@ public:
 	void CloseFog();
 	void OpenFog();
 	void DisableFog(class FName FogName);
+	void FogSwitchoff();
 	void ExecuteUbergraph_ExpFog(int32 EntryPoint);
 
 public:

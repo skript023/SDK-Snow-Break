@@ -126,7 +126,7 @@ public:
 DUMPER7_ASSERTS_AAccompanyCameraActor;
 
 // Class CharacterAccompany.AccompanyCameraInstance
-// 0x0140 (0x04E0 - 0x03A0)
+// 0x01E0 (0x0580 - 0x03A0)
 class UAccompanyCameraInstance final : public UCameraInstance
 {
 public:
@@ -135,8 +135,8 @@ public:
 	float                                         CameraZoomFactorMultiplier;                        // 0x03CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         CameraZoomFactor;                                  // 0x03D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_3D4[0xC];                                      // 0x03D4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FStandbyCameraConfig                   StandbyCameraConfig;                               // 0x03E0(0x00F0)(Transient, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4D0[0x10];                                     // 0x04D0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FStandbyCameraConfig                   StandbyCameraConfig;                               // 0x03E0(0x0190)(Transient, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_570[0x10];                                     // 0x0570(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddInput(const struct FVector2D& Value);

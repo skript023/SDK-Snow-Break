@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass AIDirectorEvent.AIDirectorEvent_C
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0180 - 0x0180)
 class UAIDirectorEvent_C final : public UGameTaskEvent_AIDirector
 {
 public:

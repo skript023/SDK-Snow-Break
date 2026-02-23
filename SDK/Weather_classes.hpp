@@ -19,6 +19,31 @@
 namespace SDK
 {
 
+// Class Weather.SandstormConfig
+// 0x0080 (0x00B0 - 0x0030)
+class USandstormConfig final : public UPrimaryDataAsset
+{
+public:
+	struct FSandstormParameter                    Parameter;                                         // 0x0030(0x0074)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            BlendInCurve;                                      // 0x00A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SandstormConfig")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SandstormConfig")
+	}
+	static class USandstormConfig* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USandstormConfig>();
+	}
+};
+DUMPER7_ASSERTS_USandstormConfig;
+
 // Class Weather.RainConfig
 // 0x0188 (0x01B8 - 0x0030)
 class URainConfig final : public UPrimaryDataAsset
@@ -177,31 +202,6 @@ public:
 };
 DUMPER7_ASSERTS_ARainSource;
 
-// Class Weather.SandstormConfig
-// 0x0080 (0x00B0 - 0x0030)
-class USandstormConfig final : public UPrimaryDataAsset
-{
-public:
-	struct FSandstormParameter                    Parameter;                                         // 0x0030(0x0074)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCurveFloat*                            BlendInCurve;                                      // 0x00A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SandstormConfig")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SandstormConfig")
-	}
-	static class USandstormConfig* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USandstormConfig>();
-	}
-};
-DUMPER7_ASSERTS_USandstormConfig;
-
 // Class Weather.SandstormSource
 // 0x01A0 (0x03E8 - 0x0248)
 class ASandstormSource final : public AWeatherActorBase
@@ -233,6 +233,7 @@ public:
 	void BeginQualityChange(EWeatherQuality InQuality);
 	void BlendParameterEvent();
 	void EndQualityChange(EWeatherQuality InQuality);
+	void ForceEndBlendParameter();
 	EWeatherQuality GetQuality();
 	void SetQuality(EWeatherQuality InQuality);
 

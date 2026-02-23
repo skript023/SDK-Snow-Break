@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_camera_op.uw_fight_camera_op_C.OnZoomChange
+// 0x0004 (0x0004 - 0x0000)
+struct uw_fight_camera_op_C_OnZoomChange final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_camera_op_C_OnZoomChange;
+
 // Function uw_fight_camera_op.uw_fight_camera_op_C.ExecuteUbergraph_uw_fight_camera_op
 // 0x0020 (0x0020 - 0x0000)
 struct uw_fight_camera_op_C_ExecuteUbergraph_uw_fight_camera_op final
@@ -28,15 +37,6 @@ public:
 	float                                         K2Node_Event_Value;                                // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_camera_op_C_ExecuteUbergraph_uw_fight_camera_op;
-
-// Function uw_fight_camera_op.uw_fight_camera_op_C.OnZoomChange
-// 0x0004 (0x0004 - 0x0000)
-struct uw_fight_camera_op_C_OnZoomChange final
-{
-public:
-	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_camera_op_C_OnZoomChange;
 
 }
 

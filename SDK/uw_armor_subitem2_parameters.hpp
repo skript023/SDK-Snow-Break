@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function uw_armor_subitem2.uw_armor_subitem2_C.Play
+// 0x0008 (0x0008 - 0x0000)
+struct uw_armor_subitem2_C_Play final
+{
+public:
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_armor_subitem2_C_Play;
+
 // Function uw_armor_subitem2.uw_armor_subitem2_C.ExecuteUbergraph_uw_armor_subitem2
 // 0x0014 (0x0014 - 0x0000)
 struct uw_armor_subitem2_C_ExecuteUbergraph_uw_armor_subitem2 final
@@ -23,15 +32,6 @@ public:
 	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0004(0x0010)(ZeroConstructor, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_armor_subitem2_C_ExecuteUbergraph_uw_armor_subitem2;
-
-// Function uw_armor_subitem2.uw_armor_subitem2_C.Play
-// 0x0008 (0x0008 - 0x0000)
-struct uw_armor_subitem2_C_Play final
-{
-public:
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_armor_subitem2_C_Play;
 
 }
 

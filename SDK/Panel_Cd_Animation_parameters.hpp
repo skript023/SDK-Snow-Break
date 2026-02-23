@@ -14,6 +14,24 @@
 namespace SDK::Params
 {
 
+// Function Panel_Cd_Animation.Panel_Cd_Animation_C.Play
+// 0x0001 (0x0001 - 0x0000)
+struct Panel_Cd_Animation_C_Play final
+{
+public:
+	bool                                          bLoop;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Panel_Cd_Animation_C_Play;
+
+// Function Panel_Cd_Animation.Panel_Cd_Animation_C.K2_OnCustomUmgAnimFinished
+// 0x0008 (0x0008 - 0x0000)
+struct Panel_Cd_Animation_C_K2_OnCustomUmgAnimFinished final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Panel_Cd_Animation_C_K2_OnCustomUmgAnimFinished;
+
 // Function Panel_Cd_Animation.Panel_Cd_Animation_C.ExecuteUbergraph_Panel_Cd_Animation
 // 0x0014 (0x0014 - 0x0000)
 struct Panel_Cd_Animation_C_ExecuteUbergraph_Panel_Cd_Animation final
@@ -26,24 +44,6 @@ public:
 	bool                                          CallFunc_EqualEqual_NameName_ReturnValue;          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_Panel_Cd_Animation_C_ExecuteUbergraph_Panel_Cd_Animation;
-
-// Function Panel_Cd_Animation.Panel_Cd_Animation_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct Panel_Cd_Animation_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Panel_Cd_Animation_C_K2_OnCustomUmgAnimFinished;
-
-// Function Panel_Cd_Animation.Panel_Cd_Animation_C.Play
-// 0x0001 (0x0001 - 0x0000)
-struct Panel_Cd_Animation_C_Play final
-{
-public:
-	bool                                          bLoop;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Panel_Cd_Animation_C_Play;
 
 }
 

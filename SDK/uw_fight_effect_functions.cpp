@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_effect.uw_fight_effect_C.ExecuteUbergraph_uw_fight_effect
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_effect_C::ExecuteUbergraph_uw_fight_effect(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_effect_C", "ExecuteUbergraph_uw_fight_effect");
-
-	Params::uw_fight_effect_C_ExecuteUbergraph_uw_fight_effect Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_effect.uw_fight_effect_C.OnHit__Overridden
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -58,6 +38,45 @@ void Uuw_fight_effect_C::OnHit__Overridden(float Angle, float Shield, bool IsBig
 	Parms.IsBigHit = IsBigHit;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_effect.uw_fight_effect_C.ExecuteUbergraph_uw_fight_effect
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_effect_C::ExecuteUbergraph_uw_fight_effect(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_effect_C", "ExecuteUbergraph_uw_fight_effect");
+
+	Params::uw_fight_effect_C_ExecuteUbergraph_uw_fight_effect Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// LuaFunction uw_fight_effect.uw_fight_effect_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_effect_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_effect_C", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -85,25 +104,6 @@ void Uuw_fight_effect_C::OnHit(float Angle, float Shield, bool IsBigHit)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_effect.uw_fight_effect_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_effect_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_effect_C", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

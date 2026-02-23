@@ -24,6 +24,16 @@ enum class ECartoonCompleteType : uint8
 	ECartoonCompleteType_MAX                 = 3,
 };
 
+// ScriptStruct Cartoon.CartoonObject
+// 0x0018 (0x0018 - 0x0000)
+struct FCartoonObject final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UObject*>                        List;                                              // 0x0008(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCartoonObject;
+
 // ScriptStruct Cartoon.CartoonEndData
 // 0x0018 (0x0018 - 0x0000)
 struct FCartoonEndData final
@@ -34,16 +44,6 @@ public:
 	class FString                                 ChoiceKeys;                                        // 0x0008(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCartoonEndData;
-
-// ScriptStruct Cartoon.CartoonObject
-// 0x0018 (0x0018 - 0x0000)
-struct FCartoonObject final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UObject*>                        List;                                              // 0x0008(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCartoonObject;
 
 // ScriptStruct Cartoon.ObjectManager
 // 0x0170 (0x0170 - 0x0000)

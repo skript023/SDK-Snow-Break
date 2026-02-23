@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Girl004b_Head.BP_Girl004b_Head_C
-// 0x0000 (0x0528 - 0x0528)
+// 0x0000 (0x0600 - 0x0600)
 class ABP_Girl004b_Head_C final : public ABP_Girl_Head_Base_C
 {
 public:

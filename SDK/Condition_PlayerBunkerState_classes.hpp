@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -33,13 +33,13 @@ public:
 	bool                                          bInState;                                          // 0x0130(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
+	void CheckBunkerLeader(class UAbilityComponentBase* InAbility, bool* InType);
+	void CheckEdgeType(class AGamePlayer* InPlayer, bool* InType);
 	void CheckBunkerType(class AGamePlayer* InPlayer, bool* InType);
+	void CheckState(class UAbilityComponentBase* InAbility, bool* bCom);
 	bool K2_CheckCondition(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void K2_InitCondition();
 	void ExecuteUbergraph_Condition_PlayerBunkerState(int32 EntryPoint);
-	void CheckBunkerLeader(class UAbilityComponentBase* InAbility, bool* InType);
-	void CheckEdgeType(class AGamePlayer* InPlayer, bool* InType);
-	void CheckState(class UAbilityComponentBase* InAbility, bool* bCom);
 
 public:
 	static class UClass* StaticClass()

@@ -17,23 +17,17 @@
 namespace SDK
 {
 
-// Function uw_fight_level_star.uw_fight_level_star_C.ExecuteUbergraph_uw_fight_level_star
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_level_star.uw_fight_level_star_C.Construct__Overridden
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void Uuw_fight_level_star_C::ExecuteUbergraph_uw_fight_level_star(int32 EntryPoint)
+void Uuw_fight_level_star_C::Construct__Overridden()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_star_C", "ExecuteUbergraph_uw_fight_level_star");
+		Func = Class->GetFunction("uw_fight_level_star_C", "Construct__Overridden");
 
-	Params::uw_fight_level_star_C_ExecuteUbergraph_uw_fight_level_star Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -51,17 +45,23 @@ void Uuw_fight_level_star_C::Destruct__Overridden()
 }
 
 
-// Function uw_fight_level_star.uw_fight_level_star_C.Construct__Overridden
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function uw_fight_level_star.uw_fight_level_star_C.ExecuteUbergraph_uw_fight_level_star
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_level_star_C::Construct__Overridden()
+void Uuw_fight_level_star_C::ExecuteUbergraph_uw_fight_level_star(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_star_C", "Construct__Overridden");
+		Func = Class->GetFunction("uw_fight_level_star_C", "ExecuteUbergraph_uw_fight_level_star");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::uw_fight_level_star_C_ExecuteUbergraph_uw_fight_level_star Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

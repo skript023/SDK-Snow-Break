@@ -10,22 +10,35 @@
 
 #include "Basic.hpp"
 
-#include "Game_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Game_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
 {
 
-// LuaFunction BP_GameController.BP_GameController_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct BP_GameController_C_ReceiveEndPlay final
+// LuaFunction BP_GameController.BP_GameController_C.LuaImpl_CallDSExec
+// 0x0018 (0x0018 - 0x0000)
+struct BP_GameController_C_LuaImpl_CallDSExec final
 {
 public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         InCmd;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 InContent;                                         // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_BP_GameController_C_ReceiveEndPlay;
+DUMPER7_ASSERTS_BP_GameController_C_LuaImpl_CallDSExec;
+
+// LuaFunction BP_GameController.BP_GameController_C.LuaImpl_CallClientExec
+// 0x0018 (0x0018 - 0x0000)
+struct BP_GameController_C_LuaImpl_CallClientExec final
+{
+public:
+	int32                                         InCmd;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 InContent;                                         // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BP_GameController_C_LuaImpl_CallClientExec;
 
 // Function BP_GameController.BP_GameController_C.CalcSideLength
 // 0x0034 (0x0034 - 0x0000)
@@ -166,14 +179,14 @@ public:
 };
 DUMPER7_ASSERTS_BP_GameController_C_NotifyAutoFire;
 
-// Function BP_GameController.BP_GameController_C.ReceiveEndPlay__Overridden
+// Function BP_GameController.BP_GameController_C.ReceiveEndPlay
 // 0x0001 (0x0001 - 0x0000)
-struct BP_GameController_C_ReceiveEndPlay__Overridden final
+struct BP_GameController_C_ReceiveEndPlay final
 {
 public:
 	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_GameController_C_ReceiveEndPlay__Overridden;
+DUMPER7_ASSERTS_BP_GameController_C_ReceiveEndPlay;
 
 // Function BP_GameController.BP_GameController_C.Client_ResumePlayerOperation
 // 0x0001 (0x0001 - 0x0000)
@@ -274,15 +287,6 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_GameController_C_ExecuteUbergraph_BP_GameController;
-
-// Function BP_GameController.BP_GameController_C.GetModuleName
-// 0x0010 (0x0010 - 0x0000)
-struct BP_GameController_C_GetModuleName final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_GameController_C_GetModuleName;
 
 }
 

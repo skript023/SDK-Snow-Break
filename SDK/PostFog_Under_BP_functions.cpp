@@ -73,15 +73,15 @@ void APostFog_Under_BP_C::UserConstructionScript()
 }
 
 
-// Function PostFog_Under_BP.PostFog_Under_BP_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function PostFog_Under_BP.PostFog_Under_BP_C.PawnActivate
+// (BlueprintCallable, BlueprintEvent)
 
-void APostFog_Under_BP_C::ReceiveBeginPlay()
+void APostFog_Under_BP_C::PawnActivate()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PostFog_Under_BP_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("PostFog_Under_BP_C", "PawnActivate");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -107,15 +107,15 @@ void APostFog_Under_BP_C::FogInitialize(bool bIsInCollision)
 }
 
 
-// Function PostFog_Under_BP.PostFog_Under_BP_C.PawnActivate
-// (BlueprintCallable, BlueprintEvent)
+// Function PostFog_Under_BP.PostFog_Under_BP_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void APostFog_Under_BP_C::PawnActivate()
+void APostFog_Under_BP_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PostFog_Under_BP_C", "PawnActivate");
+		Func = Class->GetFunction("PostFog_Under_BP_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

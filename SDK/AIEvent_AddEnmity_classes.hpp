@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -27,9 +27,9 @@ public:
 	float                                         Enmity;                                            // 0x00B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteOnServer(class AActor* InCharacter);
 	bool CanInterruptFight();
 	void OnExecute(class AGameCharacter* Character);
+	void ExecuteOnServer(class AActor* InCharacter);
 	void ExecuteUbergraph_AIEvent_AddEnmity(int32 EntryPoint);
 
 public:

@@ -31,40 +31,6 @@ void ATrap_mon_902_Skill02_C::ReceiveBeginPlay()
 }
 
 
-// Function Trap_mon_902_Skill02.Trap_mon_902_Skill02_C.BP_OnDead
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UAbilityComponentBase*            Killer                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ATrap_mon_902_Skill02_C::BP_OnDead(class UAbilityComponentBase* Killer)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Trap_mon_902_Skill02_C", "BP_OnDead");
-
-	Params::Trap_mon_902_Skill02_C_BP_OnDead Parms{};
-
-	Parms.Killer = Killer;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Trap_mon_902_Skill02.Trap_mon_902_Skill02_C.BP_ClientPlayTrapEndExhibition
-// (Event, Protected, BlueprintEvent)
-
-void ATrap_mon_902_Skill02_C::BP_ClientPlayTrapEndExhibition()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Trap_mon_902_Skill02_C", "BP_ClientPlayTrapEndExhibition");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function Trap_mon_902_Skill02.Trap_mon_902_Skill02_C.BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature
 // (HasOutParams, BlueprintEvent)
 // Parameters:
@@ -95,6 +61,26 @@ void ATrap_mon_902_Skill02_C::BndEvt__Sphere_K2Node_ComponentBoundEvent_0_Compon
 }
 
 
+// Function Trap_mon_902_Skill02.Trap_mon_902_Skill02_C.BP_OnDead
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UAbilityComponentBase*            Killer                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATrap_mon_902_Skill02_C::BP_OnDead(class UAbilityComponentBase* Killer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Trap_mon_902_Skill02_C", "BP_OnDead");
+
+	Params::Trap_mon_902_Skill02_C_BP_OnDead Parms{};
+
+	Parms.Killer = Killer;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Trap_mon_902_Skill02.Trap_mon_902_Skill02_C.Server_OnActive
 // (Event, Public, BlueprintEvent)
 
@@ -118,6 +104,20 @@ void ATrap_mon_902_Skill02_C::Client_OnActive()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("Trap_mon_902_Skill02_C", "Client_OnActive");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Trap_mon_902_Skill02.Trap_mon_902_Skill02_C.BP_ClientPlayTrapEndExhibition
+// (Event, Protected, BlueprintEvent)
+
+void ATrap_mon_902_Skill02_C::BP_ClientPlayTrapEndExhibition()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Trap_mon_902_Skill02_C", "BP_ClientPlayTrapEndExhibition");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

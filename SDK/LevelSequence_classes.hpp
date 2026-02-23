@@ -22,28 +22,34 @@
 namespace SDK
 {
 
-// Class LevelSequence.LevelSequenceAnimSequenceLink
-// 0x0010 (0x0038 - 0x0028)
-class ULevelSequenceAnimSequenceLink final : public UAssetUserData
+// Class LevelSequence.LevelSequenceBurnInOptions
+// 0x0028 (0x0050 - 0x0028)
+class ULevelSequenceBurnInOptions final : public UObject
 {
 public:
-	TArray<struct FLevelSequenceAnimSequenceLinkItem> AnimSequenceLinks;                             // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bUseBurnIn;                                        // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftClassPath                         BurnInClass;                                       // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULevelSequenceBurnInInitSettings*       Settings;                                          // 0x0048(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void SetBurnIn(const struct FSoftClassPath& InBurnInClass);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LevelSequenceAnimSequenceLink")
+		STATIC_CLASS_IMPL("LevelSequenceBurnInOptions")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LevelSequenceAnimSequenceLink")
+		STATIC_NAME_IMPL(L"LevelSequenceBurnInOptions")
 	}
-	static class ULevelSequenceAnimSequenceLink* GetDefaultObj()
+	static class ULevelSequenceBurnInOptions* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULevelSequenceAnimSequenceLink>();
+		return GetDefaultObjImpl<ULevelSequenceBurnInOptions>();
 	}
 };
-DUMPER7_ASSERTS_ULevelSequenceAnimSequenceLink;
+DUMPER7_ASSERTS_ULevelSequenceBurnInOptions;
 
 // Class LevelSequence.LevelSequence
 // 0x0168 (0x01C8 - 0x0060)
@@ -180,35 +186,6 @@ public:
 };
 DUMPER7_ASSERTS_ULevelSequenceBurnInInitSettings;
 
-// Class LevelSequence.LevelSequenceBurnInOptions
-// 0x0028 (0x0050 - 0x0028)
-class ULevelSequenceBurnInOptions final : public UObject
-{
-public:
-	bool                                          bUseBurnIn;                                        // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSoftClassPath                         BurnInClass;                                       // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULevelSequenceBurnInInitSettings*       Settings;                                          // 0x0048(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void SetBurnIn(const struct FSoftClassPath& InBurnInClass);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LevelSequenceBurnInOptions")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LevelSequenceBurnInOptions")
-	}
-	static class ULevelSequenceBurnInOptions* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULevelSequenceBurnInOptions>();
-	}
-};
-DUMPER7_ASSERTS_ULevelSequenceBurnInOptions;
-
 // Class LevelSequence.LevelSequenceActor
 // 0x0080 (0x02A8 - 0x0228)
 class ALevelSequenceActor final : public AActor
@@ -267,6 +244,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ALevelSequenceActor;
+
+// Class LevelSequence.LevelSequenceAnimSequenceLink
+// 0x0010 (0x0038 - 0x0028)
+class ULevelSequenceAnimSequenceLink final : public UAssetUserData
+{
+public:
+	TArray<struct FLevelSequenceAnimSequenceLinkItem> AnimSequenceLinks;                             // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LevelSequenceAnimSequenceLink")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LevelSequenceAnimSequenceLink")
+	}
+	static class ULevelSequenceAnimSequenceLink* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULevelSequenceAnimSequenceLink>();
+	}
+};
+DUMPER7_ASSERTS_ULevelSequenceAnimSequenceLink;
 
 // Class LevelSequence.LevelSequenceBurnIn
 // 0x00C0 (0x0340 - 0x0280)

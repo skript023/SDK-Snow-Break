@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function girl004b_abpp.girl004b_abpp_C.ExecuteUbergraph_girl004b_abpp
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Ugirl004b_abpp_C::ExecuteUbergraph_girl004b_abpp(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("girl004b_abpp_C", "ExecuteUbergraph_girl004b_abpp");
+
+	Params::girl004b_abpp_C_ExecuteUbergraph_girl004b_abpp Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function girl004b_abpp.girl004b_abpp_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -38,26 +58,6 @@ void Ugirl004b_abpp_C::AnimGraph(const struct FPoseLink& InPose, struct FPoseLin
 
 	if (AnimGraph_0 != nullptr)
 		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
-}
-
-
-// Function girl004b_abpp.girl004b_abpp_C.ExecuteUbergraph_girl004b_abpp
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Ugirl004b_abpp_C::ExecuteUbergraph_girl004b_abpp(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("girl004b_abpp_C", "ExecuteUbergraph_girl004b_abpp");
-
-	Params::girl004b_abpp_C_ExecuteUbergraph_girl004b_abpp Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

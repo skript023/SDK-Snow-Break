@@ -12,52 +12,12 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "CoreUObject_classes.hpp"
 #include "PhysicsControl_structs.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 namespace SDK
 {
-
-// Class PhysicsControl.AnimRigidBodyControlDataSource
-// 0x0000 (0x0000 - 0x0000)
-class IAnimRigidBodyControlDataSource final
-{
-public:
-	void AnimNode_SetModifierMovementType(const class FName& ModifierName, EPhysicsMovementType MovementType);
-	void GetAdditionalControlData(TArray<struct FAdditionalControlUpdateData>* ControlUpdateDatas);
-	void GetAnimNodeAddForce(TMap<class FName, struct FVector>* ForceMap);
-	void GetAnimNodeAddTorque(TMap<class FName, struct FVector>* TorqueMap);
-	void GetAnimNodeControlCreateData(struct FAnimRigidBodyControlCreationData* RigidBodyData);
-	void GetAnimNodeControlUpdateData(struct FRigidBodyKinematicTargets* KinematicTarget, struct FRigidBodyControlTargets* InControlTargets, struct FPhysicsControlControlAndModifierUpdates* ControlUpdates, TArray<class FName>* InControlAndModifierProfiles, TArray<class FName>* InConstraintProfiles);
-	void GetRigidBodyGrabUpdateData(TArray<struct FRigidBodyGrabUpdateData>* GrabUpdateDatas);
-
-	bool GetIsEnableAnimNodeControl(const class USkeletalMeshComponent* InOwnerMesh) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AnimRigidBodyControlDataSource")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AnimRigidBodyControlDataSource")
-	}
-	static class IAnimRigidBodyControlDataSource* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IAnimRigidBodyControlDataSource>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IAnimRigidBodyControlDataSource;
 
 // Class PhysicsControl.PhysicsControlComponent
 // 0x0080 (0x0280 - 0x0200)
@@ -232,13 +192,15 @@ public:
 	void AddControlUpdateProcessor(class UBasePhysControlsDataUpdateAsset* ProcessorAsset);
 	void AddRigidBodyGrabUpdateData(const struct FRigidBodyGrabUpdateData& UpdateData);
 	void AnimNode_SetControlModifierParamters(const struct FPhysicsControlNamedModifierParameters& ModifierUpdate, bool bOverride);
+	void AnimNode_SetControlMultiplierUpdatesParamters(const struct FPhysicsControlNamedControlMultiplierParameters& ControlMultiplierUpdates, bool bOverride);
 	void AnimNode_SetControlParameters(const struct FPhysicsControlNamedControlParameters& ControlUpdate, bool bOverride);
 	void ConditionalAddForceInSet(const class FName SetName, const struct FVector& InForce);
 	void ConditionalAddTorqueInRadiansInSet(const class FName SetName, const struct FVector& InTorque);
-	bool ConditionalCreateAdditionalControl(class FName Name_0, class UMeshComponent* ParentMeshComponent, const class FName ParentBoneName, class UMeshComponent* ChildMeshComponent, const class FName ChildBoneName, const class FName Set, const class FName AdditionalSetName);
+	bool ConditionalCreateAdditionalControl(class FName Name_0, class UMeshComponent* ParentMeshComponent, const class FName ParentBoneName, class UMeshComponent* ChildMeshComponent, const class FName ChildBoneName, const class FName Set, const class FName AdditionalSetName, bool bForceDisableSkeletalAnimation);
 	bool ConditionalDestroyControl(const class FName Name_0);
 	void ConditionalDestroyControlsInSet(const class FName Set);
 	bool ConditionalResetControlPoint(const class FName SetName);
+	void ConditionalSetBodyModifiersMovementType(const class FName SetName, const EPhysicsMovementType MovementType);
 	void ConditionalSetBodyModifiersPhysicsBlendWeight(const class FName SetName, const float PhysicsBlendWeight);
 	void ConditionalSetBodyModifiersPhysicsBlendWeightAndMovementType(const class FName SetName, const float PhysicsBlendWeight, const EPhysicsMovementType MovementType);
 	bool ConditionalSetControlPoint(const class FName SetName, const struct FVector& Position);
@@ -266,6 +228,46 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UBaseGamePhysicsControlComponent;
+
+// Class PhysicsControl.AnimRigidBodyControlDataSource
+// 0x0000 (0x0000 - 0x0000)
+class IAnimRigidBodyControlDataSource final
+{
+public:
+	void AnimNode_SetModifierMovementType(const class FName& ModifierName, EPhysicsMovementType MovementType);
+	void GetAdditionalControlData(TArray<struct FAdditionalControlUpdateData>* ControlUpdateDatas);
+	void GetAnimNodeAddForce(TMap<class FName, struct FVector>* ForceMap);
+	void GetAnimNodeAddTorque(TMap<class FName, struct FVector>* TorqueMap);
+	void GetAnimNodeControlCreateData(struct FAnimRigidBodyControlCreationData* RigidBodyData);
+	void GetAnimNodeControlUpdateData(struct FRigidBodyKinematicTargets* KinematicTarget, struct FRigidBodyControlTargets* InControlTargets, struct FPhysicsControlControlAndModifierUpdates* ControlUpdates, TArray<class FName>* InControlAndModifierProfiles, TArray<class FName>* InConstraintProfiles);
+	void GetRigidBodyGrabUpdateData(TArray<struct FRigidBodyGrabUpdateData>* GrabUpdateDatas);
+
+	bool GetIsEnableAnimNodeControl(const class USkeletalMeshComponent* InOwnerMesh) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AnimRigidBodyControlDataSource")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AnimRigidBodyControlDataSource")
+	}
+	static class IAnimRigidBodyControlDataSource* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IAnimRigidBodyControlDataSource>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IAnimRigidBodyControlDataSource;
 
 // Class PhysicsControl.PhysicsControlDataAsset
 // 0x0178 (0x01A8 - 0x0030)

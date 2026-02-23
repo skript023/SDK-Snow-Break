@@ -14,6 +14,36 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_power.uw_fight_power_C.K2_PlayAnim
+// 0x0004 (0x0004 - 0x0000)
+struct uw_fight_power_C_K2_PlayAnim final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_power_C_K2_PlayAnim;
+
+// Function uw_fight_power.uw_fight_power_C.OnPowerStrengthening
+// 0x000C (0x000C - 0x0000)
+struct uw_fight_power_C_OnPowerStrengthening final
+{
+public:
+	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Start;                                             // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         End;                                               // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_power_C_OnPowerStrengthening;
+
+// Function uw_fight_power.uw_fight_power_C.OnPowerTimeStrengthening
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_power_C_OnPowerTimeStrengthening final
+{
+public:
+	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_power_C_OnPowerTimeStrengthening;
+
 // Function uw_fight_power.uw_fight_power_C.ExecuteUbergraph_uw_fight_power
 // 0x0020 (0x0020 - 0x0000)
 struct uw_fight_power_C_ExecuteUbergraph_uw_fight_power final
@@ -31,36 +61,6 @@ public:
 	bool                                          K2Node_Event_bStart;                               // 0x001C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_power_C_ExecuteUbergraph_uw_fight_power;
-
-// Function uw_fight_power.uw_fight_power_C.OnPowerTimeStrengthening
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_power_C_OnPowerTimeStrengthening final
-{
-public:
-	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_power_C_OnPowerTimeStrengthening;
-
-// Function uw_fight_power.uw_fight_power_C.OnPowerStrengthening
-// 0x000C (0x000C - 0x0000)
-struct uw_fight_power_C_OnPowerStrengthening final
-{
-public:
-	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Start;                                             // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         End;                                               // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_power_C_OnPowerStrengthening;
-
-// Function uw_fight_power.uw_fight_power_C.K2_PlayAnim
-// 0x0004 (0x0004 - 0x0000)
-struct uw_fight_power_C_K2_PlayAnim final
-{
-public:
-	float                                         InValue;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_power_C_K2_PlayAnim;
 
 }
 

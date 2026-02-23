@@ -125,25 +125,6 @@ void Uuw_fight_star_tips_C::TryPlay__Overridden()
 }
 
 
-// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.TryPlay
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_star_tips_C::TryPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_star_tips_C", "TryPlay");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.Construct
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
@@ -163,26 +144,20 @@ void Uuw_fight_star_tips_C::Construct()
 }
 
 
-// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.OnAnimationFinished
-// (BlueprintCosmetic, Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.TryPlay
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_star_tips_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
+void Uuw_fight_star_tips_C::TryPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_star_tips_C", "OnAnimationFinished");
-
-	Params::uw_fight_star_tips_C_OnAnimationFinished Parms{};
-
-	Parms.Animation = Animation;
+		Func = Class->GetFunction("uw_fight_star_tips_C", "TryPlay");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -203,6 +178,31 @@ void Uuw_fight_star_tips_C::OnListItemObjectSet(class UObject* ListItemObject)
 	Params::uw_fight_star_tips_C_OnListItemObjectSet Parms{};
 
 	Parms.ListItemObject = ListItemObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.OnAnimationFinished
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_star_tips_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_star_tips_C", "OnAnimationFinished");
+
+	Params::uw_fight_star_tips_C_OnAnimationFinished Parms{};
+
+	Parms.Animation = Animation;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

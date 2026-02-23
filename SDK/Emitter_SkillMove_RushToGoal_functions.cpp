@@ -17,6 +17,44 @@
 namespace SDK
 {
 
+// LuaFunction Emitter_SkillMove_RushToGoal.Emitter_SkillMove_RushToGoal_C.OnEmitterInterrupt
+// (Native, Event, Protected, BlueprintEvent)
+
+void UEmitter_SkillMove_RushToGoal_C::OnEmitterInterrupt()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Emitter_SkillMove_RushToGoal_C", "OnEmitterInterrupt");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction Emitter_SkillMove_RushToGoal.Emitter_SkillMove_RushToGoal_C.OnEmitBegin
+// (Native, Event, Protected, BlueprintEvent)
+
+void UEmitter_SkillMove_RushToGoal_C::OnEmitBegin()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Emitter_SkillMove_RushToGoal_C", "OnEmitBegin");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction Emitter_SkillMove_RushToGoal.Emitter_SkillMove_RushToGoal_C.OnEmitEnd
 // (Native, Event, Protected, BlueprintEvent)
 
@@ -70,44 +108,6 @@ void UEmitter_SkillMove_RushToGoal_C::EmitterDestroyLua()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("Emitter_SkillMove_RushToGoal_C", "EmitterDestroyLua");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction Emitter_SkillMove_RushToGoal.Emitter_SkillMove_RushToGoal_C.OnEmitBegin
-// (Native, Event, Protected, BlueprintEvent)
-
-void UEmitter_SkillMove_RushToGoal_C::OnEmitBegin()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_RushToGoal_C", "OnEmitBegin");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction Emitter_SkillMove_RushToGoal.Emitter_SkillMove_RushToGoal_C.OnEmitterInterrupt
-// (Native, Event, Protected, BlueprintEvent)
-
-void UEmitter_SkillMove_RushToGoal_C::OnEmitterInterrupt()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_RushToGoal_C", "OnEmitterInterrupt");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

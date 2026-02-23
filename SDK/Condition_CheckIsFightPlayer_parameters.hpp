@@ -14,17 +14,6 @@
 namespace SDK::Params
 {
 
-// Function Condition_CheckIsFightPlayer.Condition_CheckIsFightPlayer_C.ExecuteUbergraph_Condition_CheckIsFightPlayer
-// 0x0008 (0x0008 - 0x0000)
-struct Condition_CheckIsFightPlayer_C_ExecuteUbergraph_Condition_CheckIsFightPlayer final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetParamboolValue_ReturnValue;            // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Condition_CheckIsFightPlayer_C_ExecuteUbergraph_Condition_CheckIsFightPlayer;
-
 // Function Condition_CheckIsFightPlayer.Condition_CheckIsFightPlayer_C.K2_CheckCondition
 // 0x0048 (0x0048 - 0x0000)
 struct Condition_CheckIsFightPlayer_C_K2_CheckCondition final
@@ -47,6 +36,17 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0041(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_Condition_CheckIsFightPlayer_C_K2_CheckCondition;
+
+// Function Condition_CheckIsFightPlayer.Condition_CheckIsFightPlayer_C.ExecuteUbergraph_Condition_CheckIsFightPlayer
+// 0x0008 (0x0008 - 0x0000)
+struct Condition_CheckIsFightPlayer_C_ExecuteUbergraph_Condition_CheckIsFightPlayer final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetParamboolValue_ReturnValue;            // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Condition_CheckIsFightPlayer_C_ExecuteUbergraph_Condition_CheckIsFightPlayer;
 
 }
 

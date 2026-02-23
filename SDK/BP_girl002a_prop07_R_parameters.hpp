@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Game_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "SeasunAccount_structs.hpp"
 
 
@@ -310,7 +310,7 @@ public:
 DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_ReceiveTick;
 
 // Function BP_girl002a_prop07_R.BP_girl002a_prop07_R_C.ExecuteUbergraph_BP_girl002a_prop07_R
-// 0x0650 (0x0650 - 0x0000)
+// 0x0660 (0x0660 - 0x0000)
 struct BP_girl002a_prop07_R_C_ExecuteUbergraph_BP_girl002a_prop07_R final
 {
 public:
@@ -402,34 +402,34 @@ public:
 	struct FLinearColor                           CallFunc_MakeColor_ReturnValue;                    // 0x0364(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_374[0x4];                                      // 0x0374(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class AActor*>                         K2Node_MakeArray_Array;                            // 0x0378(0x0010)(ReferenceParm)
-	struct FCharacterStateStartParam              K2Node_MakeStruct_CharacterStateStartParam;        // 0x0388(0x0100)(ContainsInstancedReference)
-	int32                                         CallFunc_StartCharacterStateParam_ReturnValue;     // 0x0488(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_48C[0x4];                                      // 0x048C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AGameCharacter*                         CallFunc_GetGameCharacter_ReturnValue_1;           // 0x0490(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0498(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_499[0x7];                                      // 0x0499(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	int64                                         CallFunc_GetPiFuGDPL_ReturnValue;                  // 0x04A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FItemTemplate                          CallFunc_FindTemplateForID_ReturnValue;            // 0x04A8(0x0140)(ConstParm)
-	TDelegate<void(class FName NotifyName)>       K2Node_CreateDelegate_OutputDelegate_30;           // 0x05E8(0x0010)(ZeroConstructor, NoDestructor)
-	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x05F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchInteger_CmpSuccess_1;                 // 0x05F9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5FA[0x6];                                      // 0x05FA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPlayMontageCallbackProxy*              CallFunc_CreateProxyObjectForPlayMontage_ReturnValue_3; // 0x0600(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchInteger_CmpSuccess_2;                 // 0x0608(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0609(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FCharacterStateStartParam              K2Node_MakeStruct_CharacterStateStartParam;        // 0x0388(0x0110)(ContainsInstancedReference)
+	int32                                         CallFunc_StartCharacterStateParam_ReturnValue;     // 0x0498(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_49C[0x4];                                      // 0x049C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGameCharacter*                         CallFunc_GetGameCharacter_ReturnValue_1;           // 0x04A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x04A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4A9[0x7];                                      // 0x04A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	int64                                         CallFunc_GetPiFuGDPL_ReturnValue;                  // 0x04B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FItemTemplate                          CallFunc_FindTemplateForID_ReturnValue;            // 0x04B8(0x0140)(ConstParm)
+	TDelegate<void(class FName NotifyName)>       K2Node_CreateDelegate_OutputDelegate_30;           // 0x05F8(0x0010)(ZeroConstructor, NoDestructor)
+	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0608(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchInteger_CmpSuccess_1;                 // 0x0609(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_60A[0x6];                                      // 0x060A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPlayMontageCallbackProxy*              CallFunc_CreateProxyObjectForPlayMontage_ReturnValue_4; // 0x0610(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchInteger_CmpSuccess_3;                 // 0x0618(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x0619(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UPlayMontageCallbackProxy*              CallFunc_CreateProxyObjectForPlayMontage_ReturnValue_3; // 0x0610(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchInteger_CmpSuccess_2;                 // 0x0618(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0619(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_61A[0x6];                                      // 0x061A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPlayMontageCallbackProxy*              CallFunc_CreateProxyObjectForPlayMontage_ReturnValue_5; // 0x0620(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAnimInstance*                          CallFunc_GetAnimInstance_ReturnValue;              // 0x0628(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UABP_girl002a_prop07_R_C*               K2Node_DynamicCast_AsABP_Girl_002a_Prop_07_R;      // 0x0630(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0638(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_5;                    // 0x0639(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_63A[0x2];                                      // 0x063A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           CallFunc_MakeColor_ReturnValue_1;                  // 0x063C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x064C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPlayMontageCallbackProxy*              CallFunc_CreateProxyObjectForPlayMontage_ReturnValue_4; // 0x0620(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchInteger_CmpSuccess_3;                 // 0x0628(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x0629(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_62A[0x6];                                      // 0x062A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPlayMontageCallbackProxy*              CallFunc_CreateProxyObjectForPlayMontage_ReturnValue_5; // 0x0630(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimInstance*                          CallFunc_GetAnimInstance_ReturnValue;              // 0x0638(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UABP_girl002a_prop07_R_C*               K2Node_DynamicCast_AsABP_Girl_002a_Prop_07_R;      // 0x0640(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0648(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_5;                    // 0x0649(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_64A[0x2];                                      // 0x064A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           CallFunc_MakeColor_ReturnValue_1;                  // 0x064C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x065C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_girl002a_prop07_R_C_ExecuteUbergraph_BP_girl002a_prop07_R;
 

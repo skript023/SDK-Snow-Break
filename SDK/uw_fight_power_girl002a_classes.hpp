@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -34,8 +34,8 @@ public:
 	class UGameCanvasPanel*                       RootPanel;                                         // 0x0430(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_power_girl002a(int32 EntryPoint);
 	void PlayAnim(bool StateType);
+	void ExecuteUbergraph_uw_fight_power_girl002a(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

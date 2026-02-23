@@ -17,233 +17,6 @@
 namespace SDK
 {
 
-// Function PhysicsControl.AnimRigidBodyControlDataSource.AnimNode_SetModifierMovementType
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class FName&                      ModifierName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EPhysicsMovementType                    MovementType                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IAnimRigidBodyControlDataSource::AnimNode_SetModifierMovementType(const class FName& ModifierName, EPhysicsMovementType MovementType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "AnimNode_SetModifierMovementType");
-
-	Params::AnimRigidBodyControlDataSource_AnimNode_SetModifierMovementType Parms{};
-
-	Parms.ModifierName = ModifierName;
-	Parms.MovementType = MovementType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAdditionalControlData
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<struct FAdditionalControlUpdateData>*ControlUpdateDatas                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void IAnimRigidBodyControlDataSource::GetAdditionalControlData(TArray<struct FAdditionalControlUpdateData>* ControlUpdateDatas)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetAdditionalControlData");
-
-	Params::AnimRigidBodyControlDataSource_GetAdditionalControlData Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (ControlUpdateDatas != nullptr)
-		*ControlUpdateDatas = std::move(Parms.ControlUpdateDatas);
-}
-
-
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeAddForce
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TMap<class FName, struct FVector>*      ForceMap                                               (Parm, OutParm, NativeAccessSpecifierPublic)
-
-void IAnimRigidBodyControlDataSource::GetAnimNodeAddForce(TMap<class FName, struct FVector>* ForceMap)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetAnimNodeAddForce");
-
-	Params::AnimRigidBodyControlDataSource_GetAnimNodeAddForce Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (ForceMap != nullptr)
-		*ForceMap = std::move(Parms.ForceMap);
-}
-
-
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeAddTorque
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TMap<class FName, struct FVector>*      TorqueMap                                              (Parm, OutParm, NativeAccessSpecifierPublic)
-
-void IAnimRigidBodyControlDataSource::GetAnimNodeAddTorque(TMap<class FName, struct FVector>* TorqueMap)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetAnimNodeAddTorque");
-
-	Params::AnimRigidBodyControlDataSource_GetAnimNodeAddTorque Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (TorqueMap != nullptr)
-		*TorqueMap = std::move(Parms.TorqueMap);
-}
-
-
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeControlCreateData
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FAnimRigidBodyControlCreationData*RigidBodyData                                          (Parm, OutParm, NativeAccessSpecifierPublic)
-
-void IAnimRigidBodyControlDataSource::GetAnimNodeControlCreateData(struct FAnimRigidBodyControlCreationData* RigidBodyData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetAnimNodeControlCreateData");
-
-	Params::AnimRigidBodyControlDataSource_GetAnimNodeControlCreateData Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (RigidBodyData != nullptr)
-		*RigidBodyData = std::move(Parms.RigidBodyData);
-}
-
-
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeControlUpdateData
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FRigidBodyKinematicTargets*      KinematicTarget                                        (Parm, OutParm, NativeAccessSpecifierPublic)
-// struct FRigidBodyControlTargets*        InControlTargets                                       (Parm, OutParm, NativeAccessSpecifierPublic)
-// struct FPhysicsControlControlAndModifierUpdates*ControlUpdates                                         (Parm, OutParm, NativeAccessSpecifierPublic)
-// TArray<class FName>*                    InControlAndModifierProfiles                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<class FName>*                    InConstraintProfiles                                   (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void IAnimRigidBodyControlDataSource::GetAnimNodeControlUpdateData(struct FRigidBodyKinematicTargets* KinematicTarget, struct FRigidBodyControlTargets* InControlTargets, struct FPhysicsControlControlAndModifierUpdates* ControlUpdates, TArray<class FName>* InControlAndModifierProfiles, TArray<class FName>* InConstraintProfiles)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetAnimNodeControlUpdateData");
-
-	Params::AnimRigidBodyControlDataSource_GetAnimNodeControlUpdateData Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (KinematicTarget != nullptr)
-		*KinematicTarget = std::move(Parms.KinematicTarget);
-
-	if (InControlTargets != nullptr)
-		*InControlTargets = std::move(Parms.InControlTargets);
-
-	if (ControlUpdates != nullptr)
-		*ControlUpdates = std::move(Parms.ControlUpdates);
-
-	if (InControlAndModifierProfiles != nullptr)
-		*InControlAndModifierProfiles = std::move(Parms.InControlAndModifierProfiles);
-
-	if (InConstraintProfiles != nullptr)
-		*InConstraintProfiles = std::move(Parms.InConstraintProfiles);
-}
-
-
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetRigidBodyGrabUpdateData
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<struct FRigidBodyGrabUpdateData>*GrabUpdateDatas                                        (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void IAnimRigidBodyControlDataSource::GetRigidBodyGrabUpdateData(TArray<struct FRigidBodyGrabUpdateData>* GrabUpdateDatas)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetRigidBodyGrabUpdateData");
-
-	Params::AnimRigidBodyControlDataSource_GetRigidBodyGrabUpdateData Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (GrabUpdateDatas != nullptr)
-		*GrabUpdateDatas = std::move(Parms.GrabUpdateDatas);
-}
-
-
-// Function PhysicsControl.AnimRigidBodyControlDataSource.GetIsEnableAnimNodeControl
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// const class USkeletalMeshComponent*     InOwnerMesh                                            (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool IAnimRigidBodyControlDataSource::GetIsEnableAnimNodeControl(const class USkeletalMeshComponent* InOwnerMesh) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetIsEnableAnimNodeControl");
-
-	Params::AnimRigidBodyControlDataSource_GetIsEnableAnimNodeControl Parms{};
-
-	Parms.InOwnerMesh = InOwnerMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function PhysicsControl.PhysicsControlComponent.AddBodyModifiersToSet
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -3807,6 +3580,33 @@ void UBaseGamePhysicsControlComponent::AnimNode_SetControlModifierParamters(cons
 }
 
 
+// Function PhysicsControl.BaseGamePhysicsControlComponent.AnimNode_SetControlMultiplierUpdatesParamters
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FPhysicsControlNamedControlMultiplierParameters&ControlMultiplierUpdates                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    bOverride                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBaseGamePhysicsControlComponent::AnimNode_SetControlMultiplierUpdatesParamters(const struct FPhysicsControlNamedControlMultiplierParameters& ControlMultiplierUpdates, bool bOverride)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BaseGamePhysicsControlComponent", "AnimNode_SetControlMultiplierUpdatesParamters");
+
+	Params::BaseGamePhysicsControlComponent_AnimNode_SetControlMultiplierUpdatesParamters Parms{};
+
+	Parms.ControlMultiplierUpdates = std::move(ControlMultiplierUpdates);
+	Parms.bOverride = bOverride;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function PhysicsControl.BaseGamePhysicsControlComponent.AnimNode_SetControlParameters
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -3898,9 +3698,10 @@ void UBaseGamePhysicsControlComponent::ConditionalAddTorqueInRadiansInSet(const 
 // const class FName                       ChildBoneName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FName                       AdditionalSetName                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bForceDisableSkeletalAnimation                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBaseGamePhysicsControlComponent::ConditionalCreateAdditionalControl(class FName Name_0, class UMeshComponent* ParentMeshComponent, const class FName ParentBoneName, class UMeshComponent* ChildMeshComponent, const class FName ChildBoneName, const class FName Set, const class FName AdditionalSetName)
+bool UBaseGamePhysicsControlComponent::ConditionalCreateAdditionalControl(class FName Name_0, class UMeshComponent* ParentMeshComponent, const class FName ParentBoneName, class UMeshComponent* ChildMeshComponent, const class FName ChildBoneName, const class FName Set, const class FName AdditionalSetName, bool bForceDisableSkeletalAnimation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3916,6 +3717,7 @@ bool UBaseGamePhysicsControlComponent::ConditionalCreateAdditionalControl(class 
 	Parms.ChildBoneName = ChildBoneName;
 	Parms.Set = Set;
 	Parms.AdditionalSetName = AdditionalSetName;
+	Parms.bForceDisableSkeletalAnimation = bForceDisableSkeletalAnimation;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4006,6 +3808,33 @@ bool UBaseGamePhysicsControlComponent::ConditionalResetControlPoint(const class 
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function PhysicsControl.BaseGamePhysicsControlComponent.ConditionalSetBodyModifiersMovementType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FName                       SetName                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EPhysicsMovementType              MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBaseGamePhysicsControlComponent::ConditionalSetBodyModifiersMovementType(const class FName SetName, const EPhysicsMovementType MovementType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BaseGamePhysicsControlComponent", "ConditionalSetBodyModifiersMovementType");
+
+	Params::BaseGamePhysicsControlComponent_ConditionalSetBodyModifiersMovementType Parms{};
+
+	Parms.SetName = SetName;
+	Parms.MovementType = MovementType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -4288,6 +4117,233 @@ void UBaseGamePhysicsControlComponent::SetOverridePhysicsControlAsset(class UPhy
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PhysicsControl.AnimRigidBodyControlDataSource.AnimNode_SetModifierMovementType
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FName&                      ModifierName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EPhysicsMovementType                    MovementType                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IAnimRigidBodyControlDataSource::AnimNode_SetModifierMovementType(const class FName& ModifierName, EPhysicsMovementType MovementType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "AnimNode_SetModifierMovementType");
+
+	Params::AnimRigidBodyControlDataSource_AnimNode_SetModifierMovementType Parms{};
+
+	Parms.ModifierName = ModifierName;
+	Parms.MovementType = MovementType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAdditionalControlData
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<struct FAdditionalControlUpdateData>*ControlUpdateDatas                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void IAnimRigidBodyControlDataSource::GetAdditionalControlData(TArray<struct FAdditionalControlUpdateData>* ControlUpdateDatas)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetAdditionalControlData");
+
+	Params::AnimRigidBodyControlDataSource_GetAdditionalControlData Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (ControlUpdateDatas != nullptr)
+		*ControlUpdateDatas = std::move(Parms.ControlUpdateDatas);
+}
+
+
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeAddForce
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TMap<class FName, struct FVector>*      ForceMap                                               (Parm, OutParm, NativeAccessSpecifierPublic)
+
+void IAnimRigidBodyControlDataSource::GetAnimNodeAddForce(TMap<class FName, struct FVector>* ForceMap)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetAnimNodeAddForce");
+
+	Params::AnimRigidBodyControlDataSource_GetAnimNodeAddForce Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (ForceMap != nullptr)
+		*ForceMap = std::move(Parms.ForceMap);
+}
+
+
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeAddTorque
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TMap<class FName, struct FVector>*      TorqueMap                                              (Parm, OutParm, NativeAccessSpecifierPublic)
+
+void IAnimRigidBodyControlDataSource::GetAnimNodeAddTorque(TMap<class FName, struct FVector>* TorqueMap)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetAnimNodeAddTorque");
+
+	Params::AnimRigidBodyControlDataSource_GetAnimNodeAddTorque Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (TorqueMap != nullptr)
+		*TorqueMap = std::move(Parms.TorqueMap);
+}
+
+
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeControlCreateData
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FAnimRigidBodyControlCreationData*RigidBodyData                                          (Parm, OutParm, NativeAccessSpecifierPublic)
+
+void IAnimRigidBodyControlDataSource::GetAnimNodeControlCreateData(struct FAnimRigidBodyControlCreationData* RigidBodyData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetAnimNodeControlCreateData");
+
+	Params::AnimRigidBodyControlDataSource_GetAnimNodeControlCreateData Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (RigidBodyData != nullptr)
+		*RigidBodyData = std::move(Parms.RigidBodyData);
+}
+
+
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetAnimNodeControlUpdateData
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FRigidBodyKinematicTargets*      KinematicTarget                                        (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FRigidBodyControlTargets*        InControlTargets                                       (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FPhysicsControlControlAndModifierUpdates*ControlUpdates                                         (Parm, OutParm, NativeAccessSpecifierPublic)
+// TArray<class FName>*                    InControlAndModifierProfiles                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class FName>*                    InConstraintProfiles                                   (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void IAnimRigidBodyControlDataSource::GetAnimNodeControlUpdateData(struct FRigidBodyKinematicTargets* KinematicTarget, struct FRigidBodyControlTargets* InControlTargets, struct FPhysicsControlControlAndModifierUpdates* ControlUpdates, TArray<class FName>* InControlAndModifierProfiles, TArray<class FName>* InConstraintProfiles)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetAnimNodeControlUpdateData");
+
+	Params::AnimRigidBodyControlDataSource_GetAnimNodeControlUpdateData Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (KinematicTarget != nullptr)
+		*KinematicTarget = std::move(Parms.KinematicTarget);
+
+	if (InControlTargets != nullptr)
+		*InControlTargets = std::move(Parms.InControlTargets);
+
+	if (ControlUpdates != nullptr)
+		*ControlUpdates = std::move(Parms.ControlUpdates);
+
+	if (InControlAndModifierProfiles != nullptr)
+		*InControlAndModifierProfiles = std::move(Parms.InControlAndModifierProfiles);
+
+	if (InConstraintProfiles != nullptr)
+		*InConstraintProfiles = std::move(Parms.InConstraintProfiles);
+}
+
+
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetRigidBodyGrabUpdateData
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<struct FRigidBodyGrabUpdateData>*GrabUpdateDatas                                        (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void IAnimRigidBodyControlDataSource::GetRigidBodyGrabUpdateData(TArray<struct FRigidBodyGrabUpdateData>* GrabUpdateDatas)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetRigidBodyGrabUpdateData");
+
+	Params::AnimRigidBodyControlDataSource_GetRigidBodyGrabUpdateData Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (GrabUpdateDatas != nullptr)
+		*GrabUpdateDatas = std::move(Parms.GrabUpdateDatas);
+}
+
+
+// Function PhysicsControl.AnimRigidBodyControlDataSource.GetIsEnableAnimNodeControl
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// const class USkeletalMeshComponent*     InOwnerMesh                                            (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool IAnimRigidBodyControlDataSource::GetIsEnableAnimNodeControl(const class USkeletalMeshComponent* InOwnerMesh) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("AnimRigidBodyControlDataSource", "GetIsEnableAnimNodeControl");
+
+	Params::AnimRigidBodyControlDataSource_GetIsEnableAnimNodeControl Parms{};
+
+	Parms.InOwnerMesh = InOwnerMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

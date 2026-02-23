@@ -17,57 +17,15 @@
 namespace SDK
 {
 
-// Function GameEx.GEDrop.MgrNotifyChangeMat
-// (Event, Public, BlueprintEvent)
-
-void AGEDrop::MgrNotifyChangeMat()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEDrop", "MgrNotifyChangeMat");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GameEx.GEDrop.MgrNotifyDestroy
-// (Event, Public, BlueprintEvent)
-
-void AGEDrop::MgrNotifyDestroy()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEDrop", "MgrNotifyDestroy");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GameEx.GEDrop.MgrNotifyReset
-// (Event, Public, BlueprintEvent)
-
-void AGEDrop::MgrNotifyReset()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEDrop", "MgrNotifyReset");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GameEx.GERotateBrick.OnRep_BrickState
+// Function GameEx.GETrapBase.Lua_UpdateOverlaps
 // (Final, Native, Public, BlueprintCallable)
 
-void AGERotateBrick::OnRep_BrickState()
+void AGETrapBase::Lua_UpdateOverlaps()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GERotateBrick", "OnRep_BrickState");
+		Func = Class->GetFunction("GETrapBase", "Lua_UpdateOverlaps");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -75,543 +33,6 @@ void AGERotateBrick::OnRep_BrickState()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GERotateBrick.SetBrickState
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EGERotateBrickState                     InState                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGERotateBrick::SetBrickState(EGERotateBrickState InState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GERotateBrick", "SetBrickState");
-
-	Params::GERotateBrick_SetBrickState Parms{};
-
-	Parms.InState = InState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GERotateBrick.SetEffectMat
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   EffectType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGERotateBrick::SetEffectMat(int32 EffectType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GERotateBrick", "SetEffectMat");
-
-	Params::GERotateBrick_SetEffectMat Parms{};
-
-	Parms.EffectType = EffectType;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GameEx.GERotateBrick.SyncRotateFinish
-// (Net, NetReliable, Native, Event, NetMulticast, Public)
-// Parameters:
-// float                                   CurAngle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGERotateBrick::SyncRotateFinish(float CurAngle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GERotateBrick", "SyncRotateFinish");
-
-	Params::GERotateBrick_SyncRotateFinish Parms{};
-
-	Parms.CurAngle = CurAngle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GERotateBrick.SyncStartRotateTime
-// (Net, NetReliable, Native, Event, NetMulticast, Public)
-// Parameters:
-// float                                   CurTime                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGERotateBrick::SyncStartRotateTime(float CurTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GERotateBrick", "SyncStartRotateTime");
-
-	Params::GERotateBrick_SyncStartRotateTime Parms{};
-
-	Parms.CurTime = CurTime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEScripteEventMgr.DelInstance
-// (Final, Native, Static, Public)
-
-void UGEScripteEventMgr::DelInstance()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEScripteEventMgr", "DelInstance");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEScripteEventMgr.GetActorExComLuaTableName
-// (Final, Native, Static, Public)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UGEScripteEventMgr::GetActorExComLuaTableName()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEScripteEventMgr", "GetActorExComLuaTableName");
-
-	Params::GEScripteEventMgr_GetActorExComLuaTableName Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEScripteEventMgr.GetGameModeLuaTableName
-// (Final, Native, Static, Public)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UGEScripteEventMgr::GetGameModeLuaTableName()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEScripteEventMgr", "GetGameModeLuaTableName");
-
-	Params::GEScripteEventMgr_GetGameModeLuaTableName Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEScripteEventMgr.GetInstance
-// (Final, Native, Static, Public)
-// Parameters:
-// class UGEScripteEventMgr*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UGEScripteEventMgr* UGEScripteEventMgr::GetInstance()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEScripteEventMgr", "GetInstance");
-
-	Params::GEScripteEventMgr_GetInstance Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEScripteEventMgr.GetScripMgrLuaTableName
-// (Final, Native, Static, Public)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UGEScripteEventMgr::GetScripMgrLuaTableName()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEScripteEventMgr", "GetScripMgrLuaTableName");
-
-	Params::GEScripteEventMgr_GetScripMgrLuaTableName Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEScripteEventMgr.SetScripMgrLuaTableName
-// (Final, Native, Static, Public)
-// Parameters:
-// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGEScripteEventMgr::SetScripMgrLuaTableName(const class FString& Name_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEScripteEventMgr", "SetScripMgrLuaTableName");
-
-	Params::GEScripteEventMgr_SetScripMgrLuaTableName Parms{};
-
-	Parms.Name_0 = std::move(Name_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEScripteEventMgr.AddGEActor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   ServerID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGEScripteEventMgr::AddGEActor(int32 ServerID, class AActor* Actor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEScripteEventMgr", "AddGEActor");
-
-	Params::GEScripteEventMgr_AddGEActor Parms{};
-
-	Parms.ServerID = ServerID;
-	Parms.Actor = Actor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEScripteEventMgr.GetGameInstance
-// (Native, Public)
-// Parameters:
-// class UGameInstance*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UGameInstance* UGEScripteEventMgr::GetGameInstance()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEScripteEventMgr", "GetGameInstance");
-
-	Params::GEScripteEventMgr_GetGameInstance Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEScripteEventMgr.GetGEActorByServerID
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   ServerID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UWorld*                           World                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AActor* UGEScripteEventMgr::GetGEActorByServerID(int32 ServerID, class UWorld* World)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEScripteEventMgr", "GetGEActorByServerID");
-
-	Params::GEScripteEventMgr_GetGEActorByServerID Parms{};
-
-	Parms.ServerID = ServerID;
-	Parms.World = World;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEScripteEventMgr.NotifyToTSEvent
-// (Native, Public)
-// Parameters:
-// const class FString&                    Cmd                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Param                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGEScripteEventMgr::NotifyToTSEvent(const class FString& Cmd, const class FString& Param)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEScripteEventMgr", "NotifyToTSEvent");
-
-	Params::GEScripteEventMgr_NotifyToTSEvent Parms{};
-
-	Parms.Cmd = std::move(Cmd);
-	Parms.Param = std::move(Param);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEScripteEventMgr.OnActorBeginPlay
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGEScripteEventMgr::OnActorBeginPlay(class AActor* Actor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEScripteEventMgr", "OnActorBeginPlay");
-
-	Params::GEScripteEventMgr_OnActorBeginPlay Parms{};
-
-	Parms.Actor = Actor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEScripteEventMgr.OnActorEndPlay
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const EEndPlayReason                    EndPlayReason                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGEScripteEventMgr::OnActorEndPlay(class AActor* Actor, const EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEScripteEventMgr", "OnActorEndPlay");
-
-	Params::GEScripteEventMgr_OnActorEndPlay Parms{};
-
-	Parms.Actor = Actor;
-	Parms.EndPlayReason = EndPlayReason;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEScripteEventMgr.OnStart
-// (Native, Public)
-// Parameters:
-// class UGameInstance*                    ins                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGEScripteEventMgr::OnStart(class UGameInstance* ins)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEScripteEventMgr", "OnStart");
-
-	Params::GEScripteEventMgr_OnStart Parms{};
-
-	Parms.ins = ins;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEScripteEventMgr.RemoveGEActor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   ServerID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UWorld*                           World                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGEScripteEventMgr::RemoveGEActor(int32 ServerID, class UWorld* World)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEScripteEventMgr", "RemoveGEActor");
-
-	Params::GEScripteEventMgr_RemoveGEActor Parms{};
-
-	Parms.ServerID = ServerID;
-	Parms.World = World;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEScripteEventMgr.RemoveLuaTable
-// (Final, Native, Public)
-// Parameters:
-// const class FString&                    TableName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGEScripteEventMgr::RemoveLuaTable(const class FString& TableName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEScripteEventMgr", "RemoveLuaTable");
-
-	Params::GEScripteEventMgr_RemoveLuaTable Parms{};
-
-	Parms.TableName = std::move(TableName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEScripteEventMgr.SetDebugWaiting
-// (Native, Public)
-
-void UGEScripteEventMgr::SetDebugWaiting()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEScripteEventMgr", "SetDebugWaiting");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEScripteEventMgr.SetLuaTable
-// (Final, Native, Public)
-// Parameters:
-// const class FString&                    TableName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    GetFunName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGEScripteEventMgr::SetLuaTable(const class FString& TableName, const class FString& GetFunName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEScripteEventMgr", "SetLuaTable");
-
-	Params::GEScripteEventMgr_SetLuaTable Parms{};
-
-	Parms.TableName = std::move(TableName);
-	Parms.GetFunName = std::move(GetFunName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GESideBySideActor.LuaImpl_DoSideBySideAction
-// (Event, Public, BlueprintEvent)
-
-void AGESideBySideActor::LuaImpl_DoSideBySideAction()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GESideBySideActor", "LuaImpl_DoSideBySideAction");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -643,517 +64,93 @@ void AGETrapBase::LuaImpl_DeActive()
 }
 
 
-// Function GameEx.GESkillLibrary.CanAddStoreCount
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function GameEx.GETrapBase.LuaImpl_OnGetSpawner
+// (Event, Public, BlueprintEvent)
 
-bool UGESkillLibrary::CanAddStoreCount(class AController* InController, int32 InIndex)
+void AGETrapBase::LuaImpl_OnGetSpawner()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "CanAddStoreCount");
+		Func = Class->GetFunction("GETrapBase", "LuaImpl_OnGetSpawner");
 
-	Params::GESkillLibrary_CanAddStoreCount Parms{};
-
-	Parms.InController = InController;
-	Parms.InIndex = InIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GameEx.GESkillLibrary.GetAllBuffIdByCharTeam
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<int32>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+// Function GameEx.GETrapBase.OnRep_SpawnedBy
+// (Final, Native, Public)
 
-TArray<int32> UGESkillLibrary::GetAllBuffIdByCharTeam(class APawn* InPawn)
+void AGETrapBase::OnRep_SpawnedBy()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "GetAllBuffIdByCharTeam");
-
-	Params::GESkillLibrary_GetAllBuffIdByCharTeam Parms{};
-
-	Parms.InPawn = InPawn;
+		Func = Class->GetFunction("GETrapBase", "OnRep_SpawnedBy");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GESkillLibrary.GetAllSkillInfo
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TArray<struct FGESkillInfo>*            InArr                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UGESkillLibrary::GetAllSkillInfo(TArray<struct FGESkillInfo>* InArr)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "GetAllSkillInfo");
-
-	Params::GESkillLibrary_GetAllSkillInfo Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (InArr != nullptr)
-		*InArr = std::move(Parms.InArr);
-}
-
-
-// Function GameEx.GESkillLibrary.GetBuffDesParam
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// int32                                   BuffId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<float>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<float> UGESkillLibrary::GetBuffDesParam(int32 BuffId, int32 Level)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "GetBuffDesParam");
-
-	Params::GESkillLibrary_GetBuffDesParam Parms{};
-
-	Parms.BuffId = BuffId;
-	Parms.Level = Level;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GESkillLibrary.GetBuffFromCount
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    isHero                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<int32>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<int32> UGESkillLibrary::GetBuffFromCount(int32 Count, class APawn* InPawn, bool isHero)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "GetBuffFromCount");
-
-	Params::GESkillLibrary_GetBuffFromCount Parms{};
-
-	Parms.Count = Count;
-	Parms.InPawn = InPawn;
-	Parms.isHero = isHero;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GESkillLibrary.GetBuffInfoByID
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGEBuffInfo                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FGEBuffInfo UGESkillLibrary::GetBuffInfoByID(int32 InId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "GetBuffInfoByID");
-
-	Params::GESkillLibrary_GetBuffInfoByID Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GESkillLibrary.GetBuffLevelParam
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// int32                                   BuffId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<int32>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<int32> UGESkillLibrary::GetBuffLevelParam(int32 BuffId, int32 Level)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "GetBuffLevelParam");
-
-	Params::GESkillLibrary_GetBuffLevelParam Parms{};
-
-	Parms.BuffId = BuffId;
-	Parms.Level = Level;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GESkillLibrary.GetBuffPath
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSoftObjectPath                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FSoftObjectPath UGESkillLibrary::GetBuffPath(int32 InId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "GetBuffPath");
-
-	Params::GESkillLibrary_GetBuffPath Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GESkillLibrary.GetOwnBuffLevel
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InBuffId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UGESkillLibrary::GetOwnBuffLevel(int32 InBuffId, class APawn* InPawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "GetOwnBuffLevel");
-
-	Params::GESkillLibrary_GetOwnBuffLevel Parms{};
-
-	Parms.InBuffId = InBuffId;
-	Parms.InPawn = InPawn;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GESkillLibrary.GetSkillEquipData
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGESkillEquipInfo                ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FGESkillEquipInfo UGESkillLibrary::GetSkillEquipData(class AController* InController, int32 InIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "GetSkillEquipData");
-
-	Params::GESkillLibrary_GetSkillEquipData Parms{};
-
-	Parms.InController = InController;
-	Parms.InIndex = InIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GESkillLibrary.GetSkillInfo
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGESkillInfo                     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FGESkillInfo UGESkillLibrary::GetSkillInfo(int32 InId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "GetSkillInfo");
-
-	Params::GESkillLibrary_GetSkillInfo Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GESkillLibrary.GetSkillPath
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSoftObjectPath                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FSoftObjectPath UGESkillLibrary::GetSkillPath(int32 InId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "GetSkillPath");
-
-	Params::GESkillLibrary_GetSkillPath Parms{};
-
-	Parms.InId = InId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GESkillLibrary.IsUseable
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UGESkillLibrary::IsUseable(class AController* InController, int32 InIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "IsUseable");
-
-	Params::GESkillLibrary_IsUseable Parms{};
-
-	Parms.InController = InController;
-	Parms.InIndex = InIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GESkillLibrary.ModifySkillReduceCD
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AGEPlayerState*                   Ps                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InReduceValue                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGESkillLibrary::ModifySkillReduceCD(class AGEPlayerState* Ps, int32 InIndex, float InReduceValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "ModifySkillReduceCD");
-
-	Params::GESkillLibrary_ModifySkillReduceCD Parms{};
-
-	Parms.Ps = Ps;
-	Parms.InIndex = InIndex;
-	Parms.InReduceValue = InReduceValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function GameEx.GESkillLibrary.ModifySkillStoreCount
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AGEGameCharacter*                 Char                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InAddCount                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function GameEx.GETrapBase.OnRep_VisibleTimeChanged
+// (Final, Native, Public)
 
-void UGESkillLibrary::ModifySkillStoreCount(class AGEGameCharacter* Char, int32 InIndex, int32 InAddCount)
+void AGETrapBase::OnRep_VisibleTimeChanged()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "ModifySkillStoreCount");
-
-	Params::GESkillLibrary_ModifySkillStoreCount Parms{};
-
-	Parms.Char = Char;
-	Parms.InIndex = InIndex;
-	Parms.InAddCount = InAddCount;
+		Func = Class->GetFunction("GETrapBase", "OnRep_VisibleTimeChanged");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function GameEx.GESkillLibrary.SetIsUsed
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function GameEx.GETrapBase.OnVisibleTimeChanged
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InTime                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGESkillLibrary::SetIsUsed(class AController* InController, int32 InIndex)
+void AGETrapBase::OnVisibleTimeChanged(float InTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "SetIsUsed");
+		Func = Class->GetFunction("GETrapBase", "OnVisibleTimeChanged");
 
-	Params::GESkillLibrary_SetIsUsed Parms{};
+	Params::GETrapBase_OnVisibleTimeChanged Parms{};
 
-	Parms.InController = InController;
-	Parms.InIndex = InIndex;
+	Parms.InTime = InTime;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GameEx.GESkillLibrary.SetSkillEquipData
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGESkillEquipInfo&         Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UGESkillLibrary::SetSkillEquipData(class AController* InController, int32 InIndex, const struct FGESkillEquipInfo& Info)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESkillLibrary", "SetSkillEquipData");
-
-	Params::GESkillLibrary_SetSkillEquipData Parms{};
-
-	Parms.InController = InController;
-	Parms.InIndex = InIndex;
-	Parms.Info = std::move(Info);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GESplineConveyorComponent.AddMoveActor
+// Function GameEx.GETrapBase.SetSpawner
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   StartLen                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bCheckRepeat                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           InSpawner                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGESplineConveyorComponent::AddMoveActor(class AActor* Actor, float StartLen, bool bCheckRepeat)
+void AGETrapBase::SetSpawner(class AActor* InSpawner)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GESplineConveyorComponent", "AddMoveActor");
+		Func = Class->GetFunction("GETrapBase", "SetSpawner");
 
-	Params::GESplineConveyorComponent_AddMoveActor Parms{};
+	Params::GETrapBase_SetSpawner Parms{};
 
-	Parms.Actor = Actor;
-	Parms.StartLen = StartLen;
-	Parms.bCheckRepeat = bCheckRepeat;
+	Parms.InSpawner = InSpawner;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1164,23 +161,483 @@ void UGESplineConveyorComponent::AddMoveActor(class AActor* Actor, float StartLe
 }
 
 
-// Function GameEx.GESplineConveyorComponent.SetMoveValue
-// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
+// Function GameEx.GEHealTrap.AddCacheChar
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   servertimeMilli                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGESplineConveyorComponent::SetMoveValue(float Time, int64 servertimeMilli)
+void AGEHealTrap::AddCacheChar(const class FString& InKey, class AActor* InActor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GESplineConveyorComponent", "SetMoveValue");
+		Func = Class->GetFunction("GEHealTrap", "AddCacheChar");
 
-	Params::GESplineConveyorComponent_SetMoveValue Parms{};
+	Params::GEHealTrap_AddCacheChar Parms{};
 
-	Parms.Time = Time;
+	Parms.InKey = std::move(InKey);
+	Parms.InActor = InActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEHealTrap.RemoveCacheChar
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   DelayTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEHealTrap::RemoveCacheChar(const class FString& InKey, float DelayTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEHealTrap", "RemoveCacheChar");
+
+	Params::GEHealTrap_RemoveCacheChar Parms{};
+
+	Parms.InKey = std::move(InKey);
+	Parms.DelayTime = DelayTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEHideAndSeekMgr.GetDObjByName
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    InName                                                 (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* AGEHideAndSeekMgr::GetDObjByName(const class FString& InName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEHideAndSeekMgr", "GetDObjByName");
+
+	Params::GEHideAndSeekMgr_GetDObjByName Parms{};
+
+	Parms.InName = std::move(InName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEHideAndSeekMgr.OnRep_canSwitchMeshIndexArr
+// (Event, Public, BlueprintEvent)
+
+void AGEHideAndSeekMgr::OnRep_canSwitchMeshIndexArr()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEHideAndSeekMgr", "OnRep_canSwitchMeshIndexArr");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEItem.LuaImpl_OnAlloc
+// (Event, Protected, BlueprintEvent)
+
+void AGEItem::LuaImpl_OnAlloc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItem", "LuaImpl_OnAlloc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEItem.LuaImpl_OnFree
+// (Event, Protected, BlueprintEvent)
+
+void AGEItem::LuaImpl_OnFree()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItem", "LuaImpl_OnFree");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEItem.LuaImpl_TryGetLocalChar
+// (Event, Protected, BlueprintEvent)
+
+void AGEItem::LuaImpl_TryGetLocalChar()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItem", "LuaImpl_TryGetLocalChar");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEItem.LuaOnRep_IsUsed
+// (Event, Public, BlueprintEvent)
+
+void AGEItem::LuaOnRep_IsUsed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItem", "LuaOnRep_IsUsed");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEItem.OnRep_CurOwner
+// (Event, Public, BlueprintEvent)
+
+void AGEItem::OnRep_CurOwner()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItem", "OnRep_CurOwner");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEItem.OnRep_IsApplyUsed
+// (Event, Public, BlueprintEvent)
+
+void AGEItem::OnRep_IsApplyUsed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItem", "OnRep_IsApplyUsed");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEItem.OnRep_IsForceDetached
+// (Event, Public, BlueprintEvent)
+
+void AGEItem::OnRep_IsForceDetached()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItem", "OnRep_IsForceDetached");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEItem.OnRep_IsUsed
+// (Native, Public)
+
+void AGEItem::OnRep_IsUsed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItem", "OnRep_IsUsed");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItem.OnRep_SpawnPos
+// (Final, Native, Public)
+
+void AGEItem::OnRep_SpawnPos()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItem", "OnRep_SpawnPos");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItemBait.SetRotationFromClient_RPC
+// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults)
+// Parameters:
+// const struct FRotator&                  InRotation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void AGEItemBait::SetRotationFromClient_RPC(const struct FRotator& InRotation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemBait", "SetRotationFromClient_RPC");
+
+	Params::GEItemBait_SetRotationFromClient_RPC Parms{};
+
+	Parms.InRotation = std::move(InRotation);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItemBomb.Boom
+// (Event, Public, BlueprintEvent)
+
+void AGEItemBomb::Boom()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemBomb", "Boom");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEItemBomb.BoomFlash
+// (Net, Native, Event, NetMulticast, Public, BlueprintCallable)
+
+void AGEItemBomb::BoomFlash()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemBomb", "BoomFlash");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItemBomb.Generator
+// (Final, Native, Public)
+
+void AGEItemBomb::Generator()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemBomb", "Generator");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItemBomb.HAS_StartSplineMove
+// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FGEItemClientInfo&         ClientInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// int64                                   servertimeMilli                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InForwardVec                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEItemBomb::HAS_StartSplineMove(const struct FGEItemClientInfo& ClientInfo, int64 servertimeMilli, const struct FVector& InForwardVec)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemBomb", "HAS_StartSplineMove");
+
+	Params::GEItemBomb_HAS_StartSplineMove Parms{};
+
+	Parms.ClientInfo = std::move(ClientInfo);
 	Parms.servertimeMilli = servertimeMilli;
+	Parms.InForwardVec = std::move(InForwardVec);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItemBomb.OnRep_BombState
+// (Event, Public, BlueprintEvent)
+
+void AGEItemBomb::OnRep_BombState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemBomb", "OnRep_BombState");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEItemBomb.SetBombState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EGEBombState                            InState                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEItemBomb::SetBombState(EGEBombState InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemBomb", "SetBombState");
+
+	Params::GEItemBomb_SetBombState Parms{};
+
+	Parms.InState = InState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItemBomb.StartFreelyMove
+// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   InSpeed                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64                                   servertimeMilli                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEItemBomb::StartFreelyMove(const struct FVector& InSpeed, int64 servertimeMilli)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemBomb", "StartFreelyMove");
+
+	Params::GEItemBomb_StartFreelyMove Parms{};
+
+	Parms.InSpeed = std::move(InSpeed);
+	Parms.servertimeMilli = servertimeMilli;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItemBomb.StartSplineMove
+// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
+// Parameters:
+// const struct FGEItemClientInfo&         ClientInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// int64                                   servertimeMilli                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEItemBomb::StartSplineMove(const struct FGEItemClientInfo& ClientInfo, int64 servertimeMilli)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemBomb", "StartSplineMove");
+
+	Params::GEItemBomb_StartSplineMove Parms{};
+
+	Parms.ClientInfo = std::move(ClientInfo);
+	Parms.servertimeMilli = servertimeMilli;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItemBomb.SyncFreelyMove
+// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   InVel                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InDStartSplineMoveur                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEItemBomb::SyncFreelyMove(const struct FVector& InVel, const struct FVector& InLocation, float InDStartSplineMoveur)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemBomb", "SyncFreelyMove");
+
+	Params::GEItemBomb_SyncFreelyMove Parms{};
+
+	Parms.InVel = std::move(InVel);
+	Parms.InLocation = std::move(InLocation);
+	Parms.InDStartSplineMoveur = InDStartSplineMoveur;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItemBomb.SyncFreelySpeed_Collision
+// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   InVel                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InDur                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEItemBomb::SyncFreelySpeed_Collision(const struct FVector& InVel, float InDur)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemBomb", "SyncFreelySpeed_Collision");
+
+	Params::GEItemBomb_SyncFreelySpeed_Collision Parms{};
+
+	Parms.InVel = std::move(InVel);
+	Parms.InDur = InDur;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2127,120 +1584,214 @@ void UGEActorExComponent::SetUserID(int32 iUserid)
 }
 
 
-// Function GameEx.GESplineMoveComponent.AddMoveActor
-// (Final, Native, Public, BlueprintCallable)
+// Function GameEx.GEItemLibrary.ApplyUseItem
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   StartLen                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bCheckRepeat                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AGEGameCharacter*                 InCharacter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    isAttachedItem                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGEItemClientInfo&         ItemInfo_Client                                        (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UGESplineMoveComponent::AddMoveActor(class AActor* Actor, float StartLen, bool bCheckRepeat)
+void UGEItemLibrary::ApplyUseItem(class AGEGameCharacter* InCharacter, int32 InIndex, bool isAttachedItem, const struct FGEItemClientInfo& ItemInfo_Client)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GESplineMoveComponent", "AddMoveActor");
+		Func = StaticClass()->GetFunction("GEItemLibrary", "ApplyUseItem");
 
-	Params::GESplineMoveComponent_AddMoveActor Parms{};
+	Params::GEItemLibrary_ApplyUseItem Parms{};
 
-	Parms.Actor = Actor;
-	Parms.StartLen = StartLen;
-	Parms.bCheckRepeat = bCheckRepeat;
+	Parms.InCharacter = InCharacter;
+	Parms.InIndex = InIndex;
+	Parms.isAttachedItem = isAttachedItem;
+	Parms.ItemInfo_Client = std::move(ItemInfo_Client);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function GameEx.GESplineMoveComponent.OnRep_MoveValue
-// (Final, Native, Public)
-
-void UGESplineMoveComponent::OnRep_MoveValue()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GESplineMoveComponent", "OnRep_MoveValue");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GESplineMoveComponent.SetisSelfMove
-// (Net, Native, Event, NetMulticast, Public, BlueprintCallable)
+// Function GameEx.GEItemLibrary.CanAddStoreCount
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// bool                                    selfmove                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    isAttachedItem                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGESplineMoveComponent::SetisSelfMove(bool selfmove)
+bool UGEItemLibrary::CanAddStoreCount(class AController* InController, int32 InIndex, bool isAttachedItem)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GESplineMoveComponent", "SetisSelfMove");
+		Func = StaticClass()->GetFunction("GEItemLibrary", "CanAddStoreCount");
 
-	Params::GESplineMoveComponent_SetisSelfMove Parms{};
+	Params::GEItemLibrary_CanAddStoreCount Parms{};
 
-	Parms.selfmove = selfmove;
+	Parms.InController = InController;
+	Parms.InIndex = InIndex;
+	Parms.isAttachedItem = isAttachedItem;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function GameEx.GESplineMoveComponent.SetMoveValue
-// (Net, Native, Event, NetMulticast, Public, BlueprintCallable)
+// Function GameEx.GEItemLibrary.GetItemData
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   servertimeMilli                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    isAttachedItem                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGEItemInfo                      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UGESplineMoveComponent::SetMoveValue(float Time, int64 servertimeMilli)
+struct FGEItemInfo UGEItemLibrary::GetItemData(class AController* InController, int32 InIndex, bool isAttachedItem)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GESplineMoveComponent", "SetMoveValue");
+		Func = StaticClass()->GetFunction("GEItemLibrary", "GetItemData");
 
-	Params::GESplineMoveComponent_SetMoveValue Parms{};
+	Params::GEItemLibrary_GetItemData Parms{};
 
-	Parms.Time = Time;
-	Parms.servertimeMilli = servertimeMilli;
+	Parms.InController = InController;
+	Parms.InIndex = InIndex;
+	Parms.isAttachedItem = isAttachedItem;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEItemLibrary.GetItemMgr
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AGEItemMgr*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AGEItemMgr* UGEItemLibrary::GetItemMgr(class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEItemLibrary", "GetItemMgr");
+
+	Params::GEItemLibrary_GetItemMgr Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEItemLibrary.IsUseable
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    isAttachedItem                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGEItemLibrary::IsUseable(class AController* InController, int32 InIndex, bool isAttachedItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEItemLibrary", "IsUseable");
+
+	Params::GEItemLibrary_IsUseable Parms{};
+
+	Parms.InController = InController;
+	Parms.InIndex = InIndex;
+	Parms.isAttachedItem = isAttachedItem;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEItemLibrary.SetIsUsed
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    isAttachedItem                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEItemLibrary::SetIsUsed(class AController* InController, int32 InIndex, bool isAttachedItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEItemLibrary", "SetIsUsed");
+
+	Params::GEItemLibrary_SetIsUsed Parms{};
+
+	Parms.InController = InController;
+	Parms.InIndex = InIndex;
+	Parms.isAttachedItem = isAttachedItem;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function GameEx.GESplineMoveComponent.UpdateSelfMeshLocation
-// (Final, Native, Public, BlueprintCallable)
+// Function GameEx.GEItemLibrary.SetItemData
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGEItemInfo&               Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UGESplineMoveComponent::UpdateSelfMeshLocation()
+void UGEItemLibrary::SetItemData(class AController* InController, int32 InIndex, const struct FGEItemInfo& Info)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GESplineMoveComponent", "UpdateSelfMeshLocation");
+		Func = StaticClass()->GetFunction("GEItemLibrary", "SetItemData");
+
+	Params::GEItemLibrary_SetItemData Parms{};
+
+	Parms.InController = InController;
+	Parms.InIndex = InIndex;
+	Parms.Info = std::move(Info);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -2338,47 +1889,26 @@ void UWaterParkCollectAIModifyCom::SetIsValid(bool InNewState)
 }
 
 
-// Function GameEx.GESystem.Get
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function GameEx.GEItemMgr.AllocItem
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGESystem*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      Path                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Position                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  Rotator                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// class AGEItem*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UGESystem* UGESystem::Get(const class UObject* WorldContextObject)
+class AGEItem* AGEItemMgr::AllocItem(const class FName& Path, const struct FVector& Position, const struct FRotator& Rotator)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GESystem", "Get");
+		Func = Class->GetFunction("GEItemMgr", "AllocItem");
 
-	Params::GESystem_Get Parms{};
+	Params::GEItemMgr_AllocItem Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GESystem.GetHideAndSeekMgr
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AGEHideAndSeekMgr*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AGEHideAndSeekMgr* UGESystem::GetHideAndSeekMgr()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GESystem", "GetHideAndSeekMgr");
-
-	Params::GESystem_GetHideAndSeekMgr Parms{};
+	Parms.Path = Path;
+	Parms.Position = std::move(Position);
+	Parms.Rotator = std::move(Rotator);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2391,19 +1921,21 @@ class AGEHideAndSeekMgr* UGESystem::GetHideAndSeekMgr()
 }
 
 
-// Function GameEx.GESystem.GetItemMgr
+// Function GameEx.GEItemMgr.FreeItem
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class AGEItemMgr*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AGEItem*                          Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class AGEItemMgr* UGESystem::GetItemMgr()
+void AGEItemMgr::FreeItem(class AGEItem* Item)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GESystem", "GetItemMgr");
+		Func = Class->GetFunction("GEItemMgr", "FreeItem");
 
-	Params::GESystem_GetItemMgr Parms{};
+	Params::GEItemMgr_FreeItem Parms{};
+
+	Parms.Item = Item;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2411,24 +1943,119 @@ class AGEItemMgr* UGESystem::GetItemMgr()
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItemMgr.LuaImpl_ApplyUseItem
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// class AGEGameCharacter*                 InCharacter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGEItemInfo&               Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FGEItemClientInfo&         ItemClientInfo                                         (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEItemMgr::LuaImpl_ApplyUseItem(class AGEGameCharacter* InCharacter, const struct FGEItemInfo& Info, const struct FGEItemClientInfo& ItemClientInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemMgr", "LuaImpl_ApplyUseItem");
+
+	Params::GEItemMgr_LuaImpl_ApplyUseItem Parms{};
+
+	Parms.InCharacter = InCharacter;
+	Parms.Info = std::move(Info);
+	Parms.ItemClientInfo = std::move(ItemClientInfo);
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
 }
 
 
-// Function GameEx.GESystem.GetZBugRunMgr
-// (Final, Native, Public, BlueprintCallable)
+// Function GameEx.GEItemMgr.LuaImpl_NotifyEquipItem
+// (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// class AGEZBugRunMgr*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AGEGameCharacter*                 InCharacter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGEItemInfo&               Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-class AGEZBugRunMgr* UGESystem::GetZBugRunMgr()
+void AGEItemMgr::LuaImpl_NotifyEquipItem(class AGEGameCharacter* InCharacter, const struct FGEItemInfo& Info)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GESystem", "GetZBugRunMgr");
+		Func = Class->GetFunction("GEItemMgr", "LuaImpl_NotifyEquipItem");
 
-	Params::GESystem_GetZBugRunMgr Parms{};
+	Params::GEItemMgr_LuaImpl_NotifyEquipItem Parms{};
+
+	Parms.InCharacter = InCharacter;
+	Parms.Info = std::move(Info);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEItemMgr.LuaImpl_NotifyUnloadItem
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AGEGameCharacter*                 InCharacter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEItemMgr::LuaImpl_NotifyUnloadItem(class AGEGameCharacter* InCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemMgr", "LuaImpl_NotifyUnloadItem");
+
+	Params::GEItemMgr_LuaImpl_NotifyUnloadItem Parms{};
+
+	Parms.InCharacter = InCharacter;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEItemMgr.LuaImpl_SetIsUseable
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// class AGEGameCharacter*                 InCharacter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGEItemInfo*                     Info                                                   (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void AGEItemMgr::LuaImpl_SetIsUseable(class AGEGameCharacter* InCharacter, struct FGEItemInfo* Info)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemMgr", "LuaImpl_SetIsUseable");
+
+	Params::GEItemMgr_LuaImpl_SetIsUseable Parms{};
+
+	Parms.InCharacter = InCharacter;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Info != nullptr)
+		*Info = std::move(Parms.Info);
+}
+
+
+// Function GameEx.GEItemScan.CharacterEntryBox
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    InName                                                 (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEItemScan::CharacterEntryBox(const class FString& InName, class AActor* InActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemScan", "CharacterEntryBox");
+
+	Params::GEItemScan_CharacterEntryBox Parms{};
+
+	Parms.InName = std::move(InName);
+	Parms.InActor = InActor;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2436,63 +2063,92 @@ class AGEZBugRunMgr* UGESystem::GetZBugRunMgr()
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function GameEx.GEWPLibrary.GetSettlementCamOffsetByTemplateID
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Function GameEx.GEItemScan.CharacterExitBox
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   InTemplateID                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    IsSuccess                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InName                                                 (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UGEWPLibrary::GetSettlementCamOffsetByTemplateID(int32 InTemplateID, bool IsSuccess)
+void AGEItemScan::CharacterExitBox(const class FString& InName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEWPLibrary", "GetSettlementCamOffsetByTemplateID");
+		Func = Class->GetFunction("GEItemScan", "CharacterExitBox");
 
-	Params::GEWPLibrary_GetSettlementCamOffsetByTemplateID Parms{};
+	Params::GEItemScan_CharacterExitBox Parms{};
 
-	Parms.InTemplateID = InTemplateID;
-	Parms.IsSuccess = IsSuccess;
+	Parms.InName = std::move(InName);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function GameEx.GEWPLibrary.SetPerformanceMode
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bOpen                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function GameEx.GEItemScan.OnRep_IsActivate
+// (Event, Public, BlueprintEvent)
 
-void UGEWPLibrary::SetPerformanceMode(bool bOpen)
+void AGEItemScan::OnRep_IsActivate()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEWPLibrary", "SetPerformanceMode");
+		Func = Class->GetFunction("GEItemScan", "OnRep_IsActivate");
 
-	Params::GEWPLibrary_SetPerformanceMode Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.bOpen = bOpen;
+
+// Function GameEx.GEItemWeaponBox.LuaImpl_WeaponBox_MultiCastOnAlloc
+// (Event, Public, BlueprintEvent)
+
+void AGEItemWeaponBox::LuaImpl_WeaponBox_MultiCastOnAlloc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemWeaponBox", "LuaImpl_WeaponBox_MultiCastOnAlloc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEItemWeaponBox.MultiCast_OnAlloc
+// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
+
+void AGEItemWeaponBox::MultiCast_OnAlloc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemWeaponBox", "MultiCast_OnAlloc");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItemWeaponBox.OnBlockMove
+// (Event, Public, BlueprintEvent)
+
+void AGEItemWeaponBox::OnBlockMove()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemWeaponBox", "OnBlockMove");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -3401,8 +3057,10 @@ void UGEAnimInstance::SetYawDeltaforLeans(float DeltaTimeX)
 // Parameters:
 // class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InMaxValue                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InMinVal                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             InMaxName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGELimitFormula::InitAttrFormula(class FName InName, float InMaxValue)
+void UGELimitFormula::InitAttrFormula(class FName InName, float InMaxValue, float InMinVal, class FName InMaxName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3413,6 +3071,8 @@ void UGELimitFormula::InitAttrFormula(class FName InName, float InMaxValue)
 
 	Parms.InName = InName;
 	Parms.InMaxValue = InMaxValue;
+	Parms.InMinVal = InMinVal;
+	Parms.InMaxName = InMaxName;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3445,6 +3105,99 @@ void UGELimitHealthFormula::InitHealthLimitFormula(class FName CurHealthName, cl
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEBoomTrap.GenerateBoomEffect
+// (Event, Public, BlueprintEvent)
+
+void AGEBoomTrap::GenerateBoomEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEBoomTrap", "GenerateBoomEffect");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEBoomTrap.OnSphereComponentBeginOverlap
+// (Final, Native, Protected, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AGEBoomTrap::OnSphereComponentBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEBoomTrap", "OnSphereComponentBeginOverlap");
+
+	Params::GEBoomTrap_OnSphereComponentBeginOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEBoomTrap.SetIsBoom
+// (Final, Native, Public)
+// Parameters:
+// bool                                    InBoom                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEBoomTrap::SetIsBoom(bool InBoom)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEBoomTrap", "SetIsBoom");
+
+	Params::GEBoomTrap_SetIsBoom Parms{};
+
+	Parms.InBoom = InBoom;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEBoomTrap.SpawnInit
+// (Final, Native, Public)
+
+void AGEBoomTrap::SpawnInit()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEBoomTrap", "SpawnInit");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -3543,6 +3296,48 @@ void UGECurveMoveComponent::SetRollback(bool bRollback)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEDrop.MgrNotifyChangeMat
+// (Event, Public, BlueprintEvent)
+
+void AGEDrop::MgrNotifyChangeMat()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEDrop", "MgrNotifyChangeMat");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEDrop.MgrNotifyDestroy
+// (Event, Public, BlueprintEvent)
+
+void AGEDrop::MgrNotifyDestroy()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEDrop", "MgrNotifyDestroy");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEDrop.MgrNotifyReset
+// (Event, Public, BlueprintEvent)
+
+void AGEDrop::MgrNotifyReset()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEDrop", "MgrNotifyReset");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -3743,6 +3538,71 @@ void AGEDynamicObject::OnRep_RandomIndexArr()
 }
 
 
+// Function GameEx.GEFightFriendHead.LuaImpl_Tick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightFriendHead::LuaImpl_Tick(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightFriendHead", "LuaImpl_Tick");
+
+	Params::GEFightFriendHead_LuaImpl_Tick Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEFightFriendHead.SetCharRoleHeadImg
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   IconId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightFriendHead::SetCharRoleHeadImg(int32 IconId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightFriendHead", "SetCharRoleHeadImg");
+
+	Params::GEFightFriendHead_SetCharRoleHeadImg Parms{};
+
+	Parms.IconId = IconId;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEFightFriendHead.SetOwnChar
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AGEGameCharacter*                 InChar                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightFriendHead::SetOwnChar(class AGEGameCharacter* InChar)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightFriendHead", "SetOwnChar");
+
+	Params::GEFightFriendHead_SetOwnChar Parms{};
+
+	Parms.InChar = InChar;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEFightHPBar.RefreshExpBar
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -3763,12 +3623,33 @@ void UGEFightHPBar::RefreshExpBar(int32 Value)
 }
 
 
+// Function GameEx.GEFightEnemyHPBar.LuaImpl_TickUpdateLoc
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   InDeltaSeconds                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightEnemyHPBar::LuaImpl_TickUpdateLoc(float InDeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightEnemyHPBar", "LuaImpl_TickUpdateLoc");
+
+	Params::GEFightEnemyHPBar_LuaImpl_TickUpdateLoc Parms{};
+
+	Parms.InDeltaSeconds = InDeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function GameEx.GEFightEnemyHPBar.SetUniqueID
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // int32                                   InUniqueID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    isBindPawnMonster                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGEFightEnemyHPBar::SetUniqueID(int32 InUniqueID)
+void UGEFightEnemyHPBar::SetUniqueID(int32 InUniqueID, bool isBindPawnMonster)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3778,6 +3659,7 @@ void UGEFightEnemyHPBar::SetUniqueID(int32 InUniqueID)
 	Params::GEFightEnemyHPBar_SetUniqueID Parms{};
 
 	Parms.InUniqueID = InUniqueID;
+	Parms.isBindPawnMonster = isBindPawnMonster;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -3798,6 +3680,115 @@ void UGEFightEnemyHPBar::SetVisibleOrCollapsed(bool IsVisible_0)
 	Params::GEFightEnemyHPBar_SetVisibleOrCollapsed Parms{};
 
 	Parms.IsVisible_0 = IsVisible_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEFightFriendHPBar.SetUniqueID
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   InUniqueID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightFriendHPBar::SetUniqueID(int32 InUniqueID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightFriendHPBar", "SetUniqueID");
+
+	Params::GEFightFriendHPBar_SetUniqueID Parms{};
+
+	Parms.InUniqueID = InUniqueID;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEFightFriendHPBar.SetVisibleOrCollapsed
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsVisible_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightFriendHPBar::SetVisibleOrCollapsed(bool IsVisible_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightFriendHPBar", "SetVisibleOrCollapsed");
+
+	Params::GEFightFriendHPBar_SetVisibleOrCollapsed Parms{};
+
+	Parms.IsVisible_0 = IsVisible_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEFightBossHPBar.ClearCacheBoss
+// (Final, Native, Public, BlueprintCallable)
+
+void UGEFightBossHPBar::ClearCacheBoss()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightBossHPBar", "ClearCacheBoss");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEFightBossHPBar.GetCacheMonster
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AGEGameMonster*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AGEGameMonster* UGEFightBossHPBar::GetCacheMonster()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightBossHPBar", "GetCacheMonster");
+
+	Params::GEFightBossHPBar_GetCacheMonster Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEFightBossHPBar.SetCacheBoss
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AGEGameMonster*                   InMonster                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightBossHPBar::SetCacheBoss(class AGEGameMonster* InMonster)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightBossHPBar", "SetCacheBoss");
+
+	Params::GEFightBossHPBar_SetCacheBoss Parms{};
+
+	Parms.InMonster = InMonster;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3993,6 +3984,200 @@ void UGEFightMemberTitle::SetPlayerUniqueIDToWidget(class UWidget* Widget, int32
 }
 
 
+// Function GameEx.GEFightMemberTitle.SetTitleVisibleOrCollapsed
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    IsVisible_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64                                   InRolePID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InName                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightMemberTitle::SetTitleVisibleOrCollapsed(bool IsVisible_0, int64 InRolePID, const class FString& InName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightMemberTitle", "SetTitleVisibleOrCollapsed");
+
+	Params::GEFightMemberTitle_SetTitleVisibleOrCollapsed Parms{};
+
+	Parms.IsVisible_0 = IsVisible_0;
+	Parms.InRolePID = InRolePID;
+	Parms.InName = std::move(InName);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEFightMemberTitleNew.AllocNewWidget
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int64                                   InRoleID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGEFightMemberTitleItemNew*       ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGEFightMemberTitleItemNew* UGEFightMemberTitleNew::AllocNewWidget(int64 InRoleID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightMemberTitleNew", "AllocNewWidget");
+
+	Params::GEFightMemberTitleNew_AllocNewWidget Parms{};
+
+	Parms.InRoleID = InRoleID;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEFightMemberTitleNew.RegisterCharacter
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AGEPlayerState*                   InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AGEGameCharacter*                 InChar                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightMemberTitleNew::RegisterCharacter(class AGEPlayerState* InActor, class AGEGameCharacter* InChar)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightMemberTitleNew", "RegisterCharacter");
+
+	Params::GEFightMemberTitleNew_RegisterCharacter Parms{};
+
+	Parms.InActor = InActor;
+	Parms.InChar = InChar;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEFightMemberTitleItemNew.GetTitleIsVisible
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGEFightMemberTitleItemNew::GetTitleIsVisible()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightMemberTitleItemNew", "GetTitleIsVisible");
+
+	Params::GEFightMemberTitleItemNew_GetTitleIsVisible Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEFightMemberTitleItemNew.LuaTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightMemberTitleItemNew::LuaTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightMemberTitleItemNew", "LuaTick");
+
+	Params::GEFightMemberTitleItemNew_LuaTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEFightMemberTitleItemNew.SetCharName
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const class FString&                    InName                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightMemberTitleItemNew::SetCharName(const class FString& InName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightMemberTitleItemNew", "SetCharName");
+
+	Params::GEFightMemberTitleItemNew_SetCharName Parms{};
+
+	Parms.InName = std::move(InName);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEFightMemberTitleItemNew.SetNameVisibleOrCollapsed
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsVisible_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightMemberTitleItemNew::SetNameVisibleOrCollapsed(bool IsVisible_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightMemberTitleItemNew", "SetNameVisibleOrCollapsed");
+
+	Params::GEFightMemberTitleItemNew_SetNameVisibleOrCollapsed Parms{};
+
+	Parms.IsVisible_0 = IsVisible_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEFightMemberTitleItemNew.SetTitleVisibleOrCollapsed
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsVisible_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightMemberTitleItemNew::SetTitleVisibleOrCollapsed(bool IsVisible_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightMemberTitleItemNew", "SetTitleVisibleOrCollapsed");
+
+	Params::GEFightMemberTitleItemNew_SetTitleVisibleOrCollapsed Parms{};
+
+	Parms.IsVisible_0 = IsVisible_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEFightWeaponSwitch.TickUpdateBulletNum
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   BulletNum                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEFightWeaponSwitch::TickUpdateBulletNum(int32 BulletNum)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEFightWeaponSwitch", "TickUpdateBulletNum");
+
+	Params::GEFightWeaponSwitch_TickUpdateBulletNum Parms{};
+
+	Parms.BulletNum = BulletNum;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function GameEx.GEGameCharacter.ActivateBuff
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -4033,6 +4218,122 @@ void AGEGameCharacter::ActivateSkill(int32 SkillID)
 	Params::GEGameCharacter_ActivateSkill Parms{};
 
 	Parms.SkillID = SkillID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.AddAttributeBaseValByName
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddAttributeBaseValByName(class FName InName, float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddAttributeBaseValByName");
+
+	Params::GEGameCharacter_AddAttributeBaseValByName Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.AddAttributeBaseValByNameHaveDur
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InDur                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    isOverride                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddAttributeBaseValByNameHaveDur(class FName InName, float InValue, float InDur, bool isOverride)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddAttributeBaseValByNameHaveDur");
+
+	Params::GEGameCharacter_AddAttributeBaseValByNameHaveDur Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = InValue;
+	Parms.InDur = InDur;
+	Parms.isOverride = isOverride;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.AddAttributeCurValByName
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddAttributeCurValByName(class FName InName, float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddAttributeCurValByName");
+
+	Params::GEGameCharacter_AddAttributeCurValByName Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.AddAttributeCurValByNameHaveDur
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InDur                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    isOverride                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddAttributeCurValByNameHaveDur(class FName InName, float InValue, float InDur, bool isOverride)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddAttributeCurValByNameHaveDur");
+
+	Params::GEGameCharacter_AddAttributeCurValByNameHaveDur Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = InValue;
+	Parms.InDur = InDur;
+	Parms.isOverride = isOverride;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4085,6 +4386,33 @@ void AGEGameCharacter::AddBuff(int32 BuffId)
 	Params::GEGameCharacter_AddBuff Parms{};
 
 	Parms.BuffId = BuffId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.AddBuff_Client
+// (Net, NetReliable, Native, Event, Public, NetClient, BlueprintCallable)
+// Parameters:
+// int32                                   BuffId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddBuff_Client(int32 BuffId, int32 Count)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddBuff_Client");
+
+	Params::GEGameCharacter_AddBuff_Client Parms{};
+
+	Parms.BuffId = BuffId;
+	Parms.Count = Count;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4151,8 +4479,9 @@ void AGEGameCharacter::AddBuffLevel(int32 BuffId)
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // float                                   InCure                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AGEGameCharacter*                 InTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEGameCharacter::AddCure(float InCure)
+void AGEGameCharacter::AddCure(float InCure, class AGEGameCharacter* InTarget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4162,6 +4491,61 @@ void AGEGameCharacter::AddCure(float InCure)
 	Params::GEGameCharacter_AddCure Parms{};
 
 	Parms.InCure = InCure;
+	Parms.InTarget = InTarget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.AddDefenceDmgFormulas
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ULogicTree_DmgFormula*            InFormula                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddDefenceDmgFormulas(class ULogicTree_DmgFormula* InFormula, int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddDefenceDmgFormulas");
+
+	Params::GEGameCharacter_AddDefenceDmgFormulas Parms{};
+
+	Parms.InFormula = InFormula;
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.AddDmgFormulas
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ULogicTree_DmgFormula*            InFormula                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddDmgFormulas(class ULogicTree_DmgFormula* InFormula, int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddDmgFormulas");
+
+	Params::GEGameCharacter_AddDmgFormulas Parms{};
+
+	Parms.InFormula = InFormula;
+	Parms.InId = InId;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4280,6 +4664,60 @@ void AGEGameCharacter::AddHaveSubtituteID(int32 ID)
 }
 
 
+// Function GameEx.GEGameCharacter.AddInsBuff
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UGameLogicTreeEntity*             InsBuffEntity                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Launcher                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddInsBuff(class UGameLogicTreeEntity* InsBuffEntity, class AActor* Launcher)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddInsBuff");
+
+	Params::GEGameCharacter_AddInsBuff Parms{};
+
+	Parms.InsBuffEntity = InsBuffEntity;
+	Parms.Launcher = Launcher;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.AddItemCatchInfo
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ItemId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddItemCatchInfo(int32 ItemId, int32 Count)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddItemCatchInfo");
+
+	Params::GEGameCharacter_AddItemCatchInfo Parms{};
+
+	Parms.ItemId = ItemId;
+	Parms.Count = Count;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.AddItemUseInfo
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -4311,8 +4749,10 @@ void AGEGameCharacter::AddItemUseInfo(int32 ItemId, int32 Count)
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // float                                   InDmg                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AGEGameCharacter*                 InTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InWeaponID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEGameCharacter::AddLaunchDmg(float InDmg)
+void AGEGameCharacter::AddLaunchDmg(float InDmg, class AGEGameCharacter* InTarget, int32 InWeaponID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4322,6 +4762,37 @@ void AGEGameCharacter::AddLaunchDmg(float InDmg)
 	Params::GEGameCharacter_AddLaunchDmg Parms{};
 
 	Parms.InDmg = InDmg;
+	Parms.InTarget = InTarget;
+	Parms.InWeaponID = InWeaponID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.AddNewSwitchWeapon
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    isSwitchNowWeapon                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NewWeaponID                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    isDestroyWhenBulletZero                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddNewSwitchWeapon(bool isSwitchNowWeapon, int32 NewWeaponID, bool isDestroyWhenBulletZero)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddNewSwitchWeapon");
+
+	Params::GEGameCharacter_AddNewSwitchWeapon Parms{};
+
+	Parms.isSwitchNowWeapon = isSwitchNowWeapon;
+	Parms.NewWeaponID = NewWeaponID;
+	Parms.isDestroyWhenBulletZero = isDestroyWhenBulletZero;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4376,6 +4847,81 @@ void AGEGameCharacter::AddOrRemoveRebornTag(bool isAdd)
 }
 
 
+// Function GameEx.GEGameCharacter.AddPeopleUseInherentSkillCount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddPeopleUseInherentSkillCount(int32 Count)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddPeopleUseInherentSkillCount");
+
+	Params::GEGameCharacter_AddPeopleUseInherentSkillCount Parms{};
+
+	Parms.Count = Count;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.AddRebornAccelerateByPeople
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InUniqueID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddRebornAccelerateByPeople(int32 InUniqueID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddRebornAccelerateByPeople");
+
+	Params::GEGameCharacter_AddRebornAccelerateByPeople Parms{};
+
+	Parms.InUniqueID = InUniqueID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.AddSkillPower
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddSkillPower(float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddSkillPower");
+
+	Params::GEGameCharacter_AddSkillPower Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.AddSkillUseInfo
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -4392,6 +4938,33 @@ void AGEGameCharacter::AddSkillUseInfo(int32 SkillID, int32 Count)
 	Params::GEGameCharacter_AddSkillUseInfo Parms{};
 
 	Parms.SkillID = SkillID;
+	Parms.Count = Count;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.AddSwitchWeaponInfo
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   WeaponID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddSwitchWeaponInfo(int32 WeaponID, int32 Count)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddSwitchWeaponInfo");
+
+	Params::GEGameCharacter_AddSwitchWeaponInfo Parms{};
+
+	Parms.WeaponID = WeaponID;
 	Parms.Count = Count;
 
 	auto Flgs = Func->FunctionFlags;
@@ -4430,13 +5003,63 @@ void AGEGameCharacter::AddTakeDmg(float InDmg, int32 LaunchUniqueID)
 }
 
 
+// Function GameEx.GEGameCharacter.AddWeaponListCache
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AGEZBugRunWeaponBase*             InWeapon                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddWeaponListCache(class AGEZBugRunWeaponBase* InWeapon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddWeaponListCache");
+
+	Params::GEGameCharacter_AddWeaponListCache Parms{};
+
+	Parms.InWeapon = InWeapon;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.AddZBugChallengeProgressKillBadgeCount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InCount                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::AddZBugChallengeProgressKillBadgeCount(int32 InCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddZBugChallengeProgressKillBadgeCount");
+
+	Params::GEGameCharacter_AddZBugChallengeProgressKillBadgeCount Parms{};
+
+	Parms.InCount = InCount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.AIDmgHit
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const struct FGEZBug_DmgHitInfo&        HitInfo                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FGEZBug_DmgHitInfo>&HitInfo                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    NeedRayValidate                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEGameCharacter::AIDmgHit(const struct FGEZBug_DmgHitInfo& HitInfo, bool NeedRayValidate)
+void AGEGameCharacter::AIDmgHit(const TArray<struct FGEZBug_DmgHitInfo>& HitInfo, bool NeedRayValidate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4594,9 +5217,11 @@ void AGEGameCharacter::ApplyContinuousSpeedVecOffset_WithFalling(const struct FV
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // float                                   InCustomExGravity                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bOverrideDuration                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEGameCharacter::ApplyCustomExGravityScale(float InCustomExGravity, float Duration)
+void AGEGameCharacter::ApplyCustomExGravityScale(float InCustomExGravity, const class FString& InKey, float Duration, bool bOverrideDuration)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4606,7 +5231,9 @@ void AGEGameCharacter::ApplyCustomExGravityScale(float InCustomExGravity, float 
 	Params::GEGameCharacter_ApplyCustomExGravityScale Parms{};
 
 	Parms.InCustomExGravity = InCustomExGravity;
+	Parms.InKey = std::move(InKey);
 	Parms.Duration = Duration;
+	Parms.bOverrideDuration = bOverrideDuration;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4669,6 +5296,31 @@ void AGEGameCharacter::ApplyHitFlyVec(const struct FVector& HitSpeedVec)
 }
 
 
+// Function GameEx.GEGameCharacter.ApplyInsBuff
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   BuffId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::ApplyInsBuff(int32 BuffId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "ApplyInsBuff");
+
+	Params::GEGameCharacter_ApplyInsBuff Parms{};
+
+	Parms.BuffId = BuffId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.ApplyInstantTempLastSpeedVec
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -4720,8 +5372,9 @@ void AGEGameCharacter::ApplyItemEffect_NeedServerTime(int32 ConfigId, float serv
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // int32                                   NewIndex                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewPlayRate                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEGameCharacter::ApplyNewAnimIndexToRep(int32 NewIndex)
+void AGEGameCharacter::ApplyNewAnimIndexToRep(int32 NewIndex, float NewPlayRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4731,6 +5384,7 @@ void AGEGameCharacter::ApplyNewAnimIndexToRep(int32 NewIndex)
 	Params::GEGameCharacter_ApplyNewAnimIndexToRep Parms{};
 
 	Parms.NewIndex = NewIndex;
+	Parms.NewPlayRate = NewPlayRate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5084,9 +5738,8 @@ void AGEGameCharacter::BroadCastPlayEffect(const class FString& InPath, const st
 // const struct FVector&                   InAttachLoc                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FRotator&                  InRotator                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // const struct FVector&                   InScale                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             AttachName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEGameCharacter::BroadCastPlayEffectAttachToById(const int32 EffId, class AActor* Parent, const struct FVector& InAttachLoc, const struct FRotator& InRotator, const struct FVector& InScale, class FName AttachName)
+void AGEGameCharacter::BroadCastPlayEffectAttachToById(const int32 EffId, class AActor* Parent, const struct FVector& InAttachLoc, const struct FRotator& InRotator, const struct FVector& InScale)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5100,7 +5753,6 @@ void AGEGameCharacter::BroadCastPlayEffectAttachToById(const int32 EffId, class 
 	Parms.InAttachLoc = std::move(InAttachLoc);
 	Parms.InRotator = std::move(InRotator);
 	Parms.InScale = std::move(InScale);
-	Parms.AttachName = AttachName;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5127,6 +5779,70 @@ void AGEGameCharacter::BroadCastPlayEffectById(const int32 EffId, const struct F
 		Func = Class->GetFunction("GEGameCharacter", "BroadCastPlayEffectById");
 
 	Params::GEGameCharacter_BroadCastPlayEffectById Parms{};
+
+	Parms.EffId = EffId;
+	Parms.InLocation = std::move(InLocation);
+	Parms.InRotation = std::move(InRotation);
+	Parms.InScale = std::move(InScale);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.BroadCastPlayLocalEffectAttachById
+// (Net, Native, Event, Public, HasDefaults, NetClient, BlueprintCallable)
+// Parameters:
+// const int32                             EffId                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Parent                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  InRotation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   InScale                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::BroadCastPlayLocalEffectAttachById(const int32 EffId, class AActor* Parent, const struct FVector& InLocation, const struct FRotator& InRotation, const struct FVector& InScale)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "BroadCastPlayLocalEffectAttachById");
+
+	Params::GEGameCharacter_BroadCastPlayLocalEffectAttachById Parms{};
+
+	Parms.EffId = EffId;
+	Parms.Parent = Parent;
+	Parms.InLocation = std::move(InLocation);
+	Parms.InRotation = std::move(InRotation);
+	Parms.InScale = std::move(InScale);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.BroadCastPlayLocalEffectById
+// (Net, Native, Event, Public, HasDefaults, NetClient, BlueprintCallable)
+// Parameters:
+// const int32                             EffId                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  InRotation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   InScale                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::BroadCastPlayLocalEffectById(const int32 EffId, const struct FVector& InLocation, const struct FRotator& InRotation, const struct FVector& InScale)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "BroadCastPlayLocalEffectById");
+
+	Params::GEGameCharacter_BroadCastPlayLocalEffectById Parms{};
 
 	Parms.EffId = EffId;
 	Parms.InLocation = std::move(InLocation);
@@ -5267,6 +5983,25 @@ void AGEGameCharacter::ChangeCamerPitchView(const class FString& InKey)
 }
 
 
+// Function GameEx.GEGameCharacter.CharDead
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::CharDead()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "CharDead");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.CheckBuffCanRefresh
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -5281,6 +6016,34 @@ bool AGEGameCharacter::CheckBuffCanRefresh(int32 BuffId)
 		Func = Class->GetFunction("GEGameCharacter", "CheckBuffCanRefresh");
 
 	Params::GEGameCharacter_CheckBuffCanRefresh Parms{};
+
+	Parms.BuffId = BuffId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameCharacter.CheckBuffCanRefreshWhenLevelFirst
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   BuffId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEGameCharacter::CheckBuffCanRefreshWhenLevelFirst(int32 BuffId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "CheckBuffCanRefreshWhenLevelFirst");
+
+	Params::GEGameCharacter_CheckBuffCanRefreshWhenLevelFirst Parms{};
 
 	Parms.BuffId = BuffId;
 
@@ -5375,6 +6138,36 @@ void AGEGameCharacter::CheckCurveMoveOnMontagePlay(class UAnimMontage* TargetMon
 }
 
 
+// Function GameEx.GEGameCharacter.CheckHaveDmgFormulaByID
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    isDmgFormula                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEGameCharacter::CheckHaveDmgFormulaByID(int32 InId, bool isDmgFormula)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "CheckHaveDmgFormulaByID");
+
+	Params::GEGameCharacter_CheckHaveDmgFormulaByID Parms{};
+
+	Parms.InId = InId;
+	Parms.isDmgFormula = isDmgFormula;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameEx.GEGameCharacter.CheckHaveSubtituteID
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -5419,6 +6212,56 @@ bool AGEGameCharacter::CheckHaveTag(const struct FGameplayTag& InTag)
 	Params::GEGameCharacter_CheckHaveTag Parms{};
 
 	Parms.InTag = std::move(InTag);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameCharacter.CheckIsLocallyControlled
+// (Final, Native, Public)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEGameCharacter::CheckIsLocallyControlled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "CheckIsLocallyControlled");
+
+	Params::GEGameCharacter_CheckIsLocallyControlled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameCharacter.CheckIsReborning
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEGameCharacter::CheckIsReborning()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "CheckIsReborning");
+
+	Params::GEGameCharacter_CheckIsReborning Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5561,6 +6404,25 @@ void AGEGameCharacter::ClearHaveSubtituteID()
 }
 
 
+// Function GameEx.GEGameCharacter.ClearRebornAccelerateByPeople
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::ClearRebornAccelerateByPeople()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "ClearRebornAccelerateByPeople");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.ClearTakeDmgMap
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -5606,6 +6468,104 @@ void AGEGameCharacter::Client_DamageOther(const struct FGEZBug_DamageRPCInfo& In
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.Client_MultiDmgOther
+// (Net, NetReliable, Native, Event, Public, NetClient, BlueprintCallable)
+// Parameters:
+// const TArray<struct FGEZBug_DamageRPCInfo>&Infos                                                  (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::Client_MultiDmgOther(const TArray<struct FGEZBug_DamageRPCInfo>& Infos)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "Client_MultiDmgOther");
+
+	Params::GEGameCharacter_Client_MultiDmgOther Parms{};
+
+	Parms.Infos = std::move(Infos);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.Client_PlayAudioAtLoc
+// (Net, Native, Event, Public, HasDefaults, NetClient, BlueprintCallable)
+// Parameters:
+// int32                                   ID                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLoc                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::Client_PlayAudioAtLoc(int32 ID, const struct FVector& InLoc)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "Client_PlayAudioAtLoc");
+
+	Params::GEGameCharacter_Client_PlayAudioAtLoc Parms{};
+
+	Parms.ID = ID;
+	Parms.InLoc = std::move(InLoc);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.Client_PlayAudioAttach
+// (Net, Native, Event, Public, NetClient, BlueprintCallable)
+// Parameters:
+// int32                                   ID                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           InParent                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::Client_PlayAudioAttach(int32 ID, class AActor* InParent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "Client_PlayAudioAttach");
+
+	Params::GEGameCharacter_Client_PlayAudioAttach Parms{};
+
+	Parms.ID = ID;
+	Parms.InParent = InParent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.ClientNotifySkillPowerFull
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::ClientNotifySkillPowerFull()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "ClientNotifySkillPowerFull");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -5713,6 +6673,56 @@ void AGEGameCharacter::DeActiveBuff_MultiCast(int32 BuffId)
 }
 
 
+// Function GameEx.GEGameCharacter.DeActivePassiveSkill
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InSkillId                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::DeActivePassiveSkill(int32 InSkillId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "DeActivePassiveSkill");
+
+	Params::GEGameCharacter_DeActivePassiveSkill Parms{};
+
+	Parms.InSkillId = InSkillId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.DeActivePassiveSkill_MultiCast
+// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InSkillId                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::DeActivePassiveSkill_MultiCast(int32 InSkillId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "DeActivePassiveSkill_MultiCast");
+
+	Params::GEGameCharacter_DeActivePassiveSkill_MultiCast Parms{};
+
+	Parms.InSkillId = InSkillId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.DeActiveSkill
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -5757,6 +6767,31 @@ void AGEGameCharacter::DestroyCurWeapon()
 }
 
 
+// Function GameEx.GEGameCharacter.DestroyWeaponByIndex
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::DestroyWeaponByIndex(int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "DestroyWeaponByIndex");
+
+	Params::GEGameCharacter_DestroyWeaponByIndex Parms{};
+
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.EnterWaterRamp
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -5774,6 +6809,50 @@ void AGEGameCharacter::EnterWaterRamp(class AActor* InActor)
 	Parms.InActor = InActor;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameCharacter.EquipPassiveSkill
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InSkillId                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::EquipPassiveSkill(int32 InSkillId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "EquipPassiveSkill");
+
+	Params::GEGameCharacter_EquipPassiveSkill Parms{};
+
+	Parms.InSkillId = InSkillId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.ForceFinishReload
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::ForceFinishReload()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "ForceFinishReload");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -5825,10 +6904,9 @@ void AGEGameCharacter::GenerateEffect(const class FString& InPath, const struct 
 // const struct FVector&                   InAttachLoc                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FRotator&                  InRotator                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // const struct FVector&                   InScale                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             AttachName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UNiagaraComponent*                ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UNiagaraComponent* AGEGameCharacter::GenerateEffectAttachTo(const int32 EffId, class AActor* Parent, const struct FVector& InAttachLoc, const struct FRotator& InRotator, const struct FVector& InScale, class FName AttachName)
+class UNiagaraComponent* AGEGameCharacter::GenerateEffectAttachTo(const int32 EffId, class AActor* Parent, const struct FVector& InAttachLoc, const struct FRotator& InRotator, const struct FVector& InScale)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5842,7 +6920,6 @@ class UNiagaraComponent* AGEGameCharacter::GenerateEffectAttachTo(const int32 Ef
 	Parms.InAttachLoc = std::move(InAttachLoc);
 	Parms.InRotator = std::move(InRotator);
 	Parms.InScale = std::move(InScale);
-	Parms.AttachName = AttachName;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6013,6 +7090,56 @@ class APlayerState* AGEGameCharacter::GetCharState()
 }
 
 
+// Function GameEx.GEGameCharacter.GetCharTemplateUIName
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString AGEGameCharacter::GetCharTemplateUIName()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "GetCharTemplateUIName");
+
+	Params::GEGameCharacter_GetCharTemplateUIName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameCharacter.GetCurLevelPeopleDefaultAttrTemplateID
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEGameCharacter::GetCurLevelPeopleDefaultAttrTemplateID()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "GetCurLevelPeopleDefaultAttrTemplateID");
+
+	Params::GEGameCharacter_GetCurLevelPeopleDefaultAttrTemplateID Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameEx.GEGameCharacter.GetCurWeapon
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -6051,6 +7178,87 @@ class ULogicTree_EntityDataCom* AGEGameCharacter::GetDataCom()
 		Func = Class->GetFunction("GEGameCharacter", "GetDataCom");
 
 	Params::GEGameCharacter_GetDataCom Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameCharacter.GetExtraDefenceDmgMultiplierFromCharFormula
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   DmgType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<float>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<float> AGEGameCharacter::GetExtraDefenceDmgMultiplierFromCharFormula(int32 DmgType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "GetExtraDefenceDmgMultiplierFromCharFormula");
+
+	Params::GEGameCharacter_GetExtraDefenceDmgMultiplierFromCharFormula Parms{};
+
+	Parms.DmgType = DmgType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameCharacter.GetExtraDmgMultiplierFromCharDmgFormula
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   DmgType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<float>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<float> AGEGameCharacter::GetExtraDmgMultiplierFromCharDmgFormula(int32 DmgType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "GetExtraDmgMultiplierFromCharDmgFormula");
+
+	Params::GEGameCharacter_GetExtraDmgMultiplierFromCharDmgFormula Parms{};
+
+	Parms.DmgType = DmgType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameCharacter.GetGameStatePtr
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// class AGEGameState*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AGEGameState* AGEGameCharacter::GetGameStatePtr()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "GetGameStatePtr");
+
+	Params::GEGameCharacter_GetGameStatePtr Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6244,6 +7452,31 @@ TArray<struct FGECharOwnBuffInfo> AGEGameCharacter::GetOwnBuffs()
 }
 
 
+// Function GameEx.GEGameCharacter.GetReplicatedComponent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UGEReplicatedComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGEReplicatedComponent* AGEGameCharacter::GetReplicatedComponent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "GetReplicatedComponent");
+
+	Params::GEGameCharacter_GetReplicatedComponent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameEx.GEGameCharacter.GetShootPosition
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -6310,6 +7543,56 @@ class UWaterParkQAnimIns* AGEGameCharacter::GetWaterParkAnimIns()
 		Func = Class->GetFunction("GEGameCharacter", "GetWaterParkAnimIns");
 
 	Params::GEGameCharacter_GetWaterParkAnimIns Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameCharacter.GetWeaponScatter
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector4                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector4 AGEGameCharacter::GetWeaponScatter()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "GetWeaponScatter");
+
+	Params::GEGameCharacter_GetWeaponScatter Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameCharacter.GetWeaponShootRange
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AGEGameCharacter::GetWeaponShootRange()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "GetWeaponShootRange");
+
+	Params::GEGameCharacter_GetWeaponShootRange Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6443,8 +7726,27 @@ void AGEGameCharacter::HitFly(const struct FVector& HitSpeedVec)
 }
 
 
+// Function GameEx.GEGameCharacter.InitInherentSkill
+// (Final, Native, Protected, BlueprintCallable)
+
+void AGEGameCharacter::InitInherentSkill()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "InitInherentSkill");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.InitLogicComFinish
-// (Final, Native, Public, BlueprintCallable)
+// (Native, Public, BlueprintCallable)
 
 void AGEGameCharacter::InitLogicComFinish()
 {
@@ -6845,6 +8147,28 @@ void AGEGameCharacter::Lua_PlayAudio(int32 Type)
 }
 
 
+// Function GameEx.GEGameCharacter.LuaImpl_AddBuff_Client
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   BuffId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::LuaImpl_AddBuff_Client(int32 BuffId, int32 Count)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_AddBuff_Client");
+
+	Params::GEGameCharacter_LuaImpl_AddBuff_Client Parms{};
+
+	Parms.BuffId = BuffId;
+	Parms.Count = Count;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function GameEx.GEGameCharacter.LuaImpl_BecomeHero
 // (Event, Public, BlueprintEvent)
 
@@ -6873,20 +8197,100 @@ void AGEGameCharacter::LuaImpl_BeInfect()
 }
 
 
-// Function GameEx.GEGameCharacter.LuaImpl_ClientOnHealthChange
+// Function GameEx.GEGameCharacter.LuaImpl_Client_PlayAudioAtLoc
+// (Event, Public, HasDefaults, BlueprintEvent)
+// Parameters:
+// int32                                   ID                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLoc                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::LuaImpl_Client_PlayAudioAtLoc(int32 ID, const struct FVector& InLoc)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_Client_PlayAudioAtLoc");
+
+	Params::GEGameCharacter_LuaImpl_Client_PlayAudioAtLoc Parms{};
+
+	Parms.ID = ID;
+	Parms.InLoc = std::move(InLoc);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameCharacter.LuaImpl_Client_PlayAudioAttach
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   ID                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           InParent                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::LuaImpl_Client_PlayAudioAttach(int32 ID, class AActor* InParent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_Client_PlayAudioAttach");
+
+	Params::GEGameCharacter_LuaImpl_Client_PlayAudioAttach Parms{};
+
+	Parms.ID = ID;
+	Parms.InParent = InParent;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameCharacter.LuaImpl_ClientAddBadge
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EWPBadgeType                            Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::LuaImpl_ClientAddBadge(int32 Count, EWPBadgeType Type)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_ClientAddBadge");
+
+	Params::GEGameCharacter_LuaImpl_ClientAddBadge Parms{};
+
+	Parms.Count = Count;
+	Parms.Type = Type;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameCharacter.LuaImpl_ClientNotifySkillPowerFull
+// (Event, Public, BlueprintEvent)
+
+void AGEGameCharacter::LuaImpl_ClientNotifySkillPowerFull()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_ClientNotifySkillPowerFull");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEGameCharacter.LuaImpl_ClientOnLocalHealthChange
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEGameCharacter::LuaImpl_ClientOnHealthChange(class FName InName, float InValue)
+void AGEGameCharacter::LuaImpl_ClientOnLocalHealthChange(class FName InName, float InValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_ClientOnHealthChange");
+		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_ClientOnLocalHealthChange");
 
-	Params::GEGameCharacter_LuaImpl_ClientOnHealthChange Parms{};
+	Params::GEGameCharacter_LuaImpl_ClientOnLocalHealthChange Parms{};
 
 	Parms.InName = InName;
 	Parms.InValue = InValue;
@@ -6903,8 +8307,9 @@ void AGEGameCharacter::LuaImpl_ClientOnHealthChange(class FName InName, float In
 // float                                   InDamage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    isCritical                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FVector&                   HitPos                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bWeaponAttack                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEGameCharacter::LuaImpl_DamageOther(int32 LaunchUniqueID, int32 TargetUniqueID, float InDamage, bool isCritical, const struct FVector& HitPos)
+void AGEGameCharacter::LuaImpl_DamageOther(int32 LaunchUniqueID, int32 TargetUniqueID, float InDamage, bool isCritical, const struct FVector& HitPos, bool bWeaponAttack)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6918,6 +8323,7 @@ void AGEGameCharacter::LuaImpl_DamageOther(int32 LaunchUniqueID, int32 TargetUni
 	Parms.InDamage = InDamage;
 	Parms.isCritical = isCritical;
 	Parms.HitPos = std::move(HitPos);
+	Parms.bWeaponAttack = bWeaponAttack;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -6938,6 +8344,50 @@ void AGEGameCharacter::LuaImpl_GetDamage_MultiCast(const struct FGEZBug_DamageRP
 	Params::GEGameCharacter_LuaImpl_GetDamage_MultiCast Parms{};
 
 	Parms.Info = std::move(Info);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameCharacter.LuaImpl_LocalSkillPowerChange
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::LuaImpl_LocalSkillPowerChange(class FName InName, float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_LocalSkillPowerChange");
+
+	Params::GEGameCharacter_LuaImpl_LocalSkillPowerChange Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = InValue;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameCharacter.LuaImpl_NotifyAddBadge
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EWPBadgeType                            Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::LuaImpl_NotifyAddBadge(int32 Count, EWPBadgeType Type)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_NotifyAddBadge");
+
+	Params::GEGameCharacter_LuaImpl_NotifyAddBadge Parms{};
+
+	Parms.Count = Count;
+	Parms.Type = Type;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -6972,6 +8422,58 @@ void AGEGameCharacter::LuaImpl_OnLevelUp(int32 Level)
 	Params::GEGameCharacter_LuaImpl_OnLevelUp Parms{};
 
 	Parms.Level = Level;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameCharacter.LuaImpl_OnRep_CharUniqueID
+// (Event, Public, BlueprintEvent)
+
+void AGEGameCharacter::LuaImpl_OnRep_CharUniqueID()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_OnRep_CharUniqueID");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEGameCharacter.LuaImpl_OnRep_IsReborning
+// (Event, Public, BlueprintEvent)
+
+void AGEGameCharacter::LuaImpl_OnRep_IsReborning()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_OnRep_IsReborning");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEGameCharacter.LuaImpl_PlayWwise
+// (Event, Public, HasDefaults, BlueprintEvent)
+// Parameters:
+// int32                                   ID                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLoc                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           InParent                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::LuaImpl_PlayWwise(int32 ID, const struct FVector& InLoc, class AActor* InParent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_PlayWwise");
+
+	Params::GEGameCharacter_LuaImpl_PlayWwise Parms{};
+
+	Parms.ID = ID;
+	Parms.InLoc = std::move(InLoc);
+	Parms.InParent = InParent;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -7012,6 +8514,40 @@ void AGEGameCharacter::LuaImpl_SetOutlineOpenOrClose(bool IsOpen, bool isEnemy, 
 	Parms.NeedTick = NeedTick;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameCharacter.LuaImpl_SmokeBomb_Multicast
+// (Event, Public, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::LuaImpl_SmokeBomb_Multicast(const struct FVector& InLocation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_SmokeBomb_Multicast");
+
+	Params::GEGameCharacter_LuaImpl_SmokeBomb_Multicast Parms{};
+
+	Parms.InLocation = std::move(InLocation);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameCharacter.LuaImpl_TrySwitchWeaponFail_Client
+// (Event, Public, BlueprintEvent)
+
+void AGEGameCharacter::LuaImpl_TrySwitchWeaponFail_Client()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LuaImpl_TrySwitchWeaponFail_Client");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -7059,6 +8595,28 @@ void AGEGameCharacter::LuaUpdateOverlaps()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.ModifySkillLevel
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   InCurLevel                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EGEZBugRunBugType                       InBugType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::ModifySkillLevel(int32 InCurLevel, EGEZBugRunBugType InBugType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "ModifySkillLevel");
+
+	Params::GEGameCharacter_ModifySkillLevel Parms{};
+
+	Parms.InCurLevel = InCurLevel;
+	Parms.InBugType = InBugType;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -7189,6 +8747,31 @@ void AGEGameCharacter::MultiCast_GetDamage(const struct FGEZBug_DamageRPCInfo& I
 }
 
 
+// Function GameEx.GEGameCharacter.MultiCast_SetRotation
+// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FRotator&                  Rotator                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::MultiCast_SetRotation(const struct FRotator& Rotator)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "MultiCast_SetRotation");
+
+	Params::GEGameCharacter_MultiCast_SetRotation Parms{};
+
+	Parms.Rotator = std::move(Rotator);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.MultiCast_SubtituteRotateInPlace
 // (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
 // Parameters:
@@ -7231,6 +8814,33 @@ void AGEGameCharacter::Multicast_ZBugChangeFireState(bool InNewFiring, bool InNe
 
 	Parms.InNewFiring = InNewFiring;
 	Parms.InNewFireState = InNewFireState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.NotifyAddBadge
+// (Net, NetReliable, Native, Event, Public, NetClient, BlueprintCallable)
+// Parameters:
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EWPBadgeType                            Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::NotifyAddBadge(int32 Count, EWPBadgeType Type)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "NotifyAddBadge");
+
+	Params::GEGameCharacter_NotifyAddBadge Parms{};
+
+	Parms.Count = Count;
+	Parms.Type = Type;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -7285,6 +8895,64 @@ void AGEGameCharacter::OnClientBeCure()
 }
 
 
+// Function GameEx.GEGameCharacter.OnClientIdleVisibleStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::OnClientIdleVisibleStateChanged(float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "OnClientIdleVisibleStateChanged");
+
+	Params::GEGameCharacter_OnClientIdleVisibleStateChanged Parms{};
+
+	Parms.InValue = InValue;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameCharacter.OnCurWeaponDestroy_Client
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::OnCurWeaponDestroy_Client()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "OnCurWeaponDestroy_Client");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.OnCurWeaponDestroy_DS
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::OnCurWeaponDestroy_DS()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "OnCurWeaponDestroy_DS");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.OnLogicStateChange
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -7318,6 +8986,25 @@ void AGEGameCharacter::OnRep_CacheLevelUpBuffs()
 		Func = Class->GetFunction("GEGameCharacter", "OnRep_CacheLevelUpBuffs");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEGameCharacter.OnRep_CharUniqueID
+// (Final, Native, Public)
+
+void AGEGameCharacter::OnRep_CharUniqueID()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "OnRep_CharUniqueID");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -7368,6 +9055,20 @@ void AGEGameCharacter::OnRep_IsInDuction()
 }
 
 
+// Function GameEx.GEGameCharacter.OnRep_isInvincible
+// (Event, Public, BlueprintEvent)
+
+void AGEGameCharacter::OnRep_isInvincible()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "OnRep_isInvincible");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GameEx.GEGameCharacter.OnRep_IsInvisible
 // (Event, Public, BlueprintEvent)
 
@@ -7377,6 +9078,20 @@ void AGEGameCharacter::OnRep_IsInvisible()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GEGameCharacter", "OnRep_IsInvisible");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEGameCharacter.OnRep_IsInvisibleV2
+// (Event, Public, BlueprintEvent)
+
+void AGEGameCharacter::OnRep_IsInvisibleV2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "OnRep_IsInvisibleV2");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -7467,6 +9182,25 @@ void AGEGameCharacter::OnRep_SetTemplateId()
 }
 
 
+// Function GameEx.GEGameCharacter.OnRep_SkillAnimState
+// (Final, Native, Public)
+
+void AGEGameCharacter::OnRep_SkillAnimState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "OnRep_SkillAnimState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.OnRep_SubtituteID
 // (Event, Public, BlueprintEvent)
 
@@ -7476,6 +9210,34 @@ void AGEGameCharacter::OnRep_SubtituteID()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GEGameCharacter", "OnRep_SubtituteID");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEGameCharacter.OnRep_TeamID
+// (Event, Public, BlueprintEvent)
+
+void AGEGameCharacter::OnRep_TeamID()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "OnRep_TeamID");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEGameCharacter.OnRep_WeaponList
+// (Event, Public, BlueprintEvent)
+
+void AGEGameCharacter::OnRep_WeaponList()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "OnRep_WeaponList");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -7495,6 +9257,33 @@ void AGEGameCharacter::OnRep_ZBugMeleeAttackType()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.OnReplicatedDataChanged
+// (Final, Native, Protected)
+// Parameters:
+// int32                                   ID                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::OnReplicatedDataChanged(int32 ID, float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "OnReplicatedDataChanged");
+
+	Params::GEGameCharacter_OnReplicatedDataChanged Parms{};
+
+	Parms.ID = ID;
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -7597,9 +9386,8 @@ void AGEGameCharacter::PlayEffect(const class FString& InPath, const struct FVec
 // const struct FVector&                   InAttachLoc                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FRotator&                  InRotator                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // const struct FVector&                   InScale                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             AttachName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEGameCharacter::PlayEffectAttachToById(const int32 EffId, class AActor* Parent, const struct FVector& InAttachLoc, const struct FRotator& InRotator, const struct FVector& InScale, class FName AttachName)
+void AGEGameCharacter::PlayEffectAttachToById(const int32 EffId, class AActor* Parent, const struct FVector& InAttachLoc, const struct FRotator& InRotator, const struct FVector& InScale)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7613,7 +9401,6 @@ void AGEGameCharacter::PlayEffectAttachToById(const int32 EffId, class AActor* P
 	Parms.InAttachLoc = std::move(InAttachLoc);
 	Parms.InRotator = std::move(InRotator);
 	Parms.InScale = std::move(InScale);
-	Parms.AttachName = AttachName;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -7655,13 +9442,110 @@ void AGEGameCharacter::PlayEffectById(const int32 EffId, const struct FVector& I
 }
 
 
+// Function GameEx.GEGameCharacter.PlayEffectByIdNew
+// (Event, Public, HasDefaults, BlueprintEvent)
+// Parameters:
+// const int32                             EffId                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  InRotation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   InScale                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           InParent                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UNiagaraComponent*                ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UNiagaraComponent* AGEGameCharacter::PlayEffectByIdNew(const int32 EffId, const struct FVector& InLocation, const struct FRotator& InRotation, const struct FVector& InScale, class AActor* InParent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "PlayEffectByIdNew");
+
+	Params::GEGameCharacter_PlayEffectByIdNew Parms{};
+
+	Parms.EffId = EffId;
+	Parms.InLocation = std::move(InLocation);
+	Parms.InRotation = std::move(InRotation);
+	Parms.InScale = std::move(InScale);
+	Parms.InParent = InParent;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameCharacter.PlayLocalEffectAttachById
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const int32                             EffId                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Parent                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  InRotation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   InScale                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::PlayLocalEffectAttachById(const int32 EffId, class AActor* Parent, const struct FVector& InLocation, const struct FRotator& InRotation, const struct FVector& InScale)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "PlayLocalEffectAttachById");
+
+	Params::GEGameCharacter_PlayLocalEffectAttachById Parms{};
+
+	Parms.EffId = EffId;
+	Parms.Parent = Parent;
+	Parms.InLocation = std::move(InLocation);
+	Parms.InRotation = std::move(InRotation);
+	Parms.InScale = std::move(InScale);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.PlayLocalEffectById
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const int32                             EffId                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  InRotation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   InScale                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::PlayLocalEffectById(const int32 EffId, const struct FVector& InLocation, const struct FRotator& InRotation, const struct FVector& InScale)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "PlayLocalEffectById");
+
+	Params::GEGameCharacter_PlayLocalEffectById Parms{};
+
+	Parms.EffId = EffId;
+	Parms.InLocation = std::move(InLocation);
+	Parms.InRotation = std::move(InRotation);
+	Parms.InScale = std::move(InScale);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.PlayMontageByName
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             TargetName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ChangeRepIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InPlayRate                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InCheckIsPlaying                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEGameCharacter::PlayMontageByName(class FName TargetName, bool ChangeRepIndex)
+void AGEGameCharacter::PlayMontageByName(class FName TargetName, bool ChangeRepIndex, float InPlayRate, bool InCheckIsPlaying)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7672,6 +9556,8 @@ void AGEGameCharacter::PlayMontageByName(class FName TargetName, bool ChangeRepI
 
 	Parms.TargetName = TargetName;
 	Parms.ChangeRepIndex = ChangeRepIndex;
+	Parms.InPlayRate = InPlayRate;
+	Parms.InCheckIsPlaying = InCheckIsPlaying;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -7719,6 +9605,44 @@ void AGEGameCharacter::Pounce()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GEGameCharacter", "Pounce");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.RefreshPassiveSkill
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::RefreshPassiveSkill()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "RefreshPassiveSkill");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.ReleaseJump
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::ReleaseJump()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "ReleaseJump");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -7833,6 +9757,33 @@ void AGEGameCharacter::RemoveContinuousSpeedVecOffset_WithFalling(const struct F
 }
 
 
+// Function GameEx.GEGameCharacter.RemoveExGravityScale
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InCustomExGravity                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::RemoveExGravityScale(float InCustomExGravity, const class FString& InKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "RemoveExGravityScale");
+
+	Params::GEGameCharacter_RemoveExGravityScale Parms{};
+
+	Parms.InCustomExGravity = InCustomExGravity;
+	Parms.InKey = std::move(InKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.RemoveExMaxMoveSpeed
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -7912,6 +9863,31 @@ void AGEGameCharacter::RemoveGameplayTag(const struct FGameplayTag& InTag)
 }
 
 
+// Function GameEx.GEGameCharacter.RemoveRebornAccelerateByPeople
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InUniqueID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::RemoveRebornAccelerateByPeople(int32 InUniqueID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "RemoveRebornAccelerateByPeople");
+
+	Params::GEGameCharacter_RemoveRebornAccelerateByPeople Parms{};
+
+	Parms.InUniqueID = InUniqueID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.ResetInstantTempLastSpeedVec
 // (Final, Native, Public, BlueprintCallable)
 
@@ -7953,6 +9929,52 @@ void AGEGameCharacter::SendBuffMsg(int32 BuffId, int32 BuffLevel)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.SendGetBadgeMsg
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EWPBadgeType                            Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::SendGetBadgeMsg(int32 Count, EWPBadgeType Type)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "SendGetBadgeMsg");
+
+	Params::GEGameCharacter_SendGetBadgeMsg Parms{};
+
+	Parms.Count = Count;
+	Parms.Type = Type;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.ServerNotifySkillPowerFull
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::ServerNotifySkillPowerFull()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "ServerNotifySkillPowerFull");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -8089,6 +10111,81 @@ void AGEGameCharacter::SetBlockMoveFromCom(bool NewBlockMove)
 }
 
 
+// Function GameEx.GEGameCharacter.SetCharUniqueID
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InUniqueID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::SetCharUniqueID(int32 InUniqueID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "SetCharUniqueID");
+
+	Params::GEGameCharacter_SetCharUniqueID Parms{};
+
+	Parms.InUniqueID = InUniqueID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.SetCoverBulletHitEffectID
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::SetCoverBulletHitEffectID(int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "SetCoverBulletHitEffectID");
+
+	Params::GEGameCharacter_SetCoverBulletHitEffectID Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.SetCoverBulletHitWwise
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::SetCoverBulletHitWwise(int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "SetCoverBulletHitWwise");
+
+	Params::GEGameCharacter_SetCoverBulletHitWwise Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.SetDisAbleFloorAdjust
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -8117,9 +10214,11 @@ void AGEGameCharacter::SetDisAbleFloorAdjust(bool bDisable)
 // Function GameEx.GEGameCharacter.SetEnterInvisible
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
+// bool                                    InInvisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Dur                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InvisibleState_Level                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEGameCharacter::SetEnterInvisible(float Dur)
+void AGEGameCharacter::SetEnterInvisible(bool InInvisible, float Dur, int32 InvisibleState_Level)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8128,7 +10227,9 @@ void AGEGameCharacter::SetEnterInvisible(float Dur)
 
 	Params::GEGameCharacter_SetEnterInvisible Parms{};
 
+	Parms.InInvisible = InInvisible;
 	Parms.Dur = Dur;
+	Parms.InvisibleState_Level = InvisibleState_Level;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8179,6 +10280,33 @@ void AGEGameCharacter::SetInJump(bool bJump)
 	Params::GEGameCharacter_SetInJump Parms{};
 
 	Parms.bJump = bJump;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.SetInvincible
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    InisInvincible                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InTime                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::SetInvincible(bool InisInvincible, float InTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "SetInvincible");
+
+	Params::GEGameCharacter_SetInvincible Parms{};
+
+	Parms.InisInvincible = InisInvincible;
+	Parms.InTime = InTime;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8260,6 +10388,31 @@ void AGEGameCharacter::SetNextLandResumeGravityScale(bool InValue)
 }
 
 
+// Function GameEx.GEGameCharacter.SetOrientRotationToMove
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    isOrientTo                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::SetOrientRotationToMove(bool isOrientTo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "SetOrientRotationToMove");
+
+	Params::GEGameCharacter_SetOrientRotationToMove Parms{};
+
+	Parms.isOrientTo = isOrientTo;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.SetOriginScale
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -8310,6 +10463,51 @@ void AGEGameCharacter::SetPlayerWeapon(class AActor* InWeapon)
 }
 
 
+// Function GameEx.GEGameCharacter.SetTeamID
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   InTeamID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::SetTeamID(int32 InTeamID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "SetTeamID");
+
+	Params::GEGameCharacter_SetTeamID Parms{};
+
+	Parms.InTeamID = InTeamID;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameCharacter.SetZBugSkillLevel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InLevel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::SetZBugSkillLevel(int32 InLevel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "SetZBugSkillLevel");
+
+	Params::GEGameCharacter_SetZBugSkillLevel Parms{};
+
+	Parms.InLevel = InLevel;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.ShowFace
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -8333,6 +10531,60 @@ void AGEGameCharacter::ShowFace(class UTexture2D* TargetFace, int32 Slot, const 
 	Parms.LayerIndex = LayerIndex;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameCharacter.SmokeBombMultiCast
+// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::SmokeBombMultiCast(const struct FVector& InLocation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "SmokeBombMultiCast");
+
+	Params::GEGameCharacter_SmokeBombMultiCast Parms{};
+
+	Parms.InLocation = std::move(InLocation);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.SpawnEntityBulletInDS
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// int32                                   BulletID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SpawnLoc                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   TargetLoc                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::SpawnEntityBulletInDS(int32 BulletID, const struct FVector& SpawnLoc, const struct FVector& TargetLoc)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "SpawnEntityBulletInDS");
+
+	Params::GEGameCharacter_SpawnEntityBulletInDS Parms{};
+
+	Parms.BulletID = BulletID;
+	Parms.SpawnLoc = std::move(SpawnLoc);
+	Parms.TargetLoc = std::move(TargetLoc);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -8464,6 +10716,25 @@ void AGEGameCharacter::SyncWaterRampTime_NetMulticast(float InCurTime, int64 InS
 }
 
 
+// Function GameEx.GEGameCharacter.TickCheckAddBadge
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::TickCheckAddBadge()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "TickCheckAddBadge");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.TickCheckWaterRamp
 // (Event, Public, BlueprintEvent)
 
@@ -8511,6 +10782,31 @@ void AGEGameCharacter::TickItemEffect(float DeltaSeconds)
 		Func = Class->GetFunction("GEGameCharacter", "TickItemEffect");
 
 	Params::GEGameCharacter_TickItemEffect Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.TickLerpCameraInfo
+// (Final, Native, Public)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::TickLerpCameraInfo(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "TickLerpCameraInfo");
+
+	Params::GEGameCharacter_TickLerpCameraInfo Parms{};
 
 	Parms.DeltaSeconds = DeltaSeconds;
 
@@ -8630,6 +10926,44 @@ void AGEGameCharacter::TryReload()
 }
 
 
+// Function GameEx.GEGameCharacter.TrySwitchWeapon_Client
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::TrySwitchWeapon_Client()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "TrySwitchWeapon_Client");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.TrySwitchWeapon_DS
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::TrySwitchWeapon_DS()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "TrySwitchWeapon_DS");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.TryUseItem
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -8720,7 +11054,7 @@ void AGEGameCharacter::TryUseItem_LuaImpl(int32 Index_0, int32 ConfigId, bool is
 
 
 // Function GameEx.GEGameCharacter.TryUseSkill
-// (Final, Native, Public, BlueprintCallable)
+// (Native, Public, BlueprintCallable)
 // Parameters:
 // int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8827,6 +11161,35 @@ void AGEGameCharacter::UpdateAILogicByTeam()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.UpdateDmgFormulaFactors
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<float>&                    InFactors                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    isDmgFormula                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::UpdateDmgFormulaFactors(int32 InId, const TArray<float>& InFactors, bool isDmgFormula)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "UpdateDmgFormulaFactors");
+
+	Params::GEGameCharacter_UpdateDmgFormulaFactors Parms{};
+
+	Parms.InId = InId;
+	Parms.InFactors = std::move(InFactors);
+	Parms.isDmgFormula = isDmgFormula;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -8962,9 +11325,9 @@ class UCameraComponent* AGEGameCharacter::GetCamera() const
 // Function GameEx.GEGameCharacter.GetCameraBoom
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class USpringArmComponent*              ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGESpringArmComponent*            ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class USpringArmComponent* AGEGameCharacter::GetCameraBoom() const
+class UGESpringArmComponent* AGEGameCharacter::GetCameraBoom() const
 {
 	static class UFunction* Func = nullptr;
 
@@ -8972,6 +11335,31 @@ class USpringArmComponent* AGEGameCharacter::GetCameraBoom() const
 		Func = Class->GetFunction("GEGameCharacter", "GetCameraBoom");
 
 	Params::GEGameCharacter_GetCameraBoom Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameCharacter.GetPeopleBaseAttackTemplateValue
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AGEGameCharacter::GetPeopleBaseAttackTemplateValue() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "GetPeopleBaseAttackTemplateValue");
+
+	Params::GEGameCharacter_GetPeopleBaseAttackTemplateValue Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -9321,6 +11709,66 @@ class AActor* UGEGameHelper::GetActorByTag(class UObject* Content, class FName T
 }
 
 
+// Function GameEx.GEGameHelper.GetAllActorsOfClass
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class AActor>               ActorClass                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class AActor*>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class AActor*> UGEGameHelper::GetAllActorsOfClass(const class UObject* WorldContextObject, TSubclassOf<class AActor> ActorClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEGameHelper", "GetAllActorsOfClass");
+
+	Params::GEGameHelper_GetAllActorsOfClass Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ActorClass = ActorClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameHelper.GetAllCharByTeamID
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           InWorldContextObject                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InTeamID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class AActor*>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class AActor*> UGEGameHelper::GetAllCharByTeamID(class AActor* InWorldContextObject, int32 InTeamID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEGameHelper", "GetAllCharByTeamID");
+
+	Params::GEGameHelper_GetAllCharByTeamID Parms{};
+
+	Parms.InWorldContextObject = InWorldContextObject;
+	Parms.InTeamID = InTeamID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameEx.GEGameHelper.GetAverageFPS
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -9412,6 +11860,38 @@ class FName UGEGameHelper::GetFName(class UObject* obj)
 	Params::GEGameHelper_GetFName Parms{};
 
 	Parms.obj = obj;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameHelper.GetFriendInSphere
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           SearchActor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InRadius                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   TeamType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UGEGameHelper::GetFriendInSphere(class AActor* SearchActor, float InRadius, int32 TeamType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEGameHelper", "GetFriendInSphere");
+
+	Params::GEGameHelper_GetFriendInSphere Parms{};
+
+	Parms.SearchActor = SearchActor;
+	Parms.InRadius = InRadius;
+	Parms.TeamType = TeamType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -9537,6 +12017,38 @@ struct FVector2D UGEGameHelper::GetLastCursorPos()
 }
 
 
+// Function GameEx.GEGameHelper.GetLightChainActors
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           InitActor                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Radius                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   MaxCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class AActor*>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class AActor*> UGEGameHelper::GetLightChainActors(class AActor* InitActor, float Radius, int32 MaxCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEGameHelper", "GetLightChainActors");
+
+	Params::GEGameHelper_GetLightChainActors Parms{};
+
+	Parms.InitActor = InitActor;
+	Parms.Radius = Radius;
+	Parms.MaxCount = MaxCount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameEx.GEGameHelper.GetLoadProgress
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -9609,6 +12121,36 @@ class FString UGEGameHelper::GetMapName(class UObject* obj)
 	Params::GEGameHelper_GetMapName Parms{};
 
 	Parms.obj = obj;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameHelper.GetMonstersInSphere
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           SearchActor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InRadius                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class AActor*>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class AActor*> UGEGameHelper::GetMonstersInSphere(class AActor* SearchActor, float InRadius)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEGameHelper", "GetMonstersInSphere");
+
+	Params::GEGameHelper_GetMonstersInSphere Parms{};
+
+	Parms.SearchActor = SearchActor;
+	Parms.InRadius = InRadius;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10655,6 +13197,20 @@ void AGEGameModeBase::LuaImpl_BeforeAllPlayerOffline()
 }
 
 
+// Function GameEx.GEGameModeBase.LuaImpl_OnSetIsMobilePlatform
+// (Event, Public, BlueprintEvent)
+
+void AGEGameModeBase::LuaImpl_OnSetIsMobilePlatform()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameModeBase", "LuaImpl_OnSetIsMobilePlatform");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GameEx.GEGameModeBase.OnRspRoomData
 // (Event, Public, BlueprintEvent)
 
@@ -10666,6 +13222,31 @@ void AGEGameModeBase::OnRspRoomData()
 		Func = Class->GetFunction("GEGameModeBase", "OnRspRoomData");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEGameModeBase.SetIsMobilePlatformFromClient
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    IsMobile                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameModeBase::SetIsMobilePlatformFromClient(bool IsMobile)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameModeBase", "SetIsMobilePlatformFromClient");
+
+	Params::GEGameModeBase_SetIsMobilePlatformFromClient Parms{};
+
+	Parms.IsMobile = IsMobile;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -10692,6 +13273,97 @@ void AGEGameModeBase::StopSession(TMap<class FString, int64>* dataMap)
 
 	if (dataMap != nullptr)
 		*dataMap = std::move(Parms.dataMap);
+}
+
+
+// Function GameEx.GEGameMonster.CheckCanAddKillScore
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEGameMonster::CheckCanAddKillScore()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameMonster", "CheckCanAddKillScore");
+
+	Params::GEGameMonster_CheckCanAddKillScore Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameMonster.LuaImpl_ClientOnHealthChange
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InVal                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameMonster::LuaImpl_ClientOnHealthChange(class FName InName, float InVal)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameMonster", "LuaImpl_ClientOnHealthChange");
+
+	Params::GEGameMonster_LuaImpl_ClientOnHealthChange Parms{};
+
+	Parms.InName = InName;
+	Parms.InVal = InVal;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameMonster.MultiCast_CharDead
+// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
+
+void AGEGameMonster::MultiCast_CharDead()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameMonster", "MultiCast_CharDead");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameMonster.SetTemplateAttrLevel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InLevel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameMonster::SetTemplateAttrLevel(int32 InLevel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameMonster", "SetTemplateAttrLevel");
+
+	Params::GEGameMonster_SetTemplateAttrLevel Parms{};
+
+	Parms.InLevel = InLevel;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -10751,6 +13423,105 @@ TArray<TWeakObjectPtr<class AGEGameCharacter>> AGEGameState::GetAllEnemyCharByTe
 }
 
 
+// Function GameEx.GEGameState.GetCharByCharUniqueID
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AGEGameCharacter*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AGEGameCharacter* AGEGameState::GetCharByCharUniqueID(int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameState", "GetCharByCharUniqueID");
+
+	Params::GEGameState_GetCharByCharUniqueID Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameState.GetCureRankByPs
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AGEPlayerState*                   InPs                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEGameState::GetCureRankByPs(class AGEPlayerState* InPs)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameState", "GetCureRankByPs");
+
+	Params::GEGameState_GetCureRankByPs Parms{};
+
+	Parms.InPs = InPs;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameState.GetCurGameState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEGameState::GetCurGameState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameState", "GetCurGameState");
+
+	Params::GEGameState_GetCurGameState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameState.GetDmgRankByPs
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AGEPlayerState*                   InPs                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEGameState::GetDmgRankByPs(class AGEPlayerState* InPs)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameState", "GetDmgRankByPs");
+
+	Params::GEGameState_GetDmgRankByPs Parms{};
+
+	Parms.InPs = InPs;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameEx.GEGameState.GetGameTime
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -10771,6 +13542,52 @@ float AGEGameState::GetGameTime()
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameState.GetKillHelpRankByPs
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AGEPlayerState*                   InPs                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEGameState::GetKillHelpRankByPs(class AGEPlayerState* InPs)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameState", "GetKillHelpRankByPs");
+
+	Params::GEGameState_GetKillHelpRankByPs Parms{};
+
+	Parms.InPs = InPs;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameState.GetKillRankByPs
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AGEPlayerState*                   InPs                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEGameState::GetKillRankByPs(class AGEPlayerState* InPs)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameState", "GetKillRankByPs");
+
+	Params::GEGameState_GetKillRankByPs Parms{};
+
+	Parms.InPs = InPs;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
 }
@@ -10804,6 +13621,29 @@ class APlayerState* AGEGameState::GetPlayerStateByGEUniqueID(int32 InUniqueID)
 }
 
 
+// Function GameEx.GEGameState.GetScoreRankByPs
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AGEPlayerState*                   InPs                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEGameState::GetScoreRankByPs(class AGEPlayerState* InPs)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameState", "GetScoreRankByPs");
+
+	Params::GEGameState_GetScoreRankByPs Parms{};
+
+	Parms.InPs = InPs;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameEx.GEGameState.OnRep_GameState
 // (Event, Public, BlueprintEvent)
 
@@ -10813,6 +13653,20 @@ void AGEGameState::OnRep_GameState()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GEGameState", "OnRep_GameState");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEGameState.OnRep_GameType
+// (Event, Public, BlueprintEvent)
+
+void AGEGameState::OnRep_GameType()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameState", "OnRep_GameType");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -10916,6 +13770,127 @@ void AGEGameState::OnRep_ZBugProgressOver()
 }
 
 
+// Function GameEx.GEGameState.RegisterCharUniqueID
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AGEGameCharacter*                 InChar                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameState::RegisterCharUniqueID(class AGEGameCharacter* InChar)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameState", "RegisterCharUniqueID");
+
+	Params::GEGameState_RegisterCharUniqueID Parms{};
+
+	Parms.InChar = InChar;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameState.UnRegisterCharUniqueID
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AGEGameCharacter*                 InChar                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameState::UnRegisterCharUniqueID(class AGEGameCharacter* InChar)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameState", "UnRegisterCharUniqueID");
+
+	Params::GEGameState_UnRegisterCharUniqueID Parms{};
+
+	Parms.InChar = InChar;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEHaloWaveTrap.AddCacheChar
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InUniqueID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEHaloWaveTrap::AddCacheChar(int32 InUniqueID, class AActor* InActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEHaloWaveTrap", "AddCacheChar");
+
+	Params::GEHaloWaveTrap_AddCacheChar Parms{};
+
+	Parms.InUniqueID = InUniqueID;
+	Parms.InActor = InActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEHaloWaveTrap.ApplyAttack
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEHaloWaveTrap::ApplyAttack()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEHaloWaveTrap", "ApplyAttack");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEHaloWaveTrap.RemoveCacheChar
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InUniqueID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEHaloWaveTrap::RemoveCacheChar(int32 InUniqueID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEHaloWaveTrap", "RemoveCacheChar");
+
+	Params::GEHaloWaveTrap_RemoveCacheChar Parms{};
+
+	Parms.InUniqueID = InUniqueID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEHASAIPathPoint.GetNextPointID
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -10963,906 +13938,6 @@ float AGEHASAIPathPoint::GetStopTime()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEHealTrap.AddCacheChar
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGEHealTrap::AddCacheChar(const class FString& InKey, class AActor* InActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEHealTrap", "AddCacheChar");
-
-	Params::GEHealTrap_AddCacheChar Parms{};
-
-	Parms.InKey = std::move(InKey);
-	Parms.InActor = InActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEHealTrap.RemoveCacheChar
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGEHealTrap::RemoveCacheChar(const class FString& InKey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEHealTrap", "RemoveCacheChar");
-
-	Params::GEHealTrap_RemoveCacheChar Parms{};
-
-	Parms.InKey = std::move(InKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEHideAndSeekMgr.GetDObjByName
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    InName                                                 (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AActor* AGEHideAndSeekMgr::GetDObjByName(const class FString& InName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEHideAndSeekMgr", "GetDObjByName");
-
-	Params::GEHideAndSeekMgr_GetDObjByName Parms{};
-
-	Parms.InName = std::move(InName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEHideAndSeekMgr.OnRep_canSwitchMeshIndexArr
-// (Event, Public, BlueprintEvent)
-
-void AGEHideAndSeekMgr::OnRep_canSwitchMeshIndexArr()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEHideAndSeekMgr", "OnRep_canSwitchMeshIndexArr");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GameEx.GEItem.LuaImpl_OnAlloc
-// (Event, Protected, BlueprintEvent)
-
-void AGEItem::LuaImpl_OnAlloc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItem", "LuaImpl_OnAlloc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GameEx.GEItem.LuaImpl_OnFree
-// (Event, Protected, BlueprintEvent)
-
-void AGEItem::LuaImpl_OnFree()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItem", "LuaImpl_OnFree");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GameEx.GEItem.LuaOnRep_IsUsed
-// (Event, Public, BlueprintEvent)
-
-void AGEItem::LuaOnRep_IsUsed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItem", "LuaOnRep_IsUsed");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GameEx.GEItem.OnRep_CurOwner
-// (Event, Public, BlueprintEvent)
-
-void AGEItem::OnRep_CurOwner()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItem", "OnRep_CurOwner");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GameEx.GEItem.OnRep_IsApplyUsed
-// (Event, Public, BlueprintEvent)
-
-void AGEItem::OnRep_IsApplyUsed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItem", "OnRep_IsApplyUsed");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GameEx.GEItem.OnRep_IsForceDetached
-// (Event, Public, BlueprintEvent)
-
-void AGEItem::OnRep_IsForceDetached()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItem", "OnRep_IsForceDetached");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GameEx.GEItem.OnRep_IsUsed
-// (Native, Public)
-
-void AGEItem::OnRep_IsUsed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItem", "OnRep_IsUsed");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItem.OnRep_SpawnPos
-// (Final, Native, Public)
-
-void AGEItem::OnRep_SpawnPos()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItem", "OnRep_SpawnPos");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemBait.SetRotationFromClient_RPC
-// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults)
-// Parameters:
-// const struct FRotator&                  InRotation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void AGEItemBait::SetRotationFromClient_RPC(const struct FRotator& InRotation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemBait", "SetRotationFromClient_RPC");
-
-	Params::GEItemBait_SetRotationFromClient_RPC Parms{};
-
-	Parms.InRotation = std::move(InRotation);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemBomb.Boom
-// (Event, Public, BlueprintEvent)
-
-void AGEItemBomb::Boom()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemBomb", "Boom");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GameEx.GEItemBomb.BoomFlash
-// (Net, Native, Event, NetMulticast, Public, BlueprintCallable)
-
-void AGEItemBomb::BoomFlash()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemBomb", "BoomFlash");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemBomb.Generator
-// (Final, Native, Public)
-
-void AGEItemBomb::Generator()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemBomb", "Generator");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemBomb.HAS_StartSplineMove
-// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FGEItemClientInfo&         ClientInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int64                                   servertimeMilli                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   InForwardVec                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGEItemBomb::HAS_StartSplineMove(const struct FGEItemClientInfo& ClientInfo, int64 servertimeMilli, const struct FVector& InForwardVec)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemBomb", "HAS_StartSplineMove");
-
-	Params::GEItemBomb_HAS_StartSplineMove Parms{};
-
-	Parms.ClientInfo = std::move(ClientInfo);
-	Parms.servertimeMilli = servertimeMilli;
-	Parms.InForwardVec = std::move(InForwardVec);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemBomb.OnRep_BombState
-// (Event, Public, BlueprintEvent)
-
-void AGEItemBomb::OnRep_BombState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemBomb", "OnRep_BombState");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GameEx.GEItemBomb.SetBombState
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EGEBombState                            InState                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGEItemBomb::SetBombState(EGEBombState InState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemBomb", "SetBombState");
-
-	Params::GEItemBomb_SetBombState Parms{};
-
-	Parms.InState = InState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemBomb.StartFreelyMove
-// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector&                   InSpeed                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   servertimeMilli                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGEItemBomb::StartFreelyMove(const struct FVector& InSpeed, int64 servertimeMilli)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemBomb", "StartFreelyMove");
-
-	Params::GEItemBomb_StartFreelyMove Parms{};
-
-	Parms.InSpeed = std::move(InSpeed);
-	Parms.servertimeMilli = servertimeMilli;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemBomb.StartSplineMove
-// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
-// Parameters:
-// const struct FGEItemClientInfo&         ClientInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int64                                   servertimeMilli                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGEItemBomb::StartSplineMove(const struct FGEItemClientInfo& ClientInfo, int64 servertimeMilli)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemBomb", "StartSplineMove");
-
-	Params::GEItemBomb_StartSplineMove Parms{};
-
-	Parms.ClientInfo = std::move(ClientInfo);
-	Parms.servertimeMilli = servertimeMilli;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemBomb.SyncFreelyMove
-// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector&                   InVel                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InDStartSplineMoveur                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGEItemBomb::SyncFreelyMove(const struct FVector& InVel, const struct FVector& InLocation, float InDStartSplineMoveur)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemBomb", "SyncFreelyMove");
-
-	Params::GEItemBomb_SyncFreelyMove Parms{};
-
-	Parms.InVel = std::move(InVel);
-	Parms.InLocation = std::move(InLocation);
-	Parms.InDStartSplineMoveur = InDStartSplineMoveur;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemBomb.SyncFreelySpeed_Collision
-// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector&                   InVel                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InDur                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGEItemBomb::SyncFreelySpeed_Collision(const struct FVector& InVel, float InDur)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemBomb", "SyncFreelySpeed_Collision");
-
-	Params::GEItemBomb_SyncFreelySpeed_Collision Parms{};
-
-	Parms.InVel = std::move(InVel);
-	Parms.InDur = InDur;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemLibrary.ApplyUseItem
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AGEGameCharacter*                 InCharacter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    isAttachedItem                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGEItemClientInfo&         ItemInfo_Client                                        (Parm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UGEItemLibrary::ApplyUseItem(class AGEGameCharacter* InCharacter, int32 InIndex, bool isAttachedItem, const struct FGEItemClientInfo& ItemInfo_Client)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEItemLibrary", "ApplyUseItem");
-
-	Params::GEItemLibrary_ApplyUseItem Parms{};
-
-	Parms.InCharacter = InCharacter;
-	Parms.InIndex = InIndex;
-	Parms.isAttachedItem = isAttachedItem;
-	Parms.ItemInfo_Client = std::move(ItemInfo_Client);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemLibrary.CanAddStoreCount
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    isAttachedItem                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UGEItemLibrary::CanAddStoreCount(class AController* InController, int32 InIndex, bool isAttachedItem)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEItemLibrary", "CanAddStoreCount");
-
-	Params::GEItemLibrary_CanAddStoreCount Parms{};
-
-	Parms.InController = InController;
-	Parms.InIndex = InIndex;
-	Parms.isAttachedItem = isAttachedItem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEItemLibrary.GetItemData
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    isAttachedItem                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGEItemInfo                      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FGEItemInfo UGEItemLibrary::GetItemData(class AController* InController, int32 InIndex, bool isAttachedItem)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEItemLibrary", "GetItemData");
-
-	Params::GEItemLibrary_GetItemData Parms{};
-
-	Parms.InController = InController;
-	Parms.InIndex = InIndex;
-	Parms.isAttachedItem = isAttachedItem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEItemLibrary.GetItemMgr
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AGEItemMgr*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AGEItemMgr* UGEItemLibrary::GetItemMgr(class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEItemLibrary", "GetItemMgr");
-
-	Params::GEItemLibrary_GetItemMgr Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEItemLibrary.IsUseable
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    isAttachedItem                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UGEItemLibrary::IsUseable(class AController* InController, int32 InIndex, bool isAttachedItem)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEItemLibrary", "IsUseable");
-
-	Params::GEItemLibrary_IsUseable Parms{};
-
-	Parms.InController = InController;
-	Parms.InIndex = InIndex;
-	Parms.isAttachedItem = isAttachedItem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEItemLibrary.SetIsUsed
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    isAttachedItem                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGEItemLibrary::SetIsUsed(class AController* InController, int32 InIndex, bool isAttachedItem)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEItemLibrary", "SetIsUsed");
-
-	Params::GEItemLibrary_SetIsUsed Parms{};
-
-	Parms.InController = InController;
-	Parms.InIndex = InIndex;
-	Parms.isAttachedItem = isAttachedItem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemLibrary.SetItemData
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGEItemInfo&               Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UGEItemLibrary::SetItemData(class AController* InController, int32 InIndex, const struct FGEItemInfo& Info)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GEItemLibrary", "SetItemData");
-
-	Params::GEItemLibrary_SetItemData Parms{};
-
-	Parms.InController = InController;
-	Parms.InIndex = InIndex;
-	Parms.Info = std::move(Info);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemMgr.AllocItem
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const class FName&                      Path                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Position                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FRotator&                  Rotator                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// class AGEItem*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AGEItem* AGEItemMgr::AllocItem(const class FName& Path, const struct FVector& Position, const struct FRotator& Rotator)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemMgr", "AllocItem");
-
-	Params::GEItemMgr_AllocItem Parms{};
-
-	Parms.Path = Path;
-	Parms.Position = std::move(Position);
-	Parms.Rotator = std::move(Rotator);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEItemMgr.FreeItem
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AGEItem*                          Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGEItemMgr::FreeItem(class AGEItem* Item)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemMgr", "FreeItem");
-
-	Params::GEItemMgr_FreeItem Parms{};
-
-	Parms.Item = Item;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemMgr.LuaImpl_ApplyUseItem
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// class AGEGameCharacter*                 InCharacter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGEItemInfo&               Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// const struct FGEItemClientInfo&         ItemClientInfo                                         (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AGEItemMgr::LuaImpl_ApplyUseItem(class AGEGameCharacter* InCharacter, const struct FGEItemInfo& Info, const struct FGEItemClientInfo& ItemClientInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemMgr", "LuaImpl_ApplyUseItem");
-
-	Params::GEItemMgr_LuaImpl_ApplyUseItem Parms{};
-
-	Parms.InCharacter = InCharacter;
-	Parms.Info = std::move(Info);
-	Parms.ItemClientInfo = std::move(ItemClientInfo);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameEx.GEItemMgr.LuaImpl_NotifyEquipItem
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// class AGEGameCharacter*                 InCharacter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGEItemInfo&               Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void AGEItemMgr::LuaImpl_NotifyEquipItem(class AGEGameCharacter* InCharacter, const struct FGEItemInfo& Info)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemMgr", "LuaImpl_NotifyEquipItem");
-
-	Params::GEItemMgr_LuaImpl_NotifyEquipItem Parms{};
-
-	Parms.InCharacter = InCharacter;
-	Parms.Info = std::move(Info);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GameEx.GEItemMgr.LuaImpl_NotifyUnloadItem
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class AGEGameCharacter*                 InCharacter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGEItemMgr::LuaImpl_NotifyUnloadItem(class AGEGameCharacter* InCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemMgr", "LuaImpl_NotifyUnloadItem");
-
-	Params::GEItemMgr_LuaImpl_NotifyUnloadItem Parms{};
-
-	Parms.InCharacter = InCharacter;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GameEx.GEItemMgr.LuaImpl_SetIsUseable
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// class AGEGameCharacter*                 InCharacter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGEItemInfo*                     Info                                                   (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void AGEItemMgr::LuaImpl_SetIsUseable(class AGEGameCharacter* InCharacter, struct FGEItemInfo* Info)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemMgr", "LuaImpl_SetIsUseable");
-
-	Params::GEItemMgr_LuaImpl_SetIsUseable Parms{};
-
-	Parms.InCharacter = InCharacter;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Info != nullptr)
-		*Info = std::move(Parms.Info);
-}
-
-
-// Function GameEx.GEItemScan.CharacterEntryBox
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    InName                                                 (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGEItemScan::CharacterEntryBox(const class FString& InName, class AActor* InActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemScan", "CharacterEntryBox");
-
-	Params::GEItemScan_CharacterEntryBox Parms{};
-
-	Parms.InName = std::move(InName);
-	Parms.InActor = InActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemScan.CharacterExitBox
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    InName                                                 (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGEItemScan::CharacterExitBox(const class FString& InName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemScan", "CharacterExitBox");
-
-	Params::GEItemScan_CharacterExitBox Parms{};
-
-	Parms.InName = std::move(InName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEItemScan.OnRep_IsActivate
-// (Event, Public, BlueprintEvent)
-
-void AGEItemScan::OnRep_IsActivate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEItemScan", "OnRep_IsActivate");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -12690,6 +14765,127 @@ void AGEPeopleBuffTrap::UpdatePeopleInTrap()
 }
 
 
+// Function GameEx.GEPeopleRebornTrap.AddCharCache
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InUniqueID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEPeopleRebornTrap::AddCharCache(int32 InUniqueID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPeopleRebornTrap", "AddCharCache");
+
+	Params::GEPeopleRebornTrap_AddCharCache Parms{};
+
+	Parms.InUniqueID = InUniqueID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEPeopleRebornTrap.ClearCharCache
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEPeopleRebornTrap::ClearCharCache()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPeopleRebornTrap", "ClearCharCache");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEPeopleRebornTrap.GetCacheCharNum
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEPeopleRebornTrap::GetCacheCharNum()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPeopleRebornTrap", "GetCacheCharNum");
+
+	Params::GEPeopleRebornTrap_GetCacheCharNum Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEPeopleRebornTrap.NotifySpawnerUpdate
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InUniqueID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    isAdd                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEPeopleRebornTrap::NotifySpawnerUpdate(int32 InUniqueID, bool isAdd)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPeopleRebornTrap", "NotifySpawnerUpdate");
+
+	Params::GEPeopleRebornTrap_NotifySpawnerUpdate Parms{};
+
+	Parms.InUniqueID = InUniqueID;
+	Parms.isAdd = isAdd;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEPeopleRebornTrap.RemoveCharCache
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InUniqueID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEPeopleRebornTrap::RemoveCharCache(int32 InUniqueID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPeopleRebornTrap", "RemoveCharCache");
+
+	Params::GEPeopleRebornTrap_RemoveCharCache Parms{};
+
+	Parms.InUniqueID = InUniqueID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEPhysicsReqComponent.AddCharCount
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -12819,6 +15015,31 @@ void AGEPlayerController::ChangeSpectateState()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEPlayerController.CharReplaceWeapon_Server
+// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
+// Parameters:
+// bool                                    isDestroyCurWeapon                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEPlayerController::CharReplaceWeapon_Server(bool isDestroyCurWeapon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerController", "CharReplaceWeapon_Server");
+
+	Params::GEPlayerController_CharReplaceWeapon_Server Parms{};
+
+	Parms.isDestroyCurWeapon = isDestroyCurWeapon;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -13206,6 +15427,26 @@ void AGEPlayerController::GMServerCall(const class FString& FuncName, const clas
 }
 
 
+// Function GameEx.GEPlayerController.LuaImpl_Server_NotifyIsMobilePlatForm
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsMobilePlatform                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEPlayerController::LuaImpl_Server_NotifyIsMobilePlatForm(bool IsMobilePlatform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerController", "LuaImpl_Server_NotifyIsMobilePlatForm");
+
+	Params::GEPlayerController_LuaImpl_Server_NotifyIsMobilePlatForm Parms{};
+
+	Parms.IsMobilePlatform = IsMobilePlatform;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function GameEx.GEPlayerController.LuaImpl_SetAnimationAlwaysTickPoseEnableOnDS
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -13438,9 +15679,9 @@ void AGEPlayerController::Server_CastSkill(int32 SkillID, int32 InIndex)
 // Function GameEx.GEPlayerController.Server_DmgHit
 // (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
 // Parameters:
-// const struct FGEZBug_DmgHitInfo&        HitInfos                                               (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FGEZBug_DmgHitInfo>&HitInfos                                               (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void AGEPlayerController::Server_DmgHit(const struct FGEZBug_DmgHitInfo& HitInfos)
+void AGEPlayerController::Server_DmgHit(const TArray<struct FGEZBug_DmgHitInfo>& HitInfos)
 {
 	static class UFunction* Func = nullptr;
 
@@ -13455,6 +15696,50 @@ void AGEPlayerController::Server_DmgHit(const struct FGEZBug_DmgHitInfo& HitInfo
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEPlayerController.Server_NotifyIsMobilePlatForm
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// bool                                    IsMobilePlatform                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEPlayerController::Server_NotifyIsMobilePlatForm(bool IsMobilePlatform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerController", "Server_NotifyIsMobilePlatForm");
+
+	Params::GEPlayerController_Server_NotifyIsMobilePlatForm Parms{};
+
+	Parms.IsMobilePlatform = IsMobilePlatform;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEPlayerController.Server_NotifyReloadFinish
+// (Net, NetReliable, Native, Event, Public, NetServer)
+
+void AGEPlayerController::Server_NotifyReloadFinish()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerController", "Server_NotifyReloadFinish");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -13560,6 +15845,58 @@ void AGEPlayerController::Server_SelectBuff(int32 BuffId)
 }
 
 
+// Function GameEx.GEPlayerController.Server_SelectSkill
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// int32                                   SkillID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEPlayerController::Server_SelectSkill(int32 SkillID, int32 InIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerController", "Server_SelectSkill");
+
+	Params::GEPlayerController_Server_SelectSkill Parms{};
+
+	Parms.SkillID = SkillID;
+	Parms.InIndex = InIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEPlayerController.Server_SetActorRotation
+// (Net, NetReliable, Native, Event, Public, NetServer, HasDefaults)
+// Parameters:
+// const struct FRotator&                  Rotator                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void AGEPlayerController::Server_SetActorRotation(const struct FRotator& Rotator)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerController", "Server_SetActorRotation");
+
+	Params::GEPlayerController_Server_SetActorRotation Parms{};
+
+	Parms.Rotator = std::move(Rotator);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEPlayerController.Server_SetFire
 // (Net, NetReliable, Native, Event, Public, NetServer)
 // Parameters:
@@ -13652,6 +15989,35 @@ void AGEPlayerController::Server_ShootEntityBullet(const struct FVector& FireLoc
 
 	Parms.FireLoc = std::move(FireLoc);
 	Parms.TargetLoc = std::move(TargetLoc);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEPlayerController.Server_ShootEntityBulletById
+// (Net, NetReliable, Native, Event, Public, NetServer, HasDefaults)
+// Parameters:
+// const struct FVector&                   FireLoc                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   TargetLoc                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   BulletID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEPlayerController::Server_ShootEntityBulletById(const struct FVector& FireLoc, const struct FVector& TargetLoc, int32 BulletID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerController", "Server_ShootEntityBulletById");
+
+	Params::GEPlayerController_Server_ShootEntityBulletById Parms{};
+
+	Parms.FireLoc = std::move(FireLoc);
+	Parms.TargetLoc = std::move(TargetLoc);
+	Parms.BulletID = BulletID;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13831,6 +16197,31 @@ void AGEPlayerController::StopAIControlLogic()
 }
 
 
+// Function GameEx.GEPlayerState.AddChallengeScore
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InScore                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEPlayerState::AddChallengeScore(float InScore)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerState", "AddChallengeScore");
+
+	Params::GEPlayerState_AddChallengeScore Parms{};
+
+	Parms.InScore = InScore;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEPlayerState.AddInfectNum
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -13846,6 +16237,31 @@ void AGEPlayerState::AddInfectNum(int32 Num)
 	Params::GEPlayerState_AddInfectNum Parms{};
 
 	Parms.Num = Num;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEPlayerState.AddKillBossCount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InCount                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEPlayerState::AddKillBossCount(int32 InCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerState", "AddKillBossCount");
+
+	Params::GEPlayerState_AddKillBossCount Parms{};
+
+	Parms.InCount = InCount;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14176,6 +16592,20 @@ void AGEPlayerState::OnRep_CatchPlayerNum()
 }
 
 
+// Function GameEx.GEPlayerState.OnRep_ChallengeScore
+// (Event, Public, BlueprintEvent)
+
+void AGEPlayerState::OnRep_ChallengeScore()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerState", "OnRep_ChallengeScore");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GameEx.GEPlayerState.OnRep_InfectNum
 // (Event, Public, BlueprintEvent)
 
@@ -14260,6 +16690,20 @@ void AGEPlayerState::OnRep_Level()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GEPlayerState", "OnRep_Level");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEPlayerState.OnRep_point
+// (Event, Public, BlueprintEvent)
+
+void AGEPlayerState::OnRep_point()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerState", "OnRep_point");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -14428,6 +16872,92 @@ uint8 AGEPlayerState::GEGetPing() const
 }
 
 
+// Function GameEx.GEReplicatedComponent.GetContainerValue
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// int32                                   ID                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGEReplicatedComponent::GetContainerValue(int32 ID, float* Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEReplicatedComponent", "GetContainerValue");
+
+	Params::GEReplicatedComponent_GetContainerValue Parms{};
+
+	Parms.ID = ID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Value != nullptr)
+		*Value = Parms.Value;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEReplicatedComponent.OnDataChanged
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEReplicatedComponent::OnDataChanged(int32 InId, float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEReplicatedComponent", "OnDataChanged");
+
+	Params::GEReplicatedComponent_OnDataChanged Parms{};
+
+	Parms.InId = InId;
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEReplicatedComponent.SetContainerValue
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ID                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEReplicatedComponent::SetContainerValue(int32 ID, float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEReplicatedComponent", "SetContainerValue");
+
+	Params::GEReplicatedComponent_SetContainerValue Parms{};
+
+	Parms.ID = ID;
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GERoll.OnHitFloor
 // (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -14590,6 +17120,1718 @@ void AGERotateBrickManager::TriggerBrickChangeRotate(EGERotateBrickState InState
 }
 
 
+// Function GameEx.GERotateBrick.OnRep_BrickState
+// (Final, Native, Public, BlueprintCallable)
+
+void AGERotateBrick::OnRep_BrickState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GERotateBrick", "OnRep_BrickState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GERotateBrick.SetBrickState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EGERotateBrickState                     InState                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGERotateBrick::SetBrickState(EGERotateBrickState InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GERotateBrick", "SetBrickState");
+
+	Params::GERotateBrick_SetBrickState Parms{};
+
+	Parms.InState = InState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GERotateBrick.SetEffectMat
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   EffectType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGERotateBrick::SetEffectMat(int32 EffectType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GERotateBrick", "SetEffectMat");
+
+	Params::GERotateBrick_SetEffectMat Parms{};
+
+	Parms.EffectType = EffectType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GERotateBrick.SyncRotateFinish
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+// Parameters:
+// float                                   CurAngle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGERotateBrick::SyncRotateFinish(float CurAngle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GERotateBrick", "SyncRotateFinish");
+
+	Params::GERotateBrick_SyncRotateFinish Parms{};
+
+	Parms.CurAngle = CurAngle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GERotateBrick.SyncStartRotateTime
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+// Parameters:
+// float                                   CurTime                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGERotateBrick::SyncStartRotateTime(float CurTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GERotateBrick", "SyncStartRotateTime");
+
+	Params::GERotateBrick_SyncStartRotateTime Parms{};
+
+	Parms.CurTime = CurTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEScripteEventMgr.DelInstance
+// (Final, Native, Static, Public)
+
+void UGEScripteEventMgr::DelInstance()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEScripteEventMgr", "DelInstance");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEScripteEventMgr.GetActorExComLuaTableName
+// (Final, Native, Static, Public)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UGEScripteEventMgr::GetActorExComLuaTableName()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEScripteEventMgr", "GetActorExComLuaTableName");
+
+	Params::GEScripteEventMgr_GetActorExComLuaTableName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEScripteEventMgr.GetGameModeLuaTableName
+// (Final, Native, Static, Public)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UGEScripteEventMgr::GetGameModeLuaTableName()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEScripteEventMgr", "GetGameModeLuaTableName");
+
+	Params::GEScripteEventMgr_GetGameModeLuaTableName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEScripteEventMgr.GetInstance
+// (Final, Native, Static, Public)
+// Parameters:
+// class UGEScripteEventMgr*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGEScripteEventMgr* UGEScripteEventMgr::GetInstance()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEScripteEventMgr", "GetInstance");
+
+	Params::GEScripteEventMgr_GetInstance Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEScripteEventMgr.GetScripMgrLuaTableName
+// (Final, Native, Static, Public)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UGEScripteEventMgr::GetScripMgrLuaTableName()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEScripteEventMgr", "GetScripMgrLuaTableName");
+
+	Params::GEScripteEventMgr_GetScripMgrLuaTableName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEScripteEventMgr.SetScripMgrLuaTableName
+// (Final, Native, Static, Public)
+// Parameters:
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEScripteEventMgr::SetScripMgrLuaTableName(const class FString& Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEScripteEventMgr", "SetScripMgrLuaTableName");
+
+	Params::GEScripteEventMgr_SetScripMgrLuaTableName Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEScripteEventMgr.AddGEActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ServerID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEScripteEventMgr::AddGEActor(int32 ServerID, class AActor* Actor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEScripteEventMgr", "AddGEActor");
+
+	Params::GEScripteEventMgr_AddGEActor Parms{};
+
+	Parms.ServerID = ServerID;
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEScripteEventMgr.GetGameInstance
+// (Native, Public)
+// Parameters:
+// class UGameInstance*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGameInstance* UGEScripteEventMgr::GetGameInstance()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEScripteEventMgr", "GetGameInstance");
+
+	Params::GEScripteEventMgr_GetGameInstance Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEScripteEventMgr.GetGEActorByServerID
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ServerID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UWorld*                           World                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* UGEScripteEventMgr::GetGEActorByServerID(int32 ServerID, class UWorld* World)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEScripteEventMgr", "GetGEActorByServerID");
+
+	Params::GEScripteEventMgr_GetGEActorByServerID Parms{};
+
+	Parms.ServerID = ServerID;
+	Parms.World = World;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEScripteEventMgr.NotifyToTSEvent
+// (Native, Public)
+// Parameters:
+// const class FString&                    Cmd                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Param                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEScripteEventMgr::NotifyToTSEvent(const class FString& Cmd, const class FString& Param)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEScripteEventMgr", "NotifyToTSEvent");
+
+	Params::GEScripteEventMgr_NotifyToTSEvent Parms{};
+
+	Parms.Cmd = std::move(Cmd);
+	Parms.Param = std::move(Param);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEScripteEventMgr.OnActorBeginPlay
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEScripteEventMgr::OnActorBeginPlay(class AActor* Actor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEScripteEventMgr", "OnActorBeginPlay");
+
+	Params::GEScripteEventMgr_OnActorBeginPlay Parms{};
+
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEScripteEventMgr.OnActorEndPlay
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EEndPlayReason                    EndPlayReason                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEScripteEventMgr::OnActorEndPlay(class AActor* Actor, const EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEScripteEventMgr", "OnActorEndPlay");
+
+	Params::GEScripteEventMgr_OnActorEndPlay Parms{};
+
+	Parms.Actor = Actor;
+	Parms.EndPlayReason = EndPlayReason;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEScripteEventMgr.OnStart
+// (Native, Public)
+// Parameters:
+// class UGameInstance*                    ins                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEScripteEventMgr::OnStart(class UGameInstance* ins)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEScripteEventMgr", "OnStart");
+
+	Params::GEScripteEventMgr_OnStart Parms{};
+
+	Parms.ins = ins;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEScripteEventMgr.RemoveGEActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ServerID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UWorld*                           World                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEScripteEventMgr::RemoveGEActor(int32 ServerID, class UWorld* World)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEScripteEventMgr", "RemoveGEActor");
+
+	Params::GEScripteEventMgr_RemoveGEActor Parms{};
+
+	Parms.ServerID = ServerID;
+	Parms.World = World;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEScripteEventMgr.RemoveLuaTable
+// (Final, Native, Public)
+// Parameters:
+// const class FString&                    TableName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEScripteEventMgr::RemoveLuaTable(const class FString& TableName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEScripteEventMgr", "RemoveLuaTable");
+
+	Params::GEScripteEventMgr_RemoveLuaTable Parms{};
+
+	Parms.TableName = std::move(TableName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEScripteEventMgr.SetDebugWaiting
+// (Native, Public)
+
+void UGEScripteEventMgr::SetDebugWaiting()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEScripteEventMgr", "SetDebugWaiting");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEScripteEventMgr.SetLuaTable
+// (Final, Native, Public)
+// Parameters:
+// const class FString&                    TableName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    GetFunName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEScripteEventMgr::SetLuaTable(const class FString& TableName, const class FString& GetFunName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEScripteEventMgr", "SetLuaTable");
+
+	Params::GEScripteEventMgr_SetLuaTable Parms{};
+
+	Parms.TableName = std::move(TableName);
+	Parms.GetFunName = std::move(GetFunName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GESideBySideActor.LuaImpl_DoSideBySideAction
+// (Event, Public, BlueprintEvent)
+
+void AGESideBySideActor::LuaImpl_DoSideBySideAction()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GESideBySideActor", "LuaImpl_DoSideBySideAction");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GESkillLibrary.CanAddStoreCount
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGESkillLibrary::CanAddStoreCount(class AController* InController, int32 InIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "CanAddStoreCount");
+
+	Params::GESkillLibrary_CanAddStoreCount Parms{};
+
+	Parms.InController = InController;
+	Parms.InIndex = InIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.GetAllBuffIdByCharTeam
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<int32>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<int32> UGESkillLibrary::GetAllBuffIdByCharTeam(class APawn* InPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetAllBuffIdByCharTeam");
+
+	Params::GESkillLibrary_GetAllBuffIdByCharTeam Parms{};
+
+	Parms.InPawn = InPawn;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.GetAllSkillInfo
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<struct FGESkillInfo>*            InArr                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UGESkillLibrary::GetAllSkillInfo(TArray<struct FGESkillInfo>* InArr)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetAllSkillInfo");
+
+	Params::GESkillLibrary_GetAllSkillInfo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (InArr != nullptr)
+		*InArr = std::move(Parms.InArr);
+}
+
+
+// Function GameEx.GESkillLibrary.GetBuffByGroup
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    InGroup                                                (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<int32>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<int32> UGESkillLibrary::GetBuffByGroup(int32 Count, class APawn* InPawn, const TArray<int32>& InGroup)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetBuffByGroup");
+
+	Params::GESkillLibrary_GetBuffByGroup Parms{};
+
+	Parms.Count = Count;
+	Parms.InPawn = InPawn;
+	Parms.InGroup = std::move(InGroup);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.GetBuffDesParam
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   BuffId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<float>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<float> UGESkillLibrary::GetBuffDesParam(int32 BuffId, int32 Level, class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetBuffDesParam");
+
+	Params::GESkillLibrary_GetBuffDesParam Parms{};
+
+	Parms.BuffId = BuffId;
+	Parms.Level = Level;
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.GetBuffFromCount
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    isHero                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bLevelUpBuffFirst                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<int32>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<int32> UGESkillLibrary::GetBuffFromCount(int32 Count, class APawn* InPawn, bool isHero, bool bLevelUpBuffFirst)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetBuffFromCount");
+
+	Params::GESkillLibrary_GetBuffFromCount Parms{};
+
+	Parms.Count = Count;
+	Parms.InPawn = InPawn;
+	Parms.isHero = isHero;
+	Parms.bLevelUpBuffFirst = bLevelUpBuffFirst;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.GetBuffInfoByID
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGEBuffInfo                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FGEBuffInfo UGESkillLibrary::GetBuffInfoByID(int32 InId, class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetBuffInfoByID");
+
+	Params::GESkillLibrary_GetBuffInfoByID Parms{};
+
+	Parms.InId = InId;
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.GetBuffLevelParam
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   BuffId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<int32>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<int32> UGESkillLibrary::GetBuffLevelParam(int32 BuffId, int32 Level, class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetBuffLevelParam");
+
+	Params::GESkillLibrary_GetBuffLevelParam Parms{};
+
+	Parms.BuffId = BuffId;
+	Parms.Level = Level;
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.GetBuffPath
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSoftObjectPath                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FSoftObjectPath UGESkillLibrary::GetBuffPath(int32 InId, class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetBuffPath");
+
+	Params::GESkillLibrary_GetBuffPath Parms{};
+
+	Parms.InId = InId;
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.GetBuffTableName
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EGameTableName                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EGameTableName UGESkillLibrary::GetBuffTableName(class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetBuffTableName");
+
+	Params::GESkillLibrary_GetBuffTableName Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.GetLv1SkillInfoByGroup
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    InGroup                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGESkillInfo                     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FGESkillInfo UGESkillLibrary::GetLv1SkillInfoByGroup(const class FString& InGroup)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetLv1SkillInfoByGroup");
+
+	Params::GESkillLibrary_GetLv1SkillInfoByGroup Parms{};
+
+	Parms.InGroup = std::move(InGroup);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.GetOwnBuffLevel
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InBuffId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UGESkillLibrary::GetOwnBuffLevel(int32 InBuffId, class APawn* InPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetOwnBuffLevel");
+
+	Params::GESkillLibrary_GetOwnBuffLevel Parms{};
+
+	Parms.InBuffId = InBuffId;
+	Parms.InPawn = InPawn;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.GetSkillEquipData
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGESkillEquipInfo                ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FGESkillEquipInfo UGESkillLibrary::GetSkillEquipData(class AController* InController, int32 InIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetSkillEquipData");
+
+	Params::GESkillLibrary_GetSkillEquipData Parms{};
+
+	Parms.InController = InController;
+	Parms.InIndex = InIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.GetSkillInfo
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGESkillInfo                     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FGESkillInfo UGESkillLibrary::GetSkillInfo(int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetSkillInfo");
+
+	Params::GESkillLibrary_GetSkillInfo Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.GetSkillPath
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSoftObjectPath                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FSoftObjectPath UGESkillLibrary::GetSkillPath(int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "GetSkillPath");
+
+	Params::GESkillLibrary_GetSkillPath Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.IsUseable
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGESkillLibrary::IsUseable(class AController* InController, int32 InIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "IsUseable");
+
+	Params::GESkillLibrary_IsUseable Parms{};
+
+	Parms.InController = InController;
+	Parms.InIndex = InIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESkillLibrary.ModifySkillReduceCD
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AGEPlayerState*                   Ps                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InReduceValue                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGESkillLibrary::ModifySkillReduceCD(class AGEPlayerState* Ps, int32 InIndex, float InReduceValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "ModifySkillReduceCD");
+
+	Params::GESkillLibrary_ModifySkillReduceCD Parms{};
+
+	Parms.Ps = Ps;
+	Parms.InIndex = InIndex;
+	Parms.InReduceValue = InReduceValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GESkillLibrary.ModifySkillStoreCount
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AGEGameCharacter*                 Char                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InAddCount                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGESkillLibrary::ModifySkillStoreCount(class AGEGameCharacter* Char, int32 InIndex, int32 InAddCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "ModifySkillStoreCount");
+
+	Params::GESkillLibrary_ModifySkillStoreCount Parms{};
+
+	Parms.Char = Char;
+	Parms.InIndex = InIndex;
+	Parms.InAddCount = InAddCount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GESkillLibrary.SetIsUsed
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGESkillLibrary::SetIsUsed(class AController* InController, int32 InIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "SetIsUsed");
+
+	Params::GESkillLibrary_SetIsUsed Parms{};
+
+	Parms.InController = InController;
+	Parms.InIndex = InIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GESkillLibrary.SetSkillEquipData
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class AController*                      InController                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGESkillEquipInfo&         Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UGESkillLibrary::SetSkillEquipData(class AController* InController, int32 InIndex, const struct FGESkillEquipInfo& Info)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESkillLibrary", "SetSkillEquipData");
+
+	Params::GESkillLibrary_SetSkillEquipData Parms{};
+
+	Parms.InController = InController;
+	Parms.InIndex = InIndex;
+	Parms.Info = std::move(Info);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GESplineConveyorComponent.AddMoveActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   StartLen                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bCheckRepeat                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGESplineConveyorComponent::AddMoveActor(class AActor* Actor, float StartLen, bool bCheckRepeat)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GESplineConveyorComponent", "AddMoveActor");
+
+	Params::GESplineConveyorComponent_AddMoveActor Parms{};
+
+	Parms.Actor = Actor;
+	Parms.StartLen = StartLen;
+	Parms.bCheckRepeat = bCheckRepeat;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GESplineConveyorComponent.SetMoveValue
+// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
+// Parameters:
+// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64                                   servertimeMilli                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGESplineConveyorComponent::SetMoveValue(float Time, int64 servertimeMilli)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GESplineConveyorComponent", "SetMoveValue");
+
+	Params::GESplineConveyorComponent_SetMoveValue Parms{};
+
+	Parms.Time = Time;
+	Parms.servertimeMilli = servertimeMilli;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GESplineMoveComponent.AddMoveActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   StartLen                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bCheckRepeat                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGESplineMoveComponent::AddMoveActor(class AActor* Actor, float StartLen, bool bCheckRepeat)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GESplineMoveComponent", "AddMoveActor");
+
+	Params::GESplineMoveComponent_AddMoveActor Parms{};
+
+	Parms.Actor = Actor;
+	Parms.StartLen = StartLen;
+	Parms.bCheckRepeat = bCheckRepeat;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GESplineMoveComponent.OnRep_MoveValue
+// (Final, Native, Public)
+
+void UGESplineMoveComponent::OnRep_MoveValue()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GESplineMoveComponent", "OnRep_MoveValue");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GESplineMoveComponent.SetisSelfMove
+// (Net, Native, Event, NetMulticast, Public, BlueprintCallable)
+// Parameters:
+// bool                                    selfmove                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGESplineMoveComponent::SetisSelfMove(bool selfmove)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GESplineMoveComponent", "SetisSelfMove");
+
+	Params::GESplineMoveComponent_SetisSelfMove Parms{};
+
+	Parms.selfmove = selfmove;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GESplineMoveComponent.SetMoveValue
+// (Net, Native, Event, NetMulticast, Public, BlueprintCallable)
+// Parameters:
+// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64                                   servertimeMilli                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGESplineMoveComponent::SetMoveValue(float Time, int64 servertimeMilli)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GESplineMoveComponent", "SetMoveValue");
+
+	Params::GESplineMoveComponent_SetMoveValue Parms{};
+
+	Parms.Time = Time;
+	Parms.servertimeMilli = servertimeMilli;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GESplineMoveComponent.UpdateSelfMeshLocation
+// (Final, Native, Public, BlueprintCallable)
+
+void UGESplineMoveComponent::UpdateSelfMeshLocation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GESplineMoveComponent", "UpdateSelfMeshLocation");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GESystem.Get
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGESystem*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGESystem* UGESystem::Get(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GESystem", "Get");
+
+	Params::GESystem_Get Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESystem.GetHideAndSeekMgr
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AGEHideAndSeekMgr*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AGEHideAndSeekMgr* UGESystem::GetHideAndSeekMgr()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GESystem", "GetHideAndSeekMgr");
+
+	Params::GESystem_GetHideAndSeekMgr Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESystem.GetItemMgr
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AGEItemMgr*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AGEItemMgr* UGESystem::GetItemMgr()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GESystem", "GetItemMgr");
+
+	Params::GESystem_GetItemMgr Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GESystem.GetZBugRunMgr
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AGEZBugRunMgr*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AGEZBugRunMgr* UGESystem::GetZBugRunMgr()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GESystem", "GetZBugRunMgr");
+
+	Params::GESystem_GetZBugRunMgr Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEWPLibrary.CheckWPSpawnerTemplateHaveSPRule
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FWPActiveSpawnersTemplate*       InTemplate                                             (Parm, OutParm, NativeAccessSpecifierPublic)
+// EWPSpawnMonsterSPRule                   InRule                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGEWPLibrary::CheckWPSpawnerTemplateHaveSPRule(struct FWPActiveSpawnersTemplate* InTemplate, EWPSpawnMonsterSPRule InRule)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEWPLibrary", "CheckWPSpawnerTemplateHaveSPRule");
+
+	Params::GEWPLibrary_CheckWPSpawnerTemplateHaveSPRule Parms{};
+
+	Parms.InRule = InRule;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (InTemplate != nullptr)
+		*InTemplate = std::move(Parms.InTemplate);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEWPLibrary.GetCharacterMeshComponentBySocket
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Socket                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AGEGameCharacter*           Character                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USceneComponent*                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USceneComponent* UGEWPLibrary::GetCharacterMeshComponentBySocket(class FName Socket, const class AGEGameCharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEWPLibrary", "GetCharacterMeshComponentBySocket");
+
+	Params::GEWPLibrary_GetCharacterMeshComponentBySocket Parms{};
+
+	Parms.Socket = Socket;
+	Parms.Character = Character;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEWPLibrary.GetCharacterTemplate
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWaterParkCharacterTemplateReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const struct FWaterParkCharacterTemplate UGEWPLibrary::GetCharacterTemplate(int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEWPLibrary", "GetCharacterTemplate");
+
+	Params::GEWPLibrary_GetCharacterTemplate Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEWPLibrary.GetSettlementCamOffsetByTemplateID
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// int32                                   InTemplateID                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    IsSuccess                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector UGEWPLibrary::GetSettlementCamOffsetByTemplateID(int32 InTemplateID, bool IsSuccess)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEWPLibrary", "GetSettlementCamOffsetByTemplateID");
+
+	Params::GEWPLibrary_GetSettlementCamOffsetByTemplateID Parms{};
+
+	Parms.InTemplateID = InTemplateID;
+	Parms.IsSuccess = IsSuccess;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEWPLibrary.GetSocketTransformFromActor
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const class FName&                      Socket                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Target                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransform*                      ResultTransform                                        (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGEWPLibrary::GetSocketTransformFromActor(const class FName& Socket, const class AActor* Target, struct FTransform* ResultTransform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEWPLibrary", "GetSocketTransformFromActor");
+
+	Params::GEWPLibrary_GetSocketTransformFromActor Parms{};
+
+	Parms.Socket = Socket;
+	Parms.Target = Target;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (ResultTransform != nullptr)
+		*ResultTransform = std::move(Parms.ResultTransform);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEWPLibrary.GetWPActiveSpawnersTemplate
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    showErrorTip                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWPActiveSpawnersTemplate  ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const struct FWPActiveSpawnersTemplate UGEWPLibrary::GetWPActiveSpawnersTemplate(int32 InId, const class UObject* WorldContextObject, bool showErrorTip)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEWPLibrary", "GetWPActiveSpawnersTemplate");
+
+	Params::GEWPLibrary_GetWPActiveSpawnersTemplate Parms{};
+
+	Parms.InId = InId;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.showErrorTip = showErrorTip;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEWPLibrary.IsEditorMobile
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGEWPLibrary::IsEditorMobile()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEWPLibrary", "IsEditorMobile");
+
+	Params::GEWPLibrary_IsEditorMobile Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEWPLibrary.IsMobilePlatform
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGEWPLibrary::IsMobilePlatform()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEWPLibrary", "IsMobilePlatform");
+
+	Params::GEWPLibrary_IsMobilePlatform Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEWPLibrary.SetPerformanceMode
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bOpen                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEWPLibrary::SetPerformanceMode(bool bOpen)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEWPLibrary", "SetPerformanceMode");
+
+	Params::GEWPLibrary_SetPerformanceMode Parms{};
+
+	Parms.bOpen = bOpen;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEWPLibrary.ShowDialog
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    InTitle                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InMsg                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEWPLibrary::ShowDialog(const class FString& InTitle, const class FString& InMsg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEWPLibrary", "ShowDialog");
+
+	Params::GEWPLibrary_ShowDialog Parms{};
+
+	Parms.InTitle = std::move(InTitle);
+	Parms.InMsg = std::move(InMsg);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEZBugRunEntityBullet.BulletBomb
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -14614,6 +18856,31 @@ void AGEZBugRunEntityBullet::BulletBomb(const struct FVector& InDir, class AActo
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunEntityBullet.CollToOthersDelayCheck
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEZBugRunEntityBullet::CollToOthersDelayCheck()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunEntityBullet", "CollToOthersDelayCheck");
+
+	Params::GEZBugRunEntityBullet_CollToOthersDelayCheck Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -14646,8 +18913,27 @@ void AGEZBugRunEntityBullet::InitBullet_MultiCast(const struct FVector& InVel, i
 }
 
 
+// Function GameEx.GEZBugRunEntityBullet.NotifyClient_SpawnNiagara
+// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
+
+void AGEZBugRunEntityBullet::NotifyClient_SpawnNiagara()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunEntityBullet", "NotifyClient_SpawnNiagara");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEZBugRunEntityBullet.OnBombComponentBeginOverlap
-// (Final, Native, Public, HasOutParams)
+// (Native, Public, HasOutParams)
 // Parameters:
 // class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -14681,8 +18967,8 @@ void AGEZBugRunEntityBullet::OnBombComponentBeginOverlap(class UPrimitiveCompone
 }
 
 
-// Function GameEx.GEZBugRunEntityBullet.OnSphereComponentBeginOverlap
-// (Final, Native, Public, HasOutParams)
+// Function GameEx.GEZBugRunEntityBullet.OnCollComponentBeginOverlap
+// (Native, Public, HasOutParams)
 // Parameters:
 // class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -14691,14 +18977,14 @@ void AGEZBugRunEntityBullet::OnBombComponentBeginOverlap(class UPrimitiveCompone
 // bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void AGEZBugRunEntityBullet::OnSphereComponentBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+void AGEZBugRunEntityBullet::OnCollComponentBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GEZBugRunEntityBullet", "OnSphereComponentBeginOverlap");
+		Func = Class->GetFunction("GEZBugRunEntityBullet", "OnCollComponentBeginOverlap");
 
-	Params::GEZBugRunEntityBullet_OnSphereComponentBeginOverlap Parms{};
+	Params::GEZBugRunEntityBullet_OnCollComponentBeginOverlap Parms{};
 
 	Parms.OverlappedComponent = OverlappedComponent;
 	Parms.OtherActor = OtherActor;
@@ -14716,8 +19002,8 @@ void AGEZBugRunEntityBullet::OnSphereComponentBeginOverlap(class UPrimitiveCompo
 }
 
 
-// Function GameEx.GEZBugRunEntityBullet.OnSphereComponentHit
-// (Final, Native, Public, HasOutParams, HasDefaults)
+// Function GameEx.GEZBugRunEntityBullet.OnCollComponentHit
+// (Native, Public, HasOutParams, HasDefaults)
 // Parameters:
 // class UPrimitiveComponent*              HitComponent                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -14725,14 +19011,14 @@ void AGEZBugRunEntityBullet::OnSphereComponentBeginOverlap(class UPrimitiveCompo
 // const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void AGEZBugRunEntityBullet::OnSphereComponentHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComponent, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
+void AGEZBugRunEntityBullet::OnCollComponentHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComponent, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GEZBugRunEntityBullet", "OnSphereComponentHit");
+		Func = Class->GetFunction("GEZBugRunEntityBullet", "OnCollComponentHit");
 
-	Params::GEZBugRunEntityBullet_OnSphereComponentHit Parms{};
+	Params::GEZBugRunEntityBullet_OnCollComponentHit Parms{};
 
 	Parms.HitComponent = HitComponent;
 	Parms.OtherActor = OtherActor;
@@ -14750,12 +19036,13 @@ void AGEZBugRunEntityBullet::OnSphereComponentHit(class UPrimitiveComponent* Hit
 
 
 // Function GameEx.GEZBugRunEntityBullet.SpawnInit
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// (Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // const struct FVector&                   AimLoc                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AGEGameCharacter*                 InChar                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AGEZBugRunWeaponBase*             InWeapon                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEZBugRunEntityBullet::SpawnInit(const struct FVector& AimLoc, class AGEGameCharacter* InChar)
+void AGEZBugRunEntityBullet::SpawnInit(const struct FVector& AimLoc, class AGEGameCharacter* InChar, class AGEZBugRunWeaponBase* InWeapon)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14766,6 +19053,7 @@ void AGEZBugRunEntityBullet::SpawnInit(const struct FVector& AimLoc, class AGEGa
 
 	Parms.AimLoc = std::move(AimLoc);
 	Parms.InChar = InChar;
+	Parms.InWeapon = InWeapon;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14951,6 +19239,76 @@ class AGEZBugRunMgr* UGEZBugRunLibrary::GetZBugRunMgr(class UObject* WorldContex
 }
 
 
+// Function GameEx.GEZBugRunLibrary.HelpLaunchMultiNormalDmg
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           Launcher                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class UObject*>&           Target                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// float                                   InDmgCoefficient                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   FixedDmg                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNeedRPC                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTriggerAllDmgEffect                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEZBugRunLibrary::HelpLaunchMultiNormalDmg(class AActor* Launcher, const TArray<class UObject*>& Target, float InDmgCoefficient, float FixedDmg, bool bNeedRPC, bool bTriggerAllDmgEffect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEZBugRunLibrary", "HelpLaunchMultiNormalDmg");
+
+	Params::GEZBugRunLibrary_HelpLaunchMultiNormalDmg Parms{};
+
+	Parms.Launcher = Launcher;
+	Parms.Target = std::move(Target);
+	Parms.InDmgCoefficient = InDmgCoefficient;
+	Parms.FixedDmg = FixedDmg;
+	Parms.bNeedRPC = bNeedRPC;
+	Parms.bTriggerAllDmgEffect = bTriggerAllDmgEffect;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunLibrary.HelpLaunchNormalDmg
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           Launcher                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Target                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InDmgCoefficient                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   FixedDmg                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNeedRPC                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTriggerAllDmgEffect                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGEZBugRunLibrary::HelpLaunchNormalDmg(class AActor* Launcher, class AActor* Target, float InDmgCoefficient, float FixedDmg, bool bNeedRPC, bool bTriggerAllDmgEffect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEZBugRunLibrary", "HelpLaunchNormalDmg");
+
+	Params::GEZBugRunLibrary_HelpLaunchNormalDmg Parms{};
+
+	Parms.Launcher = Launcher;
+	Parms.Target = Target;
+	Parms.InDmgCoefficient = InDmgCoefficient;
+	Parms.FixedDmg = FixedDmg;
+	Parms.bNeedRPC = bNeedRPC;
+	Parms.bTriggerAllDmgEffect = bTriggerAllDmgEffect;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEZBugRunMgr.AddCRTTestData
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -14966,6 +19324,75 @@ void AGEZBugRunMgr::AddCRTTestData(bool isCritical)
 	Params::GEZBugRunMgr_AddCRTTestData Parms{};
 
 	Parms.isCritical = isCritical;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.AddKillCount
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEZBugRunMgr::AddKillCount()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "AddKillCount");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.AddMonsterCache
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AGEGameCharacter*                 InMonster                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::AddMonsterCache(class AGEGameCharacter* InMonster)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "AddMonsterCache");
+
+	Params::GEZBugRunMgr_AddMonsterCache Parms{};
+
+	Parms.InMonster = InMonster;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.AddMonsterCountInLevel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InCount                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::AddMonsterCountInLevel(int32 InCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "AddMonsterCountInLevel");
+
+	Params::GEZBugRunMgr_AddMonsterCountInLevel Parms{};
+
+	Parms.InCount = InCount;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14995,6 +19422,269 @@ void AGEZBugRunMgr::AllocateWeaponToChar(int32 WeaponID, class AActor* InChar)
 	Parms.InChar = InChar;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEZBugRunMgr.CheckCanSpawnMonster
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEZBugRunMgr::CheckCanSpawnMonster()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "CheckCanSpawnMonster");
+
+	Params::GEZBugRunMgr_CheckCanSpawnMonster Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.CheckCurWaveRefreshItem
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEZBugRunMgr::CheckCurWaveRefreshItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "CheckCurWaveRefreshItem");
+
+	Params::GEZBugRunMgr_CheckCurWaveRefreshItem Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.CheckCurWaveRefreshWeaponBox
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEZBugRunMgr::CheckCurWaveRefreshWeaponBox()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "CheckCurWaveRefreshWeaponBox");
+
+	Params::GEZBugRunMgr_CheckCurWaveRefreshWeaponBox Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.CheckIsBonusWave
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEZBugRunMgr::CheckIsBonusWave()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "CheckIsBonusWave");
+
+	Params::GEZBugRunMgr_CheckIsBonusWave Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.CheckIsBossWave
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEZBugRunMgr::CheckIsBossWave()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "CheckIsBossWave");
+
+	Params::GEZBugRunMgr_CheckIsBossWave Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.CheckIsCurWaveRefreshBuff
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEZBugRunMgr::CheckIsCurWaveRefreshBuff()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "CheckIsCurWaveRefreshBuff");
+
+	Params::GEZBugRunMgr_CheckIsCurWaveRefreshBuff Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.CheckIsLastWave
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEZBugRunMgr::CheckIsLastWave()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "CheckIsLastWave");
+
+	Params::GEZBugRunMgr_CheckIsLastWave Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.CheckLastWaveIsBonus
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEZBugRunMgr::CheckLastWaveIsBonus()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "CheckLastWaveIsBonus");
+
+	Params::GEZBugRunMgr_CheckLastWaveIsBonus Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.CheckZBugChallengeSuccess
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEZBugRunMgr::CheckZBugChallengeSuccess()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "CheckZBugChallengeSuccess");
+
+	Params::GEZBugRunMgr_CheckZBugChallengeSuccess Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.ClearKillCount
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEZBugRunMgr::ClearKillCount()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "ClearKillCount");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.ClearLevelCountDownTimer
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEZBugRunMgr::ClearLevelCountDownTimer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "ClearLevelCountDownTimer");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -15054,6 +19744,31 @@ float AGEZBugRunMgr::GetAddPerformScoreByDeadTarget(class AGEPlayerState* InStat
 }
 
 
+// Function GameEx.GEZBugRunMgr.GetAllMonsterCache
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TArray<class AGEGameCharacter*>         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class AGEGameCharacter*> AGEZBugRunMgr::GetAllMonsterCache()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "GetAllMonsterCache");
+
+	Params::GEZBugRunMgr_GetAllMonsterCache Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameEx.GEZBugRunMgr.GetAllPreloadStr
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -15067,6 +19782,256 @@ TArray<class FString> AGEZBugRunMgr::GetAllPreloadStr()
 		Func = Class->GetFunction("GEZBugRunMgr", "GetAllPreloadStr");
 
 	Params::GEZBugRunMgr_GetAllPreloadStr Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.GetCurBonusWaveBaseExtraBuff
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEZBugRunMgr::GetCurBonusWaveBaseExtraBuff()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "GetCurBonusWaveBaseExtraBuff");
+
+	Params::GEZBugRunMgr_GetCurBonusWaveBaseExtraBuff Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.GetCurBonusWaveKillPhase
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TArray<int32>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<int32> AGEZBugRunMgr::GetCurBonusWaveKillPhase()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "GetCurBonusWaveKillPhase");
+
+	Params::GEZBugRunMgr_GetCurBonusWaveKillPhase Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.GetCurChallengeWave
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEZBugRunMgr::GetCurChallengeWave()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "GetCurChallengeWave");
+
+	Params::GEZBugRunMgr_GetCurChallengeWave Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.GetCurWaveRefreshBuffGroup
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TArray<int32>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<int32> AGEZBugRunMgr::GetCurWaveRefreshBuffGroup()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "GetCurWaveRefreshBuffGroup");
+
+	Params::GEZBugRunMgr_GetCurWaveRefreshBuffGroup Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.GetMonsterStrengthMultiplier
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FGEMonsterStrengthMultiplier     ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FGEMonsterStrengthMultiplier AGEZBugRunMgr::GetMonsterStrengthMultiplier()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "GetMonsterStrengthMultiplier");
+
+	Params::GEZBugRunMgr_GetMonsterStrengthMultiplier Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.GetNeedKillCount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEZBugRunMgr::GetNeedKillCount()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "GetNeedKillCount");
+
+	Params::GEZBugRunMgr_GetNeedKillCount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.GetRandomBonusWaveIndex
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEZBugRunMgr::GetRandomBonusWaveIndex()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "GetRandomBonusWaveIndex");
+
+	Params::GEZBugRunMgr_GetRandomBonusWaveIndex Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.GetRandomCharForSpawnMonster
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* AGEZBugRunMgr::GetRandomCharForSpawnMonster()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "GetRandomCharForSpawnMonster");
+
+	Params::GEZBugRunMgr_GetRandomCharForSpawnMonster Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.GetTriggerBonusWaveCount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEZBugRunMgr::GetTriggerBonusWaveCount()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "GetTriggerBonusWaveCount");
+
+	Params::GEZBugRunMgr_GetTriggerBonusWaveCount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.GetWaveCount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AGEZBugRunMgr::GetWaveCount()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "GetWaveCount");
+
+	Params::GEZBugRunMgr_GetWaveCount Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15101,6 +20066,92 @@ void AGEZBugRunMgr::GM_ForceKillPeople(class AActor* Killer, class AActor* Targe
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.HelpLaunchForceFixDmg
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AGEGameCharacter*                 InLauncher                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AGEGameCharacter*                 InTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InDmg                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::HelpLaunchForceFixDmg(class AGEGameCharacter* InLauncher, class AGEGameCharacter* InTarget, float InDmg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "HelpLaunchForceFixDmg");
+
+	Params::GEZBugRunMgr_HelpLaunchForceFixDmg Parms{};
+
+	Parms.InLauncher = InLauncher;
+	Parms.InTarget = InTarget;
+	Parms.InDmg = InDmg;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.InitBonusWave
+// (Final, Native, Public)
+
+void AGEZBugRunMgr::InitBonusWave()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "InitBonusWave");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.InitZBugChallenge
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEZBugRunMgr::InitZBugChallenge()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "InitZBugChallenge");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.LevelCountDownTimer
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEZBugRunMgr::LevelCountDownTimer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "LevelCountDownTimer");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -15149,6 +20200,26 @@ void AGEZBugRunMgr::LuaImpl_CompositeAtLocationByID(int32 EffectId, const struct
 	Parms.InLoc = std::move(InLoc);
 	Parms.InDir = std::move(InDir);
 	Parms.Caster = Caster;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEZBugRunMgr.LuaImpl_CurWaveFinish_Client
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   InCurWave                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::LuaImpl_CurWaveFinish_Client(int32 InCurWave)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "LuaImpl_CurWaveFinish_Client");
+
+	Params::GEZBugRunMgr_LuaImpl_CurWaveFinish_Client Parms{};
+
+	Parms.InCurWave = InCurWave;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -15244,6 +20315,64 @@ void AGEZBugRunMgr::LuaImpl_KillOthers_Multicast(int32 KillerGEUniqueID, int32 T
 }
 
 
+// Function GameEx.GEZBugRunMgr.LuaImpl_OnCurWaveStateChange
+// (Event, Public, BlueprintEvent)
+
+void AGEZBugRunMgr::LuaImpl_OnCurWaveStateChange()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "LuaImpl_OnCurWaveStateChange");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEZBugRunMgr.LuaImpl_PVEKillOthers
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AActor*                           Killer                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Target                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::LuaImpl_PVEKillOthers(class AActor* Killer, class AActor* Target)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "LuaImpl_PVEKillOthers");
+
+	Params::GEZBugRunMgr_LuaImpl_PVEKillOthers Parms{};
+
+	Parms.Killer = Killer;
+	Parms.Target = Target;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEZBugRunMgr.LuaImpl_PVEKillOthers_Multicast
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   KillerGEUniqueID                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   TargetGEUniqueID                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::LuaImpl_PVEKillOthers_Multicast(int32 KillerGEUniqueID, int32 TargetGEUniqueID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "LuaImpl_PVEKillOthers_Multicast");
+
+	Params::GEZBugRunMgr_LuaImpl_PVEKillOthers_Multicast Parms{};
+
+	Parms.KillerGEUniqueID = KillerGEUniqueID;
+	Parms.TargetGEUniqueID = TargetGEUniqueID;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function GameEx.GEZBugRunMgr.LuaImpl_TickCheckInitForPlayer
 // (Event, Public, BlueprintEvent)
 
@@ -15255,6 +20384,79 @@ void AGEZBugRunMgr::LuaImpl_TickCheckInitForPlayer()
 		Func = Class->GetFunction("GEZBugRunMgr", "LuaImpl_TickCheckInitForPlayer");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEZBugRunMgr.LuaImpl_ZBugChallengeFail
+// (Event, Public, BlueprintEvent)
+
+void AGEZBugRunMgr::LuaImpl_ZBugChallengeFail()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "LuaImpl_ZBugChallengeFail");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEZBugRunMgr.LuaImpl_ZBugChallengeFinish_MultiCast
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsSuccess                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::LuaImpl_ZBugChallengeFinish_MultiCast(bool IsSuccess)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "LuaImpl_ZBugChallengeFinish_MultiCast");
+
+	Params::GEZBugRunMgr_LuaImpl_ZBugChallengeFinish_MultiCast Parms{};
+
+	Parms.IsSuccess = IsSuccess;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEZBugRunMgr.LuaImpl_ZBugChallengeWin
+// (Event, Public, BlueprintEvent)
+
+void AGEZBugRunMgr::LuaImpl_ZBugChallengeWin()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "LuaImpl_ZBugChallengeWin");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEZBugRunMgr.MultiCast_CurWaveFinish
+// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InCurWave                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::MultiCast_CurWaveFinish(int32 InCurWave)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "MultiCast_CurWaveFinish");
+
+	Params::GEZBugRunMgr_MultiCast_CurWaveFinish Parms{};
+
+	Parms.InCurWave = InCurWave;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -15314,6 +20516,174 @@ void AGEZBugRunMgr::MultiCast_KillOthers(int32 KillerGEUniqueID, int32 TargetGEU
 }
 
 
+// Function GameEx.GEZBugRunMgr.MultiCast_PVEKillOthers
+// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
+// Parameters:
+// int32                                   KillerGEUniqueID                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   TargetGEUniqueID                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::MultiCast_PVEKillOthers(int32 KillerGEUniqueID, int32 TargetGEUniqueID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "MultiCast_PVEKillOthers");
+
+	Params::GEZBugRunMgr_MultiCast_PVEKillOthers Parms{};
+
+	Parms.KillerGEUniqueID = KillerGEUniqueID;
+	Parms.TargetGEUniqueID = TargetGEUniqueID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.NotifyCurWaveFinish
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEZBugRunMgr::NotifyCurWaveFinish()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "NotifyCurWaveFinish");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.NotifyCurWaveStart
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEZBugRunMgr::NotifyCurWaveStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "NotifyCurWaveStart");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.NotifyNextWaveStartBeforeProcess
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEZBugRunMgr::NotifyNextWaveStartBeforeProcess()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "NotifyNextWaveStartBeforeProcess");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.OnRep_BonusWaveTimer
+// (Event, Public, BlueprintEvent)
+
+void AGEZBugRunMgr::OnRep_BonusWaveTimer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "OnRep_BonusWaveTimer");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEZBugRunMgr.OnRep_CurChallengeWave
+// (Event, Public, BlueprintEvent)
+
+void AGEZBugRunMgr::OnRep_CurChallengeWave()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "OnRep_CurChallengeWave");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEZBugRunMgr.OnRep_CurWaveKillCount
+// (Event, Public, BlueprintEvent)
+
+void AGEZBugRunMgr::OnRep_CurWaveKillCount()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "OnRep_CurWaveKillCount");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEZBugRunMgr.OnRep_CurWaveState
+// (Event, Public, BlueprintEvent)
+
+void AGEZBugRunMgr::OnRep_CurWaveState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "OnRep_CurWaveState");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEZBugRunMgr.OnRep_CurWaveTotalKill
+// (Event, Public, BlueprintEvent)
+
+void AGEZBugRunMgr::OnRep_CurWaveTotalKill()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "OnRep_CurWaveTotalKill");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEZBugRunMgr.OnRep_ZBugChallengeCountDown
+// (Event, Public, BlueprintEvent)
+
+void AGEZBugRunMgr::OnRep_ZBugChallengeCountDown()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "OnRep_ZBugChallengeCountDown");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GameEx.GEZBugRunMgr.OpenOrCloseCRTTestMode
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -15329,6 +20699,31 @@ void AGEZBugRunMgr::OpenOrCloseCRTTestMode(bool IsOpen)
 	Params::GEZBugRunMgr_OpenOrCloseCRTTestMode Parms{};
 
 	Parms.IsOpen = IsOpen;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.PauseLevelTime
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bPause                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::PauseLevelTime(bool bPause)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "PauseLevelTime");
+
+	Params::GEZBugRunMgr_PauseLevelTime Parms{};
+
+	Parms.bPause = bPause;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15366,6 +20761,50 @@ void AGEZBugRunMgr::PeopleKillOther(class AActor* Launcher, class AActor* Target
 }
 
 
+// Function GameEx.GEZBugRunMgr.RemoveMonsterCache
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AGEGameCharacter*                 InMonster                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::RemoveMonsterCache(class AGEGameCharacter* InMonster)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "RemoveMonsterCache");
+
+	Params::GEZBugRunMgr_RemoveMonsterCache Parms{};
+
+	Parms.InMonster = InMonster;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.SendBonusWaveFinishMsg
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEZBugRunMgr::SendBonusWaveFinishMsg()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "SendBonusWaveFinishMsg");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEZBugRunMgr.SendCharDeathMsg
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -15388,6 +20827,241 @@ void AGEZBugRunMgr::SendCharDeathMsg(class AActor* Launcher, class AActor* Targe
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.SetBonusWaveLogic
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSoftObjectPath                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FSoftObjectPath AGEZBugRunMgr::SetBonusWaveLogic(int32 InIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "SetBonusWaveLogic");
+
+	Params::GEZBugRunMgr_SetBonusWaveLogic Parms{};
+
+	Parms.InIndex = InIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEZBugRunMgr.SetCurWaveState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EZBugChallengeWaveState                 InState                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::SetCurWaveState(EZBugChallengeWaveState InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "SetCurWaveState");
+
+	Params::GEZBugRunMgr_SetCurWaveState Parms{};
+
+	Parms.InState = InState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.SetCurWaveTotalKill
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InCount                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::SetCurWaveTotalKill(int32 InCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "SetCurWaveTotalKill");
+
+	Params::GEZBugRunMgr_SetCurWaveTotalKill Parms{};
+
+	Parms.InCount = InCount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.SetMonsterStrengthLevel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InLevel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::SetMonsterStrengthLevel(int32 InLevel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "SetMonsterStrengthLevel");
+
+	Params::GEZBugRunMgr_SetMonsterStrengthLevel Parms{};
+
+	Parms.InLevel = InLevel;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.TickZBugChallenge
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::TickZBugChallenge(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "TickZBugChallenge");
+
+	Params::GEZBugRunMgr_TickZBugChallenge Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.TransferKillToBonusBuffCount
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEZBugRunMgr::TransferKillToBonusBuffCount()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "TransferKillToBonusBuffCount");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.ZBugChallengeFail
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEZBugRunMgr::ZBugChallengeFail()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "ZBugChallengeFail");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.ZBugChallengeFinish
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    IsSuccess                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::ZBugChallengeFinish(bool IsSuccess)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "ZBugChallengeFinish");
+
+	Params::GEZBugRunMgr_ZBugChallengeFinish Parms{};
+
+	Parms.IsSuccess = IsSuccess;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.ZBugChallengeFinish_MultiCast
+// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
+// Parameters:
+// bool                                    IsSuccess                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunMgr::ZBugChallengeFinish_MultiCast(bool IsSuccess)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "ZBugChallengeFinish_MultiCast");
+
+	Params::GEZBugRunMgr_ZBugChallengeFinish_MultiCast Parms{};
+
+	Parms.IsSuccess = IsSuccess;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunMgr.ZBugChallengeWin
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEZBugRunMgr::ZBugChallengeWin()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunMgr", "ZBugChallengeWin");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -15726,6 +21400,31 @@ void AGEZBugRunWeaponBase::InitWeaponRecoil()
 }
 
 
+// Function GameEx.GEZBugRunWeaponBase.Lua_Tick
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunWeaponBase::Lua_Tick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunWeaponBase", "Lua_Tick");
+
+	Params::GEZBugRunWeaponBase_Lua_Tick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEZBugRunWeaponBase.OnMeleeHitOther
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -15770,6 +21469,31 @@ void AGEZBugRunWeaponBase::SendOneMeleeHitInfoToServer(const struct FVector& Hit
 
 	Parms.HitPos = std::move(HitPos);
 	Parms.TargetChar = TargetChar;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEZBugRunWeaponBase.SetDestroyWhenNoBullet
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEZBugRunWeaponBase::SetDestroyWhenNoBullet(bool InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEZBugRunWeaponBase", "SetDestroyWhenNoBullet");
+
+	Params::GEZBugRunWeaponBase_SetDestroyWhenNoBullet Parms{};
+
+	Parms.InValue = InValue;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16036,6 +21760,33 @@ void AGEZBugRunWeaponBase::RandomShootTarets(const struct FVector& ShootDir, int
 }
 
 
+// Function GameEx.LT_Decorator_CheckPlayerState.OnStateChange
+// (Final, Native, Public)
+// Parameters:
+// EWaterParkCharState                     PreState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EWaterParkCharState                     CurState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULT_Decorator_CheckPlayerState::OnStateChange(EWaterParkCharState PreState, EWaterParkCharState CurState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LT_Decorator_CheckPlayerState", "OnStateChange");
+
+	Params::LT_Decorator_CheckPlayerState_OnStateChange Parms{};
+
+	Parms.PreState = PreState;
+	Parms.CurState = CurState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.LT_Decorator_WaterParkIsGameStart.OnGameStageChange
 // (Final, Native, Private)
 // Parameters:
@@ -16294,8 +22045,9 @@ void UWaterParkQAnimIns::InitZBugWeaponAsset()
 // class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    CheckIsPlaying                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ChangeRepIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InPlayRate                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWaterParkQAnimIns::PlayMontageByName(class FName InName, bool CheckIsPlaying, bool ChangeRepIndex)
+void UWaterParkQAnimIns::PlayMontageByName(class FName InName, bool CheckIsPlaying, bool ChangeRepIndex, float InPlayRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -16307,6 +22059,7 @@ void UWaterParkQAnimIns::PlayMontageByName(class FName InName, bool CheckIsPlayi
 	Parms.InName = InName;
 	Parms.CheckIsPlaying = CheckIsPlaying;
 	Parms.ChangeRepIndex = ChangeRepIndex;
+	Parms.InPlayRate = InPlayRate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "Game_structs.hpp"
 #include "Game_classes.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass Emitter_Trap.Emitter_Trap_C
-// 0x0010 (0x0C80 - 0x0C70)
+// 0x0010 (0x0C90 - 0x0C80)
 class UEmitter_Trap_C final : public USkill_Emitter
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0C70(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0C80(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void OnEmitEnd();

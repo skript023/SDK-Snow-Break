@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -35,8 +35,8 @@ public:
 	void ExecuteUbergraph_uw_fight_worldboss_score(int32 EntryPoint);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void NumberScroll__Overridden(float InDeltaTime);
-	void NumberScroll(float InDeltaTime);
 	void Construct();
+	void NumberScroll(float InDeltaTime);
 	void Destruct();
 	void OnConstruct();
 

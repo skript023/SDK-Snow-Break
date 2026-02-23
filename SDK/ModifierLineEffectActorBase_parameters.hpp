@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 #include "Game_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
@@ -259,26 +259,26 @@ public:
 DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_ReceiveEndPlay;
 
 // Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnPreEffectActorOwnerDead
-// 0x01C8 (0x01C8 - 0x0000)
+// 0x01D0 (0x01D0 - 0x0000)
 struct ModifierLineEffectActorBase_C_OnPreEffectActorOwnerDead final
 {
 public:
 	bool                                          bDead;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAbilityComponentBase*                  InLauncher;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeData;                                  // 0x0010(0x01B8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	struct FHealthChangeValue                     HealthChangeData;                                  // 0x0010(0x01C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_OnPreEffectActorOwnerDead;
 
 // Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnLauncherDead
-// 0x01C8 (0x01C8 - 0x0000)
+// 0x01D0 (0x01D0 - 0x0000)
 struct ModifierLineEffectActorBase_C_OnLauncherDead final
 {
 public:
 	bool                                          bDead;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAbilityComponentBase*                  InLauncher;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeData;                                  // 0x0010(0x01B8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	struct FHealthChangeValue                     HealthChangeData;                                  // 0x0010(0x01C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_OnLauncherDead;
 
@@ -292,7 +292,7 @@ public:
 DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_ReceiveTick;
 
 // Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ExecuteUbergraph_ModifierLineEffectActorBase
-// 0x03C8 (0x03C8 - 0x0000)
+// 0x03D8 (0x03D8 - 0x0000)
 struct ModifierLineEffectActorBase_C_ExecuteUbergraph_ModifierLineEffectActorBase final
 {
 public:
@@ -309,15 +309,15 @@ public:
 	bool                                          K2Node_CustomEvent_bDead_1;                        // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAbilityComponentBase*                  K2Node_CustomEvent_InLauncher_1;                   // 0x0038(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     K2Node_CustomEvent_HealthChangeData_1;             // 0x0040(0x01B8)(ConstParm, ContainsInstancedReference)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x01F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x01F9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x01FA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_CustomEvent_bDead;                          // 0x01FB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1FC[0x4];                                      // 0x01FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbilityComponentBase*                  K2Node_CustomEvent_InLauncher;                     // 0x0200(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     K2Node_CustomEvent_HealthChangeData;               // 0x0208(0x01B8)(ConstParm, ContainsInstancedReference)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x03C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHealthChangeValue                     K2Node_CustomEvent_HealthChangeData_1;             // 0x0040(0x01C0)(ConstParm, ContainsInstancedReference)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0201(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0202(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_CustomEvent_bDead;                          // 0x0203(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilityComponentBase*                  K2Node_CustomEvent_InLauncher;                     // 0x0208(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHealthChangeValue                     K2Node_CustomEvent_HealthChangeData;               // 0x0210(0x01C0)(ConstParm, ContainsInstancedReference)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x03D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_ExecuteUbergraph_ModifierLineEffectActorBase;
 

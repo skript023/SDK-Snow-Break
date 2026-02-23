@@ -17,6 +17,42 @@
 namespace SDK
 {
 
+// Function TemplateSequence.TemplateSequencePlayer.CreateTemplateSequencePlayer
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTemplateSequence*                TemplateSequence                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneSequencePlaybackSettings&Settings                                               (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// class ATemplateSequenceActor**          OutActor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTemplateSequencePlayer*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UTemplateSequencePlayer* UTemplateSequencePlayer::CreateTemplateSequencePlayer(class UObject* WorldContextObject, class UTemplateSequence* TemplateSequence, const struct FMovieSceneSequencePlaybackSettings& Settings, class ATemplateSequenceActor** OutActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TemplateSequencePlayer", "CreateTemplateSequencePlayer");
+
+	Params::TemplateSequencePlayer_CreateTemplateSequencePlayer Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.TemplateSequence = TemplateSequence;
+	Parms.Settings = std::move(Settings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutActor != nullptr)
+		*OutActor = Parms.OutActor;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function TemplateSequence.TemplateSequenceActor.SetBinding
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -137,42 +173,6 @@ class UTemplateSequence* ATemplateSequenceActor::LoadSequence() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function TemplateSequence.TemplateSequencePlayer.CreateTemplateSequencePlayer
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UTemplateSequence*                TemplateSequence                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FMovieSceneSequencePlaybackSettings&Settings                                               (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class ATemplateSequenceActor**          OutActor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UTemplateSequencePlayer*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UTemplateSequencePlayer* UTemplateSequencePlayer::CreateTemplateSequencePlayer(class UObject* WorldContextObject, class UTemplateSequence* TemplateSequence, const struct FMovieSceneSequencePlaybackSettings& Settings, class ATemplateSequenceActor** OutActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TemplateSequencePlayer", "CreateTemplateSequencePlayer");
-
-	Params::TemplateSequencePlayer_CreateTemplateSequencePlayer Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.TemplateSequence = TemplateSequence;
-	Parms.Settings = std::move(Settings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutActor != nullptr)
-		*OutActor = Parms.OutActor;
 
 	return Parms.ReturnValue;
 }

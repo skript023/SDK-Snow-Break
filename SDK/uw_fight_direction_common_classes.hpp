@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 #include "UMG_structs.hpp"
 
 
@@ -128,8 +128,8 @@ public:
 	class URedirectImage*                         vx_quan_diban_bai_3;                               // 0x0B30(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_direction_common(int32 EntryPoint);
 	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void ExecuteUbergraph_uw_fight_direction_common(int32 EntryPoint);
 	void OnAnimationFinished(const class UWidgetAnimation* Animation);
 	void PlayTypeAnim();
 	void PlayDieAnim();

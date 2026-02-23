@@ -107,6 +107,33 @@ void Uuw_fight_grenade_tips_C::SetPlaySpeed(float InSpeedPre)
 }
 
 
+// LuaFunction uw_fight_grenade_tips.uw_fight_grenade_tips_C.ReceiveWarning
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsWarning                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   InTotalTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_grenade_tips_C::ReceiveWarning(bool IsWarning, float InTotalTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_grenade_tips_C", "ReceiveWarning");
+
+	Params::uw_fight_grenade_tips_C_ReceiveWarning Parms{};
+
+	Parms.IsWarning = IsWarning;
+	Parms.InTotalTime = InTotalTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_grenade_tips.uw_fight_grenade_tips_C.Tick
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -148,33 +175,6 @@ void Uuw_fight_grenade_tips_C::Construct()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_grenade_tips.uw_fight_grenade_tips_C.ReceiveWarning
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    IsWarning                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   InTotalTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_grenade_tips_C::ReceiveWarning(bool IsWarning, float InTotalTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_grenade_tips_C", "ReceiveWarning");
-
-	Params::uw_fight_grenade_tips_C_ReceiveWarning Parms{};
-
-	Parms.IsWarning = IsWarning;
-	Parms.InTotalTime = InTotalTime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

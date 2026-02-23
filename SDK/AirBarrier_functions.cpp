@@ -17,6 +17,32 @@
 namespace SDK
 {
 
+// LuaFunction AirBarrier.AirBarrier_C.DoRegionCheck
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool*                                   bPassCheck                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void AAirBarrier_C::DoRegionCheck(bool* bPassCheck)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AirBarrier_C", "DoRegionCheck");
+
+	Params::AirBarrier_C_DoRegionCheck Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (bPassCheck != nullptr)
+		*bPassCheck = Parms.bPassCheck;
+}
+
+
 // LuaFunction AirBarrier.AirBarrier_C.DoOnlineTDDutyCheck
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -65,32 +91,6 @@ void AAirBarrier_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction AirBarrier.AirBarrier_C.DoRegionCheck
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool*                                   bPassCheck                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void AAirBarrier_C::DoRegionCheck(bool* bPassCheck)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AirBarrier_C", "DoRegionCheck");
-
-	Params::AirBarrier_C_DoRegionCheck Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (bPassCheck != nullptr)
-		*bPassCheck = Parms.bPassCheck;
 }
 
 

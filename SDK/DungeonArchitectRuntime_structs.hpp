@@ -365,6 +365,33 @@ public:
 };
 DUMPER7_ASSERTS_FDungeonSchemaAction_NewNode;
 
+// ScriptStruct DungeonArchitectRuntime.SnapMapModuleDatabaseConnectionInfo
+// 0x0050 (0x0050 - 0x0000)
+struct FSnapMapModuleDatabaseConnectionInfo final
+{
+public:
+	struct FGuid                                  ConnectionId;                                      // 0x0000(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             Transform;                                         // 0x0010(0x0030)(Edit, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class USnapConnectionInfo*                    ConnectionInfo;                                    // 0x0040(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESnapConnectionConstraint                     ConnectionConstraint;                              // 0x0048(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSnapMapModuleDatabaseConnectionInfo;
+
+// ScriptStruct DungeonArchitectRuntime.SnapMapModuleDatabaseItem
+// 0x0088 (0x0088 - 0x0000)
+struct FSnapMapModuleDatabaseItem final
+{
+public:
+	TSoftObjectPtr<class UWorld>                  LogicLevel;                                        // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UWorld>                  Level;                                             // 0x0028(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Category;                                          // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBox                                   ModuleBounds;                                      // 0x0058(0x001C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSnapMapModuleDatabaseConnectionInfo> Connections;                                 // 0x0078(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSnapMapModuleDatabaseItem;
+
 // ScriptStruct DungeonArchitectRuntime.DungeonLevelStreamingConfig
 // 0x0018 (0x0018 - 0x0000)
 struct FDungeonLevelStreamingConfig final
@@ -403,6 +430,77 @@ public:
 	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FDungeonStreamingChunkParamRep;
+
+// ScriptStruct DungeonArchitectRuntime.SnapGridFlowModuleDatabaseConnectionInfo
+// 0x0050 (0x0050 - 0x0000)
+struct FSnapGridFlowModuleDatabaseConnectionInfo final
+{
+public:
+	struct FGuid                                  ConnectionId;                                      // 0x0000(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             Transform;                                         // 0x0010(0x0030)(Edit, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class USnapConnectionInfo*                    ConnectionInfo;                                    // 0x0040(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESnapConnectionConstraint                     ConnectionConstraint;                              // 0x0048(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSnapGridFlowModuleDatabaseConnectionInfo;
+
+// ScriptStruct DungeonArchitectRuntime.SGFModuleAssemblySideCell
+// 0x0034 (0x0034 - 0x0000)
+struct FSGFModuleAssemblySideCell final
+{
+public:
+	int32                                         ConnectionIdx;                                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  NodeId;                                            // 0x0004(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  LinkedNodeId;                                      // 0x0014(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  LinkID;                                            // 0x0024(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSGFModuleAssemblySideCell;
+
+// ScriptStruct DungeonArchitectRuntime.SGFModuleAssemblySide
+// 0x0018 (0x0018 - 0x0000)
+struct FSGFModuleAssemblySide final
+{
+public:
+	int32                                         Width;                                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Height;                                            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FSGFModuleAssemblySideCell>     ConnectionIndices;                                 // 0x0008(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSGFModuleAssemblySide;
+
+// ScriptStruct DungeonArchitectRuntime.SGFModuleAssembly
+// 0x00A0 (0x00A0 - 0x0000)
+struct FSGFModuleAssembly final
+{
+public:
+	struct FIntVector                             NumChunks;                                         // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSGFModuleAssemblySide                 Front;                                             // 0x0010(0x0018)(NativeAccessSpecifierPublic)
+	struct FSGFModuleAssemblySide                 Left;                                              // 0x0028(0x0018)(NativeAccessSpecifierPublic)
+	struct FSGFModuleAssemblySide                 Back;                                              // 0x0040(0x0018)(NativeAccessSpecifierPublic)
+	struct FSGFModuleAssemblySide                 Right;                                             // 0x0058(0x0018)(NativeAccessSpecifierPublic)
+	struct FSGFModuleAssemblySide                 Top;                                               // 0x0070(0x0018)(NativeAccessSpecifierPublic)
+	struct FSGFModuleAssemblySide                 Down;                                              // 0x0088(0x0018)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSGFModuleAssembly;
+
+// ScriptStruct DungeonArchitectRuntime.SnapGridFlowModuleDatabaseItem
+// 0x00F8 (0x00F8 - 0x0000)
+struct FSnapGridFlowModuleDatabaseItem final
+{
+public:
+	TSoftObjectPtr<class UWorld>                  LogicLevel;                                        // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UWorld>                  Level;                                             // 0x0028(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Category;                                          // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAllowRotation;                                    // 0x0058(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SelectionWeight;                                   // 0x005C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBox                                   ModuleBounds;                                      // 0x0060(0x001C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FIntVector                             NumChunks;                                         // 0x007C(0x000C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FSnapGridFlowModuleDatabaseConnectionInfo> Connections;                            // 0x0088(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	TMap<TSoftObjectPtr<class UPlaceableMarkerAsset>, int32> AvailableMarkers;                       // 0x0098(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
+	TArray<struct FSGFModuleAssembly>             RotatedAssemblies;                                 // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSnapGridFlowModuleDatabaseItem;
 
 // ScriptStruct DungeonArchitectRuntime.MarkerReplaceEntry
 // 0x0020 (0x0020 - 0x0000)
@@ -828,6 +926,20 @@ public:
 };
 DUMPER7_ASSERTS_FGridSpatialConstraint3x3Data;
 
+// ScriptStruct DungeonArchitectRuntime.SnapGridFlowModuleInstanceSerializedData
+// 0x0090 (0x0090 - 0x0000)
+struct FSnapGridFlowModuleInstanceSerializedData final
+{
+public:
+	struct FGuid                                  ModuleInstanceId;                                  // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             WorldTransform;                                    // 0x0010(0x0030)(IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UWorld>                  Level;                                             // 0x0040(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Category;                                          // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBox                                   ModuleBounds;                                      // 0x0070(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSnapGridFlowModuleInstanceSerializedData;
+
 // ScriptStruct DungeonArchitectRuntime.GridSpatialConstraintEdgeData
 // 0x0010 (0x0010 - 0x0000)
 struct FGridSpatialConstraintEdgeData final
@@ -847,6 +959,15 @@ public:
 	float                                         Ratio;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FIsaacDoor;
+
+// ScriptStruct DungeonArchitectRuntime.SimpleCitySpatialConstraintCellData
+// 0x0001 (0x0001 - 0x0000)
+struct FSimpleCitySpatialConstraintCellData final
+{
+public:
+	ESimpleCitySpatialCellOccupation              OccupationConstraint;                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSimpleCitySpatialConstraintCellData;
 
 // ScriptStruct DungeonArchitectRuntime.IsaacRoomTile
 // 0x0001 (0x0001 - 0x0000)
@@ -893,6 +1014,17 @@ public:
 };
 DUMPER7_ASSERTS_FPlaceableMarkerAssetSpriteSettings;
 
+// ScriptStruct DungeonArchitectRuntime.SnapConnectionVisualMeshInfo_DEPRECATED
+// 0x0040 (0x0040 - 0x0000)
+struct FSnapConnectionVisualMeshInfo_DEPRECATED final
+{
+public:
+	class UStaticMesh*                            StaticMesh;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     MaterialOverride;                                  // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             Offset;                                            // 0x0010(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSnapConnectionVisualMeshInfo_DEPRECATED;
+
 // ScriptStruct DungeonArchitectRuntime.CityBlockDimension
 // 0x0020 (0x0020 - 0x0000)
 struct FCityBlockDimension final
@@ -921,15 +1053,6 @@ public:
 };
 DUMPER7_ASSERTS_FSimpleCityCell;
 
-// ScriptStruct DungeonArchitectRuntime.SimpleCitySpatialConstraintCellData
-// 0x0001 (0x0001 - 0x0000)
-struct FSimpleCitySpatialConstraintCellData final
-{
-public:
-	ESimpleCitySpatialCellOccupation              OccupationConstraint;                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSimpleCitySpatialConstraintCellData;
-
 // ScriptStruct DungeonArchitectRuntime.SimpleCitySpatialConstraint3x3Data
 // 0x0010 (0x0010 - 0x0000)
 struct FSimpleCitySpatialConstraint3x3Data final
@@ -951,17 +1074,6 @@ public:
 	TArray<uint8>                                 ActorData;                                         // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSnapChunkActorDataEntry;
-
-// ScriptStruct DungeonArchitectRuntime.SnapConnectionVisualMeshInfo_DEPRECATED
-// 0x0040 (0x0040 - 0x0000)
-struct FSnapConnectionVisualMeshInfo_DEPRECATED final
-{
-public:
-	class UStaticMesh*                            StaticMesh;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     MaterialOverride;                                  // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             Offset;                                            // 0x0010(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSnapConnectionVisualMeshInfo_DEPRECATED;
 
 // ScriptStruct DungeonArchitectRuntime.SnapConnectionVisualBlueprintInfo_DEPRECATED
 // 0x0040 (0x0040 - 0x0000)
@@ -996,91 +1108,6 @@ public:
 };
 DUMPER7_ASSERTS_FSnapFlowAGNodeGroupSetting;
 
-// ScriptStruct DungeonArchitectRuntime.SnapGridFlowModuleInstanceSerializedData
-// 0x0090 (0x0090 - 0x0000)
-struct FSnapGridFlowModuleInstanceSerializedData final
-{
-public:
-	struct FGuid                                  ModuleInstanceId;                                  // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             WorldTransform;                                    // 0x0010(0x0030)(IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UWorld>                  Level;                                             // 0x0040(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Category;                                          // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBox                                   ModuleBounds;                                      // 0x0070(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSnapGridFlowModuleInstanceSerializedData;
-
-// ScriptStruct DungeonArchitectRuntime.SGFModuleAssemblySideCell
-// 0x0034 (0x0034 - 0x0000)
-struct FSGFModuleAssemblySideCell final
-{
-public:
-	int32                                         ConnectionIdx;                                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  NodeId;                                            // 0x0004(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  LinkedNodeId;                                      // 0x0014(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  LinkID;                                            // 0x0024(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSGFModuleAssemblySideCell;
-
-// ScriptStruct DungeonArchitectRuntime.SGFModuleAssemblySide
-// 0x0018 (0x0018 - 0x0000)
-struct FSGFModuleAssemblySide final
-{
-public:
-	int32                                         Width;                                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Height;                                            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FSGFModuleAssemblySideCell>     ConnectionIndices;                                 // 0x0008(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSGFModuleAssemblySide;
-
-// ScriptStruct DungeonArchitectRuntime.SGFModuleAssembly
-// 0x00A0 (0x00A0 - 0x0000)
-struct FSGFModuleAssembly final
-{
-public:
-	struct FIntVector                             NumChunks;                                         // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSGFModuleAssemblySide                 Front;                                             // 0x0010(0x0018)(NativeAccessSpecifierPublic)
-	struct FSGFModuleAssemblySide                 Left;                                              // 0x0028(0x0018)(NativeAccessSpecifierPublic)
-	struct FSGFModuleAssemblySide                 Back;                                              // 0x0040(0x0018)(NativeAccessSpecifierPublic)
-	struct FSGFModuleAssemblySide                 Right;                                             // 0x0058(0x0018)(NativeAccessSpecifierPublic)
-	struct FSGFModuleAssemblySide                 Top;                                               // 0x0070(0x0018)(NativeAccessSpecifierPublic)
-	struct FSGFModuleAssemblySide                 Down;                                              // 0x0088(0x0018)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSGFModuleAssembly;
-
-// ScriptStruct DungeonArchitectRuntime.SnapGridFlowModuleDatabaseConnectionInfo
-// 0x0050 (0x0050 - 0x0000)
-struct FSnapGridFlowModuleDatabaseConnectionInfo final
-{
-public:
-	struct FGuid                                  ConnectionId;                                      // 0x0000(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             Transform;                                         // 0x0010(0x0030)(Edit, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	class USnapConnectionInfo*                    ConnectionInfo;                                    // 0x0040(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESnapConnectionConstraint                     ConnectionConstraint;                              // 0x0048(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSnapGridFlowModuleDatabaseConnectionInfo;
-
-// ScriptStruct DungeonArchitectRuntime.SnapGridFlowModuleDatabaseItem
-// 0x00F8 (0x00F8 - 0x0000)
-struct FSnapGridFlowModuleDatabaseItem final
-{
-public:
-	TSoftObjectPtr<class UWorld>                  LogicLevel;                                        // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UWorld>                  Level;                                             // 0x0028(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Category;                                          // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAllowRotation;                                    // 0x0058(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SelectionWeight;                                   // 0x005C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBox                                   ModuleBounds;                                      // 0x0060(0x001C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FIntVector                             NumChunks;                                         // 0x007C(0x000C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FSnapGridFlowModuleDatabaseConnectionInfo> Connections;                            // 0x0088(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	TMap<TSoftObjectPtr<class UPlaceableMarkerAsset>, int32> AvailableMarkers;                       // 0x0098(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
-	TArray<struct FSGFModuleAssembly>             RotatedAssemblies;                                 // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSnapGridFlowModuleDatabaseItem;
-
 // ScriptStruct DungeonArchitectRuntime.SnapMapModuleInstanceSerializedData
 // 0x0090 (0x0090 - 0x0000)
 struct FSnapMapModuleInstanceSerializedData final
@@ -1094,33 +1121,6 @@ public:
 	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSnapMapModuleInstanceSerializedData;
-
-// ScriptStruct DungeonArchitectRuntime.SnapMapModuleDatabaseConnectionInfo
-// 0x0050 (0x0050 - 0x0000)
-struct FSnapMapModuleDatabaseConnectionInfo final
-{
-public:
-	struct FGuid                                  ConnectionId;                                      // 0x0000(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             Transform;                                         // 0x0010(0x0030)(Edit, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	class USnapConnectionInfo*                    ConnectionInfo;                                    // 0x0040(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESnapConnectionConstraint                     ConnectionConstraint;                              // 0x0048(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSnapMapModuleDatabaseConnectionInfo;
-
-// ScriptStruct DungeonArchitectRuntime.SnapMapModuleDatabaseItem
-// 0x0088 (0x0088 - 0x0000)
-struct FSnapMapModuleDatabaseItem final
-{
-public:
-	TSoftObjectPtr<class UWorld>                  LogicLevel;                                        // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UWorld>                  Level;                                             // 0x0028(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Category;                                          // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBox                                   ModuleBounds;                                      // 0x0058(0x001C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSnapMapModuleDatabaseConnectionInfo> Connections;                                 // 0x0078(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSnapMapModuleDatabaseItem;
 
 }
 

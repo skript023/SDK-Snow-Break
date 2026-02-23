@@ -18,19 +18,19 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Girl002a.BP_Girl002a_C
-// 0x0010 (0x2460 - 0x2450)
+// 0x0010 (0x24A0 - 0x2490)
 class ABP_Girl002a_C final : public ABaseCharacter_C
 {
 public:
-	uint8                                         Pad_2445[0x3];                                     // 0x2445(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Girl002a_C;                      // 0x2448(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCameraComponent*                       AimCamera;                                         // 0x2450(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2485[0x3];                                     // 0x2485(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Girl002a_C;                      // 0x2488(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UCameraComponent*                       AimCamera;                                         // 0x2490(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnSwitchLeave(const struct FTransform& Trans);
-	void OnSwitchEnter(const struct FTransform& Trans);
 	void ReceiveTick(float DeltaSeconds);
 	void ReceiveBeginPlay();
+	void OnSwitchLeave(const struct FTransform& Trans);
+	void OnSwitchEnter(const struct FTransform& Trans);
 	void ExecuteUbergraph_BP_Girl002a(int32 EntryPoint);
 
 public:

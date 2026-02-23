@@ -10,21 +10,21 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass Trap_Girl002a_Skill03.Trap_Girl002a_Skill03_C
-// 0x0020 (0x1830 - 0x1810)
+// 0x0020 (0x1870 - 0x1850)
 class ATrap_Girl002a_Skill03_C final : public ATrap
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1810(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FSoftClassPath                         EffectBpPath;                                      // 0x1818(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1850(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FSoftClassPath                         EffectBpPath;                                      // 0x1858(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void ReceiveBeginPlay();

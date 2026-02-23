@@ -218,6 +218,34 @@ void ABaseCharacter_C::Finished_FF22B03A46B8695D518850B1FF8A56E3()
 }
 
 
+// Function BaseCharacter.BaseCharacter_C.BeginToDissolve
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABaseCharacter_C::BeginToDissolve()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BaseCharacter_C", "BeginToDissolve");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BaseCharacter.BaseCharacter_C.EndToDissolve
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABaseCharacter_C::EndToDissolve()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BaseCharacter_C", "EndToDissolve");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BaseCharacter.BaseCharacter_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 

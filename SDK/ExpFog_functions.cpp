@@ -397,6 +397,20 @@ void AExpFog_C::DisableFog(class FName FogName)
 }
 
 
+// Function ExpFog.ExpFog_C.FogSwitchoff
+// (BlueprintCallable, BlueprintEvent)
+
+void AExpFog_C::FogSwitchoff()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExpFog_C", "FogSwitchoff");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ExpFog.ExpFog_C.ExecuteUbergraph_ExpFog
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:

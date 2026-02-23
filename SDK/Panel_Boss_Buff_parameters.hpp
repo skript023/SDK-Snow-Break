@@ -14,34 +14,14 @@
 namespace SDK::Params
 {
 
-// Function Panel_Boss_Buff.Panel_Boss_Buff_C.ExecuteUbergraph_Panel_Boss_Buff
+// Function Panel_Boss_Buff.Panel_Boss_Buff_C.PlayAnim
 // 0x0008 (0x0008 - 0x0000)
-struct Panel_Boss_Buff_C_ExecuteUbergraph_Panel_Boss_Buff final
+struct Panel_Boss_Buff_C_PlayAnim final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_bReset;                               // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_Event_bBlockup;                             // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UWidgetAnimation*                       InAnim;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_Panel_Boss_Buff_C_ExecuteUbergraph_Panel_Boss_Buff;
-
-// Function Panel_Boss_Buff.Panel_Boss_Buff_C.K2_OnSkillBlockup
-// 0x0001 (0x0001 - 0x0000)
-struct Panel_Boss_Buff_C_K2_OnSkillBlockup final
-{
-public:
-	bool                                          bBlockup;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Panel_Boss_Buff_C_K2_OnSkillBlockup;
-
-// Function Panel_Boss_Buff.Panel_Boss_Buff_C.K2_PlayFinish
-// 0x0001 (0x0001 - 0x0000)
-struct Panel_Boss_Buff_C_K2_PlayFinish final
-{
-public:
-	bool                                          bReset;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Panel_Boss_Buff_C_K2_PlayFinish;
+DUMPER7_ASSERTS_Panel_Boss_Buff_C_PlayAnim;
 
 // Function Panel_Boss_Buff.Panel_Boss_Buff_C.Get_Group_Buff_1_ToolTipWidget_0
 // 0x0008 (0x0008 - 0x0000)
@@ -52,14 +32,34 @@ public:
 };
 DUMPER7_ASSERTS_Panel_Boss_Buff_C_Get_Group_Buff_1_ToolTipWidget_0;
 
-// Function Panel_Boss_Buff.Panel_Boss_Buff_C.PlayAnim
-// 0x0008 (0x0008 - 0x0000)
-struct Panel_Boss_Buff_C_PlayAnim final
+// Function Panel_Boss_Buff.Panel_Boss_Buff_C.K2_PlayFinish
+// 0x0001 (0x0001 - 0x0000)
+struct Panel_Boss_Buff_C_K2_PlayFinish final
 {
 public:
-	class UWidgetAnimation*                       InAnim;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bReset;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_Panel_Boss_Buff_C_PlayAnim;
+DUMPER7_ASSERTS_Panel_Boss_Buff_C_K2_PlayFinish;
+
+// Function Panel_Boss_Buff.Panel_Boss_Buff_C.K2_OnSkillBlockup
+// 0x0001 (0x0001 - 0x0000)
+struct Panel_Boss_Buff_C_K2_OnSkillBlockup final
+{
+public:
+	bool                                          bBlockup;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Panel_Boss_Buff_C_K2_OnSkillBlockup;
+
+// Function Panel_Boss_Buff.Panel_Boss_Buff_C.ExecuteUbergraph_Panel_Boss_Buff
+// 0x0008 (0x0008 - 0x0000)
+struct Panel_Boss_Buff_C_ExecuteUbergraph_Panel_Boss_Buff final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_bReset;                               // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_Event_bBlockup;                             // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Panel_Boss_Buff_C_ExecuteUbergraph_Panel_Boss_Buff;
 
 }
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -37,10 +37,10 @@ public:
 	void CheckAddAttribute();
 	void AddModifier(class UAbilityComponentBase* InOwner);
 	void SetAttribute(class UAbilityComponentBase* InOwner, float ChangeValue, class UAbilityAttribute* InAttribute);
-	void K2_ReceiveActive(const class UObject* Instigator, bool bReActive);
-	void K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn);
 	void K2_ReceiveTick(float DeltaSeconds, const class UAbilityComponentBase* InOwner);
+	void K2_ReceiveActive(const class UObject* Instigator, bool bReActive);
 	void OnApplyModifier(int32 ModifierID_0, bool IsApply);
+	void K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn);
 	void ExecuteUbergraph_XinhuoComponent(int32 EntryPoint);
 
 public:

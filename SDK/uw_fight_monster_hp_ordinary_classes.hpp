@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "Game_structs.hpp"
 #include "Game_classes.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -83,8 +83,8 @@ public:
 	void PlayVisibiltyAnim();
 	void PlayWhiteAnim();
 	void K2_OnAppliedModifierChange(int32 ModifierID, bool IsApply, int64 InLauncherCharacterHashIndex);
-	void K2_OnReset();
 	void K2_OnFree();
+	void K2_OnReset();
 	void Destruct();
 
 	class FString GetModuleName() const;

@@ -17,21 +17,23 @@
 namespace SDK
 {
 
-// Function uw_fight_crossstrong.uw_fight_crossstrong_C.ExecuteUbergraph_uw_fight_crossstrong
-// (Final, UbergraphFunction)
+// Function uw_fight_crossstrong.uw_fight_crossstrong_C.OnFireStrengthening
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bStart                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    bSmall                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_crossstrong_C::ExecuteUbergraph_uw_fight_crossstrong(int32 EntryPoint)
+void Uuw_fight_crossstrong_C::OnFireStrengthening(bool bStart, bool bSmall)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_crossstrong_C", "ExecuteUbergraph_uw_fight_crossstrong");
+		Func = Class->GetFunction("uw_fight_crossstrong_C", "OnFireStrengthening");
 
-	Params::uw_fight_crossstrong_C_ExecuteUbergraph_uw_fight_crossstrong Parms{};
+	Params::uw_fight_crossstrong_C_OnFireStrengthening Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bStart = bStart;
+	Parms.bSmall = bSmall;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,23 +59,21 @@ void Uuw_fight_crossstrong_C::K2_OnCustomUmgAnimFinished(const class FName& Anim
 }
 
 
-// Function uw_fight_crossstrong.uw_fight_crossstrong_C.OnFireStrengthening
-// (Event, Public, BlueprintEvent)
+// Function uw_fight_crossstrong.uw_fight_crossstrong_C.ExecuteUbergraph_uw_fight_crossstrong
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    bStart                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// bool                                    bSmall                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_crossstrong_C::OnFireStrengthening(bool bStart, bool bSmall)
+void Uuw_fight_crossstrong_C::ExecuteUbergraph_uw_fight_crossstrong(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_crossstrong_C", "OnFireStrengthening");
+		Func = Class->GetFunction("uw_fight_crossstrong_C", "ExecuteUbergraph_uw_fight_crossstrong");
 
-	Params::uw_fight_crossstrong_C_OnFireStrengthening Parms{};
+	Params::uw_fight_crossstrong_C_ExecuteUbergraph_uw_fight_crossstrong Parms{};
 
-	Parms.bStart = bStart;
-	Parms.bSmall = bSmall;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

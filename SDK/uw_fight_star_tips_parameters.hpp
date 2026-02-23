@@ -54,15 +54,6 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_star_tips_C_OnListItemObjectSet__Overridden;
 
-// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.OnAnimationFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_star_tips_C_OnAnimationFinished final
-{
-public:
-	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_uw_fight_star_tips_C_OnAnimationFinished;
-
 // LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.OnListItemObjectSet
 // 0x0008 (0x0008 - 0x0000)
 struct uw_fight_star_tips_C_OnListItemObjectSet final
@@ -71,6 +62,15 @@ public:
 	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_star_tips_C_OnListItemObjectSet;
+
+// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.OnAnimationFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_star_tips_C_OnAnimationFinished final
+{
+public:
+	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_uw_fight_star_tips_C_OnAnimationFinished;
 
 // Function uw_fight_star_tips.uw_fight_star_tips_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

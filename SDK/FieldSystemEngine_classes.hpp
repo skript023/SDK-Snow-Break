@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Chaos_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Chaos_structs.hpp"
 
 
 namespace SDK
@@ -102,6 +102,57 @@ public:
 };
 DUMPER7_ASSERTS_UFieldSystemComponent;
 
+// Class FieldSystemEngine.FieldNodeBase
+// 0x0000 (0x00B0 - 0x00B0)
+class UFieldNodeBase : public UActorComponent
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("FieldNodeBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"FieldNodeBase")
+	}
+	static class UFieldNodeBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UFieldNodeBase>();
+	}
+};
+DUMPER7_ASSERTS_UFieldNodeBase;
+
+// Class FieldSystemEngine.OperatorField
+// 0x0020 (0x00D0 - 0x00B0)
+class UOperatorField final : public UFieldNodeBase
+{
+public:
+	float                                         Magnitude;                                         // 0x00B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UFieldNodeBase*                         RightField;                                        // 0x00B8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UFieldNodeBase*                         LeftField;                                         // 0x00C0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EFieldOperationType                           Operation;                                         // 0x00C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	class UOperatorField* SetOperatorField(float Magnitude_0, const class UFieldNodeBase* RightField_0, const class UFieldNodeBase* LeftField_0, EFieldOperationType Operation_0);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OperatorField")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OperatorField")
+	}
+	static class UOperatorField* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOperatorField>();
+	}
+};
+DUMPER7_ASSERTS_UOperatorField;
+
 // Class FieldSystemEngine.FieldSystemMetaData
 // 0x0000 (0x00B0 - 0x00B0)
 class UFieldSystemMetaData : public UActorComponent
@@ -176,25 +227,28 @@ public:
 };
 DUMPER7_ASSERTS_UFieldSystemMetaDataProcessingResolution;
 
-// Class FieldSystemEngine.FieldNodeBase
+// Class FieldSystemEngine.ReturnResultsTerminal
 // 0x0000 (0x00B0 - 0x00B0)
-class UFieldNodeBase : public UActorComponent
+class UReturnResultsTerminal final : public UFieldNodeBase
 {
+public:
+	class UReturnResultsTerminal* SetReturnResultsTerminal();
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("FieldNodeBase")
+		STATIC_CLASS_IMPL("ReturnResultsTerminal")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"FieldNodeBase")
+		STATIC_NAME_IMPL(L"ReturnResultsTerminal")
 	}
-	static class UFieldNodeBase* GetDefaultObj()
+	static class UReturnResultsTerminal* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UFieldNodeBase>();
+		return GetDefaultObjImpl<UReturnResultsTerminal>();
 	}
 };
-DUMPER7_ASSERTS_UFieldNodeBase;
+DUMPER7_ASSERTS_UReturnResultsTerminal;
 
 // Class FieldSystemEngine.FieldNodeInt
 // 0x0000 (0x00B0 - 0x00B0)
@@ -550,37 +604,6 @@ public:
 };
 DUMPER7_ASSERTS_URandomVector;
 
-// Class FieldSystemEngine.OperatorField
-// 0x0020 (0x00D0 - 0x00B0)
-class UOperatorField final : public UFieldNodeBase
-{
-public:
-	float                                         Magnitude;                                         // 0x00B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UFieldNodeBase*                         RightField;                                        // 0x00B8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UFieldNodeBase*                         LeftField;                                         // 0x00C0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EFieldOperationType                           Operation;                                         // 0x00C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class UOperatorField* SetOperatorField(float Magnitude_0, const class UFieldNodeBase* RightField_0, const class UFieldNodeBase* LeftField_0, EFieldOperationType Operation_0);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OperatorField")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OperatorField")
-	}
-	static class UOperatorField* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOperatorField>();
-	}
-};
-DUMPER7_ASSERTS_UOperatorField;
-
 // Class FieldSystemEngine.ToIntegerField
 // 0x0008 (0x00B8 - 0x00B0)
 class UToIntegerField final : public UFieldNodeInt
@@ -661,29 +684,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCullingField;
-
-// Class FieldSystemEngine.ReturnResultsTerminal
-// 0x0000 (0x00B0 - 0x00B0)
-class UReturnResultsTerminal final : public UFieldNodeBase
-{
-public:
-	class UReturnResultsTerminal* SetReturnResultsTerminal();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ReturnResultsTerminal")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ReturnResultsTerminal")
-	}
-	static class UReturnResultsTerminal* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UReturnResultsTerminal>();
-	}
-};
-DUMPER7_ASSERTS_UReturnResultsTerminal;
 
 }
 

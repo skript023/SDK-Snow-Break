@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass uw_fight_danger_warning.uw_fight_danger_warning_C
-// 0x00E8 (0x0430 - 0x0348)
+// 0x00F0 (0x0438 - 0x0348)
 class Uuw_fight_danger_warning_C final : public UUserWidgetAnimation
 {
 public:
@@ -51,6 +51,7 @@ public:
 	class URedirectImage*                         Shadow1;                                           // 0x0418(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         Shadow2;                                           // 0x0420(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UCustomTextBlock*                       TxtEnemyWarn;                                      // 0x0428(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class URedirectTextBlock*                     TxtWarnIntro;                                      // 0x0430(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_uw_fight_danger_warning(int32 EntryPoint);

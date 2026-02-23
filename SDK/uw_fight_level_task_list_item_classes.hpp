@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -42,12 +42,12 @@ public:
 	class UVtaSlateTexture*                       FileImg;                                           // 0x0438(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_level_task_list_item(int32 EntryPoint);
-	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
-	void BP_OnItemSelectionChanged(bool bIsSelected);
-	void BP_OnItemExpansionChanged(bool bIsExpanded);
-	void BP_OnEntryReleased();
 	void SetState(uint8 InState);
+	void BP_OnEntryReleased();
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void BP_OnItemSelectionChanged(bool bIsSelected);
+	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
+	void ExecuteUbergraph_uw_fight_level_task_list_item(int32 EntryPoint);
 	void OnListItemObjectSet(class UObject* ListItemObject);
 	void Destruct();
 	void OnConstruct();

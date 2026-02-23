@@ -14,6 +14,51 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_boss_hp_animation.uw_fight_boss_hp_animation_C.BP_OnItemExpansionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_boss_hp_animation_C_BP_OnItemExpansionChanged final
+{
+public:
+	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_boss_hp_animation_C_BP_OnItemExpansionChanged;
+
+// Function uw_fight_boss_hp_animation.uw_fight_boss_hp_animation_C.BP_OnItemSelectionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_boss_hp_animation_C_BP_OnItemSelectionChanged final
+{
+public:
+	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_boss_hp_animation_C_BP_OnItemSelectionChanged;
+
+// Function uw_fight_boss_hp_animation.uw_fight_boss_hp_animation_C.OnListItemObjectSet
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_boss_hp_animation_C_OnListItemObjectSet final
+{
+public:
+	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_boss_hp_animation_C_OnListItemObjectSet;
+
+// Function uw_fight_boss_hp_animation.uw_fight_boss_hp_animation_C.K2_Play
+// 0x0004 (0x0004 - 0x0000)
+struct uw_fight_boss_hp_animation_C_K2_Play final
+{
+public:
+	float                                         InDelayTime;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_boss_hp_animation_C_K2_Play;
+
+// Function uw_fight_boss_hp_animation.uw_fight_boss_hp_animation_C.K2_OnCustomUmgAnimFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_boss_hp_animation_C_K2_OnCustomUmgAnimFinished final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_boss_hp_animation_C_K2_OnCustomUmgAnimFinished;
+
 // Function uw_fight_boss_hp_animation.uw_fight_boss_hp_animation_C.ExecuteUbergraph_uw_fight_boss_hp_animation
 // 0x0020 (0x0020 - 0x0000)
 struct uw_fight_boss_hp_animation_C_ExecuteUbergraph_uw_fight_boss_hp_animation final
@@ -29,51 +74,6 @@ public:
 	float                                         K2Node_Event_InDelayTime;                          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_boss_hp_animation_C_ExecuteUbergraph_uw_fight_boss_hp_animation;
-
-// Function uw_fight_boss_hp_animation.uw_fight_boss_hp_animation_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_boss_hp_animation_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_boss_hp_animation_C_K2_OnCustomUmgAnimFinished;
-
-// Function uw_fight_boss_hp_animation.uw_fight_boss_hp_animation_C.K2_Play
-// 0x0004 (0x0004 - 0x0000)
-struct uw_fight_boss_hp_animation_C_K2_Play final
-{
-public:
-	float                                         InDelayTime;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_boss_hp_animation_C_K2_Play;
-
-// Function uw_fight_boss_hp_animation.uw_fight_boss_hp_animation_C.OnListItemObjectSet
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_boss_hp_animation_C_OnListItemObjectSet final
-{
-public:
-	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_boss_hp_animation_C_OnListItemObjectSet;
-
-// Function uw_fight_boss_hp_animation.uw_fight_boss_hp_animation_C.BP_OnItemSelectionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_boss_hp_animation_C_BP_OnItemSelectionChanged final
-{
-public:
-	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_boss_hp_animation_C_BP_OnItemSelectionChanged;
-
-// Function uw_fight_boss_hp_animation.uw_fight_boss_hp_animation_C.BP_OnItemExpansionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_boss_hp_animation_C_BP_OnItemExpansionChanged final
-{
-public:
-	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_boss_hp_animation_C_BP_OnItemExpansionChanged;
 
 }
 

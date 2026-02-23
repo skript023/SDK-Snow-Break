@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -19,7 +19,7 @@ namespace SDK
 
 // BlueprintGeneratedClass Condition_CheckIsFightPlayer.Condition_CheckIsFightPlayer_C
 // 0x0010 (0x0118 - 0x0108)
-class UCondition_CheckIsFightPlayer_C final : public UCastConditionCheck_CharacterDie
+class UCondition_CheckIsFightPlayer_C final : public UCastConditionCheck
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0108(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -27,9 +27,9 @@ public:
 	bool                                          bContainQTE;                                       // 0x0111(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
+	bool K2_CheckCondition(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void K2_InitCondition();
 	void ExecuteUbergraph_Condition_CheckIsFightPlayer(int32 EntryPoint);
-	bool K2_CheckCondition(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 
 public:
 	static class UClass* StaticClass()

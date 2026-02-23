@@ -55,44 +55,6 @@ void UKillMonsterByIdExecute_C::OnEnd_Client()
 }
 
 
-// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnActive
-// (Native, Event, Public, BlueprintEvent)
-
-void UKillMonsterByIdExecute_C::OnActive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnActive");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnEnd
-// (Native, Event, Public, BlueprintEvent)
-
-void UKillMonsterByIdExecute_C::OnEnd()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnEnd");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.GetDescription
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -115,6 +77,44 @@ class FString UKillMonsterByIdExecute_C::GetDescription()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnEnd
+// (Native, Event, Public, BlueprintEvent)
+
+void UKillMonsterByIdExecute_C::OnEnd()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnEnd");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnActive
+// (Native, Event, Public, BlueprintEvent)
+
+void UKillMonsterByIdExecute_C::OnActive()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnActive");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

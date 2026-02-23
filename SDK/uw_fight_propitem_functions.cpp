@@ -17,41 +17,35 @@
 namespace SDK
 {
 
-// Function uw_fight_propitem.uw_fight_propitem_C.ExecuteUbergraph_uw_fight_propitem
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_propitem.uw_fight_propitem_C.BP_OnEntryReleased
+// (Event, Protected, BlueprintEvent)
 
-void Uuw_fight_propitem_C::ExecuteUbergraph_uw_fight_propitem(int32 EntryPoint)
+void Uuw_fight_propitem_C::BP_OnEntryReleased()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_propitem_C", "ExecuteUbergraph_uw_fight_propitem");
+		Func = Class->GetFunction("uw_fight_propitem_C", "BP_OnEntryReleased");
 
-	Params::uw_fight_propitem_C_ExecuteUbergraph_uw_fight_propitem Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function uw_fight_propitem.uw_fight_propitem_C.OnListItemObjectSet__Overridden
+// Function uw_fight_propitem.uw_fight_propitem_C.BP_OnItemExpansionChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UObject*                          ListItemObject                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_propitem_C::OnListItemObjectSet__Overridden(class UObject* ListItemObject)
+void Uuw_fight_propitem_C::BP_OnItemExpansionChanged(bool bIsExpanded)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_propitem_C", "OnListItemObjectSet__Overridden");
+		Func = Class->GetFunction("uw_fight_propitem_C", "BP_OnItemExpansionChanged");
 
-	Params::uw_fight_propitem_C_OnListItemObjectSet__Overridden Parms{};
+	Params::uw_fight_propitem_C_BP_OnItemExpansionChanged Parms{};
 
-	Parms.ListItemObject = ListItemObject;
+	Parms.bIsExpanded = bIsExpanded;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -77,37 +71,68 @@ void Uuw_fight_propitem_C::BP_OnItemSelectionChanged(bool bIsSelected)
 }
 
 
-// Function uw_fight_propitem.uw_fight_propitem_C.BP_OnItemExpansionChanged
+// Function uw_fight_propitem.uw_fight_propitem_C.OnListItemObjectSet__Overridden
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          ListItemObject                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_propitem_C::BP_OnItemExpansionChanged(bool bIsExpanded)
+void Uuw_fight_propitem_C::OnListItemObjectSet__Overridden(class UObject* ListItemObject)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_propitem_C", "BP_OnItemExpansionChanged");
+		Func = Class->GetFunction("uw_fight_propitem_C", "OnListItemObjectSet__Overridden");
 
-	Params::uw_fight_propitem_C_BP_OnItemExpansionChanged Parms{};
+	Params::uw_fight_propitem_C_OnListItemObjectSet__Overridden Parms{};
 
-	Parms.bIsExpanded = bIsExpanded;
+	Parms.ListItemObject = ListItemObject;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_propitem.uw_fight_propitem_C.BP_OnEntryReleased
-// (Event, Protected, BlueprintEvent)
+// Function uw_fight_propitem.uw_fight_propitem_C.ExecuteUbergraph_uw_fight_propitem
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_propitem_C::BP_OnEntryReleased()
+void Uuw_fight_propitem_C::ExecuteUbergraph_uw_fight_propitem(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_propitem_C", "BP_OnEntryReleased");
+		Func = Class->GetFunction("uw_fight_propitem_C", "ExecuteUbergraph_uw_fight_propitem");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::uw_fight_propitem_C_ExecuteUbergraph_uw_fight_propitem Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// LuaFunction uw_fight_propitem.uw_fight_propitem_C.OnListItemObjectSet
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// class UObject*                          ListItemObject                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_propitem_C::OnListItemObjectSet(class UObject* ListItemObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_propitem_C", "OnListItemObjectSet");
+
+	Params::uw_fight_propitem_C_OnListItemObjectSet Parms{};
+
+	Parms.ListItemObject = ListItemObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -145,31 +170,6 @@ void Uuw_fight_propitem_C::K2_OnCustomUmgAnimFinished(const class FName& AnimNam
 	Params::uw_fight_propitem_C_K2_OnCustomUmgAnimFinished Parms{};
 
 	Parms.AnimName = AnimName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_propitem.uw_fight_propitem_C.OnListItemObjectSet
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// class UObject*                          ListItemObject                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_propitem_C::OnListItemObjectSet(class UObject* ListItemObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_propitem_C", "OnListItemObjectSet");
-
-	Params::uw_fight_propitem_C_OnListItemObjectSet Parms{};
-
-	Parms.ListItemObject = ListItemObject;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

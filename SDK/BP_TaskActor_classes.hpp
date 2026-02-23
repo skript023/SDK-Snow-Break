@@ -10,88 +10,88 @@
 
 #include "Basic.hpp"
 
-#include "Game_structs.hpp"
 #include "Engine_structs.hpp"
 #include "UMG_structs.hpp"
 #include "GameTask_structs.hpp"
 #include "GameTask_classes.hpp"
+#include "Game_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_TaskActor.BP_TaskActor_C
-// 0x0130 (0x0840 - 0x0710)
+// 0x0130 (0x0850 - 0x0720)
 class ABP_TaskActor_C final : public AGameTaskActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0710(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBillboardComponent*                    BillBoard;                                         // 0x0718(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	int32                                         TowerLevelAreaID;                                  // 0x0720(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         TaskFinishRogue_CheckNum;                          // 0x0724(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bPlayFinishAnim;                                   // 0x0728(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_729[0x3];                                      // 0x0729(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         PlayerPerformDelay;                                // 0x072C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void()>              VictorySequenceFinish;                             // 0x0730(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMap<class UUserWidget*, ESlateVisibility>    UIWidgets;                                         // 0x0740(0x0050)(Edit, BlueprintVisible, ContainsInstancedReference)
-	TMap<int32, ESlateVisibility>                 FightUIState;                                      // 0x0790(0x0050)(Edit, BlueprintVisible)
-	bool                                          PlaySuccess;                                       // 0x07E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          PlayFailed;                                        // 0x07E1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bShouldMonsterDieWhenFinish;                       // 0x07E2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_7E3[0x5];                                      // 0x07E3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class ALevelSequenceActor*                    SequenceActor;                                     // 0x07E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bLose;                                             // 0x07F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_7F1[0x7];                                      // 0x07F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWidget*                                EffectWidget;                                      // 0x07F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UWidget*                                EffectWidget2;                                     // 0x0800(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          PlayWinVoice;                                      // 0x0808(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_809[0x7];                                      // 0x0809(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWidget*                                TeleportEffectWidget;                              // 0x0810(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         UnloadFreeTypeDatatOnFlush;                        // 0x0818(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_81C[0x4];                                      // 0x081C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUserWidget*                            SceneSwitchWidget;                                 // 0x0820(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bDontAllocateDrop;                                 // 0x0828(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bHideFight;                                        // 0x0829(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          bDestroyTrapWhenEnd;                               // 0x082A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bIgnoreDestroyAIByTag;                             // 0x082B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	class FName                                   IgnoreDestroyAITag;                                // 0x082C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bPlayLoseVoice;                                    // 0x0834(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bHideOnlineMoney;                                  // 0x0835(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_836[0x2];                                      // 0x0836(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         B_Show_Subtitles_Type;                             // 0x0838(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0720(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBillboardComponent*                    BillBoard;                                         // 0x0728(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	int32                                         TowerLevelAreaID;                                  // 0x0730(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         TaskFinishRogue_CheckNum;                          // 0x0734(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bPlayFinishAnim;                                   // 0x0738(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_739[0x3];                                      // 0x0739(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PlayerPerformDelay;                                // 0x073C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void()>              VictorySequenceFinish;                             // 0x0740(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMap<class UUserWidget*, ESlateVisibility>    UIWidgets;                                         // 0x0750(0x0050)(Edit, BlueprintVisible, ContainsInstancedReference)
+	TMap<int32, ESlateVisibility>                 FightUIState;                                      // 0x07A0(0x0050)(Edit, BlueprintVisible)
+	bool                                          PlaySuccess;                                       // 0x07F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          PlayFailed;                                        // 0x07F1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bShouldMonsterDieWhenFinish;                       // 0x07F2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7F3[0x5];                                      // 0x07F3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class ALevelSequenceActor*                    SequenceActor;                                     // 0x07F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bLose;                                             // 0x0800(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_801[0x7];                                      // 0x0801(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWidget*                                EffectWidget;                                      // 0x0808(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWidget*                                EffectWidget2;                                     // 0x0810(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          PlayWinVoice;                                      // 0x0818(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_819[0x7];                                      // 0x0819(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWidget*                                TeleportEffectWidget;                              // 0x0820(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         UnloadFreeTypeDatatOnFlush;                        // 0x0828(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_82C[0x4];                                      // 0x082C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUserWidget*                            SceneSwitchWidget;                                 // 0x0830(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bDontAllocateDrop;                                 // 0x0838(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bHideFight;                                        // 0x0839(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          bDestroyTrapWhenEnd;                               // 0x083A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bIgnoreDestroyAIByTag;                             // 0x083B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	class FName                                   IgnoreDestroyAITag;                                // 0x083C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bPlayLoseVoice;                                    // 0x0844(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bHideOnlineMoney;                                  // 0x0845(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_846[0x2];                                      // 0x0846(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         B_Show_Subtitles_Type;                             // 0x0848(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void TryStartTask(bool bOpenUI);
-	void GetCharacterTemplateId(class AGamePlayer* Player, int32* TemplateId);
-	void GetVictorySequence(class ULevelSequence** AsLevel_Sequence, class FString* Return_Value_资源名修饰);
-	void ForceInterruptSkill(class AGameSkill* GameSkill, ESkillInterruptedType InterruptedType);
-	void OnMultiKill(class AActor* Killer, class AActor* Deceased);
-	void SetGameTask();
-	void ReceiveBeginPlay();
-	void OnDebugInit();
-	void RequestTaskDataValueSync();
-	void OnMultiKillInfoUpdate();
-	void UnBindGameTaskUIEvent();
-	void LeaveAllAI();
-	void MultiDoSpawn(int32 InMonsterId, class FName InTag, class FName PointName);
-	void OnLevelSequcenceFinish();
-	void NotifyMoveCameraComplete();
-	void CheckActCondition(int32 ConditionID, const class FString& LogicName, bool* ret);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void CloseActCondition(int32 ConditionID, const class FString& LogicName);
 	void OnPlayerMove();
+	void ForceInterruptSkill(class AGameSkill* GameSkill, ESkillInterruptedType InterruptedType);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	int32 GetLevelConfigTime(const class UGameTask* Cur);
-	void DoSceneOnOff();
-	void PlayTeleportAnim(class AActor* TeleportActor);
-	void OpenActCondition(int32 ConditionID, const class FString& LogicName);
-	bool IsMultiLevel();
 	void OnLevelPreFinish(bool bSuccess);
+	void UnBindGameTaskUIEvent();
+	void OnMultiKillInfoUpdate();
+	void DoSceneOnOff();
+	void NotifyStartMultiSubTask(const struct FMultiSubTask& InSubTask);
+	void GetCharacterTemplateId(class AGamePlayer* Player, int32* TemplateId);
+	void FixSkill(class AGameSkill* InSkill);
+	void RequestTaskDataValueSync();
+	bool ShouldCalcOnlineDesignation();
+	void LeaveAllAI();
+	void OnLevelSequcenceFinish();
+	void OpenActCondition(int32 ConditionID, const class FString& LogicName);
+	void GetVictorySequence(class ULevelSequence** AsLevel_Sequence, class FString* Return_Value_资源名修饰);
+	void ReceiveBeginPlay();
 	void OnClientMultiTaskPathUpdate();
 	void FightTip(const class FString& InKey, int32 InType, bool IsNodeId, const struct FRepExecuteDes& ExecuteData);
+	void CheckActCondition(int32 ConditionID, const class FString& LogicName, bool* ret);
 	bool ShouldCalcOnlineBehaviorPoint();
-	void FixSkill(class AGameSkill* InSkill);
-	bool ShouldCalcOnlineDesignation();
-	void NotifyStartMultiSubTask(const struct FMultiSubTask& InSubTask);
+	void OnDebugInit();
+	void NotifyMoveCameraComplete();
+	bool IsMultiLevel();
+	void OnMultiKill(class AActor* Killer, class AActor* Deceased);
+	void PlayTeleportAnim(class AActor* TeleportActor);
+	void CloseActCondition(int32 ConditionID, const class FString& LogicName);
+	void TryStartTask(bool bOpenUI);
+	void MultiDoSpawn(int32 InMonsterId, class FName InTag, class FName PointName);
+	void SetGameTask();
 	void GetCharacterTemplateId__Overridden(class AGamePlayer* Player, int32* TemplateId);
 	void CloseActCondition__Overridden(int32 ConditionID, const class FString& LogicName);
 	void CheckActCondition__Overridden(int32 ConditionID, const class FString& LogicName, bool* ret);
@@ -143,11 +143,11 @@ public:
 	void OnAsyncLoadComplete(class UObject* LoadedObject, const struct FSoftObjectPath& Path);
 	void ExecuteUbergraph_BP_TaskActor(int32 EntryPoint);
 
+	bool IsWaveControlLevel() const;
+	bool IsMultiConstLevel() const;
 	bool IsMultiSpecificLevel() const;
 	bool IsMultiDynamicLevel() const;
-	bool IsWaveControlLevel() const;
 	bool LevelAlwaysShowSuccess() const;
-	bool IsMultiConstLevel() const;
 	class FString GetModuleName() const;
 
 public:

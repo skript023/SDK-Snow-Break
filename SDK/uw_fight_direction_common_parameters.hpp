@@ -16,6 +16,15 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_direction_common.uw_fight_direction_common_C.K2_OnCustomUmgAnimFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_direction_common_C_K2_OnCustomUmgAnimFinished final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_direction_common_C_K2_OnCustomUmgAnimFinished;
+
 // Function uw_fight_direction_common.uw_fight_direction_common_C.ExecuteUbergraph_uw_fight_direction_common
 // 0x0038 (0x0038 - 0x0000)
 struct uw_fight_direction_common_C_ExecuteUbergraph_uw_fight_direction_common final
@@ -42,15 +51,6 @@ public:
 	bool                                          CallFunc_EqualEqual_NameName_ReturnValue;          // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_direction_common_C_ExecuteUbergraph_uw_fight_direction_common;
-
-// Function uw_fight_direction_common.uw_fight_direction_common_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_direction_common_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_direction_common_C_K2_OnCustomUmgAnimFinished;
 
 // Function uw_fight_direction_common.uw_fight_direction_common_C.OnAnimationFinished
 // 0x0008 (0x0008 - 0x0000)

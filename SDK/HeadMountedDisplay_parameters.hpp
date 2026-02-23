@@ -10,13 +10,109 @@
 
 #include "Basic.hpp"
 
+#include "InputCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "HeadMountedDisplay_structs.hpp"
-#include "InputCore_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function HeadMountedDisplay.MotionControllerComponent.GetHandJointPosition
+// 0x0014 (0x0014 - 0x0000)
+struct MotionControllerComponent_GetHandJointPosition final
+{
+public:
+	int32                                         jointIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bValueFound;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ReturnValue;                                       // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MotionControllerComponent_GetHandJointPosition;
+
+// Function HeadMountedDisplay.MotionControllerComponent.GetParameterValue
+// 0x0010 (0x0010 - 0x0000)
+struct MotionControllerComponent_GetParameterValue final
+{
+public:
+	class FName                                   InName;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bValueFound;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MotionControllerComponent_GetParameterValue;
+
+// Function HeadMountedDisplay.MotionControllerComponent.SetAssociatedPlayerIndex
+// 0x0004 (0x0004 - 0x0000)
+struct MotionControllerComponent_SetAssociatedPlayerIndex final
+{
+public:
+	int32                                         NewPlayer;                                         // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MotionControllerComponent_SetAssociatedPlayerIndex;
+
+// Function HeadMountedDisplay.MotionControllerComponent.SetCustomDisplayMesh
+// 0x0008 (0x0008 - 0x0000)
+struct MotionControllerComponent_SetCustomDisplayMesh final
+{
+public:
+	class UStaticMesh*                            NewDisplayMesh;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MotionControllerComponent_SetCustomDisplayMesh;
+
+// Function HeadMountedDisplay.MotionControllerComponent.SetDisplayModelSource
+// 0x0008 (0x0008 - 0x0000)
+struct MotionControllerComponent_SetDisplayModelSource final
+{
+public:
+	class FName                                   NewDisplayModelSource;                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MotionControllerComponent_SetDisplayModelSource;
+
+// Function HeadMountedDisplay.MotionControllerComponent.SetShowDeviceModel
+// 0x0001 (0x0001 - 0x0000)
+struct MotionControllerComponent_SetShowDeviceModel final
+{
+public:
+	bool                                          bShowControllerModel;                              // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MotionControllerComponent_SetShowDeviceModel;
+
+// Function HeadMountedDisplay.MotionControllerComponent.SetTrackingMotionSource
+// 0x0008 (0x0008 - 0x0000)
+struct MotionControllerComponent_SetTrackingMotionSource final
+{
+public:
+	class FName                                   NewSource;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MotionControllerComponent_SetTrackingMotionSource;
+
+// Function HeadMountedDisplay.MotionControllerComponent.SetTrackingSource
+// 0x0001 (0x0001 - 0x0000)
+struct MotionControllerComponent_SetTrackingSource final
+{
+public:
+	EControllerHand                               NewSource;                                         // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MotionControllerComponent_SetTrackingSource;
+
+// Function HeadMountedDisplay.MotionControllerComponent.GetTrackingSource
+// 0x0001 (0x0001 - 0x0000)
+struct MotionControllerComponent_GetTrackingSource final
+{
+public:
+	EControllerHand                               ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MotionControllerComponent_GetTrackingSource;
+
+// Function HeadMountedDisplay.MotionControllerComponent.IsTracked
+// 0x0001 (0x0001 - 0x0000)
+struct MotionControllerComponent_IsTracked final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MotionControllerComponent_IsTracked;
 
 // Function HeadMountedDisplay.HeadMountedDisplayFunctionLibrary.CalibrateExternalTrackingToHMD
 // 0x0030 (0x0030 - 0x0000)
@@ -476,102 +572,6 @@ public:
 	struct FTransform                             ExternalTrackingTransform;                         // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_HeadMountedDisplayFunctionLibrary_UpdateExternalTrackingHMDPosition;
-
-// Function HeadMountedDisplay.MotionControllerComponent.GetHandJointPosition
-// 0x0014 (0x0014 - 0x0000)
-struct MotionControllerComponent_GetHandJointPosition final
-{
-public:
-	int32                                         jointIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bValueFound;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                ReturnValue;                                       // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MotionControllerComponent_GetHandJointPosition;
-
-// Function HeadMountedDisplay.MotionControllerComponent.GetParameterValue
-// 0x0010 (0x0010 - 0x0000)
-struct MotionControllerComponent_GetParameterValue final
-{
-public:
-	class FName                                   InName;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bValueFound;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MotionControllerComponent_GetParameterValue;
-
-// Function HeadMountedDisplay.MotionControllerComponent.SetAssociatedPlayerIndex
-// 0x0004 (0x0004 - 0x0000)
-struct MotionControllerComponent_SetAssociatedPlayerIndex final
-{
-public:
-	int32                                         NewPlayer;                                         // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MotionControllerComponent_SetAssociatedPlayerIndex;
-
-// Function HeadMountedDisplay.MotionControllerComponent.SetCustomDisplayMesh
-// 0x0008 (0x0008 - 0x0000)
-struct MotionControllerComponent_SetCustomDisplayMesh final
-{
-public:
-	class UStaticMesh*                            NewDisplayMesh;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MotionControllerComponent_SetCustomDisplayMesh;
-
-// Function HeadMountedDisplay.MotionControllerComponent.SetDisplayModelSource
-// 0x0008 (0x0008 - 0x0000)
-struct MotionControllerComponent_SetDisplayModelSource final
-{
-public:
-	class FName                                   NewDisplayModelSource;                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MotionControllerComponent_SetDisplayModelSource;
-
-// Function HeadMountedDisplay.MotionControllerComponent.SetShowDeviceModel
-// 0x0001 (0x0001 - 0x0000)
-struct MotionControllerComponent_SetShowDeviceModel final
-{
-public:
-	bool                                          bShowControllerModel;                              // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MotionControllerComponent_SetShowDeviceModel;
-
-// Function HeadMountedDisplay.MotionControllerComponent.SetTrackingMotionSource
-// 0x0008 (0x0008 - 0x0000)
-struct MotionControllerComponent_SetTrackingMotionSource final
-{
-public:
-	class FName                                   NewSource;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MotionControllerComponent_SetTrackingMotionSource;
-
-// Function HeadMountedDisplay.MotionControllerComponent.SetTrackingSource
-// 0x0001 (0x0001 - 0x0000)
-struct MotionControllerComponent_SetTrackingSource final
-{
-public:
-	EControllerHand                               NewSource;                                         // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MotionControllerComponent_SetTrackingSource;
-
-// Function HeadMountedDisplay.MotionControllerComponent.GetTrackingSource
-// 0x0001 (0x0001 - 0x0000)
-struct MotionControllerComponent_GetTrackingSource final
-{
-public:
-	EControllerHand                               ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MotionControllerComponent_GetTrackingSource;
-
-// Function HeadMountedDisplay.MotionControllerComponent.IsTracked
-// 0x0001 (0x0001 - 0x0000)
-struct MotionControllerComponent_IsTracked final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MotionControllerComponent_IsTracked;
 
 // Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.DisableMotionTrackingForComponent
 // 0x0008 (0x0008 - 0x0000)

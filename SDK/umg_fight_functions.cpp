@@ -295,6 +295,56 @@ bool Uumg_fight_C::GetFightPartShow(EFightWidgetPart InPart)
 }
 
 
+// LuaFunction umg_fight.umg_fight_C.HideSkillSelector
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   SkillIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uumg_fight_C::HideSkillSelector(int32 SkillIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_fight_C", "HideSkillSelector");
+
+	Params::umg_fight_C_HideSkillSelector Parms{};
+
+	Parms.SkillIndex = SkillIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction umg_fight.umg_fight_C.ShowSkillSelector
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   SkillIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uumg_fight_C::ShowSkillSelector(int32 SkillIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_fight_C", "ShowSkillSelector");
+
+	Params::umg_fight_C_ShowSkillSelector Parms{};
+
+	Parms.SkillIndex = SkillIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction umg_fight.umg_fight_C.UpdateControl
 // (Native, Event, Public, BlueprintEvent)
 
@@ -415,56 +465,6 @@ void Uumg_fight_C::UpdateInteractionProgress(float InValue)
 	Params::umg_fight_C_UpdateInteractionProgress Parms{};
 
 	Parms.InValue = InValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction umg_fight.umg_fight_C.ShowSkillSelector
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   SkillIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uumg_fight_C::ShowSkillSelector(int32 SkillIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "ShowSkillSelector");
-
-	Params::umg_fight_C_ShowSkillSelector Parms{};
-
-	Parms.SkillIndex = SkillIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction umg_fight.umg_fight_C.HideSkillSelector
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   SkillIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uumg_fight_C::HideSkillSelector(int32 SkillIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "HideSkillSelector");
-
-	Params::umg_fight_C_HideSkillSelector Parms{};
-
-	Parms.SkillIndex = SkillIndex;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

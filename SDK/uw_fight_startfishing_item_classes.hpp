@@ -23,8 +23,8 @@ class Uuw_fight_startfishing_item_C final : public Uuw_fight_interactitem_C
 public:
 	void UpdateKeyShow();
 	void BindKeyBoardOnSettingChange();
-	void TriggerInteract();
 	void BindExitInteractEvent();
+	void TriggerInteract();
 	void InitGamepadLongPressUI();
 	void Destruct();
 	void OnConstruct();

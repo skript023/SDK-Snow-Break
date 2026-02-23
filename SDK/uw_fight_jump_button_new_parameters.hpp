@@ -16,17 +16,14 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_jump_button_new.uw_fight_jump_button_new_C.ExecuteUbergraph_uw_fight_jump_button_new
-// 0x0044 (0x0044 - 0x0000)
-struct uw_fight_jump_button_new_C_ExecuteUbergraph_uw_fight_jump_button_new final
+// Function uw_fight_jump_button_new.uw_fight_jump_button_new_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_jump_button_new_C_PreConstruct final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGeometry                              K2Node_Event_MyGeometry;                           // 0x0004(0x0038)(IsPlainOldData, NoDestructor)
-	float                                         K2Node_Event_InDeltaTime;                          // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_IsDesignTime;                         // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_uw_fight_jump_button_new_C_ExecuteUbergraph_uw_fight_jump_button_new;
+DUMPER7_ASSERTS_uw_fight_jump_button_new_C_PreConstruct;
 
 // Function uw_fight_jump_button_new.uw_fight_jump_button_new_C.Tick
 // 0x003C (0x003C - 0x0000)
@@ -38,14 +35,17 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_jump_button_new_C_Tick;
 
-// Function uw_fight_jump_button_new.uw_fight_jump_button_new_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_jump_button_new_C_PreConstruct final
+// Function uw_fight_jump_button_new.uw_fight_jump_button_new_C.ExecuteUbergraph_uw_fight_jump_button_new
+// 0x0044 (0x0044 - 0x0000)
+struct uw_fight_jump_button_new_C_ExecuteUbergraph_uw_fight_jump_button_new final
 {
 public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGeometry                              K2Node_Event_MyGeometry;                           // 0x0004(0x0038)(IsPlainOldData, NoDestructor)
+	float                                         K2Node_Event_InDeltaTime;                          // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_IsDesignTime;                         // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_uw_fight_jump_button_new_C_PreConstruct;
+DUMPER7_ASSERTS_uw_fight_jump_button_new_C_ExecuteUbergraph_uw_fight_jump_button_new;
 
 }
 

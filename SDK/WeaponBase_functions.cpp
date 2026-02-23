@@ -37,26 +37,71 @@ bool AWeaponBase_C::ReceiveShootBullet()
 }
 
 
-// Function WeaponBase.WeaponBase_C.ReceiveStopFire
-// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// int32                                   InStartSkillID                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+// Function WeaponBase.WeaponBase_C.EndToDissolve
+// (Public, BlueprintCallable, BlueprintEvent)
 
-bool AWeaponBase_C::ReceiveStopFire(int32 InStartSkillID) const
+void AWeaponBase_C::EndToDissolve()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WeaponBase_C", "ReceiveStopFire");
+		Func = Class->GetFunction("WeaponBase_C", "EndToDissolve");
 
-	Params::WeaponBase_C_ReceiveStopFire Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.InStartSkillID = InStartSkillID;
+
+// Function WeaponBase.WeaponBase_C.BeginToDissolve
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void AWeaponBase_C::BeginToDissolve()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WeaponBase_C", "BeginToDissolve");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WeaponBase.WeaponBase_C.ExecuteUbergraph_WeaponBase
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AWeaponBase_C::ExecuteUbergraph_WeaponBase(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WeaponBase_C", "ExecuteUbergraph_WeaponBase");
+
+	Params::WeaponBase_C_ExecuteUbergraph_WeaponBase Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
 
-	return Parms.ReturnValue;
+
+// Function WeaponBase.WeaponBase_C.OnEquipWeapon
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AGameCharacter*                   Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AWeaponBase_C::OnEquipWeapon(class AGameCharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WeaponBase_C", "OnEquipWeapon");
+
+	Params::WeaponBase_C_OnEquipWeapon Parms{};
+
+	Parms.Character = Character;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -73,6 +118,29 @@ bool AWeaponBase_C::ReceiveBreakFire() const
 		Func = Class->GetFunction("WeaponBase_C", "ReceiveBreakFire");
 
 	Params::WeaponBase_C_ReceiveBreakFire Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function WeaponBase.WeaponBase_C.ReceiveStopFire
+// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// int32                                   InStartSkillID                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool AWeaponBase_C::ReceiveStopFire(int32 InStartSkillID) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WeaponBase_C", "ReceiveStopFire");
+
+	Params::WeaponBase_C_ReceiveStopFire Parms{};
+
+	Parms.InStartSkillID = InStartSkillID;
 
 	UObject::ProcessEvent(Func, &Parms);
 

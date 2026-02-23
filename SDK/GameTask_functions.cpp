@@ -165,7 +165,7 @@ bool UGameTask::EndSubRootNode(const class FString& SubRootNodeName)
 
 
 // Function GameTask.GameTask.FindAllTaskNode
-// (Final, Native, Private)
+// (Final, Native, Public)
 // Parameters:
 // TArray<class UGameTaskNode*>            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 

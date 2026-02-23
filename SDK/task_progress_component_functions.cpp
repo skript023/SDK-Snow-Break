@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function task_progress_component.task_progress_component_C.ReceiveBeginPlay
+// (Event, Public, BlueprintEvent)
+
+void Utask_progress_component_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("task_progress_component_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function task_progress_component.task_progress_component_C.ExecuteUbergraph_task_progress_component
 // (Final, UbergraphFunction)
 // Parameters:
@@ -34,20 +48,6 @@ void Utask_progress_component_C::ExecuteUbergraph_task_progress_component(int32 
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function task_progress_component.task_progress_component_C.ReceiveBeginPlay
-// (Event, Public, BlueprintEvent)
-
-void Utask_progress_component_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("task_progress_component_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

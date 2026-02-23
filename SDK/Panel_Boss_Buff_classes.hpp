@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -36,12 +36,12 @@ public:
 	class Uuw_Panel_Boss_Buff_data_C*             Data;                                              // 0x0408(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_Panel_Boss_Buff(int32 EntryPoint);
-	void K2_OnSkillBlockup(bool bBlockup);
-	void K2_PlayFinish(bool bReset);
-	void Construct();
-	class UWidget* Get_Group_Buff_1_ToolTipWidget_0();
 	void PlayAnim(class UWidgetAnimation* InAnim);
+	class UWidget* Get_Group_Buff_1_ToolTipWidget_0();
+	void Construct();
+	void K2_PlayFinish(bool bReset);
+	void K2_OnSkillBlockup(bool bBlockup);
+	void ExecuteUbergraph_Panel_Boss_Buff(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

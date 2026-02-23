@@ -2048,7 +2048,7 @@ public:
 DUMPER7_ASSERTS_UNiagaraLightRendererProperties;
 
 // Class Niagara.NiagaraMeshRendererProperties
-// 0x05F8 (0x0678 - 0x0080)
+// 0x0608 (0x0688 - 0x0080)
 class UNiagaraMeshRendererProperties final : public UNiagaraRendererProperties
 {
 public:
@@ -2095,7 +2095,8 @@ public:
 	struct FNiagaraVariableAttributeBinding       NormalizedAgeBinding;                              // 0x0508(0x0058)(Edit, NativeAccessSpecifierPublic)
 	struct FNiagaraVariableAttributeBinding       CameraOffsetBinding;                               // 0x0560(0x0058)(Edit, NativeAccessSpecifierPublic)
 	struct FNiagaraVariableAttributeBinding       RendererVisibilityTagBinding;                      // 0x05B8(0x0058)(Edit, NativeAccessSpecifierPublic)
-	uint8                                         Pad_610[0x68];                                     // 0x0610(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<struct FNiagaraMaterialAttributeBinding> MaterialParameterBindings;                       // 0x0610(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_620[0x68];                                     // 0x0620(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

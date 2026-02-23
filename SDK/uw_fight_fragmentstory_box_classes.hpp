@@ -22,8 +22,8 @@ class Uuw_fight_fragmentstory_box_C final : public Uuw_fight_interactitem_C
 {
 public:
 	void UpdateKeyShow();
-	void BindKeyBoardOnSettingChange();
 	void BindExitInteractEvent();
+	void BindKeyBoardOnSettingChange();
 	void TriggerInteract();
 	void InitGamepadLongPressUI();
 	void Destruct();

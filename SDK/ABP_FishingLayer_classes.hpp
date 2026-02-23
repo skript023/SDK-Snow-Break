@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
 #include "SeasunAnimGraph_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "InputCore_structs.hpp"
 #include "Engine_classes.hpp"
+#include "InputCore_structs.hpp"
 #include "MagicLeapController_structs.hpp"
 
 

@@ -38,26 +38,6 @@ void UABP_GirlBase_HeadBase_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 }
 
 
-// Function ABP_GirlBase_HeadBase.ABP_GirlBase_HeadBase_C.BlueprintUpdateAnimation
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTimeX                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UABP_GirlBase_HeadBase_C::BlueprintUpdateAnimation(float DeltaTimeX)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_GirlBase_HeadBase_C", "BlueprintUpdateAnimation");
-
-	Params::ABP_GirlBase_HeadBase_C_BlueprintUpdateAnimation Parms{};
-
-	Parms.DeltaTimeX = DeltaTimeX;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function ABP_GirlBase_HeadBase.ABP_GirlBase_HeadBase_C.BlueprintBeginPlay
 // (Event, Public, BlueprintEvent)
 
@@ -67,20 +47,6 @@ void UABP_GirlBase_HeadBase_C::BlueprintBeginPlay()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("ABP_GirlBase_HeadBase_C", "BlueprintBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_GirlBase_HeadBase.ABP_GirlBase_HeadBase_C.CustomEvent
-// (BlueprintCallable, BlueprintEvent)
-
-void UABP_GirlBase_HeadBase_C::CustomEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_GirlBase_HeadBase_C", "CustomEvent");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -103,6 +69,40 @@ void UABP_GirlBase_HeadBase_C::ExecuteUbergraph_ABP_GirlBase_HeadBase(int32 Entr
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_GirlBase_HeadBase.ABP_GirlBase_HeadBase_C.BlueprintUpdateAnimation
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTimeX                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_GirlBase_HeadBase_C::BlueprintUpdateAnimation(float DeltaTimeX)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_GirlBase_HeadBase_C", "BlueprintUpdateAnimation");
+
+	Params::ABP_GirlBase_HeadBase_C_BlueprintUpdateAnimation Parms{};
+
+	Parms.DeltaTimeX = DeltaTimeX;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_GirlBase_HeadBase.ABP_GirlBase_HeadBase_C.CustomEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_GirlBase_HeadBase_C::CustomEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_GirlBase_HeadBase_C", "CustomEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

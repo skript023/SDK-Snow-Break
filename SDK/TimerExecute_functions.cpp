@@ -17,15 +17,15 @@
 namespace SDK
 {
 
-// LuaFunction TimerExecute.TimerExecute_C.OnEnd_Client
+// LuaFunction TimerExecute.TimerExecute_C.OnEnd
 // (Native, Event, Public, BlueprintEvent)
 
-void UTimerExecute_C::OnEnd_Client()
+void UTimerExecute_C::OnEnd()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TimerExecute_C", "OnEnd_Client");
+		Func = Class->GetFunction("TimerExecute_C", "OnEnd");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -36,15 +36,15 @@ void UTimerExecute_C::OnEnd_Client()
 }
 
 
-// LuaFunction TimerExecute.TimerExecute_C.OnActive_Client
+// LuaFunction TimerExecute.TimerExecute_C.OnActive
 // (Native, Event, Public, BlueprintEvent)
 
-void UTimerExecute_C::OnActive_Client()
+void UTimerExecute_C::OnActive()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TimerExecute_C", "OnActive_Client");
+		Func = Class->GetFunction("TimerExecute_C", "OnActive");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -80,15 +80,15 @@ class FString UTimerExecute_C::GetDescription()
 }
 
 
-// LuaFunction TimerExecute.TimerExecute_C.OnEnd
+// LuaFunction TimerExecute.TimerExecute_C.OnActive_Client
 // (Native, Event, Public, BlueprintEvent)
 
-void UTimerExecute_C::OnEnd()
+void UTimerExecute_C::OnActive_Client()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TimerExecute_C", "OnEnd");
+		Func = Class->GetFunction("TimerExecute_C", "OnActive_Client");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -99,15 +99,15 @@ void UTimerExecute_C::OnEnd()
 }
 
 
-// LuaFunction TimerExecute.TimerExecute_C.OnActive
+// LuaFunction TimerExecute.TimerExecute_C.OnEnd_Client
 // (Native, Event, Public, BlueprintEvent)
 
-void UTimerExecute_C::OnActive()
+void UTimerExecute_C::OnEnd_Client()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TimerExecute_C", "OnActive");
+		Func = Class->GetFunction("TimerExecute_C", "OnEnd_Client");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

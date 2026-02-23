@@ -17,19 +17,19 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass KillMonsterByIDExecute.KillMonsterByIdExecute_C
-// 0x0000 (0x0230 - 0x0230)
+// 0x0000 (0x0238 - 0x0238)
 class UKillMonsterByIdExecute_C final : public UKillMonsterBaseExecute_C
 {
 public:
-	uint8                                         Pad_22A[0x2];                                      // 0x022A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Mid;                                               // 0x022C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_232[0x2];                                      // 0x0232(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Mid;                                               // 0x0234(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void OnCountDown_Client();
 	void OnEnd_Client();
-	void OnActive();
-	void OnEnd();
 	class FString GetDescription();
+	void OnEnd();
+	void OnActive();
 	void OnActive_Client();
 
 	class FString GetSpecialStaticDescription() const;

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_structs.hpp"
 #include "EnumInitSnow_structs.hpp"
+#include "Game_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -19,16 +19,12 @@ namespace SDK::Params
 {
 
 // Function GamePlayerCameraManager.GamePlayerCameraManager_C.ExecuteUbergraph_GamePlayerCameraManager
-// 0x0020 (0x0020 - 0x0000)
+// 0x0008 (0x0008 - 0x0000)
 struct GamePlayerCameraManager_C_ExecuteUbergraph_GamePlayerCameraManager final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraSystem*                         CallFunc_LoadNiagaraAsset_ReturnValue;             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsDedicatedServer_ReturnValue;            // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      CallFunc_SpawnSystemAtLocation_ReturnValue;        // 0x0018(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsDedicatedServer_ReturnValue;            // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_GamePlayerCameraManager_C_ExecuteUbergraph_GamePlayerCameraManager;
 
@@ -48,21 +44,39 @@ public:
 DUMPER7_ASSERTS_GamePlayerCameraManager_C_Set_Snow;
 
 // Function GamePlayerCameraManager.GamePlayerCameraManager_C.ActiveSnow
-// 0x00B4 (0x00B4 - 0x0000)
+// 0x00B0 (0x00B0 - 0x0000)
 struct GamePlayerCameraManager_C_ActiveSnow final
 {
 public:
 	bool                                          Active;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	EnumInitSnow                                  Snow;                                              // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSnowEffectParameter                   K2Node_MakeStruct_SnowEffectParameter;             // 0x0004(0x0038)(NoDestructor)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSnowEffectParameter                   K2Node_MakeStruct_SnowEffectParameter_1;           // 0x0040(0x0038)(NoDestructor)
-	struct FSnowEffectParameter                   K2Node_MakeStruct_SnowEffectParameter_2;           // 0x0078(0x0038)(NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FSnowEffectParameter                   K2Node_MakeStruct_SnowEffectParameter_1;           // 0x003C(0x0038)(NoDestructor)
+	struct FSnowEffectParameter                   K2Node_MakeStruct_SnowEffectParameter_2;           // 0x0074(0x0038)(NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00AC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_GamePlayerCameraManager_C_ActiveSnow;
+
+// Function GamePlayerCameraManager.GamePlayerCameraManager_C.CreateSnow
+// 0x0010 (0x0010 - 0x0000)
+struct GamePlayerCameraManager_C_CreateSnow final
+{
+public:
+	class UNiagaraSystem*                         CallFunc_LoadNiagaraAsset_ReturnValue;             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      CallFunc_SpawnSystemAtLocation_ReturnValue;        // 0x0008(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_GamePlayerCameraManager_C_CreateSnow;
+
+// Function GamePlayerCameraManager.GamePlayerCameraManager_C.DestroySnow
+// 0x0001 (0x0001 - 0x0000)
+struct GamePlayerCameraManager_C_DestroySnow final
+{
+public:
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_GamePlayerCameraManager_C_DestroySnow;
 
 }
 

@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_special_ui.uw_fight_special_ui_C.ExecuteUbergraph_uw_fight_special_ui
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_special_ui_C::ExecuteUbergraph_uw_fight_special_ui(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_special_ui_C", "ExecuteUbergraph_uw_fight_special_ui");
-
-	Params::uw_fight_special_ui_C_ExecuteUbergraph_uw_fight_special_ui Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_special_ui.uw_fight_special_ui_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
@@ -54,6 +34,26 @@ void Uuw_fight_special_ui_C::Tick(const struct FGeometry& MyGeometry, float InDe
 
 	Parms.MyGeometry = std::move(MyGeometry);
 	Parms.InDeltaTime = InDeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_special_ui.uw_fight_special_ui_C.ExecuteUbergraph_uw_fight_special_ui
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_special_ui_C::ExecuteUbergraph_uw_fight_special_ui(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_special_ui_C", "ExecuteUbergraph_uw_fight_special_ui");
+
+	Params::uw_fight_special_ui_C_ExecuteUbergraph_uw_fight_special_ui Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

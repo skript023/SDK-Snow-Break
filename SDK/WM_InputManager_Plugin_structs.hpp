@@ -105,6 +105,15 @@ enum class ERawControllerType : uint8
 	ERawControllerType_MAX                   = 4,
 };
 
+// ScriptStruct WM_InputManager_Plugin._PCS_Device
+// 0x0010 (0x0010 - 0x0000)
+struct F_PCS_Device final
+{
+public:
+	TArray<class UWM_Device*>                     Devices;                                           // 0x0000(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_F_PCS_Device;
+
 // ScriptStruct WM_InputManager_Plugin.WM_HID_ButtonData
 // 0x0028 (0x0028 - 0x0000)
 struct FWM_HID_ButtonData final
@@ -120,15 +129,6 @@ public:
 	uint8                                         Pad_20[0x8];                                       // 0x0020(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FWM_HID_ButtonData;
-
-// ScriptStruct WM_InputManager_Plugin._PCS_Device
-// 0x0010 (0x0010 - 0x0000)
-struct F_PCS_Device final
-{
-public:
-	TArray<class UWM_Device*>                     Devices;                                           // 0x0000(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_F_PCS_Device;
 
 // ScriptStruct WM_InputManager_Plugin.DPADCollection
 // 0x0070 (0x0070 - 0x0000)
@@ -152,6 +152,15 @@ public:
 	TMap<class FString, int32>                    DefaultButtonMappings;                             // 0x0050(0x0050)(Edit, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FDefaultDeviceMappings;
+
+// ScriptStruct WM_InputManager_Plugin.WM_HID_DPADData
+// 0x0148 (0x0148 - 0x0000)
+struct alignas(0x08) FWM_HID_DPADData final
+{
+public:
+	uint8                                         Pad_0[0x148];                                      // 0x0000(0x0148)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FWM_HID_DPADData;
 
 // ScriptStruct WM_InputManager_Plugin.HidKeysByClass
 // 0x01E0 (0x01E0 - 0x0000)
@@ -180,15 +189,6 @@ public:
 	uint8                                         Pad_60[0x8];                                       // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FWM_BasicDeviceInfo;
-
-// ScriptStruct WM_InputManager_Plugin.WM_HID_DPADData
-// 0x0148 (0x0148 - 0x0000)
-struct alignas(0x08) FWM_HID_DPADData final
-{
-public:
-	uint8                                         Pad_0[0x148];                                      // 0x0000(0x0148)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FWM_HID_DPADData;
 
 // ScriptStruct WM_InputManager_Plugin.WM_HID_AxisData
 // 0x0098 (0x0098 - 0x0000)

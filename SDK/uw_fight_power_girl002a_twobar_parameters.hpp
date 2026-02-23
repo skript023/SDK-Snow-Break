@@ -14,6 +14,33 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.PlayDepleteAnim
+// 0x0004 (0x0004 - 0x0000)
+struct uw_fight_power_girl002a_twobar_C_PlayDepleteAnim final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_power_girl002a_twobar_C_PlayDepleteAnim;
+
+// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.PlayFullAnim
+// 0x0004 (0x0004 - 0x0000)
+struct uw_fight_power_girl002a_twobar_C_PlayFullAnim final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_power_girl002a_twobar_C_PlayFullAnim;
+
+// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.PlayStartStateAnim
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_power_girl002a_twobar_C_PlayStartStateAnim final
+{
+public:
+	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_power_girl002a_twobar_C_PlayStartStateAnim;
+
 // Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.ExecuteUbergraph_uw_fight_power_girl002a_twobar
 // 0x0010 (0x0010 - 0x0000)
 struct uw_fight_power_girl002a_twobar_C_ExecuteUbergraph_uw_fight_power_girl002a_twobar final
@@ -27,33 +54,6 @@ public:
 	bool                                          K2Node_Event_bPlay;                                // 0x000E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_power_girl002a_twobar_C_ExecuteUbergraph_uw_fight_power_girl002a_twobar;
-
-// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.PlayStartStateAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_power_girl002a_twobar_C_PlayStartStateAnim final
-{
-public:
-	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_power_girl002a_twobar_C_PlayStartStateAnim;
-
-// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.PlayFullAnim
-// 0x0004 (0x0004 - 0x0000)
-struct uw_fight_power_girl002a_twobar_C_PlayFullAnim final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_power_girl002a_twobar_C_PlayFullAnim;
-
-// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.PlayDepleteAnim
-// 0x0004 (0x0004 - 0x0000)
-struct uw_fight_power_girl002a_twobar_C_PlayDepleteAnim final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_power_girl002a_twobar_C_PlayDepleteAnim;
 
 }
 

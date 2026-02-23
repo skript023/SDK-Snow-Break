@@ -17,21 +17,21 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass SkillMove_RushToGoal.SkillMove_RushToGoal_C
-// 0x0008 (0x01E0 - 0x01D8)
+// 0x0008 (0x01E8 - 0x01E0)
 class USkillMove_RushToGoal_C final : public USkillMove
 {
 public:
-	float                                         ActiveTime;                                        // 0x01D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Distance;                                          // 0x01DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ActiveTime;                                        // 0x01E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Distance;                                          // 0x01E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool IsUsedToAddVelocityInsteadOverride();
-	void OnMoveBlock(const struct FHitResult& HitResult);
+	void OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement);
 	bool OnMoveTouchTargetCheck(class AActor* InTarget);
 	void OnMoveEnd(class UBaseMovementComponent* Movement);
-	void OnMoveTickCheck(float DeltaTime);
-	void OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement);
 	void OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement);
+	void OnMoveBlock(const struct FHitResult& HitResult);
+	void OnMoveTickCheck(float DeltaTime);
 
 	class FString GetModuleName() const;
 

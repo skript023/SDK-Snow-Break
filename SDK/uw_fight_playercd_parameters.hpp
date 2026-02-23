@@ -16,6 +16,25 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_playercd.uw_fight_playercd_C.Tick
+// 0x003C (0x003C - 0x0000)
+struct uw_fight_playercd_C_Tick final
+{
+public:
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_playercd_C_Tick;
+
+// Function uw_fight_playercd.uw_fight_playercd_C.Play
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_playercd_C_Play final
+{
+public:
+	bool                                          bLoop;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_playercd_C_Play;
+
 // Function uw_fight_playercd.uw_fight_playercd_C.ExecuteUbergraph_uw_fight_playercd
 // 0x0068 (0x0068 - 0x0000)
 struct uw_fight_playercd_C_ExecuteUbergraph_uw_fight_playercd final
@@ -31,25 +50,6 @@ public:
 	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue_1;              // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_playercd_C_ExecuteUbergraph_uw_fight_playercd;
-
-// Function uw_fight_playercd.uw_fight_playercd_C.Play
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_playercd_C_Play final
-{
-public:
-	bool                                          bLoop;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_playercd_C_Play;
-
-// Function uw_fight_playercd.uw_fight_playercd_C.Tick
-// 0x003C (0x003C - 0x0000)
-struct uw_fight_playercd_C_Tick final
-{
-public:
-	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_playercd_C_Tick;
 
 }
 

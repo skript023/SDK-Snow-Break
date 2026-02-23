@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function ShieldRecover.ShieldRecover_C.ExecuteUbergraph_ShieldRecover
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UShieldRecover_C::ExecuteUbergraph_ShieldRecover(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ShieldRecover_C", "ExecuteUbergraph_ShieldRecover");
-
-	Params::ShieldRecover_C_ExecuteUbergraph_ShieldRecover Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function ShieldRecover.ShieldRecover_C.K2_ReceiveActive
 // (Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -52,6 +32,26 @@ void UShieldRecover_C::K2_ReceiveActive(const class UObject* Instigator)
 	Params::ShieldRecover_C_K2_ReceiveActive Parms{};
 
 	Parms.Instigator = Instigator;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ShieldRecover.ShieldRecover_C.ExecuteUbergraph_ShieldRecover
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UShieldRecover_C::ExecuteUbergraph_ShieldRecover(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ShieldRecover_C", "ExecuteUbergraph_ShieldRecover");
+
+	Params::ShieldRecover_C_ExecuteUbergraph_ShieldRecover Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

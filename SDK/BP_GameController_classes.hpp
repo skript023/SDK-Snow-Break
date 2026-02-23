@@ -10,44 +10,43 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Game_structs.hpp"
 #include "Game_classes.hpp"
-#include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_GameController.BP_GameController_C
-// 0x00A0 (0x15C0 - 0x1520)
+// 0x00A0 (0x1600 - 0x1560)
 class ABP_GameController_C final : public AGamePlayerController
 {
 public:
-	uint8                                         Pad_151C[0x4];                                     // 0x151C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1520(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	uint8                                         Pad_1528[0x8];                                     // 0x1528(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Last_Transform;                                    // 0x1530(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FTransform                             Last_Transform_Temp;                               // 0x1560(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	float                                         CurrentTime;                                       // 0x1590(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         SaveIntervalTime;                                  // 0x1594(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bAutoFireInBunker;                                 // 0x1598(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          bForceNotAutoFire;                                 // 0x1599(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          bRushNotAutoFire;                                  // 0x159A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_159B[0x1];                                     // 0x159B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         SensitivityCamera_ShotGun;                         // 0x159C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         SensitivityCamera_Normal;                          // 0x15A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_15A4[0x4];                                     // 0x15A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class APawn*                                  CurPawn;                                           // 0x15A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         SensitivityGyrosope_Normal;                        // 0x15B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         SensitivityGyrosope_ShotGun;                       // 0x15B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bAutoFire;                                         // 0x15B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_15B9[0x3];                                     // 0x15B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         RushButtonType;                                    // 0x15BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1560(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	uint8                                         Pad_1568[0x8];                                     // 0x1568(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Last_Transform;                                    // 0x1570(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FTransform                             Last_Transform_Temp;                               // 0x15A0(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	float                                         CurrentTime;                                       // 0x15D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         SaveIntervalTime;                                  // 0x15D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bAutoFireInBunker;                                 // 0x15D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          bForceNotAutoFire;                                 // 0x15D9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          bRushNotAutoFire;                                  // 0x15DA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_15DB[0x1];                                     // 0x15DB(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SensitivityCamera_ShotGun;                         // 0x15DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         SensitivityCamera_Normal;                          // 0x15E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_15E4[0x4];                                     // 0x15E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  CurPawn;                                           // 0x15E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         SensitivityGyrosope_Normal;                        // 0x15F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         SensitivityGyrosope_ShotGun;                       // 0x15F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bAutoFire;                                         // 0x15F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_15F9[0x3];                                     // 0x15F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         RushButtonType;                                    // 0x15FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void LuaImpl_CallDSExec(int32 InCmd, const class FString& InContent);
+	void LuaImpl_CallClientExec(int32 InCmd, const class FString& InContent);
 	void CalcSideLength(float InVal, float LineVal, float* ReturnVal);
 	void SetRushButtonType(int32 InType);
 	void AutoFireToRush();
@@ -57,18 +56,16 @@ public:
 	void ResetSensitivityCamera();
 	void ForceStopAutoFireInBunker(bool bStop);
 	void ResetAutoFireInBunker();
-	void ReceiveBeginPlay__Overridden();
+	void ReceiveBeginPlay();
 	void ReceiveTick(float DeltaSeconds);
 	void NotifyAutoFire(bool bFire);
-	void ReceiveEndPlay__Overridden(EEndPlayReason EndPlayReason);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ServerCancelAllInAnimSkill();
 	void Client_ResumePlayerOperation(EPlayerAction Action);
 	void Client_ClearPlayerActionFlag(EPlayerAction Action, class AGamePlayer* TargetPlayer);
 	void NotifyInteractFailed();
 	void OnSwitchPlayerCharacterFinished();
 	void ExecuteUbergraph_BP_GameController(int32 EntryPoint);
-
-	class FString GetModuleName() const;
 
 public:
 	static class UClass* StaticClass()

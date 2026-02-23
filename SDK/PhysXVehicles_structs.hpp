@@ -64,6 +64,17 @@ public:
 };
 DUMPER7_ASSERTS_FVehicleInputRate;
 
+// ScriptStruct PhysXVehicles.TireConfigMaterialFriction
+// 0x0010 (0x0010 - 0x0000)
+struct FTireConfigMaterialFriction final
+{
+public:
+	class UPhysicalMaterial*                      PhysicalMaterial;                                  // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrictionScale;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FTireConfigMaterialFriction;
+
 // ScriptStruct PhysXVehicles.VehicleGearData
 // 0x000C (0x000C - 0x0000)
 struct FVehicleGearData final
@@ -75,24 +86,6 @@ public:
 };
 DUMPER7_ASSERTS_FVehicleGearData;
 
-// ScriptStruct PhysXVehicles.VehicleTransmissionData
-// 0x0030 (0x0030 - 0x0000)
-struct FVehicleTransmissionData final
-{
-public:
-	bool                                          bUseGearAutoBox;                                   // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         GearSwitchTime;                                    // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GearAutoBoxLatency;                                // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FinalRatio;                                        // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVehicleGearData>               ForwardGears;                                      // 0x0010(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	float                                         ReverseGearRatio;                                  // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NeutralGearUpRatio;                                // 0x0024(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ClutchStrength;                                    // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FVehicleTransmissionData;
-
 // ScriptStruct PhysXVehicles.AnimNode_WheelHandler
 // 0x0018 (0x00E0 - 0x00C8)
 struct FAnimNode_WheelHandler final : public FAnimNode_SkeletalControlBase
@@ -101,17 +94,6 @@ public:
 	uint8                                         Pad_C8[0x18];                                      // 0x00C8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAnimNode_WheelHandler;
-
-// ScriptStruct PhysXVehicles.TireConfigMaterialFriction
-// 0x0010 (0x0010 - 0x0000)
-struct FTireConfigMaterialFriction final
-{
-public:
-	class UPhysicalMaterial*                      PhysicalMaterial;                                  // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FrictionScale;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FTireConfigMaterialFriction;
 
 // ScriptStruct PhysXVehicles.VehicleAnimInstanceProxy
 // 0x0010 (0x0770 - 0x0760)
@@ -134,6 +116,24 @@ public:
 	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FWheelSetup;
+
+// ScriptStruct PhysXVehicles.VehicleTransmissionData
+// 0x0030 (0x0030 - 0x0000)
+struct FVehicleTransmissionData final
+{
+public:
+	bool                                          bUseGearAutoBox;                                   // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GearSwitchTime;                                    // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GearAutoBoxLatency;                                // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FinalRatio;                                        // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVehicleGearData>               ForwardGears;                                      // 0x0010(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	float                                         ReverseGearRatio;                                  // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NeutralGearUpRatio;                                // 0x0024(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ClutchStrength;                                    // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FVehicleTransmissionData;
 
 // ScriptStruct PhysXVehicles.VehicleEngineData
 // 0x00A0 (0x00A0 - 0x0000)

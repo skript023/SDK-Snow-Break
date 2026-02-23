@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -28,10 +28,10 @@ public:
 	bool                                          bPerform;                                          // 0x03C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_uw_test_boss203_break_progress(int32 EntryPoint);
-	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void StartProgress(float PerformTime);
 	void StopProgress();
+	void StartProgress(float PerformTime);
+	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void ExecuteUbergraph_uw_test_boss203_break_progress(int32 EntryPoint);
 	void Destruct();
 	void OnConstruct();
 

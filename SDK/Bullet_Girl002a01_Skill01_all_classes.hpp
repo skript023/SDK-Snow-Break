@@ -19,19 +19,20 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Bullet_Girl002a01_Skill01_all.Bullet_Girl002a01_Skill01_all_C
-// 0x0050 (0x0A50 - 0x0A00)
+// 0x0050 (0x0A80 - 0x0A30)
 #pragma pack(push, 0x1)
 class alignas(0x10) ABullet_Girl002a01_Skill01_all_C : public ABullet
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          HasFire;                                           // 0x0A08(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_A09[0x7];                                      // 0x0A09(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AActor*>                         Targets;                                           // 0x0A10(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	TArray<EBulletCollision>                      bLock_1;                                           // 0x0A20(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<EBulletCollision>                      bLock_2;                                           // 0x0A30(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	float                                         Change_Fly_Distance;                               // 0x0A40(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          HasTarget;                                         // 0x0A44(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A28[0x8];                                      // 0x0A28(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A30(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          HasFire;                                           // 0x0A38(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A39[0x7];                                      // 0x0A39(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         Targets;                                           // 0x0A40(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	TArray<EBulletCollision>                      bLock_1;                                           // 0x0A50(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<EBulletCollision>                      bLock_2;                                           // 0x0A60(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	float                                         Change_Fly_Distance;                               // 0x0A70(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          HasTarget;                                         // 0x0A74(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void girl002a_bullet_lastmove();

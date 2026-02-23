@@ -16,6 +16,62 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_direction_threat.uw_fight_direction_threat_C.StartLoop
+// 0x000C (0x000C - 0x0000)
+struct uw_fight_direction_threat_C_StartLoop final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          HasAppear;                                         // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_NameName_ReturnValue;          // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_direction_threat_C_StartLoop;
+
+// Function uw_fight_direction_threat.uw_fight_direction_threat_C.SetDefendTargetPercent
+// 0x0004 (0x0004 - 0x0000)
+struct uw_fight_direction_threat_C_SetDefendTargetPercent final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_direction_threat_C_SetDefendTargetPercent;
+
+// Function uw_fight_direction_threat.uw_fight_direction_threat_C.AppearFinish
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_direction_threat_C_AppearFinish final
+{
+public:
+	class UWidgetAnimation*                       Animation;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_direction_threat_C_AppearFinish;
+
+// Function uw_fight_direction_threat.uw_fight_direction_threat_C.OnAnimationFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_direction_threat_C_OnAnimationFinished final
+{
+public:
+	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_direction_threat_C_OnAnimationFinished;
+
+// Function uw_fight_direction_threat.uw_fight_direction_threat_C.OnVisibilityChanged_Event_0
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_direction_threat_C_OnVisibilityChanged_Event_0 final
+{
+public:
+	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_direction_threat_C_OnVisibilityChanged_Event_0;
+
+// Function uw_fight_direction_threat.uw_fight_direction_threat_C.K2_OnCustomUmgAnimFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_direction_threat_C_K2_OnCustomUmgAnimFinished final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_direction_threat_C_K2_OnCustomUmgAnimFinished;
+
 // Function uw_fight_direction_threat.uw_fight_direction_threat_C.ExecuteUbergraph_uw_fight_direction_threat
 // 0x0040 (0x0040 - 0x0000)
 struct uw_fight_direction_threat_C_ExecuteUbergraph_uw_fight_direction_threat final
@@ -42,62 +98,6 @@ public:
 	bool                                          CallFunc_EqualEqual_NameName_ReturnValue;          // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_direction_threat_C_ExecuteUbergraph_uw_fight_direction_threat;
-
-// Function uw_fight_direction_threat.uw_fight_direction_threat_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_direction_threat_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_direction_threat_C_K2_OnCustomUmgAnimFinished;
-
-// Function uw_fight_direction_threat.uw_fight_direction_threat_C.OnVisibilityChanged_Event_0
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_direction_threat_C_OnVisibilityChanged_Event_0 final
-{
-public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_direction_threat_C_OnVisibilityChanged_Event_0;
-
-// Function uw_fight_direction_threat.uw_fight_direction_threat_C.OnAnimationFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_direction_threat_C_OnAnimationFinished final
-{
-public:
-	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_direction_threat_C_OnAnimationFinished;
-
-// Function uw_fight_direction_threat.uw_fight_direction_threat_C.AppearFinish
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_direction_threat_C_AppearFinish final
-{
-public:
-	class UWidgetAnimation*                       Animation;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_direction_threat_C_AppearFinish;
-
-// Function uw_fight_direction_threat.uw_fight_direction_threat_C.SetDefendTargetPercent
-// 0x0004 (0x0004 - 0x0000)
-struct uw_fight_direction_threat_C_SetDefendTargetPercent final
-{
-public:
-	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_direction_threat_C_SetDefendTargetPercent;
-
-// Function uw_fight_direction_threat.uw_fight_direction_threat_C.StartLoop
-// 0x000C (0x000C - 0x0000)
-struct uw_fight_direction_threat_C_StartLoop final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          HasAppear;                                         // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_NameName_ReturnValue;          // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_direction_threat_C_StartLoop;
 
 }
 

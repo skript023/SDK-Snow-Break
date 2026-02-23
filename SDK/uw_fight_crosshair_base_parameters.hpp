@@ -16,6 +16,16 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_crosshair_base.uw_fight_crosshair_base_C.Tick
+// 0x003C (0x003C - 0x0000)
+struct uw_fight_crosshair_base_C_Tick final
+{
+public:
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_crosshair_base_C_Tick;
+
 // Function uw_fight_crosshair_base.uw_fight_crosshair_base_C.ExecuteUbergraph_uw_fight_crosshair_base
 // 0x0040 (0x0040 - 0x0000)
 struct uw_fight_crosshair_base_C_ExecuteUbergraph_uw_fight_crosshair_base final
@@ -26,16 +36,6 @@ public:
 	float                                         K2Node_Event_InDeltaTime;                          // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_crosshair_base_C_ExecuteUbergraph_uw_fight_crosshair_base;
-
-// Function uw_fight_crosshair_base.uw_fight_crosshair_base_C.Tick
-// 0x003C (0x003C - 0x0000)
-struct uw_fight_crosshair_base_C_Tick final
-{
-public:
-	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_crosshair_base_C_Tick;
 
 }
 

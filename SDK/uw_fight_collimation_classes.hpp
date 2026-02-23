@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -67,8 +67,8 @@ public:
 	int32                                         KillSound;                                         // 0x04DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_collimation(int32 EntryPoint);
 	void Construct();
+	void ExecuteUbergraph_uw_fight_collimation(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

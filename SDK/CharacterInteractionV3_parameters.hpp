@@ -10,33 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "UniversalCameraPlugin_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "InputCore_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "UniversalCameraPlugin_structs.hpp"
 #include "CharacterInteractionV3_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function CharacterInteractionV3.InteractionV3Event.CanTrigger
-// 0x0001 (0x0001 - 0x0000)
-struct InteractionV3Event_CanTrigger final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3Event_CanTrigger;
-
-// Function CharacterInteractionV3.InteractionV3Event_Achievement.GetArchivementComponentV3
-// 0x0008 (0x0008 - 0x0000)
-struct InteractionV3Event_Achievement_GetArchivementComponentV3 final
-{
-public:
-	class UInteractionArchivementComponentV3*     ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3Event_Achievement_GetArchivementComponentV3;
 
 // Function CharacterInteractionV3.ActorOperateAct.OnPause
 // 0x0008 (0x0008 - 0x0000)
@@ -140,19 +122,6 @@ public:
 };
 DUMPER7_ASSERTS_ActorOperateAct_IsCompleteAndBlendOut;
 
-// Function CharacterInteractionV3.InteractionMouseHoverInterface.OnMouseHover
-// 0x0030 (0x0030 - 0x0000)
-struct InteractionMouseHoverInterface_OnMouseHover final
-{
-public:
-	TArray<class FName>                           BoneNames;                                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	const class UCurveFloat*                      CurveScale;                                        // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              SlideVector;                                       // 0x0018(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              SlideStartPos;                                     // 0x0020(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              SlidEndPos;                                        // 0x0028(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionMouseHoverInterface_OnMouseHover;
-
 // Function CharacterInteractionV3.InteractionV3DragInterface.EndDrag
 // 0x0040 (0x0040 - 0x0000)
 struct InteractionV3DragInterface_EndDrag final
@@ -185,6 +154,199 @@ public:
 	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_InteractionV3DragInterface_UpdateDrag;
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetCableLengthRuntime
+// 0x0018 (0x0018 - 0x0000)
+struct InteractionV3CableFunctionLibrary_GetCableLengthRuntime final
+{
+public:
+	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetCableLengthRuntime;
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetCableLengthRuntimeAtIndex
+// 0x0018 (0x0018 - 0x0000)
+struct InteractionV3CableFunctionLibrary_GetCableLengthRuntimeAtIndex final
+{
+public:
+	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetCableLengthRuntimeAtIndex;
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetCablePoints
+// 0x0030 (0x0030 - 0x0000)
+struct InteractionV3CableFunctionLibrary_GetCablePoints final
+{
+public:
+	const class UCableComponent*                  CableComponent;                                    // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        AdditionalPoints;                                  // 0x0008(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bToEnd;                                            // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetCablePoints;
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetLocationOnCableByPercentage
+// 0x0020 (0x0020 - 0x0000)
+struct InteractionV3CableFunctionLibrary_GetLocationOnCableByPercentage final
+{
+public:
+	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         _percentage;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ReturnValue;                                       // 0x0014(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetLocationOnCableByPercentage;
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetLowestLocationIndexOnCable
+// 0x0018 (0x0018 - 0x0000)
+struct InteractionV3CableFunctionLibrary_GetLowestLocationIndexOnCable final
+{
+public:
+	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetLowestLocationIndexOnCable;
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetLowestLocationOnCable
+// 0x0020 (0x0020 - 0x0000)
+struct InteractionV3CableFunctionLibrary_GetLowestLocationOnCable final
+{
+public:
+	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FVector                                ReturnValue;                                       // 0x0010(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetLowestLocationOnCable;
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetPercentageByParticleIndex
+// 0x0018 (0x0018 - 0x0000)
+struct InteractionV3CableFunctionLibrary_GetPercentageByParticleIndex final
+{
+public:
+	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         _Index;                                            // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetPercentageByParticleIndex;
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetSideLocationOnCableByPercentage
+// 0x0028 (0x0028 - 0x0000)
+struct InteractionV3CableFunctionLibrary_GetSideLocationOnCableByPercentage final
+{
+public:
+	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         _percentage;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetSideLocationOnCableByPercentage;
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.SpringInterpFloat
+// 0x0038 (0x0038 - 0x0000)
+struct InteractionV3CableFunctionLibrary_SpringInterpFloat final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         _Target;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         _Current;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         _Velocity;                                         // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        CablePoints;                                       // 0x0010(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         _Stiffness;                                        // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         _Damping;                                          // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         _VelocityClamp;                                    // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         _HeightScale;                                      // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0030(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_SpringInterpFloat;
+
+// Function CharacterInteractionV3.AdditiveSequenceWeightCalculator.CalcWeight
+// 0x0020 (0x0020 - 0x0000)
+struct AdditiveSequenceWeightCalculator_CalcWeight final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AInteractionSkeletalActorV3*            Actor;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimMontage*                           InAdditiveMontage;                                 // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0018(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_AdditiveSequenceWeightCalculator_CalcWeight;
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.GetEyeBlend
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionV3FaceAnimInstance_GetEyeBlend final
+{
+public:
+	class UBlendSpace*                            ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3FaceAnimInstance_GetEyeBlend;
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.PlayConfessionAnim
+// 0x0010 (0x0010 - 0x0000)
+struct InteractionV3FaceAnimInstance_PlayConfessionAnim final
+{
+public:
+	class UAnimSequence*                          InConfessionAnim;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InBlendInTime;                                     // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InBlendOutTime;                                    // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3FaceAnimInstance_PlayConfessionAnim;
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.PlayLastFrameAnim
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionV3FaceAnimInstance_PlayLastFrameAnim final
+{
+public:
+	class UAnimSequence*                          InLastFrameAnim;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3FaceAnimInstance_PlayLastFrameAnim;
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.SetEyeBlend
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionV3FaceAnimInstance_SetEyeBlend final
+{
+public:
+	class UBlendSpace*                            NewBlend;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3FaceAnimInstance_SetEyeBlend;
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.SetFaceIdleAnim
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionV3FaceAnimInstance_SetFaceIdleAnim final
+{
+public:
+	class UAnimSequence*                          InAnimSequence;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3FaceAnimInstance_SetFaceIdleAnim;
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.SetMouseFollowEyeOffset
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionV3FaceAnimInstance_SetMouseFollowEyeOffset final
+{
+public:
+	struct FVector2D                              InMouseFollowEyeOffset;                            // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3FaceAnimInstance_SetMouseFollowEyeOffset;
+
+// Function CharacterInteractionV3.InteractionMouseHoverInterface.OnMouseHover
+// 0x0030 (0x0030 - 0x0000)
+struct InteractionMouseHoverInterface_OnMouseHover final
+{
+public:
+	TArray<class FName>                           BoneNames;                                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	const class UCurveFloat*                      CurveScale;                                        // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              SlideVector;                                       // 0x0018(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              SlideStartPos;                                     // 0x0020(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              SlidEndPos;                                        // 0x0028(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionMouseHoverInterface_OnMouseHover;
 
 // Function CharacterInteractionV3.ScenarioLittleGameBase.OnUpdate
 // 0x0004 (0x0004 - 0x0000)
@@ -221,6 +383,15 @@ public:
 	class UScenarioStateNode_LittleGame*          ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_ScenarioLittleGameBase_GetStateNode;
+
+// Function CharacterInteractionV3.ScenarioStandardLittleGame.AllPerformerPhysicsBlendOut
+// 0x0008 (0x0008 - 0x0000)
+struct ScenarioStandardLittleGame_AllPerformerPhysicsBlendOut final
+{
+public:
+	class UCurveFloat*                            OverrideBlendCurve;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ScenarioStandardLittleGame_AllPerformerPhysicsBlendOut;
 
 // Function CharacterInteractionV3.ScenarioStandardLittleGame.GameInput
 // 0x0018 (0x0018 - 0x0000)
@@ -329,6 +500,24 @@ public:
 	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_ScenarioStandardLittleGame_OnMoveRight;
+
+// Function CharacterInteractionV3.ScenarioStandardLittleGame.PerformerPhysicsBlendOut
+// 0x0008 (0x0008 - 0x0000)
+struct ScenarioStandardLittleGame_PerformerPhysicsBlendOut final
+{
+public:
+	class UCurveFloat*                            OverrideBlendCurve;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ScenarioStandardLittleGame_PerformerPhysicsBlendOut;
+
+// Function CharacterInteractionV3.ScenarioStandardLittleGame.PhysicsBlendOut
+// 0x0004 (0x0004 - 0x0000)
+struct ScenarioStandardLittleGame_PhysicsBlendOut final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ScenarioStandardLittleGame_PhysicsBlendOut;
 
 // Function CharacterInteractionV3.ScenarioStandardLittleGame.PlayShowElement
 // 0x0028 (0x0028 - 0x0000)
@@ -578,6 +767,16 @@ public:
 };
 DUMPER7_ASSERTS_InteractionActorV3_BindOperateActEvent;
 
+// Function CharacterInteractionV3.InteractionActorV3.OnOperateBlendOut
+// 0x0018 (0x0018 - 0x0000)
+struct InteractionActorV3_OnOperateBlendOut final
+{
+public:
+	class FString                                 ActorOperateActName;                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UActorOperateAct*                       ActorOperateAct;                                   // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionActorV3_OnOperateBlendOut;
+
 // Function CharacterInteractionV3.InteractionActorV3.OnOperateEnd
 // 0x0018 (0x0018 - 0x0000)
 struct InteractionActorV3_OnOperateEnd final
@@ -649,6 +848,15 @@ public:
 };
 DUMPER7_ASSERTS_InteractionActorV3_UnbindOperateActEvent;
 
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.ClearConditionComplete
+// 0x0004 (0x0004 - 0x0000)
+struct InteractionArchivementComponentV3_ClearConditionComplete final
+{
+public:
+	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionArchivementComponentV3_ClearConditionComplete;
+
 // Function CharacterInteractionV3.InteractionArchivementComponentV3.PlayArchivement
 // 0x0004 (0x0004 - 0x0000)
 struct InteractionArchivementComponentV3_PlayArchivement final
@@ -657,6 +865,15 @@ public:
 	int32                                         InId;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_InteractionArchivementComponentV3_PlayArchivement;
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.RefreshArchivements
+// 0x0001 (0x0001 - 0x0000)
+struct InteractionArchivementComponentV3_RefreshArchivements final
+{
+public:
+	bool                                          bAllowRevoke;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionArchivementComponentV3_RefreshArchivements;
 
 // Function CharacterInteractionV3.InteractionArchivementComponentV3.SetArchievementPlayed
 // 0x0004 (0x0004 - 0x0000)
@@ -747,6 +964,15 @@ public:
 };
 DUMPER7_ASSERTS_InteractionCameraActor_GetCameraActor;
 
+// Function CharacterInteractionV3.InteractionCameraActor.ActiveCameraByStandbyID
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionCameraActor_ActiveCameraByStandbyID final
+{
+public:
+	class FName                                   ID;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionCameraActor_ActiveCameraByStandbyID;
+
 // Function CharacterInteractionV3.InteractionCameraActor.GetAdditivePitchAndYaw
 // 0x0008 (0x0008 - 0x0000)
 struct InteractionCameraActor_GetAdditivePitchAndYaw final
@@ -775,6 +1001,15 @@ public:
 };
 DUMPER7_ASSERTS_InteractionCameraActor_SetStandbyConfig;
 
+// Function CharacterInteractionV3.InteractionCameraActor.SwitchToFixedCamera
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionCameraActor_SwitchToFixedCamera final
+{
+public:
+	class FName                                   InCameraName;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionCameraActor_SwitchToFixedCamera;
+
 // Function CharacterInteractionV3.InteractionCameraActor.GetDefaultViewInfo
 // 0x05F0 (0x05F0 - 0x0000)
 struct InteractionCameraActor_GetDefaultViewInfo final
@@ -792,6 +1027,34 @@ public:
 	struct FVector2D                              Value;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_InteractionCameraInstance_AddInput;
+
+// Function CharacterInteractionV3.InteractionCameraInstance.DisableInput
+// 0x0002 (0x0002 - 0x0000)
+struct InteractionCameraInstance_DisableInput final
+{
+public:
+	bool                                          bDisable;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EInteractionCameraDisableInputType            InType;                                            // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionCameraInstance_DisableInput;
+
+// Function CharacterInteractionV3.InteractionCameraInstance.SetLevelSequence
+// 0x0028 (0x0028 - 0x0000)
+struct InteractionCameraInstance_SetLevelSequence final
+{
+public:
+	TSoftObjectPtr<class ULevelSequence>          LevelSequence;                                     // 0x0000(0x0028)(Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionCameraInstance_SetLevelSequence;
+
+// Function CharacterInteractionV3.InteractionCameraInstance.SetLevelSequenceInputCut
+// 0x0004 (0x0004 - 0x0000)
+struct InteractionCameraInstance_SetLevelSequenceInputCut final
+{
+public:
+	float                                         Times;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionCameraInstance_SetLevelSequenceInputCut;
 
 // Function CharacterInteractionV3.InteractionCameraInstance.SetOperateConfig
 // 0x0008 (0x0008 - 0x0000)
@@ -811,6 +1074,33 @@ public:
 };
 DUMPER7_ASSERTS_InteractionCameraInstance_SetStandbyConfig;
 
+// Function CharacterInteractionV3.InteractionCameraInstance.SwitchToFixedCamera
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionCameraInstance_SwitchToFixedCamera final
+{
+public:
+	class FName                                   InCameraName;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionCameraInstance_SwitchToFixedCamera;
+
+// Function CharacterInteractionV3.InteractionCameraInstance.IsInputDisabled
+// 0x0001 (0x0001 - 0x0000)
+struct InteractionCameraInstance_IsInputDisabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionCameraInstance_IsInputDisabled;
+
+// Function CharacterInteractionV3.InteractionSkeletalActorV3.StartPhysicsBlendOut
+// 0x0004 (0x0004 - 0x0000)
+struct InteractionSkeletalActorV3_StartPhysicsBlendOut final
+{
+public:
+	float                                         InTime;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionSkeletalActorV3_StartPhysicsBlendOut;
+
 // Function CharacterInteractionV3.InteractionSkeletalActorV3.GetInteractionCharacterAnimInstance
 // 0x0008 (0x0008 - 0x0000)
 struct InteractionSkeletalActorV3_GetInteractionCharacterAnimInstance final
@@ -820,6 +1110,15 @@ public:
 };
 DUMPER7_ASSERTS_InteractionSkeletalActorV3_GetInteractionCharacterAnimInstance;
 
+// Function CharacterInteractionV3.InteractionCharacterV3.SetAllowEyesFollow
+// 0x0001 (0x0001 - 0x0000)
+struct InteractionCharacterV3_SetAllowEyesFollow final
+{
+public:
+	bool                                          bNewValue;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionCharacterV3_SetAllowEyesFollow;
+
 // Function CharacterInteractionV3.InteractionCharacterV3.SetKawaiiBlendScale
 // 0x0004 (0x0004 - 0x0000)
 struct InteractionCharacterV3_SetKawaiiBlendScale final
@@ -828,6 +1127,15 @@ public:
 	float                                         KawaiiBlendScaleValue;                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_InteractionCharacterV3_SetKawaiiBlendScale;
+
+// Function CharacterInteractionV3.InteractionCharacterV3.GetAllowEyesFollow
+// 0x0001 (0x0001 - 0x0000)
+struct InteractionCharacterV3_GetAllowEyesFollow final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionCharacterV3_GetAllowEyesFollow;
 
 // Function CharacterInteractionV3.InteractionCharacterV3.GetInteractionCharacterFaceAnimInstance
 // 0x0008 (0x0008 - 0x0000)
@@ -935,6 +1243,15 @@ public:
 };
 DUMPER7_ASSERTS_InteractionDirectorV3_PlayScenarioShowElement;
 
+// Function CharacterInteractionV3.InteractionDirectorV3.PreloadShowElements
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionDirectorV3_PreloadShowElements final
+{
+public:
+	class FName                                   ScName;                                            // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionDirectorV3_PreloadShowElements;
+
 // Function CharacterInteractionV3.InteractionDirectorV3.QuitScenarioShowElement
 // 0x0008 (0x0008 - 0x0000)
 struct InteractionDirectorV3_QuitScenarioShowElement final
@@ -972,6 +1289,15 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_InteractionDirectorV3_ShowActorsComponents;
+
+// Function CharacterInteractionV3.InteractionDirectorV3.GetActiveStateMachine
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionDirectorV3_GetActiveStateMachine final
+{
+public:
+	class UScenarioStateMachine*                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionDirectorV3_GetActiveStateMachine;
 
 // Function CharacterInteractionV3.InteractionDirectorV3.GetActiveStateNode
 // 0x0008 (0x0008 - 0x0000)
@@ -1169,6 +1495,24 @@ public:
 };
 DUMPER7_ASSERTS_InteractionInputComponent_AddMouseButtonEvent;
 
+// Function CharacterInteractionV3.InteractionInputComponent.DisableGamepadAxisInput
+// 0x0004 (0x0004 - 0x0000)
+struct InteractionInputComponent_DisableGamepadAxisInput final
+{
+public:
+	int32                                         InAxisNum;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionInputComponent_DisableGamepadAxisInput;
+
+// Function CharacterInteractionV3.InteractionInputComponent.EnableGamepadAxisInput
+// 0x0004 (0x0004 - 0x0000)
+struct InteractionInputComponent_EnableGamepadAxisInput final
+{
+public:
+	int32                                         InAxisNum;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionInputComponent_EnableGamepadAxisInput;
+
 // Function CharacterInteractionV3.InteractionInputComponent.HandleMouseButtonEvent
 // 0x0002 (0x0002 - 0x0000)
 struct InteractionInputComponent_HandleMouseButtonEvent final
@@ -1224,6 +1568,24 @@ public:
 	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_InteractionInputComponent_LookUp;
+
+// Function CharacterInteractionV3.InteractionInputComponent.ManualMoveForward
+// 0x0004 (0x0004 - 0x0000)
+struct InteractionInputComponent_ManualMoveForward final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionInputComponent_ManualMoveForward;
+
+// Function CharacterInteractionV3.InteractionInputComponent.ManualMoveRight
+// 0x0004 (0x0004 - 0x0000)
+struct InteractionInputComponent_ManualMoveRight final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionInputComponent_ManualMoveRight;
 
 // Function CharacterInteractionV3.InteractionInputComponent.MoveForward
 // 0x0004 (0x0004 - 0x0000)
@@ -1373,6 +1735,17 @@ public:
 };
 DUMPER7_ASSERTS_InteractionInputComponent_IsBlockInteractionOperate;
 
+// Function CharacterInteractionV3.InteractionInputComponent.IsGamepadAxisInputEnabled
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionInputComponent_IsGamepadAxisInputEnabled final
+{
+public:
+	int32                                         InAxisNum;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionInputComponent_IsGamepadAxisInputEnabled;
+
 // Function CharacterInteractionV3.InteractionInputComponent.IsListeningForInputAction
 // 0x000C (0x000C - 0x0000)
 struct InteractionInputComponent_IsListeningForInputAction final
@@ -1498,6 +1871,16 @@ public:
 };
 DUMPER7_ASSERTS_InteractionPlayV3_GetSceneActorHideComConfig;
 
+// Function CharacterInteractionV3.InteractionPlayV3.LoadShowElementsInName
+// 0x000C (0x000C - 0x0000)
+struct InteractionPlayV3_LoadShowElementsInName final
+{
+public:
+	class FName                                   ScenarioName;                                      // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionPlayV3_LoadShowElementsInName;
+
 // Function CharacterInteractionV3.InteractionPlayV3.Start
 // 0x0018 (0x0018 - 0x0000)
 struct InteractionPlayV3_Start final
@@ -1538,6 +1921,16 @@ public:
 	class AInteractionDirectorV3*                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_InteractionPlayV3_GetInteractionDirector;
+
+// Function CharacterInteractionV3.InteractionPlayV3.GetPrefixFromName
+// 0x0010 (0x0010 - 0x0000)
+struct InteractionPlayV3_GetPrefixFromName final
+{
+public:
+	class FName                                   InName;                                            // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionPlayV3_GetPrefixFromName;
 
 // Function CharacterInteractionV3.InteractionPlayV3.GetScenarioActors
 // 0x0060 (0x0060 - 0x0000)
@@ -1624,61 +2017,23 @@ public:
 };
 DUMPER7_ASSERTS_InteractionV3CharacterAnimInstance_SetIdleAnimState;
 
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.GetEyeBlend
-// 0x0008 (0x0008 - 0x0000)
-struct InteractionV3FaceAnimInstance_GetEyeBlend final
+// Function CharacterInteractionV3.InteractionV3Event.CanTrigger
+// 0x0001 (0x0001 - 0x0000)
+struct InteractionV3Event_CanTrigger final
 {
 public:
-	class UBlendSpace*                            ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_InteractionV3FaceAnimInstance_GetEyeBlend;
+DUMPER7_ASSERTS_InteractionV3Event_CanTrigger;
 
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.PlayConfessionAnim
-// 0x0010 (0x0010 - 0x0000)
-struct InteractionV3FaceAnimInstance_PlayConfessionAnim final
-{
-public:
-	class UAnimSequence*                          InConfessionAnim;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InBlendInTime;                                     // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InBlendOutTime;                                    // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3FaceAnimInstance_PlayConfessionAnim;
-
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.PlayLastFrameAnim
+// Function CharacterInteractionV3.InteractionV3Event_Achievement.GetArchivementComponentV3
 // 0x0008 (0x0008 - 0x0000)
-struct InteractionV3FaceAnimInstance_PlayLastFrameAnim final
+struct InteractionV3Event_Achievement_GetArchivementComponentV3 final
 {
 public:
-	class UAnimSequence*                          InLastFrameAnim;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UInteractionArchivementComponentV3*     ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_InteractionV3FaceAnimInstance_PlayLastFrameAnim;
-
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.SetEyeBlend
-// 0x0008 (0x0008 - 0x0000)
-struct InteractionV3FaceAnimInstance_SetEyeBlend final
-{
-public:
-	class UBlendSpace*                            NewBlend;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3FaceAnimInstance_SetEyeBlend;
-
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.SetFaceIdleAnim
-// 0x0008 (0x0008 - 0x0000)
-struct InteractionV3FaceAnimInstance_SetFaceIdleAnim final
-{
-public:
-	class UAnimSequence*                          InAnimSequence;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3FaceAnimInstance_SetFaceIdleAnim;
-
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.SetMouseFollowEyeOffset
-// 0x0008 (0x0008 - 0x0000)
-struct InteractionV3FaceAnimInstance_SetMouseFollowEyeOffset final
-{
-public:
-	struct FVector2D                              InMouseFollowEyeOffset;                            // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3FaceAnimInstance_SetMouseFollowEyeOffset;
+DUMPER7_ASSERTS_InteractionV3Event_Achievement_GetArchivementComponentV3;
 
 // Function CharacterInteractionV3.InteractionV3FunctionLibrary.ActiveCameraBlendOut
 // 0x0010 (0x0010 - 0x0000)
@@ -1702,6 +2057,18 @@ public:
 	struct FVector                                ReturnValue;                                       // 0x001C(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_InteractionV3FunctionLibrary_CalculateBezierPoint;
+
+// Function CharacterInteractionV3.InteractionV3FunctionLibrary.ClearAchievementConditionComplete
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionV3FunctionLibrary_ClearAchievementConditionComplete final
+{
+public:
+	int32                                         ConditionID;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRefresh;                                          // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAllowRevoke;                                      // 0x0005(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionV3FunctionLibrary_ClearAchievementConditionComplete;
 
 // Function CharacterInteractionV3.InteractionV3FunctionLibrary.CreateUniversalCamera
 // 0x0010 (0x0010 - 0x0000)
@@ -1815,6 +2182,37 @@ public:
 };
 DUMPER7_ASSERTS_InteractionV3FunctionLibrary_LockCameraBlendOutChange;
 
+// Function CharacterInteractionV3.InteractionV3FunctionLibrary.RefreshAchievements
+// 0x0001 (0x0001 - 0x0000)
+struct InteractionV3FunctionLibrary_RefreshAchievements final
+{
+public:
+	bool                                          bAllowRevoke;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InteractionV3FunctionLibrary_RefreshAchievements;
+
+// Function CharacterInteractionV3.InteractionV3FunctionLibrary.SetAchievementConditionComplete
+// 0x0008 (0x0008 - 0x0000)
+struct InteractionV3FunctionLibrary_SetAchievementConditionComplete final
+{
+public:
+	int32                                         ConditionID;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRefresh;                                          // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionV3FunctionLibrary_SetAchievementConditionComplete;
+
+// Function CharacterInteractionV3.InteractionV3FunctionLibrary.SetActorHiddenByName
+// 0x000C (0x000C - 0x0000)
+struct InteractionV3FunctionLibrary_SetActorHiddenByName final
+{
+public:
+	class FName                                   ActorName;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHidden;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionV3FunctionLibrary_SetActorHiddenByName;
+
 // Function CharacterInteractionV3.InteractionV3FunctionLibrary.SetActorHiddenInGame
 // 0x0010 (0x0010 - 0x0000)
 struct InteractionV3FunctionLibrary_SetActorHiddenInGame final
@@ -1871,115 +2269,14 @@ public:
 };
 DUMPER7_ASSERTS_InteractionV3FunctionLibrary_SimpleVectorSpringInterp;
 
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetCableLengthRuntime
-// 0x0018 (0x0018 - 0x0000)
-struct InteractionV3CableFunctionLibrary_GetCableLengthRuntime final
+// Function CharacterInteractionV3.InteractionV3FunctionLibrary.TryPlayAchievement
+// 0x0004 (0x0004 - 0x0000)
+struct InteractionV3FunctionLibrary_TryPlayAchievement final
 {
 public:
-	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         AchievementID;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetCableLengthRuntime;
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetCableLengthRuntimeAtIndex
-// 0x0018 (0x0018 - 0x0000)
-struct InteractionV3CableFunctionLibrary_GetCableLengthRuntimeAtIndex final
-{
-public:
-	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         Index_0;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetCableLengthRuntimeAtIndex;
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetCablePoints
-// 0x0030 (0x0030 - 0x0000)
-struct InteractionV3CableFunctionLibrary_GetCablePoints final
-{
-public:
-	const class UCableComponent*                  CableComponent;                                    // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        AdditionalPoints;                                  // 0x0008(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bToEnd;                                            // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetCablePoints;
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetLocationOnCableByPercentage
-// 0x0020 (0x0020 - 0x0000)
-struct InteractionV3CableFunctionLibrary_GetLocationOnCableByPercentage final
-{
-public:
-	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         _percentage;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ReturnValue;                                       // 0x0014(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetLocationOnCableByPercentage;
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetLowestLocationIndexOnCable
-// 0x0018 (0x0018 - 0x0000)
-struct InteractionV3CableFunctionLibrary_GetLowestLocationIndexOnCable final
-{
-public:
-	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetLowestLocationIndexOnCable;
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetLowestLocationOnCable
-// 0x0020 (0x0020 - 0x0000)
-struct InteractionV3CableFunctionLibrary_GetLowestLocationOnCable final
-{
-public:
-	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FVector                                ReturnValue;                                       // 0x0010(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetLowestLocationOnCable;
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetPercentageByParticleIndex
-// 0x0018 (0x0018 - 0x0000)
-struct InteractionV3CableFunctionLibrary_GetPercentageByParticleIndex final
-{
-public:
-	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         _Index;                                            // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetPercentageByParticleIndex;
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetSideLocationOnCableByPercentage
-// 0x0028 (0x0028 - 0x0000)
-struct InteractionV3CableFunctionLibrary_GetSideLocationOnCableByPercentage final
-{
-public:
-	TArray<struct FVector>                        CablePoints;                                       // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         _percentage;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_GetSideLocationOnCableByPercentage;
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.SpringInterpFloat
-// 0x0038 (0x0038 - 0x0000)
-struct InteractionV3CableFunctionLibrary_SpringInterpFloat final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         _Target;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         _Current;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         _Velocity;                                         // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        CablePoints;                                       // 0x0010(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         _Stiffness;                                        // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         _Damping;                                          // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         _VelocityClamp;                                    // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         _HeightScale;                                      // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0030(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_InteractionV3CableFunctionLibrary_SpringInterpFloat;
+DUMPER7_ASSERTS_InteractionV3FunctionLibrary_TryPlayAchievement;
 
 // Function CharacterInteractionV3.InteractionV3Lib.GetInteractionStringStat
 // 0x0020 (0x0020 - 0x0000)
@@ -2045,6 +2342,17 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_InteractionV3Lib_HasInteractionStringStat;
+
+// Function CharacterInteractionV3.InteractionV3Lib.IsComponentInFrustum
+// 0x0010 (0x0010 - 0x0000)
+struct InteractionV3Lib_IsComponentInFrustum final
+{
+public:
+	class UPrimitiveComponent*                    Component;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InteractionV3Lib_IsComponentInFrustum;
 
 // Function CharacterInteractionV3.InteractionV3Lib.SetInteractionBoolStat
 // 0x0018 (0x0018 - 0x0000)
@@ -2745,6 +3053,15 @@ public:
 	TArray<class UInteractionOperateV3*>          InOperates;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_ScenarioStateNode_RemoveFromExecutableOperates;
+
+// Function CharacterInteractionV3.ScenarioStateNode.SetIgnoreCameraFix
+// 0x0001 (0x0001 - 0x0000)
+struct ScenarioStateNode_SetIgnoreCameraFix final
+{
+public:
+	bool                                          bIgnore;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ScenarioStateNode_SetIgnoreCameraFix;
 
 // Function CharacterInteractionV3.ScenarioStateNode.SetNodeInnerState
 // 0x0001 (0x0001 - 0x0000)

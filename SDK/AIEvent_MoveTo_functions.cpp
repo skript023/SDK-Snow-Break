@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function AIEvent_MoveTo.AIEvent_MoveTo_C.CanInterruptFight
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UAIEvent_MoveTo_C::CanInterruptFight()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIEvent_MoveTo_C", "CanInterruptFight");
+
+	Params::AIEvent_MoveTo_C_CanInterruptFight Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function AIEvent_MoveTo.AIEvent_MoveTo_C.OnMoveFinished_27A515F04C10695563425C91883D3501
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -70,26 +90,6 @@ void UAIEvent_MoveTo_C::OnExecute(class AGameCharacter* Character)
 	Parms.Character = Character;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIEvent_MoveTo.AIEvent_MoveTo_C.CanInterruptFight
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-
-bool UAIEvent_MoveTo_C::CanInterruptFight()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIEvent_MoveTo_C", "CanInterruptFight");
-
-	Params::AIEvent_MoveTo_C_CanInterruptFight Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 

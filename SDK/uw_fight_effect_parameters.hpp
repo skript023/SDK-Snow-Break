@@ -14,6 +14,17 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_effect.uw_fight_effect_C.OnHit__Overridden
+// 0x000C (0x000C - 0x0000)
+struct uw_fight_effect_C_OnHit__Overridden final
+{
+public:
+	float                                         Angle;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Shield;                                            // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsBigHit;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_effect_C_OnHit__Overridden;
+
 // Function uw_fight_effect.uw_fight_effect_C.ExecuteUbergraph_uw_fight_effect
 // 0x0010 (0x0010 - 0x0000)
 struct uw_fight_effect_C_ExecuteUbergraph_uw_fight_effect final
@@ -25,17 +36,6 @@ public:
 	bool                                          K2Node_Event_IsBigHit;                             // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_effect_C_ExecuteUbergraph_uw_fight_effect;
-
-// Function uw_fight_effect.uw_fight_effect_C.OnHit__Overridden
-// 0x000C (0x000C - 0x0000)
-struct uw_fight_effect_C_OnHit__Overridden final
-{
-public:
-	float                                         Angle;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Shield;                                            // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsBigHit;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_effect_C_OnHit__Overridden;
 
 // LuaFunction uw_fight_effect.uw_fight_effect_C.OnHit
 // 0x000C (0x000C - 0x0000)

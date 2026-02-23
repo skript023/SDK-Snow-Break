@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_level_occupy.uw_fight_level_occupy_C.ExecuteUbergraph_uw_fight_level_occupy
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_level_occupy_C::ExecuteUbergraph_uw_fight_level_occupy(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_occupy_C", "ExecuteUbergraph_uw_fight_level_occupy");
-
-	Params::uw_fight_level_occupy_C_ExecuteUbergraph_uw_fight_level_occupy Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_level_occupy.uw_fight_level_occupy_C.Tick__Overridden
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
@@ -54,6 +34,26 @@ void Uuw_fight_level_occupy_C::Tick__Overridden(const struct FGeometry& MyGeomet
 
 	Parms.MyGeometry = std::move(MyGeometry);
 	Parms.InDeltaTime = InDeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_level_occupy.uw_fight_level_occupy_C.ExecuteUbergraph_uw_fight_level_occupy
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_level_occupy_C::ExecuteUbergraph_uw_fight_level_occupy(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_occupy_C", "ExecuteUbergraph_uw_fight_level_occupy");
+
+	Params::uw_fight_level_occupy_C_ExecuteUbergraph_uw_fight_level_occupy Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

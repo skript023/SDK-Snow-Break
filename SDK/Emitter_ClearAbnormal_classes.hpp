@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Emitter_ClearAbnormal.Emitter_ClearAbnormal_C
-// 0x0000 (0x0C70 - 0x0C70)
+// 0x0000 (0x0C80 - 0x0C80)
 class UEmitter_ClearAbnormal_C final : public USkill_Emitter
 {
 public:

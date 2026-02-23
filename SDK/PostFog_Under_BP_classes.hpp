@@ -56,9 +56,9 @@ public:
 	void Enabl_Fog_Param();
 	void GetExpHeightFog();
 	void UserConstructionScript();
-	void ReceiveBeginPlay();
-	void FogInitialize(bool bIsInCollision);
 	void PawnActivate();
+	void FogInitialize(bool bIsInCollision);
+	void ReceiveBeginPlay();
 	void BndEvt__Box_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 	void BndEvt__Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
 	void bEndOverLap();

@@ -127,7 +127,7 @@ public:
 DUMPER7_ASSERTS_UGameTask;
 
 // Class GameTask.GameTaskNode
-// 0x0110 (0x0138 - 0x0028)
+// 0x0118 (0x0140 - 0x0028)
 class UGameTaskNode : public UObject
 {
 public:
@@ -140,15 +140,17 @@ public:
 	TArray<int32>                                 AbandonConditionIDs;                               // 0x0078(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	TMap<class FName, int32>                      TaskDataConditions;                                // 0x0088(0x0050)(Edit, NativeAccessSpecifierPublic)
 	TArray<int32>                                 NecessaryAbandonConditionIDs;                      // 0x00D8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class UGameTaskNode*>                  Children;                                          // 0x00E8(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F8[0x18];                                      // 0x00F8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         InnerID;                                           // 0x0110(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_114[0xC];                                      // 0x0114(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameTask*                              GameTaskAsset;                                     // 0x0120(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UGameTaskNode*                          ParentNode;                                        // 0x0128(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_130[0x1];                                      // 0x0130(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bIsTickEnable;                                     // 0x0131(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_132[0x6];                                      // 0x0132(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          ForceCheckCondition;                               // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UGameTaskNode*>                  Children;                                          // 0x00F0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_100[0x18];                                     // 0x0100(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         InnerID;                                           // 0x0118(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11C[0xC];                                      // 0x011C(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameTask*                              GameTaskAsset;                                     // 0x0128(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UGameTaskNode*                          ParentNode;                                        // 0x0130(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_138[0x1];                                      // 0x0138(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bIsTickEnable;                                     // 0x0139(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_13A[0x6];                                      // 0x013A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void GetAllRecursiveChildren(TArray<class UGameTaskNode*>* inArray);
@@ -187,11 +189,11 @@ public:
 DUMPER7_ASSERTS_UGameTaskNode;
 
 // Class GameTask.GameTaskFlowChild
-// 0x0008 (0x0140 - 0x0138)
+// 0x0008 (0x0148 - 0x0140)
 class UGameTaskFlowChild : public UGameTaskNode
 {
 public:
-	class UGameTaskComposite_Flow*                ParentFlowNode;                                    // 0x0138(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UGameTaskComposite_Flow*                ParentFlowNode;                                    // 0x0140(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -210,33 +212,33 @@ public:
 DUMPER7_ASSERTS_UGameTaskFlowChild;
 
 // Class GameTask.GameTask_Execute
-// 0x00D0 (0x0210 - 0x0140)
+// 0x00D0 (0x0218 - 0x0148)
 class UGameTask_Execute : public UGameTaskFlowChild
 {
 public:
-	int32                                         IconBG;                                            // 0x0140(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Icon;                                              // 0x0144(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         LevelPointsNum;                                    // 0x0148(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ExecuteDescriptionID;                              // 0x014C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CountDown;                                         // 0x0150(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_154[0x4];                                      // 0x0154(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CountDownStr;                                      // 0x0158(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHiddenExectue;                                    // 0x0168(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_169[0x7];                                      // 0x0169(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UGameTaskEvent*>                 ActiveEvents;                                      // 0x0170(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class UGameTaskEvent*>                 FinishEvents;                                      // 0x0180(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FString                                 TaskItemDes;                                       // 0x0190(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UGameTask_Execute* Execute)> OnExecuteChange;                // 0x01A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UGameTask_Execute* Execute)> OnSuddenChange;                 // 0x01B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	EExecuteUIAnimType                            showUIAnimType;                                    // 0x01C0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ShowCompleteTip;                                   // 0x01C1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          EndIsConsideredComplete;                           // 0x01C2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C3[0x5];                                      // 0x01C3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 DescArgs;                                          // 0x01C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          PlayFinishVoice;                                   // 0x01D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D9[0x17];                                     // 0x01D9(0x0017)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ExecuteDes;                                        // 0x01F0(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_200[0x10];                                     // 0x0200(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         IconBG;                                            // 0x0148(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Icon;                                              // 0x014C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LevelPointsNum;                                    // 0x0150(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ExecuteDescriptionID;                              // 0x0154(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CountDown;                                         // 0x0158(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15C[0x4];                                      // 0x015C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CountDownStr;                                      // 0x0160(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHiddenExectue;                                    // 0x0170(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_171[0x7];                                      // 0x0171(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UGameTaskEvent*>                 ActiveEvents;                                      // 0x0178(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class UGameTaskEvent*>                 FinishEvents;                                      // 0x0188(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 TaskItemDes;                                       // 0x0198(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UGameTask_Execute* Execute)> OnExecuteChange;                // 0x01A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UGameTask_Execute* Execute)> OnSuddenChange;                 // 0x01B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	EExecuteUIAnimType                            showUIAnimType;                                    // 0x01C8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ShowCompleteTip;                                   // 0x01C9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          EndIsConsideredComplete;                           // 0x01CA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1CB[0x5];                                      // 0x01CB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 DescArgs;                                          // 0x01D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          PlayFinishVoice;                                   // 0x01E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E1[0x17];                                     // 0x01E1(0x0017)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ExecuteDes;                                        // 0x01F8(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_208[0x10];                                     // 0x0208(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ActiveCountDown();
@@ -286,7 +288,7 @@ public:
 DUMPER7_ASSERTS_UGameTask_Execute;
 
 // Class GameTask.GameTask_SubRoot
-// 0x0000 (0x0138 - 0x0138)
+// 0x0000 (0x0140 - 0x0140)
 class UGameTask_SubRoot final : public UGameTaskNode
 {
 public:
@@ -306,7 +308,7 @@ public:
 DUMPER7_ASSERTS_UGameTask_SubRoot;
 
 // Class GameTask.GameTaskActor
-// 0x04E8 (0x0710 - 0x0228)
+// 0x04F8 (0x0720 - 0x0228)
 class AGameTaskActor : public AActor
 {
 public:
@@ -334,64 +336,65 @@ public:
 	int32                                         ForceLevelId;                                      // 0x0294(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         KillMonsterZ;                                      // 0x0298(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_29C[0x4];                                      // 0x029C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(ELevelFinishResult FinishResult, float UseTime, ELevelFailedReason FailedReason)> OnTaskFinish; // 0x02A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(ELevelFinishResult FinishResult, float UseTime, ELevelFailedReason FailedReason)> OnRogue3DTaskFinish; // 0x02B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 UIID, int32 UITypeID)> OnLevelUINotify;                      // 0x02C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnGameTaskStart;                                   // 0x02D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnGameTaskSwitch;                                  // 0x02E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AGameTaskActor* InTaskActor)> OnTaskFinishSimple;            // 0x02F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_300[0x10];                                     // 0x0300(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class AGameTaskActor* InTaskActor)> OnTaskFailedSimple;            // 0x0310(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 InTime)>  OnLevelTimeNotify;                                 // 0x0320(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 InTime)>  OnLevelCountDown;                                  // 0x0330(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_340[0x10];                                     // 0x0340(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bTaskInFight;                                      // 0x0350(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_351[0x7];                                      // 0x0351(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 MainTaskPath;                                      // 0x0358(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class UGameTask>               MainTaskCache;                                     // 0x0368(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELevelFinishResult                            ChildResult;                                       // 0x0370(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_371[0x3];                                      // 0x0371(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         AreaId;                                            // 0x0374(0x0004)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MonstarLevel;                                      // 0x0378(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_37C[0x4];                                      // 0x037C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameTaskComposite_Flow*                CurrentFlow;                                       // 0x0380(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<ENodeState>                            RepProp_NodesState;                                // 0x0388(0x0010)(Net, ZeroConstructor, RepNotify, NativeAccessSpecifierPublic)
-	uint8                                         Pad_398[0x8];                                      // 0x0398(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FRepExecuteDes>                 RepProp_ExecuteDes;                                // 0x03A0(0x0010)(Net, ZeroConstructor, RepNotify, NativeAccessSpecifierPublic)
-	struct FRepExecuteDes                         RepProp_SuddenDes;                                 // 0x03B0(0x0018)(Net, RepNotify, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 InAreaId)> OnTaskPreLoad;                                    // 0x03C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	bool                                          PlayKillBossVoice;                                 // 0x03D8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bForbidCharacterVoice;                             // 0x03D9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3DA[0x6E];                                     // 0x03DA(0x006E)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 NotifyTimes;                                       // 0x0448(0x0010)(BlueprintVisible, ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	uint8                                         Pad_458[0x50];                                     // 0x0458(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameTask*                              GameTask;                                          // 0x04A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4B0[0xC];                                      // 0x04B0(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         LevelCountDownTime;                                // 0x04BC(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                 OptionTaskPath;                                    // 0x04C0(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, RepNotify, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bUIIsState;                                        // 0x04D0(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4D1[0xAB];                                     // 0x04D1(0x00AB)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bOptimizeMonsterTick;                              // 0x057C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          PlayLevelBeginSound;                               // 0x057D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ELevelFinishResult                            FinishResultCache;                                 // 0x057E(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_57F[0x9];                                      // 0x057F(0x0009)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<ENodeState>                            StateTemp;                                         // 0x0588(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	uint8                                         Pad_598[0x2D];                                     // 0x0598(0x002D)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bHasBegunPlayed;                                   // 0x05C5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHasDebugInit;                                     // 0x05C6(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsMain;                                            // 0x05C7(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftClassPtr<class UClass>                   ParallelTemplate;                                  // 0x05C8(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5F0[0x18];                                     // 0x05F0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FString, class UGameTask*>         TaskTemplateCaches;                                // 0x0608(0x0050)(NativeAccessSpecifierPrivate)
-	TSet<int32>                                   HiddenMonsterTipsFilter;                           // 0x0658(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6A8[0x40];                                     // 0x06A8(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACameraActor*                           CameraActor;                                       // 0x06E8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class AActor*                                 CacheViewTarget;                                   // 0x06F0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class APlayerController*                      CachePlayerController;                             // 0x06F8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class APlayerCameraManager*                   PlayerCameraManager;                               // 0x0700(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NowSpawnNodeId;                                    // 0x0708(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          MonsMoveIgnoreCollisionOnClient;                   // 0x070C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_70D[0x3];                                      // 0x070D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 OptionTaskPath;                                    // 0x02A0(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, RepNotify, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(ELevelFinishResult FinishResult, float UseTime, ELevelFailedReason FailedReason)> OnTaskFinish; // 0x02B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(ELevelFinishResult FinishResult, float UseTime, ELevelFailedReason FailedReason)> OnRogue3DTaskFinish; // 0x02C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 UIID, int32 UITypeID)> OnLevelUINotify;                      // 0x02D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnGameTaskStart;                                   // 0x02E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnGameTaskSwitch;                                  // 0x02F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AGameTaskActor* InTaskActor)> OnTaskFinishSimple;            // 0x0300(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_310[0x10];                                     // 0x0310(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(class AGameTaskActor* InTaskActor)> OnTaskFailedSimple;            // 0x0320(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 InTime)>  OnLevelTimeNotify;                                 // 0x0330(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 InTime)>  OnLevelCountDown;                                  // 0x0340(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_350[0x10];                                     // 0x0350(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bTaskInFight;                                      // 0x0360(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_361[0x7];                                      // 0x0361(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 MainTaskPath;                                      // 0x0368(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CurrentTaskPath;                                   // 0x0378(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class UGameTask>               MainTaskCache;                                     // 0x0388(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELevelFinishResult                            ChildResult;                                       // 0x0390(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_391[0x3];                                      // 0x0391(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         AreaId;                                            // 0x0394(0x0004)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MonstarLevel;                                      // 0x0398(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39C[0x4];                                      // 0x039C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameTaskComposite_Flow*                CurrentFlow;                                       // 0x03A0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<ENodeState>                            RepProp_NodesState;                                // 0x03A8(0x0010)(Net, ZeroConstructor, RepNotify, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3B8[0x8];                                      // 0x03B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRepExecuteDes>                 RepProp_ExecuteDes;                                // 0x03C0(0x0010)(Net, ZeroConstructor, RepNotify, NativeAccessSpecifierPublic)
+	struct FRepExecuteDes                         RepProp_SuddenDes;                                 // 0x03D0(0x0018)(Net, RepNotify, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 InAreaId)> OnTaskPreLoad;                                    // 0x03E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	bool                                          PlayKillBossVoice;                                 // 0x03F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForbidCharacterVoice;                             // 0x03F9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3FA[0x6E];                                     // 0x03FA(0x006E)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 NotifyTimes;                                       // 0x0468(0x0010)(BlueprintVisible, ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	uint8                                         Pad_478[0x50];                                     // 0x0478(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameTask*                              GameTask;                                          // 0x04C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4D0[0xC];                                      // 0x04D0(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         LevelCountDownTime;                                // 0x04DC(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bUIIsState;                                        // 0x04E0(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4E1[0xAB];                                     // 0x04E1(0x00AB)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bOptimizeMonsterTick;                              // 0x058C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          PlayLevelBeginSound;                               // 0x058D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ELevelFinishResult                            FinishResultCache;                                 // 0x058E(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_58F[0x9];                                      // 0x058F(0x0009)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<ENodeState>                            StateTemp;                                         // 0x0598(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5A8[0x2D];                                     // 0x05A8(0x002D)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bHasBegunPlayed;                                   // 0x05D5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasDebugInit;                                     // 0x05D6(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsMain;                                            // 0x05D7(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftClassPtr<class UClass>                   ParallelTemplate;                                  // 0x05D8(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_600[0x18];                                     // 0x0600(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, class UGameTask*>         TaskTemplateCaches;                                // 0x0618(0x0050)(NativeAccessSpecifierPrivate)
+	TSet<int32>                                   HiddenMonsterTipsFilter;                           // 0x0668(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6B8[0x40];                                     // 0x06B8(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACameraActor*                           CameraActor;                                       // 0x06F8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class AActor*                                 CacheViewTarget;                                   // 0x0700(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class APlayerController*                      CachePlayerController;                             // 0x0708(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class APlayerCameraManager*                   PlayerCameraManager;                               // 0x0710(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NowSpawnNodeId;                                    // 0x0718(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          MonsMoveIgnoreCollisionOnClient;                   // 0x071C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71D[0x3];                                      // 0x071D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class AGameTaskActor* GetGameTaskActor(const class UObject* WorldContext);
@@ -556,7 +559,7 @@ public:
 DUMPER7_ASSERTS_AGameTaskActor;
 
 // Class GameTask.GameTaskAuxiliaryNode
-// 0x0000 (0x0138 - 0x0138)
+// 0x0000 (0x0140 - 0x0140)
 class UGameTaskAuxiliaryNode : public UGameTaskNode
 {
 public:
@@ -599,21 +602,21 @@ public:
 DUMPER7_ASSERTS_UGameTaskCacheSubsystem;
 
 // Class GameTask.GameTaskComposite_Flow
-// 0x0058 (0x0190 - 0x0138)
+// 0x0058 (0x0198 - 0x0140)
 class UGameTaskComposite_Flow final : public UGameTaskNode
 {
 public:
-	int32                                         FlowDescriptionID;                                 // 0x0138(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHiddenFlow;                                       // 0x013C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_13D[0x3];                                      // 0x013D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UGameTaskEvent*>                 EnterEvents;                                       // 0x0140(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class UGameTaskEvent*>                 ExitEvents;                                        // 0x0150(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	class UGameTaskComposite_Flow*                Next;                                              // 0x0160(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UGameTaskComposite_Flow* Flow)> OnFlowChange;                // 0x0168(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	int32                                         Loop;                                              // 0x0178(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17C[0x4];                                      // 0x017C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameTaskComposite_Flow*                RootNodePtr;                                       // 0x0180(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_188[0x8];                                      // 0x0188(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         FlowDescriptionID;                                 // 0x0140(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHiddenFlow;                                       // 0x0144(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_145[0x3];                                      // 0x0145(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UGameTaskEvent*>                 EnterEvents;                                       // 0x0148(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class UGameTaskEvent*>                 ExitEvents;                                        // 0x0158(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	class UGameTaskComposite_Flow*                Next;                                              // 0x0168(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UGameTaskComposite_Flow* Flow)> OnFlowChange;                // 0x0170(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	int32                                         Loop;                                              // 0x0180(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_184[0x4];                                      // 0x0184(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameTaskComposite_Flow*                RootNodePtr;                                       // 0x0188(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_190[0x8];                                      // 0x0190(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void Exit();
@@ -641,12 +644,12 @@ public:
 DUMPER7_ASSERTS_UGameTaskComposite_Flow;
 
 // Class GameTask.GameTaskComposite_Or
-// 0x0008 (0x0148 - 0x0140)
+// 0x0008 (0x0150 - 0x0148)
 class UGameTaskComposite_Or final : public UGameTaskFlowChild
 {
 public:
-	int32                                         SuccessRequestNum;                                 // 0x0140(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_144[0x4];                                      // 0x0144(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         SuccessRequestNum;                                 // 0x0148(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14C[0x4];                                      // 0x014C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -665,7 +668,7 @@ public:
 DUMPER7_ASSERTS_UGameTaskComposite_Or;
 
 // Class GameTask.GameTaskComposite_Parallel
-// 0x0000 (0x0140 - 0x0140)
+// 0x0000 (0x0148 - 0x0148)
 class UGameTaskComposite_Parallel final : public UGameTaskFlowChild
 {
 public:
@@ -685,11 +688,11 @@ public:
 DUMPER7_ASSERTS_UGameTaskComposite_Parallel;
 
 // Class GameTask.GameTaskComposite_Sequence
-// 0x0008 (0x0148 - 0x0140)
+// 0x0008 (0x0150 - 0x0148)
 class UGameTaskComposite_Sequence final : public UGameTaskFlowChild
 {
 public:
-	uint8                                         Pad_140[0x8];                                      // 0x0140(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_148[0x8];                                      // 0x0148(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -734,17 +737,17 @@ public:
 DUMPER7_ASSERTS_UGameTaskCondition;
 
 // Class GameTask.GameTaskEvent
-// 0x0030 (0x0168 - 0x0138)
+// 0x0030 (0x0170 - 0x0140)
 class UGameTaskEvent : public UGameTaskAuxiliaryNode
 {
 public:
-	EEventNetMode                                 NetMode;                                           // 0x0138(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_139[0x7];                                      // 0x0139(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 TaskEventTag;                                      // 0x0140(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UGameTaskEvent* TaskNode)> OnEventDeferFinish;               // 0x0150(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	bool                                          IsTaskFinishEvent;                                 // 0x0160(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UnreactiveWhenReconnect;                           // 0x0161(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_162[0x6];                                      // 0x0162(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EEventNetMode                                 NetMode;                                           // 0x0140(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_141[0x7];                                      // 0x0141(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 TaskEventTag;                                      // 0x0148(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UGameTaskEvent* TaskNode)> OnEventDeferFinish;               // 0x0158(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	bool                                          IsTaskFinishEvent;                                 // 0x0168(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UnreactiveWhenReconnect;                           // 0x0169(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_16A[0x6];                                      // 0x016A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool OnTrigger();
@@ -766,11 +769,11 @@ public:
 DUMPER7_ASSERTS_UGameTaskEvent;
 
 // Class GameTask.GameTaskEvent_FinishNodeByTag
-// 0x0008 (0x0170 - 0x0168)
+// 0x0008 (0x0178 - 0x0170)
 class UGameTaskEvent_FinishNodeByTag final : public UGameTaskEvent
 {
 public:
-	class FName                                   FinishNodeTag;                                     // 0x0168(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   FinishNodeTag;                                     // 0x0170(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -789,12 +792,12 @@ public:
 DUMPER7_ASSERTS_UGameTaskEvent_FinishNodeByTag;
 
 // Class GameTask.GameTaskEvent_PlayPlot
-// 0x0008 (0x0170 - 0x0168)
+// 0x0008 (0x0178 - 0x0170)
 class UGameTaskEvent_PlayPlot final : public UGameTaskEvent
 {
 public:
-	int32                                         PlotID;                                            // 0x0168(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C[0x4];                                      // 0x016C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         PlotID;                                            // 0x0170(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_174[0x4];                                      // 0x0174(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -813,7 +816,7 @@ public:
 DUMPER7_ASSERTS_UGameTaskEvent_PlayPlot;
 
 // Class GameTask.GameTaskEvent_SpawnMonsterBase
-// 0x0000 (0x0168 - 0x0168)
+// 0x0000 (0x0170 - 0x0170)
 class UGameTaskEvent_SpawnMonsterBase : public UGameTaskEvent
 {
 public:
@@ -837,18 +840,18 @@ public:
 DUMPER7_ASSERTS_UGameTaskEvent_SpawnMonsterBase;
 
 // Class GameTask.GameTaskEvent_SpawnMonByPoint
-// 0x0030 (0x0198 - 0x0168)
+// 0x0030 (0x01A0 - 0x0170)
 class UGameTaskEvent_SpawnMonByPoint : public UGameTaskEvent_SpawnMonsterBase
 {
 public:
-	int32                                         TableID;                                           // 0x0168(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C[0x4];                                      // 0x016C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Tag;                                               // 0x0170(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Team;                                              // 0x0180(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSummon;                                           // 0x0190(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bMulti;                                            // 0x0191(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_192[0x2];                                      // 0x0192(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         SpawnStartIndex;                                   // 0x0194(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TableID;                                           // 0x0170(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_174[0x4];                                      // 0x0174(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Tag;                                               // 0x0178(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Team;                                              // 0x0188(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSummon;                                           // 0x0198(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMulti;                                            // 0x0199(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19A[0x2];                                      // 0x019A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SpawnStartIndex;                                   // 0x019C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	int32 GetSpawnNum();
@@ -870,12 +873,12 @@ public:
 DUMPER7_ASSERTS_UGameTaskEvent_SpawnMonByPoint;
 
 // Class GameTask.GameTaskEvent_SpawnMonByStruct
-// 0x0008 (0x0170 - 0x0168)
+// 0x0008 (0x0178 - 0x0170)
 class UGameTaskEvent_SpawnMonByStruct final : public UGameTaskEvent_SpawnMonsterBase
 {
 public:
-	int32                                         SpawnStartIndex;                                   // 0x0168(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C[0x4];                                      // 0x016C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         SpawnStartIndex;                                   // 0x0170(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_174[0x4];                                      // 0x0174(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	int32 GetSpawnNum();
@@ -899,12 +902,12 @@ public:
 DUMPER7_ASSERTS_UGameTaskEvent_SpawnMonByStruct;
 
 // Class GameTask.GameTaskExecute_ProtectItems
-// 0x0018 (0x0228 - 0x0210)
+// 0x0018 (0x0230 - 0x0218)
 class UGameTaskExecute_ProtectItems final : public UGameTask_Execute
 {
 public:
-	class FString                                 ItemName;                                          // 0x0210(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 Item;                                              // 0x0220(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ItemName;                                          // 0x0218(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Item;                                              // 0x0228(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -923,12 +926,12 @@ public:
 DUMPER7_ASSERTS_UGameTaskExecute_ProtectItems;
 
 // Class GameTask.GameTaskExecute_Timer
-// 0x0008 (0x0218 - 0x0210)
+// 0x0008 (0x0220 - 0x0218)
 class UGameTaskExecute_Timer : public UGameTask_Execute
 {
 public:
-	float                                         Num;                                               // 0x0210(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_214[0x4];                                      // 0x0214(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         Num;                                               // 0x0218(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21C[0x4];                                      // 0x021C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

@@ -32,15 +32,25 @@ public:
 };
 DUMPER7_ASSERTS_WeaponBase_C_ReceiveShootBullet;
 
-// Function WeaponBase.WeaponBase_C.ReceiveStopFire
-// 0x0008 (0x0008 - 0x0000)
-struct WeaponBase_C_ReceiveStopFire final
+// Function WeaponBase.WeaponBase_C.ExecuteUbergraph_WeaponBase
+// 0x0010 (0x0010 - 0x0000)
+struct WeaponBase_C_ExecuteUbergraph_WeaponBase final
 {
 public:
-	int32                                         InStartSkillID;                                    // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGameCharacter*                         K2Node_Event_Character;                            // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_WeaponBase_C_ReceiveStopFire;
+DUMPER7_ASSERTS_WeaponBase_C_ExecuteUbergraph_WeaponBase;
+
+// Function WeaponBase.WeaponBase_C.OnEquipWeapon
+// 0x0008 (0x0008 - 0x0000)
+struct WeaponBase_C_OnEquipWeapon final
+{
+public:
+	class AGameCharacter*                         Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WeaponBase_C_OnEquipWeapon;
 
 // Function WeaponBase.WeaponBase_C.ReceiveBreakFire
 // 0x0004 (0x0004 - 0x0000)
@@ -53,6 +63,16 @@ public:
 	bool                                          CallFunc_NotEqual_ByteByte_ReturnValue;            // 0x0003(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_WeaponBase_C_ReceiveBreakFire;
+
+// Function WeaponBase.WeaponBase_C.ReceiveStopFire
+// 0x0008 (0x0008 - 0x0000)
+struct WeaponBase_C_ReceiveStopFire final
+{
+public:
+	int32                                         InStartSkillID;                                    // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WeaponBase_C_ReceiveStopFire;
 
 // Function WeaponBase.WeaponBase_C.ReceiveStartReload
 // 0x0002 (0x0002 - 0x0000)

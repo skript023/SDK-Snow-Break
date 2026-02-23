@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "Game_classes.hpp"
 
 
@@ -17,14 +18,22 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass WeaponBase.WeaponBase_C
-// 0x0000 (0x1B60 - 0x1B60)
-class AWeaponBase_C : public APlayerWeapon
+// 0x0010 (0x1C80 - 0x1C70)
+#pragma pack(push, 0x1)
+class alignas(0x10) AWeaponBase_C : public APlayerWeapon
 {
 public:
-	bool ReceiveShootBullet();
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1C70(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
-	bool ReceiveStopFire(int32 InStartSkillID) const;
+public:
+	bool ReceiveShootBullet();
+	void EndToDissolve();
+	void BeginToDissolve();
+	void ExecuteUbergraph_WeaponBase(int32 EntryPoint);
+	void OnEquipWeapon(class AGameCharacter* Character);
+
 	bool ReceiveBreakFire() const;
+	bool ReceiveStopFire(int32 InStartSkillID) const;
 	bool ReceiveStartReload() const;
 
 public:
@@ -41,6 +50,7 @@ public:
 		return GetDefaultObjImpl<AWeaponBase_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_AWeaponBase_C;
 
 }

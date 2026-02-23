@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function uw_fight_interactlist.uw_fight_interactlist_C.RemoveInteractItemOfOwner
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          Owner                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_interactlist_C::RemoveInteractItemOfOwner(class UObject* Owner)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_interactlist_C", "RemoveInteractItemOfOwner");
+
+	Params::uw_fight_interactlist_C_RemoveInteractItemOfOwner Parms{};
+
+	Parms.Owner = Owner;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function uw_fight_interactlist.uw_fight_interactlist_C.AddInteractItem
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -46,26 +66,6 @@ void Uuw_fight_interactlist_C::AddInteractItem(class UClass* InteractItemBaseCla
 
 	if (PriorityLevel != nullptr)
 		*PriorityLevel = Parms.PriorityLevel;
-}
-
-
-// Function uw_fight_interactlist.uw_fight_interactlist_C.RemoveInteractItemOfOwner
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          Owner                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_interactlist_C::RemoveInteractItemOfOwner(class UObject* Owner)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_interactlist_C", "RemoveInteractItemOfOwner");
-
-	Params::uw_fight_interactlist_C_RemoveInteractItemOfOwner Parms{};
-
-	Parms.Owner = Owner;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

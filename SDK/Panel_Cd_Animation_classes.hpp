@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK
@@ -32,10 +32,10 @@ public:
 	class URedirectImage*                         Direction_cd_4;                                    // 0x0380(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_Panel_Cd_Animation(int32 EntryPoint);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
-	void Stop();
 	void Play(bool bLoop);
+	void Stop();
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void ExecuteUbergraph_Panel_Cd_Animation(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

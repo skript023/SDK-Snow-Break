@@ -28,9 +28,9 @@ public:
 	class URedirectImage*                         ImgPower;                                          // 0x0290(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_player_power(int32 EntryPoint);
-	void VisibilityChanged(ESlateVisibility InVisibility);
 	void PreConstruct(bool IsDesignTime);
+	void VisibilityChanged(ESlateVisibility InVisibility);
+	void ExecuteUbergraph_uw_fight_player_power(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

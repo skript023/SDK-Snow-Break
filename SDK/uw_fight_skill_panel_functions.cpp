@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_skill_panel.uw_fight_skill_panel_C.ExecuteUbergraph_uw_fight_skill_panel
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_skill_panel_C::ExecuteUbergraph_uw_fight_skill_panel(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_panel_C", "ExecuteUbergraph_uw_fight_skill_panel");
-
-	Params::uw_fight_skill_panel_C_ExecuteUbergraph_uw_fight_skill_panel Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_skill_panel.uw_fight_skill_panel_C.ShowOrHideCancelBtn
 // (BlueprintEvent)
 // Parameters:
@@ -52,6 +32,26 @@ void Uuw_fight_skill_panel_C::ShowOrHideCancelBtn(bool bShow)
 	Params::uw_fight_skill_panel_C_ShowOrHideCancelBtn Parms{};
 
 	Parms.bShow = bShow;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_skill_panel.uw_fight_skill_panel_C.ExecuteUbergraph_uw_fight_skill_panel
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_skill_panel_C::ExecuteUbergraph_uw_fight_skill_panel(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_panel_C", "ExecuteUbergraph_uw_fight_skill_panel");
+
+	Params::uw_fight_skill_panel_C_ExecuteUbergraph_uw_fight_skill_panel Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

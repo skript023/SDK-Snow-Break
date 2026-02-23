@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Wp10302_Attach.BP_Wp10302_Attach_C
-// 0x0000 (0x04F8 - 0x04F8)
+// 0x0000 (0x05D0 - 0x05D0)
 class ABP_Wp10302_Attach_C final : public ABp_wpbase_attach_C
 {
 public:

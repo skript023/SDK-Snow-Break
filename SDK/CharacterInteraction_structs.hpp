@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "PhysicsControl_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "PhysicsControl_structs.hpp"
 
 
 namespace SDK
@@ -332,6 +332,15 @@ public:
 	TArray<int32>                                 SyncSequenceIDs;                                   // 0x0038(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FConfessionSequenceInfo;
+
+// ScriptStruct CharacterInteraction.VertexIndexs
+// 0x000C (0x000C - 0x0000)
+struct alignas(0x04) FVertexIndexs final
+{
+public:
+	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FVertexIndexs;
 
 // ScriptStruct CharacterInteraction.ParamNameToSet
 // 0x0010 (0x0010 - 0x0000)

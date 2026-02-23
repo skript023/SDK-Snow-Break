@@ -11,32 +11,15 @@
 #include "Basic.hpp"
 
 #include "Game_classes.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass Condition_ModifierNotExist.Condition_ModifierNotExist_C
-// 0x0028 (0x0130 - 0x0108)
-class UCondition_ModifierNotExist_C final : public UCastConditionCheck
+// 0x0000 (0x0108 - 0x0108)
+class UCondition_ModifierNotExist_C final : public UCastConditionCheck_ModifierNotExist
 {
-public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0108(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class AGameCharacter*                         TempLauncher;                                      // 0x0110(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ModifierID;                                        // 0x0118(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bOnlySelf;                                         // 0x011C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_11D[0x3];                                      // 0x011D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 TagName;                                           // 0x0120(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-
-public:
-	void CheckModifierExit(class AGameCharacter* NewParam, bool* bExit);
-	bool K2_CheckCondition(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
-	void ExecuteUbergraph_Condition_ModifierNotExist(int32 EntryPoint);
-	void GetModiferLauner(class UAbilityComponentBase** OutAbility);
-	void GetLauncher(class AGameCharacter** GameCharacter);
-	void K2_InitCondition();
-
 public:
 	static class UClass* StaticClass()
 	{

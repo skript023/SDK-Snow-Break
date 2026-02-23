@@ -17,23 +17,37 @@
 namespace SDK
 {
 
-// Function Panel_Cd_Animation.Panel_Cd_Animation_C.ExecuteUbergraph_Panel_Cd_Animation
-// (Final, UbergraphFunction)
+// Function Panel_Cd_Animation.Panel_Cd_Animation_C.Play
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bLoop                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UPanel_Cd_Animation_C::ExecuteUbergraph_Panel_Cd_Animation(int32 EntryPoint)
+void UPanel_Cd_Animation_C::Play(bool bLoop)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Panel_Cd_Animation_C", "ExecuteUbergraph_Panel_Cd_Animation");
+		Func = Class->GetFunction("Panel_Cd_Animation_C", "Play");
 
-	Params::Panel_Cd_Animation_C_ExecuteUbergraph_Panel_Cd_Animation Parms{};
+	Params::Panel_Cd_Animation_C_Play Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bLoop = bLoop;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Panel_Cd_Animation.Panel_Cd_Animation_C.Stop
+// (BlueprintCallable, BlueprintEvent)
+
+void UPanel_Cd_Animation_C::Stop()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Panel_Cd_Animation_C", "Stop");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -57,35 +71,21 @@ void UPanel_Cd_Animation_C::K2_OnCustomUmgAnimFinished(const class FName& AnimNa
 }
 
 
-// Function Panel_Cd_Animation.Panel_Cd_Animation_C.Stop
-// (BlueprintCallable, BlueprintEvent)
-
-void UPanel_Cd_Animation_C::Stop()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Panel_Cd_Animation_C", "Stop");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Panel_Cd_Animation.Panel_Cd_Animation_C.Play
-// (BlueprintCallable, BlueprintEvent)
+// Function Panel_Cd_Animation.Panel_Cd_Animation_C.ExecuteUbergraph_Panel_Cd_Animation
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    bLoop                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPanel_Cd_Animation_C::Play(bool bLoop)
+void UPanel_Cd_Animation_C::ExecuteUbergraph_Panel_Cd_Animation(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Panel_Cd_Animation_C", "Play");
+		Func = Class->GetFunction("Panel_Cd_Animation_C", "ExecuteUbergraph_Panel_Cd_Animation");
 
-	Params::Panel_Cd_Animation_C_Play Parms{};
+	Params::Panel_Cd_Animation_C_ExecuteUbergraph_Panel_Cd_Animation Parms{};
 
-	Parms.bLoop = bLoop;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -17,35 +17,15 @@
 namespace SDK
 {
 
-// Function uw_fight_ammunition3.uw_fight_ammunition3_C.ExecuteUbergraph_uw_fight_ammunition3
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_ammunition3.uw_fight_ammunition3_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void Uuw_fight_ammunition3_C::ExecuteUbergraph_uw_fight_ammunition3(int32 EntryPoint)
+void Uuw_fight_ammunition3_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition3_C", "ExecuteUbergraph_uw_fight_ammunition3");
-
-	Params::uw_fight_ammunition3_C_ExecuteUbergraph_uw_fight_ammunition3 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_ammunition3.uw_fight_ammunition3_C.K2_SkillCastBulletFail
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_ammunition3_C::K2_SkillCastBulletFail()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition3_C", "K2_SkillCastBulletFail");
+		Func = Class->GetFunction("uw_fight_ammunition3_C", "Construct");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -75,17 +55,37 @@ void Uuw_fight_ammunition3_C::OnBulletChange(int32 InCurBullet, int32 InMaxBulle
 }
 
 
-// Function uw_fight_ammunition3.uw_fight_ammunition3_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function uw_fight_ammunition3.uw_fight_ammunition3_C.K2_SkillCastBulletFail
+// (Event, Public, BlueprintEvent)
 
-void Uuw_fight_ammunition3_C::Construct()
+void Uuw_fight_ammunition3_C::K2_SkillCastBulletFail()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition3_C", "Construct");
+		Func = Class->GetFunction("uw_fight_ammunition3_C", "K2_SkillCastBulletFail");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_ammunition3.uw_fight_ammunition3_C.ExecuteUbergraph_uw_fight_ammunition3
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_ammunition3_C::ExecuteUbergraph_uw_fight_ammunition3(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_ammunition3_C", "ExecuteUbergraph_uw_fight_ammunition3");
+
+	Params::uw_fight_ammunition3_C_ExecuteUbergraph_uw_fight_ammunition3 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

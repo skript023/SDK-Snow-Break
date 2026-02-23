@@ -55,25 +55,6 @@ void Uuw_healthroom_minidiff_C::Destruct()
 }
 
 
-// LuaFunction uw_healthroom_minidiff.uw_healthroom_minidiff_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_healthroom_minidiff_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_healthroom_minidiff_C", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_healthroom_minidiff.uw_healthroom_minidiff_C.OnListItemObjectSet
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -94,6 +75,25 @@ void Uuw_healthroom_minidiff_C::OnListItemObjectSet(class UObject* ListItemObjec
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_healthroom_minidiff.uw_healthroom_minidiff_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_healthroom_minidiff_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_healthroom_minidiff_C", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

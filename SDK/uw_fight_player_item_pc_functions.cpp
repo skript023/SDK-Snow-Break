@@ -364,6 +364,69 @@ void Uuw_fight_player_item_pc_C::IsInFight(bool* InFight)
 }
 
 
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_player_item_pc_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_pc_C", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.NotifyRefreshCharacter
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_player_item_pc_C::NotifyRefreshCharacter()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_pc_C", "NotifyRefreshCharacter");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.K2_OnUpdate
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_player_item_pc_C::K2_OnUpdate(float InDeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_pc_C", "K2_OnUpdate");
+
+	Params::uw_fight_player_item_pc_C_K2_OnUpdate Parms{};
+
+	Parms.InDeltaTime = InDeltaTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.UpdateKeyboard
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -389,92 +452,15 @@ void Uuw_fight_player_item_pc_C::UpdateKeyboard(int32 InIndex)
 }
 
 
-// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnAnimationFinished
-// (BlueprintCosmetic, Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_player_item_pc_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_pc_C", "OnAnimationFinished");
-
-	Params::uw_fight_player_item_pc_C_OnAnimationFinished Parms{};
-
-	Parms.Animation = Animation;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnChargeTimesChange
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   InCurrentTimes                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InMaxTimes                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_player_item_pc_C::OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_pc_C", "OnChargeTimesChange");
-
-	Params::uw_fight_player_item_pc_C_OnChargeTimesChange Parms{};
-
-	Parms.InCurrentTimes = InCurrentTimes;
-	Parms.InMaxTimes = InMaxTimes;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.NotifyClick
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EPlayerBtnType                          BtnType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_player_item_pc_C::NotifyClick(EPlayerBtnType BtnType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_pc_C", "NotifyClick");
-
-	Params::uw_fight_player_item_pc_C_NotifyClick Parms{};
-
-	Parms.BtnType = BtnType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.NotifyRefreshCharacter
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.NotifyReviveCdOK
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_player_item_pc_C::NotifyRefreshCharacter()
+void Uuw_fight_player_item_pc_C::NotifyReviveCdOK()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_pc_C", "NotifyRefreshCharacter");
+		Func = Class->GetFunction("uw_fight_player_item_pc_C", "NotifyReviveCdOK");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -510,6 +496,31 @@ void Uuw_fight_player_item_pc_C::K2_OnCustomUmgAnimFinished(const class FName& A
 }
 
 
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnAnimationFinished
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_player_item_pc_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_pc_C", "OnAnimationFinished");
+
+	Params::uw_fight_player_item_pc_C_OnAnimationFinished Parms{};
+
+	Parms.Animation = Animation;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.NotifyDataChange
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -529,39 +540,53 @@ void Uuw_fight_player_item_pc_C::NotifyDataChange()
 }
 
 
-// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.NotifyReviveCdOK
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.NotifyClick
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EPlayerBtnType                          BtnType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void Uuw_fight_player_item_pc_C::NotifyReviveCdOK()
+void Uuw_fight_player_item_pc_C::NotifyClick(EPlayerBtnType BtnType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_pc_C", "NotifyReviveCdOK");
+		Func = Class->GetFunction("uw_fight_player_item_pc_C", "NotifyClick");
+
+	Params::uw_fight_player_item_pc_C_NotifyClick Parms{};
+
+	Parms.BtnType = BtnType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_player_item_pc.uw_fight_player_item_pc_C.OnChargeTimesChange
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   InCurrentTimes                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InMaxTimes                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void Uuw_fight_player_item_pc_C::Construct()
+void Uuw_fight_player_item_pc_C::OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_pc_C", "Construct");
+		Func = Class->GetFunction("uw_fight_player_item_pc_C", "OnChargeTimesChange");
+
+	Params::uw_fight_player_item_pc_C_OnChargeTimesChange Parms{};
+
+	Parms.InCurrentTimes = InCurrentTimes;
+	Parms.InMaxTimes = InMaxTimes;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

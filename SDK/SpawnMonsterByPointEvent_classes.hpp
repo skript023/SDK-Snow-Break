@@ -19,12 +19,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass SpawnMonsterByPointEvent.SpawnMonsterByPointEvent_C
-// 0x0010 (0x01A8 - 0x0198)
+// 0x0010 (0x01B0 - 0x01A0)
 class USpawnMonsterByPointEvent_C final : public UGameTaskEvent_SpawnMonByPoint
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0198(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          IsAsync;                                           // 0x01A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x01A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          IsAsync;                                           // 0x01A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_SpawnMonsterByPointEvent(int32 EntryPoint);

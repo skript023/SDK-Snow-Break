@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BaseSummon.BaseSummon_C
-// 0x0010 (0x1490 - 0x1480)
+// 0x0010 (0x14D0 - 0x14C0)
 class ABaseSummon_C final : public AGameSummon
 {
 public:
-	class UAnimMontage*                           Celebrate_Montage;                                 // 0x1480(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimMontage*                           Celebrate_Montage;                                 // 0x14C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	float Abnormal_RepelAnimTime(int32 AnimType, bool bIsBack);

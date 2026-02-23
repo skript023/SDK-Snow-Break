@@ -17,75 +17,6 @@
 namespace SDK
 {
 
-// Function CharacterInteractionV3.InteractionV3Event.DoAction
-// (Native, Event, Public, BlueprintEvent)
-
-void UInteractionV3Event::DoAction()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3Event", "DoAction");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3Event.CanTrigger
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInteractionV3Event::CanTrigger() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3Event", "CanTrigger");
-
-	Params::InteractionV3Event_CanTrigger Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3Event_Achievement.GetArchivementComponentV3
-// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UInteractionArchivementComponentV3*ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UInteractionArchivementComponentV3* UInteractionV3Event_Achievement::GetArchivementComponentV3() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3Event_Achievement", "GetArchivementComponentV3");
-
-	Params::InteractionV3Event_Achievement_GetArchivementComponentV3 Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function CharacterInteractionV3.ActorOperateAct.OnPause
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -365,39 +296,6 @@ bool UActorOperateAct::IsCompleteAndBlendOut() const
 }
 
 
-// Function CharacterInteractionV3.InteractionMouseHoverInterface.OnMouseHover
-// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
-// Parameters:
-// const TArray<class FName>&              BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// const class UCurveFloat*                CurveScale                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector2D&                 SlideVector                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector2D&                 SlideStartPos                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector2D&                 SlidEndPos                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IInteractionMouseHoverInterface::OnMouseHover(const TArray<class FName>& BoneNames, const class UCurveFloat* CurveScale, const struct FVector2D& SlideVector, const struct FVector2D& SlideStartPos, const struct FVector2D& SlidEndPos)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("InteractionMouseHoverInterface", "OnMouseHover");
-
-	Params::InteractionMouseHoverInterface_OnMouseHover Parms{};
-
-	Parms.BoneNames = std::move(BoneNames);
-	Parms.CurveScale = CurveScale;
-	Parms.SlideVector = std::move(SlideVector);
-	Parms.SlideStartPos = std::move(SlideStartPos);
-	Parms.SlidEndPos = std::move(SlidEndPos);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function CharacterInteractionV3.InteractionV3DragInterface.EndDrag
 // (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -469,6 +367,545 @@ void IInteractionV3DragInterface::UpdateDrag(const struct FTransform& TargetTran
 
 	Parms.TargetTransform = std::move(TargetTransform);
 	Parms.DeltaLocation = std::move(DeltaLocation);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetCableLengthRuntime
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UInteractionV3CableFunctionLibrary::GetCableLengthRuntime(const TArray<struct FVector>& CablePoints)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetCableLengthRuntime");
+
+	Params::InteractionV3CableFunctionLibrary_GetCableLengthRuntime Parms{};
+
+	Parms.CablePoints = std::move(CablePoints);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetCableLengthRuntimeAtIndex
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UInteractionV3CableFunctionLibrary::GetCableLengthRuntimeAtIndex(const TArray<struct FVector>& CablePoints, int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetCableLengthRuntimeAtIndex");
+
+	Params::InteractionV3CableFunctionLibrary_GetCableLengthRuntimeAtIndex Parms{};
+
+	Parms.CablePoints = std::move(CablePoints);
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetCablePoints
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class UCableComponent*            CableComponent                                         (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           AdditionalPoints                                       (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// bool                                    bToEnd                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FVector> UInteractionV3CableFunctionLibrary::GetCablePoints(const class UCableComponent* CableComponent, const TArray<struct FVector>& AdditionalPoints, bool bToEnd)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetCablePoints");
+
+	Params::InteractionV3CableFunctionLibrary_GetCablePoints Parms{};
+
+	Parms.CableComponent = CableComponent;
+	Parms.AdditionalPoints = std::move(AdditionalPoints);
+	Parms.bToEnd = bToEnd;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetLocationOnCableByPercentage
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// float                                   _percentage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector UInteractionV3CableFunctionLibrary::GetLocationOnCableByPercentage(const TArray<struct FVector>& CablePoints, float _percentage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetLocationOnCableByPercentage");
+
+	Params::InteractionV3CableFunctionLibrary_GetLocationOnCableByPercentage Parms{};
+
+	Parms.CablePoints = std::move(CablePoints);
+	Parms._percentage = _percentage;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetLowestLocationIndexOnCable
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UInteractionV3CableFunctionLibrary::GetLowestLocationIndexOnCable(const TArray<struct FVector>& CablePoints)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetLowestLocationIndexOnCable");
+
+	Params::InteractionV3CableFunctionLibrary_GetLowestLocationIndexOnCable Parms{};
+
+	Parms.CablePoints = std::move(CablePoints);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetLowestLocationOnCable
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector UInteractionV3CableFunctionLibrary::GetLowestLocationOnCable(const TArray<struct FVector>& CablePoints)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetLowestLocationOnCable");
+
+	Params::InteractionV3CableFunctionLibrary_GetLowestLocationOnCable Parms{};
+
+	Parms.CablePoints = std::move(CablePoints);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetPercentageByParticleIndex
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// int32                                   _Index                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UInteractionV3CableFunctionLibrary::GetPercentageByParticleIndex(const TArray<struct FVector>& CablePoints, int32 _Index)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetPercentageByParticleIndex");
+
+	Params::InteractionV3CableFunctionLibrary_GetPercentageByParticleIndex Parms{};
+
+	Parms.CablePoints = std::move(CablePoints);
+	Parms._Index = _Index;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetSideLocationOnCableByPercentage
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// float                                   _percentage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FVector> UInteractionV3CableFunctionLibrary::GetSideLocationOnCableByPercentage(const TArray<struct FVector>& CablePoints, float _percentage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetSideLocationOnCableByPercentage");
+
+	Params::InteractionV3CableFunctionLibrary_GetSideLocationOnCableByPercentage Parms{};
+
+	Parms.CablePoints = std::move(CablePoints);
+	Parms._percentage = _percentage;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.SpringInterpFloat
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   _Target                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   _Current                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  _Velocity                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// float                                   _Stiffness                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   _Damping                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   _VelocityClamp                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   _HeightScale                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UInteractionV3CableFunctionLibrary::SpringInterpFloat(float DeltaTime, float _Target, float _Current, float* _Velocity, const TArray<struct FVector>& CablePoints, float _Stiffness, float _Damping, float _VelocityClamp, float _HeightScale)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "SpringInterpFloat");
+
+	Params::InteractionV3CableFunctionLibrary_SpringInterpFloat Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+	Parms._Target = _Target;
+	Parms._Current = _Current;
+	Parms.CablePoints = std::move(CablePoints);
+	Parms._Stiffness = _Stiffness;
+	Parms._Damping = _Damping;
+	Parms._VelocityClamp = _VelocityClamp;
+	Parms._HeightScale = _HeightScale;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (_Velocity != nullptr)
+		*_Velocity = Parms._Velocity;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.AdditiveSequenceWeightCalculator.CalcWeight
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AInteractionSkeletalActorV3*      Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAnimMontage*                     InAdditiveMontage                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UAdditiveSequenceWeightCalculator::CalcWeight(float DeltaSeconds, class AInteractionSkeletalActorV3* Actor, class UAnimMontage* InAdditiveMontage) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AdditiveSequenceWeightCalculator", "CalcWeight");
+
+	Params::AdditiveSequenceWeightCalculator_CalcWeight Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.Actor = Actor;
+	Parms.InAdditiveMontage = InAdditiveMontage;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.GetEyeBlend
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UBlendSpace*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UBlendSpace* UInteractionV3FaceAnimInstance::GetEyeBlend()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "GetEyeBlend");
+
+	Params::InteractionV3FaceAnimInstance_GetEyeBlend Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.PlayConfessionAnim
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UAnimSequence*                    InConfessionAnim                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InBlendInTime                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InBlendOutTime                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionV3FaceAnimInstance::PlayConfessionAnim(class UAnimSequence* InConfessionAnim, float InBlendInTime, float InBlendOutTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "PlayConfessionAnim");
+
+	Params::InteractionV3FaceAnimInstance_PlayConfessionAnim Parms{};
+
+	Parms.InConfessionAnim = InConfessionAnim;
+	Parms.InBlendInTime = InBlendInTime;
+	Parms.InBlendOutTime = InBlendOutTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.PlayLastFrameAnim
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UAnimSequence*                    InLastFrameAnim                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionV3FaceAnimInstance::PlayLastFrameAnim(class UAnimSequence* InLastFrameAnim)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "PlayLastFrameAnim");
+
+	Params::InteractionV3FaceAnimInstance_PlayLastFrameAnim Parms{};
+
+	Parms.InLastFrameAnim = InLastFrameAnim;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.SetEyeBlend
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UBlendSpace*                      NewBlend                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionV3FaceAnimInstance::SetEyeBlend(class UBlendSpace* NewBlend)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "SetEyeBlend");
+
+	Params::InteractionV3FaceAnimInstance_SetEyeBlend Parms{};
+
+	Parms.NewBlend = NewBlend;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.SetFaceIdleAnim
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UAnimSequence*                    InAnimSequence                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionV3FaceAnimInstance::SetFaceIdleAnim(class UAnimSequence* InAnimSequence)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "SetFaceIdleAnim");
+
+	Params::InteractionV3FaceAnimInstance_SetFaceIdleAnim Parms{};
+
+	Parms.InAnimSequence = InAnimSequence;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.SetMouseFollowEyeOffset
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector2D&                 InMouseFollowEyeOffset                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionV3FaceAnimInstance::SetMouseFollowEyeOffset(const struct FVector2D& InMouseFollowEyeOffset)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "SetMouseFollowEyeOffset");
+
+	Params::InteractionV3FaceAnimInstance_SetMouseFollowEyeOffset Parms{};
+
+	Parms.InMouseFollowEyeOffset = std::move(InMouseFollowEyeOffset);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.StopConfessionAnim
+// (Final, Native, Public, BlueprintCallable)
+
+void UInteractionV3FaceAnimInstance::StopConfessionAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "StopConfessionAnim");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.StopLastFrameAnim
+// (Final, Native, Public, BlueprintCallable)
+
+void UInteractionV3FaceAnimInstance::StopLastFrameAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "StopLastFrameAnim");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionMouseHoverInterface.OnMouseHover
+// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
+// Parameters:
+// const TArray<class FName>&              BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class UCurveFloat*                CurveScale                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 SlideVector                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 SlideStartPos                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 SlidEndPos                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IInteractionMouseHoverInterface::OnMouseHover(const TArray<class FName>& BoneNames, const class UCurveFloat* CurveScale, const struct FVector2D& SlideVector, const struct FVector2D& SlideStartPos, const struct FVector2D& SlidEndPos)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("InteractionMouseHoverInterface", "OnMouseHover");
+
+	Params::InteractionMouseHoverInterface_OnMouseHover Parms{};
+
+	Parms.BoneNames = std::move(BoneNames);
+	Parms.CurveScale = CurveScale;
+	Parms.SlideVector = std::move(SlideVector);
+	Parms.SlideStartPos = std::move(SlideStartPos);
+	Parms.SlidEndPos = std::move(SlidEndPos);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -693,6 +1130,31 @@ class UScenarioStateNode_LittleGame* UScenarioLittleGameBase::GetStateNode() con
 }
 
 
+// Function CharacterInteractionV3.ScenarioStandardLittleGame.AllPerformerPhysicsBlendOut
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCurveFloat*                      OverrideBlendCurve                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UScenarioStandardLittleGame::AllPerformerPhysicsBlendOut(class UCurveFloat* OverrideBlendCurve)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScenarioStandardLittleGame", "AllPerformerPhysicsBlendOut");
+
+	Params::ScenarioStandardLittleGame_AllPerformerPhysicsBlendOut Parms{};
+
+	Parms.OverrideBlendCurve = OverrideBlendCurve;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function CharacterInteractionV3.ScenarioStandardLittleGame.GameInput
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -713,6 +1175,25 @@ void UScenarioStandardLittleGame::GameInput(const struct FLittleGameInputEvent& 
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.ScenarioStandardLittleGame.InitTineLine
+// (Final, Native, Public)
+
+void UScenarioStandardLittleGame::InitTineLine()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScenarioStandardLittleGame", "InitTineLine");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -829,6 +1310,25 @@ void UScenarioStandardLittleGame::OnInitCameraSequenceFinished()
 		Func = Class->GetFunction("ScenarioStandardLittleGame", "OnInitCameraSequenceFinished");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function CharacterInteractionV3.ScenarioStandardLittleGame.OnInitShowElementFinish
+// (Native, Event, Public, BlueprintEvent)
+
+void UScenarioStandardLittleGame::OnInitShowElementFinish()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScenarioStandardLittleGame", "OnInitShowElementFinish");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -984,6 +1484,75 @@ void UScenarioStandardLittleGame::OnMoveRight(float InValue)
 	Parms.InValue = InValue;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function CharacterInteractionV3.ScenarioStandardLittleGame.OnTimelineFinished
+// (Final, Native, Public)
+
+void UScenarioStandardLittleGame::OnTimelineFinished()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScenarioStandardLittleGame", "OnTimelineFinished");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.ScenarioStandardLittleGame.PerformerPhysicsBlendOut
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCurveFloat*                      OverrideBlendCurve                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UScenarioStandardLittleGame::PerformerPhysicsBlendOut(class UCurveFloat* OverrideBlendCurve)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScenarioStandardLittleGame", "PerformerPhysicsBlendOut");
+
+	Params::ScenarioStandardLittleGame_PerformerPhysicsBlendOut Parms{};
+
+	Parms.OverrideBlendCurve = OverrideBlendCurve;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.ScenarioStandardLittleGame.PhysicsBlendOut
+// (Final, Native, Public)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UScenarioStandardLittleGame::PhysicsBlendOut(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScenarioStandardLittleGame", "PhysicsBlendOut");
+
+	Params::ScenarioStandardLittleGame_PhysicsBlendOut Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -1750,6 +2319,28 @@ void AInteractionActorV3::BindOperateActEvent(const class FString& ActorOperateA
 }
 
 
+// Function CharacterInteractionV3.InteractionActorV3.OnOperateBlendOut
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const class FString&                    ActorOperateActName                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UActorOperateAct*                 ActorOperateAct                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AInteractionActorV3::OnOperateBlendOut(const class FString& ActorOperateActName, class UActorOperateAct* ActorOperateAct)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionActorV3", "OnOperateBlendOut");
+
+	Params::InteractionActorV3_OnOperateBlendOut Parms{};
+
+	Parms.ActorOperateActName = std::move(ActorOperateActName);
+	Parms.ActorOperateAct = ActorOperateAct;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function CharacterInteractionV3.InteractionActorV3.OnOperateEnd
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -1979,6 +2570,31 @@ void AInteractionActorV3::UnbindOperateActEvent(const class FString& ActorOperat
 }
 
 
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.ClearConditionComplete
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionArchivementComponentV3::ClearConditionComplete(int32 InId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionArchivementComponentV3", "ClearConditionComplete");
+
+	Params::InteractionArchivementComponentV3_ClearConditionComplete Parms{};
+
+	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function CharacterInteractionV3.InteractionArchivementComponentV3.PlayArchivement
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -1994,6 +2610,31 @@ void UInteractionArchivementComponentV3::PlayArchivement(int32 InId)
 	Params::InteractionArchivementComponentV3_PlayArchivement Parms{};
 
 	Parms.InId = InId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionArchivementComponentV3.RefreshArchivements
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bAllowRevoke                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionArchivementComponentV3::RefreshArchivements(bool bAllowRevoke)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionArchivementComponentV3", "RefreshArchivements");
+
+	Params::InteractionArchivementComponentV3_RefreshArchivements Parms{};
+
+	Parms.bAllowRevoke = bAllowRevoke;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2260,6 +2901,31 @@ void AInteractionCameraActor::ActiveCamera()
 }
 
 
+// Function CharacterInteractionV3.InteractionCameraActor.ActiveCameraByStandbyID
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             ID                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AInteractionCameraActor::ActiveCameraByStandbyID(class FName ID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionCameraActor", "ActiveCameraByStandbyID");
+
+	Params::InteractionCameraActor_ActiveCameraByStandbyID Parms{};
+
+	Parms.ID = ID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function CharacterInteractionV3.InteractionCameraActor.GetAdditivePitchAndYaw
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -2340,6 +3006,50 @@ void AInteractionCameraActor::SetStandbyConfig(class FName ID)
 }
 
 
+// Function CharacterInteractionV3.InteractionCameraActor.SwitchToFixedCamera
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InCameraName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AInteractionCameraActor::SwitchToFixedCamera(class FName InCameraName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionCameraActor", "SwitchToFixedCamera");
+
+	Params::InteractionCameraActor_SwitchToFixedCamera Parms{};
+
+	Parms.InCameraName = InCameraName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionCameraActor.SwitchToFreeCamera
+// (Final, Native, Public, BlueprintCallable)
+
+void AInteractionCameraActor::SwitchToFreeCamera()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionCameraActor", "SwitchToFreeCamera");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function CharacterInteractionV3.InteractionCameraActor.ToggleDebugCameraModifierInfo
 // (Final, Native, Public, BlueprintCallable)
 
@@ -2409,6 +3119,83 @@ void UInteractionCameraInstance::AddInput(const struct FVector2D& Value)
 }
 
 
+// Function CharacterInteractionV3.InteractionCameraInstance.DisableInput
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bDisable                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EInteractionCameraDisableInputType      InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionCameraInstance::DisableInput(bool bDisable, EInteractionCameraDisableInputType InType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionCameraInstance", "DisableInput");
+
+	Params::InteractionCameraInstance_DisableInput Parms{};
+
+	Parms.bDisable = bDisable;
+	Parms.InType = InType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionCameraInstance.SetLevelSequence
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSoftObjectPtr<class ULevelSequence>    LevelSequence                                          (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionCameraInstance::SetLevelSequence(TSoftObjectPtr<class ULevelSequence> LevelSequence)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionCameraInstance", "SetLevelSequence");
+
+	Params::InteractionCameraInstance_SetLevelSequence Parms{};
+
+	Parms.LevelSequence = LevelSequence;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionCameraInstance.SetLevelSequenceInputCut
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Times                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionCameraInstance::SetLevelSequenceInputCut(float Times)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionCameraInstance", "SetLevelSequenceInputCut");
+
+	Params::InteractionCameraInstance_SetLevelSequenceInputCut Parms{};
+
+	Parms.Times = Times;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function CharacterInteractionV3.InteractionCameraInstance.SetOperateConfig
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -2449,6 +3236,100 @@ void UInteractionCameraInstance::SetStandbyConfig(class FName ID)
 	Params::InteractionCameraInstance_SetStandbyConfig Parms{};
 
 	Parms.ID = ID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionCameraInstance.SwitchToFixedCamera
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InCameraName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionCameraInstance::SwitchToFixedCamera(class FName InCameraName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionCameraInstance", "SwitchToFixedCamera");
+
+	Params::InteractionCameraInstance_SwitchToFixedCamera Parms{};
+
+	Parms.InCameraName = InCameraName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionCameraInstance.SwitchToFreeCamera
+// (Final, Native, Public, BlueprintCallable)
+
+void UInteractionCameraInstance::SwitchToFreeCamera()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionCameraInstance", "SwitchToFreeCamera");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionCameraInstance.IsInputDisabled
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInteractionCameraInstance::IsInputDisabled() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionCameraInstance", "IsInputDisabled");
+
+	Params::InteractionCameraInstance_IsInputDisabled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionSkeletalActorV3.StartPhysicsBlendOut
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InTime                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AInteractionSkeletalActorV3::StartPhysicsBlendOut(float InTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionSkeletalActorV3", "StartPhysicsBlendOut");
+
+	Params::InteractionSkeletalActorV3_StartPhysicsBlendOut Parms{};
+
+	Parms.InTime = InTime;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2531,6 +3412,31 @@ void AInteractionCharacterV3::OnLipSyncDataReady()
 }
 
 
+// Function CharacterInteractionV3.InteractionCharacterV3.SetAllowEyesFollow
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AInteractionCharacterV3::SetAllowEyesFollow(bool bNewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionCharacterV3", "SetAllowEyesFollow");
+
+	Params::InteractionCharacterV3_SetAllowEyesFollow Parms{};
+
+	Parms.bNewValue = bNewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function CharacterInteractionV3.InteractionCharacterV3.SetKawaiiBlendScale
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -2572,6 +3478,31 @@ void AInteractionCharacterV3::StartKawaiiBlend()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionCharacterV3.GetAllowEyesFollow
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AInteractionCharacterV3::GetAllowEyesFollow() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionCharacterV3", "GetAllowEyesFollow");
+
+	Params::InteractionCharacterV3_GetAllowEyesFollow Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -2884,6 +3815,31 @@ TArray<struct FShowElementsAnim> AInteractionDirectorV3::PlayScenarioShowElement
 }
 
 
+// Function CharacterInteractionV3.InteractionDirectorV3.PreloadShowElements
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const class FName&                      ScName                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AInteractionDirectorV3::PreloadShowElements(const class FName& ScName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionDirectorV3", "PreloadShowElements");
+
+	Params::InteractionDirectorV3_PreloadShowElements Parms{};
+
+	Parms.ScName = ScName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function CharacterInteractionV3.InteractionDirectorV3.QuitScenarioShowElement
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -3021,6 +3977,31 @@ void AInteractionDirectorV3::ToggleDebugOperateCollision()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionDirectorV3.GetActiveStateMachine
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UScenarioStateMachine*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UScenarioStateMachine* AInteractionDirectorV3::GetActiveStateMachine() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionDirectorV3", "GetActiveStateMachine");
+
+	Params::InteractionDirectorV3_GetActiveStateMachine Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -3620,6 +4601,75 @@ int32 UInteractionInputComponent::AddMouseButtonEvent(bool bDown, TDelegate<void
 }
 
 
+// Function CharacterInteractionV3.InteractionInputComponent.DisableGamepadAxisInput
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// int32                                   InAxisNum                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionInputComponent::DisableGamepadAxisInput(int32 InAxisNum)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionInputComponent", "DisableGamepadAxisInput");
+
+	Params::InteractionInputComponent_DisableGamepadAxisInput Parms{};
+
+	Parms.InAxisNum = InAxisNum;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionInputComponent.EnableGamepadAllAxisInput
+// (Final, Native, Protected, BlueprintCallable)
+
+void UInteractionInputComponent::EnableGamepadAllAxisInput()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionInputComponent", "EnableGamepadAllAxisInput");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionInputComponent.EnableGamepadAxisInput
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// int32                                   InAxisNum                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionInputComponent::EnableGamepadAxisInput(int32 InAxisNum)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionInputComponent", "EnableGamepadAxisInput");
+
+	Params::InteractionInputComponent_EnableGamepadAxisInput Parms{};
+
+	Parms.InAxisNum = InAxisNum;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function CharacterInteractionV3.InteractionInputComponent.HandleMouseButtonEvent
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -3751,6 +4801,56 @@ void UInteractionInputComponent::LookUp(float InValue)
 		Func = Class->GetFunction("InteractionInputComponent", "LookUp");
 
 	Params::InteractionInputComponent_LookUp Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionInputComponent.ManualMoveForward
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionInputComponent::ManualMoveForward(float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionInputComponent", "ManualMoveForward");
+
+	Params::InteractionInputComponent_ManualMoveForward Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionInputComponent.ManualMoveRight
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionInputComponent::ManualMoveRight(float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionInputComponent", "ManualMoveRight");
+
+	Params::InteractionInputComponent_ManualMoveRight Parms{};
 
 	Parms.InValue = InValue;
 
@@ -4206,6 +5306,34 @@ bool UInteractionInputComponent::IsBlockInteractionOperate() const
 }
 
 
+// Function CharacterInteractionV3.InteractionInputComponent.IsGamepadAxisInputEnabled
+// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InAxisNum                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInteractionInputComponent::IsGamepadAxisInputEnabled(int32 InAxisNum) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionInputComponent", "IsGamepadAxisInputEnabled");
+
+	Params::InteractionInputComponent_IsGamepadAxisInputEnabled Parms{};
+
+	Parms.InAxisNum = InAxisNum;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function CharacterInteractionV3.InteractionInputComponent.IsListeningForInputAction
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -4582,6 +5710,34 @@ class UDataTable* AInteractionPlayV3::GetSceneActorHideComConfig()
 }
 
 
+// Function CharacterInteractionV3.InteractionPlayV3.LoadShowElementsInName
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FName&                      ScenarioName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AInteractionPlayV3::LoadShowElementsInName(const class FName& ScenarioName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionPlayV3", "LoadShowElementsInName");
+
+	Params::InteractionPlayV3_LoadShowElementsInName Parms{};
+
+	Parms.ScenarioName = ScenarioName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function CharacterInteractionV3.InteractionPlayV3.Start
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -4700,6 +5856,34 @@ class AInteractionDirectorV3* AInteractionPlayV3::GetInteractionDirector() const
 		Func = Class->GetFunction("InteractionPlayV3", "GetInteractionDirector");
 
 	Params::InteractionPlayV3_GetInteractionDirector Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionPlayV3.GetPrefixFromName
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class FName&                      InName                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FName AInteractionPlayV3::GetPrefixFromName(const class FName& InName) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionPlayV3", "GetPrefixFromName");
+
+	Params::InteractionPlayV3_GetPrefixFromName Parms{};
+
+	Parms.InName = InName;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5017,19 +6201,38 @@ void UInteractionV3CharacterAnimInstance::StopLastFrameAnim()
 }
 
 
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.GetEyeBlend
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UBlendSpace*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function CharacterInteractionV3.InteractionV3Event.DoAction
+// (Native, Event, Public, BlueprintEvent)
 
-class UBlendSpace* UInteractionV3FaceAnimInstance::GetEyeBlend()
+void UInteractionV3Event::DoAction()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "GetEyeBlend");
+		Func = Class->GetFunction("InteractionV3Event", "DoAction");
 
-	Params::InteractionV3FaceAnimInstance_GetEyeBlend Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3Event.CanTrigger
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInteractionV3Event::CanTrigger() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionV3Event", "CanTrigger");
+
+	Params::InteractionV3Event_CanTrigger Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5042,25 +6245,19 @@ class UBlendSpace* UInteractionV3FaceAnimInstance::GetEyeBlend()
 }
 
 
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.PlayConfessionAnim
-// (Final, Native, Public, BlueprintCallable)
+// Function CharacterInteractionV3.InteractionV3Event_Achievement.GetArchivementComponentV3
+// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UAnimSequence*                    InConfessionAnim                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InBlendInTime                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InBlendOutTime                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UInteractionArchivementComponentV3*ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UInteractionV3FaceAnimInstance::PlayConfessionAnim(class UAnimSequence* InConfessionAnim, float InBlendInTime, float InBlendOutTime)
+class UInteractionArchivementComponentV3* UInteractionV3Event_Achievement::GetArchivementComponentV3() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "PlayConfessionAnim");
+		Func = Class->GetFunction("InteractionV3Event_Achievement", "GetArchivementComponentV3");
 
-	Params::InteractionV3FaceAnimInstance_PlayConfessionAnim Parms{};
-
-	Parms.InConfessionAnim = InConfessionAnim;
-	Parms.InBlendInTime = InBlendInTime;
-	Parms.InBlendOutTime = InBlendOutTime;
+	Params::InteractionV3Event_Achievement_GetArchivementComponentV3 Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5068,144 +6265,8 @@ void UInteractionV3FaceAnimInstance::PlayConfessionAnim(class UAnimSequence* InC
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
 
-
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.PlayLastFrameAnim
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UAnimSequence*                    InLastFrameAnim                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInteractionV3FaceAnimInstance::PlayLastFrameAnim(class UAnimSequence* InLastFrameAnim)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "PlayLastFrameAnim");
-
-	Params::InteractionV3FaceAnimInstance_PlayLastFrameAnim Parms{};
-
-	Parms.InLastFrameAnim = InLastFrameAnim;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.SetEyeBlend
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UBlendSpace*                      NewBlend                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInteractionV3FaceAnimInstance::SetEyeBlend(class UBlendSpace* NewBlend)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "SetEyeBlend");
-
-	Params::InteractionV3FaceAnimInstance_SetEyeBlend Parms{};
-
-	Parms.NewBlend = NewBlend;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.SetFaceIdleAnim
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UAnimSequence*                    InAnimSequence                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInteractionV3FaceAnimInstance::SetFaceIdleAnim(class UAnimSequence* InAnimSequence)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "SetFaceIdleAnim");
-
-	Params::InteractionV3FaceAnimInstance_SetFaceIdleAnim Parms{};
-
-	Parms.InAnimSequence = InAnimSequence;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.SetMouseFollowEyeOffset
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector2D&                 InMouseFollowEyeOffset                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInteractionV3FaceAnimInstance::SetMouseFollowEyeOffset(const struct FVector2D& InMouseFollowEyeOffset)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "SetMouseFollowEyeOffset");
-
-	Params::InteractionV3FaceAnimInstance_SetMouseFollowEyeOffset Parms{};
-
-	Parms.InMouseFollowEyeOffset = std::move(InMouseFollowEyeOffset);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.StopConfessionAnim
-// (Final, Native, Public, BlueprintCallable)
-
-void UInteractionV3FaceAnimInstance::StopConfessionAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "StopConfessionAnim");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3FaceAnimInstance.StopLastFrameAnim
-// (Final, Native, Public, BlueprintCallable)
-
-void UInteractionV3FaceAnimInstance::StopLastFrameAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionV3FaceAnimInstance", "StopLastFrameAnim");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
+	return Parms.ReturnValue;
 }
 
 
@@ -5265,6 +6326,35 @@ struct FVector UInteractionV3FunctionLibrary::CalculateBezierPoint(float T, cons
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3FunctionLibrary.ClearAchievementConditionComplete
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ConditionID                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bRefresh                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAllowRevoke                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionV3FunctionLibrary::ClearAchievementConditionComplete(int32 ConditionID, bool bRefresh, bool bAllowRevoke)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3FunctionLibrary", "ClearAchievementConditionComplete");
+
+	Params::InteractionV3FunctionLibrary_ClearAchievementConditionComplete Parms{};
+
+	Parms.ConditionID = ConditionID;
+	Parms.bRefresh = bRefresh;
+	Parms.bAllowRevoke = bAllowRevoke;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -5568,6 +6658,85 @@ void UInteractionV3FunctionLibrary::LockCameraBlendOutChange(const class UObject
 }
 
 
+// Function CharacterInteractionV3.InteractionV3FunctionLibrary.RefreshAchievements
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bAllowRevoke                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionV3FunctionLibrary::RefreshAchievements(bool bAllowRevoke)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3FunctionLibrary", "RefreshAchievements");
+
+	Params::InteractionV3FunctionLibrary_RefreshAchievements Parms{};
+
+	Parms.bAllowRevoke = bAllowRevoke;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3FunctionLibrary.SetAchievementConditionComplete
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ConditionID                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bRefresh                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionV3FunctionLibrary::SetAchievementConditionComplete(int32 ConditionID, bool bRefresh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3FunctionLibrary", "SetAchievementConditionComplete");
+
+	Params::InteractionV3FunctionLibrary_SetAchievementConditionComplete Parms{};
+
+	Parms.ConditionID = ConditionID;
+	Parms.bRefresh = bRefresh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3FunctionLibrary.SetActorHiddenByName
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FName                             ActorName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bHidden                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionV3FunctionLibrary::SetActorHiddenByName(class FName ActorName, bool bHidden)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3FunctionLibrary", "SetActorHiddenByName");
+
+	Params::InteractionV3FunctionLibrary_SetActorHiddenByName Parms{};
+
+	Parms.ActorName = ActorName;
+	Parms.bHidden = bHidden;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function CharacterInteractionV3.InteractionV3FunctionLibrary.SetActorHiddenInGame
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -5713,22 +6882,21 @@ struct FVector UInteractionV3FunctionLibrary::SimpleVectorSpringInterp(const str
 }
 
 
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetCableLengthRuntime
+// Function CharacterInteractionV3.InteractionV3FunctionLibrary.TryPlayAchievement
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   AchievementID                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UInteractionV3CableFunctionLibrary::GetCableLengthRuntime(const TArray<struct FVector>& CablePoints)
+void UInteractionV3FunctionLibrary::TryPlayAchievement(int32 AchievementID)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetCableLengthRuntime");
+		Func = StaticClass()->GetFunction("InteractionV3FunctionLibrary", "TryPlayAchievement");
 
-	Params::InteractionV3CableFunctionLibrary_GetCableLengthRuntime Parms{};
+	Params::InteractionV3FunctionLibrary_TryPlayAchievement Parms{};
 
-	Parms.CablePoints = std::move(CablePoints);
+	Parms.AchievementID = AchievementID;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5736,262 +6904,6 @@ float UInteractionV3CableFunctionLibrary::GetCableLengthRuntime(const TArray<str
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetCableLengthRuntimeAtIndex
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UInteractionV3CableFunctionLibrary::GetCableLengthRuntimeAtIndex(const TArray<struct FVector>& CablePoints, int32 Index_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetCableLengthRuntimeAtIndex");
-
-	Params::InteractionV3CableFunctionLibrary_GetCableLengthRuntimeAtIndex Parms{};
-
-	Parms.CablePoints = std::move(CablePoints);
-	Parms.Index_0 = Index_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetCablePoints
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const class UCableComponent*            CableComponent                                         (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TArray<struct FVector>&           AdditionalPoints                                       (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// bool                                    bToEnd                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<struct FVector> UInteractionV3CableFunctionLibrary::GetCablePoints(const class UCableComponent* CableComponent, const TArray<struct FVector>& AdditionalPoints, bool bToEnd)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetCablePoints");
-
-	Params::InteractionV3CableFunctionLibrary_GetCablePoints Parms{};
-
-	Parms.CableComponent = CableComponent;
-	Parms.AdditionalPoints = std::move(AdditionalPoints);
-	Parms.bToEnd = bToEnd;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetLocationOnCableByPercentage
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// float                                   _percentage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector UInteractionV3CableFunctionLibrary::GetLocationOnCableByPercentage(const TArray<struct FVector>& CablePoints, float _percentage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetLocationOnCableByPercentage");
-
-	Params::InteractionV3CableFunctionLibrary_GetLocationOnCableByPercentage Parms{};
-
-	Parms.CablePoints = std::move(CablePoints);
-	Parms._percentage = _percentage;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetLowestLocationIndexOnCable
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UInteractionV3CableFunctionLibrary::GetLowestLocationIndexOnCable(const TArray<struct FVector>& CablePoints)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetLowestLocationIndexOnCable");
-
-	Params::InteractionV3CableFunctionLibrary_GetLowestLocationIndexOnCable Parms{};
-
-	Parms.CablePoints = std::move(CablePoints);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetLowestLocationOnCable
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector UInteractionV3CableFunctionLibrary::GetLowestLocationOnCable(const TArray<struct FVector>& CablePoints)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetLowestLocationOnCable");
-
-	Params::InteractionV3CableFunctionLibrary_GetLowestLocationOnCable Parms{};
-
-	Parms.CablePoints = std::move(CablePoints);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetPercentageByParticleIndex
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// int32                                   _Index                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UInteractionV3CableFunctionLibrary::GetPercentageByParticleIndex(const TArray<struct FVector>& CablePoints, int32 _Index)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetPercentageByParticleIndex");
-
-	Params::InteractionV3CableFunctionLibrary_GetPercentageByParticleIndex Parms{};
-
-	Parms.CablePoints = std::move(CablePoints);
-	Parms._Index = _Index;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.GetSideLocationOnCableByPercentage
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// float                                   _percentage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<struct FVector> UInteractionV3CableFunctionLibrary::GetSideLocationOnCableByPercentage(const TArray<struct FVector>& CablePoints, float _percentage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "GetSideLocationOnCableByPercentage");
-
-	Params::InteractionV3CableFunctionLibrary_GetSideLocationOnCableByPercentage Parms{};
-
-	Parms.CablePoints = std::move(CablePoints);
-	Parms._percentage = _percentage;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CharacterInteractionV3.InteractionV3CableFunctionLibrary.SpringInterpFloat
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   _Target                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   _Current                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float*                                  _Velocity                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TArray<struct FVector>&           CablePoints                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// float                                   _Stiffness                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   _Damping                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   _VelocityClamp                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   _HeightScale                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UInteractionV3CableFunctionLibrary::SpringInterpFloat(float DeltaTime, float _Target, float _Current, float* _Velocity, const TArray<struct FVector>& CablePoints, float _Stiffness, float _Damping, float _VelocityClamp, float _HeightScale)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("InteractionV3CableFunctionLibrary", "SpringInterpFloat");
-
-	Params::InteractionV3CableFunctionLibrary_SpringInterpFloat Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-	Parms._Target = _Target;
-	Parms._Current = _Current;
-	Parms.CablePoints = std::move(CablePoints);
-	Parms._Stiffness = _Stiffness;
-	Parms._Damping = _Damping;
-	Parms._VelocityClamp = _VelocityClamp;
-	Parms._HeightScale = _HeightScale;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (_Velocity != nullptr)
-		*_Velocity = Parms._Velocity;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -6170,6 +7082,34 @@ bool UInteractionV3Lib::HasInteractionStringStat(const class FString& StatName)
 	Params::InteractionV3Lib_HasInteractionStringStat Parms{};
 
 	Parms.StatName = std::move(StatName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.InteractionV3Lib.IsComponentInFrustum
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UPrimitiveComponent*              Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInteractionV3Lib::IsComponentInFrustum(class UPrimitiveComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InteractionV3Lib", "IsComponentInFrustum");
+
+	Params::InteractionV3Lib_IsComponentInFrustum Parms{};
+
+	Parms.Component = Component;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8773,6 +9713,31 @@ void UScenarioStateNode::RemoveFromExecutableOperates(const TArray<class UIntera
 }
 
 
+// Function CharacterInteractionV3.ScenarioStateNode.SetIgnoreCameraFix
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bIgnore                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UScenarioStateNode::SetIgnoreCameraFix(bool bIgnore)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScenarioStateNode", "SetIgnoreCameraFix");
+
+	Params::ScenarioStateNode_SetIgnoreCameraFix Parms{};
+
+	Parms.bIgnore = bIgnore;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function CharacterInteractionV3.ScenarioStateNode.SetNodeInnerState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -9408,6 +10373,25 @@ class UScenarioStandardLittleGame* UScenarioStateNode_LittleGame::GetLittleGameI
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function CharacterInteractionV3.ScenarioStateNode_LittleGameEntry.OnInitShowElementFinish
+// (Final, Native, Public)
+
+void UScenarioStateNode_LittleGameEntry::OnInitShowElementFinish()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScenarioStateNode_LittleGameEntry", "OnInitShowElementFinish");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
