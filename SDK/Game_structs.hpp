@@ -5496,7 +5496,7 @@ enum class ESearchSettingType : uint8
 
 // Enum Game.EBulletType
 // NumValues: 0x0004
-enum class Game::EBulletTypes : uint8
+enum class EBulletTypes : uint8
 {
 	Bullet                                   = 0,
 	BulletScreenEditor                       = 1,
