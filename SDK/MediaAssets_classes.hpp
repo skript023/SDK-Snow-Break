@@ -21,6 +21,229 @@
 namespace SDK
 {
 
+// Class MediaAssets.MediaSource
+// 0x0058 (0x0080 - 0x0028)
+class UMediaSource : public UObject
+{
+public:
+	uint8                                         Pad_28[0x58];                                      // 0x0028(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetMediaOptionBool(const class FName& Key, bool Value);
+	void SetMediaOptionFloat(const class FName& Key, float Value);
+	void SetMediaOptionInt64(const class FName& Key, int64 Value);
+	void SetMediaOptionString(const class FName& Key, const class FString& Value);
+
+	class FString GetUrl() const;
+	bool Validate() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MediaSource")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MediaSource")
+	}
+	static class UMediaSource* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMediaSource>();
+	}
+};
+DUMPER7_ASSERTS_UMediaSource;
+
+// Class MediaAssets.MediaPlaylist
+// 0x0010 (0x0038 - 0x0028)
+class UMediaPlaylist final : public UObject
+{
+public:
+	TArray<class UMediaSource*>                   Items;                                             // 0x0028(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+
+public:
+	bool Add(class UMediaSource* MediaSource);
+	bool AddFile(const class FString& FilePath);
+	bool AddUrl(const class FString& URL);
+	class UMediaSource* Get(int32 Index_0);
+	class UMediaSource* GetNext(int32* InOutIndex);
+	class UMediaSource* GetPrevious(int32* InOutIndex);
+	class UMediaSource* GetRandom(int32* OutIndex);
+	void Insert(class UMediaSource* MediaSource, int32 Index_0);
+	int32 Num();
+	bool Remove(class UMediaSource* MediaSource);
+	bool RemoveAt(int32 Index_0);
+	bool Replace(int32 Index_0, class UMediaSource* Replacement);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MediaPlaylist")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MediaPlaylist")
+	}
+	static class UMediaPlaylist* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMediaPlaylist>();
+	}
+};
+DUMPER7_ASSERTS_UMediaPlaylist;
+
+// Class MediaAssets.MediaComponent
+// 0x0010 (0x00C0 - 0x00B0)
+class UMediaComponent final : public UActorComponent
+{
+public:
+	class UMediaTexture*                          MediaTexture;                                      // 0x00B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMediaPlayer*                           MediaPlayer;                                       // 0x00B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, Interp, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	class UMediaPlayer* GetMediaPlayer() const;
+	class UMediaTexture* GetMediaTexture() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MediaComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MediaComponent")
+	}
+	static class UMediaComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMediaComponent>();
+	}
+};
+DUMPER7_ASSERTS_UMediaComponent;
+
+// Class MediaAssets.BaseMediaSource
+// 0x0008 (0x0088 - 0x0080)
+class UBaseMediaSource : public UMediaSource
+{
+public:
+	class FName                                   PlayerName;                                        // 0x0080(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BaseMediaSource")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BaseMediaSource")
+	}
+	static class UBaseMediaSource* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBaseMediaSource>();
+	}
+};
+DUMPER7_ASSERTS_UBaseMediaSource;
+
+// Class MediaAssets.TimeSynchronizableMediaSource
+// 0x0010 (0x0098 - 0x0088)
+class UTimeSynchronizableMediaSource final : public UBaseMediaSource
+{
+public:
+	bool                                          bUseTimeSynchronization;                           // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_89[0x3];                                       // 0x0089(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         FrameDelay;                                        // 0x008C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        TimeDelay;                                         // 0x0090(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("TimeSynchronizableMediaSource")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TimeSynchronizableMediaSource")
+	}
+	static class UTimeSynchronizableMediaSource* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UTimeSynchronizableMediaSource>();
+	}
+};
+DUMPER7_ASSERTS_UTimeSynchronizableMediaSource;
+
+// Class MediaAssets.FileMediaSource
+// 0x0028 (0x00B0 - 0x0088)
+class UFileMediaSource final : public UBaseMediaSource
+{
+public:
+	class FString                                 FilePath;                                          // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          PrecacheFile;                                      // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_99[0x17];                                      // 0x0099(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetFilePath(const class FString& Path);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("FileMediaSource")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"FileMediaSource")
+	}
+	static class UFileMediaSource* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UFileMediaSource>();
+	}
+};
+DUMPER7_ASSERTS_UFileMediaSource;
+
+// Class MediaAssets.MediaBlueprintFunctionLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UMediaBlueprintFunctionLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static void EnumerateAudioCaptureDevices(TArray<struct FMediaCaptureDevice>* OutDevices, int32 Filter);
+	static void EnumerateVideoCaptureDevices(TArray<struct FMediaCaptureDevice>* OutDevices, int32 Filter);
+	static void EnumerateWebcamCaptureDevices(TArray<struct FMediaCaptureDevice>* OutDevices, int32 Filter);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MediaBlueprintFunctionLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MediaBlueprintFunctionLibrary")
+	}
+	static class UMediaBlueprintFunctionLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMediaBlueprintFunctionLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UMediaBlueprintFunctionLibrary;
+
+// Class MediaAssets.MediaTimeStampInfo
+// 0x0010 (0x0038 - 0x0028)
+class UMediaTimeStampInfo final : public UObject
+{
+public:
+	struct FTimespan                              Time;                                              // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         SequenceIndex;                                     // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MediaTimeStampInfo")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MediaTimeStampInfo")
+	}
+	static class UMediaTimeStampInfo* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMediaTimeStampInfo>();
+	}
+};
+DUMPER7_ASSERTS_UMediaTimeStampInfo;
+
 // Class MediaAssets.MediaPlayer
 // 0x0110 (0x0138 - 0x0028)
 class UMediaPlayer final : public UObject
@@ -144,203 +367,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMediaPlayer;
-
-// Class MediaAssets.MediaSource
-// 0x0058 (0x0080 - 0x0028)
-class UMediaSource : public UObject
-{
-public:
-	uint8                                         Pad_28[0x58];                                      // 0x0028(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetMediaOptionBool(const class FName& Key, bool Value);
-	void SetMediaOptionFloat(const class FName& Key, float Value);
-	void SetMediaOptionInt64(const class FName& Key, int64 Value);
-	void SetMediaOptionString(const class FName& Key, const class FString& Value);
-
-	class FString GetUrl() const;
-	bool Validate() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MediaSource")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MediaSource")
-	}
-	static class UMediaSource* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMediaSource>();
-	}
-};
-DUMPER7_ASSERTS_UMediaSource;
-
-// Class MediaAssets.MediaPlaylist
-// 0x0010 (0x0038 - 0x0028)
-class UMediaPlaylist final : public UObject
-{
-public:
-	TArray<class UMediaSource*>                   Items;                                             // 0x0028(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-
-public:
-	bool Add(class UMediaSource* MediaSource);
-	bool AddFile(const class FString& FilePath);
-	bool AddUrl(const class FString& URL);
-	class UMediaSource* Get(int32 Index_0);
-	class UMediaSource* GetNext(int32* InOutIndex);
-	class UMediaSource* GetPrevious(int32* InOutIndex);
-	class UMediaSource* GetRandom(int32* OutIndex);
-	void Insert(class UMediaSource* MediaSource, int32 Index_0);
-	int32 Num();
-	bool Remove(class UMediaSource* MediaSource);
-	bool RemoveAt(int32 Index_0);
-	bool Replace(int32 Index_0, class UMediaSource* Replacement);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MediaPlaylist")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MediaPlaylist")
-	}
-	static class UMediaPlaylist* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMediaPlaylist>();
-	}
-};
-DUMPER7_ASSERTS_UMediaPlaylist;
-
-// Class MediaAssets.BaseMediaSource
-// 0x0008 (0x0088 - 0x0080)
-class UBaseMediaSource : public UMediaSource
-{
-public:
-	class FName                                   PlayerName;                                        // 0x0080(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BaseMediaSource")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BaseMediaSource")
-	}
-	static class UBaseMediaSource* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBaseMediaSource>();
-	}
-};
-DUMPER7_ASSERTS_UBaseMediaSource;
-
-// Class MediaAssets.FileMediaSource
-// 0x0028 (0x00B0 - 0x0088)
-class UFileMediaSource final : public UBaseMediaSource
-{
-public:
-	class FString                                 FilePath;                                          // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          PrecacheFile;                                      // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_99[0x17];                                      // 0x0099(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetFilePath(const class FString& Path);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("FileMediaSource")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"FileMediaSource")
-	}
-	static class UFileMediaSource* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UFileMediaSource>();
-	}
-};
-DUMPER7_ASSERTS_UFileMediaSource;
-
-// Class MediaAssets.MediaBlueprintFunctionLibrary
-// 0x0000 (0x0028 - 0x0028)
-class UMediaBlueprintFunctionLibrary final : public UBlueprintFunctionLibrary
-{
-public:
-	static void EnumerateAudioCaptureDevices(TArray<struct FMediaCaptureDevice>* OutDevices, int32 Filter);
-	static void EnumerateVideoCaptureDevices(TArray<struct FMediaCaptureDevice>* OutDevices, int32 Filter);
-	static void EnumerateWebcamCaptureDevices(TArray<struct FMediaCaptureDevice>* OutDevices, int32 Filter);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MediaBlueprintFunctionLibrary")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MediaBlueprintFunctionLibrary")
-	}
-	static class UMediaBlueprintFunctionLibrary* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMediaBlueprintFunctionLibrary>();
-	}
-};
-DUMPER7_ASSERTS_UMediaBlueprintFunctionLibrary;
-
-// Class MediaAssets.MediaComponent
-// 0x0010 (0x00C0 - 0x00B0)
-class UMediaComponent final : public UActorComponent
-{
-public:
-	class UMediaTexture*                          MediaTexture;                                      // 0x00B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UMediaPlayer*                           MediaPlayer;                                       // 0x00B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, Interp, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	class UMediaPlayer* GetMediaPlayer() const;
-	class UMediaTexture* GetMediaTexture() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MediaComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MediaComponent")
-	}
-	static class UMediaComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMediaComponent>();
-	}
-};
-DUMPER7_ASSERTS_UMediaComponent;
-
-// Class MediaAssets.MediaTimeStampInfo
-// 0x0010 (0x0038 - 0x0028)
-class UMediaTimeStampInfo final : public UObject
-{
-public:
-	struct FTimespan                              Time;                                              // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int64                                         SequenceIndex;                                     // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MediaTimeStampInfo")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MediaTimeStampInfo")
-	}
-	static class UMediaTimeStampInfo* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMediaTimeStampInfo>();
-	}
-};
-DUMPER7_ASSERTS_UMediaTimeStampInfo;
 
 // Class MediaAssets.MediaSoundComponent
 // 0x0220 (0x08E0 - 0x06C0)
@@ -474,32 +500,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UStreamMediaSource;
-
-// Class MediaAssets.TimeSynchronizableMediaSource
-// 0x0010 (0x0098 - 0x0088)
-class UTimeSynchronizableMediaSource final : public UBaseMediaSource
-{
-public:
-	bool                                          bUseTimeSynchronization;                           // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_89[0x3];                                       // 0x0089(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         FrameDelay;                                        // 0x008C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        TimeDelay;                                         // 0x0090(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("TimeSynchronizableMediaSource")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"TimeSynchronizableMediaSource")
-	}
-	static class UTimeSynchronizableMediaSource* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UTimeSynchronizableMediaSource>();
-	}
-};
-DUMPER7_ASSERTS_UTimeSynchronizableMediaSource;
 
 }
 

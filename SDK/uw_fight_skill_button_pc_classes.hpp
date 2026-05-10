@@ -31,7 +31,7 @@ public:
 	class UWidgetAnimation*                       Sustain;                                           // 0x05F8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       ReduceCD;                                          // 0x0600(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Strong;                                            // 0x0608(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UWidgetAnimation*                       Oncd;                                              // 0x0610(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UWidgetAnimation*                       oncd;                                              // 0x0610(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       qta_cd;                                            // 0x0618(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       fight_cd;                                          // 0x0620(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UProgressBar*                           BarNoEnergy;                                       // 0x0628(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -129,11 +129,11 @@ public:
 	void OnUIEffectSkillLongPress(bool bStart);
 	void K2_OnCustomUmgAnimFinished__Overridden(const class FName& AnimName);
 	void ExecuteUbergraph_uw_fight_skill_button_pc(int32 EntryPoint);
-	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void OnSkillStrengthening(bool bStart);
 	void Construct();
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void K2_PlayCDAnim(bool bPlay);
+	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
 	void Destruct();
 
 	class FString GetModuleName() const;

@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_injured_subitem1.uw_fight_injured_subitem1_C.ExecuteUbergraph_uw_fight_injured_subitem1
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_injured_subitem1_C::ExecuteUbergraph_uw_fight_injured_subitem1(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_injured_subitem1_C", "ExecuteUbergraph_uw_fight_injured_subitem1");
-
-	Params::uw_fight_injured_subitem1_C_ExecuteUbergraph_uw_fight_injured_subitem1 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_injured_subitem1.uw_fight_injured_subitem1_C.K2_OnCustomUmgAnimFinished
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -52,6 +32,26 @@ void Uuw_fight_injured_subitem1_C::K2_OnCustomUmgAnimFinished(const class FName&
 	Params::uw_fight_injured_subitem1_C_K2_OnCustomUmgAnimFinished Parms{};
 
 	Parms.AnimName = AnimName;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_injured_subitem1.uw_fight_injured_subitem1_C.ExecuteUbergraph_uw_fight_injured_subitem1
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_injured_subitem1_C::ExecuteUbergraph_uw_fight_injured_subitem1(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_injured_subitem1_C", "ExecuteUbergraph_uw_fight_injured_subitem1");
+
+	Params::uw_fight_injured_subitem1_C_ExecuteUbergraph_uw_fight_injured_subitem1 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

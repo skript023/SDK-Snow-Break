@@ -34,6 +34,35 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_decorate_girl014a_C_GetMaxBulletCount;
 
+// Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.Play Anim
+// 0x0010 (0x0010 - 0x0000)
+struct uw_fight_decorate_girl014a_C_Play_Anim final
+{
+public:
+	class UWidgetAnimation*                       InAnim;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bLoop;                                             // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_decorate_girl014a_C_Play_Anim;
+
+// Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.ONVisibilityChange
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_decorate_girl014a_C_ONVisibilityChange final
+{
+public:
+	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_decorate_girl014a_C_ONVisibilityChange;
+
+// Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.K2_OnCustomUmgAnimFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_decorate_girl014a_C_K2_OnCustomUmgAnimFinished final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_decorate_girl014a_C_K2_OnCustomUmgAnimFinished;
+
 // Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.GetCurBulletCount
 // 0x0030 (0x0030 - 0x0000)
 struct uw_fight_decorate_girl014a_C_GetCurBulletCount final
@@ -56,26 +85,6 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_decorate_girl014a_C_GetCurBulletCount;
 
-// Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.Play Anim
-// 0x0010 (0x0010 - 0x0000)
-struct uw_fight_decorate_girl014a_C_Play_Anim final
-{
-public:
-	class UWidgetAnimation*                       InAnim;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bLoop;                                             // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_decorate_girl014a_C_Play_Anim;
-
-// Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.ONVisibilityChange
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_decorate_girl014a_C_ONVisibilityChange final
-{
-public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_decorate_girl014a_C_ONVisibilityChange;
-
 // Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.OnBulletChange
 // 0x000C (0x000C - 0x0000)
 struct uw_fight_decorate_girl014a_C_OnBulletChange final
@@ -86,15 +95,6 @@ public:
 	float                                         InPercent;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_decorate_girl014a_C_OnBulletChange;
-
-// Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_decorate_girl014a_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_decorate_girl014a_C_K2_OnCustomUmgAnimFinished;
 
 // Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.ExecuteUbergraph_uw_fight_decorate_girl014a
 // 0x0198 (0x0198 - 0x0000)

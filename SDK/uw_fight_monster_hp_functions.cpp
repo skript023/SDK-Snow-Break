@@ -17,21 +17,91 @@
 namespace SDK
 {
 
-// Function uw_fight_monster_hp.uw_fight_monster_hp_C.ExecuteUbergraph_uw_fight_monster_hp
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_monster_hp.uw_fight_monster_hp_C.PlayVisibiltyAnim
+// (Event, Public, BlueprintEvent)
 
-void Uuw_fight_monster_hp_C::ExecuteUbergraph_uw_fight_monster_hp(int32 EntryPoint)
+void Uuw_fight_monster_hp_C::PlayVisibiltyAnim()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_C", "ExecuteUbergraph_uw_fight_monster_hp");
+		Func = Class->GetFunction("uw_fight_monster_hp_C", "PlayVisibiltyAnim");
 
-	Params::uw_fight_monster_hp_C_ExecuteUbergraph_uw_fight_monster_hp Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function uw_fight_monster_hp.uw_fight_monster_hp_C.PlayDisappearAnim
+// (Event, Public, BlueprintEvent)
+
+void Uuw_fight_monster_hp_C::PlayDisappearAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_hp_C", "PlayDisappearAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_monster_hp.uw_fight_monster_hp_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_monster_hp_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_hp_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_monster_hp.uw_fight_monster_hp_C.PlayWhiteAnim
+// (Event, Public, BlueprintEvent)
+
+void Uuw_fight_monster_hp_C::PlayWhiteAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_hp_C", "PlayWhiteAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_monster_hp.uw_fight_monster_hp_C.DissappearFinish
+// (BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_monster_hp_C::DissappearFinish()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_hp_C", "DissappearFinish");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_monster_hp.uw_fight_monster_hp_C.UpdateImage
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const EFightMonsterTipsType             InTipsType                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_monster_hp_C::UpdateImage(const EFightMonsterTipsType InTipsType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_hp_C", "UpdateImage");
+
+	Params::uw_fight_monster_hp_C_UpdateImage Parms{};
+
+	Parms.InTipsType = InTipsType;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,122 +127,23 @@ void Uuw_fight_monster_hp_C::OnSetLocationAndVisibleOfHPBar(bool bVisible)
 }
 
 
-// Function uw_fight_monster_hp.uw_fight_monster_hp_C.UpdateImage
-// (Event, Public, BlueprintEvent)
+// Function uw_fight_monster_hp.uw_fight_monster_hp_C.ExecuteUbergraph_uw_fight_monster_hp
+// (Final, UbergraphFunction)
 // Parameters:
-// const EFightMonsterTipsType             InTipsType                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_monster_hp_C::UpdateImage(const EFightMonsterTipsType InTipsType)
+void Uuw_fight_monster_hp_C::ExecuteUbergraph_uw_fight_monster_hp(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_C", "UpdateImage");
+		Func = Class->GetFunction("uw_fight_monster_hp_C", "ExecuteUbergraph_uw_fight_monster_hp");
 
-	Params::uw_fight_monster_hp_C_UpdateImage Parms{};
+	Params::uw_fight_monster_hp_C_ExecuteUbergraph_uw_fight_monster_hp Parms{};
 
-	Parms.InTipsType = InTipsType;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_monster_hp.uw_fight_monster_hp_C.DissappearFinish
-// (BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_monster_hp_C::DissappearFinish()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_C", "DissappearFinish");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_monster_hp.uw_fight_monster_hp_C.PlayWhiteAnim
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_monster_hp_C::PlayWhiteAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_C", "PlayWhiteAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_monster_hp.uw_fight_monster_hp_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_monster_hp_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_monster_hp.uw_fight_monster_hp_C.PlayDisappearAnim
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_monster_hp_C::PlayDisappearAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_C", "PlayDisappearAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_monster_hp.uw_fight_monster_hp_C.PlayVisibiltyAnim
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_monster_hp_C::PlayVisibiltyAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_C", "PlayVisibiltyAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// LuaFunction uw_fight_monster_hp.uw_fight_monster_hp_C.K2_OnAppliedModifierChange
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   ModifierID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    IsApply                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// int64                                   InLauncherCharacterHashIndex                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_monster_hp_C::K2_OnAppliedModifierChange(int32 ModifierID, bool IsApply, int64 InLauncherCharacterHashIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_C", "K2_OnAppliedModifierChange");
-
-	Params::uw_fight_monster_hp_C_K2_OnAppliedModifierChange Parms{};
-
-	Parms.ModifierID = ModifierID;
-	Parms.IsApply = IsApply;
-	Parms.InLauncherCharacterHashIndex = InLauncherCharacterHashIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -209,6 +180,35 @@ void Uuw_fight_monster_hp_C::K2_OnReset()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_monster_hp.uw_fight_monster_hp_C.K2_OnAppliedModifierChange
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   ModifierID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    IsApply                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// int64                                   InLauncherCharacterHashIndex                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_monster_hp_C::K2_OnAppliedModifierChange(int32 ModifierID, bool IsApply, int64 InLauncherCharacterHashIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_hp_C", "K2_OnAppliedModifierChange");
+
+	Params::uw_fight_monster_hp_C_K2_OnAppliedModifierChange Parms{};
+
+	Parms.ModifierID = ModifierID;
+	Parms.IsApply = IsApply;
+	Parms.InLauncherCharacterHashIndex = InLauncherCharacterHashIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

@@ -80,15 +80,39 @@ public:
 };
 DUMPER7_ASSERTS_GEItemBait_SetRotationFromClient_RPC;
 
+// Function GameEx.GEItemBomb.HAS_StartMoveAlongParabola
+// 0x0048 (0x0048 - 0x0000)
+struct GEItemBomb_HAS_StartMoveAlongParabola final
+{
+public:
+	struct FGEItemClientInfo                      ClientInfo;                                        // 0x0000(0x0024)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int64                                         servertimeMilli;                                   // 0x0028(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                InForwardVec;                                      // 0x0030(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 InOwner;                                           // 0x0040(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEItemBomb_HAS_StartMoveAlongParabola;
+
+// Function GameEx.GEItemBomb.HAS_StartMoveAlongParabola_ServerCheck
+// 0x0024 (0x0024 - 0x0000)
+struct GEItemBomb_HAS_StartMoveAlongParabola_ServerCheck final
+{
+public:
+	struct FGEItemClientInfo                      ClientInfo;                                        // 0x0000(0x0024)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEItemBomb_HAS_StartMoveAlongParabola_ServerCheck;
+
 // Function GameEx.GEItemBomb.HAS_StartSplineMove
-// 0x0030 (0x0030 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct GEItemBomb_HAS_StartSplineMove final
 {
 public:
-	struct FGEItemClientInfo                      ClientInfo;                                        // 0x0000(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-	int64                                         servertimeMilli;                                   // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                InForwardVec;                                      // 0x0020(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGEItemClientInfo                      ClientInfo;                                        // 0x0000(0x0024)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int64                                         servertimeMilli;                                   // 0x0028(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                InForwardVec;                                      // 0x0030(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_GEItemBomb_HAS_StartSplineMove;
 
@@ -113,12 +137,13 @@ public:
 DUMPER7_ASSERTS_GEItemBomb_StartFreelyMove;
 
 // Function GameEx.GEItemBomb.StartSplineMove
-// 0x0020 (0x0020 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct GEItemBomb_StartSplineMove final
 {
 public:
-	struct FGEItemClientInfo                      ClientInfo;                                        // 0x0000(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-	int64                                         servertimeMilli;                                   // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGEItemClientInfo                      ClientInfo;                                        // 0x0000(0x0024)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int64                                         servertimeMilli;                                   // 0x0028(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GEItemBomb_StartSplineMove;
 
@@ -441,7 +466,7 @@ public:
 DUMPER7_ASSERTS_GEActorExComponent_SetUserID;
 
 // Function GameEx.GEItemLibrary.ApplyUseItem
-// 0x0028 (0x0028 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct GEItemLibrary_ApplyUseItem final
 {
 public:
@@ -449,7 +474,8 @@ public:
 	int32                                         InIndex;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          isAttachedItem;                                    // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGEItemClientInfo                      ItemInfo_Client;                                   // 0x0010(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGEItemClientInfo                      ItemInfo_Client;                                   // 0x0010(0x0024)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_GEItemLibrary_ApplyUseItem;
 
@@ -583,15 +609,15 @@ public:
 DUMPER7_ASSERTS_GEItemMgr_FreeItem;
 
 // Function GameEx.GEItemMgr.LuaImpl_ApplyUseItem
-// 0x0060 (0x0060 - 0x0000)
+// 0x0068 (0x0068 - 0x0000)
 struct GEItemMgr_LuaImpl_ApplyUseItem final
 {
 public:
 	class AGEGameCharacter*                       InCharacter;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGEItemInfo                            Info;                                              // 0x0008(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FGEItemClientInfo                      ItemClientInfo;                                    // 0x0040(0x0018)(ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0058(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGEItemClientInfo                      ItemClientInfo;                                    // 0x0040(0x0024)(ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0064(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_65[0x3];                                       // 0x0065(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_GEItemMgr_LuaImpl_ApplyUseItem;
 
@@ -810,15 +836,6 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_GEAIController_SetIntValue;
-
-// Function GameEx.GEAIController.SetProxyMoveDir
-// 0x000C (0x000C - 0x0000)
-struct GEAIController_SetProxyMoveDir final
-{
-public:
-	struct FVector                                InModifierDir;                                     // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GEAIController_SetProxyMoveDir;
 
 // Function GameEx.GEAIController.TriggerNotify
 // 0x0020 (0x0020 - 0x0000)
@@ -2081,6 +2098,15 @@ public:
 };
 DUMPER7_ASSERTS_GEGameCharacter_CheckIsReborning;
 
+// Function GameEx.GEGameCharacter.CheckIsSubtituteBasketBall
+// 0x0001 (0x0001 - 0x0000)
+struct GEGameCharacter_CheckIsSubtituteBasketBall final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEGameCharacter_CheckIsSubtituteBasketBall;
+
 // Function GameEx.GEGameCharacter.CheckMontageIsPlay
 // 0x000C (0x000C - 0x0000)
 struct GEGameCharacter_CheckMontageIsPlay final
@@ -2244,6 +2270,18 @@ public:
 	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GEGameCharacter_DestroyWeaponByIndex;
+
+// Function GameEx.GEGameCharacter.EnterDragItemAimMode
+// 0x000C (0x000C - 0x0000)
+struct GEGameCharacter_EnterDragItemAimMode final
+{
+public:
+	int32                                         InItemIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InItemId;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsInUIDrag;                                       // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_GEGameCharacter_EnterDragItemAimMode;
 
 // Function GameEx.GEGameCharacter.EnterWaterRamp
 // 0x0008 (0x0008 - 0x0000)
@@ -2676,6 +2714,24 @@ public:
 };
 DUMPER7_ASSERTS_GEGameCharacter_IsWalk;
 
+// Function GameEx.GEGameCharacter.LeaveDragItemAimMode
+// 0x0004 (0x0004 - 0x0000)
+struct GEGameCharacter_LeaveDragItemAimMode final
+{
+public:
+	int32                                         InItemIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEGameCharacter_LeaveDragItemAimMode;
+
+// Function GameEx.GEGameCharacter.LockJumpByBit
+// 0x0004 (0x0004 - 0x0000)
+struct GEGameCharacter_LockJumpByBit final
+{
+public:
+	int32                                         InBit;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEGameCharacter_LockJumpByBit;
+
 // Function GameEx.GEGameCharacter.LockMoveByBit
 // 0x0004 (0x0004 - 0x0000)
 struct GEGameCharacter_LockMoveByBit final
@@ -2926,6 +2982,15 @@ public:
 };
 DUMPER7_ASSERTS_GEGameCharacter_Multicast_ZBugChangeFireState;
 
+// Function GameEx.GEGameCharacter.Notify_DragModeEnterOrOut
+// 0x0001 (0x0001 - 0x0000)
+struct GEGameCharacter_Notify_DragModeEnterOrOut final
+{
+public:
+	bool                                          bEnter;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEGameCharacter_Notify_DragModeEnterOrOut;
+
 // Function GameEx.GEGameCharacter.NotifyAddBadge
 // 0x0008 (0x0008 - 0x0000)
 struct GEGameCharacter_NotifyAddBadge final
@@ -3078,6 +3143,17 @@ public:
 	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_GEGameCharacter_PlayMontageByName;
+
+// Function GameEx.GEGameCharacter.RefreshInductionNiagaraByDistance
+// 0x0008 (0x0008 - 0x0000)
+struct GEGameCharacter_RefreshInductionNiagaraByDistance final
+{
+public:
+	float                                         InDistance;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_GEGameCharacter_RefreshInductionNiagaraByDistance;
 
 // Function GameEx.GEGameCharacter.RemoveBait
 // 0x0008 (0x0008 - 0x0000)
@@ -3371,6 +3447,16 @@ public:
 };
 DUMPER7_ASSERTS_GEGameCharacter_SetTeamID;
 
+// Function GameEx.GEGameCharacter.SetUIDragInfo
+// 0x0008 (0x0008 - 0x0000)
+struct GEGameCharacter_SetUIDragInfo final
+{
+public:
+	float                                         InDeltaX;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InDeltaY;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEGameCharacter_SetUIDragInfo;
+
 // Function GameEx.GEGameCharacter.SetZBugSkillLevel
 // 0x0004 (0x0004 - 0x0000)
 struct GEGameCharacter_SetZBugSkillLevel final
@@ -3479,6 +3565,15 @@ public:
 };
 DUMPER7_ASSERTS_GEGameCharacter_Transport;
 
+// Function GameEx.GEGameCharacter.TryLeaveDragItemAimMode
+// 0x0004 (0x0004 - 0x0000)
+struct GEGameCharacter_TryLeaveDragItemAimMode final
+{
+public:
+	int32                                         InItemIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEGameCharacter_TryLeaveDragItemAimMode;
+
 // Function GameEx.GEGameCharacter.TryUseItem
 // 0x0008 (0x0008 - 0x0000)
 struct GEGameCharacter_TryUseItem final
@@ -3489,6 +3584,36 @@ public:
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_GEGameCharacter_TryUseItem;
+
+// Function GameEx.GEGameCharacter.TryUseItem1
+// 0x0004 (0x0004 - 0x0000)
+struct GEGameCharacter_TryUseItem1 final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEGameCharacter_TryUseItem1;
+
+// Function GameEx.GEGameCharacter.TryUseItem2
+// 0x0004 (0x0004 - 0x0000)
+struct GEGameCharacter_TryUseItem2 final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEGameCharacter_TryUseItem2;
+
+// Function GameEx.GEGameCharacter.TryUseItem_HASMode
+// 0x0008 (0x0008 - 0x0000)
+struct GEGameCharacter_TryUseItem_HASMode final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsRelease;                                        // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFromUI;                                           // 0x0005(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_GEGameCharacter_TryUseItem_HASMode;
 
 // Function GameEx.GEGameCharacter.TryUseItem_LuaImpl
 // 0x000C (0x000C - 0x0000)
@@ -3519,6 +3644,15 @@ public:
 	float                                         Rate;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GEGameCharacter_TurnAtRate;
+
+// Function GameEx.GEGameCharacter.UnLockJumpByBit
+// 0x0004 (0x0004 - 0x0000)
+struct GEGameCharacter_UnLockJumpByBit final
+{
+public:
+	int32                                         InBit;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEGameCharacter_UnLockJumpByBit;
 
 // Function GameEx.GEGameCharacter.UnLockMoveByBit
 // 0x0004 (0x0004 - 0x0000)
@@ -3901,6 +4035,18 @@ public:
 };
 DUMPER7_ASSERTS_GEGameHelper_GetMonstersInSphere;
 
+// Function GameEx.GEGameHelper.GetMultiRandomCharByTeamID
+// 0x0020 (0x0020 - 0x0000)
+struct GEGameHelper_GetMultiRandomCharByTeamID final
+{
+public:
+	class UObject*                                WorldContextObj;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TeamID;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InCount;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class AActor*>                         ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEGameHelper_GetMultiRandomCharByTeamID;
+
 // Function GameEx.GEGameHelper.GetNearestActorByClass
 // 0x0020 (0x0020 - 0x0000)
 struct GEGameHelper_GetNearestActorByClass final
@@ -3962,6 +4108,18 @@ public:
 	struct FVector2D                              ReturnValue;                                       // 0x0004(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GEGameHelper_GetPreviousPointerPosition;
+
+// Function GameEx.GEGameHelper.GetRandomCharByTeamID
+// 0x0018 (0x0018 - 0x0000)
+struct GEGameHelper_GetRandomCharByTeamID final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TeamID;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEGameHelper_GetRandomCharByTeamID;
 
 // Function GameEx.GEGameHelper.GetRecentlyActorByTrace
 // 0x0058 (0x0058 - 0x0000)
@@ -4891,7 +5049,7 @@ DUMPER7_ASSERTS_GEPlayerController_GetMoveRightDirection;
 struct GEPlayerController_GetServerTime_Client final
 {
 public:
-	int64                                         clientTimeStamp;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         ClientTimestamp;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int64                                         ServerTimestamp;                                   // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GEPlayerController_GetServerTime_Client;
@@ -4901,7 +5059,7 @@ DUMPER7_ASSERTS_GEPlayerController_GetServerTime_Client;
 struct GEPlayerController_GetServerTime_Server final
 {
 public:
-	int64                                         clientTimeStamp;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         ClientTimestamp;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GEPlayerController_GetServerTime_Server;
 
@@ -5000,14 +5158,14 @@ public:
 DUMPER7_ASSERTS_GEPlayerController_Server_AllocateWeapon;
 
 // Function GameEx.GEPlayerController.Server_ApplyUseItem
-// 0x0020 (0x0020 - 0x0000)
+// 0x002C (0x002C - 0x0000)
 struct GEPlayerController_Server_ApplyUseItem final
 {
 public:
 	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          isAttachedItem;                                    // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGEItemClientInfo                      ItemInfo;                                          // 0x0008(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGEItemClientInfo                      ItemInfo;                                          // 0x0008(0x0024)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GEPlayerController_Server_ApplyUseItem;
 
@@ -5203,6 +5361,17 @@ public:
 };
 DUMPER7_ASSERTS_GEPlayerController_Server_ZBugChangeMeleeState;
 
+// Function GameEx.GEPlayerController.SetFreeWatchCameraMode
+// 0x0010 (0x0010 - 0x0000)
+struct GEPlayerController_SetFreeWatchCameraMode final
+{
+public:
+	bool                                          bEnter;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  InFreeWatcherModeActor;                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEPlayerController_SetFreeWatchCameraMode;
+
 // Function GameEx.GEPlayerState.AddChallengeScore
 // 0x0004 (0x0004 - 0x0000)
 struct GEPlayerState_AddChallengeScore final
@@ -5319,6 +5488,15 @@ public:
 	EGEZBugRunBugType                             Type;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GEPlayerState_LuaImpl_ZBugIDChange;
+
+// Function GameEx.GEPlayerState.SetHAS_PerformScore
+// 0x0004 (0x0004 - 0x0000)
+struct GEPlayerState_SetHAS_PerformScore final
+{
+public:
+	float                                         InNewValue;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GEPlayerState_SetHAS_PerformScore;
 
 // Function GameEx.GEPlayerState.SetZBugID
 // 0x0001 (0x0001 - 0x0000)

@@ -17,81 +17,246 @@
 namespace SDK
 {
 
-// Function uw_fight_player_item.uw_fight_player_item_C.ExecuteUbergraph_uw_fight_player_item
-// (Final, UbergraphFunction)
+// Function uw_fight_player_item.uw_fight_player_item_C.IsInFight
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   InFight                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_player_item_C::ExecuteUbergraph_uw_fight_player_item(int32 EntryPoint)
+void Uuw_fight_player_item_C::IsInFight(bool* InFight)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "ExecuteUbergraph_uw_fight_player_item");
+		Func = Class->GetFunction("uw_fight_player_item_C", "IsInFight");
 
-	Params::uw_fight_player_item_C_ExecuteUbergraph_uw_fight_player_item Parms{};
+	Params::uw_fight_player_item_C_IsInFight Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (InFight != nullptr)
+		*InFight = Parms.InFight;
+}
+
+
+// Function uw_fight_player_item.uw_fight_player_item_C.PlayActivation
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bForward                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_player_item_C::PlayActivation(bool bForward)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "PlayActivation");
+
+	Params::uw_fight_player_item_C_PlayActivation Parms{};
+
+	Parms.bForward = bForward;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_player_item.uw_fight_player_item_C.OnUIEffectSkillLongPress
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bStart                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// Function uw_fight_player_item.uw_fight_player_item_C.BndEvt__Btn_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
 
-void Uuw_fight_player_item_C::OnUIEffectSkillLongPress(bool bStart)
+void Uuw_fight_player_item_C::BndEvt__Btn_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "OnUIEffectSkillLongPress");
+		Func = Class->GetFunction("uw_fight_player_item_C", "BndEvt__Btn_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
 
-	Params::uw_fight_player_item_C_OnUIEffectSkillLongPress Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.bStart = bStart;
+
+// Function uw_fight_player_item.uw_fight_player_item_C.StopEffect
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const EPlayerItemEffectType             InEffectType                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_player_item_C::StopEffect(const EPlayerItemEffectType InEffectType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "StopEffect");
+
+	Params::uw_fight_player_item_C_StopEffect Parms{};
+
+	Parms.InEffectType = InEffectType;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_player_item.uw_fight_player_item_C.OnSkillStrengthening
+// Function uw_fight_player_item.uw_fight_player_item_C.K2_PlaySwitchCDAnim
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bStart                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    bPlay                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_player_item_C::OnSkillStrengthening(bool bStart)
+void Uuw_fight_player_item_C::K2_PlaySwitchCDAnim(bool bPlay)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "OnSkillStrengthening");
+		Func = Class->GetFunction("uw_fight_player_item_C", "K2_PlaySwitchCDAnim");
 
-	Params::uw_fight_player_item_C_OnSkillStrengthening Parms{};
+	Params::uw_fight_player_item_C_K2_PlaySwitchCDAnim Parms{};
 
-	Parms.bStart = bStart;
+	Parms.bPlay = bPlay;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_player_item.uw_fight_player_item_C.K2_PlaySustainAnim
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bPlayAnim                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// Function uw_fight_player_item.uw_fight_player_item_C.BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature
+// (BlueprintEvent)
 
-void Uuw_fight_player_item_C::K2_PlaySustainAnim(bool bPlayAnim)
+void Uuw_fight_player_item_C::BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "K2_PlaySustainAnim");
+		Func = Class->GetFunction("uw_fight_player_item_C", "BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature");
 
-	Params::uw_fight_player_item_C_K2_PlaySustainAnim Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.bPlayAnim = bPlayAnim;
+
+// Function uw_fight_player_item.uw_fight_player_item_C.BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_2_OnButtonReleasedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void Uuw_fight_player_item_C::BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_2_OnButtonReleasedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_2_OnButtonReleasedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_player_item.uw_fight_player_item_C.OnNotNormalSwitch
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bNotNormalSwitch                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_player_item_C::OnNotNormalSwitch(bool bNotNormalSwitch)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "OnNotNormalSwitch");
+
+	Params::uw_fight_player_item_C_OnNotNormalSwitch Parms{};
+
+	Parms.bNotNormalSwitch = bNotNormalSwitch;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_player_item.uw_fight_player_item_C.OnReduceCD
+// (Event, Public, BlueprintEvent)
+
+void Uuw_fight_player_item_C::OnReduceCD()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "OnReduceCD");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_player_item.uw_fight_player_item_C.OnBackSkillPress
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bPress                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_player_item_C::OnBackSkillPress(bool bPress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "OnBackSkillPress");
+
+	Params::uw_fight_player_item_C_OnBackSkillPress Parms{};
+
+	Parms.bPress = bPress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_player_item.uw_fight_player_item_C.BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void Uuw_fight_player_item_C::BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_player_item.uw_fight_player_item_C.BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_5_OnButtonReleasedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void Uuw_fight_player_item_C::BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_5_OnButtonReleasedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_5_OnButtonReleasedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_player_item.uw_fight_player_item_C.PlayPresentAnim
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bPresent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_player_item_C::PlayPresentAnim(bool bPresent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "PlayPresentAnim");
+
+	Params::uw_fight_player_item_C_PlayPresentAnim Parms{};
+
+	Parms.bPresent = bPresent;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_player_item.uw_fight_player_item_C.K2_NormalEnergyChange
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bFull                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_player_item_C::K2_NormalEnergyChange(bool bFull)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "K2_NormalEnergyChange");
+
+	Params::uw_fight_player_item_C_K2_NormalEnergyChange Parms{};
+
+	Parms.bFull = bFull;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -119,248 +284,135 @@ void Uuw_fight_player_item_C::PlayEffect(const EPlayerItemEffectType InEffectTyp
 }
 
 
-// Function uw_fight_player_item.uw_fight_player_item_C.K2_NormalEnergyChange
+// Function uw_fight_player_item.uw_fight_player_item_C.K2_PlaySustainAnim
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bFull                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    bPlayAnim                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_player_item_C::K2_NormalEnergyChange(bool bFull)
+void Uuw_fight_player_item_C::K2_PlaySustainAnim(bool bPlayAnim)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "K2_NormalEnergyChange");
+		Func = Class->GetFunction("uw_fight_player_item_C", "K2_PlaySustainAnim");
 
-	Params::uw_fight_player_item_C_K2_NormalEnergyChange Parms{};
+	Params::uw_fight_player_item_C_K2_PlaySustainAnim Parms{};
 
-	Parms.bFull = bFull;
+	Parms.bPlayAnim = bPlayAnim;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_player_item.uw_fight_player_item_C.PlayPresentAnim
+// Function uw_fight_player_item.uw_fight_player_item_C.OnSkillStrengthening
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bPresent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    bStart                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_player_item_C::PlayPresentAnim(bool bPresent)
+void Uuw_fight_player_item_C::OnSkillStrengthening(bool bStart)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "PlayPresentAnim");
+		Func = Class->GetFunction("uw_fight_player_item_C", "OnSkillStrengthening");
 
-	Params::uw_fight_player_item_C_PlayPresentAnim Parms{};
+	Params::uw_fight_player_item_C_OnSkillStrengthening Parms{};
 
-	Parms.bPresent = bPresent;
+	Parms.bStart = bStart;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_player_item.uw_fight_player_item_C.BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_5_OnButtonReleasedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void Uuw_fight_player_item_C::BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_5_OnButtonReleasedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_5_OnButtonReleasedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_player_item.uw_fight_player_item_C.BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void Uuw_fight_player_item_C::BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_player_item.uw_fight_player_item_C.OnBackSkillPress
+// Function uw_fight_player_item.uw_fight_player_item_C.OnUIEffectSkillLongPress
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bPress                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    bStart                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_player_item_C::OnBackSkillPress(bool bPress)
+void Uuw_fight_player_item_C::OnUIEffectSkillLongPress(bool bStart)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "OnBackSkillPress");
+		Func = Class->GetFunction("uw_fight_player_item_C", "OnUIEffectSkillLongPress");
 
-	Params::uw_fight_player_item_C_OnBackSkillPress Parms{};
+	Params::uw_fight_player_item_C_OnUIEffectSkillLongPress Parms{};
 
-	Parms.bPress = bPress;
+	Parms.bStart = bStart;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_player_item.uw_fight_player_item_C.OnReduceCD
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_player_item_C::OnReduceCD()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "OnReduceCD");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_player_item.uw_fight_player_item_C.OnNotNormalSwitch
-// (Event, Public, BlueprintEvent)
+// Function uw_fight_player_item.uw_fight_player_item_C.ExecuteUbergraph_uw_fight_player_item
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    bNotNormalSwitch                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_player_item_C::OnNotNormalSwitch(bool bNotNormalSwitch)
+void Uuw_fight_player_item_C::ExecuteUbergraph_uw_fight_player_item(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "OnNotNormalSwitch");
+		Func = Class->GetFunction("uw_fight_player_item_C", "ExecuteUbergraph_uw_fight_player_item");
 
-	Params::uw_fight_player_item_C_OnNotNormalSwitch Parms{};
+	Params::uw_fight_player_item_C_ExecuteUbergraph_uw_fight_player_item Parms{};
 
-	Parms.bNotNormalSwitch = bNotNormalSwitch;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_player_item.uw_fight_player_item_C.BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_2_OnButtonReleasedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void Uuw_fight_player_item_C::BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_2_OnButtonReleasedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_2_OnButtonReleasedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_player_item.uw_fight_player_item_C.BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void Uuw_fight_player_item_C::BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_player_item.uw_fight_player_item_C.K2_PlaySwitchCDAnim
-// (Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_player_item.uw_fight_player_item_C.OnAnimationFinished
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bPlay                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void Uuw_fight_player_item_C::K2_PlaySwitchCDAnim(bool bPlay)
+void Uuw_fight_player_item_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "K2_PlaySwitchCDAnim");
+		Func = Class->GetFunction("uw_fight_player_item_C", "OnAnimationFinished");
 
-	Params::uw_fight_player_item_C_K2_PlaySwitchCDAnim Parms{};
+	Params::uw_fight_player_item_C_OnAnimationFinished Parms{};
 
-	Parms.bPlay = bPlay;
+	Parms.Animation = Animation;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function uw_fight_player_item.uw_fight_player_item_C.StopEffect
-// (Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_player_item.uw_fight_player_item_C.OnChargeTimesChange
+// (Native, Event, Public, BlueprintEvent)
 // Parameters:
-// const EPlayerItemEffectType             InEffectType                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   InCurrentTimes                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InMaxTimes                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void Uuw_fight_player_item_C::StopEffect(const EPlayerItemEffectType InEffectType)
+void Uuw_fight_player_item_C::OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "StopEffect");
+		Func = Class->GetFunction("uw_fight_player_item_C", "OnChargeTimesChange");
 
-	Params::uw_fight_player_item_C_StopEffect Parms{};
+	Params::uw_fight_player_item_C_OnChargeTimesChange Parms{};
 
-	Parms.InEffectType = InEffectType;
+	Parms.InCurrentTimes = InCurrentTimes;
+	Parms.InMaxTimes = InMaxTimes;
 
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_player_item.uw_fight_player_item_C.BndEvt__Btn_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void Uuw_fight_player_item_C::BndEvt__Btn_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "BndEvt__Btn_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_player_item.uw_fight_player_item_C.PlayActivation
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bForward                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_player_item_C::PlayActivation(bool bForward)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "PlayActivation");
-
-	Params::uw_fight_player_item_C_PlayActivation Parms{};
-
-	Parms.bForward = bForward;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_player_item.uw_fight_player_item_C.IsInFight
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// bool*                                   InFight                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_player_item_C::IsInFight(bool* InFight)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "IsInFight");
-
-	Params::uw_fight_player_item_C_IsInFight Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InFight != nullptr)
-		*InFight = Parms.InFight;
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -383,6 +435,31 @@ void Uuw_fight_player_item_C::Construct()
 }
 
 
+// LuaFunction uw_fight_player_item.uw_fight_player_item_C.NotifyClick
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EPlayerBtnType                          BtnType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_player_item_C::NotifyClick(EPlayerBtnType BtnType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_player_item_C", "NotifyClick");
+
+	Params::uw_fight_player_item_C_NotifyClick Parms{};
+
+	Parms.BtnType = BtnType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_player_item.uw_fight_player_item_C.NotifyRefreshCharacter
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -397,56 +474,6 @@ void Uuw_fight_player_item_C::NotifyRefreshCharacter()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_player_item.uw_fight_player_item_C.K2_OnUpdate
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_player_item_C::K2_OnUpdate(float InDeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "K2_OnUpdate");
-
-	Params::uw_fight_player_item_C_K2_OnUpdate Parms{};
-
-	Parms.InDeltaTime = InDeltaTime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_player_item.uw_fight_player_item_C.UpdateKeyboard
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_player_item_C::UpdateKeyboard(int32 InIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "UpdateKeyboard");
-
-	Params::uw_fight_player_item_C_UpdateKeyboard Parms{};
-
-	Parms.InIndex = InIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -496,31 +523,6 @@ void Uuw_fight_player_item_C::K2_OnCustomUmgAnimFinished(const class FName& Anim
 }
 
 
-// LuaFunction uw_fight_player_item.uw_fight_player_item_C.OnAnimationFinished
-// (BlueprintCosmetic, Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_player_item_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "OnAnimationFinished");
-
-	Params::uw_fight_player_item_C_OnAnimationFinished Parms{};
-
-	Parms.Animation = Animation;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_player_item.uw_fight_player_item_C.NotifyDataChange
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -540,48 +542,21 @@ void Uuw_fight_player_item_C::NotifyDataChange()
 }
 
 
-// LuaFunction uw_fight_player_item.uw_fight_player_item_C.NotifyClick
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EPlayerBtnType                          BtnType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_player_item_C::NotifyClick(EPlayerBtnType BtnType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "NotifyClick");
-
-	Params::uw_fight_player_item_C_NotifyClick Parms{};
-
-	Parms.BtnType = BtnType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_player_item.uw_fight_player_item_C.OnChargeTimesChange
+// LuaFunction uw_fight_player_item.uw_fight_player_item_C.UpdateKeyboard
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   InCurrentTimes                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InMaxTimes                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void Uuw_fight_player_item_C::OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes)
+void Uuw_fight_player_item_C::UpdateKeyboard(int32 InIndex)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_item_C", "OnChargeTimesChange");
+		Func = Class->GetFunction("uw_fight_player_item_C", "UpdateKeyboard");
 
-	Params::uw_fight_player_item_C_OnChargeTimesChange Parms{};
+	Params::uw_fight_player_item_C_UpdateKeyboard Parms{};
 
-	Parms.InCurrentTimes = InCurrentTimes;
-	Parms.InMaxTimes = InMaxTimes;
+	Parms.InIndex = InIndex;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

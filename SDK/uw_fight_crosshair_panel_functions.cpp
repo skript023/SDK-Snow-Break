@@ -17,6 +17,25 @@
 namespace SDK
 {
 
+// LuaFunction uw_fight_crosshair_panel.uw_fight_crosshair_panel_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_crosshair_panel_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_crosshair_panel_C", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_crosshair_panel.uw_fight_crosshair_panel_C.InitCrossHair
 // (Native, Event, Public, HasDefaults, BlueprintEvent)
 // Parameters:
@@ -39,25 +58,6 @@ void Uuw_fight_crosshair_panel_C::InitCrossHair(const struct FSoftClassPath& Cro
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_crosshair_panel.uw_fight_crosshair_panel_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_crosshair_panel_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_crosshair_panel_C", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

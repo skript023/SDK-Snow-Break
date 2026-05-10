@@ -17,37 +17,23 @@
 namespace SDK
 {
 
-// Function uw_fight_reload.uw_fight_reload_C.ExecuteUbergraph_uw_fight_reload
-// (Final, UbergraphFunction, HasDefaults)
+// Function uw_fight_reload.uw_fight_reload_C.K2_OnCharacterChange
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AGameCharacter*                   Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_reload_C::ExecuteUbergraph_uw_fight_reload(int32 EntryPoint)
+void Uuw_fight_reload_C::K2_OnCharacterChange(class AGameCharacter* Character)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_reload_C", "ExecuteUbergraph_uw_fight_reload");
+		Func = Class->GetFunction("uw_fight_reload_C", "K2_OnCharacterChange");
 
-	Params::uw_fight_reload_C_ExecuteUbergraph_uw_fight_reload Parms{};
+	Params::uw_fight_reload_C_K2_OnCharacterChange Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.Character = Character;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_reload.uw_fight_reload_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_reload_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_reload_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -71,21 +57,35 @@ void Uuw_fight_reload_C::UpdateFromCharacter(class AGameCharacter* Character)
 }
 
 
-// Function uw_fight_reload.uw_fight_reload_C.K2_OnCharacterChange
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class AGameCharacter*                   Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_reload.uw_fight_reload_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void Uuw_fight_reload_C::K2_OnCharacterChange(class AGameCharacter* Character)
+void Uuw_fight_reload_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_reload_C", "K2_OnCharacterChange");
+		Func = Class->GetFunction("uw_fight_reload_C", "Construct");
 
-	Params::uw_fight_reload_C_K2_OnCharacterChange Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.Character = Character;
+
+// Function uw_fight_reload.uw_fight_reload_C.ExecuteUbergraph_uw_fight_reload
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_reload_C::ExecuteUbergraph_uw_fight_reload(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_reload_C", "ExecuteUbergraph_uw_fight_reload");
+
+	Params::uw_fight_reload_C_ExecuteUbergraph_uw_fight_reload Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -41,11 +41,11 @@ public:
 	class UVtaSlateTexture*                       Icon;                                              // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_reload_button_new(int32 EntryPoint);
-	void UpdateFromCharacter(class AGameCharacter* Character);
-	void Construct();
-	void K2_OnCharacterChange(class AGameCharacter* Character);
 	void ChangeIcon(EWeaponType WeaponType, int32 WeaponMode);
+	void K2_OnCharacterChange(class AGameCharacter* Character);
+	void Construct();
+	void UpdateFromCharacter(class AGameCharacter* Character);
+	void ExecuteUbergraph_uw_fight_reload_button_new(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

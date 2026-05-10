@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -105,15 +105,6 @@ public:
 };
 DUMPER7_ASSERTS_FMovieSceneCaptureSettings;
 
-// ScriptStruct MovieSceneCapture.CapturedPixelsID
-// 0x0050 (0x0050 - 0x0000)
-struct FCapturedPixelsID final
-{
-public:
-	TMap<class FName, class FName>                Identifiers;                                       // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCapturedPixelsID;
-
 // ScriptStruct MovieSceneCapture.CapturedPixels
 // 0x0010 (0x0010 - 0x0000)
 struct alignas(0x08) FCapturedPixels final
@@ -122,6 +113,15 @@ public:
 	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCapturedPixels;
+
+// ScriptStruct MovieSceneCapture.CapturedPixelsID
+// 0x0050 (0x0050 - 0x0000)
+struct FCapturedPixelsID final
+{
+public:
+	TMap<class FName, class FName>                Identifiers;                                       // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCapturedPixelsID;
 
 }
 

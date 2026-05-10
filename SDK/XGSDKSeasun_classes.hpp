@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "UMG_classes.hpp"
 #include "XGSDK_classes.hpp"
+#include "UMG_classes.hpp"
 
 
 namespace SDK

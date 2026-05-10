@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SMSystem_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SMSystem_structs.hpp"
 #include "Game_classes.hpp"
 
 

@@ -18,34 +18,6 @@
 namespace SDK::Params
 {
 
-// LuaFunction ExplosiveBase.ExplosiveBase_C.CheckCull
-// 0x0009 (0x0009 - 0x0000)
-struct ExplosiveBase_C_CheckCull final
-{
-public:
-	bool                                          tempCull;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_CheckDistanceCull_ReturnValue;            // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsDedicatedServer_ReturnValue;            // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0003(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_NotEqual_BoolBool_ReturnValue;            // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_GetBoomWarn_ReturnValue;                  // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0007(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_ExplosiveBase_C_CheckCull;
-
-// LuaFunction ExplosiveBase.ExplosiveBase_C.SetHpShowDistance
-// 0x0003 (0x0003 - 0x0000)
-struct ExplosiveBase_C_SetHpShowDistance final
-{
-public:
-	bool                                          CallFunc_IsDedicatedServer_ReturnValue;            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SetShowDistance_ReturnValue;              // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_ExplosiveBase_C_SetHpShowDistance;
-
 // Function ExplosiveBase.ExplosiveBase_C.ChangeTickInteral
 // 0x000C (0x000C - 0x0000)
 struct ExplosiveBase_C_ChangeTickInteral final
@@ -249,13 +221,13 @@ public:
 DUMPER7_ASSERTS_ExplosiveBase_C_NotifyAim;
 
 // Function ExplosiveBase.ExplosiveBase_C.OnDie
-// 0x01D0 (0x01D0 - 0x0000)
+// 0x01E8 (0x01E8 - 0x0000)
 struct ExplosiveBase_C_OnDie final
 {
 public:
 	class AGameCharacter*                         Who;                                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AGameCharacter*                         Killer;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0010(0x01C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0010(0x01D8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_ExplosiveBase_C_OnDie;
 
@@ -280,7 +252,7 @@ public:
 DUMPER7_ASSERTS_ExplosiveBase_C_OnSwitchWarn;
 
 // Function ExplosiveBase.ExplosiveBase_C.ExecuteUbergraph_ExplosiveBase
-// 0x01F8 (0x01F8 - 0x0000)
+// 0x0210 (0x0210 - 0x0000)
 struct ExplosiveBase_C_ExecuteUbergraph_ExplosiveBase final
 {
 public:
@@ -289,22 +261,50 @@ public:
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class AGameCharacter*                         K2Node_Event_Who;                                  // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AGameCharacter*                         K2Node_Event_Killer;                               // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     K2Node_Event_HealthChangeValue;                    // 0x0018(0x01C0)(ConstParm, ContainsInstancedReference)
-	bool                                          K2Node_CustomEvent_ShowCollision;                  // 0x01D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_CustomEvent_OldMesh;                        // 0x01D9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_CustomEvent_NewMesh;                        // 0x01DA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_Event_InWarn;                               // 0x01DB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x01DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x01DD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x01DE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1DF[0x1];                                      // 0x01DF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(bool bAim)>                    K2Node_CreateDelegate_OutputDelegate;              // 0x01E0(0x0010)(ZeroConstructor, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x01F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x01F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_5;                    // 0x01F2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_6;                    // 0x01F3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FHealthChangeValue                     K2Node_Event_HealthChangeValue;                    // 0x0018(0x01D8)(ConstParm, ContainsInstancedReference)
+	bool                                          K2Node_CustomEvent_ShowCollision;                  // 0x01F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_CustomEvent_OldMesh;                        // 0x01F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_CustomEvent_NewMesh;                        // 0x01F2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_Event_InWarn;                               // 0x01F3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x01F4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x01F5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x01F6(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1F7[0x1];                                      // 0x01F7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(bool bAim)>                    K2Node_CreateDelegate_OutputDelegate;              // 0x01F8(0x0010)(ZeroConstructor, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0208(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x0209(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_5;                    // 0x020A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_6;                    // 0x020B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_ExplosiveBase_C_ExecuteUbergraph_ExplosiveBase;
+
+// LuaFunction ExplosiveBase.ExplosiveBase_C.SetHpShowDistance
+// 0x0003 (0x0003 - 0x0000)
+struct ExplosiveBase_C_SetHpShowDistance final
+{
+public:
+	bool                                          CallFunc_IsDedicatedServer_ReturnValue;            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SetShowDistance_ReturnValue;              // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_ExplosiveBase_C_SetHpShowDistance;
+
+// LuaFunction ExplosiveBase.ExplosiveBase_C.CheckCull
+// 0x0009 (0x0009 - 0x0000)
+struct ExplosiveBase_C_CheckCull final
+{
+public:
+	bool                                          tempCull;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_CheckDistanceCull_ReturnValue;            // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsDedicatedServer_ReturnValue;            // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0003(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_NotEqual_BoolBool_ReturnValue;            // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_GetBoomWarn_ReturnValue;                  // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0007(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_ExplosiveBase_C_CheckCull;
 
 // Function ExplosiveBase.ExplosiveBase_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

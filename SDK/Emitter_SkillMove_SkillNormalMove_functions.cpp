@@ -17,6 +17,27 @@
 namespace SDK
 {
 
+// Function Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.GetDefaultParamsValue
+// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<struct FParamInfo>*              Values                                                 (Parm, OutParm)
+
+void UEmitter_SkillMove_SkillNormalMove_C::GetDefaultParamsValue(TArray<struct FParamInfo>* Values)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "GetDefaultParamsValue");
+
+	Params::Emitter_SkillMove_SkillNormalMove_C_GetDefaultParamsValue Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Values != nullptr)
+		*Values = std::move(Parms.Values);
+}
+
+
 // LuaFunction Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.OnEmitterInterrupt
 // (Native, Event, Protected, BlueprintEvent)
 
@@ -55,15 +76,15 @@ void UEmitter_SkillMove_SkillNormalMove_C::OnEmitBegin()
 }
 
 
-// LuaFunction Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.OnEmitEnd
-// (Native, Event, Protected, BlueprintEvent)
+// LuaFunction Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.EmitterDestroyLua
+// (Native, Event, Public, BlueprintEvent)
 
-void UEmitter_SkillMove_SkillNormalMove_C::OnEmitEnd()
+void UEmitter_SkillMove_SkillNormalMove_C::EmitterDestroyLua()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "OnEmitEnd");
+		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "EmitterDestroyLua");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -99,15 +120,15 @@ void UEmitter_SkillMove_SkillNormalMove_C::OnEmitTick(float DeltaTime)
 }
 
 
-// LuaFunction Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.EmitterDestroyLua
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.OnEmitEnd
+// (Native, Event, Protected, BlueprintEvent)
 
-void UEmitter_SkillMove_SkillNormalMove_C::EmitterDestroyLua()
+void UEmitter_SkillMove_SkillNormalMove_C::OnEmitEnd()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "EmitterDestroyLua");
+		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "OnEmitEnd");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -115,27 +136,6 @@ void UEmitter_SkillMove_SkillNormalMove_C::EmitterDestroyLua()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.GetDefaultParamsValue
-// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<struct FParamInfo>*              Values                                                 (Parm, OutParm)
-
-void UEmitter_SkillMove_SkillNormalMove_C::GetDefaultParamsValue(TArray<struct FParamInfo>* Values)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "GetDefaultParamsValue");
-
-	Params::Emitter_SkillMove_SkillNormalMove_C_GetDefaultParamsValue Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Values != nullptr)
-		*Values = std::move(Parms.Values);
 }
 
 }

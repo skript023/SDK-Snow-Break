@@ -23,15 +23,6 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_level_occupy_list_C_BP_OnItemExpansionChanged;
 
-// Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.BP_OnItemSelectionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_level_occupy_list_C_BP_OnItemSelectionChanged final
-{
-public:
-	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_level_occupy_list_C_BP_OnItemSelectionChanged;
-
 // Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.OnListItemObjectSet__Overridden
 // 0x0008 (0x0008 - 0x0000)
 struct uw_fight_level_occupy_list_C_OnListItemObjectSet__Overridden final
@@ -40,6 +31,15 @@ public:
 	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_level_occupy_list_C_OnListItemObjectSet__Overridden;
+
+// Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.BP_OnItemSelectionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_level_occupy_list_C_BP_OnItemSelectionChanged final
+{
+public:
+	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_level_occupy_list_C_BP_OnItemSelectionChanged;
 
 // Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.ExecuteUbergraph_uw_fight_level_occupy_list
 // 0x0018 (0x0018 - 0x0000)

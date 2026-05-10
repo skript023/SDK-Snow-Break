@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Shake_Girl004b_Skill03_hit2.Shake_Girl004b_Skill03_hit2_C
-// 0x0000 (0x00C0 - 0x00C0)
+// 0x0000 (0x00D0 - 0x00D0)
 class UShake_Girl004b_Skill03_hit2_C final : public UGameCameraShake
 {
 public:

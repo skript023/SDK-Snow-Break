@@ -32,8 +32,8 @@ public:
 	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
 	void ExecuteUbergraph_uw_fight_boss_hp_resistance(int32 EntryPoint);
 	void OnListItemObjectSet(class UObject* ListItemObject);
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Game_classes.hpp"
 
 
@@ -46,6 +46,15 @@ public:
 	bool                                          bReplaceLauncherWithCauser;                        // 0x03A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
+	void CheckLauncher(class AActor* LauncherA, class AActor* LauncherB, bool* bEqual);
+	void FindPreEffectActor(class AModifierLineEffectActorBase_C** EffectActor);
+	void LineToEffectActor(class AModifierLineEffectActorBase_C* EffectActor);
+	void ReceiveBeginPlay();
+	void OnPreEffectActorEndPlay(class AActor* Actor, EEndPlayReason EndPlayReason);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void OnPreEffectActorOwnerDead(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData);
+	void OnLauncherDead(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData);
+	void ExecuteUbergraph_ModifierLineEffectActorBase(int32 EntryPoint);
 	void WrapGetLauncher(class AActor** OutActor);
 	TArray<struct FSoftObjectPath> OnGetAssetPath();
 	void ServerProcessEndEffect();
@@ -56,16 +65,7 @@ public:
 	void CalcPointOffset(const struct FVector& Start, const struct FVector& End, float Offset, struct FVector* OutVector);
 	void LineToLauncher();
 	void GetApplyLocation(struct FVector* OutLocation);
-	void CheckLauncher(class AActor* LauncherA, class AActor* LauncherB, bool* bEqual);
-	void FindPreEffectActor(class AModifierLineEffectActorBase_C** EffectActor);
-	void LineToEffectActor(class AModifierLineEffectActorBase_C* EffectActor);
-	void ReceiveBeginPlay();
-	void OnPreEffectActorEndPlay(class AActor* Actor, EEndPlayReason EndPlayReason);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void OnPreEffectActorOwnerDead(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData);
-	void OnLauncherDead(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData);
 	void ReceiveTick(float DeltaSeconds);
-	void ExecuteUbergraph_ModifierLineEffectActorBase(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

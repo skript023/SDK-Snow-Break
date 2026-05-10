@@ -25,11 +25,11 @@ public:
 	int32                                         Mid;                                               // 0x0234(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnCountDown_Client();
 	void OnEnd_Client();
-	class FString GetDescription();
-	void OnEnd();
+	void OnCountDown_Client();
 	void OnActive();
+	void OnEnd();
+	class FString GetDescription();
 	void OnActive_Client();
 
 	class FString GetSpecialStaticDescription() const;

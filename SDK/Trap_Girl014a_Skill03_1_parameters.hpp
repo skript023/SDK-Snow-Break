@@ -16,15 +16,6 @@
 namespace SDK::Params
 {
 
-// Function Trap_Girl014a_Skill03_1.Trap_Girl014a_Skill03_1_C.StartFallEffect
-// 0x0001 (0x0001 - 0x0000)
-struct Trap_Girl014a_Skill03_1_C_StartFallEffect final
-{
-public:
-	bool                                          bIsServer;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Trap_Girl014a_Skill03_1_C_StartFallEffect;
-
 // Function Trap_Girl014a_Skill03_1.Trap_Girl014a_Skill03_1_C.ExecuteUbergraph_Trap_Girl014a_Skill03_1
 // 0x0118 (0x0118 - 0x0000)
 struct Trap_Girl014a_Skill03_1_C_ExecuteUbergraph_Trap_Girl014a_Skill03_1 final
@@ -83,6 +74,15 @@ public:
 	class UNiagaraComponent*                      CallFunc_SpawnGameNiagaraAttached_ReturnValue_2;   // 0x0110(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Trap_Girl014a_Skill03_1_C_ExecuteUbergraph_Trap_Girl014a_Skill03_1;
+
+// Function Trap_Girl014a_Skill03_1.Trap_Girl014a_Skill03_1_C.StartFallEffect
+// 0x0001 (0x0001 - 0x0000)
+struct Trap_Girl014a_Skill03_1_C_StartFallEffect final
+{
+public:
+	bool                                          bIsServer;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Trap_Girl014a_Skill03_1_C_StartFallEffect;
 
 }
 

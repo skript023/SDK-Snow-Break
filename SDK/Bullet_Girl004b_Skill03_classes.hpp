@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Game_classes.hpp"
 
 
@@ -23,7 +23,6 @@ namespace SDK
 class ABullet_Girl004b_Skill03_C final : public ABullet
 {
 public:
-	uint8                                         Pad_A28[0x8];                                      // 0x0A28(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A30(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UBulletSubTraceComponent*               BulletSubTrace;                                    // 0x0A38(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	float                                         目标与子弹之间距离;                                // 0x0A40(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

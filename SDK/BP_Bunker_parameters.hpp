@@ -78,18 +78,18 @@ public:
 DUMPER7_ASSERTS_BP_Bunker_C_UserConstructionScript;
 
 // Function BP_Bunker.BP_Bunker_C.OnDie
-// 0x01D0 (0x01D0 - 0x0000)
+// 0x01E8 (0x01E8 - 0x0000)
 struct BP_Bunker_C_OnDie final
 {
 public:
 	class AGameCharacter*                         Who;                                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AGameCharacter*                         Killer;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0010(0x01C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0010(0x01D8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_BP_Bunker_C_OnDie;
 
 // Function BP_Bunker.BP_Bunker_C.ExecuteUbergraph_BP_Bunker
-// 0x0240 (0x0240 - 0x0000)
+// 0x0258 (0x0258 - 0x0000)
 struct BP_Bunker_C_ExecuteUbergraph_BP_Bunker final
 {
 public:
@@ -97,23 +97,23 @@ public:
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AGameCharacter*                         K2Node_Event_Who;                                  // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AGameCharacter*                         K2Node_Event_Killer;                               // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     K2Node_Event_HealthChangeValue;                    // 0x0018(0x01C0)(ConstParm, ContainsInstancedReference)
-	struct FRotator                               CallFunc_K2_GetComponentRotation_ReturnValue;      // 0x01D8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue;      // 0x01E4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_K2_GetComponentRotation_ReturnValue_1;    // 0x01F0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_1;    // 0x01FC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UWwiseComponent*                        CallFunc_PostEventAtLocation_ReturnValue;          // 0x0208(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0210(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsActive_ReturnValue;                     // 0x0211(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_212[0x6];                                      // 0x0212(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      CallFunc_SpawnGameNiagaraAtLocation_ReturnValue;   // 0x0218(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SetStaticMesh_ReturnValue_1;              // 0x0221(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_222[0x6];                                      // 0x0222(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 CallFunc_SpawnBunkerCollisionActor_OutActor;       // 0x0228(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0230(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_231[0x7];                                      // 0x0231(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 CallFunc_SpawnBunkerCollisionActor_OutActor_1;     // 0x0238(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHealthChangeValue                     K2Node_Event_HealthChangeValue;                    // 0x0018(0x01D8)(ConstParm, ContainsInstancedReference)
+	struct FRotator                               CallFunc_K2_GetComponentRotation_ReturnValue;      // 0x01F0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue;      // 0x01FC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_K2_GetComponentRotation_ReturnValue_1;    // 0x0208(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_1;    // 0x0214(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWwiseComponent*                        CallFunc_PostEventAtLocation_ReturnValue;          // 0x0220(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0228(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsActive_ReturnValue;                     // 0x0229(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_22A[0x6];                                      // 0x022A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      CallFunc_SpawnGameNiagaraAtLocation_ReturnValue;   // 0x0230(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0238(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SetStaticMesh_ReturnValue_1;              // 0x0239(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_23A[0x6];                                      // 0x023A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 CallFunc_SpawnBunkerCollisionActor_OutActor;       // 0x0240(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0248(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_249[0x7];                                      // 0x0249(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 CallFunc_SpawnBunkerCollisionActor_OutActor_1;     // 0x0250(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Bunker_C_ExecuteUbergraph_BP_Bunker;
 

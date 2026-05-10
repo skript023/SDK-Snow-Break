@@ -24,14 +24,14 @@ public:
 	bool                                          bShowEnterAnime;                                   // 0x05E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void ReceiveTick(float DeltaSeconds);
 	void GetAllTargetWithWeakResults(TArray<struct FBoneResult>* NewResults);
-	void GetPartMainBone(const struct FBoneResult& PartResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
-	void ReceiveDestroyed();
-	void GetAllQueryResults(TArray<struct FQueryResult>* OutResults);
-	void GetPartitionMainPart(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult);
 	void GetPartitionMainBone(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
+	void GetPartitionMainPart(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult);
+	void GetPartMainBone(const struct FBoneResult& PartResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
+	void ReceiveTick(float DeltaSeconds);
+	void ReceiveDestroyed();
 	void ReceiveBeginPlay();
+	void GetAllQueryResults(TArray<struct FQueryResult>* OutResults);
 
 public:
 	static class UClass* StaticClass()

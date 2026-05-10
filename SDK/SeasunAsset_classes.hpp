@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "SeasunAsset_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "SeasunAsset_structs.hpp"
 #include "CoreUObject_classes.hpp"
 
 

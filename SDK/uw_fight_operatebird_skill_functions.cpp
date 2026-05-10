@@ -17,23 +17,17 @@
 namespace SDK
 {
 
-// Function uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.ExecuteUbergraph_uw_fight_operatebird_skill
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature
+// (BlueprintEvent)
 
-void Uuw_fight_operatebird_skill_C::ExecuteUbergraph_uw_fight_operatebird_skill(int32 EntryPoint)
+void Uuw_fight_operatebird_skill_C::BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_operatebird_skill_C", "ExecuteUbergraph_uw_fight_operatebird_skill");
+		Func = Class->GetFunction("uw_fight_operatebird_skill_C", "BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature");
 
-	Params::uw_fight_operatebird_skill_C_ExecuteUbergraph_uw_fight_operatebird_skill Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -51,36 +45,23 @@ void Uuw_fight_operatebird_skill_C::BndEvt__uw_fight_operatebird_skill_ButtonSki
 }
 
 
-// Function uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature
-// (BlueprintEvent)
+// Function uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.ExecuteUbergraph_uw_fight_operatebird_skill
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_operatebird_skill_C::BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature()
+void Uuw_fight_operatebird_skill_C::ExecuteUbergraph_uw_fight_operatebird_skill(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_operatebird_skill_C", "BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature");
+		Func = Class->GetFunction("uw_fight_operatebird_skill_C", "ExecuteUbergraph_uw_fight_operatebird_skill");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::uw_fight_operatebird_skill_C_ExecuteUbergraph_uw_fight_operatebird_skill Parms{};
 
+	Parms.EntryPoint = EntryPoint;
 
-// LuaFunction uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_operatebird_skill_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_operatebird_skill_C", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -104,6 +85,25 @@ void Uuw_fight_operatebird_skill_C::K2_OnCustomUmgAnimFinished(const class FName
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_operatebird_skill_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_operatebird_skill_C", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function Trap_Girl002a_Skill03.Trap_Girl002a_Skill03_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ATrap_Girl002a_Skill03_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Trap_Girl002a_Skill03_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function Trap_Girl002a_Skill03.Trap_Girl002a_Skill03_C.Client_OnActive
 // (Event, Public, BlueprintEvent)
 
@@ -54,6 +40,20 @@ void ATrap_Girl002a_Skill03_C::Server_OnActive()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("Trap_Girl002a_Skill03_C", "Server_OnActive");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Trap_Girl002a_Skill03.Trap_Girl002a_Skill03_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ATrap_Girl002a_Skill03_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Trap_Girl002a_Skill03_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

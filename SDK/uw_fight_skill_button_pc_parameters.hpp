@@ -146,15 +146,14 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_ExecuteUbergraph_uw_fight_skill_button_pc;
 
-// LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnChargeTimesChange
+// LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_OnCustomUmgAnimFinished
 // 0x0008 (0x0008 - 0x0000)
-struct uw_fight_skill_button_pc_C_OnChargeTimesChange final
+struct uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished final
 {
 public:
-	int32                                         InCurrentTimes;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InMaxTimes;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnChargeTimesChange;
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished;
 
 // LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnSkillStrengthening
 // 0x0001 (0x0001 - 0x0000)
@@ -165,15 +164,6 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnSkillStrengthening;
 
-// LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished;
-
 // LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_PlayCDAnim
 // 0x0001 (0x0001 - 0x0000)
 struct uw_fight_skill_button_pc_C_K2_PlayCDAnim final
@@ -182,6 +172,16 @@ public:
 	bool                                          bPlay;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_K2_PlayCDAnim;
+
+// LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnChargeTimesChange
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_skill_button_pc_C_OnChargeTimesChange final
+{
+public:
+	int32                                         InCurrentTimes;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InMaxTimes;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_uw_fight_skill_button_pc_C_OnChargeTimesChange;
 
 // Function uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

@@ -26,8 +26,8 @@ public:
 public:
 	void Init__Overridden(class UObject* InOuter);
 	void Init(class UObject* InOuter);
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

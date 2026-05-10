@@ -17,19 +17,19 @@ namespace SDK::Params
 {
 
 // Function DeadPerformance_DLC8.DeadPerformance_DLC8_C.DeadPerformanceLogic
-// 0x01D8 (0x01D8 - 0x0000)
+// 0x01F0 (0x01F0 - 0x0000)
 struct DeadPerformance_DLC8_C_DeadPerformanceLogic final
 {
 public:
 	class AGameCharacter*                         DeadCharacter;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AGameCharacter*                         Killer;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UDeadPerformanceComponent*              DeadComponent;                                     // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0018(0x01C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0018(0x01D8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_DeadPerformance_DLC8_C_DeadPerformanceLogic;
 
 // Function DeadPerformance_DLC8.DeadPerformance_DLC8_C.ExecuteUbergraph_DeadPerformance_DLC8
-// 0x02A8 (0x02A8 - 0x0000)
+// 0x02C0 (0x02C0 - 0x0000)
 struct DeadPerformance_DLC8_C_ExecuteUbergraph_DeadPerformance_DLC8 final
 {
 public:
@@ -62,29 +62,29 @@ public:
 	class AGameCharacter*                         K2Node_Event_DeadCharacter;                        // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AGameCharacter*                         K2Node_Event_Killer;                               // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UDeadPerformanceComponent*              K2Node_Event_DeadComponent;                        // 0x0070(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     K2Node_Event_HealthChangeValue;                    // 0x0078(0x01C0)(ConstParm, ContainsInstancedReference)
-	EPhysiqueType                                 CallFunc_GetPhysiqueType_ReturnValue;              // 0x0238(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_239[0x3];                                      // 0x0239(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_Select_Default;                             // 0x023C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Select_Default_1;                           // 0x0240(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_244[0x4];                                      // 0x0244(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ACharacterAccessory*>            CallFunc_GetCharacterAccessories_OutCharacterAccessories; // 0x0248(0x0010)(ReferenceParm)
-	class ACharacterAccessory*                    CallFunc_Array_Get_Item;                           // 0x0258(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      CallFunc_SpawnSystemAttached_ReturnValue;          // 0x0260(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0268(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_26C[0x4];                                      // 0x026C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAnimInstance*                          CallFunc_GetGameAnimInstance_ReturnValue;          // 0x0270(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x0278(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_27C[0x4];                                      // 0x027C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAnimInstance*                          CallFunc_GetLinkedAnimGraphInstanceByTag_ReturnValue; // 0x0280(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Max_ReturnValue;                          // 0x0288(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x028C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_28D[0x3];                                      // 0x028D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbnormalAnimBase*                      K2Node_DynamicCast_AsAbnormal_Anim_Base;           // 0x0290(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0298(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_299[0x3];                                      // 0x0299(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_Montage_Play_ReturnValue;                 // 0x029C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetIsInFloating_ReturnValue;              // 0x02A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FHealthChangeValue                     K2Node_Event_HealthChangeValue;                    // 0x0078(0x01D8)(ConstParm, ContainsInstancedReference)
+	EPhysiqueType                                 CallFunc_GetPhysiqueType_ReturnValue;              // 0x0250(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_251[0x3];                                      // 0x0251(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Select_Default;                             // 0x0254(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Select_Default_1;                           // 0x0258(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_25C[0x4];                                      // 0x025C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ACharacterAccessory*>            CallFunc_GetCharacterAccessories_OutCharacterAccessories; // 0x0260(0x0010)(ReferenceParm)
+	class ACharacterAccessory*                    CallFunc_Array_Get_Item;                           // 0x0270(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      CallFunc_SpawnSystemAttached_ReturnValue;          // 0x0278(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0280(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_284[0x4];                                      // 0x0284(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimInstance*                          CallFunc_GetGameAnimInstance_ReturnValue;          // 0x0288(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x0290(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_294[0x4];                                      // 0x0294(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimInstance*                          CallFunc_GetLinkedAnimGraphInstanceByTag_ReturnValue; // 0x0298(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Max_ReturnValue;                          // 0x02A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x02A4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2A5[0x3];                                      // 0x02A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbnormalAnimBase*                      K2Node_DynamicCast_AsAbnormal_Anim_Base;           // 0x02A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x02B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2B1[0x3];                                      // 0x02B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Montage_Play_ReturnValue;                 // 0x02B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetIsInFloating_ReturnValue;              // 0x02B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_DeadPerformance_DLC8_C_ExecuteUbergraph_DeadPerformance_DLC8;
 

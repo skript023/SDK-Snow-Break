@@ -63,10 +63,10 @@ public:
 	void OnSafeToDanger();
 	void OnDangerToSafe();
 	void ExecuteUbergraph_TargetTrigger(int32 EntryPoint);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ReceiveActorBeginOverlap(class AActor* OtherActor);
-	void ReceiveActorEndOverlap(class AActor* OtherActor);
 	void ReceiveTick(float DeltaSeconds);
+	void ReceiveActorEndOverlap(class AActor* OtherActor);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 
 	class FString GetModuleName() const;
 

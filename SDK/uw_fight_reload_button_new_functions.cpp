@@ -17,57 +17,25 @@
 namespace SDK
 {
 
-// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.ExecuteUbergraph_uw_fight_reload_button_new
-// (Final, UbergraphFunction, HasDefaults)
+// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.ChangeIcon
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EWeaponType                             WeaponType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   WeaponMode                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_reload_button_new_C::ExecuteUbergraph_uw_fight_reload_button_new(int32 EntryPoint)
+void Uuw_fight_reload_button_new_C::ChangeIcon(EWeaponType WeaponType, int32 WeaponMode)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_reload_button_new_C", "ExecuteUbergraph_uw_fight_reload_button_new");
+		Func = Class->GetFunction("uw_fight_reload_button_new_C", "ChangeIcon");
 
-	Params::uw_fight_reload_button_new_C_ExecuteUbergraph_uw_fight_reload_button_new Parms{};
+	Params::uw_fight_reload_button_new_C_ChangeIcon Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.WeaponType = WeaponType;
+	Parms.WeaponMode = WeaponMode;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.UpdateFromCharacter
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AGameCharacter*                   Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_reload_button_new_C::UpdateFromCharacter(class AGameCharacter* Character)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_reload_button_new_C", "UpdateFromCharacter");
-
-	Params::uw_fight_reload_button_new_C_UpdateFromCharacter Parms{};
-
-	Parms.Character = Character;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_reload_button_new_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_reload_button_new_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -91,23 +59,55 @@ void Uuw_fight_reload_button_new_C::K2_OnCharacterChange(class AGameCharacter* C
 }
 
 
-// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.ChangeIcon
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// EWeaponType                             WeaponType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   WeaponMode                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void Uuw_fight_reload_button_new_C::ChangeIcon(EWeaponType WeaponType, int32 WeaponMode)
+void Uuw_fight_reload_button_new_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_reload_button_new_C", "ChangeIcon");
+		Func = Class->GetFunction("uw_fight_reload_button_new_C", "Construct");
 
-	Params::uw_fight_reload_button_new_C_ChangeIcon Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.WeaponType = WeaponType;
-	Parms.WeaponMode = WeaponMode;
+
+// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.UpdateFromCharacter
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AGameCharacter*                   Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_reload_button_new_C::UpdateFromCharacter(class AGameCharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_reload_button_new_C", "UpdateFromCharacter");
+
+	Params::uw_fight_reload_button_new_C_UpdateFromCharacter Parms{};
+
+	Parms.Character = Character;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.ExecuteUbergraph_uw_fight_reload_button_new
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_reload_button_new_C::ExecuteUbergraph_uw_fight_reload_button_new(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_reload_button_new_C", "ExecuteUbergraph_uw_fight_reload_button_new");
+
+	Params::uw_fight_reload_button_new_C_ExecuteUbergraph_uw_fight_reload_button_new Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

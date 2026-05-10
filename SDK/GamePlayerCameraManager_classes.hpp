@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "Game_classes.hpp"
 #include "EnumInitSnow_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK

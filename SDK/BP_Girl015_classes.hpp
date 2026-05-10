@@ -19,23 +19,23 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Girl015.BP_Girl015_C
-// 0x0790 (0x2C20 - 0x2490)
+// 0x0790 (0x2C60 - 0x24D0)
 class ABP_Girl015_C final : public ABaseCharacter_C
 {
 public:
-	uint8                                         Pad_2485[0x3];                                     // 0x2485(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Girl015_C;                       // 0x2488(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FCameraInfo                            SpecialShootAimCameraInfo;                         // 0x2490(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCameraInfo                            SpecialShootNormalCameraInfo;                      // 0x2580(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCameraInfo                            SpecialShootFireCameraInfo;                        // 0x2670(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCameraInfo                            SpecialShootNormalCameraInfo_start_F;              // 0x2760(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCameraInfo                            SpecialShootNormalCameraInfo_start_B;              // 0x2850(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCameraInfo                            SpecialShootNormalCameraInfo_start_L;              // 0x2940(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCameraInfo                            SpecialShootNormalCameraInfo_start_R;              // 0x2A30(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	int32                                         FrontSkillID;                                      // 0x2B20(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          End;                                               // 0x2B24(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B25[0x3];                                     // 0x2B25(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCameraInfo                            SpecialShootNormalCameraInfo_start_Motionless;     // 0x2B28(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	uint8                                         Pad_24C5[0x3];                                     // 0x24C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Girl015_C;                       // 0x24C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FCameraInfo                            SpecialShootAimCameraInfo;                         // 0x24D0(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCameraInfo                            SpecialShootNormalCameraInfo;                      // 0x25C0(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCameraInfo                            SpecialShootFireCameraInfo;                        // 0x26B0(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCameraInfo                            SpecialShootNormalCameraInfo_start_F;              // 0x27A0(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCameraInfo                            SpecialShootNormalCameraInfo_start_B;              // 0x2890(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCameraInfo                            SpecialShootNormalCameraInfo_start_L;              // 0x2980(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCameraInfo                            SpecialShootNormalCameraInfo_start_R;              // 0x2A70(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int32                                         FrontSkillID;                                      // 0x2B60(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          End;                                               // 0x2B64(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2B65[0x3];                                     // 0x2B65(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCameraInfo                            SpecialShootNormalCameraInfo_start_Motionless;     // 0x2B68(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	TArray<struct FSoftObjectPath> OnGetAssetPath(TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);

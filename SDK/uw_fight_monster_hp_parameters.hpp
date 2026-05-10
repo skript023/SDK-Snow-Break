@@ -18,6 +18,24 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_monster_hp.uw_fight_monster_hp_C.UpdateImage
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_monster_hp_C_UpdateImage final
+{
+public:
+	EFightMonsterTipsType                         InTipsType;                                        // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_monster_hp_C_UpdateImage;
+
+// Function uw_fight_monster_hp.uw_fight_monster_hp_C.OnSetLocationAndVisibleOfHPBar
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_monster_hp_C_OnSetLocationAndVisibleOfHPBar final
+{
+public:
+	bool                                          bVisible;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_monster_hp_C_OnSetLocationAndVisibleOfHPBar;
+
 // Function uw_fight_monster_hp.uw_fight_monster_hp_C.ExecuteUbergraph_uw_fight_monster_hp
 // 0x0048 (0x0048 - 0x0000)
 struct uw_fight_monster_hp_C_ExecuteUbergraph_uw_fight_monster_hp final
@@ -47,24 +65,6 @@ public:
 	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue;                 // 0x003C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_monster_hp_C_ExecuteUbergraph_uw_fight_monster_hp;
-
-// Function uw_fight_monster_hp.uw_fight_monster_hp_C.OnSetLocationAndVisibleOfHPBar
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_monster_hp_C_OnSetLocationAndVisibleOfHPBar final
-{
-public:
-	bool                                          bVisible;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_monster_hp_C_OnSetLocationAndVisibleOfHPBar;
-
-// Function uw_fight_monster_hp.uw_fight_monster_hp_C.UpdateImage
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_monster_hp_C_UpdateImage final
-{
-public:
-	EFightMonsterTipsType                         InTipsType;                                        // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_monster_hp_C_UpdateImage;
 
 // LuaFunction uw_fight_monster_hp.uw_fight_monster_hp_C.K2_OnAppliedModifierChange
 // 0x0010 (0x0010 - 0x0000)

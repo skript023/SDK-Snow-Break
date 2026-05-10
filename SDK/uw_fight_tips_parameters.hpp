@@ -16,22 +16,6 @@
 namespace SDK::Params
 {
 
-// LuaFunction uw_fight_tips.uw_fight_tips_C.AddTipsPool
-// 0x0060 (0x0060 - 0x0000)
-struct uw_fight_tips_C_AddTipsPool final
-{
-public:
-	class FText                                   Title;                                             // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
-	class FText                                   Desc;                                              // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
-	float                                         Duration;                                          // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Type;                                              // 0x0034(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 tableStr;                                          // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 SoundEffect;                                       // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          Result;                                            // 0x0058(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_tips_C_AddTipsPool;
-
 // Function uw_fight_tips.uw_fight_tips_C.AddTipsPool__Overridden
 // 0x0060 (0x0060 - 0x0000)
 struct uw_fight_tips_C_AddTipsPool__Overridden final
@@ -82,6 +66,22 @@ public:
 	float                                         K2Node_Event_InDeltaTime;                          // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_tips_C_ExecuteUbergraph_uw_fight_tips;
+
+// LuaFunction uw_fight_tips.uw_fight_tips_C.AddTipsPool
+// 0x0060 (0x0060 - 0x0000)
+struct uw_fight_tips_C_AddTipsPool final
+{
+public:
+	class FText                                   Title;                                             // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class FText                                   Desc;                                              // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
+	float                                         Duration;                                          // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Type;                                              // 0x0034(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 tableStr;                                          // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 SoundEffect;                                       // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          Result;                                            // 0x0058(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_tips_C_AddTipsPool;
 
 // Function uw_fight_tips.uw_fight_tips_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

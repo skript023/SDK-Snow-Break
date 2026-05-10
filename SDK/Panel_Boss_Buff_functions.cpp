@@ -17,75 +17,21 @@
 namespace SDK
 {
 
-// Function Panel_Boss_Buff.Panel_Boss_Buff_C.PlayAnim
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function Panel_Boss_Buff.Panel_Boss_Buff_C.ExecuteUbergraph_Panel_Boss_Buff
+// (Final, UbergraphFunction)
 // Parameters:
-// class UWidgetAnimation*                 InAnim                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPanel_Boss_Buff_C::PlayAnim(class UWidgetAnimation* InAnim)
+void UPanel_Boss_Buff_C::ExecuteUbergraph_Panel_Boss_Buff(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Panel_Boss_Buff_C", "PlayAnim");
+		Func = Class->GetFunction("Panel_Boss_Buff_C", "ExecuteUbergraph_Panel_Boss_Buff");
 
-	Params::Panel_Boss_Buff_C_PlayAnim Parms{};
+	Params::Panel_Boss_Buff_C_ExecuteUbergraph_Panel_Boss_Buff Parms{};
 
-	Parms.InAnim = InAnim;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Panel_Boss_Buff.Panel_Boss_Buff_C.Get_Group_Buff_1_ToolTipWidget_0
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class UWidget*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-class UWidget* UPanel_Boss_Buff_C::Get_Group_Buff_1_ToolTipWidget_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Panel_Boss_Buff_C", "Get_Group_Buff_1_ToolTipWidget_0");
-
-	Params::Panel_Boss_Buff_C_Get_Group_Buff_1_ToolTipWidget_0 Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Panel_Boss_Buff.Panel_Boss_Buff_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UPanel_Boss_Buff_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Panel_Boss_Buff_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Panel_Boss_Buff.Panel_Boss_Buff_C.K2_PlayFinish
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bReset                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UPanel_Boss_Buff_C::K2_PlayFinish(bool bReset)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Panel_Boss_Buff_C", "K2_PlayFinish");
-
-	Params::Panel_Boss_Buff_C_K2_PlayFinish Parms{};
-
-	Parms.bReset = bReset;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -111,21 +57,75 @@ void UPanel_Boss_Buff_C::K2_OnSkillBlockup(bool bBlockup)
 }
 
 
-// Function Panel_Boss_Buff.Panel_Boss_Buff_C.ExecuteUbergraph_Panel_Boss_Buff
-// (Final, UbergraphFunction)
+// Function Panel_Boss_Buff.Panel_Boss_Buff_C.K2_PlayFinish
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bReset                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UPanel_Boss_Buff_C::ExecuteUbergraph_Panel_Boss_Buff(int32 EntryPoint)
+void UPanel_Boss_Buff_C::K2_PlayFinish(bool bReset)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Panel_Boss_Buff_C", "ExecuteUbergraph_Panel_Boss_Buff");
+		Func = Class->GetFunction("Panel_Boss_Buff_C", "K2_PlayFinish");
 
-	Params::Panel_Boss_Buff_C_ExecuteUbergraph_Panel_Boss_Buff Parms{};
+	Params::Panel_Boss_Buff_C_K2_PlayFinish Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bReset = bReset;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Panel_Boss_Buff.Panel_Boss_Buff_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UPanel_Boss_Buff_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Panel_Boss_Buff_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Panel_Boss_Buff.Panel_Boss_Buff_C.Get_Group_Buff_1_ToolTipWidget_0
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class UWidget* UPanel_Boss_Buff_C::Get_Group_Buff_1_ToolTipWidget_0()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Panel_Boss_Buff_C", "Get_Group_Buff_1_ToolTipWidget_0");
+
+	Params::Panel_Boss_Buff_C_Get_Group_Buff_1_ToolTipWidget_0 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Panel_Boss_Buff.Panel_Boss_Buff_C.PlayAnim
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UWidgetAnimation*                 InAnim                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPanel_Boss_Buff_C::PlayAnim(class UWidgetAnimation* InAnim)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Panel_Boss_Buff_C", "PlayAnim");
+
+	Params::Panel_Boss_Buff_C_PlayAnim Parms{};
+
+	Parms.InAnim = InAnim;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

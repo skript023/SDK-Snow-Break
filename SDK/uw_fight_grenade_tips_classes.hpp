@@ -30,16 +30,16 @@ public:
 	float                                         MaxSpeed;                                          // 0x03D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_grenade_tips(int32 EntryPoint);
-	void Tick__Overridden(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void Play();
-	void Stop();
 	void SetPlaySpeed(float InSpeedPre);
+	void Tick__Overridden(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void ExecuteUbergraph_uw_fight_grenade_tips(int32 EntryPoint);
+	void Stop();
+	void Play();
 	void ReceiveWarning(bool IsWarning, float InTotalTime);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void Construct();
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

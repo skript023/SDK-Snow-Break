@@ -38,12 +38,12 @@ public:
 	void SwitchForce__Overridden();
 	void ReceiveTick__Overridden(float DeltaSeconds);
 	void ExecuteUbergraph_SwitchMgr(int32 EntryPoint);
-	void OnSwitchEvent();
-	void ReceiveBeginPlay();
 	void OnBind();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveBeginPlay();
 	void ReceiveTick(float DeltaSeconds);
 	void SwitchForce();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void OnSwitchEvent();
 
 	class FString GetModuleName() const;
 

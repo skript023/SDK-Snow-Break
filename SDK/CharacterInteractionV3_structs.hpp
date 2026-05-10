@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "InputCore_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CameraBlueprint_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Slate_structs.hpp"
+#include "InputCore_structs.hpp"
 
 
 namespace SDK
@@ -238,72 +238,6 @@ public:
 };
 DUMPER7_ASSERTS_FInteractionVoiceConfig;
 
-// ScriptStruct CharacterInteractionV3.InteractionCameraModifierInfo
-// 0x0028 (0x0028 - 0x0000)
-struct FInteractionCameraModifierInfo final
-{
-public:
-	struct FRotator                               AdditiveRotation;                                  // 0x0000(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                ViewPointLocationOffset;                           // 0x000C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AdditiveArmLength;                                 // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                CameraLocation;                                    // 0x001C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInteractionCameraModifierInfo;
-
-// ScriptStruct CharacterInteractionV3.AnimNode_InteractionV3BlendSpace
-// 0x0018 (0x0028 - 0x0010)
-struct FAnimNode_InteractionV3BlendSpace final : public FAnimNode_Base
-{
-public:
-	EInteractionV3BlendSpaceSlot                  SlotType;                                          // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x17];                                      // 0x0011(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAnimNode_InteractionV3BlendSpace;
-
-// ScriptStruct CharacterInteractionV3.PhysicsAssetModifier
-// 0x0050 (0x0050 - 0x0000)
-struct FPhysicsAssetModifier final
-{
-public:
-	TSoftObjectPtr<class UPhysicsAsset>           OverridePhysicsAsset;                              // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UPhysicsControlAsset>    OverridePhysicsControlAsset;                       // 0x0028(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPhysicsAssetModifier;
-
-// ScriptStruct CharacterInteractionV3.AnimNode_InteractionV3IK
-// 0x0018 (0x00E0 - 0x00C8)
-struct FAnimNode_InteractionV3IK final : public FAnimNode_SkeletalControlBase
-{
-public:
-	struct FComponentSpacePoseLink                RefComponentPose;                                  // 0x00C8(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	EInteractionV3IKSlot                          SlotType;                                          // 0x00D8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAnimNode_InteractionV3IK;
-
-// ScriptStruct CharacterInteractionV3.CameraNode_InteractionStandby
-// 0x0038 (0x0048 - 0x0010)
-struct FCameraNode_InteractionStandby final : public FCameraNode_Base
-{
-public:
-	struct FCameraParameterLink                   Source;                                            // 0x0010(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FInteractionCameraModifierInfo         StandbyModifierInfo;                               // 0x0020(0x0028)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCameraNode_InteractionStandby;
-
-// ScriptStruct CharacterInteractionV3.WorldSpaceIKTargetBoneConfig
-// 0x0050 (0x0050 - 0x0000)
-struct alignas(0x10) FWorldSpaceIKTargetBoneConfig final
-{
-public:
-	EInteractionV3IKSlot                          SlotType;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   BoneName;                                          // 0x0004(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                JointOffset;                                       // 0x000C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x38];                                      // 0x0018(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FWorldSpaceIKTargetBoneConfig;
-
 // ScriptStruct CharacterInteractionV3.FennyVoiceTipCfg
 // 0x0058 (0x0058 - 0x0000)
 struct FFennyVoiceTipCfg final
@@ -316,18 +250,81 @@ public:
 };
 DUMPER7_ASSERTS_FFennyVoiceTipCfg;
 
-// ScriptStruct CharacterInteractionV3.ActorOperateActTemplate
-// 0x0068 (0x0070 - 0x0008)
-struct FActorOperateActTemplate final : public FTableRowBase
+// ScriptStruct CharacterInteractionV3.PhysicsProfileModifier
+// 0x0020 (0x0020 - 0x0000)
+struct FPhysicsProfileModifier final
 {
 public:
-	class FName                                   TemplateName;                                      // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftClassPath                         ActorOperateActPath;                               // 0x0010(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftClassPath                         InputControlPath;                                  // 0x0028(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftClassPath                         CompleteTriggerPath;                               // 0x0040(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftClassPath                         AutoConfigPath;                                    // 0x0058(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   StartPhysicsControlProfile;                        // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EndPhysicsControlProfile;                          // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   StartConstraintProfile;                            // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EndConstraintProfile;                              // 0x0018(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FActorOperateActTemplate;
+DUMPER7_ASSERTS_FPhysicsProfileModifier;
+
+// ScriptStruct CharacterInteractionV3.InteractionV3PhysProfileModifier
+// 0x0060 (0x0060 - 0x0000)
+struct FInteractionV3PhysProfileModifier final
+{
+public:
+	struct FPhysicsProfileModifier                BodyProfile;                                       // 0x0000(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPhysicsProfileModifier                BodyAnimNodeProfile;                               // 0x0020(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPhysicsProfileModifier                FaceProfile;                                       // 0x0040(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInteractionV3PhysProfileModifier;
+
+// ScriptStruct CharacterInteractionV3.InteractionCameraModifierInfo
+// 0x0028 (0x0028 - 0x0000)
+struct FInteractionCameraModifierInfo final
+{
+public:
+	struct FRotator                               AdditiveRotation;                                  // 0x0000(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                ViewPointLocationOffset;                           // 0x000C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AdditiveArmLength;                                 // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                CameraLocation;                                    // 0x001C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInteractionCameraModifierInfo;
+
+// ScriptStruct CharacterInteractionV3.AnimNode_InteractionV3IK
+// 0x0018 (0x00E0 - 0x00C8)
+struct FAnimNode_InteractionV3IK final : public FAnimNode_SkeletalControlBase
+{
+public:
+	struct FComponentSpacePoseLink                RefComponentPose;                                  // 0x00C8(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	EInteractionV3IKSlot                          SlotType;                                          // 0x00D8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAnimNode_InteractionV3IK;
+
+// ScriptStruct CharacterInteractionV3.InteractionLookAtBoneData
+// 0x0010 (0x0010 - 0x0000)
+struct FInteractionLookAtBoneData final
+{
+public:
+	class FName                                   ActorName;                                         // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   BoneName;                                          // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInteractionLookAtBoneData;
+
+// ScriptStruct CharacterInteractionV3.AnimNode_InteractionV3BlendSpace
+// 0x0018 (0x0028 - 0x0010)
+struct FAnimNode_InteractionV3BlendSpace final : public FAnimNode_Base
+{
+public:
+	EInteractionV3BlendSpaceSlot                  SlotType;                                          // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x17];                                      // 0x0011(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAnimNode_InteractionV3BlendSpace;
+
+// ScriptStruct CharacterInteractionV3.CameraNode_InteractionStandby
+// 0x0038 (0x0048 - 0x0010)
+struct FCameraNode_InteractionStandby final : public FCameraNode_Base
+{
+public:
+	struct FCameraParameterLink                   Source;                                            // 0x0010(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FInteractionCameraModifierInfo         StandbyModifierInfo;                               // 0x0020(0x0028)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCameraNode_InteractionStandby;
 
 // ScriptStruct CharacterInteractionV3.ScenarioStandbyActorInfo
 // 0x0058 (0x0058 - 0x0000)
@@ -349,15 +346,6 @@ public:
 	TSoftObjectPtr<class ULevelSequence>          CameraSequenceAsset;                               // 0x0010(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FFennyShowerStandbyCfg;
-
-// ScriptStruct CharacterInteractionV3.InteractionV3OperateWwise
-// 0x0010 (0x0010 - 0x0000)
-struct FInteractionV3OperateWwise final
-{
-public:
-	class FString                                 WwiseEventName;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInteractionV3OperateWwise;
 
 // ScriptStruct CharacterInteractionV3.InteractionV3HolyLightData
 // 0x0020 (0x0020 - 0x0000)
@@ -391,16 +379,6 @@ public:
 	TArray<struct FInteractionV3HolyLightRuntimeData> ArrayData;                                     // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FInteractionV3HolyLightRuntimeDataArray;
-
-// ScriptStruct CharacterInteractionV3.BonePair
-// 0x0010 (0x0010 - 0x0000)
-struct FBonePair final
-{
-public:
-	class FName                                   ParentBoneName;                                    // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ChildBoneName;                                     // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FBonePair;
 
 // ScriptStruct CharacterInteractionV3.InteractionArchivementConditionV3
 // 0x0018 (0x0018 - 0x0000)
@@ -437,16 +415,6 @@ public:
 	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSceneActorComponentShowConfig;
-
-// ScriptStruct CharacterInteractionV3.InteractionV3CharacterHolyLight
-// 0x0018 (0x0018 - 0x0000)
-struct FInteractionV3CharacterHolyLight final
-{
-public:
-	class FName                                   CharacterName;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FInteractionV3HolyLightData>    HolyLightData;                                     // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInteractionV3CharacterHolyLight;
 
 // ScriptStruct CharacterInteractionV3.ShowElementsAnim
 // 0x0018 (0x0018 - 0x0000)
@@ -709,50 +677,6 @@ public:
 };
 DUMPER7_ASSERTS_FInteractionV3AnimInstanceProxy;
 
-// ScriptStruct CharacterInteractionV3.IKMaintainRefPoseConfig
-// 0x0018 (0x0018 - 0x0000)
-struct FIKMaintainRefPoseConfig final
-{
-public:
-	EInteractionV3IKSlot                          SlotType;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   BoneName;                                          // 0x0004(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                JointOffset;                                       // 0x000C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FIKMaintainRefPoseConfig;
-
-// ScriptStruct CharacterInteractionV3.IKMaintainRefPoseRelativeConfig
-// 0x0014 (0x0014 - 0x0000)
-struct FIKMaintainRefPoseRelativeConfig final
-{
-public:
-	EInteractionV3IKSlot                          SlotType;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   BoneName;                                          // 0x0004(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   RefBoneName;                                       // 0x000C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FIKMaintainRefPoseRelativeConfig;
-
-// ScriptStruct CharacterInteractionV3.IKRefPoseFixData
-// 0x0020 (0x0020 - 0x0000)
-struct FIKRefPoseFixData final
-{
-public:
-	TArray<struct FIKMaintainRefPoseConfig>       MaintainRefPoseConfigs;                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FIKMaintainRefPoseRelativeConfig> MaintainRefPoseRelativeConfigs;                  // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FIKRefPoseFixData;
-
-// ScriptStruct CharacterInteractionV3.ScenarioOperateTemplate
-// 0x0020 (0x0028 - 0x0008)
-struct FScenarioOperateTemplate final : public FTableRowBase
-{
-public:
-	class FName                                   TemplateName;                                      // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftClassPath                         ScenarioOperatePath;                               // 0x0010(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FScenarioOperateTemplate;
-
 // ScriptStruct CharacterInteractionV3.PhysicsControlRigidBodyRelativeControlTickFunction
 // 0x0008 (0x0030 - 0x0028)
 struct FPhysicsControlRigidBodyRelativeControlTickFunction final : public FTickFunction
@@ -837,51 +761,6 @@ public:
 };
 DUMPER7_ASSERTS_FStandbyCameraConfig;
 
-// ScriptStruct CharacterInteractionV3.CharacterPhysicsAssetModifier
-// 0x00F8 (0x00F8 - 0x0000)
-struct FCharacterPhysicsAssetModifier final
-{
-public:
-	class FName                                   ActorName;                                         // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPhysicsAssetModifier                  BodyModifier;                                      // 0x0008(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FPhysicsAssetModifier                  BodyAnimNodeModifier;                              // 0x0058(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FPhysicsAssetModifier                  FaceModifier;                                      // 0x00A8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCharacterPhysicsAssetModifier;
-
-// ScriptStruct CharacterInteractionV3.PhysicsProfileModifier
-// 0x0020 (0x0020 - 0x0000)
-struct FPhysicsProfileModifier final
-{
-public:
-	class FName                                   StartPhysicsControlProfile;                        // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EndPhysicsControlProfile;                          // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   StartConstraintProfile;                            // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EndConstraintProfile;                              // 0x0018(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPhysicsProfileModifier;
-
-// ScriptStruct CharacterInteractionV3.InteractionV3PhysProfileModifier
-// 0x0060 (0x0060 - 0x0000)
-struct FInteractionV3PhysProfileModifier final
-{
-public:
-	struct FPhysicsProfileModifier                BodyProfile;                                       // 0x0000(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FPhysicsProfileModifier                BodyAnimNodeProfile;                               // 0x0020(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FPhysicsProfileModifier                FaceProfile;                                       // 0x0040(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInteractionV3PhysProfileModifier;
-
-// ScriptStruct CharacterInteractionV3.ActorOperateActInfo
-// 0x0010 (0x0010 - 0x0000)
-struct FActorOperateActInfo final
-{
-public:
-	class FName                                   CharacterName;                                     // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UActorOperateAct*                       ActorOperateAct;                                   // 0x0008(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FActorOperateActInfo;
-
 // ScriptStruct CharacterInteractionV3.IKWorldSpaceEffectorAccumulateConfig
 // 0x0028 (0x0028 - 0x0000)
 struct FIKWorldSpaceEffectorAccumulateConfig final
@@ -918,6 +797,19 @@ public:
 };
 DUMPER7_ASSERTS_FIKWorldSpaceOffsetData;
 
+// ScriptStruct CharacterInteractionV3.WorldSpaceIKTargetBoneConfig
+// 0x0050 (0x0050 - 0x0000)
+struct alignas(0x10) FWorldSpaceIKTargetBoneConfig final
+{
+public:
+	EInteractionV3IKSlot                          SlotType;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   BoneName;                                          // 0x0004(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                JointOffset;                                       // 0x000C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x38];                                      // 0x0018(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FWorldSpaceIKTargetBoneConfig;
+
 // ScriptStruct CharacterInteractionV3.WorldSpaceIKTargetConfig
 // 0x0020 (0x0020 - 0x0000)
 struct FWorldSpaceIKTargetConfig final
@@ -938,15 +830,123 @@ public:
 };
 DUMPER7_ASSERTS_FIKMaintainWorldSpaceRelativeData;
 
-// ScriptStruct CharacterInteractionV3.InteractionLookAtBoneData
-// 0x0010 (0x0010 - 0x0000)
-struct FInteractionLookAtBoneData final
+// ScriptStruct CharacterInteractionV3.IKMaintainRefPoseConfig
+// 0x0018 (0x0018 - 0x0000)
+struct FIKMaintainRefPoseConfig final
 {
 public:
-	class FName                                   ActorName;                                         // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   BoneName;                                          // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EInteractionV3IKSlot                          SlotType;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   BoneName;                                          // 0x0004(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                JointOffset;                                       // 0x000C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FInteractionLookAtBoneData;
+DUMPER7_ASSERTS_FIKMaintainRefPoseConfig;
+
+// ScriptStruct CharacterInteractionV3.IKMaintainRefPoseRelativeConfig
+// 0x0014 (0x0014 - 0x0000)
+struct FIKMaintainRefPoseRelativeConfig final
+{
+public:
+	EInteractionV3IKSlot                          SlotType;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   BoneName;                                          // 0x0004(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   RefBoneName;                                       // 0x000C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FIKMaintainRefPoseRelativeConfig;
+
+// ScriptStruct CharacterInteractionV3.IKRefPoseFixData
+// 0x0020 (0x0020 - 0x0000)
+struct FIKRefPoseFixData final
+{
+public:
+	TArray<struct FIKMaintainRefPoseConfig>       MaintainRefPoseConfigs;                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FIKMaintainRefPoseRelativeConfig> MaintainRefPoseRelativeConfigs;                  // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FIKRefPoseFixData;
+
+// ScriptStruct CharacterInteractionV3.ActorOperateActTemplate
+// 0x0068 (0x0070 - 0x0008)
+struct FActorOperateActTemplate final : public FTableRowBase
+{
+public:
+	class FName                                   TemplateName;                                      // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftClassPath                         ActorOperateActPath;                               // 0x0010(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftClassPath                         InputControlPath;                                  // 0x0028(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftClassPath                         CompleteTriggerPath;                               // 0x0040(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftClassPath                         AutoConfigPath;                                    // 0x0058(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FActorOperateActTemplate;
+
+// ScriptStruct CharacterInteractionV3.ScenarioOperateTemplate
+// 0x0020 (0x0028 - 0x0008)
+struct FScenarioOperateTemplate final : public FTableRowBase
+{
+public:
+	class FName                                   TemplateName;                                      // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftClassPath                         ScenarioOperatePath;                               // 0x0010(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FScenarioOperateTemplate;
+
+// ScriptStruct CharacterInteractionV3.ActorOperateActInfo
+// 0x0010 (0x0010 - 0x0000)
+struct FActorOperateActInfo final
+{
+public:
+	class FName                                   CharacterName;                                     // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UActorOperateAct*                       ActorOperateAct;                                   // 0x0008(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FActorOperateActInfo;
+
+// ScriptStruct CharacterInteractionV3.BonePair
+// 0x0010 (0x0010 - 0x0000)
+struct FBonePair final
+{
+public:
+	class FName                                   ParentBoneName;                                    // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ChildBoneName;                                     // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FBonePair;
+
+// ScriptStruct CharacterInteractionV3.PhysicsAssetModifier
+// 0x0050 (0x0050 - 0x0000)
+struct FPhysicsAssetModifier final
+{
+public:
+	TSoftObjectPtr<class UPhysicsAsset>           OverridePhysicsAsset;                              // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UPhysicsControlAsset>    OverridePhysicsControlAsset;                       // 0x0028(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPhysicsAssetModifier;
+
+// ScriptStruct CharacterInteractionV3.CharacterPhysicsAssetModifier
+// 0x00F8 (0x00F8 - 0x0000)
+struct FCharacterPhysicsAssetModifier final
+{
+public:
+	class FName                                   ActorName;                                         // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPhysicsAssetModifier                  BodyModifier;                                      // 0x0008(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FPhysicsAssetModifier                  BodyAnimNodeModifier;                              // 0x0058(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FPhysicsAssetModifier                  FaceModifier;                                      // 0x00A8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCharacterPhysicsAssetModifier;
+
+// ScriptStruct CharacterInteractionV3.InteractionV3OperateWwise
+// 0x0010 (0x0010 - 0x0000)
+struct FInteractionV3OperateWwise final
+{
+public:
+	class FString                                 WwiseEventName;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInteractionV3OperateWwise;
+
+// ScriptStruct CharacterInteractionV3.InteractionV3CharacterHolyLight
+// 0x0018 (0x0018 - 0x0000)
+struct FInteractionV3CharacterHolyLight final
+{
+public:
+	class FName                                   CharacterName;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FInteractionV3HolyLightData>    HolyLightData;                                     // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInteractionV3CharacterHolyLight;
 
 // ScriptStruct CharacterInteractionV3.InteractionV3SpringInterpolation
 // 0x0010 (0x0010 - 0x0000)

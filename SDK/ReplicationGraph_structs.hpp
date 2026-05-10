@@ -16,16 +16,6 @@
 namespace SDK
 {
 
-// ScriptStruct ReplicationGraph.ConnectionAlwaysRelevantNodePair
-// 0x0010 (0x0010 - 0x0000)
-struct FConnectionAlwaysRelevantNodePair final
-{
-public:
-	class UNetConnection*                         NetConnection;                                     // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UReplicationGraphNode_AlwaysRelevant_ForConnection* Node;                                  // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FConnectionAlwaysRelevantNodePair;
-
 // ScriptStruct ReplicationGraph.LastLocationGatherInfo
 // 0x0020 (0x0020 - 0x0000)
 struct FLastLocationGatherInfo final
@@ -36,6 +26,16 @@ public:
 	struct FVector                                LastOutOfRangeLocationCheck;                       // 0x0014(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLastLocationGatherInfo;
+
+// ScriptStruct ReplicationGraph.ConnectionAlwaysRelevantNodePair
+// 0x0010 (0x0010 - 0x0000)
+struct FConnectionAlwaysRelevantNodePair final
+{
+public:
+	class UNetConnection*                         NetConnection;                                     // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UReplicationGraphNode_AlwaysRelevant_ForConnection* Node;                                  // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FConnectionAlwaysRelevantNodePair;
 
 // ScriptStruct ReplicationGraph.TearOffActorInfo
 // 0x0018 (0x0018 - 0x0000)

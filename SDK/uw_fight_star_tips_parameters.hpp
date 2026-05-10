@@ -14,6 +14,33 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_star_tips.uw_fight_star_tips_C.OnListItemObjectSet__Overridden
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_star_tips_C_OnListItemObjectSet__Overridden final
+{
+public:
+	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_star_tips_C_OnListItemObjectSet__Overridden;
+
+// Function uw_fight_star_tips.uw_fight_star_tips_C.BP_OnItemSelectionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_star_tips_C_BP_OnItemSelectionChanged final
+{
+public:
+	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_star_tips_C_BP_OnItemSelectionChanged;
+
+// Function uw_fight_star_tips.uw_fight_star_tips_C.BP_OnItemExpansionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_star_tips_C_BP_OnItemExpansionChanged final
+{
+public:
+	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_star_tips_C_BP_OnItemExpansionChanged;
+
 // Function uw_fight_star_tips.uw_fight_star_tips_C.ExecuteUbergraph_uw_fight_star_tips
 // 0x0018 (0x0018 - 0x0000)
 struct uw_fight_star_tips_C_ExecuteUbergraph_uw_fight_star_tips final
@@ -27,32 +54,14 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_star_tips_C_ExecuteUbergraph_uw_fight_star_tips;
 
-// Function uw_fight_star_tips.uw_fight_star_tips_C.BP_OnItemExpansionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_star_tips_C_BP_OnItemExpansionChanged final
-{
-public:
-	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_star_tips_C_BP_OnItemExpansionChanged;
-
-// Function uw_fight_star_tips.uw_fight_star_tips_C.BP_OnItemSelectionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_star_tips_C_BP_OnItemSelectionChanged final
-{
-public:
-	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_star_tips_C_BP_OnItemSelectionChanged;
-
-// Function uw_fight_star_tips.uw_fight_star_tips_C.OnListItemObjectSet__Overridden
+// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.OnAnimationFinished
 // 0x0008 (0x0008 - 0x0000)
-struct uw_fight_star_tips_C_OnListItemObjectSet__Overridden final
+struct uw_fight_star_tips_C_OnAnimationFinished final
 {
 public:
-	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_uw_fight_star_tips_C_OnListItemObjectSet__Overridden;
+DUMPER7_ASSERTS_uw_fight_star_tips_C_OnAnimationFinished;
 
 // LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.OnListItemObjectSet
 // 0x0008 (0x0008 - 0x0000)
@@ -62,15 +71,6 @@ public:
 	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_star_tips_C_OnListItemObjectSet;
-
-// LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.OnAnimationFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_star_tips_C_OnAnimationFinished final
-{
-public:
-	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_uw_fight_star_tips_C_OnAnimationFinished;
 
 // Function uw_fight_star_tips.uw_fight_star_tips_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

@@ -17,6 +17,27 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_scene_off.uw_fight_scene_off_C.SceneOff
+// 0x0020 (0x0020 - 0x0000)
+struct uw_fight_scene_off_C_SceneOff final
+{
+public:
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0000(0x0010)(ZeroConstructor, NoDestructor)
+	struct FTimerHandle                           CallFunc_K2_SetTimerDelegate_ReturnValue;          // 0x0010(0x0008)(NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterial_AsMaterial_Instance_Dynamic; // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_scene_off_C_SceneOff;
+
+// Function uw_fight_scene_off.uw_fight_scene_off_C.Tick
+// 0x003C (0x003C - 0x0000)
+struct uw_fight_scene_off_C_Tick final
+{
+public:
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_scene_off_C_Tick;
+
 // Function uw_fight_scene_off.uw_fight_scene_off_C.ExecuteUbergraph_uw_fight_scene_off
 // 0x0058 (0x0058 - 0x0000)
 struct uw_fight_scene_off_C_ExecuteUbergraph_uw_fight_scene_off final
@@ -34,27 +55,6 @@ public:
 	float                                         CallFunc_GetFloatValue_ReturnValue_1;              // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_scene_off_C_ExecuteUbergraph_uw_fight_scene_off;
-
-// Function uw_fight_scene_off.uw_fight_scene_off_C.Tick
-// 0x003C (0x003C - 0x0000)
-struct uw_fight_scene_off_C_Tick final
-{
-public:
-	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_scene_off_C_Tick;
-
-// Function uw_fight_scene_off.uw_fight_scene_off_C.SceneOff
-// 0x0020 (0x0020 - 0x0000)
-struct uw_fight_scene_off_C_SceneOff final
-{
-public:
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0000(0x0010)(ZeroConstructor, NoDestructor)
-	struct FTimerHandle                           CallFunc_K2_SetTimerDelegate_ReturnValue;          // 0x0010(0x0008)(NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterial_AsMaterial_Instance_Dynamic; // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_scene_off_C_SceneOff;
 
 }
 

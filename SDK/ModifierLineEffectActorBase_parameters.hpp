@@ -18,6 +18,144 @@
 namespace SDK::Params
 {
 
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.CheckLauncher
+// 0x0050 (0x0050 - 0x0000)
+struct ModifierLineEffectActorBase_C_CheckLauncher final
+{
+public:
+	class AActor*                                 LauncherA;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 LauncherB;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bEqual;                                            // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue;      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGameCharacter*                         K2Node_DynamicCast_AsGame_Character;               // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGameCharacter*                         CallFunc_GetOriginPlayer_ReturnValue;              // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameCharacter*                         K2Node_DynamicCast_AsGame_Character_1;             // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGameCharacter*                         CallFunc_GetOriginPlayer_ReturnValue_1;            // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue_1;    // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_CheckLauncher;
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.FindPreEffectActor
+// 0x0050 (0x0050 - 0x0000)
+struct ModifierLineEffectActorBase_C_FindPreEffectActor final
+{
+public:
+	class AModifierLineEffectActorBase_C*         EffectActor;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable;                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UClass*                                 CallFunc_GetObjectClass_ReturnValue;               // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class AModifierLineEffectActorBase_C*> CallFunc_GetAllActorsOfClass_OutActors;            // 0x0020(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AModifierLineEffectActorBase_C*         CallFunc_Array_Get_Item;                           // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_NotEqual_ObjectObject_ReturnValue;        // 0x0041(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0042(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0043(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_CheckLauncher_bEqual;                     // 0x0045(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0046(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x0047(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue_2;                 // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_FindPreEffectActor;
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.LineToEffectActor
+// 0x0040 (0x0040 - 0x0000)
+struct ModifierLineEffectActorBase_C_LineToEffectActor final
+{
+public:
+	class AModifierLineEffectActorBase_C*         EffectActor;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData)> K2Node_CreateDelegate_OutputDelegate; // 0x000C(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void(class AActor* Actor, EEndPlayReason EndPlayReason)> K2Node_CreateDelegate_OutputDelegate_1; // 0x001C(0x0010)(ZeroConstructor, NoDestructor)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGameCharacter*                         K2Node_DynamicCast_AsGame_Character;               // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_LineToEffectActor;
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnPreEffectActorEndPlay
+// 0x0010 (0x0010 - 0x0000)
+struct ModifierLineEffectActorBase_C_OnPreEffectActorEndPlay final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                EndPlayReason;                                     // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_OnPreEffectActorEndPlay;
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct ModifierLineEffectActorBase_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_ReceiveEndPlay;
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnPreEffectActorOwnerDead
+// 0x01E8 (0x01E8 - 0x0000)
+struct ModifierLineEffectActorBase_C_OnPreEffectActorOwnerDead final
+{
+public:
+	bool                                          bDead;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilityComponentBase*                  InLauncher;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHealthChangeValue                     HealthChangeData;                                  // 0x0010(0x01D8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_OnPreEffectActorOwnerDead;
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnLauncherDead
+// 0x01E8 (0x01E8 - 0x0000)
+struct ModifierLineEffectActorBase_C_OnLauncherDead final
+{
+public:
+	bool                                          bDead;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilityComponentBase*                  InLauncher;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHealthChangeValue                     HealthChangeData;                                  // 0x0010(0x01D8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_OnLauncherDead;
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ExecuteUbergraph_ModifierLineEffectActorBase
+// 0x0408 (0x0408 - 0x0000)
+struct ModifierLineEffectActorBase_C_ExecuteUbergraph_ModifierLineEffectActorBase final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 K2Node_CustomEvent_Actor;                          // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                K2Node_CustomEvent_EndPlayReason;                  // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AModifierLineEffectActorBase_C*         CallFunc_FindPreEffectActor_EffectActor;           // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      CallFunc_SpawnGameNiagaraAttached_ReturnValue;     // 0x0028(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                K2Node_Event_EndPlayReason;                        // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_bDead_1;                        // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilityComponentBase*                  K2Node_CustomEvent_InLauncher_1;                   // 0x0038(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHealthChangeValue                     K2Node_CustomEvent_HealthChangeData_1;             // 0x0040(0x01D8)(ConstParm, ContainsInstancedReference)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0219(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x021A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_CustomEvent_bDead;                          // 0x021B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_21C[0x4];                                      // 0x021C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilityComponentBase*                  K2Node_CustomEvent_InLauncher;                     // 0x0220(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHealthChangeValue                     K2Node_CustomEvent_HealthChangeData;               // 0x0228(0x01D8)(ConstParm, ContainsInstancedReference)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0400(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_ExecuteUbergraph_ModifierLineEffectActorBase;
+
 // Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.WrapGetLauncher
 // 0x0010 (0x0010 - 0x0000)
 struct ModifierLineEffectActorBase_C_WrapGetLauncher final
@@ -174,114 +312,6 @@ public:
 };
 DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_GetApplyLocation;
 
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.CheckLauncher
-// 0x0050 (0x0050 - 0x0000)
-struct ModifierLineEffectActorBase_C_CheckLauncher final
-{
-public:
-	class AActor*                                 LauncherA;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 LauncherB;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bEqual;                                            // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue;      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class AGameCharacter*                         K2Node_DynamicCast_AsGame_Character;               // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AGameCharacter*                         CallFunc_GetOriginPlayer_ReturnValue;              // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AGameCharacter*                         K2Node_DynamicCast_AsGame_Character_1;             // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AGameCharacter*                         CallFunc_GetOriginPlayer_ReturnValue_1;            // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue_1;    // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_CheckLauncher;
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.FindPreEffectActor
-// 0x0050 (0x0050 - 0x0000)
-struct ModifierLineEffectActorBase_C_FindPreEffectActor final
-{
-public:
-	class AModifierLineEffectActorBase_C*         EffectActor;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable;                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UClass*                                 CallFunc_GetObjectClass_ReturnValue;               // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class AModifierLineEffectActorBase_C*> CallFunc_GetAllActorsOfClass_OutActors;            // 0x0020(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AModifierLineEffectActorBase_C*         CallFunc_Array_Get_Item;                           // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_NotEqual_ObjectObject_ReturnValue;        // 0x0041(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0042(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0043(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_CheckLauncher_bEqual;                     // 0x0045(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0046(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x0047(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue_2;                 // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_FindPreEffectActor;
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.LineToEffectActor
-// 0x0040 (0x0040 - 0x0000)
-struct ModifierLineEffectActorBase_C_LineToEffectActor final
-{
-public:
-	class AModifierLineEffectActorBase_C*         EffectActor;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData)> K2Node_CreateDelegate_OutputDelegate; // 0x000C(0x0010)(ZeroConstructor, NoDestructor)
-	TDelegate<void(class AActor* Actor, EEndPlayReason EndPlayReason)> K2Node_CreateDelegate_OutputDelegate_1; // 0x001C(0x0010)(ZeroConstructor, NoDestructor)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AGameCharacter*                         K2Node_DynamicCast_AsGame_Character;               // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_LineToEffectActor;
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnPreEffectActorEndPlay
-// 0x0010 (0x0010 - 0x0000)
-struct ModifierLineEffectActorBase_C_OnPreEffectActorEndPlay final
-{
-public:
-	class AActor*                                 Actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEndPlayReason                                EndPlayReason;                                     // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_OnPreEffectActorEndPlay;
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct ModifierLineEffectActorBase_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_ReceiveEndPlay;
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnPreEffectActorOwnerDead
-// 0x01D0 (0x01D0 - 0x0000)
-struct ModifierLineEffectActorBase_C_OnPreEffectActorOwnerDead final
-{
-public:
-	bool                                          bDead;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbilityComponentBase*                  InLauncher;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeData;                                  // 0x0010(0x01C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_OnPreEffectActorOwnerDead;
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnLauncherDead
-// 0x01D0 (0x01D0 - 0x0000)
-struct ModifierLineEffectActorBase_C_OnLauncherDead final
-{
-public:
-	bool                                          bDead;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbilityComponentBase*                  InLauncher;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeData;                                  // 0x0010(0x01C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_OnLauncherDead;
-
 // Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)
 struct ModifierLineEffectActorBase_C_ReceiveTick final
@@ -290,36 +320,6 @@ public:
 	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_ReceiveTick;
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ExecuteUbergraph_ModifierLineEffectActorBase
-// 0x03D8 (0x03D8 - 0x0000)
-struct ModifierLineEffectActorBase_C_ExecuteUbergraph_ModifierLineEffectActorBase final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 K2Node_CustomEvent_Actor;                          // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEndPlayReason                                K2Node_CustomEvent_EndPlayReason;                  // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AModifierLineEffectActorBase_C*         CallFunc_FindPreEffectActor_EffectActor;           // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      CallFunc_SpawnGameNiagaraAttached_ReturnValue;     // 0x0028(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEndPlayReason                                K2Node_Event_EndPlayReason;                        // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_CustomEvent_bDead_1;                        // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbilityComponentBase*                  K2Node_CustomEvent_InLauncher_1;                   // 0x0038(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     K2Node_CustomEvent_HealthChangeData_1;             // 0x0040(0x01C0)(ConstParm, ContainsInstancedReference)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0201(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0202(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_CustomEvent_bDead;                          // 0x0203(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbilityComponentBase*                  K2Node_CustomEvent_InLauncher;                     // 0x0208(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     K2Node_CustomEvent_HealthChangeData;               // 0x0210(0x01C0)(ConstParm, ContainsInstancedReference)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x03D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ModifierLineEffectActorBase_C_ExecuteUbergraph_ModifierLineEffectActorBase;
 
 }
 

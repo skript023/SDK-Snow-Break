@@ -16,6 +16,19 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_cross10.uw_fight_cross10_C.K2_OnReloading
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_cross10_C_K2_OnReloading final
+{
+public:
+	bool                                          bIsReload;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	EWeaponType                                   Type;                                              // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bInterrupt;                                        // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AnimTime;                                          // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_cross10_C_K2_OnReloading;
+
 // Function uw_fight_cross10.uw_fight_cross10_C.ExecuteUbergraph_uw_fight_cross10
 // 0x0010 (0x0010 - 0x0000)
 struct uw_fight_cross10_C_ExecuteUbergraph_uw_fight_cross10 final
@@ -32,19 +45,6 @@ public:
 	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x000E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_cross10_C_ExecuteUbergraph_uw_fight_cross10;
-
-// Function uw_fight_cross10.uw_fight_cross10_C.K2_OnReloading
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_cross10_C_K2_OnReloading final
-{
-public:
-	bool                                          bIsReload;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	EWeaponType                                   Type;                                              // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bInterrupt;                                        // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AnimTime;                                          // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_cross10_C_K2_OnReloading;
 
 }
 

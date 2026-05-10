@@ -25,6 +25,15 @@ public:
 };
 DUMPER7_ASSERTS_ABP_GirlBase_HeadBase_C_AnimGraph;
 
+// Function ABP_GirlBase_HeadBase.ABP_GirlBase_HeadBase_C.BlueprintUpdateAnimation
+// 0x0004 (0x0004 - 0x0000)
+struct ABP_GirlBase_HeadBase_C_BlueprintUpdateAnimation final
+{
+public:
+	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ABP_GirlBase_HeadBase_C_BlueprintUpdateAnimation;
+
 // Function ABP_GirlBase_HeadBase.ABP_GirlBase_HeadBase_C.ExecuteUbergraph_ABP_GirlBase_HeadBase
 // 0x0024 (0x0024 - 0x0000)
 struct ABP_GirlBase_HeadBase_C_ExecuteUbergraph_ABP_GirlBase_HeadBase final
@@ -43,15 +52,6 @@ public:
 	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue_2;          // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_ABP_GirlBase_HeadBase_C_ExecuteUbergraph_ABP_GirlBase_HeadBase;
-
-// Function ABP_GirlBase_HeadBase.ABP_GirlBase_HeadBase_C.BlueprintUpdateAnimation
-// 0x0004 (0x0004 - 0x0000)
-struct ABP_GirlBase_HeadBase_C_BlueprintUpdateAnimation final
-{
-public:
-	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ABP_GirlBase_HeadBase_C_BlueprintUpdateAnimation;
 
 }
 

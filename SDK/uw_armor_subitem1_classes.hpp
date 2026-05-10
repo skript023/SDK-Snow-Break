@@ -33,10 +33,10 @@ public:
 	float                                         StartTime;                                         // 0x02B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Play();
-	void Construct();
-	void CustomEvent_0();
 	void ExecuteUbergraph_uw_armor_subitem1(int32 EntryPoint);
+	void CustomEvent_0();
+	void Construct();
+	void Play();
 
 public:
 	static class UClass* StaticClass()

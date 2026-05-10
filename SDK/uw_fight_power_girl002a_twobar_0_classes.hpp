@@ -43,8 +43,8 @@ public:
 public:
 	void PlayDepleteAnim(int32 Index_0);
 	void PlayFullAnim(int32 Index_0);
-	void PlayStartStateAnim(bool bPlay);
 	void ExecuteUbergraph_uw_fight_power_girl002a_twobar(int32 EntryPoint);
+	void PlayStartStateAnim(bool bPlay);
 
 public:
 	static class UClass* StaticClass()

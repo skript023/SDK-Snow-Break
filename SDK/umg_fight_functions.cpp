@@ -267,22 +267,24 @@ class FText Uumg_fight_C::Get_TxtOnlineNum_Text_0()
 }
 
 
-// LuaFunction umg_fight.umg_fight_C.GetFightPartShow
+// LuaFunction umg_fight.umg_fight_C.CheckFightPartShow
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
 // EFightWidgetPart                        InPart                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EFightWidgetPartHideReason              InReason                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-bool Uumg_fight_C::GetFightPartShow(EFightWidgetPart InPart)
+bool Uumg_fight_C::CheckFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "GetFightPartShow");
+		Func = Class->GetFunction("umg_fight_C", "CheckFightPartShow");
 
-	Params::umg_fight_C_GetFightPartShow Parms{};
+	Params::umg_fight_C_CheckFightPartShow Parms{};
 
 	Parms.InPart = InPart;
+	Parms.InReason = InReason;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -310,6 +312,31 @@ void Uumg_fight_C::HideSkillSelector(int32 SkillIndex)
 	Params::umg_fight_C_HideSkillSelector Parms{};
 
 	Parms.SkillIndex = SkillIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction umg_fight.umg_fight_C.ShowOrHideCross
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void Uumg_fight_C::ShowOrHideCross(bool bShow)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_fight_C", "ShowOrHideCross");
+
+	Params::umg_fight_C_ShowOrHideCross Parms{};
+
+	Parms.bShow = bShow;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -364,24 +391,47 @@ void Uumg_fight_C::UpdateControl()
 }
 
 
-// LuaFunction umg_fight.umg_fight_C.CheckFightPartShow
+// LuaFunction umg_fight.umg_fight_C.UpdateInteractionProgress
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
-// EFightWidgetPart                        InPart                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EFightWidgetPartHideReason              InReason                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool Uumg_fight_C::CheckFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason)
+void Uumg_fight_C::UpdateInteractionProgress(float InValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "CheckFightPartShow");
+		Func = Class->GetFunction("umg_fight_C", "UpdateInteractionProgress");
 
-	Params::umg_fight_C_CheckFightPartShow Parms{};
+	Params::umg_fight_C_UpdateInteractionProgress Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction umg_fight.umg_fight_C.GetFightPartShow
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// EFightWidgetPart                        InPart                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+bool Uumg_fight_C::GetFightPartShow(EFightWidgetPart InPart)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("umg_fight_C", "GetFightPartShow");
+
+	Params::umg_fight_C_GetFightPartShow Parms{};
 
 	Parms.InPart = InPart;
-	Parms.InReason = InReason;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -415,56 +465,6 @@ void Uumg_fight_C::SetFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHid
 	Parms.InReason = InReason;
 	Parms.bShow = bShow;
 	Parms.bForce = bForce;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction umg_fight.umg_fight_C.ShowOrHideCross
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void Uumg_fight_C::ShowOrHideCross(bool bShow)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "ShowOrHideCross");
-
-	Params::umg_fight_C_ShowOrHideCross Parms{};
-
-	Parms.bShow = bShow;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction umg_fight.umg_fight_C.UpdateInteractionProgress
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uumg_fight_C::UpdateInteractionProgress(float InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("umg_fight_C", "UpdateInteractionProgress");
-
-	Params::umg_fight_C_UpdateInteractionProgress Parms{};
-
-	Parms.InValue = InValue;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

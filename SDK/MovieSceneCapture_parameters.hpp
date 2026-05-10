@@ -34,42 +34,6 @@ public:
 };
 DUMPER7_ASSERTS_MovieSceneCaptureProtocolBase_IsCapturing;
 
-// Function MovieSceneCapture.MovieSceneCapture.GetAudioCaptureProtocol
-// 0x0008 (0x0008 - 0x0000)
-struct MovieSceneCapture_GetAudioCaptureProtocol final
-{
-public:
-	class UMovieSceneCaptureProtocolBase*         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneCapture_GetAudioCaptureProtocol;
-
-// Function MovieSceneCapture.MovieSceneCapture.GetImageCaptureProtocol
-// 0x0008 (0x0008 - 0x0000)
-struct MovieSceneCapture_GetImageCaptureProtocol final
-{
-public:
-	class UMovieSceneCaptureProtocolBase*         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneCapture_GetImageCaptureProtocol;
-
-// Function MovieSceneCapture.MovieSceneCapture.SetAudioCaptureProtocolType
-// 0x0008 (0x0008 - 0x0000)
-struct MovieSceneCapture_SetAudioCaptureProtocolType final
-{
-public:
-	TSubclassOf<class UMovieSceneCaptureProtocolBase> ProtocolType;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneCapture_SetAudioCaptureProtocolType;
-
-// Function MovieSceneCapture.MovieSceneCapture.SetImageCaptureProtocolType
-// 0x0008 (0x0008 - 0x0000)
-struct MovieSceneCapture_SetImageCaptureProtocolType final
-{
-public:
-	TSubclassOf<class UMovieSceneCaptureProtocolBase> ProtocolType;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneCapture_SetImageCaptureProtocolType;
-
 // Function MovieSceneCapture.MovieSceneCaptureEnvironment.FindAudioCaptureProtocol
 // 0x0008 (0x0008 - 0x0000)
 struct MovieSceneCaptureEnvironment_FindAudioCaptureProtocol final
@@ -114,6 +78,42 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MovieSceneCaptureEnvironment_IsCaptureInProgress;
+
+// Function MovieSceneCapture.MovieSceneCapture.GetAudioCaptureProtocol
+// 0x0008 (0x0008 - 0x0000)
+struct MovieSceneCapture_GetAudioCaptureProtocol final
+{
+public:
+	class UMovieSceneCaptureProtocolBase*         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneCapture_GetAudioCaptureProtocol;
+
+// Function MovieSceneCapture.MovieSceneCapture.GetImageCaptureProtocol
+// 0x0008 (0x0008 - 0x0000)
+struct MovieSceneCapture_GetImageCaptureProtocol final
+{
+public:
+	class UMovieSceneCaptureProtocolBase*         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneCapture_GetImageCaptureProtocol;
+
+// Function MovieSceneCapture.MovieSceneCapture.SetAudioCaptureProtocolType
+// 0x0008 (0x0008 - 0x0000)
+struct MovieSceneCapture_SetAudioCaptureProtocolType final
+{
+public:
+	TSubclassOf<class UMovieSceneCaptureProtocolBase> ProtocolType;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneCapture_SetAudioCaptureProtocolType;
+
+// Function MovieSceneCapture.MovieSceneCapture.SetImageCaptureProtocolType
+// 0x0008 (0x0008 - 0x0000)
+struct MovieSceneCapture_SetImageCaptureProtocolType final
+{
+public:
+	TSubclassOf<class UMovieSceneCaptureProtocolBase> ProtocolType;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneCapture_SetImageCaptureProtocolType;
 
 // Function MovieSceneCapture.UserDefinedCaptureProtocol.OnPixelsReceived
 // 0x0070 (0x0070 - 0x0000)

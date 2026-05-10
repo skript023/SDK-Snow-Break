@@ -11,21 +11,12 @@
 #include "Basic.hpp"
 
 #include "Game_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// LuaFunction Emitter_Trap.Emitter_Trap_C.OnEmit
-// 0x0001 (0x0001 - 0x0000)
-struct Emitter_Trap_C_OnEmit final
-{
-public:
-	EEmitterResult                                ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Emitter_Trap_C_OnEmit;
 
 // Function Emitter_Trap.Emitter_Trap_C.OnGetAssetPath
 // 0x01A0 (0x01A0 - 0x0000)
@@ -81,6 +72,15 @@ public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Emitter_Trap_C_ExecuteUbergraph_Emitter_Trap;
+
+// LuaFunction Emitter_Trap.Emitter_Trap_C.OnEmit
+// 0x0001 (0x0001 - 0x0000)
+struct Emitter_Trap_C_OnEmit final
+{
+public:
+	EEmitterResult                                ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Emitter_Trap_C_OnEmit;
 
 // Function Emitter_Trap.Emitter_Trap_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

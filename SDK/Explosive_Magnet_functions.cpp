@@ -17,61 +17,23 @@
 namespace SDK
 {
 
-// LuaFunction Explosive_Magnet.Explosive_Magnet_C.CheckCull
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void AExplosive_Magnet_C::CheckCull()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Explosive_Magnet_C", "CheckCull");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction Explosive_Magnet.Explosive_Magnet_C.SetHpShowDistance
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void AExplosive_Magnet_C::SetHpShowDistance()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Explosive_Magnet_C", "SetHpShowDistance");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Explosive_Magnet.Explosive_Magnet_C.IsStillValid
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function Explosive_Magnet.Explosive_Magnet_C.ExecuteUbergraph_Explosive_Magnet
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool AExplosive_Magnet_C::IsStillValid()
+void AExplosive_Magnet_C::ExecuteUbergraph_Explosive_Magnet(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Explosive_Magnet_C", "IsStillValid");
+		Func = Class->GetFunction("Explosive_Magnet_C", "ExecuteUbergraph_Explosive_Magnet");
 
-	Params::Explosive_Magnet_C_IsStillValid Parms{};
+	Params::Explosive_Magnet_C_ExecuteUbergraph_Explosive_Magnet Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 
@@ -95,23 +57,61 @@ void AExplosive_Magnet_C::ReSpawn(bool IsValid)
 }
 
 
-// Function Explosive_Magnet.Explosive_Magnet_C.ExecuteUbergraph_Explosive_Magnet
-// (Final, UbergraphFunction)
+// Function Explosive_Magnet.Explosive_Magnet_C.IsStillValid
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-void AExplosive_Magnet_C::ExecuteUbergraph_Explosive_Magnet(int32 EntryPoint)
+bool AExplosive_Magnet_C::IsStillValid()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Explosive_Magnet_C", "ExecuteUbergraph_Explosive_Magnet");
+		Func = Class->GetFunction("Explosive_Magnet_C", "IsStillValid");
 
-	Params::Explosive_Magnet_C_ExecuteUbergraph_Explosive_Magnet Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Params::Explosive_Magnet_C_IsStillValid Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// LuaFunction Explosive_Magnet.Explosive_Magnet_C.SetHpShowDistance
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void AExplosive_Magnet_C::SetHpShowDistance()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Explosive_Magnet_C", "SetHpShowDistance");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction Explosive_Magnet.Explosive_Magnet_C.CheckCull
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void AExplosive_Magnet_C::CheckCull()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Explosive_Magnet_C", "CheckCull");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 }

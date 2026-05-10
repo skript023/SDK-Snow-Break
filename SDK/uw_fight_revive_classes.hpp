@@ -21,10 +21,10 @@ namespace SDK
 class Uuw_fight_revive_C final : public Uuw_fight_interactitem_C
 {
 public:
-	void TriggerInteract();
 	void BindExitInteractEvent();
-	void Destruct();
+	void TriggerInteract();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

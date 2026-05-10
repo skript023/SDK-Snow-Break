@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "PostFogInSide_Str_structs.hpp"
-#include "Game_classes.hpp"
 #include "TwostFogInSide_Str_structs.hpp"
 #include "PostFogOut_Str_structs.hpp"
+#include "PostFogInSide_Str_structs.hpp"
 #include "TwostFogCusInSide_Str_structs.hpp"
 #include "TwostFogOringin_Str_structs.hpp"
+#include "Game_classes.hpp"
 
 
 namespace SDK

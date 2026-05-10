@@ -55,15 +55,15 @@ void UEmitter_SkillMove_RushToGoal_C::OnEmitBegin()
 }
 
 
-// LuaFunction Emitter_SkillMove_RushToGoal.Emitter_SkillMove_RushToGoal_C.OnEmitEnd
-// (Native, Event, Protected, BlueprintEvent)
+// LuaFunction Emitter_SkillMove_RushToGoal.Emitter_SkillMove_RushToGoal_C.EmitterDestroyLua
+// (Native, Event, Public, BlueprintEvent)
 
-void UEmitter_SkillMove_RushToGoal_C::OnEmitEnd()
+void UEmitter_SkillMove_RushToGoal_C::EmitterDestroyLua()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_RushToGoal_C", "OnEmitEnd");
+		Func = Class->GetFunction("Emitter_SkillMove_RushToGoal_C", "EmitterDestroyLua");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -99,15 +99,15 @@ void UEmitter_SkillMove_RushToGoal_C::OnEmitTick(float DeltaTime)
 }
 
 
-// LuaFunction Emitter_SkillMove_RushToGoal.Emitter_SkillMove_RushToGoal_C.EmitterDestroyLua
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction Emitter_SkillMove_RushToGoal.Emitter_SkillMove_RushToGoal_C.OnEmitEnd
+// (Native, Event, Protected, BlueprintEvent)
 
-void UEmitter_SkillMove_RushToGoal_C::EmitterDestroyLua()
+void UEmitter_SkillMove_RushToGoal_C::OnEmitEnd()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_RushToGoal_C", "EmitterDestroyLua");
+		Func = Class->GetFunction("Emitter_SkillMove_RushToGoal_C", "OnEmitEnd");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

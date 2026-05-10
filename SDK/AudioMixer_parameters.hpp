@@ -17,15 +17,6 @@
 namespace SDK::Params
 {
 
-// Function AudioMixer.SubmixEffectSubmixEQPreset.SetSettings
-// 0x0010 (0x0010 - 0x0000)
-struct SubmixEffectSubmixEQPreset_SetSettings final
-{
-public:
-	struct FSubmixEffectSubmixEQSettings          InSettings;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectSubmixEQPreset_SetSettings;
-
 // Function AudioMixer.SynthComponent.SetLowPassFilterEnabled
 // 0x0001 (0x0001 - 0x0000)
 struct SynthComponent_SetLowPassFilterEnabled final
@@ -73,135 +64,34 @@ public:
 };
 DUMPER7_ASSERTS_SynthComponent_IsPlaying;
 
-// Function AudioMixer.QuartzSubsystem.CreateNewClock
+// Function AudioMixer.SubmixEffectSubmixEQPreset.SetSettings
+// 0x0010 (0x0010 - 0x0000)
+struct SubmixEffectSubmixEQPreset_SetSettings final
+{
+public:
+	struct FSubmixEffectSubmixEQSettings          InSettings;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectSubmixEQPreset_SetSettings;
+
+// Function AudioMixer.SubmixEffectReverbPreset.SetSettings
 // 0x0040 (0x0040 - 0x0000)
-struct QuartzSubsystem_CreateNewClock final
+struct SubmixEffectReverbPreset_SetSettings final
 {
 public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ClockName;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FQuartzClockSettings                   InSettings;                                        // 0x0010(0x0020)(Parm, NativeAccessSpecifierPublic)
-	bool                                          bOverrideSettingsIfClockExists;                    // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UQuartzClockHandle*                     ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSubmixEffectReverbSettings            InSettings;                                        // 0x0000(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_QuartzSubsystem_CreateNewClock;
+DUMPER7_ASSERTS_SubmixEffectReverbPreset_SetSettings;
 
-// Function AudioMixer.QuartzSubsystem.DoesClockExist
-// 0x0018 (0x0018 - 0x0000)
-struct QuartzSubsystem_DoesClockExist final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ClockName;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_QuartzSubsystem_DoesClockExist;
-
-// Function AudioMixer.QuartzSubsystem.GetAudioRenderThreadToGameThreadAverageLatency
-// 0x0004 (0x0004 - 0x0000)
-struct QuartzSubsystem_GetAudioRenderThreadToGameThreadAverageLatency final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_QuartzSubsystem_GetAudioRenderThreadToGameThreadAverageLatency;
-
-// Function AudioMixer.QuartzSubsystem.GetAudioRenderThreadToGameThreadMaxLatency
-// 0x0004 (0x0004 - 0x0000)
-struct QuartzSubsystem_GetAudioRenderThreadToGameThreadMaxLatency final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_QuartzSubsystem_GetAudioRenderThreadToGameThreadMaxLatency;
-
-// Function AudioMixer.QuartzSubsystem.GetAudioRenderThreadToGameThreadMinLatency
-// 0x0004 (0x0004 - 0x0000)
-struct QuartzSubsystem_GetAudioRenderThreadToGameThreadMinLatency final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_QuartzSubsystem_GetAudioRenderThreadToGameThreadMinLatency;
-
-// Function AudioMixer.QuartzSubsystem.GetGameThreadToAudioRenderThreadAverageLatency
+// Function AudioMixer.SubmixEffectReverbPreset.SetSettingsWithReverbEffect
 // 0x0010 (0x0010 - 0x0000)
-struct QuartzSubsystem_GetGameThreadToAudioRenderThreadAverageLatency final
+struct SubmixEffectReverbPreset_SetSettingsWithReverbEffect final
 {
 public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	const class UReverbEffect*                    InReverbEffect;                                    // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WetLevel;                                          // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DryLevel;                                          // 0x000C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_QuartzSubsystem_GetGameThreadToAudioRenderThreadAverageLatency;
-
-// Function AudioMixer.QuartzSubsystem.GetGameThreadToAudioRenderThreadMaxLatency
-// 0x0010 (0x0010 - 0x0000)
-struct QuartzSubsystem_GetGameThreadToAudioRenderThreadMaxLatency final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_QuartzSubsystem_GetGameThreadToAudioRenderThreadMaxLatency;
-
-// Function AudioMixer.QuartzSubsystem.GetGameThreadToAudioRenderThreadMinLatency
-// 0x0010 (0x0010 - 0x0000)
-struct QuartzSubsystem_GetGameThreadToAudioRenderThreadMinLatency final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_QuartzSubsystem_GetGameThreadToAudioRenderThreadMinLatency;
-
-// Function AudioMixer.QuartzSubsystem.GetHandleForClock
-// 0x0018 (0x0018 - 0x0000)
-struct QuartzSubsystem_GetHandleForClock final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ClockName;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UQuartzClockHandle*                     ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_QuartzSubsystem_GetHandleForClock;
-
-// Function AudioMixer.QuartzSubsystem.GetRoundTripAverageLatency
-// 0x0010 (0x0010 - 0x0000)
-struct QuartzSubsystem_GetRoundTripAverageLatency final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_QuartzSubsystem_GetRoundTripAverageLatency;
-
-// Function AudioMixer.QuartzSubsystem.GetRoundTripMaxLatency
-// 0x0010 (0x0010 - 0x0000)
-struct QuartzSubsystem_GetRoundTripMaxLatency final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_QuartzSubsystem_GetRoundTripMaxLatency;
-
-// Function AudioMixer.QuartzSubsystem.GetRoundTripMinLatency
-// 0x0010 (0x0010 - 0x0000)
-struct QuartzSubsystem_GetRoundTripMinLatency final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_QuartzSubsystem_GetRoundTripMinLatency;
+DUMPER7_ASSERTS_SubmixEffectReverbPreset_SetSettingsWithReverbEffect;
 
 // Function AudioMixer.AudioMixerBlueprintLibrary.AddMasterSubmixEffect
 // 0x0010 (0x0010 - 0x0000)
@@ -773,25 +663,135 @@ public:
 };
 DUMPER7_ASSERTS_SubmixEffectDynamicsProcessorPreset_SetSettings;
 
-// Function AudioMixer.SubmixEffectReverbPreset.SetSettings
+// Function AudioMixer.QuartzSubsystem.CreateNewClock
 // 0x0040 (0x0040 - 0x0000)
-struct SubmixEffectReverbPreset_SetSettings final
+struct QuartzSubsystem_CreateNewClock final
 {
 public:
-	struct FSubmixEffectReverbSettings            InSettings;                                        // 0x0000(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ClockName;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FQuartzClockSettings                   InSettings;                                        // 0x0010(0x0020)(Parm, NativeAccessSpecifierPublic)
+	bool                                          bOverrideSettingsIfClockExists;                    // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UQuartzClockHandle*                     ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_SubmixEffectReverbPreset_SetSettings;
+DUMPER7_ASSERTS_QuartzSubsystem_CreateNewClock;
 
-// Function AudioMixer.SubmixEffectReverbPreset.SetSettingsWithReverbEffect
-// 0x0010 (0x0010 - 0x0000)
-struct SubmixEffectReverbPreset_SetSettingsWithReverbEffect final
+// Function AudioMixer.QuartzSubsystem.DoesClockExist
+// 0x0018 (0x0018 - 0x0000)
+struct QuartzSubsystem_DoesClockExist final
 {
 public:
-	const class UReverbEffect*                    InReverbEffect;                                    // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WetLevel;                                          // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DryLevel;                                          // 0x000C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ClockName;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_SubmixEffectReverbPreset_SetSettingsWithReverbEffect;
+DUMPER7_ASSERTS_QuartzSubsystem_DoesClockExist;
+
+// Function AudioMixer.QuartzSubsystem.GetAudioRenderThreadToGameThreadAverageLatency
+// 0x0004 (0x0004 - 0x0000)
+struct QuartzSubsystem_GetAudioRenderThreadToGameThreadAverageLatency final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_QuartzSubsystem_GetAudioRenderThreadToGameThreadAverageLatency;
+
+// Function AudioMixer.QuartzSubsystem.GetAudioRenderThreadToGameThreadMaxLatency
+// 0x0004 (0x0004 - 0x0000)
+struct QuartzSubsystem_GetAudioRenderThreadToGameThreadMaxLatency final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_QuartzSubsystem_GetAudioRenderThreadToGameThreadMaxLatency;
+
+// Function AudioMixer.QuartzSubsystem.GetAudioRenderThreadToGameThreadMinLatency
+// 0x0004 (0x0004 - 0x0000)
+struct QuartzSubsystem_GetAudioRenderThreadToGameThreadMinLatency final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_QuartzSubsystem_GetAudioRenderThreadToGameThreadMinLatency;
+
+// Function AudioMixer.QuartzSubsystem.GetGameThreadToAudioRenderThreadAverageLatency
+// 0x0010 (0x0010 - 0x0000)
+struct QuartzSubsystem_GetGameThreadToAudioRenderThreadAverageLatency final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_QuartzSubsystem_GetGameThreadToAudioRenderThreadAverageLatency;
+
+// Function AudioMixer.QuartzSubsystem.GetGameThreadToAudioRenderThreadMaxLatency
+// 0x0010 (0x0010 - 0x0000)
+struct QuartzSubsystem_GetGameThreadToAudioRenderThreadMaxLatency final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_QuartzSubsystem_GetGameThreadToAudioRenderThreadMaxLatency;
+
+// Function AudioMixer.QuartzSubsystem.GetGameThreadToAudioRenderThreadMinLatency
+// 0x0010 (0x0010 - 0x0000)
+struct QuartzSubsystem_GetGameThreadToAudioRenderThreadMinLatency final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_QuartzSubsystem_GetGameThreadToAudioRenderThreadMinLatency;
+
+// Function AudioMixer.QuartzSubsystem.GetHandleForClock
+// 0x0018 (0x0018 - 0x0000)
+struct QuartzSubsystem_GetHandleForClock final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ClockName;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UQuartzClockHandle*                     ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_QuartzSubsystem_GetHandleForClock;
+
+// Function AudioMixer.QuartzSubsystem.GetRoundTripAverageLatency
+// 0x0010 (0x0010 - 0x0000)
+struct QuartzSubsystem_GetRoundTripAverageLatency final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_QuartzSubsystem_GetRoundTripAverageLatency;
+
+// Function AudioMixer.QuartzSubsystem.GetRoundTripMaxLatency
+// 0x0010 (0x0010 - 0x0000)
+struct QuartzSubsystem_GetRoundTripMaxLatency final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_QuartzSubsystem_GetRoundTripMaxLatency;
+
+// Function AudioMixer.QuartzSubsystem.GetRoundTripMinLatency
+// 0x0010 (0x0010 - 0x0000)
+struct QuartzSubsystem_GetRoundTripMinLatency final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_QuartzSubsystem_GetRoundTripMinLatency;
 
 }
 

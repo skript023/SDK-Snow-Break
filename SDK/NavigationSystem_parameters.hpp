@@ -17,80 +17,6 @@
 namespace SDK::Params
 {
 
-// Function NavigationSystem.NavigationPath.EnableDebugDrawing
-// 0x0014 (0x0014 - 0x0000)
-struct NavigationPath_EnableDebugDrawing final
-{
-public:
-	bool                                          bShouldDrawDebugData;                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           PathColor;                                         // 0x0004(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavigationPath_EnableDebugDrawing;
-
-// Function NavigationSystem.NavigationPath.EnableRecalculationOnInvalidation
-// 0x0001 (0x0001 - 0x0000)
-struct NavigationPath_EnableRecalculationOnInvalidation final
-{
-public:
-	ENavigationOptionFlag                         DoRecalculation;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavigationPath_EnableRecalculationOnInvalidation;
-
-// Function NavigationSystem.NavigationPath.GetDebugString
-// 0x0010 (0x0010 - 0x0000)
-struct NavigationPath_GetDebugString final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavigationPath_GetDebugString;
-
-// Function NavigationSystem.NavigationPath.GetPathCost
-// 0x0004 (0x0004 - 0x0000)
-struct NavigationPath_GetPathCost final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavigationPath_GetPathCost;
-
-// Function NavigationSystem.NavigationPath.GetPathLength
-// 0x0004 (0x0004 - 0x0000)
-struct NavigationPath_GetPathLength final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavigationPath_GetPathLength;
-
-// Function NavigationSystem.NavigationPath.IsPartial
-// 0x0001 (0x0001 - 0x0000)
-struct NavigationPath_IsPartial final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavigationPath_IsPartial;
-
-// Function NavigationSystem.NavigationPath.IsStringPulled
-// 0x0001 (0x0001 - 0x0000)
-struct NavigationPath_IsStringPulled final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavigationPath_IsStringPulled;
-
-// Function NavigationSystem.NavigationPath.IsValid
-// 0x0001 (0x0001 - 0x0000)
-struct NavigationPath_IsValid final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavigationPath_IsValid;
-
 // Function NavigationSystem.NavigationSystemV1.FindPathToActorSynchronously
 // 0x0040 (0x0040 - 0x0000)
 struct NavigationSystemV1_FindPathToActorSynchronously final
@@ -397,6 +323,80 @@ public:
 	class AActor*                                 Invoker;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_NavigationSystemV1_UnregisterNavigationInvoker;
+
+// Function NavigationSystem.NavigationPath.EnableDebugDrawing
+// 0x0014 (0x0014 - 0x0000)
+struct NavigationPath_EnableDebugDrawing final
+{
+public:
+	bool                                          bShouldDrawDebugData;                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           PathColor;                                         // 0x0004(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavigationPath_EnableDebugDrawing;
+
+// Function NavigationSystem.NavigationPath.EnableRecalculationOnInvalidation
+// 0x0001 (0x0001 - 0x0000)
+struct NavigationPath_EnableRecalculationOnInvalidation final
+{
+public:
+	ENavigationOptionFlag                         DoRecalculation;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavigationPath_EnableRecalculationOnInvalidation;
+
+// Function NavigationSystem.NavigationPath.GetDebugString
+// 0x0010 (0x0010 - 0x0000)
+struct NavigationPath_GetDebugString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavigationPath_GetDebugString;
+
+// Function NavigationSystem.NavigationPath.GetPathCost
+// 0x0004 (0x0004 - 0x0000)
+struct NavigationPath_GetPathCost final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavigationPath_GetPathCost;
+
+// Function NavigationSystem.NavigationPath.GetPathLength
+// 0x0004 (0x0004 - 0x0000)
+struct NavigationPath_GetPathLength final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavigationPath_GetPathLength;
+
+// Function NavigationSystem.NavigationPath.IsPartial
+// 0x0001 (0x0001 - 0x0000)
+struct NavigationPath_IsPartial final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavigationPath_IsPartial;
+
+// Function NavigationSystem.NavigationPath.IsStringPulled
+// 0x0001 (0x0001 - 0x0000)
+struct NavigationPath_IsStringPulled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavigationPath_IsStringPulled;
+
+// Function NavigationSystem.NavigationPath.IsValid
+// 0x0001 (0x0001 - 0x0000)
+struct NavigationPath_IsValid final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavigationPath_IsValid;
 
 // Function NavigationSystem.NavRelevantComponent.SetNavigationRelevancy
 // 0x0001 (0x0001 - 0x0000)

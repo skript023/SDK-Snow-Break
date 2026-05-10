@@ -25,10 +25,10 @@ public:
 	bool                                          bWarning;                                          // 0x0221(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void OnEnd();
 	void OnActive();
-	class FString GetDescription();
+	void OnEnd();
 	void OnActive_Client();
+	class FString GetDescription();
 	void OnEnd_Client();
 
 	class FString GetSpecialStaticDescription() const;

@@ -41,12 +41,12 @@ public:
 	void SequenceEvent__ENTRYPOINTuw_fight_direction_shop_0();
 	void StartLoop(const class UObject* Object, bool HasAppear);
 	void SetDefendTargetPercent(float Value);
-	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);
 	void PlayDieAnim();
 	void AppearFinish(class UWidgetAnimation* Animation);
 	void OnAnimationFinished(const class UWidgetAnimation* Animation);
 	void PlayTypeAnim();
 	void ExecuteUbergraph_uw_fight_direction_shop(int32 EntryPoint);
+	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);
 
 public:
 	static class UClass* StaticClass()

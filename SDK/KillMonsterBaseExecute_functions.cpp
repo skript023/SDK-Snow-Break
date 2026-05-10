@@ -17,50 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.GetDescription
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UKillMonsterBaseExecute_C::GetDescription()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterBaseExecute_C", "GetDescription");
-
-	Params::KillMonsterBaseExecute_C_GetDescription Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.OnEnd
-// (Native, Event, Public, BlueprintEvent)
-
-void UKillMonsterBaseExecute_C::OnEnd()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterBaseExecute_C", "OnEnd");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.OnActive
 // (Native, Event, Public, BlueprintEvent)
 
@@ -80,15 +36,15 @@ void UKillMonsterBaseExecute_C::OnActive()
 }
 
 
-// LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.OnCountDown_Client
+// LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.OnEnd
 // (Native, Event, Public, BlueprintEvent)
 
-void UKillMonsterBaseExecute_C::OnCountDown_Client()
+void UKillMonsterBaseExecute_C::OnEnd()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterBaseExecute_C", "OnCountDown_Client");
+		Func = Class->GetFunction("KillMonsterBaseExecute_C", "OnEnd");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -118,6 +74,31 @@ void UKillMonsterBaseExecute_C::OnActive_Client()
 }
 
 
+// LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.GetDescription
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UKillMonsterBaseExecute_C::GetDescription()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KillMonsterBaseExecute_C", "GetDescription");
+
+	Params::KillMonsterBaseExecute_C_GetDescription Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.OnEnd_Client
 // (Native, Event, Public, BlueprintEvent)
 
@@ -127,6 +108,25 @@ void UKillMonsterBaseExecute_C::OnEnd_Client()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("KillMonsterBaseExecute_C", "OnEnd_Client");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction KillMonsterBaseExecute.KillMonsterBaseExecute_C.OnCountDown_Client
+// (Native, Event, Public, BlueprintEvent)
+
+void UKillMonsterBaseExecute_C::OnCountDown_Client()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KillMonsterBaseExecute_C", "OnCountDown_Client");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -32,13 +32,13 @@ public:
 	class URedirectTextBlock*                     TxtScore;                                          // 0x03E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_worldboss_score(int32 EntryPoint);
-	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void NumberScroll__Overridden(float InDeltaTime);
-	void Construct();
+	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void ExecuteUbergraph_uw_fight_worldboss_score(int32 EntryPoint);
 	void NumberScroll(float InDeltaTime);
-	void Destruct();
+	void Construct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

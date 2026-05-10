@@ -16,6 +16,35 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.ChangeIcon
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_reload_button_new_C_ChangeIcon final
+{
+public:
+	EWeaponType                                   WeaponType;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         WeaponMode;                                        // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_reload_button_new_C_ChangeIcon;
+
+// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.K2_OnCharacterChange
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_reload_button_new_C_K2_OnCharacterChange final
+{
+public:
+	class AGameCharacter*                         Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_reload_button_new_C_K2_OnCharacterChange;
+
+// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.UpdateFromCharacter
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_reload_button_new_C_UpdateFromCharacter final
+{
+public:
+	class AGameCharacter*                         Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_reload_button_new_C_UpdateFromCharacter;
+
 // Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.ExecuteUbergraph_uw_fight_reload_button_new
 // 0x0070 (0x0070 - 0x0000)
 struct uw_fight_reload_button_new_C_ExecuteUbergraph_uw_fight_reload_button_new final
@@ -54,35 +83,6 @@ public:
 	bool                                          CallFunc_BooleanOR_ReturnValue_3;                  // 0x006F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_reload_button_new_C_ExecuteUbergraph_uw_fight_reload_button_new;
-
-// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.UpdateFromCharacter
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_reload_button_new_C_UpdateFromCharacter final
-{
-public:
-	class AGameCharacter*                         Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_reload_button_new_C_UpdateFromCharacter;
-
-// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.K2_OnCharacterChange
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_reload_button_new_C_K2_OnCharacterChange final
-{
-public:
-	class AGameCharacter*                         Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_reload_button_new_C_K2_OnCharacterChange;
-
-// Function uw_fight_reload_button_new.uw_fight_reload_button_new_C.ChangeIcon
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_reload_button_new_C_ChangeIcon final
-{
-public:
-	EWeaponType                                   WeaponType;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         WeaponMode;                                        // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_reload_button_new_C_ChangeIcon;
 
 }
 

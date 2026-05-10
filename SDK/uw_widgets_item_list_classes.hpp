@@ -156,12 +156,12 @@ public:
 	class URedirectTextBlock*                     TxtTitle;                                          // 0x07C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void OnConstruct();
 	void Destruct();
-	void OnListItemObjectSet(class UObject* ListItemObject);
+	void OnConstruct();
+	void Construct();
 	void CustListQuickPlayAnim();
 	void CustListPlayAnim();
-	void Construct();
+	void OnListItemObjectSet(class UObject* ListItemObject);
 	void SequenceEvent__ENTRYPOINTuw_widgets_item_list_3();
 	void SequenceEvent__ENTRYPOINTuw_widgets_item_list_2();
 	void SequenceEvent__ENTRYPOINTuw_widgets_item_list_1();

@@ -134,15 +134,6 @@ public:
 };
 DUMPER7_ASSERTS_TargetTrigger_C_ExecuteUbergraph_TargetTrigger;
 
-// LuaFunction TargetTrigger.TargetTrigger_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct TargetTrigger_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TargetTrigger_C_ReceiveEndPlay;
-
 // LuaFunction TargetTrigger.TargetTrigger_C.ReceiveActorBeginOverlap
 // 0x0008 (0x0008 - 0x0000)
 struct TargetTrigger_C_ReceiveActorBeginOverlap final
@@ -151,6 +142,15 @@ public:
 	class AActor*                                 OtherActor;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_TargetTrigger_C_ReceiveActorBeginOverlap;
+
+// LuaFunction TargetTrigger.TargetTrigger_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct TargetTrigger_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TargetTrigger_C_ReceiveTick;
 
 // LuaFunction TargetTrigger.TargetTrigger_C.ReceiveActorEndOverlap
 // 0x0008 (0x0008 - 0x0000)
@@ -161,14 +161,14 @@ public:
 };
 DUMPER7_ASSERTS_TargetTrigger_C_ReceiveActorEndOverlap;
 
-// LuaFunction TargetTrigger.TargetTrigger_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct TargetTrigger_C_ReceiveTick final
+// LuaFunction TargetTrigger.TargetTrigger_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct TargetTrigger_C_ReceiveEndPlay final
 {
 public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_TargetTrigger_C_ReceiveTick;
+DUMPER7_ASSERTS_TargetTrigger_C_ReceiveEndPlay;
 
 // Function TargetTrigger.TargetTrigger_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

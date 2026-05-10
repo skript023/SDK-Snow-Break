@@ -18,16 +18,16 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass WeaponBulletHoming.WeaponBulletHoming_C
-// 0x0020 (0x00F8 - 0x00D8)
+// 0x0020 (0x0100 - 0x00E0)
 class UWeaponBulletHoming_C final : public UModifierSpecialEffectObject
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UClass*                                 Buffer;                                            // 0x00E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UGameAbilityBuffer*                     NoBulletBuffer;                                    // 0x00E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         EmitterID;                                         // 0x00F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsTryHitOnlyTarget;                                // 0x00F4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          IsStartHitFromCamera;                              // 0x00F5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00E0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UClass*                                 Buffer;                                            // 0x00E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UGameAbilityBuffer*                     NoBulletBuffer;                                    // 0x00F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         EmitterID;                                         // 0x00F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsTryHitOnlyTarget;                                // 0x00FC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          IsStartHitFromCamera;                              // 0x00FD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void SetEmitterID(bool bRemove);

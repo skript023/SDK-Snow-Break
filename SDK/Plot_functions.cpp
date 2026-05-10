@@ -3460,6 +3460,25 @@ bool UPlotSaveGame::HasKey(const class FString& InKey) const
 }
 
 
+// Function Plot.SpineActor.DestroyAllSpineActor
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void ASpineActor::DestroyAllSpineActor()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SpineActor", "DestroyAllSpineActor");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Plot.PlotSpineEffectImage.SetDataAndPlayAnimation
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -5230,6 +5249,28 @@ void UPlotWidgetCover::ShowSecondText()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Plot.PlotWidgetFightSpine.DoTalk
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UPlotWidget*                      InParent                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPlotItem_Talk*                   InData                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlotWidgetFightSpine::DoTalk(class UPlotWidget* InParent, class UPlotItem_Talk* InData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlotWidgetFightSpine", "DoTalk");
+
+	Params::PlotWidgetFightSpine_DoTalk Parms{};
+
+	Parms.InParent = InParent;
+	Parms.InData = InData;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

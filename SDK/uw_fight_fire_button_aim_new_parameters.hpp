@@ -10,9 +10,81 @@
 
 #include "Basic.hpp"
 
+#include "Game_structs.hpp"
+#include "UMG_structs.hpp"
+
 
 namespace SDK::Params
 {
+
+// Function uw_fight_fire_button_aim_new.uw_fight_fire_button_aim_new_C.ExecuteUbergraph_uw_fight_fire_button_aim_new
+// 0x0078 (0x0078 - 0x0000)
+struct uw_fight_fire_button_aim_new_C_ExecuteUbergraph_uw_fight_fire_button_aim_new final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              ___byte_Variable;                                  // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              ___byte_Variable_1;                                // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGameCharacter*                         K2Node_Event_Character;                            // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsVisible_ReturnValue;                    // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         K2Node_CustomEvent_ModifierID;                     // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_IsApply;                        // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	int64                                         K2Node_CustomEvent_LauncherCharacterHashIndex;     // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EModifierRemoveSourceType                     K2Node_CustomEvent_RemoveSourceType;               // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x002A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsModifierDataInfoExist_ReturnValue;      // 0x002B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsModifierDataInfoExist_ReturnValue_1;    // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x002D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          ___bool_Variable;                                  // 0x002E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x002F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	ESlateVisibility                              K2Node_Select_Default;                             // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(int32 ModifierID, bool IsApply, int64 LauncherCharacterHashIndex, EModifierRemoveSourceType RemoveSourceType)> K2Node_CreateDelegate_OutputDelegate; // 0x0034(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void(int32 ModifierID, bool IsApply, int64 LauncherCharacterHashIndex, EModifierRemoveSourceType RemoveSourceType)> K2Node_CreateDelegate_OutputDelegate_1; // 0x0044(0x0010)(ZeroConstructor, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0054(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x0055(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_56[0x2];                                       // 0x0056(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  CallFunc_GetOwningPlayerPawn_ReturnValue;          // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  K2Node_CustomEvent_Character;                      // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_Girl004c_C*                         K2Node_DynamicCast_AsBP_Girl_004c;                 // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_fire_button_aim_new_C_ExecuteUbergraph_uw_fight_fire_button_aim_new;
+
+// Function uw_fight_fire_button_aim_new.uw_fight_fire_button_aim_new_C.EventSetPawn
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_fire_button_aim_new_C_EventSetPawn final
+{
+public:
+	class APawn*                                  Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_fire_button_aim_new_C_EventSetPawn;
+
+// Function uw_fight_fire_button_aim_new.uw_fight_fire_button_aim_new_C.ModifyChange
+// 0x0018 (0x0018 - 0x0000)
+struct uw_fight_fire_button_aim_new_C_ModifyChange final
+{
+public:
+	int32                                         ModifierID;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsApply;                                           // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int64                                         LauncherCharacterHashIndex;                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EModifierRemoveSourceType                     RemoveSourceType;                                  // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_fire_button_aim_new_C_ModifyChange;
+
+// Function uw_fight_fire_button_aim_new.uw_fight_fire_button_aim_new_C.K2_OnCharacterChange
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_fire_button_aim_new_C_K2_OnCharacterChange final
+{
+public:
+	class AGameCharacter*                         Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_fire_button_aim_new_C_K2_OnCharacterChange;
 
 // Function uw_fight_fire_button_aim_new.uw_fight_fire_button_aim_new_C.Clear Player Action
 // 0x0038 (0x0038 - 0x0000)

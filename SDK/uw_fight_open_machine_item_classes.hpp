@@ -22,13 +22,13 @@ class Uuw_fight_open_machine_item_C final : public Uuw_fight_interactitem_C
 {
 public:
 	void DontRequireNormalState(bool* ret);
-	void BindExitInteractEvent();
 	void UpdateKeyShow();
 	void BindKeyBoardOnSettingChange();
 	void TriggerInteract();
+	void BindExitInteractEvent();
 	void InitGamepadLongPressUI();
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

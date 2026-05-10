@@ -125,6 +125,31 @@ void UWwiseComponent::SetbDefaultUseSpatialAudio(bool bInDefaultUseSpatialAudio)
 }
 
 
+// Function Wwise.WwiseComponent.IsLoadingBank
+// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UWwiseComponent::IsLoadingBank()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WwiseComponent", "IsLoadingBank");
+
+	Params::WwiseComponent_IsLoadingBank Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Wwise.WwiseComponent.IsPlayingSomething
 // (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
 // Parameters:
@@ -179,8 +204,9 @@ void UWwiseComponent::PauseWithTransition(int32 InTransitionMS)
 // (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
 // Parameters:
 // const class FString&                    InEventName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInForceSyncLoadBank                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWwiseComponent::PostEvent(const class FString& InEventName)
+void UWwiseComponent::PostEvent(const class FString& InEventName, bool bInForceSyncLoadBank)
 {
 	static class UFunction* Func = nullptr;
 
@@ -190,6 +216,7 @@ void UWwiseComponent::PostEvent(const class FString& InEventName)
 	Params::WwiseComponent_PostEvent Parms{};
 
 	Parms.InEventName = std::move(InEventName);
+	Parms.bInForceSyncLoadBank = bInForceSyncLoadBank;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -205,10 +232,11 @@ void UWwiseComponent::PostEvent(const class FString& InEventName)
 // Parameters:
 // const class FString&                    InEventName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(class UWwiseComponent* WwiseComponent)>&OnEndPlay                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bEnablePlayInfo                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInEnablePlayInfo                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInForceSyncLoadBank                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UWwiseComponent::PostEventWithCallback(const class FString& InEventName, const TDelegate<void(class UWwiseComponent* WwiseComponent)>& OnEndPlay, bool bEnablePlayInfo)
+int32 UWwiseComponent::PostEventWithCallback(const class FString& InEventName, const TDelegate<void(class UWwiseComponent* WwiseComponent)>& OnEndPlay, bool bInEnablePlayInfo, bool bInForceSyncLoadBank)
 {
 	static class UFunction* Func = nullptr;
 
@@ -219,7 +247,8 @@ int32 UWwiseComponent::PostEventWithCallback(const class FString& InEventName, c
 
 	Parms.InEventName = std::move(InEventName);
 	Parms.OnEndPlay = OnEndPlay;
-	Parms.bEnablePlayInfo = bEnablePlayInfo;
+	Parms.bInEnablePlayInfo = bInEnablePlayInfo;
+	Parms.bInForceSyncLoadBank = bInForceSyncLoadBank;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1389,9 +1418,10 @@ void UWwiseLibrary::PauseSequcneWwiseComponents(int32 InTransitionDuration)
 // Parameters:
 // class UObject*                          InWorldContext                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    InEventName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInForceSyncLoadBank                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UWwiseComponent*                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UWwiseComponent* UWwiseLibrary::PostEvent2D(class UObject* InWorldContext, const class FString& InEventName)
+class UWwiseComponent* UWwiseLibrary::PostEvent2D(class UObject* InWorldContext, const class FString& InEventName, bool bInForceSyncLoadBank)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1402,6 +1432,7 @@ class UWwiseComponent* UWwiseLibrary::PostEvent2D(class UObject* InWorldContext,
 
 	Parms.InWorldContext = InWorldContext;
 	Parms.InEventName = std::move(InEventName);
+	Parms.bInForceSyncLoadBank = bInForceSyncLoadBank;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1450,9 +1481,10 @@ class UWwiseComponent* UWwiseLibrary::PostEvent2DInSequence(class UObject* InWor
 // class UObject*                          InWorldContext                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    InEventName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void(class UWwiseComponent* WwiseComponent)>&OnEndPlay                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    bInForceSyncLoadBank                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UWwiseComponent*                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UWwiseComponent* UWwiseLibrary::PostEvent2DWithCallback(class UObject* InWorldContext, const class FString& InEventName, const TDelegate<void(class UWwiseComponent* WwiseComponent)>& OnEndPlay)
+class UWwiseComponent* UWwiseLibrary::PostEvent2DWithCallback(class UObject* InWorldContext, const class FString& InEventName, const TDelegate<void(class UWwiseComponent* WwiseComponent)>& OnEndPlay, bool bInForceSyncLoadBank)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1464,6 +1496,7 @@ class UWwiseComponent* UWwiseLibrary::PostEvent2DWithCallback(class UObject* InW
 	Parms.InWorldContext = InWorldContext;
 	Parms.InEventName = std::move(InEventName);
 	Parms.OnEndPlay = OnEndPlay;
+	Parms.bInForceSyncLoadBank = bInForceSyncLoadBank;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

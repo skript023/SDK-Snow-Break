@@ -38,15 +38,6 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_direction_shop_C_SetDefendTargetPercent;
 
-// Function uw_fight_direction_shop.uw_fight_direction_shop_C.OnVisibilityChanged_Event_0
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_direction_shop_C_OnVisibilityChanged_Event_0 final
-{
-public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_direction_shop_C_OnVisibilityChanged_Event_0;
-
 // Function uw_fight_direction_shop.uw_fight_direction_shop_C.AppearFinish
 // 0x0008 (0x0008 - 0x0000)
 struct uw_fight_direction_shop_C_AppearFinish final
@@ -86,6 +77,15 @@ public:
 	bool                                          CallFunc_BooleanAND_ReturnValue_2;                 // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_direction_shop_C_ExecuteUbergraph_uw_fight_direction_shop;
+
+// Function uw_fight_direction_shop.uw_fight_direction_shop_C.OnVisibilityChanged_Event_0
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_direction_shop_C_OnVisibilityChanged_Event_0 final
+{
+public:
+	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_direction_shop_C_OnVisibilityChanged_Event_0;
 
 }
 

@@ -42,23 +42,71 @@ bool USkillMove_RushToGoal_C::IsUsedToAddVelocityInsteadOverride()
 }
 
 
-// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveStart
+// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveTickCheck
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
-// class AActor*                           Launcher                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USkillMove_RushToGoal_C::OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement)
+void USkillMove_RushToGoal_C::OnMoveTickCheck(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_RushToGoal_C", "OnMoveStart");
+		Func = Class->GetFunction("SkillMove_RushToGoal_C", "OnMoveTickCheck");
 
-	Params::SkillMove_RushToGoal_C_OnMoveStart Parms{};
+	Params::SkillMove_RushToGoal_C_OnMoveTickCheck Parms{};
 
-	Parms.Launcher = Launcher;
+	Parms.DeltaTime = DeltaTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveEnd
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkillMove_RushToGoal_C::OnMoveEnd(class UBaseMovementComponent* Movement)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillMove_RushToGoal_C", "OnMoveEnd");
+
+	Params::SkillMove_RushToGoal_C_OnMoveEnd Parms{};
+
 	Parms.Movement = Movement;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveBlock
+// (Native, Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void USkillMove_RushToGoal_C::OnMoveBlock(const struct FHitResult& HitResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillMove_RushToGoal_C", "OnMoveBlock");
+
+	Params::SkillMove_RushToGoal_C_OnMoveBlock Parms{};
+
+	Parms.HitResult = std::move(HitResult);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -97,31 +145,6 @@ bool USkillMove_RushToGoal_C::OnMoveTouchTargetCheck(class AActor* InTarget)
 }
 
 
-// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveEnd
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkillMove_RushToGoal_C::OnMoveEnd(class UBaseMovementComponent* Movement)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_RushToGoal_C", "OnMoveEnd");
-
-	Params::SkillMove_RushToGoal_C_OnMoveEnd Parms{};
-
-	Parms.Movement = Movement;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveTick
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -155,46 +178,23 @@ void USkillMove_RushToGoal_C::OnMoveTick(float DeltaTime, float Friction, bool b
 }
 
 
-// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveBlock
-// (Native, Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void USkillMove_RushToGoal_C::OnMoveBlock(const struct FHitResult& HitResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_RushToGoal_C", "OnMoveBlock");
-
-	Params::SkillMove_RushToGoal_C_OnMoveBlock Parms{};
-
-	Parms.HitResult = std::move(HitResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveTickCheck
+// LuaFunction SkillMove_RushToGoal.SkillMove_RushToGoal_C.OnMoveStart
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
-// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Launcher                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USkillMove_RushToGoal_C::OnMoveTickCheck(float DeltaTime)
+void USkillMove_RushToGoal_C::OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_RushToGoal_C", "OnMoveTickCheck");
+		Func = Class->GetFunction("SkillMove_RushToGoal_C", "OnMoveStart");
 
-	Params::SkillMove_RushToGoal_C_OnMoveTickCheck Parms{};
+	Params::SkillMove_RushToGoal_C_OnMoveStart Parms{};
 
-	Parms.DeltaTime = DeltaTime;
+	Parms.Launcher = Launcher;
+	Parms.Movement = Movement;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

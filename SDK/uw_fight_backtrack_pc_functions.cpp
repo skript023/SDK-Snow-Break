@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.OnMoveRightEnd__Overridden
+// (BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_backtrack_pc_C::OnMoveRightEnd__Overridden()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "OnMoveRightEnd__Overridden");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.ExecuteUbergraph_uw_fight_backtrack_pc
 // (Final, UbergraphFunction)
 // Parameters:
@@ -34,20 +48,6 @@ void Uuw_fight_backtrack_pc_C::ExecuteUbergraph_uw_fight_backtrack_pc(int32 Entr
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.OnMoveRightEnd__Overridden
-// (BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_backtrack_pc_C::OnMoveRightEnd__Overridden()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "OnMoveRightEnd__Overridden");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -121,25 +121,6 @@ void Uuw_fight_backtrack_pc_C::ConstructInLua__Overridden()
 }
 
 
-// LuaFunction uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.OnMoveLeftStart
-// (Native, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_backtrack_pc_C::OnMoveLeftStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "OnMoveLeftStart");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.OnMoveRightStart
 // (Native, BlueprintCallable, BlueprintEvent)
 
@@ -149,25 +130,6 @@ void Uuw_fight_backtrack_pc_C::OnMoveRightStart()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "OnMoveRightStart");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.ConstructInLua
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_backtrack_pc_C::ConstructInLua()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "ConstructInLua");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -197,6 +159,25 @@ void Uuw_fight_backtrack_pc_C::OnMoveRightEnd()
 }
 
 
+// LuaFunction uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.OnMoveLeftStart
+// (Native, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_backtrack_pc_C::OnMoveLeftStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "OnMoveLeftStart");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.OnMoveLeftEnd
 // (Native, BlueprintCallable, BlueprintEvent)
 
@@ -206,6 +187,25 @@ void Uuw_fight_backtrack_pc_C::OnMoveLeftEnd()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "OnMoveLeftEnd");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_backtrack_pc.uw_fight_backtrack_pc_C.ConstructInLua
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_backtrack_pc_C::ConstructInLua()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_backtrack_pc_C", "ConstructInLua");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

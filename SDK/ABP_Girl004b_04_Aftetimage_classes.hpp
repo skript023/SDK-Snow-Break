@@ -30,9 +30,9 @@ public:
 	struct FPoseSnapshot                          Snapshot;                                          // 0x0388(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 	void BlueprintUpdateAnimation(float DeltaTimeX);
 	void ExecuteUbergraph_ABP_Girl004b_04_Aftetimage(int32 EntryPoint);
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
 
 public:
 	static class UClass* StaticClass()

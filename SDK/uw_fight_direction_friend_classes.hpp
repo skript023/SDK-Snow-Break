@@ -34,15 +34,15 @@ public:
 	class URedirectImage*                         ImgHeight;                                         // 0x0840(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_direction_friend(int32 EntryPoint);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
-	void OnAnimationFinished(const class UWidgetAnimation* Animation);
-	void AppearFinish(class UWidgetAnimation* Animation);
-	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);
-	void PlayDieAnim();
-	void SetDefendTargetPercent(float Value);
-	void StartLoop(const class UObject* Object, bool HasAppear);
 	void SequenceEvent__ENTRYPOINTuw_fight_direction_friend_0();
+	void SetDefendTargetPercent(float Value);
+	void PlayDieAnim();
+	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);
+	void AppearFinish(class UWidgetAnimation* Animation);
+	void OnAnimationFinished(const class UWidgetAnimation* Animation);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void ExecuteUbergraph_uw_fight_direction_friend(int32 EntryPoint);
+	void StartLoop(const class UObject* Object, bool HasAppear);
 
 public:
 	static class UClass* StaticClass()

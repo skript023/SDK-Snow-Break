@@ -143,6 +143,30 @@ public:
 };
 DUMPER7_ASSERTS_FDPADCollection;
 
+// ScriptStruct WM_InputManager_Plugin.WM_HID_AxisData
+// 0x0098 (0x0098 - 0x0000)
+struct FWM_HID_AxisData final
+{
+public:
+	class UWM_Settings*                           WM_Settings;                                       // 0x0000(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x1C];                                       // 0x0008(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         LogicalMin;                                        // 0x0024(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LogicalMax;                                        // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LogicalCenter;                                     // 0x002C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LogicalRange;                                      // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RawValue;                                          // 0x0034(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NormalizedRawValue;                                // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CenteredValue;                                     // 0x003C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AxisValue;                                         // 0x0040(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EWM_AxisCodeTable                             axisEnum;                                          // 0x0044(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_45[0x1B];                                      // 0x0045(0x001B)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 AxisBindingCode;                                   // 0x0060(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_70[0x10];                                      // 0x0070(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Instance;                                          // 0x0080(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_84[0x14];                                      // 0x0084(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FWM_HID_AxisData;
+
 // ScriptStruct WM_InputManager_Plugin.DefaultDeviceMappings
 // 0x00A0 (0x00A0 - 0x0000)
 struct FDefaultDeviceMappings final
@@ -153,14 +177,14 @@ public:
 };
 DUMPER7_ASSERTS_FDefaultDeviceMappings;
 
-// ScriptStruct WM_InputManager_Plugin.WM_HID_DPADData
-// 0x0148 (0x0148 - 0x0000)
-struct alignas(0x08) FWM_HID_DPADData final
+// ScriptStruct WM_InputManager_Plugin.WM_HID_XInputWrap
+// 0x0050 (0x0050 - 0x0000)
+struct alignas(0x08) FWM_HID_XInputWrap final
 {
 public:
-	uint8                                         Pad_0[0x148];                                      // 0x0000(0x0148)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x50];                                       // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FWM_HID_DPADData;
+DUMPER7_ASSERTS_FWM_HID_XInputWrap;
 
 // ScriptStruct WM_InputManager_Plugin.HidKeysByClass
 // 0x01E0 (0x01E0 - 0x0000)
@@ -190,29 +214,14 @@ public:
 };
 DUMPER7_ASSERTS_FWM_BasicDeviceInfo;
 
-// ScriptStruct WM_InputManager_Plugin.WM_HID_AxisData
-// 0x0098 (0x0098 - 0x0000)
-struct FWM_HID_AxisData final
+// ScriptStruct WM_InputManager_Plugin.WM_HID_DPADData
+// 0x0148 (0x0148 - 0x0000)
+struct alignas(0x08) FWM_HID_DPADData final
 {
 public:
-	class UWM_Settings*                           WM_Settings;                                       // 0x0000(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x1C];                                       // 0x0008(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         LogicalMin;                                        // 0x0024(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         LogicalMax;                                        // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LogicalCenter;                                     // 0x002C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LogicalRange;                                      // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RawValue;                                          // 0x0034(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NormalizedRawValue;                                // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CenteredValue;                                     // 0x003C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AxisValue;                                         // 0x0040(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EWM_AxisCodeTable                             axisEnum;                                          // 0x0044(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_45[0x1B];                                      // 0x0045(0x001B)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 AxisBindingCode;                                   // 0x0060(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_70[0x10];                                      // 0x0070(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Instance;                                          // 0x0080(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_84[0x14];                                      // 0x0084(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x148];                                      // 0x0000(0x0148)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FWM_HID_AxisData;
+DUMPER7_ASSERTS_FWM_HID_DPADData;
 
 // ScriptStruct WM_InputManager_Plugin.WM_HID_DeviceInfo
 // 0x00D0 (0x00D0 - 0x0000)
@@ -235,15 +244,6 @@ public:
 	uint8                                         Pad_94[0x3C];                                      // 0x0094(0x003C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FWM_HID_DeviceInfo;
-
-// ScriptStruct WM_InputManager_Plugin.WM_HID_XInputWrap
-// 0x0050 (0x0050 - 0x0000)
-struct alignas(0x08) FWM_HID_XInputWrap final
-{
-public:
-	uint8                                         Pad_0[0x50];                                       // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FWM_HID_XInputWrap;
 
 // ScriptStruct WM_InputManager_Plugin.WM_Keyboard_DeviceInfo
 // 0x0018 (0x0018 - 0x0000)

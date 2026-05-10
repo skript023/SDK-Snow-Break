@@ -17,6 +17,33 @@
 namespace SDK
 {
 
+// Function NTF_Girl004b_SpecialReload.NTF_Girl004b_SpecialReload_C.Received_NotifyBegin
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TotalDuration                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UNTF_Girl004b_SpecialReload_C::Received_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NTF_Girl004b_SpecialReload_C", "Received_NotifyBegin");
+
+	Params::NTF_Girl004b_SpecialReload_C_Received_NotifyBegin Parms{};
+
+	Parms.MeshComp = MeshComp;
+	Parms.Animation = Animation;
+	Parms.TotalDuration = TotalDuration;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function NTF_Girl004b_SpecialReload.NTF_Girl004b_SpecialReload_C.Received_NotifyEnd
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -62,33 +89,6 @@ bool UNTF_Girl004b_SpecialReload_C::Received_NotifyTick(class USkeletalMeshCompo
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
 	Parms.FrameDeltaTime = FrameDeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function NTF_Girl004b_SpecialReload.NTF_Girl004b_SpecialReload_C.Received_NotifyBegin
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   TotalDuration                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-
-bool UNTF_Girl004b_SpecialReload_C::Received_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NTF_Girl004b_SpecialReload_C", "Received_NotifyBegin");
-
-	Params::NTF_Girl004b_SpecialReload_C_Received_NotifyBegin Parms{};
-
-	Parms.MeshComp = MeshComp;
-	Parms.Animation = Animation;
-	Parms.TotalDuration = TotalDuration;
 
 	UObject::ProcessEvent(Func, &Parms);
 

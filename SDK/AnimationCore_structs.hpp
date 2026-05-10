@@ -50,30 +50,6 @@ public:
 };
 DUMPER7_ASSERTS_FConstraintOffset;
 
-// ScriptStruct AnimationCore.ConstraintDescriptor
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FConstraintDescriptor final
-{
-public:
-	EConstraintType                               Type;                                              // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0xF];                                        // 0x0001(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FConstraintDescriptor;
-
-// ScriptStruct AnimationCore.ConstraintData
-// 0x0080 (0x0080 - 0x0000)
-struct FConstraintData final
-{
-public:
-	struct FConstraintDescriptor                  Constraint;                                        // 0x0000(0x0010)(NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bMaintainOffset;                                   // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0xB];                                       // 0x0015(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Offset;                                            // 0x0020(0x0030)(IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FTransform                             CurrentTransform;                                  // 0x0050(0x0030)(Transient, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FConstraintData;
-
 // ScriptStruct AnimationCore.NodeObject
 // 0x0010 (0x0010 - 0x0000)
 struct FNodeObject final
@@ -105,6 +81,30 @@ public:
 };
 DUMPER7_ASSERTS_FNodeHierarchyWithUserData;
 
+// ScriptStruct AnimationCore.ConstraintDescriptor
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FConstraintDescriptor final
+{
+public:
+	EConstraintType                               Type;                                              // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0xF];                                        // 0x0001(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FConstraintDescriptor;
+
+// ScriptStruct AnimationCore.ConstraintData
+// 0x0080 (0x0080 - 0x0000)
+struct FConstraintData final
+{
+public:
+	struct FConstraintDescriptor                  Constraint;                                        // 0x0000(0x0010)(NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMaintainOffset;                                   // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0xB];                                       // 0x0015(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Offset;                                            // 0x0020(0x0030)(IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTransform                             CurrentTransform;                                  // 0x0050(0x0030)(Transient, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FConstraintData;
+
 // ScriptStruct AnimationCore.FilterOptionPerAxis
 // 0x0003 (0x0003 - 0x0000)
 struct FFilterOptionPerAxis final
@@ -115,17 +115,6 @@ public:
 	bool                                          bZ;                                                // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FFilterOptionPerAxis;
-
-// ScriptStruct AnimationCore.TransformFilter
-// 0x0009 (0x0009 - 0x0000)
-struct FTransformFilter final
-{
-public:
-	struct FFilterOptionPerAxis                   TranslationFilter;                                 // 0x0000(0x0003)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FFilterOptionPerAxis                   RotationFilter;                                    // 0x0003(0x0003)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FFilterOptionPerAxis                   ScaleFilter;                                       // 0x0006(0x0003)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FTransformFilter;
 
 // ScriptStruct AnimationCore.ConstraintDescription
 // 0x000D (0x000D - 0x0000)
@@ -157,15 +146,6 @@ public:
 };
 DUMPER7_ASSERTS_FTransformConstraint;
 
-// ScriptStruct AnimationCore.CCDIKChainLink
-// 0x0080 (0x0080 - 0x0000)
-struct alignas(0x10) FCCDIKChainLink final
-{
-public:
-	uint8                                         Pad_0[0x80];                                       // 0x0000(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCCDIKChainLink;
-
 // ScriptStruct AnimationCore.TransformNoScale
 // 0x0020 (0x0020 - 0x0000)
 struct FTransformNoScale final
@@ -176,6 +156,47 @@ public:
 	struct FQuat                                  Rotation;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FTransformNoScale;
+
+// ScriptStruct AnimationCore.ConstraintDescriptionEx
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FConstraintDescriptionEx
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FFilterOptionPerAxis                   AxesFilterOption;                                  // 0x0008(0x0003)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FConstraintDescriptionEx;
+
+// ScriptStruct AnimationCore.TransformConstraintDescription
+// 0x0008 (0x0018 - 0x0010)
+struct FTransformConstraintDescription final : public FConstraintDescriptionEx
+{
+public:
+	ETransformConstraintType                      TransformType;                                     // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FTransformConstraintDescription;
+
+// ScriptStruct AnimationCore.TransformFilter
+// 0x0009 (0x0009 - 0x0000)
+struct FTransformFilter final
+{
+public:
+	struct FFilterOptionPerAxis                   TranslationFilter;                                 // 0x0000(0x0003)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FFilterOptionPerAxis                   RotationFilter;                                    // 0x0003(0x0003)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FFilterOptionPerAxis                   ScaleFilter;                                       // 0x0006(0x0003)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTransformFilter;
+
+// ScriptStruct AnimationCore.CCDIKChainLink
+// 0x0080 (0x0080 - 0x0000)
+struct alignas(0x10) FCCDIKChainLink final
+{
+public:
+	uint8                                         Pad_0[0x80];                                       // 0x0000(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCCDIKChainLink;
 
 // ScriptStruct AnimationCore.EulerTransform
 // 0x0024 (0x0024 - 0x0000)
@@ -208,17 +229,6 @@ public:
 };
 DUMPER7_ASSERTS_FAxis;
 
-// ScriptStruct AnimationCore.ConstraintDescriptionEx
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FConstraintDescriptionEx
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FFilterOptionPerAxis                   AxesFilterOption;                                  // 0x0008(0x0003)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FConstraintDescriptionEx;
-
 // ScriptStruct AnimationCore.AimConstraintDescription
 // 0x0030 (0x0040 - 0x0010)
 struct FAimConstraintDescription final : public FConstraintDescriptionEx
@@ -231,16 +241,6 @@ public:
 	struct FVector                                LookUpTarget;                                      // 0x0034(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAimConstraintDescription;
-
-// ScriptStruct AnimationCore.TransformConstraintDescription
-// 0x0008 (0x0018 - 0x0010)
-struct FTransformConstraintDescription final : public FConstraintDescriptionEx
-{
-public:
-	ETransformConstraintType                      TransformType;                                     // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FTransformConstraintDescription;
 
 // ScriptStruct AnimationCore.NodeChain
 // 0x0010 (0x0010 - 0x0000)

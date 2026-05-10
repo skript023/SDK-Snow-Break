@@ -110,13 +110,13 @@ public:
 
 public:
 	int32 GetMaxBulletCount();
-	int32 GetCurBulletCount();
 	void EndPlay();
 	void Play_Anim(class UWidgetAnimation* InAnim, bool bLoop);
-	void Construct();
 	void ONVisibilityChange(ESlateVisibility InVisibility);
-	void OnBulletChange(int32 InCurBullet, int32 InMaxBullet, float InPercent);
 	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	int32 GetCurBulletCount();
+	void Construct();
+	void OnBulletChange(int32 InCurBullet, int32 InMaxBullet, float InPercent);
 	void ExecuteUbergraph_uw_fight_decorate_girl014a(int32 EntryPoint);
 
 public:

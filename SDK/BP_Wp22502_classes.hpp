@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Wp22502.BP_Wp22502_C
-// 0x0000 (0x1C90 - 0x1C90)
+// 0x0000 (0x1CA0 - 0x1CA0)
 class ABP_Wp22502_C final : public ABp_wpbase_C
 {
 public:

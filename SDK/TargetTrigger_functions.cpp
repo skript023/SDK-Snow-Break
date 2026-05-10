@@ -219,31 +219,6 @@ void ATargetTrigger_C::ExecuteUbergraph_TargetTrigger(int32 EntryPoint)
 }
 
 
-// LuaFunction TargetTrigger.TargetTrigger_C.ReceiveEndPlay
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          EndPlayReason                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ATargetTrigger_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "ReceiveEndPlay");
-
-	Params::TargetTrigger_C_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason = EndPlayReason;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction TargetTrigger.TargetTrigger_C.ReceiveActorBeginOverlap
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -259,6 +234,31 @@ void ATargetTrigger_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
 	Params::TargetTrigger_C_ReceiveActorBeginOverlap Parms{};
 
 	Parms.OtherActor = OtherActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction TargetTrigger.TargetTrigger_C.ReceiveTick
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ATargetTrigger_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetTrigger_C", "ReceiveTick");
+
+	Params::TargetTrigger_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -294,21 +294,21 @@ void ATargetTrigger_C::ReceiveActorEndOverlap(class AActor* OtherActor)
 }
 
 
-// LuaFunction TargetTrigger.TargetTrigger_C.ReceiveTick
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction TargetTrigger.TargetTrigger_C.ReceiveEndPlay
+// (Native, Event, Protected, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEndPlayReason                          EndPlayReason                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ATargetTrigger_C::ReceiveTick(float DeltaSeconds)
+void ATargetTrigger_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TargetTrigger_C", "ReceiveTick");
+		Func = Class->GetFunction("TargetTrigger_C", "ReceiveEndPlay");
 
-	Params::TargetTrigger_C_ReceiveTick Parms{};
+	Params::TargetTrigger_C_ReceiveEndPlay Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.EndPlayReason = EndPlayReason;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

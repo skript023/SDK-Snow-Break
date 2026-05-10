@@ -16,6 +16,15 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.UpdateImage
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_monster_hp_ordinary_C_UpdateImage final
+{
+public:
+	EFightMonsterTipsType                         InTipsType;                                        // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_monster_hp_ordinary_C_UpdateImage;
+
 // Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.ExecuteUbergraph_uw_fight_monster_hp_ordinary
 // 0x0008 (0x0008 - 0x0000)
 struct uw_fight_monster_hp_ordinary_C_ExecuteUbergraph_uw_fight_monster_hp_ordinary final
@@ -26,15 +35,6 @@ public:
 	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_monster_hp_ordinary_C_ExecuteUbergraph_uw_fight_monster_hp_ordinary;
-
-// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.UpdateImage
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_monster_hp_ordinary_C_UpdateImage final
-{
-public:
-	EFightMonsterTipsType                         InTipsType;                                        // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_monster_hp_ordinary_C_UpdateImage;
 
 // LuaFunction uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.K2_OnAppliedModifierChange
 // 0x0010 (0x0010 - 0x0000)

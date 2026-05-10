@@ -17,55 +17,21 @@
 namespace SDK
 {
 
-// Function uw_fight_boss_hp_control.uw_fight_boss_hp_control_C.BP_OnEntryReleased
-// (Event, Protected, BlueprintEvent)
-
-void Uuw_fight_boss_hp_control_C::BP_OnEntryReleased()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_boss_hp_control_C", "BP_OnEntryReleased");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_boss_hp_control.uw_fight_boss_hp_control_C.BP_OnItemExpansionChanged
-// (Event, Protected, BlueprintEvent)
+// Function uw_fight_boss_hp_control.uw_fight_boss_hp_control_C.ExecuteUbergraph_uw_fight_boss_hp_control
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_boss_hp_control_C::BP_OnItemExpansionChanged(bool bIsExpanded)
+void Uuw_fight_boss_hp_control_C::ExecuteUbergraph_uw_fight_boss_hp_control(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_boss_hp_control_C", "BP_OnItemExpansionChanged");
+		Func = Class->GetFunction("uw_fight_boss_hp_control_C", "ExecuteUbergraph_uw_fight_boss_hp_control");
 
-	Params::uw_fight_boss_hp_control_C_BP_OnItemExpansionChanged Parms{};
+	Params::uw_fight_boss_hp_control_C_ExecuteUbergraph_uw_fight_boss_hp_control Parms{};
 
-	Parms.bIsExpanded = bIsExpanded;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_boss_hp_control.uw_fight_boss_hp_control_C.BP_OnItemSelectionChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bIsSelected                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_boss_hp_control_C::BP_OnItemSelectionChanged(bool bIsSelected)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_boss_hp_control_C", "BP_OnItemSelectionChanged");
-
-	Params::uw_fight_boss_hp_control_C_BP_OnItemSelectionChanged Parms{};
-
-	Parms.bIsSelected = bIsSelected;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -91,23 +57,57 @@ void Uuw_fight_boss_hp_control_C::OnListItemObjectSet__Overridden(class UObject*
 }
 
 
-// Function uw_fight_boss_hp_control.uw_fight_boss_hp_control_C.ExecuteUbergraph_uw_fight_boss_hp_control
-// (Final, UbergraphFunction)
+// Function uw_fight_boss_hp_control.uw_fight_boss_hp_control_C.BP_OnItemSelectionChanged
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsSelected                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_boss_hp_control_C::ExecuteUbergraph_uw_fight_boss_hp_control(int32 EntryPoint)
+void Uuw_fight_boss_hp_control_C::BP_OnItemSelectionChanged(bool bIsSelected)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_boss_hp_control_C", "ExecuteUbergraph_uw_fight_boss_hp_control");
+		Func = Class->GetFunction("uw_fight_boss_hp_control_C", "BP_OnItemSelectionChanged");
 
-	Params::uw_fight_boss_hp_control_C_ExecuteUbergraph_uw_fight_boss_hp_control Parms{};
+	Params::uw_fight_boss_hp_control_C_BP_OnItemSelectionChanged Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bIsSelected = bIsSelected;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_boss_hp_control.uw_fight_boss_hp_control_C.BP_OnItemExpansionChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_boss_hp_control_C::BP_OnItemExpansionChanged(bool bIsExpanded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_boss_hp_control_C", "BP_OnItemExpansionChanged");
+
+	Params::uw_fight_boss_hp_control_C_BP_OnItemExpansionChanged Parms{};
+
+	Parms.bIsExpanded = bIsExpanded;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_boss_hp_control.uw_fight_boss_hp_control_C.BP_OnEntryReleased
+// (Event, Protected, BlueprintEvent)
+
+void Uuw_fight_boss_hp_control_C::BP_OnEntryReleased()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_boss_hp_control_C", "BP_OnEntryReleased");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -136,15 +136,15 @@ void Uuw_fight_boss_hp_control_C::OnListItemObjectSet(class UObject* ListItemObj
 }
 
 
-// LuaFunction uw_fight_boss_hp_control.uw_fight_boss_hp_control_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_boss_hp_control.uw_fight_boss_hp_control_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_boss_hp_control_C::Destruct()
+void Uuw_fight_boss_hp_control_C::OnConstruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_boss_hp_control_C", "Destruct");
+		Func = Class->GetFunction("uw_fight_boss_hp_control_C", "OnConstruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -155,15 +155,15 @@ void Uuw_fight_boss_hp_control_C::Destruct()
 }
 
 
-// LuaFunction uw_fight_boss_hp_control.uw_fight_boss_hp_control_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_boss_hp_control.uw_fight_boss_hp_control_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_boss_hp_control_C::OnConstruct()
+void Uuw_fight_boss_hp_control_C::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_boss_hp_control_C", "OnConstruct");
+		Func = Class->GetFunction("uw_fight_boss_hp_control_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

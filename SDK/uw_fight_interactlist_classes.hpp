@@ -28,8 +28,8 @@ public:
 	void RemoveInteractItemOfOwner(class UObject* Owner);
 	void AddInteractItem(class UClass* InteractItemBaseClass, int32 Order, class UObject* ItemOwner, class Uuw_fight_interactitem_C** Child, int32* PriorityLevel);
 	void Construct();
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

@@ -21,11 +21,11 @@ namespace SDK
 class ASkillSelector_YunZhuan_NormalSkill_2_C final : public ASkillSelector_YunZhuan_NormalSkill_C
 {
 public:
-	void GetSortedPartitions(class AGameCharacter* GameCharacter, TArray<struct FBoneResult>* OutPartitions);
-	void GetPartitionMainPart(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult);
-	void GetPartitionMainBone(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
 	void GetAllTargetWithWeakResults(TArray<struct FBoneResult>* NewResults);
 	void ReceiveTick(float DeltaSeconds);
+	void GetPartitionMainBone(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult, class AGameCharacter** GameCharacter);
+	void GetPartitionMainPart(const struct FBoneResult& PartitionResult, bool* IsValid, struct FBoneResult* BoneResult);
+	void GetSortedPartitions(class AGameCharacter* GameCharacter, TArray<struct FBoneResult>* OutPartitions);
 	void GetAllQueryResults(TArray<struct FQueryResult>* OutResults);
 
 public:

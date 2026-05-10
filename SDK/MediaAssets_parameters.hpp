@@ -10,14 +10,265 @@
 
 #include "Basic.hpp"
 
+#include "MediaUtils_structs.hpp"
 #include "MediaAssets_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "MediaUtils_structs.hpp"
 #include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function MediaAssets.MediaSource.SetMediaOptionBool
+// 0x000C (0x000C - 0x0000)
+struct MediaSource_SetMediaOptionBool final
+{
+public:
+	class FName                                   Key;                                               // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Value;                                             // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MediaSource_SetMediaOptionBool;
+
+// Function MediaAssets.MediaSource.SetMediaOptionFloat
+// 0x000C (0x000C - 0x0000)
+struct MediaSource_SetMediaOptionFloat final
+{
+public:
+	class FName                                   Key;                                               // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MediaSource_SetMediaOptionFloat;
+
+// Function MediaAssets.MediaSource.SetMediaOptionInt64
+// 0x0010 (0x0010 - 0x0000)
+struct MediaSource_SetMediaOptionInt64 final
+{
+public:
+	class FName                                   Key;                                               // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         Value;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MediaSource_SetMediaOptionInt64;
+
+// Function MediaAssets.MediaSource.SetMediaOptionString
+// 0x0018 (0x0018 - 0x0000)
+struct MediaSource_SetMediaOptionString final
+{
+public:
+	class FName                                   Key;                                               // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MediaSource_SetMediaOptionString;
+
+// Function MediaAssets.MediaSource.GetUrl
+// 0x0010 (0x0010 - 0x0000)
+struct MediaSource_GetUrl final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MediaSource_GetUrl;
+
+// Function MediaAssets.MediaSource.Validate
+// 0x0001 (0x0001 - 0x0000)
+struct MediaSource_Validate final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MediaSource_Validate;
+
+// Function MediaAssets.MediaPlaylist.Add
+// 0x0010 (0x0010 - 0x0000)
+struct MediaPlaylist_Add final
+{
+public:
+	class UMediaSource*                           MediaSource;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MediaPlaylist_Add;
+
+// Function MediaAssets.MediaPlaylist.AddFile
+// 0x0018 (0x0018 - 0x0000)
+struct MediaPlaylist_AddFile final
+{
+public:
+	class FString                                 FilePath;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MediaPlaylist_AddFile;
+
+// Function MediaAssets.MediaPlaylist.AddUrl
+// 0x0018 (0x0018 - 0x0000)
+struct MediaPlaylist_AddUrl final
+{
+public:
+	class FString                                 URL;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MediaPlaylist_AddUrl;
+
+// Function MediaAssets.MediaPlaylist.Get
+// 0x0010 (0x0010 - 0x0000)
+struct MediaPlaylist_Get final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMediaSource*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MediaPlaylist_Get;
+
+// Function MediaAssets.MediaPlaylist.GetNext
+// 0x0010 (0x0010 - 0x0000)
+struct MediaPlaylist_GetNext final
+{
+public:
+	int32                                         InOutIndex;                                        // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMediaSource*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MediaPlaylist_GetNext;
+
+// Function MediaAssets.MediaPlaylist.GetPrevious
+// 0x0010 (0x0010 - 0x0000)
+struct MediaPlaylist_GetPrevious final
+{
+public:
+	int32                                         InOutIndex;                                        // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMediaSource*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MediaPlaylist_GetPrevious;
+
+// Function MediaAssets.MediaPlaylist.GetRandom
+// 0x0010 (0x0010 - 0x0000)
+struct MediaPlaylist_GetRandom final
+{
+public:
+	int32                                         OutIndex;                                          // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMediaSource*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MediaPlaylist_GetRandom;
+
+// Function MediaAssets.MediaPlaylist.Insert
+// 0x0010 (0x0010 - 0x0000)
+struct MediaPlaylist_Insert final
+{
+public:
+	class UMediaSource*                           MediaSource;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MediaPlaylist_Insert;
+
+// Function MediaAssets.MediaPlaylist.Num
+// 0x0004 (0x0004 - 0x0000)
+struct MediaPlaylist_Num final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MediaPlaylist_Num;
+
+// Function MediaAssets.MediaPlaylist.Remove
+// 0x0010 (0x0010 - 0x0000)
+struct MediaPlaylist_Remove final
+{
+public:
+	class UMediaSource*                           MediaSource;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MediaPlaylist_Remove;
+
+// Function MediaAssets.MediaPlaylist.RemoveAt
+// 0x0008 (0x0008 - 0x0000)
+struct MediaPlaylist_RemoveAt final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MediaPlaylist_RemoveAt;
+
+// Function MediaAssets.MediaPlaylist.Replace
+// 0x0018 (0x0018 - 0x0000)
+struct MediaPlaylist_Replace final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMediaSource*                           Replacement;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MediaPlaylist_Replace;
+
+// Function MediaAssets.MediaComponent.GetMediaPlayer
+// 0x0008 (0x0008 - 0x0000)
+struct MediaComponent_GetMediaPlayer final
+{
+public:
+	class UMediaPlayer*                           ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MediaComponent_GetMediaPlayer;
+
+// Function MediaAssets.MediaComponent.GetMediaTexture
+// 0x0008 (0x0008 - 0x0000)
+struct MediaComponent_GetMediaTexture final
+{
+public:
+	class UMediaTexture*                          ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MediaComponent_GetMediaTexture;
+
+// Function MediaAssets.FileMediaSource.SetFilePath
+// 0x0010 (0x0010 - 0x0000)
+struct FileMediaSource_SetFilePath final
+{
+public:
+	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FileMediaSource_SetFilePath;
+
+// Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateAudioCaptureDevices
+// 0x0018 (0x0018 - 0x0000)
+struct MediaBlueprintFunctionLibrary_EnumerateAudioCaptureDevices final
+{
+public:
+	TArray<struct FMediaCaptureDevice>            OutDevices;                                        // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         Filter;                                            // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MediaBlueprintFunctionLibrary_EnumerateAudioCaptureDevices;
+
+// Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateVideoCaptureDevices
+// 0x0018 (0x0018 - 0x0000)
+struct MediaBlueprintFunctionLibrary_EnumerateVideoCaptureDevices final
+{
+public:
+	TArray<struct FMediaCaptureDevice>            OutDevices;                                        // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         Filter;                                            // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MediaBlueprintFunctionLibrary_EnumerateVideoCaptureDevices;
+
+// Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateWebcamCaptureDevices
+// 0x0018 (0x0018 - 0x0000)
+struct MediaBlueprintFunctionLibrary_EnumerateWebcamCaptureDevices final
+{
+public:
+	TArray<struct FMediaCaptureDevice>            OutDevices;                                        // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         Filter;                                            // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MediaBlueprintFunctionLibrary_EnumerateWebcamCaptureDevices;
 
 // Function MediaAssets.MediaPlayer.CanPlaySource
 // 0x0010 (0x0010 - 0x0000)
@@ -735,257 +986,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MediaPlayer_SupportsSeeking;
-
-// Function MediaAssets.MediaSource.SetMediaOptionBool
-// 0x000C (0x000C - 0x0000)
-struct MediaSource_SetMediaOptionBool final
-{
-public:
-	class FName                                   Key;                                               // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Value;                                             // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MediaSource_SetMediaOptionBool;
-
-// Function MediaAssets.MediaSource.SetMediaOptionFloat
-// 0x000C (0x000C - 0x0000)
-struct MediaSource_SetMediaOptionFloat final
-{
-public:
-	class FName                                   Key;                                               // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Value;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MediaSource_SetMediaOptionFloat;
-
-// Function MediaAssets.MediaSource.SetMediaOptionInt64
-// 0x0010 (0x0010 - 0x0000)
-struct MediaSource_SetMediaOptionInt64 final
-{
-public:
-	class FName                                   Key;                                               // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int64                                         Value;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MediaSource_SetMediaOptionInt64;
-
-// Function MediaAssets.MediaSource.SetMediaOptionString
-// 0x0018 (0x0018 - 0x0000)
-struct MediaSource_SetMediaOptionString final
-{
-public:
-	class FName                                   Key;                                               // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Value;                                             // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MediaSource_SetMediaOptionString;
-
-// Function MediaAssets.MediaSource.GetUrl
-// 0x0010 (0x0010 - 0x0000)
-struct MediaSource_GetUrl final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MediaSource_GetUrl;
-
-// Function MediaAssets.MediaSource.Validate
-// 0x0001 (0x0001 - 0x0000)
-struct MediaSource_Validate final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MediaSource_Validate;
-
-// Function MediaAssets.MediaPlaylist.Add
-// 0x0010 (0x0010 - 0x0000)
-struct MediaPlaylist_Add final
-{
-public:
-	class UMediaSource*                           MediaSource;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MediaPlaylist_Add;
-
-// Function MediaAssets.MediaPlaylist.AddFile
-// 0x0018 (0x0018 - 0x0000)
-struct MediaPlaylist_AddFile final
-{
-public:
-	class FString                                 FilePath;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MediaPlaylist_AddFile;
-
-// Function MediaAssets.MediaPlaylist.AddUrl
-// 0x0018 (0x0018 - 0x0000)
-struct MediaPlaylist_AddUrl final
-{
-public:
-	class FString                                 URL;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MediaPlaylist_AddUrl;
-
-// Function MediaAssets.MediaPlaylist.Get
-// 0x0010 (0x0010 - 0x0000)
-struct MediaPlaylist_Get final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMediaSource*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MediaPlaylist_Get;
-
-// Function MediaAssets.MediaPlaylist.GetNext
-// 0x0010 (0x0010 - 0x0000)
-struct MediaPlaylist_GetNext final
-{
-public:
-	int32                                         InOutIndex;                                        // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMediaSource*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MediaPlaylist_GetNext;
-
-// Function MediaAssets.MediaPlaylist.GetPrevious
-// 0x0010 (0x0010 - 0x0000)
-struct MediaPlaylist_GetPrevious final
-{
-public:
-	int32                                         InOutIndex;                                        // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMediaSource*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MediaPlaylist_GetPrevious;
-
-// Function MediaAssets.MediaPlaylist.GetRandom
-// 0x0010 (0x0010 - 0x0000)
-struct MediaPlaylist_GetRandom final
-{
-public:
-	int32                                         OutIndex;                                          // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMediaSource*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MediaPlaylist_GetRandom;
-
-// Function MediaAssets.MediaPlaylist.Insert
-// 0x0010 (0x0010 - 0x0000)
-struct MediaPlaylist_Insert final
-{
-public:
-	class UMediaSource*                           MediaSource;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MediaPlaylist_Insert;
-
-// Function MediaAssets.MediaPlaylist.Num
-// 0x0004 (0x0004 - 0x0000)
-struct MediaPlaylist_Num final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MediaPlaylist_Num;
-
-// Function MediaAssets.MediaPlaylist.Remove
-// 0x0010 (0x0010 - 0x0000)
-struct MediaPlaylist_Remove final
-{
-public:
-	class UMediaSource*                           MediaSource;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MediaPlaylist_Remove;
-
-// Function MediaAssets.MediaPlaylist.RemoveAt
-// 0x0008 (0x0008 - 0x0000)
-struct MediaPlaylist_RemoveAt final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MediaPlaylist_RemoveAt;
-
-// Function MediaAssets.MediaPlaylist.Replace
-// 0x0018 (0x0018 - 0x0000)
-struct MediaPlaylist_Replace final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMediaSource*                           Replacement;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MediaPlaylist_Replace;
-
-// Function MediaAssets.FileMediaSource.SetFilePath
-// 0x0010 (0x0010 - 0x0000)
-struct FileMediaSource_SetFilePath final
-{
-public:
-	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FileMediaSource_SetFilePath;
-
-// Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateAudioCaptureDevices
-// 0x0018 (0x0018 - 0x0000)
-struct MediaBlueprintFunctionLibrary_EnumerateAudioCaptureDevices final
-{
-public:
-	TArray<struct FMediaCaptureDevice>            OutDevices;                                        // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         Filter;                                            // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MediaBlueprintFunctionLibrary_EnumerateAudioCaptureDevices;
-
-// Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateVideoCaptureDevices
-// 0x0018 (0x0018 - 0x0000)
-struct MediaBlueprintFunctionLibrary_EnumerateVideoCaptureDevices final
-{
-public:
-	TArray<struct FMediaCaptureDevice>            OutDevices;                                        // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         Filter;                                            // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MediaBlueprintFunctionLibrary_EnumerateVideoCaptureDevices;
-
-// Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateWebcamCaptureDevices
-// 0x0018 (0x0018 - 0x0000)
-struct MediaBlueprintFunctionLibrary_EnumerateWebcamCaptureDevices final
-{
-public:
-	TArray<struct FMediaCaptureDevice>            OutDevices;                                        // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         Filter;                                            // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MediaBlueprintFunctionLibrary_EnumerateWebcamCaptureDevices;
-
-// Function MediaAssets.MediaComponent.GetMediaPlayer
-// 0x0008 (0x0008 - 0x0000)
-struct MediaComponent_GetMediaPlayer final
-{
-public:
-	class UMediaPlayer*                           ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MediaComponent_GetMediaPlayer;
-
-// Function MediaAssets.MediaComponent.GetMediaTexture
-// 0x0008 (0x0008 - 0x0000)
-struct MediaComponent_GetMediaTexture final
-{
-public:
-	class UMediaTexture*                          ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MediaComponent_GetMediaTexture;
 
 // Function MediaAssets.MediaSoundComponent.BP_GetAttenuationSettingsToApply
 // 0x03A8 (0x03A8 - 0x0000)

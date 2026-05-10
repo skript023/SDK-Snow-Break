@@ -26,8 +26,8 @@ public:
 
 public:
 	void Construct();
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

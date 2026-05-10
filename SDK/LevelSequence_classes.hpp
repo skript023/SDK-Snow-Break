@@ -22,35 +22,6 @@
 namespace SDK
 {
 
-// Class LevelSequence.LevelSequenceBurnInOptions
-// 0x0028 (0x0050 - 0x0028)
-class ULevelSequenceBurnInOptions final : public UObject
-{
-public:
-	bool                                          bUseBurnIn;                                        // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSoftClassPath                         BurnInClass;                                       // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULevelSequenceBurnInInitSettings*       Settings;                                          // 0x0048(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void SetBurnIn(const struct FSoftClassPath& InBurnInClass);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LevelSequenceBurnInOptions")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LevelSequenceBurnInOptions")
-	}
-	static class ULevelSequenceBurnInOptions* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULevelSequenceBurnInOptions>();
-	}
-};
-DUMPER7_ASSERTS_ULevelSequenceBurnInOptions;
-
 // Class LevelSequence.LevelSequence
 // 0x0168 (0x01C8 - 0x0060)
 class ULevelSequence : public UMovieSceneSequence
@@ -86,6 +57,35 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ULevelSequence;
+
+// Class LevelSequence.LevelSequenceBurnInOptions
+// 0x0028 (0x0050 - 0x0028)
+class ULevelSequenceBurnInOptions final : public UObject
+{
+public:
+	bool                                          bUseBurnIn;                                        // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftClassPath                         BurnInClass;                                       // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULevelSequenceBurnInInitSettings*       Settings;                                          // 0x0048(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void SetBurnIn(const struct FSoftClassPath& InBurnInClass);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LevelSequenceBurnInOptions")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LevelSequenceBurnInOptions")
+	}
+	static class ULevelSequenceBurnInOptions* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULevelSequenceBurnInOptions>();
+	}
+};
+DUMPER7_ASSERTS_ULevelSequenceBurnInOptions;
 
 // Class LevelSequence.AnimSequenceLevelSequenceLink
 // 0x0028 (0x0050 - 0x0028)

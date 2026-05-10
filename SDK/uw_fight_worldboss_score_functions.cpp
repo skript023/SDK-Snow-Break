@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function uw_fight_worldboss_score.uw_fight_worldboss_score_C.ExecuteUbergraph_uw_fight_worldboss_score
-// (Final, UbergraphFunction, HasDefaults)
+// Function uw_fight_worldboss_score.uw_fight_worldboss_score_C.NumberScroll__Overridden
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_worldboss_score_C::ExecuteUbergraph_uw_fight_worldboss_score(int32 EntryPoint)
+void Uuw_fight_worldboss_score_C::NumberScroll__Overridden(float InDeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_worldboss_score_C", "ExecuteUbergraph_uw_fight_worldboss_score");
+		Func = Class->GetFunction("uw_fight_worldboss_score_C", "NumberScroll__Overridden");
 
-	Params::uw_fight_worldboss_score_C_ExecuteUbergraph_uw_fight_worldboss_score Parms{};
+	Params::uw_fight_worldboss_score_C_NumberScroll__Overridden Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.InDeltaTime = InDeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -59,42 +59,23 @@ void Uuw_fight_worldboss_score_C::Tick(const struct FGeometry& MyGeometry, float
 }
 
 
-// Function uw_fight_worldboss_score.uw_fight_worldboss_score_C.NumberScroll__Overridden
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function uw_fight_worldboss_score.uw_fight_worldboss_score_C.ExecuteUbergraph_uw_fight_worldboss_score
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_worldboss_score_C::NumberScroll__Overridden(float InDeltaTime)
+void Uuw_fight_worldboss_score_C::ExecuteUbergraph_uw_fight_worldboss_score(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_worldboss_score_C", "NumberScroll__Overridden");
+		Func = Class->GetFunction("uw_fight_worldboss_score_C", "ExecuteUbergraph_uw_fight_worldboss_score");
 
-	Params::uw_fight_worldboss_score_C_NumberScroll__Overridden Parms{};
+	Params::uw_fight_worldboss_score_C_ExecuteUbergraph_uw_fight_worldboss_score Parms{};
 
-	Parms.InDeltaTime = InDeltaTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// LuaFunction uw_fight_worldboss_score.uw_fight_worldboss_score_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_worldboss_score_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_worldboss_score_C", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -123,15 +104,15 @@ void Uuw_fight_worldboss_score_C::NumberScroll(float InDeltaTime)
 }
 
 
-// LuaFunction uw_fight_worldboss_score.uw_fight_worldboss_score_C.Destruct
+// LuaFunction uw_fight_worldboss_score.uw_fight_worldboss_score_C.Construct
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_worldboss_score_C::Destruct()
+void Uuw_fight_worldboss_score_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_worldboss_score_C", "Destruct");
+		Func = Class->GetFunction("uw_fight_worldboss_score_C", "Construct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -151,6 +132,25 @@ void Uuw_fight_worldboss_score_C::OnConstruct()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_worldboss_score_C", "OnConstruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_worldboss_score.uw_fight_worldboss_score_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_worldboss_score_C::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_worldboss_score_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

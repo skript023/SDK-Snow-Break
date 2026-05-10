@@ -16,6 +16,15 @@
 namespace SDK::Params
 {
 
+// Function ABP_Girl004b_Phy.ABP_Girl004b_Phy_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ABP_Girl004b_Phy_C_AnimGraph final
+{
+public:
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+};
+DUMPER7_ASSERTS_ABP_Girl004b_Phy_C_AnimGraph;
+
 // Function ABP_Girl004b_Phy.ABP_Girl004b_Phy_C.ExecuteUbergraph_ABP_Girl004b_Phy
 // 0x0008 (0x0008 - 0x0000)
 struct ABP_Girl004b_Phy_C_ExecuteUbergraph_ABP_Girl004b_Phy final
@@ -25,15 +34,6 @@ public:
 	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_ABP_Girl004b_Phy_C_ExecuteUbergraph_ABP_Girl004b_Phy;
-
-// Function ABP_Girl004b_Phy.ABP_Girl004b_Phy_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ABP_Girl004b_Phy_C_AnimGraph final
-{
-public:
-	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
-};
-DUMPER7_ASSERTS_ABP_Girl004b_Phy_C_AnimGraph;
 
 }
 

@@ -17,6 +17,197 @@
 namespace SDK
 {
 
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.CheckLauncher
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class AActor*                           LauncherA                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           LauncherB                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   bEqual                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void AModifierLineEffectActorBase_C::CheckLauncher(class AActor* LauncherA, class AActor* LauncherB, bool* bEqual)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "CheckLauncher");
+
+	Params::ModifierLineEffectActorBase_C_CheckLauncher Parms{};
+
+	Parms.LauncherA = LauncherA;
+	Parms.LauncherB = LauncherB;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (bEqual != nullptr)
+		*bEqual = Parms.bEqual;
+}
+
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.FindPreEffectActor
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AModifierLineEffectActorBase_C**  EffectActor                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AModifierLineEffectActorBase_C::FindPreEffectActor(class AModifierLineEffectActorBase_C** EffectActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "FindPreEffectActor");
+
+	Params::ModifierLineEffectActorBase_C_FindPreEffectActor Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (EffectActor != nullptr)
+		*EffectActor = Parms.EffectActor;
+}
+
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.LineToEffectActor
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AModifierLineEffectActorBase_C*   EffectActor                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AModifierLineEffectActorBase_C::LineToEffectActor(class AModifierLineEffectActorBase_C* EffectActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "LineToEffectActor");
+
+	Params::ModifierLineEffectActorBase_C_LineToEffectActor Parms{};
+
+	Parms.EffectActor = EffectActor;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void AModifierLineEffectActorBase_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnPreEffectActorEndPlay
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           Actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AModifierLineEffectActorBase_C::OnPreEffectActorEndPlay(class AActor* Actor, EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "OnPreEffectActorEndPlay");
+
+	Params::ModifierLineEffectActorBase_C_OnPreEffectActorEndPlay Parms{};
+
+	Parms.Actor = Actor;
+	Parms.EndPlayReason = EndPlayReason;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ReceiveEndPlay
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AModifierLineEffectActorBase_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "ReceiveEndPlay");
+
+	Params::ModifierLineEffectActorBase_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnPreEffectActorOwnerDead
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bDead                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UAbilityComponentBase*            InLauncher                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHealthChangeValue&        HealthChangeData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+
+void AModifierLineEffectActorBase_C::OnPreEffectActorOwnerDead(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "OnPreEffectActorOwnerDead");
+
+	Params::ModifierLineEffectActorBase_C_OnPreEffectActorOwnerDead Parms{};
+
+	Parms.bDead = bDead;
+	Parms.InLauncher = InLauncher;
+	Parms.HealthChangeData = std::move(HealthChangeData);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnLauncherDead
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bDead                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UAbilityComponentBase*            InLauncher                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHealthChangeValue&        HealthChangeData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+
+void AModifierLineEffectActorBase_C::OnLauncherDead(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "OnLauncherDead");
+
+	Params::ModifierLineEffectActorBase_C_OnLauncherDead Parms{};
+
+	Parms.bDead = bDead;
+	Parms.InLauncher = InLauncher;
+	Parms.HealthChangeData = std::move(HealthChangeData);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ExecuteUbergraph_ModifierLineEffectActorBase
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AModifierLineEffectActorBase_C::ExecuteUbergraph_ModifierLineEffectActorBase(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "ExecuteUbergraph_ModifierLineEffectActorBase");
+
+	Params::ModifierLineEffectActorBase_C_ExecuteUbergraph_ModifierLineEffectActorBase Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.WrapGetLauncher
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -199,177 +390,6 @@ void AModifierLineEffectActorBase_C::GetApplyLocation(struct FVector* OutLocatio
 }
 
 
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.CheckLauncher
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class AActor*                           LauncherA                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           LauncherB                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool*                                   bEqual                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void AModifierLineEffectActorBase_C::CheckLauncher(class AActor* LauncherA, class AActor* LauncherB, bool* bEqual)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "CheckLauncher");
-
-	Params::ModifierLineEffectActorBase_C_CheckLauncher Parms{};
-
-	Parms.LauncherA = LauncherA;
-	Parms.LauncherB = LauncherB;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (bEqual != nullptr)
-		*bEqual = Parms.bEqual;
-}
-
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.FindPreEffectActor
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AModifierLineEffectActorBase_C**  EffectActor                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AModifierLineEffectActorBase_C::FindPreEffectActor(class AModifierLineEffectActorBase_C** EffectActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "FindPreEffectActor");
-
-	Params::ModifierLineEffectActorBase_C_FindPreEffectActor Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (EffectActor != nullptr)
-		*EffectActor = Parms.EffectActor;
-}
-
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.LineToEffectActor
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AModifierLineEffectActorBase_C*   EffectActor                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AModifierLineEffectActorBase_C::LineToEffectActor(class AModifierLineEffectActorBase_C* EffectActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "LineToEffectActor");
-
-	Params::ModifierLineEffectActorBase_C_LineToEffectActor Parms{};
-
-	Parms.EffectActor = EffectActor;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void AModifierLineEffectActorBase_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnPreEffectActorEndPlay
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AActor*                           Actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AModifierLineEffectActorBase_C::OnPreEffectActorEndPlay(class AActor* Actor, EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "OnPreEffectActorEndPlay");
-
-	Params::ModifierLineEffectActorBase_C_OnPreEffectActorEndPlay Parms{};
-
-	Parms.Actor = Actor;
-	Parms.EndPlayReason = EndPlayReason;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ReceiveEndPlay
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AModifierLineEffectActorBase_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "ReceiveEndPlay");
-
-	Params::ModifierLineEffectActorBase_C_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason = EndPlayReason;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnPreEffectActorOwnerDead
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bDead                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class UAbilityComponentBase*            InLauncher                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FHealthChangeValue&        HealthChangeData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-
-void AModifierLineEffectActorBase_C::OnPreEffectActorOwnerDead(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "OnPreEffectActorOwnerDead");
-
-	Params::ModifierLineEffectActorBase_C_OnPreEffectActorOwnerDead Parms{};
-
-	Parms.bDead = bDead;
-	Parms.InLauncher = InLauncher;
-	Parms.HealthChangeData = std::move(HealthChangeData);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.OnLauncherDead
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bDead                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class UAbilityComponentBase*            InLauncher                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FHealthChangeValue&        HealthChangeData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-
-void AModifierLineEffectActorBase_C::OnLauncherDead(bool bDead, class UAbilityComponentBase* InLauncher, const struct FHealthChangeValue& HealthChangeData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "OnLauncherDead");
-
-	Params::ModifierLineEffectActorBase_C_OnLauncherDead Parms{};
-
-	Parms.bDead = bDead;
-	Parms.InLauncher = InLauncher;
-	Parms.HealthChangeData = std::move(HealthChangeData);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -385,26 +405,6 @@ void AModifierLineEffectActorBase_C::ReceiveTick(float DeltaSeconds)
 	Params::ModifierLineEffectActorBase_C_ReceiveTick Parms{};
 
 	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ModifierLineEffectActorBase.ModifierLineEffectActorBase_C.ExecuteUbergraph_ModifierLineEffectActorBase
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AModifierLineEffectActorBase_C::ExecuteUbergraph_ModifierLineEffectActorBase(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModifierLineEffectActorBase_C", "ExecuteUbergraph_ModifierLineEffectActorBase");
-
-	Params::ModifierLineEffectActorBase_C_ExecuteUbergraph_ModifierLineEffectActorBase Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

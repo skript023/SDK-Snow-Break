@@ -55,19 +55,19 @@ public:
 DUMPER7_ASSERTS_SelfCheck_SwitchState_C_SwitchCharacter;
 
 // Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.OnDead
-// 0x01D0 (0x01D0 - 0x0000)
+// 0x01E8 (0x01E8 - 0x0000)
 struct SelfCheck_SwitchState_C_OnDead final
 {
 public:
 	bool                                          bDead;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAbilityComponentBase*                  InLauncher;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeData;                                  // 0x0010(0x01C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	struct FHealthChangeValue                     HealthChangeData;                                  // 0x0010(0x01D8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_SelfCheck_SwitchState_C_OnDead;
 
 // Function SelfCheck_SwitchState.SelfCheck_SwitchState_C.ExecuteUbergraph_SelfCheck_SwitchState
-// 0x0250 (0x0250 - 0x0000)
+// 0x0268 (0x0268 - 0x0000)
 struct SelfCheck_SwitchState_C_ExecuteUbergraph_SelfCheck_SwitchState final
 {
 public:
@@ -86,19 +86,19 @@ public:
 	bool                                          K2Node_CustomEvent_bDead;                          // 0x0039(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAbilityComponentBase*                  K2Node_CustomEvent_InLauncher;                     // 0x0040(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     K2Node_CustomEvent_HealthChangeData;               // 0x0048(0x01C0)(ConstParm, ContainsInstancedReference)
-	class AGameCharacter*                         CallFunc_GetLauncherOriginCharacter_ReturnValue_1; // 0x0208(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAbilityComponentBase*                  CallFunc_GetLauncherAbility_ReturnValue;           // 0x0210(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0219(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsCurrentCharacter_ReturnValue;           // 0x021A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_21B[0x5];                                      // 0x021B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbilityComponentBase*                  CallFunc_GetLauncherAbility_ReturnValue_1;         // 0x0220(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0228(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_229[0x7];                                      // 0x0229(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AGameCharacter*                         CallFunc_GetLauncherOriginCharacter_ReturnValue_2; // 0x0230(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(bool bEnter, class AGameCharacter* CurCharacter)> K2Node_CreateDelegate_OutputDelegate_1; // 0x0238(0x0010)(ZeroConstructor, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x0248(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FHealthChangeValue                     K2Node_CustomEvent_HealthChangeData;               // 0x0048(0x01D8)(ConstParm, ContainsInstancedReference)
+	class AGameCharacter*                         CallFunc_GetLauncherOriginCharacter_ReturnValue_1; // 0x0220(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAbilityComponentBase*                  CallFunc_GetLauncherAbility_ReturnValue;           // 0x0228(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0230(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0231(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsCurrentCharacter_ReturnValue;           // 0x0232(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_233[0x5];                                      // 0x0233(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilityComponentBase*                  CallFunc_GetLauncherAbility_ReturnValue_1;         // 0x0238(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0240(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_241[0x7];                                      // 0x0241(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGameCharacter*                         CallFunc_GetLauncherOriginCharacter_ReturnValue_2; // 0x0248(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(bool bEnter, class AGameCharacter* CurCharacter)> K2Node_CreateDelegate_OutputDelegate_1; // 0x0250(0x0010)(ZeroConstructor, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x0260(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_SelfCheck_SwitchState_C_ExecuteUbergraph_SelfCheck_SwitchState;
 

@@ -37,19 +37,19 @@ public:
 	class UNiagaraComponent*                      GameNiagara_1;                                     // 0x02B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void OnNotifyEnd_EA90ADDA46E4C027EC141D8D5621A07D(class FName NotifyName);
+	void OnInterrupted_EA90ADDA46E4C027EC141D8D5621A07D(class FName NotifyName);
+	void OnCompleted_EA90ADDA46E4C027EC141D8D5621A07D(class FName NotifyName);
+	void OnAbilityCastSkill_Event_0(int32 SkillID, const TArray<int32>& OriginSkills, class UGameAbilityComponent* AbilityRef);
+	void ExecuteUbergraph_girl014a_skill01_SMAgent(int32 EntryPoint);
 	void Timeline_0__FinishedFunc();
 	void Timeline_0__UpdateFunc();
-	void OnNotifyEnd_EA90ADDA46E4C027EC141D8D5621A07D(class FName NotifyName);
 	void OnNotifyBegin_EA90ADDA46E4C027EC141D8D5621A07D(class FName NotifyName);
-	void OnInterrupted_EA90ADDA46E4C027EC141D8D5621A07D(class FName NotifyName);
 	void OnBlendOut_EA90ADDA46E4C027EC141D8D5621A07D(class FName NotifyName);
-	void OnCompleted_EA90ADDA46E4C027EC141D8D5621A07D(class FName NotifyName);
 	void ReceiveBeginPlay();
-	void OnAbilityCastSkill_Event_0(int32 SkillID, const TArray<int32>& OriginSkills, class UGameAbilityComponent* AbilityRef);
 	void OnSkillCancel_Event_0(int32 SkillID, ESkillInterruptedType InType, int32 InInterruptSkillID);
 	void ReceiveTick(float DeltaSeconds);
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ExecuteUbergraph_girl014a_skill01_SMAgent(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

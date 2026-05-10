@@ -18,28 +18,28 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Bunker.BP_Bunker_C
-// 0x0080 (0x1450 - 0x13D0)
+// 0x0080 (0x1480 - 0x1400)
 class ABP_Bunker_C : public AMonsterBunker
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x13D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBoxComponent*                          NavBox;                                            // 0x13D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBillboardComponent*                    BillBoard;                                         // 0x13E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBunkerPointComponent*                  BunkerPoint04;                                     // 0x13E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBunkerPointComponent*                  BunkerPoint03;                                     // 0x13F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBunkerPointComponent*                  BunkerPoint02;                                     // 0x13F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBunkerPointComponent*                  BunkerPoint01;                                     // 0x1400(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	bool                                          NoColAfterBroken;                                  // 0x1408(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          HideMesh;                                          // 0x1409(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          CastShadow;                                        // 0x140A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_140B[0x5];                                     // 0x140B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraSystem*                         DieEffect;                                         // 0x1410(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UStaticMesh*                            BrokenMesh;                                        // 0x1418(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 WwiseDie;                                          // 0x1420(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	class UStaticMesh*                            OrgMesh;                                           // 0x1430(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInterface*                     NewMaterial;                                       // 0x1438(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 BunkerCollisionActor;                              // 0x1440(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bHasSpawned;                                       // 0x1448(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1400(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBoxComponent*                          NavBox;                                            // 0x1408(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBillboardComponent*                    BillBoard;                                         // 0x1410(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBunkerPointComponent*                  BunkerPoint04;                                     // 0x1418(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBunkerPointComponent*                  BunkerPoint03;                                     // 0x1420(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBunkerPointComponent*                  BunkerPoint02;                                     // 0x1428(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBunkerPointComponent*                  BunkerPoint01;                                     // 0x1430(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          NoColAfterBroken;                                  // 0x1438(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          HideMesh;                                          // 0x1439(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          CastShadow;                                        // 0x143A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_143B[0x5];                                     // 0x143B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraSystem*                         DieEffect;                                         // 0x1440(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UStaticMesh*                            BrokenMesh;                                        // 0x1448(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 WwiseDie;                                          // 0x1450(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class UStaticMesh*                            OrgMesh;                                           // 0x1460(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInterface*                     NewMaterial;                                       // 0x1468(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 BunkerCollisionActor;                              // 0x1470(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bHasSpawned;                                       // 0x1478(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void SpawnBunkerCollisionActor(class AActor** OutActor);

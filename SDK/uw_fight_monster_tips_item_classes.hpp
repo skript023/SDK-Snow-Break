@@ -106,16 +106,16 @@ public:
 	class URedirectTextBlock*                     TxtGuardName;                                      // 0x0A80(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_monster_tips_item(int32 EntryPoint);
-	void PlayTypeAnim();
-	void OnAnimationFinished(const class UWidgetAnimation* Animation);
-	void AppearFinish(class UWidgetAnimation* Animation);
-	void PlayHitAnim(const struct FApplyDamageResultData& DamageResultData);
-	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);
-	void PlayDieAnim();
-	void SetDefendTargetPercent(float Value);
-	void StartLoop(const class UObject* Object, bool HasAppear);
 	void SequenceEvent__ENTRYPOINTuw_fight_monster_tips_item_0();
+	void PlayDieAnim();
+	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);
+	void AppearFinish(class UWidgetAnimation* Animation);
+	void OnAnimationFinished(const class UWidgetAnimation* Animation);
+	void PlayTypeAnim();
+	void ExecuteUbergraph_uw_fight_monster_tips_item(int32 EntryPoint);
+	void StartLoop(const class UObject* Object, bool HasAppear);
+	void SetDefendTargetPercent(float Value);
+	void PlayHitAnim(const struct FApplyDamageResultData& DamageResultData);
 
 public:
 	static class UClass* StaticClass()

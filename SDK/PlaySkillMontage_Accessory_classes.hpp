@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PlaySkillMontage_Accessory.PlaySkillMontage_Accessory_C
-// 0x0008 (0x0118 - 0x0110)
+// 0x0008 (0x0120 - 0x0118)
 class UPlaySkillMontage_Accessory_C : public UPlaySkillMontageComponent
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0110(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0118(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ReceiveActiveSkill(const bool bIsClient);

@@ -57,26 +57,6 @@ void uw_fight_power_girl002a_twobar_0::Uuw_fight_power_girl002a_twobar_C::PlayFu
 }
 
 
-// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.PlayStartStateAnim
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bPlay                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void uw_fight_power_girl002a_twobar_0::Uuw_fight_power_girl002a_twobar_C::PlayStartStateAnim(bool bPlay)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_power_girl002a_twobar_C", "PlayStartStateAnim");
-
-	Params::uw_fight_power_girl002a_twobar_C_PlayStartStateAnim Parms{};
-
-	Parms.bPlay = bPlay;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.ExecuteUbergraph_uw_fight_power_girl002a_twobar
 // (Final, UbergraphFunction)
 // Parameters:
@@ -92,6 +72,26 @@ void uw_fight_power_girl002a_twobar_0::Uuw_fight_power_girl002a_twobar_C::Execut
 	Params::uw_fight_power_girl002a_twobar_C_ExecuteUbergraph_uw_fight_power_girl002a_twobar Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_power_girl002a_twobar.uw_fight_power_girl002a_twobar_C.PlayStartStateAnim
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bPlay                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void uw_fight_power_girl002a_twobar_0::Uuw_fight_power_girl002a_twobar_C::PlayStartStateAnim(bool bPlay)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_power_girl002a_twobar_C", "PlayStartStateAnim");
+
+	Params::uw_fight_power_girl002a_twobar_C_PlayStartStateAnim Parms{};
+
+	Parms.bPlay = bPlay;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

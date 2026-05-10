@@ -131,6 +131,30 @@ void ABP_Girl004b_C::NotifyRefreshPlayerSkinMesh(int32 SkinTemplateID, int32 Ski
 }
 
 
+// Function BP_Girl004b.BP_Girl004b_C.OnAbilityCast
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   SkillID                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const TArray<int32>&                    OriginSkills                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UGameAbilityComponent*            AbilityRef                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Girl004b_C::OnAbilityCast(int32 SkillID, const TArray<int32>& OriginSkills, class UGameAbilityComponent* AbilityRef)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Girl004b_C", "OnAbilityCast");
+
+	Params::BP_Girl004b_C_OnAbilityCast Parms{};
+
+	Parms.SkillID = SkillID;
+	Parms.OriginSkills = std::move(OriginSkills);
+	Parms.AbilityRef = AbilityRef;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_Girl004b.BP_Girl004b_C.ReInitRecoverAttribute
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -140,6 +164,20 @@ void ABP_Girl004b_C::ReInitRecoverAttribute()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Girl004b_C", "ReInitRecoverAttribute");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Girl004b.BP_Girl004b_C.ReInitSaveAttribute
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Girl004b_C::ReInitSaveAttribute()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Girl004b_C", "ReInitSaveAttribute");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -206,44 +244,6 @@ void ABP_Girl004b_C::CustomEvent_0(const class APlayerWeapon* InCurWeapon)
 	Parms.InCurWeapon = InCurWeapon;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Girl004b.BP_Girl004b_C.OnAbilityCast
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   SkillID                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const TArray<int32>&                    OriginSkills                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class UGameAbilityComponent*            AbilityRef                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Girl004b_C::OnAbilityCast(int32 SkillID, const TArray<int32>& OriginSkills, class UGameAbilityComponent* AbilityRef)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Girl004b_C", "OnAbilityCast");
-
-	Params::BP_Girl004b_C_OnAbilityCast Parms{};
-
-	Parms.SkillID = SkillID;
-	Parms.OriginSkills = std::move(OriginSkills);
-	Parms.AbilityRef = AbilityRef;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Girl004b.BP_Girl004b_C.ReInitSaveAttribute
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Girl004b_C::ReInitSaveAttribute()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Girl004b_C", "ReInitSaveAttribute");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

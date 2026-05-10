@@ -17,23 +17,45 @@
 namespace SDK
 {
 
-// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.ExecuteUbergraph_uw_fight_monster_hp_ordinary
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.PlayWhiteAnim
+// (Event, Public, BlueprintEvent)
 
-void Uuw_fight_monster_hp_ordinary_C::ExecuteUbergraph_uw_fight_monster_hp_ordinary(int32 EntryPoint)
+void Uuw_fight_monster_hp_ordinary_C::PlayWhiteAnim()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "ExecuteUbergraph_uw_fight_monster_hp_ordinary");
+		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "PlayWhiteAnim");
 
-	Params::uw_fight_monster_hp_ordinary_C_ExecuteUbergraph_uw_fight_monster_hp_ordinary Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.PlayVisibiltyAnim
+// (Event, Public, BlueprintEvent)
+
+void Uuw_fight_monster_hp_ordinary_C::PlayVisibiltyAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "PlayVisibiltyAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_monster_hp_ordinary_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -57,74 +79,23 @@ void Uuw_fight_monster_hp_ordinary_C::UpdateImage(const EFightMonsterTipsType In
 }
 
 
-// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_monster_hp_ordinary_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.PlayVisibiltyAnim
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_monster_hp_ordinary_C::PlayVisibiltyAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "PlayVisibiltyAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.PlayWhiteAnim
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_monster_hp_ordinary_C::PlayWhiteAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "PlayWhiteAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// LuaFunction uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.K2_OnAppliedModifierChange
-// (Native, Event, Public, BlueprintEvent)
+// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.ExecuteUbergraph_uw_fight_monster_hp_ordinary
+// (Final, UbergraphFunction)
 // Parameters:
-// int32                                   ModifierID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    IsApply                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// int64                                   InLauncherCharacterHashIndex                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_monster_hp_ordinary_C::K2_OnAppliedModifierChange(int32 ModifierID, bool IsApply, int64 InLauncherCharacterHashIndex)
+void Uuw_fight_monster_hp_ordinary_C::ExecuteUbergraph_uw_fight_monster_hp_ordinary(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "K2_OnAppliedModifierChange");
+		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "ExecuteUbergraph_uw_fight_monster_hp_ordinary");
 
-	Params::uw_fight_monster_hp_ordinary_C_K2_OnAppliedModifierChange Parms{};
+	Params::uw_fight_monster_hp_ordinary_C_ExecuteUbergraph_uw_fight_monster_hp_ordinary Parms{};
 
-	Parms.ModifierID = ModifierID;
-	Parms.IsApply = IsApply;
-	Parms.InLauncherCharacterHashIndex = InLauncherCharacterHashIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -161,6 +132,35 @@ void Uuw_fight_monster_hp_ordinary_C::K2_OnReset()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.K2_OnAppliedModifierChange
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   ModifierID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    IsApply                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// int64                                   InLauncherCharacterHashIndex                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_monster_hp_ordinary_C::K2_OnAppliedModifierChange(int32 ModifierID, bool IsApply, int64 InLauncherCharacterHashIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "K2_OnAppliedModifierChange");
+
+	Params::uw_fight_monster_hp_ordinary_C_K2_OnAppliedModifierChange Parms{};
+
+	Parms.ModifierID = ModifierID;
+	Parms.IsApply = IsApply;
+	Parms.InLauncherCharacterHashIndex = InLauncherCharacterHashIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Bunker_Crate.BP_Bunker_Crate_C
-// 0x0010 (0x1460 - 0x1450)
+// 0x0010 (0x1490 - 0x1480)
 class ABP_Bunker_Crate_C final : public ABP_Bunker_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Bunker_Crate_C;                  // 0x1450(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Bunker_Crate_C;                  // 0x1480(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue);

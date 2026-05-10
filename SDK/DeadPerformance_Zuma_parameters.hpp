@@ -17,7 +17,7 @@ namespace SDK::Params
 {
 
 // Function DeadPerformance_Zuma.DeadPerformance_Zuma_C.ExecuteUbergraph_DeadPerformance_Zuma
-// 0x01F8 (0x01F8 - 0x0000)
+// 0x0210 (0x0210 - 0x0000)
 struct DeadPerformance_Zuma_C_ExecuteUbergraph_DeadPerformance_Zuma final
 {
 public:
@@ -26,23 +26,23 @@ public:
 	class AGameCharacter*                         K2Node_Event_DeadCharacter;                        // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AGameCharacter*                         K2Node_Event_Killer;                               // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UDeadPerformanceComponent*              K2Node_Event_DeadComponent;                        // 0x0018(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     K2Node_Event_HealthChangeValue;                    // 0x0020(0x01C0)(ConstParm, ContainsInstancedReference)
-	class AGamePlayer*                            K2Node_DynamicCast_AsGame_Player;                  // 0x01E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x01E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1E9[0x7];                                      // 0x01E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      CallFunc_SpawnSystemAttached_ReturnValue;          // 0x01F0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHealthChangeValue                     K2Node_Event_HealthChangeValue;                    // 0x0020(0x01D8)(ConstParm, ContainsInstancedReference)
+	class AGamePlayer*                            K2Node_DynamicCast_AsGame_Player;                  // 0x01F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_201[0x7];                                      // 0x0201(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      CallFunc_SpawnSystemAttached_ReturnValue;          // 0x0208(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_DeadPerformance_Zuma_C_ExecuteUbergraph_DeadPerformance_Zuma;
 
 // Function DeadPerformance_Zuma.DeadPerformance_Zuma_C.DeadPerformanceLogic
-// 0x01D8 (0x01D8 - 0x0000)
+// 0x01F0 (0x01F0 - 0x0000)
 struct DeadPerformance_Zuma_C_DeadPerformanceLogic final
 {
 public:
 	class AGameCharacter*                         DeadCharacter;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AGameCharacter*                         Killer;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UDeadPerformanceComponent*              DeadComponent;                                     // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0018(0x01C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0018(0x01D8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_DeadPerformance_Zuma_C_DeadPerformanceLogic;
 

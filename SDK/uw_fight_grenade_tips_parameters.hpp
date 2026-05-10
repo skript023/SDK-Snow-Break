@@ -16,16 +16,16 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.ExecuteUbergraph_uw_fight_grenade_tips
-// 0x0040 (0x0040 - 0x0000)
-struct uw_fight_grenade_tips_C_ExecuteUbergraph_uw_fight_grenade_tips final
+// Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.SetPlaySpeed
+// 0x000C (0x000C - 0x0000)
+struct uw_fight_grenade_tips_C_SetPlaySpeed final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGeometry                              K2Node_Event_MyGeometry;                           // 0x0004(0x0038)(IsPlainOldData, NoDestructor)
-	float                                         K2Node_Event_InDeltaTime;                          // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         InSpeedPre;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Lerp_ReturnValue;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsAnimationPlaying_ReturnValue;           // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_uw_fight_grenade_tips_C_ExecuteUbergraph_uw_fight_grenade_tips;
+DUMPER7_ASSERTS_uw_fight_grenade_tips_C_SetPlaySpeed;
 
 // Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.Tick__Overridden
 // 0x003C (0x003C - 0x0000)
@@ -37,16 +37,16 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_grenade_tips_C_Tick__Overridden;
 
-// Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.Play
-// 0x0010 (0x0010 - 0x0000)
-struct uw_fight_grenade_tips_C_Play final
+// Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.ExecuteUbergraph_uw_fight_grenade_tips
+// 0x0040 (0x0040 - 0x0000)
+struct uw_fight_grenade_tips_C_ExecuteUbergraph_uw_fight_grenade_tips final
 {
 public:
-	bool                                          CallFunc_IsAnimationPlaying_ReturnValue;           // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGeometry                              K2Node_Event_MyGeometry;                           // 0x0004(0x0038)(IsPlainOldData, NoDestructor)
+	float                                         K2Node_Event_InDeltaTime;                          // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_uw_fight_grenade_tips_C_Play;
+DUMPER7_ASSERTS_uw_fight_grenade_tips_C_ExecuteUbergraph_uw_fight_grenade_tips;
 
 // Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.Stop
 // 0x0001 (0x0001 - 0x0000)
@@ -57,16 +57,16 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_grenade_tips_C_Stop;
 
-// Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.SetPlaySpeed
-// 0x000C (0x000C - 0x0000)
-struct uw_fight_grenade_tips_C_SetPlaySpeed final
+// Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.Play
+// 0x0010 (0x0010 - 0x0000)
+struct uw_fight_grenade_tips_C_Play final
 {
 public:
-	float                                         InSpeedPre;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Lerp_ReturnValue;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsAnimationPlaying_ReturnValue;           // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsAnimationPlaying_ReturnValue;           // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_uw_fight_grenade_tips_C_SetPlaySpeed;
+DUMPER7_ASSERTS_uw_fight_grenade_tips_C_Play;
 
 // LuaFunction uw_fight_grenade_tips.uw_fight_grenade_tips_C.ReceiveWarning
 // 0x0008 (0x0008 - 0x0000)

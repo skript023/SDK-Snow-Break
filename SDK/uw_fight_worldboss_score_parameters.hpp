@@ -16,16 +16,14 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_worldboss_score.uw_fight_worldboss_score_C.ExecuteUbergraph_uw_fight_worldboss_score
-// 0x0040 (0x0040 - 0x0000)
-struct uw_fight_worldboss_score_C_ExecuteUbergraph_uw_fight_worldboss_score final
+// Function uw_fight_worldboss_score.uw_fight_worldboss_score_C.NumberScroll__Overridden
+// 0x0004 (0x0004 - 0x0000)
+struct uw_fight_worldboss_score_C_NumberScroll__Overridden final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGeometry                              K2Node_Event_MyGeometry;                           // 0x0004(0x0038)(IsPlainOldData, NoDestructor)
-	float                                         K2Node_Event_InDeltaTime;                          // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         InDeltaTime;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_uw_fight_worldboss_score_C_ExecuteUbergraph_uw_fight_worldboss_score;
+DUMPER7_ASSERTS_uw_fight_worldboss_score_C_NumberScroll__Overridden;
 
 // Function uw_fight_worldboss_score.uw_fight_worldboss_score_C.Tick
 // 0x003C (0x003C - 0x0000)
@@ -37,14 +35,16 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_worldboss_score_C_Tick;
 
-// Function uw_fight_worldboss_score.uw_fight_worldboss_score_C.NumberScroll__Overridden
-// 0x0004 (0x0004 - 0x0000)
-struct uw_fight_worldboss_score_C_NumberScroll__Overridden final
+// Function uw_fight_worldboss_score.uw_fight_worldboss_score_C.ExecuteUbergraph_uw_fight_worldboss_score
+// 0x0040 (0x0040 - 0x0000)
+struct uw_fight_worldboss_score_C_ExecuteUbergraph_uw_fight_worldboss_score final
 {
 public:
-	float                                         InDeltaTime;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGeometry                              K2Node_Event_MyGeometry;                           // 0x0004(0x0038)(IsPlainOldData, NoDestructor)
+	float                                         K2Node_Event_InDeltaTime;                          // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_uw_fight_worldboss_score_C_NumberScroll__Overridden;
+DUMPER7_ASSERTS_uw_fight_worldboss_score_C_ExecuteUbergraph_uw_fight_worldboss_score;
 
 // LuaFunction uw_fight_worldboss_score.uw_fight_worldboss_score_C.NumberScroll
 // 0x0004 (0x0004 - 0x0000)

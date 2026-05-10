@@ -30,7 +30,7 @@ public:
 	class UWidgetAnimation*                       Reset;                                             // 0x05A0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Silent;                                            // 0x05A8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Appear;                                            // 0x05B0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UWidgetAnimation*                       Interrupt;                                         // 0x05B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UWidgetAnimation*                       interrupt;                                         // 0x05B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       monsterhp_appear;                                  // 0x05C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       monsterhp_disappear;                               // 0x05C8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       monsterhp_white;                                   // 0x05D0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
@@ -47,7 +47,7 @@ public:
 	class UVerticalBox*                           Damage;                                            // 0x0628(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UBorder*                                Effect;                                            // 0x0630(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         elite;                                             // 0x0638(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class URedirectImage*                         HpBg;                                              // 0x0640(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class URedirectImage*                         HpBG;                                              // 0x0640(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         Image;                                             // 0x0648(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         Image_1;                                           // 0x0650(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         Image_2;                                           // 0x0658(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -85,17 +85,17 @@ public:
 	struct FVector2D                              SkillPos;                                          // 0x0758(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_monster_hp(int32 EntryPoint);
-	void OnSetLocationAndVisibleOfHPBar(bool bVisible);
-	void UpdateImage(const EFightMonsterTipsType InTipsType);
-	void DissappearFinish();
-	void PlayWhiteAnim();
-	void Construct();
-	void PlayDisappearAnim();
 	void PlayVisibiltyAnim();
-	void K2_OnAppliedModifierChange(int32 ModifierID, bool IsApply, int64 InLauncherCharacterHashIndex);
+	void PlayDisappearAnim();
+	void Construct();
+	void PlayWhiteAnim();
+	void DissappearFinish();
+	void UpdateImage(const EFightMonsterTipsType InTipsType);
+	void OnSetLocationAndVisibleOfHPBar(bool bVisible);
+	void ExecuteUbergraph_uw_fight_monster_hp(int32 EntryPoint);
 	void K2_OnFree();
 	void K2_OnReset();
+	void K2_OnAppliedModifierChange(int32 ModifierID, bool IsApply, int64 InLauncherCharacterHashIndex);
 	void Destruct();
 
 	class FString GetModuleName() const;

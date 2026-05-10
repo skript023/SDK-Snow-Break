@@ -10,21 +10,21 @@
 
 #include "Basic.hpp"
 
-#include "DefaultPlayerMoveComponent_classes.hpp"
 #include "Engine_structs.hpp"
+#include "DefaultPlayerMoveComponent_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Girl002a_Movement.BP_Girl002a_Movement_C
-// 0x0010 (0x1460 - 0x1450)
+// 0x0010 (0x1480 - 0x1470)
 class UBP_Girl002a_Movement_C final : public UDefaultPlayerMoveComponent_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Girl002a_Movement_C;             // 0x1448(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          NewVar_0_0;                                        // 0x1450(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          New_Var_0;                                         // 0x1451(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Girl002a_Movement_C;             // 0x1468(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          NewVar_0_0;                                        // 0x1470(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          New_Var_0;                                         // 0x1471(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	bool ReceiveCustomSpeedCurve(struct FCustomSpeedCurve* CustomSpeedCurve);

@@ -16,25 +16,25 @@
 namespace SDK
 {
 
-// Class AudioExtensions.SoundfieldEffectSettingsBase
+// Class AudioExtensions.SoundfieldEndpointSettingsBase
 // 0x0000 (0x0028 - 0x0028)
-class USoundfieldEffectSettingsBase final : public UObject
+class USoundfieldEndpointSettingsBase final : public UObject
 {
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("SoundfieldEffectSettingsBase")
+		STATIC_CLASS_IMPL("SoundfieldEndpointSettingsBase")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"SoundfieldEffectSettingsBase")
+		STATIC_NAME_IMPL(L"SoundfieldEndpointSettingsBase")
 	}
-	static class USoundfieldEffectSettingsBase* GetDefaultObj()
+	static class USoundfieldEndpointSettingsBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<USoundfieldEffectSettingsBase>();
+		return GetDefaultObjImpl<USoundfieldEndpointSettingsBase>();
 	}
 };
-DUMPER7_ASSERTS_USoundfieldEffectSettingsBase;
+DUMPER7_ASSERTS_USoundfieldEndpointSettingsBase;
 
 // Class AudioExtensions.SoundfieldEncodingSettingsBase
 // 0x0000 (0x0028 - 0x0028)
@@ -156,25 +156,25 @@ public:
 };
 DUMPER7_ASSERTS_USoundModulatorBase;
 
-// Class AudioExtensions.SoundfieldEndpointSettingsBase
+// Class AudioExtensions.SoundfieldEffectSettingsBase
 // 0x0000 (0x0028 - 0x0028)
-class USoundfieldEndpointSettingsBase final : public UObject
+class USoundfieldEffectSettingsBase final : public UObject
 {
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("SoundfieldEndpointSettingsBase")
+		STATIC_CLASS_IMPL("SoundfieldEffectSettingsBase")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"SoundfieldEndpointSettingsBase")
+		STATIC_NAME_IMPL(L"SoundfieldEffectSettingsBase")
 	}
-	static class USoundfieldEndpointSettingsBase* GetDefaultObj()
+	static class USoundfieldEffectSettingsBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<USoundfieldEndpointSettingsBase>();
+		return GetDefaultObjImpl<USoundfieldEffectSettingsBase>();
 	}
 };
-DUMPER7_ASSERTS_USoundfieldEndpointSettingsBase;
+DUMPER7_ASSERTS_USoundfieldEffectSettingsBase;
 
 // Class AudioExtensions.SoundfieldEffectBase
 // 0x0008 (0x0030 - 0x0028)

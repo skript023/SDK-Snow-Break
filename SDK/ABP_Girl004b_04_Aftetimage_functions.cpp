@@ -17,6 +17,27 @@
 namespace SDK
 {
 
+// Function ABP_Girl004b_04_Aftetimage.ABP_Girl004b_04_Aftetimage_C.AnimGraph
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+
+void UABP_Girl004b_04_Aftetimage_C::AnimGraph(struct FPoseLink* AnimGraph_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Girl004b_04_Aftetimage_C", "AnimGraph");
+
+	Params::ABP_Girl004b_04_Aftetimage_C_AnimGraph Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimGraph_0 != nullptr)
+		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
+}
+
+
 // Function ABP_Girl004b_04_Aftetimage.ABP_Girl004b_04_Aftetimage_C.BlueprintUpdateAnimation
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -54,27 +75,6 @@ void UABP_Girl004b_04_Aftetimage_C::ExecuteUbergraph_ABP_Girl004b_04_Aftetimage(
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ABP_Girl004b_04_Aftetimage.ABP_Girl004b_04_Aftetimage_C.AnimGraph
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
-
-void UABP_Girl004b_04_Aftetimage_C::AnimGraph(struct FPoseLink* AnimGraph_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Girl004b_04_Aftetimage_C", "AnimGraph");
-
-	Params::ABP_Girl004b_04_Aftetimage_C_AnimGraph Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (AnimGraph_0 != nullptr)
-		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
 }

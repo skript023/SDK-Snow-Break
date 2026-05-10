@@ -59,7 +59,7 @@ enum class EPlotCompleteType : uint8
 };
 
 // Enum Plot.EDialogueType
-// NumValues: 0x0006
+// NumValues: 0x0007
 enum class EDialogueType : uint8
 {
 	None                                     = 0,
@@ -67,7 +67,8 @@ enum class EDialogueType : uint8
 	Fight                                    = 2,
 	Animation                                = 3,
 	Stage                                    = 4,
-	EDialogueType_MAX                        = 5,
+	FightSpine                               = 5,
+	EDialogueType_MAX                        = 6,
 };
 
 // Enum Plot.EPlotPostProcessEffectType
@@ -355,6 +356,31 @@ enum class EPlotWidgetType : uint8
 	EPlotWidgetType_MAX                      = 2,
 };
 
+// ScriptStruct Plot.PlotCutSceneData
+// 0x0080 (0x0080 - 0x0000)
+struct FPlotCutSceneData final
+{
+public:
+	struct FSoftObjectPath                        SequencePath;                                      // 0x0000(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMovieSceneSequencePlaybackSettings    Settings;                                          // 0x0018(0x0014)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftObjectPath                        Style;                                             // 0x0030(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              Size;                                              // 0x0048(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              Position;                                          // 0x0050(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FadeInTime;                                        // 0x0058(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FadeOutTime;                                       // 0x005C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FadeOutTargetAlpha;                                // 0x0060(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PlayDelayTime;                                     // 0x0064(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FadeOutDelayTime;                                  // 0x0068(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              TargetPosition;                                    // 0x006C(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveDelayTime;                                     // 0x0074(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveSpeed;                                         // 0x0078(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Layer;                                             // 0x007C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bIsMainCamera : 1;                                 // 0x007D(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_7E[0x2];                                       // 0x007E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FPlotCutSceneData;
+
 // ScriptStruct Plot.FacialMorphTargetInfo
 // 0x000C (0x000C - 0x0000)
 struct FFacialMorphTargetInfo final
@@ -421,19 +447,6 @@ public:
 	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FPlotCameraInfo;
-
-// ScriptStruct Plot.InteractionGameRecord
-// 0x0038 (0x0038 - 0x0000)
-struct FInteractionGameRecord final
-{
-public:
-	class FString                                 Content;                                           // 0x0000(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Speaker;                                           // 0x0010(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isCurTalking;                                      // 0x0020(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 WwiseEventID;                                      // 0x0028(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInteractionGameRecord;
 
 // ScriptStruct Plot.SpineParameters
 // 0x0050 (0x0050 - 0x0000)
@@ -512,6 +525,13 @@ public:
 };
 DUMPER7_ASSERTS_FConfigItem;
 
+// ScriptStruct Plot.SequenceItemStruct
+// 0x0000 (0x0040 - 0x0040)
+struct FSequenceItemStruct final : public FSelectItemData
+{
+};
+DUMPER7_ASSERTS_FSequenceItemStruct;
+
 // ScriptStruct Plot.PlotName2Img
 // 0x0120 (0x0128 - 0x0008)
 struct FPlotName2Img final : public FTableRowBase
@@ -535,16 +555,6 @@ public:
 	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FPlotName2Img;
-
-// ScriptStruct Plot.SubtitleRecord
-// 0x0020 (0x0020 - 0x0000)
-struct FSubtitleRecord final
-{
-public:
-	class FString                                 Content;                                           // 0x0000(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 WwiseEventID;                                      // 0x0010(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSubtitleRecord;
 
 // ScriptStruct Plot.TalkConfig
 // 0x0030 (0x0030 - 0x0000)
@@ -577,30 +587,28 @@ public:
 };
 DUMPER7_ASSERTS_FFacialAnimationData;
 
-// ScriptStruct Plot.PlotCutSceneData
-// 0x0080 (0x0080 - 0x0000)
-struct FPlotCutSceneData final
+// ScriptStruct Plot.SubtitleRecord
+// 0x0020 (0x0020 - 0x0000)
+struct FSubtitleRecord final
 {
 public:
-	struct FSoftObjectPath                        SequencePath;                                      // 0x0000(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMovieSceneSequencePlaybackSettings    Settings;                                          // 0x0018(0x0014)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSoftObjectPath                        Style;                                             // 0x0030(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              Size;                                              // 0x0048(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              Position;                                          // 0x0050(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FadeInTime;                                        // 0x0058(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FadeOutTime;                                       // 0x005C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FadeOutTargetAlpha;                                // 0x0060(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PlayDelayTime;                                     // 0x0064(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FadeOutDelayTime;                                  // 0x0068(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              TargetPosition;                                    // 0x006C(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MoveDelayTime;                                     // 0x0074(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MoveSpeed;                                         // 0x0078(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Layer;                                             // 0x007C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bIsMainCamera : 1;                                 // 0x007D(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_7E[0x2];                                       // 0x007E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 Content;                                           // 0x0000(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 WwiseEventID;                                      // 0x0010(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FPlotCutSceneData;
+DUMPER7_ASSERTS_FSubtitleRecord;
+
+// ScriptStruct Plot.InteractionGameRecord
+// 0x0038 (0x0038 - 0x0000)
+struct FInteractionGameRecord final
+{
+public:
+	class FString                                 Content;                                           // 0x0000(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Speaker;                                           // 0x0010(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isCurTalking;                                      // 0x0020(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 WwiseEventID;                                      // 0x0028(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInteractionGameRecord;
 
 // ScriptStruct Plot.BackgroundSubtitlesOneByOneParams
 // 0x000C (0x000C - 0x0000)
@@ -665,17 +673,18 @@ public:
 DUMPER7_ASSERTS_FPlotSound;
 
 // ScriptStruct Plot.PlotInfo
-// 0x0028 (0x0030 - 0x0008)
+// 0x0040 (0x0048 - 0x0008)
 struct FPlotInfo final : public FTableRowBase
 {
 public:
 	int32                                         ID;                                                // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSoftObjectPath                        PlotPath;                                          // 0x0010(0x0018)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Summary;                                           // 0x0028(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Browse;                                            // 0x0029(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPlotCategory                                 PlotCategory;                                      // 0x002A(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B[0x5];                                       // 0x002B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FSoftObjectPath                        PlotPath_18;                                       // 0x0028(0x0018)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Summary;                                           // 0x0040(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Browse;                                            // 0x0041(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPlotCategory                                 PlotCategory;                                      // 0x0042(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_43[0x5];                                       // 0x0043(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FPlotInfo;
 
@@ -733,13 +742,6 @@ public:
 	class FString                                 EventName;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FNameSelected;
-
-// ScriptStruct Plot.SequenceItemStruct
-// 0x0000 (0x0040 - 0x0040)
-struct FSequenceItemStruct final : public FSelectItemData
-{
-};
-DUMPER7_ASSERTS_FSequenceItemStruct;
 
 }
 

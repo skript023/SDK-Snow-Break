@@ -33,10 +33,10 @@ public:
 
 public:
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
-	void BlueprintBeginPlay();
-	void ExecuteUbergraph_ABP_GirlBase_HeadBase(int32 EntryPoint);
 	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void BlueprintBeginPlay();
 	void CustomEvent();
+	void ExecuteUbergraph_ABP_GirlBase_HeadBase(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -32,10 +32,10 @@ public:
 public:
 	void CheckActive(ECharacterActionState InState, bool bSet);
 	void K2_ReceiveActive(const class UObject* Instigator);
-	void OnPlayerActionFlay(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet);
 	void K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn);
-	void K2_ReceiveInitialize(const TArray<struct FParamInfo>& Info, const class UGameAbilityComponent* lpInstigator);
 	void ExecuteUbergraph_AllBulletEffect(int32 EntryPoint);
+	void OnPlayerActionFlay(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet);
+	void K2_ReceiveInitialize(const TArray<struct FParamInfo>& Info, const class UGameAbilityComponent* lpInstigator);
 
 public:
 	static class UClass* StaticClass()

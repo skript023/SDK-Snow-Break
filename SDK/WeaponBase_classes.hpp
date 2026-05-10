@@ -18,22 +18,23 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass WeaponBase.WeaponBase_C
-// 0x0010 (0x1C80 - 0x1C70)
+// 0x0010 (0x1C90 - 0x1C80)
 #pragma pack(push, 0x1)
 class alignas(0x10) AWeaponBase_C : public APlayerWeapon
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1C70(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	uint8                                         Pad_1C78[0x8];                                     // 0x1C78(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1C80(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	bool ReceiveShootBullet();
 	void EndToDissolve();
 	void BeginToDissolve();
-	void ExecuteUbergraph_WeaponBase(int32 EntryPoint);
 	void OnEquipWeapon(class AGameCharacter* Character);
+	void ExecuteUbergraph_WeaponBase(int32 EntryPoint);
 
-	bool ReceiveBreakFire() const;
 	bool ReceiveStopFire(int32 InStartSkillID) const;
+	bool ReceiveBreakFire() const;
 	bool ReceiveStartReload() const;
 
 public:

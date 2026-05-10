@@ -40,11 +40,11 @@ public:
 	float                                         LerpTime;                                          // 0x03B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_npcfriend_hp(int32 EntryPoint);
-	void K2_OnUpdate(float InDeltaTime);
-	void SetHpPercent(float Percent);
-	void PlayBreakAnim();
 	void PlayLowAnim(bool bLow);
+	void PlayBreakAnim();
+	void K2_OnUpdate(float InDeltaTime);
+	void ExecuteUbergraph_uw_fight_npcfriend_hp(int32 EntryPoint);
+	void SetHpPercent(float Percent);
 
 public:
 	static class UClass* StaticClass()

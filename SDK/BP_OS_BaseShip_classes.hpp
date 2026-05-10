@@ -20,26 +20,26 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_OS_BaseShip.BP_OS_BaseShip_C
-// 0x0070 (0x1320 - 0x12B0)
+// 0x0070 (0x1370 - 0x1300)
 class ABP_OS_BaseShip_C final : public AOS_BaseShip
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x12B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        HPBarComponent;                                    // 0x12B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBoxComponent*                          Box;                                               // 0x12C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         Timeline_1_NewTrack_0_B6EE44024DE6FD705315328725D3A4AD; // 0x12C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            Timeline_1__Direction_B6EE44024DE6FD705315328725D3A4AD; // 0x12CC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12CD[0x3];                                     // 0x12CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     Timeline_1;                                        // 0x12D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Timeline_0_NewTrack_0_873EBFEB46682AB8617B968C5F97F3D5; // 0x12D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            Timeline_0__Direction_873EBFEB46682AB8617B968C5F97F3D5; // 0x12DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12DD[0x3];                                     // 0x12DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     Timeline_0;                                        // 0x12E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_Spline_C*                           SplineActor;                                       // 0x12E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraSystem*                         DeadEffect;                                        // 0x12F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class USceneComponent*>                Fans;                                              // 0x12F8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	struct FTimerHandle                           FansRotateTimer;                                   // 0x1308(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class UWwiseComponent*                        AudioRef;                                          // 0x1310(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1300(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        HPBarComponent;                                    // 0x1308(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          Box;                                               // 0x1310(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         Timeline_1_NewTrack_0_B6EE44024DE6FD705315328725D3A4AD; // 0x1318(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            Timeline_1__Direction_B6EE44024DE6FD705315328725D3A4AD; // 0x131C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_131D[0x3];                                     // 0x131D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     Timeline_1;                                        // 0x1320(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Timeline_0_NewTrack_0_873EBFEB46682AB8617B968C5F97F3D5; // 0x1328(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            Timeline_0__Direction_873EBFEB46682AB8617B968C5F97F3D5; // 0x132C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_132D[0x3];                                     // 0x132D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     Timeline_0;                                        // 0x1330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_Spline_C*                           SplineActor;                                       // 0x1338(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraSystem*                         DeadEffect;                                        // 0x1340(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class USceneComponent*>                Fans;                                              // 0x1348(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	struct FTimerHandle                           FansRotateTimer;                                   // 0x1358(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UWwiseComponent*                        AudioRef;                                          // 0x1360(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AddDieExp();

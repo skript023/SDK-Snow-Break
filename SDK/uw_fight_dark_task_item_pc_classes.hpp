@@ -44,8 +44,8 @@ public:
 	void BP_OnEntryReleased();
 	void SetState(uint8 InState);
 	void OnListItemObjectSet(class UObject* ListItemObject);
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

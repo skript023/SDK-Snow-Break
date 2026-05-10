@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "SeasunAnimGraph_structs.hpp"
 #include "ControlRig_structs.hpp"
+#include "SeasunAnimGraph_structs.hpp"
 #include "KawaiiPhysics_structs.hpp"
 
 

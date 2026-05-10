@@ -18,18 +18,18 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Explosive_Magnet.Explosive_Magnet_C
-// 0x0010 (0x1610 - 0x1600)
+// 0x0010 (0x1640 - 0x1630)
 class AExplosive_Magnet_C final : public AExplosiveBase_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_Explosive_Magnet_C;                 // 0x1600(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_Explosive_Magnet_C;                 // 0x1630(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void CheckCull();
-	void SetHpShowDistance();
-	bool IsStillValid();
-	void ReSpawn(bool IsValid);
 	void ExecuteUbergraph_Explosive_Magnet(int32 EntryPoint);
+	void ReSpawn(bool IsValid);
+	bool IsStillValid();
+	void SetHpShowDistance();
+	void CheckCull();
 
 public:
 	static class UClass* StaticClass()

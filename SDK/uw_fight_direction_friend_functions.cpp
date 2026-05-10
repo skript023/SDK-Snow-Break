@@ -17,115 +17,15 @@
 namespace SDK
 {
 
-// Function uw_fight_direction_friend.uw_fight_direction_friend_C.ExecuteUbergraph_uw_fight_direction_friend
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_direction_friend.uw_fight_direction_friend_C.SequenceEvent__ENTRYPOINTuw_fight_direction_friend_0
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_direction_friend_C::ExecuteUbergraph_uw_fight_direction_friend(int32 EntryPoint)
+void Uuw_fight_direction_friend_C::SequenceEvent__ENTRYPOINTuw_fight_direction_friend_0()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_friend_C", "ExecuteUbergraph_uw_fight_direction_friend");
-
-	Params::uw_fight_direction_friend_C_ExecuteUbergraph_uw_fight_direction_friend Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_direction_friend.uw_fight_direction_friend_C.K2_OnCustomUmgAnimFinished
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FName&                      AnimName                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_direction_friend_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_friend_C", "K2_OnCustomUmgAnimFinished");
-
-	Params::uw_fight_direction_friend_C_K2_OnCustomUmgAnimFinished Parms{};
-
-	Parms.AnimName = AnimName;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_direction_friend.uw_fight_direction_friend_C.OnAnimationFinished
-// (BlueprintCosmetic, Event, Protected, BlueprintEvent)
-// Parameters:
-// const class UWidgetAnimation*           Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_direction_friend_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_friend_C", "OnAnimationFinished");
-
-	Params::uw_fight_direction_friend_C_OnAnimationFinished Parms{};
-
-	Parms.Animation = Animation;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_direction_friend.uw_fight_direction_friend_C.AppearFinish
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UWidgetAnimation*                 Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_direction_friend_C::AppearFinish(class UWidgetAnimation* Animation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_friend_C", "AppearFinish");
-
-	Params::uw_fight_direction_friend_C_AppearFinish Parms{};
-
-	Parms.Animation = Animation;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_direction_friend.uw_fight_direction_friend_C.OnVisibilityChanged_Event_0
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ESlateVisibility                        InVisibility                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_direction_friend_C::OnVisibilityChanged_Event_0(ESlateVisibility InVisibility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_friend_C", "OnVisibilityChanged_Event_0");
-
-	Params::uw_fight_direction_friend_C_OnVisibilityChanged_Event_0 Parms{};
-
-	Parms.InVisibility = InVisibility;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_direction_friend.uw_fight_direction_friend_C.PlayDieAnim
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_direction_friend_C::PlayDieAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_friend_C", "PlayDieAnim");
+		Func = Class->GetFunction("uw_fight_direction_friend_C", "SequenceEvent__ENTRYPOINTuw_fight_direction_friend_0");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -151,6 +51,120 @@ void Uuw_fight_direction_friend_C::SetDefendTargetPercent(float Value)
 }
 
 
+// Function uw_fight_direction_friend.uw_fight_direction_friend_C.PlayDieAnim
+// (Event, Public, BlueprintEvent)
+
+void Uuw_fight_direction_friend_C::PlayDieAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_friend_C", "PlayDieAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_direction_friend.uw_fight_direction_friend_C.OnVisibilityChanged_Event_0
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ESlateVisibility                        InVisibility                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_direction_friend_C::OnVisibilityChanged_Event_0(ESlateVisibility InVisibility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_friend_C", "OnVisibilityChanged_Event_0");
+
+	Params::uw_fight_direction_friend_C_OnVisibilityChanged_Event_0 Parms{};
+
+	Parms.InVisibility = InVisibility;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_direction_friend.uw_fight_direction_friend_C.AppearFinish
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UWidgetAnimation*                 Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_direction_friend_C::AppearFinish(class UWidgetAnimation* Animation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_friend_C", "AppearFinish");
+
+	Params::uw_fight_direction_friend_C_AppearFinish Parms{};
+
+	Parms.Animation = Animation;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_direction_friend.uw_fight_direction_friend_C.OnAnimationFinished
+// (BlueprintCosmetic, Event, Protected, BlueprintEvent)
+// Parameters:
+// const class UWidgetAnimation*           Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_direction_friend_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_friend_C", "OnAnimationFinished");
+
+	Params::uw_fight_direction_friend_C_OnAnimationFinished Parms{};
+
+	Parms.Animation = Animation;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_direction_friend.uw_fight_direction_friend_C.K2_OnCustomUmgAnimFinished
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FName&                      AnimName                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_direction_friend_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_friend_C", "K2_OnCustomUmgAnimFinished");
+
+	Params::uw_fight_direction_friend_C_K2_OnCustomUmgAnimFinished Parms{};
+
+	Parms.AnimName = AnimName;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_direction_friend.uw_fight_direction_friend_C.ExecuteUbergraph_uw_fight_direction_friend
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_direction_friend_C::ExecuteUbergraph_uw_fight_direction_friend(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_friend_C", "ExecuteUbergraph_uw_fight_direction_friend");
+
+	Params::uw_fight_direction_friend_C_ExecuteUbergraph_uw_fight_direction_friend Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function uw_fight_direction_friend.uw_fight_direction_friend_C.StartLoop
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -170,20 +184,6 @@ void Uuw_fight_direction_friend_C::StartLoop(const class UObject* Object, bool H
 	Parms.HasAppear = HasAppear;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_direction_friend.uw_fight_direction_friend_C.SequenceEvent__ENTRYPOINTuw_fight_direction_friend_0
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_direction_friend_C::SequenceEvent__ENTRYPOINTuw_fight_direction_friend_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_friend_C", "SequenceEvent__ENTRYPOINTuw_fight_direction_friend_0");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

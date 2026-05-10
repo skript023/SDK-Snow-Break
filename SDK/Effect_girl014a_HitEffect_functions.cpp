@@ -41,6 +41,20 @@ void AEffect_girl014a_HitEffect_C::GetClosedPoint(class FName BoneName, const st
 }
 
 
+// Function Effect_girl014a_HitEffect.Effect_girl014a_HitEffect_C.K2_ReceiveDeActive
+// (Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void AEffect_girl014a_HitEffect_C::K2_ReceiveDeActive()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Effect_girl014a_HitEffect_C", "K2_ReceiveDeActive");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function Effect_girl014a_HitEffect.Effect_girl014a_HitEffect_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 
@@ -64,20 +78,6 @@ void AEffect_girl014a_HitEffect_C::K2_ReceiveActive()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("Effect_girl014a_HitEffect_C", "K2_ReceiveActive");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Effect_girl014a_HitEffect.Effect_girl014a_HitEffect_C.K2_ReceiveDeActive
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void AEffect_girl014a_HitEffect_C::K2_ReceiveDeActive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Effect_girl014a_HitEffect_C", "K2_ReceiveDeActive");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

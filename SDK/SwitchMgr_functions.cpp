@@ -99,20 +99,45 @@ void ASwitchMgr_C::ExecuteUbergraph_SwitchMgr(int32 EntryPoint)
 }
 
 
-// LuaFunction SwitchMgr.SwitchMgr_C.OnSwitchEvent
+// LuaFunction SwitchMgr.SwitchMgr_C.OnBind
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASwitchMgr_C::OnSwitchEvent()
+void ASwitchMgr_C::OnBind()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SwitchMgr_C", "OnSwitchEvent");
+		Func = Class->GetFunction("SwitchMgr_C", "OnBind");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction SwitchMgr.SwitchMgr_C.ReceiveEndPlay
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ASwitchMgr_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SwitchMgr_C", "ReceiveEndPlay");
+
+	Params::SwitchMgr_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -127,25 +152,6 @@ void ASwitchMgr_C::ReceiveBeginPlay()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("SwitchMgr_C", "ReceiveBeginPlay");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction SwitchMgr.SwitchMgr_C.OnBind
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASwitchMgr_C::OnBind()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SwitchMgr_C", "OnBind");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -200,26 +206,20 @@ void ASwitchMgr_C::SwitchForce()
 }
 
 
-// LuaFunction SwitchMgr.SwitchMgr_C.ReceiveEndPlay
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          EndPlayReason                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// LuaFunction SwitchMgr.SwitchMgr_C.OnSwitchEvent
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASwitchMgr_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+void ASwitchMgr_C::OnSwitchEvent()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SwitchMgr_C", "ReceiveEndPlay");
-
-	Params::SwitchMgr_C_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason = EndPlayReason;
+		Func = Class->GetFunction("SwitchMgr_C", "OnSwitchEvent");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

@@ -21,6 +21,7 @@
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "GameplayTags_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "UMG_classes.hpp"
 #include "GameTable_structs.hpp"
 
@@ -123,7 +124,7 @@ public:
 DUMPER7_ASSERTS_UAnimNtf_GECharTiming;
 
 // Class GameEx.GEHideAndSeekMgr
-// 0x00A0 (0x02C8 - 0x0228)
+// 0x00B8 (0x02E0 - 0x0228)
 class AGEHideAndSeekMgr final : public AActor
 {
 public:
@@ -133,9 +134,12 @@ public:
 	TArray<class FString>                         DObjGroup;                                         // 0x0240(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         minRandomDObjCount;                                // 0x0250(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         maxRandomDObjCount;                                // 0x0254(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<int32>                                 canSwitchMeshIndexArr;                             // 0x0258(0x0010)(BlueprintVisible, Net, ZeroConstructor, RepNotify, NativeAccessSpecifierPublic)
-	TArray<int32>                                 DObjIndexArr;                                      // 0x0268(0x0010)(BlueprintVisible, Net, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_278[0x50];                                     // 0x0278(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bUseTagRandom;                                     // 0x0258(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_259[0x7];                                      // 0x0259(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRandomTagGroup>                RandomTagInfo;                                     // 0x0260(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 canSwitchMeshIndexArr;                             // 0x0270(0x0010)(BlueprintVisible, Net, ZeroConstructor, RepNotify, NativeAccessSpecifierPublic)
+	TArray<int32>                                 DObjIndexArr;                                      // 0x0280(0x0010)(BlueprintVisible, Net, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_290[0x50];                                     // 0x0290(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class AActor* GetDObjByName(const class FString& InName);
@@ -185,7 +189,7 @@ public:
 DUMPER7_ASSERTS_UGEAbilityAttributeSettings;
 
 // Class GameEx.GEItem
-// 0x0068 (0x0290 - 0x0228)
+// 0x0070 (0x0298 - 0x0228)
 class AGEItem : public AActor
 {
 public:
@@ -202,11 +206,14 @@ public:
 	class AActor*                                 CurOwner;                                          // 0x0260(0x0008)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                 CacheOwner;                                        // 0x0268(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         RotateDisplaySpeed;                                // 0x0270(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_274[0x4];                                      // 0x0274(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         UseCD;                                             // 0x0278(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_27C[0x8];                                      // 0x027C(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class AGEGameCharacter>        LocalChar;                                         // 0x0284(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_28C[0x4];                                      // 0x028C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bRotateToLocalChar;                                // 0x0274(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_275[0x7];                                      // 0x0275(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         UseCD;                                             // 0x027C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_280[0x8];                                      // 0x0280(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          isSpawnNiagaraVisible;                             // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_289[0x3];                                      // 0x0289(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AGEGameCharacter>        LocalChar;                                         // 0x028C(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_294[0x4];                                      // 0x0294(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void LuaImpl_OnAlloc();
@@ -236,12 +243,12 @@ public:
 DUMPER7_ASSERTS_AGEItem;
 
 // Class GameEx.GEItemBait
-// 0x0058 (0x02E8 - 0x0290)
+// 0x0058 (0x02F0 - 0x0298)
 class AGEItemBait final : public AGEItem
 {
 public:
-	int32                                         ItemId;                                            // 0x0290(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_294[0x54];                                     // 0x0294(0x0054)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         ItemId;                                            // 0x0298(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29C[0x54];                                     // 0x029C(0x0054)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetRotationFromClient_RPC(const struct FRotator& InRotation);
@@ -287,53 +294,57 @@ public:
 DUMPER7_ASSERTS_AGEAccelerateTrap;
 
 // Class GameEx.GEItemBomb
-// 0x0150 (0x03E0 - 0x0290)
+// 0x01D8 (0x0470 - 0x0298)
 class alignas(0x10) AGEItemBomb final : public AGEItem
 {
 public:
-	bool                                          NeedGenerator;                                     // 0x0290(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_291[0x6F];                                     // 0x0291(0x006F)(Fixing Size After Last Property [ Dumper-7 ])
-	class USplineComponent*                       SplineComponent;                                   // 0x0300(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraComponent*                      FlashNiagara;                                      // 0x0308(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraComponent*                      TailNiagara;                                       // 0x0310(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ItemId;                                            // 0x0318(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                StartPoint;                                        // 0x031C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        PointArriveTangent;                                // 0x0328(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        PointLeaveTangent;                                 // 0x0338(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         Height;                                            // 0x0348(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CenterOffset;                                      // 0x034C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DestDistance;                                      // 0x0350(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DestOffsetZ;                                       // 0x0354(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Speed;                                             // 0x0358(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                RotateSpeed;                                       // 0x035C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LineLength;                                        // 0x0368(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         minSpeedZ;                                         // 0x036C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SmoothMaxCount;                                    // 0x0370(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SyncToClientDur;                                   // 0x0374(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxSpeedModify;                                    // 0x0378(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BoomDelay;                                         // 0x037C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BoomFlashDelay;                                    // 0x0380(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          CanTick;                                           // 0x0384(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_385[0x3];                                      // 0x0385(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SplineLength;                                      // 0x0388(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isStartMove;                                       // 0x038C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isSplineMoveComplete;                              // 0x038D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_38E[0x2];                                      // 0x038E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         newLen;                                            // 0x0390(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                FreelyMoveSpeed;                                   // 0x0394(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LifeTimeForRPC;                                    // 0x03A0(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                HitImpactNormal;                                   // 0x03A4(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                InitTangent;                                       // 0x03B0(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         inertiaXSpeed;                                     // 0x03BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ForwardVec;                                        // 0x03C0(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SplineTimer;                                       // 0x03CC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGEBombState                                  CurState;                                          // 0x03D0(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D1[0xF];                                      // 0x03D1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          NeedGenerator;                                     // 0x0298(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_299[0x77];                                     // 0x0299(0x0077)(Fixing Size After Last Property [ Dumper-7 ])
+	class USplineComponent*                       SplineComponent;                                   // 0x0310(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraComponent*                      FlashNiagara;                                      // 0x0318(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraComponent*                      TailNiagara;                                       // 0x0320(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ItemId;                                            // 0x0328(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                StartPoint;                                        // 0x032C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        PointArriveTangent;                                // 0x0338(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        PointLeaveTangent;                                 // 0x0348(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         Height;                                            // 0x0358(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CenterOffset;                                      // 0x035C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DestDistance;                                      // 0x0360(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DestOffsetZ;                                       // 0x0364(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Speed;                                             // 0x0368(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                RotateSpeed;                                       // 0x036C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LineLength;                                        // 0x0378(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         minSpeedZ;                                         // 0x037C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SmoothMaxCount;                                    // 0x0380(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SyncToClientDur;                                   // 0x0384(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxSpeedModify;                                    // 0x0388(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BoomDelay;                                         // 0x038C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BoomFlashDelay;                                    // 0x0390(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          CanTick;                                           // 0x0394(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_395[0x3];                                      // 0x0395(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SplineLength;                                      // 0x0398(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isStartMove;                                       // 0x039C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isSplineMoveComplete;                              // 0x039D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39E[0x2];                                      // 0x039E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         newLen;                                            // 0x03A0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                FreelyMoveSpeed;                                   // 0x03A4(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LifeTimeForRPC;                                    // 0x03B0(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HitImpactNormal;                                   // 0x03B4(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                InitTangent;                                       // 0x03C0(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         inertiaXSpeed;                                     // 0x03CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ForwardVec;                                        // 0x03D0(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SplineTimer;                                       // 0x03DC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGEBombState                                  CurState;                                          // 0x03E0(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3E1[0x3];                                      // 0x03E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ParabolaVel;                                       // 0x03E4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3F0[0x80];                                     // 0x03F0(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void Boom();
 	void BoomFlash();
 	void Generator();
+	void HAS_StartMoveAlongParabola(const struct FGEItemClientInfo& ClientInfo, int64 servertimeMilli, const struct FVector& InForwardVec, class AActor* InOwner);
+	void HAS_StartMoveAlongParabola_ServerCheck(struct FGEItemClientInfo* ClientInfo);
 	void HAS_StartSplineMove(const struct FGEItemClientInfo& ClientInfo, int64 servertimeMilli, const struct FVector& InForwardVec);
 	void OnRep_BombState();
 	void SetBombState(EGEBombState InState);
@@ -556,17 +567,17 @@ public:
 DUMPER7_ASSERTS_UWaterPark_AIModifyEscape;
 
 // Class GameEx.GEItemScan
-// 0x0068 (0x02F8 - 0x0290)
+// 0x0068 (0x0300 - 0x0298)
 class AGEItemScan final : public AGEItem
 {
 public:
-	class UNiagaraComponent*                      CheckNiagara;                                      // 0x0290(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isActivate;                                        // 0x0298(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_299[0x3];                                      // 0x0299(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CheckDuration;                                     // 0x029C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ActivateTimer;                                     // 0x02A0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ItemId;                                            // 0x02A4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A8[0x50];                                     // 0x02A8(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      CheckNiagara;                                      // 0x0298(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isActivate;                                        // 0x02A0(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A1[0x3];                                      // 0x02A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CheckDuration;                                     // 0x02A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ActivateTimer;                                     // 0x02A8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ItemId;                                            // 0x02AC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B0[0x50];                                     // 0x02B0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void CharacterEntryBox(const class FString& InName, class AActor* InActor);
@@ -614,21 +625,21 @@ public:
 DUMPER7_ASSERTS_UWaterPark_AIModifyWait;
 
 // Class GameEx.GEItemWeaponBox
-// 0x0038 (0x02C8 - 0x0290)
+// 0x0038 (0x02D0 - 0x0298)
 class AGEItemWeaponBox final : public AGEItem
 {
 public:
-	int32                                         ItemId;                                            // 0x0290(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                MoveSpeed;                                         // 0x0294(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ValidDirectionDis;                                 // 0x02A0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bBlockMove;                                        // 0x02A4(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A5[0x3];                                      // 0x02A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CacheLastFrameLocation;                            // 0x02A8(0x000C)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LifeTime;                                          // 0x02B4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinLifeTime;                                       // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CheckIsOnGroundCD;                                 // 0x02BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CheckIsOnGroundHeight;                             // 0x02C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CheckIsOnGroundTimer;                              // 0x02C4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ItemId;                                            // 0x0298(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                MoveSpeed;                                         // 0x029C(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ValidDirectionDis;                                 // 0x02A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bBlockMove;                                        // 0x02AC(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2AD[0x3];                                      // 0x02AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CacheLastFrameLocation;                            // 0x02B0(0x000C)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LifeTime;                                          // 0x02BC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinLifeTime;                                       // 0x02C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CheckIsOnGroundCD;                                 // 0x02C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CheckIsOnGroundHeight;                             // 0x02C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CheckIsOnGroundTimer;                              // 0x02CC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void LuaImpl_WeaponBox_MultiCastOnAlloc();
@@ -845,7 +856,10 @@ class UGECustomPathFollowingComponent final : public UPathFollowingComponent
 {
 public:
 	bool CheckReachProxyMidPoint(const struct FVector& CurrentLocation, const struct FVector& StartLocation, const struct FVector& TargetLocation);
-	void ForceCurLinkFromLua();
+	void ForceNextLinkFromLua();
+	void PauseMoveByLua();
+	void ResumeMoveByLua();
+	void UpdateMoveFocusByLua();
 	bool UsingCustomLink();
 
 public:
@@ -865,7 +879,7 @@ public:
 DUMPER7_ASSERTS_UGECustomPathFollowingComponent;
 
 // Class GameEx.GEAIController
-// 0x02B0 (0x05E0 - 0x0330)
+// 0x02A8 (0x05D8 - 0x0330)
 class AGEAIController final : public AAIController
 {
 public:
@@ -876,48 +890,48 @@ public:
 	int32                                         PlayerID;                                          // 0x0430(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_434[0x4];                                      // 0x0434(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                TargetPos;                                         // 0x0438(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ProxyMoveDir;                                      // 0x0444(0x000C)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWorld*                                 OwnWorld;                                          // 0x0450(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AGEGameCharacter*                       GEGameChar;                                        // 0x0458(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                TestMoveDir;                                       // 0x0460(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_46C[0x4];                                      // 0x046C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AGEGameModeBase*                        GEGameMode;                                        // 0x0470(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AGEGameState*                           GEGameState;                                       // 0x0478(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_480[0x50];                                     // 0x0480(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         NowRandomTargetTime;                               // 0x04D0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                NowRandomTargetPos;                                // 0x04D4(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          HasValidTargetPos;                                 // 0x04E0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4E1[0x3];                                      // 0x04E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class AGEHASAIPathPoint>       HAS_CurPathPoint;                                  // 0x04E4(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AActor>                  ForceTargetActor;                                  // 0x04EC(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ForceTargetLoc;                                    // 0x04F4(0x000C)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ForceGoToTargetLocTimer;                           // 0x0500(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ForceGoToTargetLocDur;                             // 0x0504(0x0004)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StopForceGoToTargetLocDist;                        // 0x0508(0x0004)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NextCanForceGoToTargetLocCD;                       // 0x050C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isGoingToForceTargetLoc;                           // 0x0510(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_511[0x3];                                      // 0x0511(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CacheTeamID;                                       // 0x0514(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HAS_PathFindCD;                                    // 0x0518(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HAS_StopDur;                                       // 0x051C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HAS_StopTimer;                                     // 0x0520(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HAS_JumpAddInputTimer;                             // 0x0524(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HAS_JumpAddInputDur;                               // 0x0528(0x0004)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HAS_AutoFindNextPointTimer;                        // 0x052C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HAS_AutoFindNextPointCD;                           // 0x0530(0x0004)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HAS_GoingJumpTimer;                                // 0x0534(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HAS_GoingJumpCD;                                   // 0x0538(0x0004)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         HAS_StopPointCount;                                // 0x053C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         HAS_StopPointMaxCount;                             // 0x0540(0x0004)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_544[0x4];                                      // 0x0544(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	uint32                                        CurQueryID;                                        // 0x0548(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CacheQueryArrNum;                                  // 0x054C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_550[0x80];                                     // 0x0550(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(const struct FAIRequestID& RequestID, EPathFollowingResult Result, class AGEAIController* AIController)> ReceiveMoveCompletedEx; // 0x05D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	bool                                          bStopPathFollowingControl;                         // 0x0444(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_445[0x3];                                      // 0x0445(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWorld*                                 OwnWorld;                                          // 0x0448(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AGEGameCharacter*                       GEGameChar;                                        // 0x0450(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                TestMoveDir;                                       // 0x0458(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_464[0x4];                                      // 0x0464(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGEGameModeBase*                        GEGameMode;                                        // 0x0468(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AGEGameState*                           GEGameState;                                       // 0x0470(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_478[0x50];                                     // 0x0478(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         NowRandomTargetTime;                               // 0x04C8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                NowRandomTargetPos;                                // 0x04CC(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          HasValidTargetPos;                                 // 0x04D8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4D9[0x3];                                      // 0x04D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AGEHASAIPathPoint>       HAS_CurPathPoint;                                  // 0x04DC(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AActor>                  ForceTargetActor;                                  // 0x04E4(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ForceTargetLoc;                                    // 0x04EC(0x000C)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ForceGoToTargetLocTimer;                           // 0x04F8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ForceGoToTargetLocDur;                             // 0x04FC(0x0004)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StopForceGoToTargetLocDist;                        // 0x0500(0x0004)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NextCanForceGoToTargetLocCD;                       // 0x0504(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isGoingToForceTargetLoc;                           // 0x0508(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_509[0x3];                                      // 0x0509(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CacheTeamID;                                       // 0x050C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HAS_PathFindCD;                                    // 0x0510(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HAS_StopDur;                                       // 0x0514(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HAS_StopTimer;                                     // 0x0518(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HAS_JumpAddInputTimer;                             // 0x051C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HAS_JumpAddInputDur;                               // 0x0520(0x0004)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HAS_AutoFindNextPointTimer;                        // 0x0524(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HAS_AutoFindNextPointCD;                           // 0x0528(0x0004)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HAS_GoingJumpTimer;                                // 0x052C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HAS_GoingJumpCD;                                   // 0x0530(0x0004)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HAS_StopPointCount;                                // 0x0534(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HAS_StopPointMaxCount;                             // 0x0538(0x0004)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_53C[0x4];                                      // 0x053C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint32                                        CurQueryID;                                        // 0x0540(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CacheQueryArrNum;                                  // 0x0544(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_548[0x80];                                     // 0x0548(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(const struct FAIRequestID& RequestID, EPathFollowingResult Result, class AGEAIController* AIController)> ReceiveMoveCompletedEx; // 0x05C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	void AbortMoveToAsync(uint32 AsyncQueryID);
-	void ClearProxyMoveDir();
 	bool GetBoolValue(const class FString& Key);
 	float GetFloatValue(const class FString& Key);
 	int32 GetIntValue(const class FString& Key);
@@ -932,7 +946,6 @@ public:
 	void SetForceTargetActor(class AActor* InActor);
 	void SetForceTargetLoc(const struct FVector& InTargetLoc);
 	void SetIntValue(const class FString& Key, int32 Value);
-	void SetProxyMoveDir(const struct FVector& InModifierDir);
 	void TriggerNotify(const class FString& NotifyName, const class FString& NotifyParam);
 
 public:
@@ -1755,26 +1768,27 @@ public:
 DUMPER7_ASSERTS_UGEFightMemberTitle;
 
 // Class GameEx.GEFightMemberTitleNew
-// 0x0058 (0x0320 - 0x02C8)
+// 0x0060 (0x0328 - 0x02C8)
 class UGEFightMemberTitleNew final : public UGameCoreWidget
 {
 public:
 	float                                         ExpressionRange;                                   // 0x02C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         NormalNameRange;                                   // 0x02CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ZBugNameRange;                                     // 0x02D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NameRange;                                         // 0x02D4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TitleRange_Max;                                    // 0x02D8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TitleRange_Min;                                    // 0x02DC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SelfTitleCamRange_Min;                             // 0x02E0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          VisibleNameNeedCheckTeam;                          // 0x02E4(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2E5[0x3];                                      // 0x02E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UGEFightMemberTitleItemNew*>     itemList;                                          // 0x02E8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TArray<struct FGEHelpTitleOrder>              ItemListLevel;                                     // 0x02F8(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	float                                         DynamicSetZOrderCD;                                // 0x0308(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DynamicSetZOrderTimer;                             // 0x030C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_310[0x8];                                      // 0x0310(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         LocalPlayerTeamID;                                 // 0x0318(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_31C[0x4];                                      // 0x031C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         HASSpectateModeNameRange;                          // 0x02D4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NameRange;                                         // 0x02D8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TitleRange_Max;                                    // 0x02DC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TitleRange_Min;                                    // 0x02E0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SelfTitleCamRange_Min;                             // 0x02E4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          VisibleNameNeedCheckTeam;                          // 0x02E8(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2E9[0x7];                                      // 0x02E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UGEFightMemberTitleItemNew*>     itemList;                                          // 0x02F0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FGEHelpTitleOrder>              ItemListLevel;                                     // 0x0300(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	float                                         DynamicSetZOrderCD;                                // 0x0310(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DynamicSetZOrderTimer;                             // 0x0314(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_318[0x8];                                      // 0x0318(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         LocalPlayerTeamID;                                 // 0x0320(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_324[0x4];                                      // 0x0324(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UGEFightMemberTitleItemNew* AllocNewWidget(int64 InRoleID);
@@ -1810,7 +1824,8 @@ public:
 	bool                                          NeedTickTitle;                                     // 0x02F0(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2F1[0x3];                                      // 0x02F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TWeakObjectPtr<class AGEGameCharacter>        OwnChar;                                           // 0x02F4(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2FC[0x4];                                      // 0x02FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bNeedHide;                                         // 0x02FC(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2FD[0x3];                                      // 0x02FD(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool GetTitleIsVisible();
@@ -1887,7 +1902,7 @@ public:
 DUMPER7_ASSERTS_UWaterParkAnimMetaData;
 
 // Class GameEx.GEGameCharacter
-// 0x1360 (0x1820 - 0x04C0)
+// 0x13B0 (0x1870 - 0x04C0)
 #pragma pack(push, 0x1)
 class alignas(0x10) AGEGameCharacter : public ACharacter
 {
@@ -1956,7 +1971,9 @@ public:
 	float                                         PounceUpAnimTime;                                  // 0x0738(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         StopPounceSpeedSquared;                            // 0x073C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         StopPounce_LowSpeedTime;                           // 0x0740(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_744[0x24];                                     // 0x0744(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_744[0x4];                                      // 0x0744(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(class AController* InController)> OnJumpStateEnd;                  // 0x0748(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_758[0x10];                                     // 0x0758(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         UnlockJumpTimeInPounceUp;                          // 0x0768(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         UnlockMoveTimeInPounceUp;                          // 0x076C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         PounceHorizonBeginSpeed;                           // 0x0770(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2040,300 +2057,321 @@ public:
 	bool                                          bLockMove;                                         // 0x0BF4(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_BF5[0x3];                                      // 0x0BF5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         BlockMoveBit;                                      // 0x0BF8(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BlockMoveFromUI;                                   // 0x0BFC(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BlockMoveFromSlideEnd;                             // 0x0BFD(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BlockMoveFromCom;                                  // 0x0BFE(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BlockJumpFromUI;                                   // 0x0BFF(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BlockJumpFromPounce;                               // 0x0C00(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C01[0x3];                                      // 0x0C01(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTag                           LockMoveTag;                                       // 0x0C04(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Now3CStateTime;                                    // 0x0C0C(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWPCharStateMachineComponent*           WPCharStateMachine;                                // 0x0C10(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FVector>           ContinuesVecMap;                                   // 0x0C18(0x0050)(Transient, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FVector>           ContinuesVecMap_WithFalling;                       // 0x0C68(0x0050)(Transient, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FWaterParkCharacterContinuesVecForward> ContinuesVecMap_Forward;      // 0x0CB8(0x0050)(Transient, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FGEZBugRunSpeedModifierDataInfo> ExSpeedMap;                          // 0x0D08(0x0050)(Transient, NativeAccessSpecifierPublic)
-	TMap<class FString, float>                    ExScaleMap;                                        // 0x0D58(0x0050)(Transient, NativeAccessSpecifierPublic)
-	float                                         CurForwardTotalVecValue;                           // 0x0DA8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ClientRayCastCD;                                   // 0x0DAC(0x0004)(Edit, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_DB0[0x4];                                      // 0x0DB0(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          WalkCheckFalling;                                  // 0x0DB4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_DB5[0x3];                                      // 0x0DB5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WalkCheckSpeed;                                    // 0x0DB8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          JumpEndUseHeight;                                  // 0x0DBC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_DBD[0x6B];                                     // 0x0DBD(0x006B)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             DefaultFace;                                       // 0x0E28(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   LeftFootSocketName;                                // 0x0E30(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   RightFootSocketName;                               // 0x0E38(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StepCheckHeight;                                   // 0x0E40(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StepCheckRadius;                                   // 0x0E44(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         StepSoundId;                                       // 0x0E48(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E4C[0xC];                                      // 0x0E4C(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      FloorEffect;                                       // 0x0E58(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FloorEffectHeight;                                 // 0x0E60(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E64[0x4];                                      // 0x0E64(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      AccelerateEffect;                                  // 0x0E68(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                AccelerateLoc;                                     // 0x0E70(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E7C[0x4];                                      // 0x0E7C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      WaterRampEffect;                                   // 0x0E80(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraComponent*                      WaterRampEffect2;                                  // 0x0E88(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                WaterRampLoc;                                      // 0x0E90(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                WaterRampLoc2;                                     // 0x0E9C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isOnSlope;                                         // 0x0EA8(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isOnWaterRamp;                                     // 0x0EA9(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_EAA[0x2];                                      // 0x0EAA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CumuWaterRampMoveForwardValue;                     // 0x0EAC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CumuWaterRampMoveRightValue;                       // 0x0EB0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WaterRampCollOffset_Horizon;                       // 0x0EB4(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WaterRmapHeight;                                   // 0x0EB8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isEntryWaterRampBox;                               // 0x0EBC(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_EBD[0x3];                                      // 0x0EBD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      ProtectEffect;                                     // 0x0EC0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AccelerateEffectThreshold;                         // 0x0EC8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KillZ;                                             // 0x0ECC(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AGEItem>                 CurrentItem;                                       // 0x0ED0(0x0008)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          HasItemHold;                                       // 0x0ED8(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsInItemRushing;                                   // 0x0ED9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          InItemHoldAnimState;                               // 0x0EDA(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isProtecting;                                      // 0x0EDB(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NowTargetArea;                                     // 0x0EDC(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NowArea;                                           // 0x0EE0(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_EE4[0x4];                                      // 0x0EE4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AWP_AIAreaModifyActor*                  NowAreaModifyActor;                                // 0x0EE8(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           ExpressionTag;                                     // 0x0EF0(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class AActor*, float>                    HasHitActors_TimeCache;                            // 0x0EF8(0x0050)(Transient, NativeAccessSpecifierPublic)
-	float                                         PlayerHitEffShowInternal;                          // 0x0F48(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isOnSeesaw;                                        // 0x0F4C(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F4D[0xB];                                      // 0x0F4D(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         SubtituteID;                                       // 0x0F58(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F5C[0x54];                                     // 0x0F5C(0x0054)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         OriginCapsuleHalfHeight;                           // 0x0FB0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AActor>                  SubtituteObj;                                      // 0x0FB4(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsInvisible;                                       // 0x0FBC(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_FBD[0x3];                                      // 0x0FBD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGEZBugInvisibleInfo                   ZBugInvisibleState;                                // 0x0FC0(0x0008)(BlueprintVisible, Net, RepNotify, NoDestructor, NativeAccessSpecifierPublic)
-	struct FGEZBugInvisibleInfo                   ZBugLastInvisibleState;                            // 0x0FC8(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         InvisibleDuration;                                 // 0x0FD0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InvisibleTimer;                                    // 0x0FD4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InvisibleFadeId;                                   // 0x0FD8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_FDC[0x4];                                      // 0x0FDC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      InvisibleNiagara;                                  // 0x0FE0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_FE8[0x10];                                     // 0x0FE8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          IsInDuction;                                       // 0x0FF8(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_FF9[0x7];                                      // 0x0FF9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      InDuctionNiagara;                                  // 0x1000(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AActor>                  NearestEscapeChar;                                 // 0x1008(0x0008)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InDuctionDuration;                                 // 0x1010(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InDuctionTimer;                                    // 0x1014(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsRotatingInPlace;                                 // 0x1018(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1019[0x3];                                     // 0x1019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SyncRotatingInPlaceTimer;                          // 0x101C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ClockWiseTimer;                                    // 0x1020(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SyncRotatingInPlaceCD;                             // 0x1024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TemplateSubtituteRotateSpeed;                      // 0x1028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CurSubtituteRotateSpeed;                           // 0x102C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TeamID;                                            // 0x1030(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CharUniqueID;                                      // 0x1034(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1038[0x8];                                     // 0x1038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULogicTree_EntityDataCom*               AbilityDataCom;                                    // 0x1040(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULogicTree_LogicHandleCom*              LogicSkillHandleCom;                               // 0x1048(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULogicTree_LogicHandleCom*              LogicBuffHandleCom;                                // 0x1050(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AGEGameCharacter>        NearestEnemy;                                      // 0x1058(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GetNearestEnemyTimer;                              // 0x1060(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GetNearestEnemyCD;                                 // 0x1064(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InvincibleDurAfterReborn;                          // 0x1068(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InvincibleDur;                                     // 0x106C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InvincibleTimer;                                   // 0x1070(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsInvincible;                                      // 0x1074(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1075[0x3];                                     // 0x1075(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      InvincibleStarNiagara;                             // 0x1078(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           ZBugOriginTag;                                     // 0x1080(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FWaterParkCameraInfo> CameraInfos;                                    // 0x1088(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FVector2D>         CameraViewPitchInfos;                              // 0x10D8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FWaterParkCameraInfo                   TargetCameraInfo;                                  // 0x1128(0x0018)(Transient, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         StartLerpCameraFOV;                                // 0x1140(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StartLerpCameraArmLength;                          // 0x1144(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                StartLerpCameraSocketOffset;                       // 0x1148(0x000C)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLerpingCameraInfo;                                // 0x1154(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1155[0x3];                                     // 0x1155(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ChangeCameraInfoTimer;                             // 0x1158(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AGEZBugRunWeaponBase>    PlayerWeapon;                                      // 0x115C(0x0008)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1164[0x4];                                     // 0x1164(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AGEZBugRunWeaponBase*>           SwitchWeaponList;                                  // 0x1168(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	TArray<class AGEZBugRunWeaponBase*>           WeaponList;                                        // 0x1178(0x0010)(Net, ZeroConstructor, Transient, RepNotify, NativeAccessSpecifierPublic)
-	TArray<int32>                                 CacheLevelUpBuffs;                                 // 0x1188(0x0010)(Net, ZeroConstructor, RepNotify, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FGECharOwnBuffInfo>             OwnBuffs;                                          // 0x1198(0x0010)(Net, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FGECharOwnBuffInfo>             OwnWeaponBuffs;                                    // 0x11A8(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FGECharOwnBuffInfo>             OwnInsBuffs;                                       // 0x11B8(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_11C8[0x10];                                    // 0x11C8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CurLevelUpCacheBuffCount;                          // 0x11D8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CacheNeedRefreshBuffCount;                         // 0x11DC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          WaitingClientSelectBuff;                           // 0x11E0(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11E1[0x7];                                     // 0x11E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 CacheAddBuffByFrame;                               // 0x11E8(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           HitEventMeleeTag;                                  // 0x11F8(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           HitEventShootTag;                                  // 0x1200(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           GetDamageTag;                                      // 0x1208(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           HitLauncherEventMeleeTag;                          // 0x1210(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           HitLauncherEventShootTag;                          // 0x1218(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           KillHelpTag;                                       // 0x1220(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isClientOneShootValid;                             // 0x1228(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1229[0x7];                                     // 0x1229(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 PassiveSkillIDs;                                   // 0x1230(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1240[0x30];                                    // 0x1240(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ULogicTree_DataFormula*>         Formulas;                                          // 0x1270(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TMap<EGELevelType, int32>                     DefaultAttrTemplateIDs;                            // 0x1280(0x0050)(Edit, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12D0[0xC0];                                    // 0x12D0(0x00C0)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          InZBugMode;                                        // 0x1390(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ZBugRepByRPC;                                      // 0x1391(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          InZBugThrowBomb;                                   // 0x1392(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1393[0x1];                                     // 0x1393(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ZBugBombAnimTime;                                  // 0x1394(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NowZBugAnimPlayTime;                               // 0x1398(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          InZBugFiring;                                      // 0x139C(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          InZBugShootAnim;                                   // 0x139D(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ZBugFireRaiseGunComplete;                          // 0x139E(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ZBugFire_InRaiseGun;                               // 0x139F(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          InZBugFireState;                                   // 0x13A0(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          InZBugMeleeHit;                                    // 0x13A1(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_13A2[0x2];                                     // 0x13A2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ZBugFireStateRemainTime;                           // 0x13A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TimeNeedToRaiseGun;                                // 0x13A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_13AC[0xC];                                     // 0x13AC(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	class AGEPlayerController*                    GEPlayerControllerCache;                           // 0x13B8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UswWeaponShootAnimYawOffset;                       // 0x13C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_13C1[0x3];                                     // 0x13C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WeaponShootAnimYawOffset;                          // 0x13C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WeaponShootAnimYawResumeSpeed;                     // 0x13C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WeaponShootAnimYawRange;                           // 0x13CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NowZBugShotYaw;                                    // 0x13D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          InMeleeAttackState;                                // 0x13D4(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_13D5[0x3];                                     // 0x13D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ZBugMeleeAttackType;                               // 0x13D8(0x0004)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_13DC[0x4];                                     // 0x13DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSoftObjectPath                        ZBugMeleeAttackLogic;                              // 0x13E0(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        ZBugOutFightBuff;                                  // 0x13F8(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           ZBugMeleeAttackTag;                                // 0x1410(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugMeleeHitAnimEffTime;                           // 0x1418(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_141C[0x34];                                    // 0x141C(0x0034)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ZBugMeleeAttackId;                                 // 0x1450(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugAimPitch;                                      // 0x1454(0x0004)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugAimPitch_AI;                                   // 0x1458(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugAimPitchSyncCD;                                // 0x145C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1460[0x5];                                     // 0x1460(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          IsReloading;                                       // 0x1465(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          CacheReloadState;                                  // 0x1466(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1467[0x1];                                     // 0x1467(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ReloadCD;                                          // 0x1468(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReloadDur;                                         // 0x146C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           ReloadFinishTag;                                   // 0x1470(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        PeopleAILogic;                                     // 0x1478(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        ZBugAILogic;                                       // 0x1490(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        ZBugGuideAILogic;                                  // 0x14A8(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           BanAttackTag;                                      // 0x14C0(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14C8[0x10];                                    // 0x14C8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      ZBugNiagara;                                       // 0x14D8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraComponent*                      ZBugOriginShieldNiagara;                           // 0x14E0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraComponent*                      ZBugSpeedUpNiagara;                                // 0x14E8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraComponent*                      ZBugDmgAddRateNiagara;                             // 0x14F0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraComponent*                      ZBugCureNiagara;                                   // 0x14F8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SpeedUpNiagaraLevel;                               // 0x1500(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         LastSpeedUpNiagaraLevel;                           // 0x1504(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugSpeedUpPhase1Threshold;                        // 0x1508(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DmgAddRateNiagaraLevel;                            // 0x150C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         LastDmgAddRateNiagaraLevel;                        // 0x1510(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugDmgAddRatePhase1Threshold;                     // 0x1514(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AlignStencil;                                      // 0x1518(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EnemyStencil;                                      // 0x151C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isOpenOutline;                                     // 0x1520(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1521[0x3];                                     // 0x1521(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         OutlineStateID;                                    // 0x1524(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         OutlineDur;                                        // 0x1528(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         OutlineTimer;                                      // 0x152C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          NeedTickOutline;                                   // 0x1530(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1531[0x3];                                     // 0x1531(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CoverBulletHitEffectID;                            // 0x1534(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CoverBulletHitWwiseID;                             // 0x1538(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_153C[0x4];                                     // 0x153C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      BurningNiagara;                                    // 0x1540(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           MeleeDmgTag;                                       // 0x1548(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           ShoootDmgTag;                                      // 0x1550(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LaunchDmg;                                         // 0x1558(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PeopleLaunchDmg;                                   // 0x155C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugLaunchDmg;                                     // 0x1560(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CacheToAddExpLaunchDmg;                            // 0x1564(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TakeDmg;                                           // 0x1568(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PeopleTakeDmg;                                     // 0x156C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugTakeDmg;                                       // 0x1570(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CacheToAddExpTakeDmg;                              // 0x1574(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<int32, float>                            TakeDmgMap;                                        // 0x1578(0x0050)(Transient, NativeAccessSpecifierPublic)
-	float                                         AddKillHelpRate;                                   // 0x15C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KillNormalZBugHelpScore;                           // 0x15CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KillOriginZBugHelpScore;                           // 0x15D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KillNormalPeopleHelpScore;                         // 0x15D4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KillHeroPeopleHelpScore;                           // 0x15D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LaunchDmgToExpThreshold;                           // 0x15DC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LaunchDmgToExpVal;                                 // 0x15E0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TakeDmgToExpThreshold;                             // 0x15E4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TakeDmgToExpVal;                                   // 0x15E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PeopleLiveToPerformScore;                          // 0x15EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LaunchDmgToPerformScore;                           // 0x15F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugLaunchDmgToPerformScore;                       // 0x15F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TakeDmgToPerformScore;                             // 0x15F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CacheToAddChallengeScoreLaunchDmg;                 // 0x15FC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LaunchDmgToChallengeScoreThreshold;                // 0x1600(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LaunchDmgToChallengeScoreVal;                      // 0x1604(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugLaunchCure;                                    // 0x1608(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CacheToScoreCure;                                  // 0x160C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CureToPerformScoreThreshold;                       // 0x1610(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CureToPerformScoreVal;                             // 0x1614(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<int32, int32>                            SkillUseInfo;                                      // 0x1618(0x0050)(Transient, NativeAccessSpecifierPublic)
-	TArray<struct FWPCharItemUseInfo>             ItemUseInfo;                                       // 0x1668(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	int32                                         InitWeaponID;                                      // 0x1678(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_167C[0x4];                                     // 0x167C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<int32, int32>                            SwitchWeaponInfo;                                  // 0x1680(0x0050)(Transient, NativeAccessSpecifierPublic)
-	int32                                         PeopleUseInherentSkillCount;                       // 0x16D0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsReborning;                                       // 0x16D4(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsReborningFinish;                                 // 0x16D5(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16D6[0x2];                                     // 0x16D6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RebornTimer;                                       // 0x16D8(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RebornCD;                                          // 0x16DC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           RebornTag;                                         // 0x16E0(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           RebornStartTag;                                    // 0x16E8(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           RebornFinishTag;                                   // 0x16F0(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RebornCD_ZBugChallenge;                            // 0x16F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RebornAcceleratePerPeople;                         // 0x16FC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<int32, bool>                             RebornAcceleratePeopleMap;                         // 0x1700(0x0050)(Transient, NativeAccessSpecifierPublic)
-	float                                         CurRebornAccelerate;                               // 0x1750(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1754[0x4];                                     // 0x1754(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 RebornTrap;                                        // 0x1758(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class UGEFightEnemyHPBar>      EnemyHPBar;                                        // 0x1760(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class UGEFightFriendHPBar>     FriendHPBar;                                       // 0x1768(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGECharacterCameraFade                        CameraFadeType;                                    // 0x1770(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          WillAddBadge;                                      // 0x1771(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1772[0x2];                                     // 0x1772(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CacheToBadgeLaunchDmg;                             // 0x1774(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBug_BadgeLaunchDmg;                               // 0x1778(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugChallenge_BadgeLaunchDmg;                      // 0x177C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ZBugChallenge_ProgressKillBadgeCDCount;            // 0x1780(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ZBugChallenge_ProgressKillBadgeCacheCount;         // 0x1784(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           GetBadgeTag;                                       // 0x1788(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FGECharInherentSkillInfo>       InherentSkills;                                    // 0x1790(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<int32>                                 InherentBuffs;                                     // 0x17A0(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_17B0[0x14];                                    // 0x17B0(0x0014)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TimeAddPower;                                      // 0x17C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AddSkillPowerCD;                                   // 0x17C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           SkillStateTag;                                     // 0x17CC(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AddSkillPowerTimer;                                // 0x17D4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ZBugSkillLevel;                                    // 0x17D8(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17DC[0x4];                                     // 0x17DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ULogicTree_DmgFormula*>          DmgFormulas;                                       // 0x17E0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class ULogicTree_DmgFormula*>          DefenceDmgFormulas;                                // 0x17F0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class UGEReplicatedComponent*                 ReplicatedComponent;                               // 0x1800(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsMonster;                                        // 0x1808(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1809[0x3];                                     // 0x1809(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class AGEGameState>            GameStatePtr;                                      // 0x180C(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1814[0x4];                                     // 0x1814(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         BlockJumpBit;                                      // 0x0BFC(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BlockMoveFromUI;                                   // 0x0C00(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BlockMoveFromSlideEnd;                             // 0x0C01(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BlockMoveFromCom;                                  // 0x0C02(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BlockJumpFromUI;                                   // 0x0C03(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BlockJumpFromPounce;                               // 0x0C04(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C05[0x3];                                      // 0x0C05(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           LockMoveTag;                                       // 0x0C08(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Now3CStateTime;                                    // 0x0C10(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C14[0x4];                                      // 0x0C14(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWPCharStateMachineComponent*           WPCharStateMachine;                                // 0x0C18(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FVector>           ContinuesVecMap;                                   // 0x0C20(0x0050)(Transient, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FVector>           ContinuesVecMap_WithFalling;                       // 0x0C70(0x0050)(Transient, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FWaterParkCharacterContinuesVecForward> ContinuesVecMap_Forward;      // 0x0CC0(0x0050)(Transient, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FGEZBugRunSpeedModifierDataInfo> ExSpeedMap;                          // 0x0D10(0x0050)(Transient, NativeAccessSpecifierPublic)
+	TMap<class FString, float>                    ExScaleMap;                                        // 0x0D60(0x0050)(Transient, NativeAccessSpecifierPublic)
+	float                                         CurForwardTotalVecValue;                           // 0x0DB0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ClientRayCastCD;                                   // 0x0DB4(0x0004)(Edit, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DB8[0x4];                                      // 0x0DB8(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          WalkCheckFalling;                                  // 0x0DBC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DBD[0x3];                                      // 0x0DBD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WalkCheckSpeed;                                    // 0x0DC0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          JumpEndUseHeight;                                  // 0x0DC4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DC5[0x6B];                                     // 0x0DC5(0x006B)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             DefaultFace;                                       // 0x0E30(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   LeftFootSocketName;                                // 0x0E38(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   RightFootSocketName;                               // 0x0E40(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StepCheckHeight;                                   // 0x0E48(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StepCheckRadius;                                   // 0x0E4C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StepSoundId;                                       // 0x0E50(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E54[0xC];                                      // 0x0E54(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      FloorEffect;                                       // 0x0E60(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FloorEffectHeight;                                 // 0x0E68(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E6C[0x4];                                      // 0x0E6C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      AccelerateEffect;                                  // 0x0E70(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                AccelerateLoc;                                     // 0x0E78(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E84[0x4];                                      // 0x0E84(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      WaterRampEffect;                                   // 0x0E88(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraComponent*                      WaterRampEffect2;                                  // 0x0E90(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WaterRampLoc;                                      // 0x0E98(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WaterRampLoc2;                                     // 0x0EA4(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isOnSlope;                                         // 0x0EB0(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isOnWaterRamp;                                     // 0x0EB1(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_EB2[0x2];                                      // 0x0EB2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CumuWaterRampMoveForwardValue;                     // 0x0EB4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CumuWaterRampMoveRightValue;                       // 0x0EB8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WaterRampCollOffset_Horizon;                       // 0x0EBC(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WaterRmapHeight;                                   // 0x0EC0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isEntryWaterRampBox;                               // 0x0EC4(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_EC5[0x3];                                      // 0x0EC5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      ProtectEffect;                                     // 0x0EC8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AccelerateEffectThreshold;                         // 0x0ED0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KillZ;                                             // 0x0ED4(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AGEItem>                 CurrentItem;                                       // 0x0ED8(0x0008)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          HasItemHold;                                       // 0x0EE0(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsInItemRushing;                                   // 0x0EE1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InItemHoldAnimState;                               // 0x0EE2(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isProtecting;                                      // 0x0EE3(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NowTargetArea;                                     // 0x0EE4(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NowArea;                                           // 0x0EE8(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_EEC[0x4];                                      // 0x0EEC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AWP_AIAreaModifyActor*                  NowAreaModifyActor;                                // 0x0EF0(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ExpressionTag;                                     // 0x0EF8(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class AActor*, float>                    HasHitActors_TimeCache;                            // 0x0F00(0x0050)(Transient, NativeAccessSpecifierPublic)
+	float                                         PlayerHitEffShowInternal;                          // 0x0F50(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isOnSeesaw;                                        // 0x0F54(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F55[0xB];                                      // 0x0F55(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SubtituteID;                                       // 0x0F60(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F64[0x54];                                     // 0x0F64(0x0054)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         OriginCapsuleHalfHeight;                           // 0x0FB8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AActor>                  SubtituteObj;                                      // 0x0FBC(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsInvisible;                                       // 0x0FC4(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_FC5[0x3];                                      // 0x0FC5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGEZBugInvisibleInfo                   ZBugInvisibleState;                                // 0x0FC8(0x0008)(BlueprintVisible, Net, RepNotify, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGEZBugInvisibleInfo                   ZBugLastInvisibleState;                            // 0x0FD0(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         InvisibleDuration;                                 // 0x0FD8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InvisibleTimer;                                    // 0x0FDC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InvisibleFadeId;                                   // 0x0FE0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_FE4[0x4];                                      // 0x0FE4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      InvisibleNiagara;                                  // 0x0FE8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_FF0[0x10];                                     // 0x0FF0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          IsInDuction;                                       // 0x1000(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1001[0x7];                                     // 0x1001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      InDuctionNiagara;                                  // 0x1008(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AActor>                  NearestEscapeChar;                                 // 0x1010(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InDuctionDuration;                                 // 0x1018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InDuctionTimer;                                    // 0x101C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsRotatingInPlace;                                 // 0x1020(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1021[0x3];                                     // 0x1021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SyncRotatingInPlaceTimer;                          // 0x1024(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ClockWiseTimer;                                    // 0x1028(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SyncRotatingInPlaceCD;                             // 0x102C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TemplateSubtituteRotateSpeed;                      // 0x1030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CurSubtituteRotateSpeed;                           // 0x1034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TeamID;                                            // 0x1038(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CharUniqueID;                                      // 0x103C(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1040[0x8];                                     // 0x1040(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULogicTree_EntityDataCom*               AbilityDataCom;                                    // 0x1048(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULogicTree_LogicHandleCom*              LogicSkillHandleCom;                               // 0x1050(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULogicTree_LogicHandleCom*              LogicBuffHandleCom;                                // 0x1058(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AGEGameCharacter>        NearestEnemy;                                      // 0x1060(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GetNearestEnemyTimer;                              // 0x1068(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GetNearestEnemyCD;                                 // 0x106C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InvincibleDurAfterReborn;                          // 0x1070(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InvincibleDur;                                     // 0x1074(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InvincibleTimer;                                   // 0x1078(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsInvincible;                                      // 0x107C(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_107D[0x3];                                     // 0x107D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      InvincibleStarNiagara;                             // 0x1080(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ZBugOriginTag;                                     // 0x1088(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FWaterParkCameraInfo> CameraInfos;                                    // 0x1090(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FVector2D>         CameraViewPitchInfos;                              // 0x10E0(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FWaterParkCameraInfo                   TargetCameraInfo;                                  // 0x1130(0x0018)(Transient, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         StartLerpCameraFOV;                                // 0x1148(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartLerpCameraArmLength;                          // 0x114C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                StartLerpCameraSocketOffset;                       // 0x1150(0x000C)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLerpingCameraInfo;                                // 0x115C(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_115D[0x3];                                     // 0x115D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ChangeCameraInfoTimer;                             // 0x1160(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AGEZBugRunWeaponBase>    PlayerWeapon;                                      // 0x1164(0x0008)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_116C[0x4];                                     // 0x116C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AGEZBugRunWeaponBase*>           SwitchWeaponList;                                  // 0x1170(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	TArray<class AGEZBugRunWeaponBase*>           WeaponList;                                        // 0x1180(0x0010)(Net, ZeroConstructor, Transient, RepNotify, NativeAccessSpecifierPublic)
+	TArray<int32>                                 CacheLevelUpBuffs;                                 // 0x1190(0x0010)(Net, ZeroConstructor, RepNotify, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FGECharOwnBuffInfo>             OwnBuffs;                                          // 0x11A0(0x0010)(Net, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FGECharOwnBuffInfo>             OwnWeaponBuffs;                                    // 0x11B0(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FGECharOwnBuffInfo>             OwnInsBuffs;                                       // 0x11C0(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_11D0[0x10];                                    // 0x11D0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CurLevelUpCacheBuffCount;                          // 0x11E0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CacheNeedRefreshBuffCount;                         // 0x11E4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          WaitingClientSelectBuff;                           // 0x11E8(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11E9[0x7];                                     // 0x11E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 CacheAddBuffByFrame;                               // 0x11F0(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           HitEventMeleeTag;                                  // 0x1200(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           HitEventShootTag;                                  // 0x1208(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           GetDamageTag;                                      // 0x1210(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           HitLauncherEventMeleeTag;                          // 0x1218(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           HitLauncherEventShootTag;                          // 0x1220(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           KillHelpTag;                                       // 0x1228(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isClientOneShootValid;                             // 0x1230(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1231[0x7];                                     // 0x1231(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 PassiveSkillIDs;                                   // 0x1238(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1248[0x30];                                    // 0x1248(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ULogicTree_DataFormula*>         Formulas;                                          // 0x1278(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TMap<EGELevelType, int32>                     DefaultAttrTemplateIDs;                            // 0x1288(0x0050)(Edit, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12D8[0xC0];                                    // 0x12D8(0x00C0)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          InZBugMode;                                        // 0x1398(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ZBugRepByRPC;                                      // 0x1399(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InZBugThrowBomb;                                   // 0x139A(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_139B[0x1];                                     // 0x139B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ZBugBombAnimTime;                                  // 0x139C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NowZBugAnimPlayTime;                               // 0x13A0(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InZBugFiring;                                      // 0x13A4(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InZBugShootAnim;                                   // 0x13A5(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ZBugFireRaiseGunComplete;                          // 0x13A6(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ZBugFire_InRaiseGun;                               // 0x13A7(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InZBugFireState;                                   // 0x13A8(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InZBugMeleeHit;                                    // 0x13A9(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_13AA[0x2];                                     // 0x13AA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ZBugFireStateRemainTime;                           // 0x13AC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeNeedToRaiseGun;                                // 0x13B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_13B4[0xC];                                     // 0x13B4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGEPlayerController*                    GEPlayerControllerCache;                           // 0x13C0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UswWeaponShootAnimYawOffset;                       // 0x13C8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_13C9[0x3];                                     // 0x13C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WeaponShootAnimYawOffset;                          // 0x13CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WeaponShootAnimYawResumeSpeed;                     // 0x13D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WeaponShootAnimYawRange;                           // 0x13D4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NowZBugShotYaw;                                    // 0x13D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InMeleeAttackState;                                // 0x13DC(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_13DD[0x3];                                     // 0x13DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ZBugMeleeAttackType;                               // 0x13E0(0x0004)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_13E4[0x4];                                     // 0x13E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftObjectPath                        ZBugMeleeAttackLogic;                              // 0x13E8(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        ZBugOutFightBuff;                                  // 0x1400(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ZBugMeleeAttackTag;                                // 0x1418(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugMeleeHitAnimEffTime;                           // 0x1420(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1424[0x34];                                    // 0x1424(0x0034)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ZBugMeleeAttackId;                                 // 0x1458(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugAimPitch;                                      // 0x145C(0x0004)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugAimPitch_AI;                                   // 0x1460(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugAimPitchSyncCD;                                // 0x1464(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1468[0x5];                                     // 0x1468(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          IsReloading;                                       // 0x146D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          CacheReloadState;                                  // 0x146E(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_146F[0x1];                                     // 0x146F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ReloadCD;                                          // 0x1470(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReloadDur;                                         // 0x1474(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ReloadFinishTag;                                   // 0x1478(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        PeopleAILogic;                                     // 0x1480(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        ZBugAILogic;                                       // 0x1498(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        ZBugGuideAILogic;                                  // 0x14B0(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           BanAttackTag;                                      // 0x14C8(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14D0[0x10];                                    // 0x14D0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      ZBugNiagara;                                       // 0x14E0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraComponent*                      ZBugOriginShieldNiagara;                           // 0x14E8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraComponent*                      ZBugSpeedUpNiagara;                                // 0x14F0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraComponent*                      ZBugDmgAddRateNiagara;                             // 0x14F8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraComponent*                      ZBugCureNiagara;                                   // 0x1500(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SpeedUpNiagaraLevel;                               // 0x1508(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LastSpeedUpNiagaraLevel;                           // 0x150C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugSpeedUpPhase1Threshold;                        // 0x1510(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DmgAddRateNiagaraLevel;                            // 0x1514(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LastDmgAddRateNiagaraLevel;                        // 0x1518(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugDmgAddRatePhase1Threshold;                     // 0x151C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AlignStencil;                                      // 0x1520(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EnemyStencil;                                      // 0x1524(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isOpenOutline;                                     // 0x1528(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isOcclutioning;                                    // 0x1529(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_152A[0x2];                                     // 0x152A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         OutlineStateID;                                    // 0x152C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OutlineDur;                                        // 0x1530(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OutlineTimer;                                      // 0x1534(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          NeedTickOutline;                                   // 0x1538(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1539[0x3];                                     // 0x1539(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CoverBulletHitEffectID;                            // 0x153C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CoverBulletHitWwiseID;                             // 0x1540(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1544[0x4];                                     // 0x1544(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      BurningNiagara;                                    // 0x1548(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           MeleeDmgTag;                                       // 0x1550(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ShoootDmgTag;                                      // 0x1558(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LaunchDmg;                                         // 0x1560(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PeopleLaunchDmg;                                   // 0x1564(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugLaunchDmg;                                     // 0x1568(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CacheToAddExpLaunchDmg;                            // 0x156C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TakeDmg;                                           // 0x1570(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PeopleTakeDmg;                                     // 0x1574(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugTakeDmg;                                       // 0x1578(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CacheToAddExpTakeDmg;                              // 0x157C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<int32, float>                            TakeDmgMap;                                        // 0x1580(0x0050)(Transient, NativeAccessSpecifierPublic)
+	float                                         AddKillHelpRate;                                   // 0x15D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KillNormalZBugHelpScore;                           // 0x15D4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KillOriginZBugHelpScore;                           // 0x15D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KillNormalPeopleHelpScore;                         // 0x15DC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KillHeroPeopleHelpScore;                           // 0x15E0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LaunchDmgToExpThreshold;                           // 0x15E4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LaunchDmgToExpVal;                                 // 0x15E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TakeDmgToExpThreshold;                             // 0x15EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TakeDmgToExpVal;                                   // 0x15F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PeopleLiveToPerformScore;                          // 0x15F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LaunchDmgToPerformScore;                           // 0x15F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugLaunchDmgToPerformScore;                       // 0x15FC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TakeDmgToPerformScore;                             // 0x1600(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CacheToAddChallengeScoreLaunchDmg;                 // 0x1604(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LaunchDmgToChallengeScoreThreshold;                // 0x1608(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LaunchDmgToChallengeScoreVal;                      // 0x160C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugLaunchCure;                                    // 0x1610(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CacheToScoreCure;                                  // 0x1614(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CureToPerformScoreThreshold;                       // 0x1618(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CureToPerformScoreVal;                             // 0x161C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<int32, int32>                            SkillUseInfo;                                      // 0x1620(0x0050)(Transient, NativeAccessSpecifierPublic)
+	TArray<struct FWPCharItemUseInfo>             ItemUseInfo;                                       // 0x1670(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	int32                                         InitWeaponID;                                      // 0x1680(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1684[0x4];                                     // 0x1684(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<int32, int32>                            SwitchWeaponInfo;                                  // 0x1688(0x0050)(Transient, NativeAccessSpecifierPublic)
+	int32                                         PeopleUseInherentSkillCount;                       // 0x16D8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsReborning;                                       // 0x16DC(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsReborningFinish;                                 // 0x16DD(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_16DE[0x2];                                     // 0x16DE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RebornTimer;                                       // 0x16E0(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RebornCD;                                          // 0x16E4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           RebornTag;                                         // 0x16E8(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           RebornStartTag;                                    // 0x16F0(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           RebornFinishTag;                                   // 0x16F8(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RebornCD_ZBugChallenge;                            // 0x1700(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RebornAcceleratePerPeople;                         // 0x1704(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<int32, bool>                             RebornAcceleratePeopleMap;                         // 0x1708(0x0050)(Transient, NativeAccessSpecifierPublic)
+	float                                         CurRebornAccelerate;                               // 0x1758(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_175C[0x4];                                     // 0x175C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 RebornTrap;                                        // 0x1760(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class UGEFightEnemyHPBar>      EnemyHPBar;                                        // 0x1768(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class UGEFightFriendHPBar>     FriendHPBar;                                       // 0x1770(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGECharacterCameraFade                        CameraFadeType;                                    // 0x1778(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          WillAddBadge;                                      // 0x1779(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_177A[0x2];                                     // 0x177A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CacheToBadgeLaunchDmg;                             // 0x177C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBug_BadgeLaunchDmg;                               // 0x1780(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugChallenge_BadgeLaunchDmg;                      // 0x1784(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ZBugChallenge_ProgressKillBadgeCDCount;            // 0x1788(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ZBugChallenge_ProgressKillBadgeCacheCount;         // 0x178C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           GetBadgeTag;                                       // 0x1790(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FGECharInherentSkillInfo>       InherentSkills;                                    // 0x1798(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<int32>                                 InherentBuffs;                                     // 0x17A8(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_17B8[0x14];                                    // 0x17B8(0x0014)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TimeAddPower;                                      // 0x17CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AddSkillPowerCD;                                   // 0x17D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           SkillStateTag;                                     // 0x17D4(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AddSkillPowerTimer;                                // 0x17DC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ZBugSkillLevel;                                    // 0x17E0(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_17E4[0x4];                                     // 0x17E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ULogicTree_DmgFormula*>          DmgFormulas;                                       // 0x17E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class ULogicTree_DmgFormula*>          DefenceDmgFormulas;                                // 0x17F8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class UGEReplicatedComponent*                 ReplicatedComponent;                               // 0x1808(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsMonster;                                        // 0x1810(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1811[0x3];                                     // 0x1811(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AGEGameState>            GameStatePtr;                                      // 0x1814(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_181C[0x4];                                     // 0x181C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AscendSpeed;                                       // 0x1820(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CatcherSpeedUpRatioInLastPhase;                    // 0x1824(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsInDragItemAimMode;                               // 0x1828(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsSettleForbidDragAim;                             // 0x1829(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_182A[0x2];                                     // 0x182A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         DragLockIndex;                                     // 0x182C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DragLockItemId;                                    // 0x1830(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsUIDrag;                                          // 0x1834(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1835[0x3];                                     // 0x1835(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         DeltaX;                                            // 0x1838(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DeltaY;                                            // 0x183C(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DragPitchMaxAngle;                                 // 0x1840(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DragPitchMinAngle;                                 // 0x1844(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HAS_CatchExSpeed;                                  // 0x1848(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HAS_HideExSpeed;                                   // 0x184C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HAS_HiderTransScore;                               // 0x1850(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1854[0x4];                                     // 0x1854(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(const struct FPointerEvent& InGestureEvent)> OnCameraMove;         // 0x1858(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	void ActivateBuff(int32 BuffId);
@@ -2347,6 +2385,7 @@ public:
 	void AddBuff_Client(int32 BuffId, int32 Count);
 	void AddBuff_MultiCast(int32 BuffId, int32 BuffLevel);
 	void AddBuffLevel(int32 BuffId);
+	void AddCatcherMoveSpeedInLastPhase();
 	void AddCure(float InCure, class AGEGameCharacter* InTarget);
 	void AddDefenceDmgFormulas(class ULogicTree_DmgFormula* InFormula, int32 InId);
 	void AddDmgFormulas(class ULogicTree_DmgFormula* InFormula, int32 InId);
@@ -2417,6 +2456,7 @@ public:
 	bool CheckHaveTag(const struct FGameplayTag& InTag);
 	bool CheckIsLocallyControlled();
 	bool CheckIsReborning();
+	bool CheckIsSubtituteBasketBall();
 	bool CheckMontageIsPlay(class FName TargetName);
 	bool CheckNowStateTime(float InTime);
 	bool CheckNowStateTimeAndLanding(float InTime, bool NeedLanding);
@@ -2424,12 +2464,16 @@ public:
 	void ClearHaveSubtituteID();
 	void ClearRebornAccelerateByPeople();
 	void ClearTakeDmgMap(int32 KillerUniqueID);
+	void ClearWatchCameraAscendOrDescendState();
 	void Client_DamageOther(const struct FGEZBug_DamageRPCInfo& Info);
 	void Client_MultiDmgOther(const TArray<struct FGEZBug_DamageRPCInfo>& Infos);
+	void Client_NotifyCatchBait();
 	void Client_PlayAudioAtLoc(int32 ID, const struct FVector& InLoc);
 	void Client_PlayAudioAttach(int32 ID, class AActor* InParent);
+	void Client_StopWarningEffect();
 	void ClientNotifySkillPowerFull();
 	void ClientOnDmgAddRateChange(class FName InName, float InValue);
+	void ConfirmUseItem2();
 	void DeActiveAllBuffByTeam(EGEBuffTeamType InTeamType);
 	void DeActiveBuff(int32 BuffId);
 	void DeActiveBuff_MultiCast(int32 BuffId);
@@ -2438,6 +2482,7 @@ public:
 	void DeActiveSkill(int32 SkillID);
 	void DestroyCurWeapon();
 	void DestroyWeaponByIndex(int32 Index_0);
+	void EnterDragItemAimMode(int32 InItemIndex, int32 InItemId, bool bIsInUIDrag);
 	void EnterWaterRamp(class AActor* InActor);
 	void EquipPassiveSkill(int32 InSkillId);
 	void ForceFinishReload();
@@ -2490,6 +2535,8 @@ public:
 	bool IsJumpEnd();
 	bool IsJumpEndStateEnd();
 	bool IsWalk();
+	void LeaveDragItemAimMode(int32 InItemIndex);
+	void LockJumpByBit(int32 InBit);
 	void LockMoveByBit(int32 InBit);
 	void LookUpAtRate(float Rate);
 	void Lua_PlayAudio(int32 Type);
@@ -2526,6 +2573,7 @@ public:
 	void MultiCast_SetRotation(const struct FRotator& Rotator);
 	void MultiCast_SubtituteRotateInPlace(float ClockWiseTime);
 	void Multicast_ZBugChangeFireState(bool InNewFiring, bool InNewFireState);
+	void Notify_DragModeEnterOrOut(bool bEnter);
 	void NotifyAddBadge(int32 Count, EWPBadgeType Type);
 	bool NotInWalk();
 	void OnClientBeCure();
@@ -2533,6 +2581,7 @@ public:
 	void OnCurWeaponDestroy_Client();
 	void OnCurWeaponDestroy_DS();
 	void OnLogicStateChange(EWaterParkCharState OldState, EWaterParkCharState NewState);
+	void OnPlayerDropBombCatchBait();
 	void OnRep_CacheLevelUpBuffs();
 	void OnRep_CharUniqueID();
 	void OnRep_HasItemHold();
@@ -2565,6 +2614,7 @@ public:
 	void PlayStepEvent();
 	void PlayZBugStepEvent();
 	void Pounce();
+	bool RefreshInductionNiagaraByDistance(float InDistance);
 	void RefreshPassiveSkill();
 	void ReleaseJump();
 	void RemoveBait(class AActor* InActor);
@@ -2600,6 +2650,9 @@ public:
 	void SetOriginScale(const struct FVector& InScale);
 	void SetPlayerWeapon(class AActor* InWeapon);
 	void SetTeamID(int32 InTeamID);
+	void SetUIDragInfo(float InDeltaX, float InDeltaY);
+	void SetWatchCameraAscendState();
+	void SetWatchCameraDescendState();
 	void SetZBugSkillLevel(int32 InLevel);
 	void ShowFace(class UTexture2D* TargetFace, int32 Slot, const class FString& TargetName, int32 LayerIndex);
 	void SmokeBombMultiCast(const struct FVector& InLocation);
@@ -2609,6 +2662,7 @@ public:
 	void StopAllMontages();
 	void StopAttack();
 	void StopMontageByName(class FName TargetName);
+	void StopWarningEffect();
 	void SyncWaterRampTime_NetMulticast(float InCurTime, int64 InServerTimeMilli);
 	void TickCheckAddBadge();
 	void TickCheckWaterRamp();
@@ -2619,15 +2673,18 @@ public:
 	void Transport(const struct FVector& TargetLocation);
 	void TryAttack();
 	void TryJump();
+	void TryLeaveDragItemAimMode(int32 InItemIndex);
 	void TryReload();
 	void TrySwitchWeapon_Client();
 	void TrySwitchWeapon_DS();
 	void TryUseItem(int32 Index_0, bool isAttachedItem);
-	void TryUseItem1();
-	void TryUseItem2();
+	void TryUseItem1(int32 Index_0);
+	void TryUseItem2(int32 Index_0);
+	void TryUseItem_HASMode(int32 Index_0, bool bIsRelease, bool bFromUI);
 	void TryUseItem_LuaImpl(int32 Index_0, int32 ConfigId, bool isAttachedItem);
 	void TryUseSkill(int32 InIndex);
 	void TurnAtRate(float Rate);
+	void UnLockJumpByBit(int32 InBit);
 	void UnLockMoveByBit(int32 InBit);
 	void UnLockMoveInput();
 	void UpdateAILogicByTeam();
@@ -2691,12 +2748,14 @@ public:
 	static class AGEPlayerController* GetLocalPlayerController(const class UObject* WorldContextObject);
 	static class FString GetMapName(class UObject* obj);
 	static TArray<class AActor*> GetMonstersInSphere(class AActor* SearchActor, float InRadius);
+	static TArray<class AActor*> GetMultiRandomCharByTeamID(class UObject* WorldContextObj, int32 TeamID, int32 InCount);
 	static class AActor* GetNearestActorByClass(class AActor* Finder, const TArray<class AActor*>& TargetActors);
 	static class AActor* GetNearestCharByTeamID(class AActor* Finder, int32 TeamID);
 	static struct FVector2D GetPlatformCursor();
 	static class APawn* GetPlayerStatePawn(class APlayerState* State);
 	static struct FVector2D GetPointerPosition(uint32 PointerIndex);
 	static struct FVector2D GetPreviousPointerPosition(uint32 PointerIndex);
+	static class AActor* GetRandomCharByTeamID(class UObject* WorldContextObject, int32 TeamID);
 	static TArray<struct FHitResult> GetRecentlyActorByTrace(class AActor* Actor, const struct FVector& Start, const struct FVector& End, float Radius, int32 TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, ECheckTraceType checkType);
 	static EGECampRelation GetRelation(const class AActor* Launcher, const class AActor* Target);
 	static uint32 GetSlateAppCursorPointerIndex();
@@ -2820,20 +2879,20 @@ public:
 DUMPER7_ASSERTS_AGEGameModeBase;
 
 // Class GameEx.GEGameMonster
-// 0x0030 (0x1850 - 0x1820)
+// 0x0030 (0x18A0 - 0x1870)
 class AGEGameMonster final : public AGEGameCharacter
 {
 public:
-	bool                                          IsDeadByLogic;                                     // 0x1818(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1819[0x7];                                     // 0x1819(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSoftObjectPath                        CustomDeadLogic;                                   // 0x1820(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNeedDeadLogicMulti;                               // 0x1838(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1839[0x3];                                     // 0x1839(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         TemplateAttrLevel;                                 // 0x183C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EWPMonsterType                                MonsterType;                                       // 0x1840(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1841[0x3];                                     // 0x1841(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         KillAddScore;                                      // 0x1844(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   IgnoreScoreTag;                                    // 0x1848(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsDeadByLogic;                                     // 0x1868(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1869[0x7];                                     // 0x1869(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftObjectPath                        CustomDeadLogic;                                   // 0x1870(0x0018)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNeedDeadLogicMulti;                               // 0x1888(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1889[0x3];                                     // 0x1889(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         TemplateAttrLevel;                                 // 0x188C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EWPMonsterType                                MonsterType;                                       // 0x1890(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1891[0x3];                                     // 0x1891(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         KillAddScore;                                      // 0x1894(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   IgnoreScoreTag;                                    // 0x1898(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	bool CheckCanAddKillScore();
@@ -2872,22 +2931,23 @@ public:
 	float                                         GameWaitStartCD_HAS;                               // 0x0288(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         GameWaitStartDur_HideAndSeek;                      // 0x028C(0x0004)(Edit, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         HAS_LastPhaseTime;                                 // 0x0290(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsHASLastPhase;                                    // 0x0294(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsHASHidePreReadyFinish;                           // 0x0295(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_296[0x2];                                      // 0x0296(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         GamePreReadyDur_ZBugRun;                           // 0x0298(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GamePreReadyCD_ZBugRun;                            // 0x029C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GameWaitStartCD_ZBugRun;                           // 0x02A0(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GameWaitStartDur_ZBugRun;                          // 0x02A4(0x0004)(Edit, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         HeroLimit_ZBugRun;                                 // 0x02A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsZBugRunHeroArrive;                               // 0x02AC(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsZBugLastPhase;                                   // 0x02AD(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ZBugProgressOver;                                  // 0x02AE(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AF[0x1];                                      // 0x02AF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ZBugLastPhaseTimePoint;                            // 0x02B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugLastPhaseExpMultiplier;                        // 0x02B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         GlobalCharUniqueID;                                // 0x02B8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         HAS_ForceChangeSubtituteTime;                      // 0x0294(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsHASLastPhase;                                    // 0x0298(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsHASForceChangeSubtitute;                         // 0x0299(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsHASHidePreReadyFinish;                           // 0x029A(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29B[0x1];                                      // 0x029B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GamePreReadyDur_ZBugRun;                           // 0x029C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GamePreReadyCD_ZBugRun;                            // 0x02A0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GameWaitStartCD_ZBugRun;                           // 0x02A4(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GameWaitStartDur_ZBugRun;                          // 0x02A8(0x0004)(Edit, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroLimit_ZBugRun;                                 // 0x02AC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsZBugRunHeroArrive;                               // 0x02B0(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsZBugLastPhase;                                   // 0x02B1(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ZBugProgressOver;                                  // 0x02B2(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B3[0x1];                                      // 0x02B3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ZBugLastPhaseTimePoint;                            // 0x02B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugLastPhaseExpMultiplier;                        // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GlobalCharUniqueID;                                // 0x02BC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<int32, class AGEGameCharacter*>          CharUniqueIDToCharMap;                             // 0x02C0(0x0050)(Transient, NativeAccessSpecifierPublic)
 	float                                         ServerGameTime;                                    // 0x0310(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ClientGameTime;                                    // 0x0314(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2910,6 +2970,7 @@ public:
 	void OnRep_GameType();
 	void OnRep_GameWaitStartCD_HAS();
 	void OnRep_GameWaitStartCD_ZBugRun();
+	void OnRep_IsHASForceChangeSubtitute();
 	void OnRep_IsHASHidePreReadyFinish();
 	void OnRep_IsHASLastPhase();
 	void OnRep_IsZBugLastPhase();
@@ -2994,15 +3055,15 @@ DUMPER7_ASSERTS_AGEHaloWaveTrap;
 class AGEHASAIPathPoint final : public AActor
 {
 public:
-	EGEHASTeamType                                Type;                                              // 0x0228(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGEHASTeamType                                Type;                                              // 0x0228(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_229[0x3];                                      // 0x0229(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ID;                                                // 0x022C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StopTime;                                          // 0x0230(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StopRandomTime;                                    // 0x0234(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RandomRadius;                                      // 0x0238(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ID;                                                // 0x022C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StopTime;                                          // 0x0230(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StopRandomTime;                                    // 0x0234(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RandomRadius;                                      // 0x0238(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_23C[0x4];                                      // 0x023C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 NextPointID;                                       // 0x0240(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          isUseItem;                                         // 0x0250(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 NextPointID;                                       // 0x0240(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          isUseItem;                                         // 0x0250(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_251[0x7];                                      // 0x0251(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -3277,7 +3338,7 @@ public:
 DUMPER7_ASSERTS_AGEPicWaveMgr;
 
 // Class GameEx.GEPlayerController
-// 0x0298 (0x0810 - 0x0578)
+// 0x02A8 (0x0820 - 0x0578)
 class AGEPlayerController : public APlayerController
 {
 public:
@@ -3352,7 +3413,10 @@ public:
 	TWeakObjectPtr<class AActor>                  LockOnTarget;                                      // 0x07FC(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_804[0x4];                                      // 0x0804(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         LockOnTargetTotalTime;                             // 0x0808(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_80C[0x4];                                      // 0x080C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80C[0x4];                                      // 0x080C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  FreeWatchModeCameraActor;                          // 0x0810(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZHeightAdd;                                        // 0x0818(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_81C[0x4];                                      // 0x081C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ChangeSpectateState();
@@ -3365,8 +3429,8 @@ public:
 	struct FVector2D GetExactRange();
 	void GetMoveForwardDirection(struct FVector* Vector);
 	void GetMoveRightDirection(struct FVector* Vector);
-	void GetServerTime_Client(int64 clientTimeStamp, int64 ServerTimestamp);
-	void GetServerTime_Server(int64 clientTimeStamp);
+	void GetServerTime_Client(int64 ClientTimestamp, int64 ServerTimestamp);
+	void GetServerTime_Server(int64 ClientTimestamp);
 	float GetServerWorldTime();
 	int32 GetSimulateNetDelay();
 	int64 GetSmluateRemoteTime();
@@ -3402,6 +3466,7 @@ public:
 	void Server_SubtituteRotateInPlace(float ClockWiseTime);
 	void Server_ZBugChangeFireState(bool InNewFiring, bool InNewFireState);
 	void Server_ZBugChangeMeleeState(bool InNewState);
+	void SetFreeWatchCameraMode(bool bEnter, class APawn* InFreeWatcherModeActor);
 	void StartAIControlLogic();
 	void StopAIControlLogic();
 
@@ -3448,30 +3513,31 @@ public:
 	int32                                         CatchPlayerNum;                                    // 0x03A0(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         HAS_UseSkillCount;                                 // 0x03A4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         HAS_UseNormalSkillCount;                           // 0x03A8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGEZBugRunBugType                             ZBugID;                                            // 0x03AC(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3AD[0x3];                                      // 0x03AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         InfectNum;                                         // 0x03B0(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         KillNum;                                           // 0x03B4(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         KillHelpNum;                                       // 0x03B8(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Level;                                             // 0x03BC(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ZBugExp;                                           // 0x03C0(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugPerformScore;                                  // 0x03C4(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         LastZBugLevel;                                     // 0x03C8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ZBugLevelLimit;                                    // 0x03CC(0x0004)(Edit, Net, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PeopleTime;                                        // 0x03D0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          isHero;                                            // 0x03D4(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BecomedHero;                                       // 0x03D5(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D6[0x2];                                      // 0x03D6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ZBug_PeopleAddExpCD;                               // 0x03D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBug_PeopleAddExpVal;                              // 0x03DC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBug_ZBugAddExpCD;                                 // 0x03E0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBug_ZBugAddExpVal;                                // 0x03E4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZBugAddExpMultiplier;                              // 0x03E8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TickAddExpCD;                                      // 0x03EC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TickAddExpValue;                                   // 0x03F0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TickAddExpTimer;                                   // 0x03F4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          canAddZBugExp;                                     // 0x03F8(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3F9[0x7];                                      // 0x03F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         HAS_PerformScore;                                  // 0x03AC(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGEZBugRunBugType                             ZBugID;                                            // 0x03B0(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3B1[0x3];                                      // 0x03B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         InfectNum;                                         // 0x03B4(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         KillNum;                                           // 0x03B8(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         KillHelpNum;                                       // 0x03BC(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Level;                                             // 0x03C0(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ZBugExp;                                           // 0x03C4(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugPerformScore;                                  // 0x03C8(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LastZBugLevel;                                     // 0x03CC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ZBugLevelLimit;                                    // 0x03D0(0x0004)(Edit, Net, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PeopleTime;                                        // 0x03D4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          isHero;                                            // 0x03D8(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BecomedHero;                                       // 0x03D9(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3DA[0x2];                                      // 0x03DA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ZBug_PeopleAddExpCD;                               // 0x03DC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBug_PeopleAddExpVal;                              // 0x03E0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBug_ZBugAddExpCD;                                 // 0x03E4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBug_ZBugAddExpVal;                                // 0x03E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZBugAddExpMultiplier;                              // 0x03EC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TickAddExpCD;                                      // 0x03F0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TickAddExpValue;                                   // 0x03F4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TickAddExpTimer;                                   // 0x03F8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          canAddZBugExp;                                     // 0x03FC(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3FD[0x3];                                      // 0x03FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TMulticastInlineDelegate<void(int32 Value)>   OnClientExpChange;                                 // 0x0400(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	bool                                          GMBanExpAdd;                                       // 0x0410(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_411[0x3];                                      // 0x0411(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -3499,6 +3565,7 @@ public:
 	void OnRep_AttachedItems();
 	void OnRep_CatchPlayerNum();
 	void OnRep_ChallengeScore();
+	void OnRep_HAS_PerformScore();
 	void OnRep_InfectNum();
 	void OnRep_isHero();
 	void OnRep_Items();
@@ -3512,6 +3579,7 @@ public:
 	void OnRep_ZBugExp();
 	void OnRep_ZBugID();
 	void OnRep_ZBugPerformScore();
+	void SetHAS_PerformScore(float InNewValue);
 	void SetZBugID(EGEZBugRunBugType Type);
 	void UpdateTickAddZBugExpByTeam();
 
@@ -4372,10 +4440,11 @@ class AGEZBugRunWeaponBase : public AActor
 {
 public:
 	uint8                                         Pad_228[0xC0];                                     // 0x0228(0x00C0)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         BulletNum;                                         // 0x02E8(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2EC[0x8];                                      // 0x02EC(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              WeaponScatterRange;                                // 0x02F4(0x0008)(Edit, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2FC[0x4];                                      // 0x02FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          isClientInitFinish;                                // 0x02E8(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2E9[0x3];                                      // 0x02E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         BulletNum;                                         // 0x02EC(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2F0[0x8];                                      // 0x02F0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              WeaponScatterRange;                                // 0x02F8(0x0008)(Edit, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector4                               TmpWeaponScatterRange;                             // 0x0300(0x0010)(Edit, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector4                               CurrentWeaponScatter;                              // 0x0310(0x0010)(Edit, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FGEWeaponScatterSigma>          WeaponScatterSigma;                                // 0x0320(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, DisableEditOnInstance, NativeAccessSpecifierPublic)

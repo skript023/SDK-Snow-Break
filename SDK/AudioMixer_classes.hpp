@@ -19,33 +19,6 @@
 namespace SDK
 {
 
-// Class AudioMixer.SubmixEffectSubmixEQPreset
-// 0x0048 (0x00B0 - 0x0068)
-class USubmixEffectSubmixEQPreset final : public USoundEffectSubmixPreset
-{
-public:
-	uint8                                         Pad_68[0x38];                                      // 0x0068(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSubmixEffectSubmixEQSettings          Settings;                                          // 0x00A0(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-
-public:
-	void SetSettings(const struct FSubmixEffectSubmixEQSettings& InSettings);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SubmixEffectSubmixEQPreset")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SubmixEffectSubmixEQPreset")
-	}
-	static class USubmixEffectSubmixEQPreset* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USubmixEffectSubmixEQPreset>();
-	}
-};
-DUMPER7_ASSERTS_USubmixEffectSubmixEQPreset;
-
 // Class AudioMixer.SynthComponent
 // 0x04C0 (0x06C0 - 0x0200)
 class USynthComponent : public USceneComponent
@@ -107,42 +80,32 @@ public:
 };
 DUMPER7_ASSERTS_USynthComponent;
 
-// Class AudioMixer.QuartzSubsystem
-// 0x0050 (0x0080 - 0x0030)
-class UQuartzSubsystem final : public UWorldSubsystem
+// Class AudioMixer.SubmixEffectSubmixEQPreset
+// 0x0048 (0x00B0 - 0x0068)
+class USubmixEffectSubmixEQPreset final : public USoundEffectSubmixPreset
 {
 public:
-	uint8                                         Pad_30[0x50];                                      // 0x0030(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_68[0x38];                                      // 0x0068(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSubmixEffectSubmixEQSettings          Settings;                                          // 0x00A0(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
-	class UQuartzClockHandle* CreateNewClock(const class UObject* WorldContextObject, class FName ClockName, const struct FQuartzClockSettings& InSettings, bool bOverrideSettingsIfClockExists);
-	bool DoesClockExist(const class UObject* WorldContextObject, class FName ClockName);
-	float GetAudioRenderThreadToGameThreadAverageLatency();
-	float GetAudioRenderThreadToGameThreadMaxLatency();
-	float GetAudioRenderThreadToGameThreadMinLatency();
-	float GetGameThreadToAudioRenderThreadAverageLatency(const class UObject* WorldContextObject);
-	float GetGameThreadToAudioRenderThreadMaxLatency(const class UObject* WorldContextObject);
-	float GetGameThreadToAudioRenderThreadMinLatency(const class UObject* WorldContextObject);
-	class UQuartzClockHandle* GetHandleForClock(const class UObject* WorldContextObject, class FName ClockName);
-	float GetRoundTripAverageLatency(const class UObject* WorldContextObject);
-	float GetRoundTripMaxLatency(const class UObject* WorldContextObject);
-	float GetRoundTripMinLatency(const class UObject* WorldContextObject);
+	void SetSettings(const struct FSubmixEffectSubmixEQSettings& InSettings);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("QuartzSubsystem")
+		STATIC_CLASS_IMPL("SubmixEffectSubmixEQPreset")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"QuartzSubsystem")
+		STATIC_NAME_IMPL(L"SubmixEffectSubmixEQPreset")
 	}
-	static class UQuartzSubsystem* GetDefaultObj()
+	static class USubmixEffectSubmixEQPreset* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UQuartzSubsystem>();
+		return GetDefaultObjImpl<USubmixEffectSubmixEQPreset>();
 	}
 };
-DUMPER7_ASSERTS_UQuartzSubsystem;
+DUMPER7_ASSERTS_USubmixEffectSubmixEQPreset;
 
 // Class AudioMixer.AudioGenerator
 // 0x0080 (0x00A8 - 0x0028)
@@ -166,6 +129,34 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAudioGenerator;
+
+// Class AudioMixer.SubmixEffectReverbPreset
+// 0x00A8 (0x0110 - 0x0068)
+class USubmixEffectReverbPreset final : public USoundEffectSubmixPreset
+{
+public:
+	uint8                                         Pad_68[0x68];                                      // 0x0068(0x0068)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSubmixEffectReverbSettings            Settings;                                          // 0x00D0(0x0040)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+
+public:
+	void SetSettings(const struct FSubmixEffectReverbSettings& InSettings);
+	void SetSettingsWithReverbEffect(const class UReverbEffect* InReverbEffect, const float WetLevel, const float DryLevel);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SubmixEffectReverbPreset")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SubmixEffectReverbPreset")
+	}
+	static class USubmixEffectReverbPreset* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USubmixEffectReverbPreset>();
+	}
+};
+DUMPER7_ASSERTS_USubmixEffectReverbPreset;
 
 // Class AudioMixer.AudioMixerBlueprintLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -291,33 +282,42 @@ public:
 };
 DUMPER7_ASSERTS_USubmixEffectDynamicsProcessorPreset;
 
-// Class AudioMixer.SubmixEffectReverbPreset
-// 0x00A8 (0x0110 - 0x0068)
-class USubmixEffectReverbPreset final : public USoundEffectSubmixPreset
+// Class AudioMixer.QuartzSubsystem
+// 0x0050 (0x0080 - 0x0030)
+class UQuartzSubsystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_68[0x68];                                      // 0x0068(0x0068)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSubmixEffectReverbSettings            Settings;                                          // 0x00D0(0x0040)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_30[0x50];                                      // 0x0030(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetSettings(const struct FSubmixEffectReverbSettings& InSettings);
-	void SetSettingsWithReverbEffect(const class UReverbEffect* InReverbEffect, const float WetLevel, const float DryLevel);
+	class UQuartzClockHandle* CreateNewClock(const class UObject* WorldContextObject, class FName ClockName, const struct FQuartzClockSettings& InSettings, bool bOverrideSettingsIfClockExists);
+	bool DoesClockExist(const class UObject* WorldContextObject, class FName ClockName);
+	float GetAudioRenderThreadToGameThreadAverageLatency();
+	float GetAudioRenderThreadToGameThreadMaxLatency();
+	float GetAudioRenderThreadToGameThreadMinLatency();
+	float GetGameThreadToAudioRenderThreadAverageLatency(const class UObject* WorldContextObject);
+	float GetGameThreadToAudioRenderThreadMaxLatency(const class UObject* WorldContextObject);
+	float GetGameThreadToAudioRenderThreadMinLatency(const class UObject* WorldContextObject);
+	class UQuartzClockHandle* GetHandleForClock(const class UObject* WorldContextObject, class FName ClockName);
+	float GetRoundTripAverageLatency(const class UObject* WorldContextObject);
+	float GetRoundTripMaxLatency(const class UObject* WorldContextObject);
+	float GetRoundTripMinLatency(const class UObject* WorldContextObject);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("SubmixEffectReverbPreset")
+		STATIC_CLASS_IMPL("QuartzSubsystem")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"SubmixEffectReverbPreset")
+		STATIC_NAME_IMPL(L"QuartzSubsystem")
 	}
-	static class USubmixEffectReverbPreset* GetDefaultObj()
+	static class UQuartzSubsystem* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<USubmixEffectReverbPreset>();
+		return GetDefaultObjImpl<UQuartzSubsystem>();
 	}
 };
-DUMPER7_ASSERTS_USubmixEffectReverbPreset;
+DUMPER7_ASSERTS_UQuartzSubsystem;
 
 // Class AudioMixer.SynthSound
 // 0x0020 (0x03E0 - 0x03C0)

@@ -45,8 +45,8 @@ public:
 public:
 	void OnHit__Overridden(float Angle, float Shield, bool IsBigHit);
 	void ExecuteUbergraph_uw_fight_effect(int32 EntryPoint);
-	void Construct();
 	void OnHit(float Angle, float Shield, bool IsBigHit);
+	void Construct();
 	void Destruct();
 
 	class FString GetModuleName() const;

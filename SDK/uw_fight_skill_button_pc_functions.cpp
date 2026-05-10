@@ -319,23 +319,21 @@ void Uuw_fight_skill_button_pc_C::ExecuteUbergraph_uw_fight_skill_button_pc(int3
 }
 
 
-// LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnChargeTimesChange
-// (Native, Event, Protected, BlueprintEvent)
+// LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_OnCustomUmgAnimFinished
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// int32                                   InCurrentTimes                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InMaxTimes                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      AnimName                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_skill_button_pc_C::OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes)
+void Uuw_fight_skill_button_pc_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_pc_C", "OnChargeTimesChange");
+		Func = Class->GetFunction("uw_fight_skill_button_pc_C", "K2_OnCustomUmgAnimFinished");
 
-	Params::uw_fight_skill_button_pc_C_OnChargeTimesChange Parms{};
+	Params::uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished Parms{};
 
-	Parms.InCurrentTimes = InCurrentTimes;
-	Parms.InMaxTimes = InMaxTimes;
+	Parms.AnimName = AnimName;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -390,31 +388,6 @@ void Uuw_fight_skill_button_pc_C::Construct()
 }
 
 
-// LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_OnCustomUmgAnimFinished
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FName&                      AnimName                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_skill_button_pc_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_pc_C", "K2_OnCustomUmgAnimFinished");
-
-	Params::uw_fight_skill_button_pc_C_K2_OnCustomUmgAnimFinished Parms{};
-
-	Parms.AnimName = AnimName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.K2_PlayCDAnim
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -430,6 +403,33 @@ void Uuw_fight_skill_button_pc_C::K2_PlayCDAnim(bool bPlay)
 	Params::uw_fight_skill_button_pc_C_K2_PlayCDAnim Parms{};
 
 	Parms.bPlay = bPlay;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_skill_button_pc.uw_fight_skill_button_pc_C.OnChargeTimesChange
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   InCurrentTimes                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InMaxTimes                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void Uuw_fight_skill_button_pc_C::OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_button_pc_C", "OnChargeTimesChange");
+
+	Params::uw_fight_skill_button_pc_C_OnChargeTimesChange Parms{};
+
+	Parms.InCurrentTimes = InCurrentTimes;
+	Parms.InMaxTimes = InMaxTimes;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

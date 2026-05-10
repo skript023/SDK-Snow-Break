@@ -21,29 +21,6 @@
 namespace SDK
 {
 
-// Class TemplateSequence.TemplateSequenceSection
-// 0x0008 (0x0168 - 0x0160)
-class UTemplateSequenceSection final : public UMovieSceneSubSection
-{
-public:
-	uint8                                         Pad_160[0x8];                                      // 0x0160(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("TemplateSequenceSection")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"TemplateSequenceSection")
-	}
-	static class UTemplateSequenceSection* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UTemplateSequenceSection>();
-	}
-};
-DUMPER7_ASSERTS_UTemplateSequenceSection;
-
 // Class TemplateSequence.TemplateSequence
 // 0x00A8 (0x0108 - 0x0060)
 class UTemplateSequence : public UMovieSceneSequence
@@ -70,6 +47,32 @@ public:
 };
 DUMPER7_ASSERTS_UTemplateSequence;
 
+// Class TemplateSequence.TemplateSequencePlayer
+// 0x0008 (0x06C8 - 0x06C0)
+class UTemplateSequencePlayer final : public UMovieSceneSequencePlayer
+{
+public:
+	uint8                                         Pad_6C0[0x8];                                      // 0x06C0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UTemplateSequencePlayer* CreateTemplateSequencePlayer(class UObject* WorldContextObject, class UTemplateSequence* TemplateSequence, const struct FMovieSceneSequencePlaybackSettings& Settings, class ATemplateSequenceActor** OutActor);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("TemplateSequencePlayer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TemplateSequencePlayer")
+	}
+	static class UTemplateSequencePlayer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UTemplateSequencePlayer>();
+	}
+};
+DUMPER7_ASSERTS_UTemplateSequencePlayer;
+
 // Class TemplateSequence.CameraAnimationSequence
 // 0x0000 (0x0108 - 0x0108)
 class UCameraAnimationSequence final : public UTemplateSequence
@@ -89,6 +92,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCameraAnimationSequence;
+
+// Class TemplateSequence.TemplateSequenceSection
+// 0x0008 (0x0168 - 0x0160)
+class UTemplateSequenceSection final : public UMovieSceneSubSection
+{
+public:
+	uint8                                         Pad_160[0x8];                                      // 0x0160(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("TemplateSequenceSection")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TemplateSequenceSection")
+	}
+	static class UTemplateSequenceSection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UTemplateSequenceSection>();
+	}
+};
+DUMPER7_ASSERTS_UTemplateSequenceSection;
 
 // Class TemplateSequence.SequenceCameraShakeCameraStandIn
 // 0x0048 (0x0070 - 0x0028)
@@ -114,6 +140,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_USequenceCameraShakeCameraStandIn;
+
+// Class TemplateSequence.TemplateSequenceSystem
+// 0x0070 (0x00B0 - 0x0040)
+class UTemplateSequenceSystem final : public UMovieSceneEntitySystem
+{
+public:
+	uint8                                         Pad_40[0x70];                                      // 0x0040(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("TemplateSequenceSystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TemplateSequenceSystem")
+	}
+	static class UTemplateSequenceSystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UTemplateSequenceSystem>();
+	}
+};
+DUMPER7_ASSERTS_UTemplateSequenceSystem;
 
 // Class TemplateSequence.SequenceCameraShake
 // 0x0030 (0x00D0 - 0x00A0)
@@ -148,59 +197,6 @@ public:
 };
 #pragma pack(pop)
 DUMPER7_ASSERTS_USequenceCameraShake;
-
-// Class TemplateSequence.SequenceCameraShakeSequencePlayer
-// 0x05F0 (0x0618 - 0x0028)
-class USequenceCameraShakeSequencePlayer final : public UObject
-{
-public:
-	uint8                                         Pad_28[0x498];                                     // 0x0028(0x0498)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                BoundObjectOverride;                               // 0x04C0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UMovieSceneSequence*                    Sequence;                                          // 0x04C8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FMovieSceneRootEvaluationTemplateInstance RootTemplateInstance;                           // 0x04D0(0x00E8)(Transient, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_5B8[0x60];                                     // 0x05B8(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SequenceCameraShakeSequencePlayer")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SequenceCameraShakeSequencePlayer")
-	}
-	static class USequenceCameraShakeSequencePlayer* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USequenceCameraShakeSequencePlayer>();
-	}
-};
-DUMPER7_ASSERTS_USequenceCameraShakeSequencePlayer;
-
-// Class TemplateSequence.TemplateSequencePlayer
-// 0x0008 (0x06C8 - 0x06C0)
-class UTemplateSequencePlayer final : public UMovieSceneSequencePlayer
-{
-public:
-	uint8                                         Pad_6C0[0x8];                                      // 0x06C0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UTemplateSequencePlayer* CreateTemplateSequencePlayer(class UObject* WorldContextObject, class UTemplateSequence* TemplateSequence, const struct FMovieSceneSequencePlaybackSettings& Settings, class ATemplateSequenceActor** OutActor);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("TemplateSequencePlayer")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"TemplateSequencePlayer")
-	}
-	static class UTemplateSequencePlayer* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UTemplateSequencePlayer>();
-	}
-};
-DUMPER7_ASSERTS_UTemplateSequencePlayer;
 
 // Class TemplateSequence.TemplateSequenceActor
 // 0x0050 (0x0278 - 0x0228)
@@ -239,28 +235,32 @@ public:
 };
 DUMPER7_ASSERTS_ATemplateSequenceActor;
 
-// Class TemplateSequence.TemplateSequenceSystem
-// 0x0070 (0x00B0 - 0x0040)
-class UTemplateSequenceSystem final : public UMovieSceneEntitySystem
+// Class TemplateSequence.SequenceCameraShakeSequencePlayer
+// 0x05F0 (0x0618 - 0x0028)
+class USequenceCameraShakeSequencePlayer final : public UObject
 {
 public:
-	uint8                                         Pad_40[0x70];                                      // 0x0040(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x498];                                     // 0x0028(0x0498)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                BoundObjectOverride;                               // 0x04C0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMovieSceneSequence*                    Sequence;                                          // 0x04C8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FMovieSceneRootEvaluationTemplateInstance RootTemplateInstance;                           // 0x04D0(0x00E8)(Transient, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_5B8[0x60];                                     // 0x05B8(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("TemplateSequenceSystem")
+		STATIC_CLASS_IMPL("SequenceCameraShakeSequencePlayer")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"TemplateSequenceSystem")
+		STATIC_NAME_IMPL(L"SequenceCameraShakeSequencePlayer")
 	}
-	static class UTemplateSequenceSystem* GetDefaultObj()
+	static class USequenceCameraShakeSequencePlayer* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UTemplateSequenceSystem>();
+		return GetDefaultObjImpl<USequenceCameraShakeSequencePlayer>();
 	}
 };
-DUMPER7_ASSERTS_UTemplateSequenceSystem;
+DUMPER7_ASSERTS_USequenceCameraShakeSequencePlayer;
 
 // Class TemplateSequence.TemplateSequenceTrack
 // 0x0000 (0x0088 - 0x0088)

@@ -21,13 +21,13 @@ namespace SDK
 class Uuw_fight_InteractionSkill_item_C final : public Uuw_fight_interactitem_C
 {
 public:
-	void UpdateKeyShow();
-	void BindKeyBoardOnSettingChange();
-	void BindExitInteractEvent();
-	void TriggerInteract();
-	void InitGamepadLongPressUI();
 	void Destruct();
 	void OnConstruct();
+	void InitGamepadLongPressUI();
+	void BindExitInteractEvent();
+	void TriggerInteract();
+	void UpdateKeyShow();
+	void BindKeyBoardOnSettingChange();
 
 	class FString GetModuleName() const;
 

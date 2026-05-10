@@ -19,17 +19,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Trap_Girl002a_Skill03.Trap_Girl002a_Skill03_C
-// 0x0020 (0x1870 - 0x1850)
+// 0x0020 (0x18C0 - 0x18A0)
 class ATrap_Girl002a_Skill03_C final : public ATrap
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1850(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FSoftClassPath                         EffectBpPath;                                      // 0x1858(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x18A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FSoftClassPath                         EffectBpPath;                                      // 0x18A8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
 	void Client_OnActive();
 	void Server_OnActive();
+	void ReceiveBeginPlay();
 	void ExecuteUbergraph_Trap_Girl002a_Skill03(int32 EntryPoint);
 
 public:

@@ -452,7 +452,7 @@ void AGEItemBomb::BoomFlash()
 
 
 // Function GameEx.GEItemBomb.Generator
-// (Final, Native, Public)
+// (Final, Native, Public, BlueprintCallable)
 
 void AGEItemBomb::Generator()
 {
@@ -467,6 +467,63 @@ void AGEItemBomb::Generator()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItemBomb.HAS_StartMoveAlongParabola
+// (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FGEItemClientInfo&         ClientInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// int64                                   servertimeMilli                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InForwardVec                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           InOwner                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEItemBomb::HAS_StartMoveAlongParabola(const struct FGEItemClientInfo& ClientInfo, int64 servertimeMilli, const struct FVector& InForwardVec, class AActor* InOwner)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemBomb", "HAS_StartMoveAlongParabola");
+
+	Params::GEItemBomb_HAS_StartMoveAlongParabola Parms{};
+
+	Parms.ClientInfo = std::move(ClientInfo);
+	Parms.servertimeMilli = servertimeMilli;
+	Parms.InForwardVec = std::move(InForwardVec);
+	Parms.InOwner = InOwner;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEItemBomb.HAS_StartMoveAlongParabola_ServerCheck
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FGEItemClientInfo*               ClientInfo                                             (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void AGEItemBomb::HAS_StartMoveAlongParabola_ServerCheck(struct FGEItemClientInfo* ClientInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEItemBomb", "HAS_StartMoveAlongParabola_ServerCheck");
+
+	Params::GEItemBomb_HAS_StartMoveAlongParabola_ServerCheck Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (ClientInfo != nullptr)
+		*ClientInfo = std::move(Parms.ClientInfo);
 }
 
 
@@ -2184,15 +2241,72 @@ bool UGECustomPathFollowingComponent::CheckReachProxyMidPoint(const struct FVect
 }
 
 
-// Function GameEx.GECustomPathFollowingComponent.ForceCurLinkFromLua
+// Function GameEx.GECustomPathFollowingComponent.ForceNextLinkFromLua
 // (Final, Native, Protected, BlueprintCallable)
 
-void UGECustomPathFollowingComponent::ForceCurLinkFromLua()
+void UGECustomPathFollowingComponent::ForceNextLinkFromLua()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GECustomPathFollowingComponent", "ForceCurLinkFromLua");
+		Func = Class->GetFunction("GECustomPathFollowingComponent", "ForceNextLinkFromLua");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GECustomPathFollowingComponent.PauseMoveByLua
+// (Final, Native, Protected, BlueprintCallable)
+
+void UGECustomPathFollowingComponent::PauseMoveByLua()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GECustomPathFollowingComponent", "PauseMoveByLua");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GECustomPathFollowingComponent.ResumeMoveByLua
+// (Final, Native, Protected, BlueprintCallable)
+
+void UGECustomPathFollowingComponent::ResumeMoveByLua()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GECustomPathFollowingComponent", "ResumeMoveByLua");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GECustomPathFollowingComponent.UpdateMoveFocusByLua
+// (Final, Native, Protected, BlueprintCallable)
+
+void UGECustomPathFollowingComponent::UpdateMoveFocusByLua()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GECustomPathFollowingComponent", "UpdateMoveFocusByLua");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2248,25 +2362,6 @@ void AGEAIController::AbortMoveToAsync(uint32 AsyncQueryID)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEAIController.ClearProxyMoveDir
-// (Final, Native, Public, BlueprintCallable)
-
-void AGEAIController::ClearProxyMoveDir()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEAIController", "ClearProxyMoveDir");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -2624,31 +2719,6 @@ void AGEAIController::SetIntValue(const class FString& Key, int32 Value)
 
 	Parms.Key = std::move(Key);
 	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameEx.GEAIController.SetProxyMoveDir
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector&                   InModifierDir                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGEAIController::SetProxyMoveDir(const struct FVector& InModifierDir)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GEAIController", "SetProxyMoveDir");
-
-	Params::GEAIController_SetProxyMoveDir Parms{};
-
-	Parms.InModifierDir = std::move(InModifierDir);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4475,6 +4545,25 @@ void AGEGameCharacter::AddBuffLevel(int32 BuffId)
 }
 
 
+// Function GameEx.GEGameCharacter.AddCatcherMoveSpeedInLastPhase
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::AddCatcherMoveSpeedInLastPhase()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "AddCatcherMoveSpeedInLastPhase");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.AddCure
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -6274,6 +6363,26 @@ bool AGEGameCharacter::CheckIsReborning()
 }
 
 
+// Function GameEx.GEGameCharacter.CheckIsSubtituteBasketBall
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEGameCharacter::CheckIsSubtituteBasketBall()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "CheckIsSubtituteBasketBall");
+
+	Params::GEGameCharacter_CheckIsSubtituteBasketBall Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameEx.GEGameCharacter.CheckMontageIsPlay
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -6448,6 +6557,25 @@ void AGEGameCharacter::ClearTakeDmgMap(int32 KillerUniqueID)
 }
 
 
+// Function GameEx.GEGameCharacter.ClearWatchCameraAscendOrDescendState
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::ClearWatchCameraAscendOrDescendState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "ClearWatchCameraAscendOrDescendState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.Client_DamageOther
 // (Net, NetReliable, Native, Event, Public, NetClient)
 // Parameters:
@@ -6493,6 +6621,25 @@ void AGEGameCharacter::Client_MultiDmgOther(const TArray<struct FGEZBug_DamageRP
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.Client_NotifyCatchBait
+// (Net, Native, Event, Public, NetClient, BlueprintCallable)
+
+void AGEGameCharacter::Client_NotifyCatchBait()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "Client_NotifyCatchBait");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -6552,6 +6699,25 @@ void AGEGameCharacter::Client_PlayAudioAttach(int32 ID, class AActor* InParent)
 }
 
 
+// Function GameEx.GEGameCharacter.Client_StopWarningEffect
+// (Net, NetReliable, Native, Event, Public, NetClient, BlueprintCallable)
+
+void AGEGameCharacter::Client_StopWarningEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "Client_StopWarningEffect");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.ClientNotifySkillPowerFull
 // (Final, Native, Public, BlueprintCallable)
 
@@ -6593,6 +6759,25 @@ void AGEGameCharacter::ClientOnDmgAddRateChange(class FName InName, float InValu
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.ConfirmUseItem2
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::ConfirmUseItem2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "ConfirmUseItem2");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -6782,6 +6967,35 @@ void AGEGameCharacter::DestroyWeaponByIndex(int32 Index_0)
 	Params::GEGameCharacter_DestroyWeaponByIndex Parms{};
 
 	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.EnterDragItemAimMode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InItemIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InItemId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsInUIDrag                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::EnterDragItemAimMode(int32 InItemIndex, int32 InItemId, bool bIsInUIDrag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "EnterDragItemAimMode");
+
+	Params::GEGameCharacter_EnterDragItemAimMode Parms{};
+
+	Parms.InItemIndex = InItemIndex;
+	Parms.InItemId = InItemId;
+	Parms.bIsInUIDrag = bIsInUIDrag;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8077,6 +8291,56 @@ bool AGEGameCharacter::IsWalk()
 }
 
 
+// Function GameEx.GEGameCharacter.LeaveDragItemAimMode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InItemIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::LeaveDragItemAimMode(int32 InItemIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LeaveDragItemAimMode");
+
+	Params::GEGameCharacter_LeaveDragItemAimMode Parms{};
+
+	Parms.InItemIndex = InItemIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.LockJumpByBit
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InBit                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::LockJumpByBit(int32 InBit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "LockJumpByBit");
+
+	Params::GEGameCharacter_LockJumpByBit Parms{};
+
+	Parms.InBit = InBit;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.LockMoveByBit
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -8824,6 +9088,26 @@ void AGEGameCharacter::Multicast_ZBugChangeFireState(bool InNewFiring, bool InNe
 }
 
 
+// Function GameEx.GEGameCharacter.Notify_DragModeEnterOrOut
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bEnter                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::Notify_DragModeEnterOrOut(bool bEnter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "Notify_DragModeEnterOrOut");
+
+	Params::GEGameCharacter_Notify_DragModeEnterOrOut Parms{};
+
+	Parms.bEnter = bEnter;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function GameEx.GEGameCharacter.NotifyAddBadge
 // (Net, NetReliable, Native, Event, Public, NetClient, BlueprintCallable)
 // Parameters:
@@ -8972,6 +9256,20 @@ void AGEGameCharacter::OnLogicStateChange(EWaterParkCharState OldState, EWaterPa
 	Parms.NewState = NewState;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameEx.GEGameCharacter.OnPlayerDropBombCatchBait
+// (Event, Public, BlueprintEvent)
+
+void AGEGameCharacter::OnPlayerDropBombCatchBait()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "OnPlayerDropBombCatchBait");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -9443,7 +9741,7 @@ void AGEGameCharacter::PlayEffectById(const int32 EffId, const struct FVector& I
 
 
 // Function GameEx.GEGameCharacter.PlayEffectByIdNew
-// (Event, Public, HasDefaults, BlueprintEvent)
+// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const int32                             EffId                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -9612,6 +9910,29 @@ void AGEGameCharacter::Pounce()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.RefreshInductionNiagaraByDistance
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   InDistance                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGEGameCharacter::RefreshInductionNiagaraByDistance(float InDistance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "RefreshInductionNiagaraByDistance");
+
+	Params::GEGameCharacter_RefreshInductionNiagaraByDistance Parms{};
+
+	Parms.InDistance = InDistance;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 
@@ -10483,6 +10804,71 @@ void AGEGameCharacter::SetTeamID(int32 InTeamID)
 }
 
 
+// Function GameEx.GEGameCharacter.SetUIDragInfo
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InDeltaX                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InDeltaY                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::SetUIDragInfo(float InDeltaX, float InDeltaY)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "SetUIDragInfo");
+
+	Params::GEGameCharacter_SetUIDragInfo Parms{};
+
+	Parms.InDeltaX = InDeltaX;
+	Parms.InDeltaY = InDeltaY;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.SetWatchCameraAscendState
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::SetWatchCameraAscendState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "SetWatchCameraAscendState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.SetWatchCameraDescendState
+// (Final, Native, Public, BlueprintCallable)
+
+void AGEGameCharacter::SetWatchCameraDescendState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "SetWatchCameraDescendState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.SetZBugSkillLevel
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -10686,6 +11072,20 @@ void AGEGameCharacter::StopMontageByName(class FName TargetName)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.StopWarningEffect
+// (Event, Public, BlueprintEvent)
+
+void AGEGameCharacter::StopWarningEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "StopWarningEffect");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -10907,6 +11307,31 @@ void AGEGameCharacter::TryJump()
 }
 
 
+// Function GameEx.GEGameCharacter.TryLeaveDragItemAimMode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InItemIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::TryLeaveDragItemAimMode(int32 InItemIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "TryLeaveDragItemAimMode");
+
+	Params::GEGameCharacter_TryLeaveDragItemAimMode Parms{};
+
+	Parms.InItemIndex = InItemIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEGameCharacter.TryReload
 // (Final, Native, Public, BlueprintCallable)
 
@@ -10993,18 +11418,24 @@ void AGEGameCharacter::TryUseItem(int32 Index_0, bool isAttachedItem)
 
 // Function GameEx.GEGameCharacter.TryUseItem1
 // (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEGameCharacter::TryUseItem1()
+void AGEGameCharacter::TryUseItem1(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GEGameCharacter", "TryUseItem1");
 
+	Params::GEGameCharacter_TryUseItem1 Parms{};
+
+	Parms.Index_0 = Index_0;
+
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -11012,18 +11443,53 @@ void AGEGameCharacter::TryUseItem1()
 
 // Function GameEx.GEGameCharacter.TryUseItem2
 // (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEGameCharacter::TryUseItem2()
+void AGEGameCharacter::TryUseItem2(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GEGameCharacter", "TryUseItem2");
 
+	Params::GEGameCharacter_TryUseItem2 Parms{};
+
+	Parms.Index_0 = Index_0;
+
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.TryUseItem_HASMode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsRelease                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromUI                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::TryUseItem_HASMode(int32 Index_0, bool bIsRelease, bool bFromUI)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "TryUseItem_HASMode");
+
+	Params::GEGameCharacter_TryUseItem_HASMode Parms{};
+
+	Parms.Index_0 = Index_0;
+	Parms.bIsRelease = bIsRelease;
+	Parms.bFromUI = bFromUI;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -11093,6 +11559,31 @@ void AGEGameCharacter::TurnAtRate(float Rate)
 	Params::GEGameCharacter_TurnAtRate Parms{};
 
 	Parms.Rate = Rate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameEx.GEGameCharacter.UnLockJumpByBit
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InBit                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEGameCharacter::UnLockJumpByBit(int32 InBit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameCharacter", "UnLockJumpByBit");
+
+	Params::GEGameCharacter_UnLockJumpByBit Parms{};
+
+	Parms.InBit = InBit;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -12163,6 +12654,38 @@ TArray<class AActor*> UGEGameHelper::GetMonstersInSphere(class AActor* SearchAct
 }
 
 
+// Function GameEx.GEGameHelper.GetMultiRandomCharByTeamID
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObj                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   TeamID                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InCount                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class AActor*>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class AActor*> UGEGameHelper::GetMultiRandomCharByTeamID(class UObject* WorldContextObj, int32 TeamID, int32 InCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEGameHelper", "GetMultiRandomCharByTeamID");
+
+	Params::GEGameHelper_GetMultiRandomCharByTeamID Parms{};
+
+	Parms.WorldContextObj = WorldContextObj;
+	Parms.TeamID = TeamID;
+	Parms.InCount = InCount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameEx.GEGameHelper.GetNearestActorByClass
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -12320,6 +12843,36 @@ struct FVector2D UGEGameHelper::GetPreviousPointerPosition(uint32 PointerIndex)
 	Params::GEGameHelper_GetPreviousPointerPosition Parms{};
 
 	Parms.PointerIndex = PointerIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameEx.GEGameHelper.GetRandomCharByTeamID
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   TeamID                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* UGEGameHelper::GetRandomCharByTeamID(class UObject* WorldContextObject, int32 TeamID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GEGameHelper", "GetRandomCharByTeamID");
+
+	Params::GEGameHelper_GetRandomCharByTeamID Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.TeamID = TeamID;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13695,6 +14248,20 @@ void AGEGameState::OnRep_GameWaitStartCD_ZBugRun()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GEGameState", "OnRep_GameWaitStartCD_ZBugRun");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEGameState.OnRep_IsHASForceChangeSubtitute
+// (Event, Public, BlueprintEvent)
+
+void AGEGameState::OnRep_IsHASForceChangeSubtitute()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEGameState", "OnRep_IsHASForceChangeSubtitute");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -15248,10 +15815,10 @@ void AGEPlayerController::GetMoveRightDirection(struct FVector* Vector)
 // Function GameEx.GEPlayerController.GetServerTime_Client
 // (Net, Native, Event, Public, NetClient, BlueprintCallable)
 // Parameters:
-// int64                                   clientTimeStamp                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64                                   ClientTimestamp                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int64                                   ServerTimestamp                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEPlayerController::GetServerTime_Client(int64 clientTimeStamp, int64 ServerTimestamp)
+void AGEPlayerController::GetServerTime_Client(int64 ClientTimestamp, int64 ServerTimestamp)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15260,7 +15827,7 @@ void AGEPlayerController::GetServerTime_Client(int64 clientTimeStamp, int64 Serv
 
 	Params::GEPlayerController_GetServerTime_Client Parms{};
 
-	Parms.clientTimeStamp = clientTimeStamp;
+	Parms.ClientTimestamp = ClientTimestamp;
 	Parms.ServerTimestamp = ServerTimestamp;
 
 	auto Flgs = Func->FunctionFlags;
@@ -15275,9 +15842,9 @@ void AGEPlayerController::GetServerTime_Client(int64 clientTimeStamp, int64 Serv
 // Function GameEx.GEPlayerController.GetServerTime_Server
 // (Net, Native, Event, Public, NetServer, BlueprintCallable)
 // Parameters:
-// int64                                   clientTimeStamp                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64                                   ClientTimestamp                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGEPlayerController::GetServerTime_Server(int64 clientTimeStamp)
+void AGEPlayerController::GetServerTime_Server(int64 ClientTimestamp)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15286,7 +15853,7 @@ void AGEPlayerController::GetServerTime_Server(int64 clientTimeStamp)
 
 	Params::GEPlayerController_GetServerTime_Server Parms{};
 
-	Parms.clientTimeStamp = clientTimeStamp;
+	Parms.ClientTimestamp = ClientTimestamp;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16159,6 +16726,33 @@ void AGEPlayerController::Server_ZBugChangeMeleeState(bool InNewState)
 }
 
 
+// Function GameEx.GEPlayerController.SetFreeWatchCameraMode
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bEnter                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APawn*                            InFreeWatcherModeActor                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEPlayerController::SetFreeWatchCameraMode(bool bEnter, class APawn* InFreeWatcherModeActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerController", "SetFreeWatchCameraMode");
+
+	Params::GEPlayerController_SetFreeWatchCameraMode Parms{};
+
+	Parms.bEnter = bEnter;
+	Parms.InFreeWatcherModeActor = InFreeWatcherModeActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameEx.GEPlayerController.StartAIControlLogic
 // (Final, Native, Public, BlueprintCallable)
 
@@ -16606,6 +17200,20 @@ void AGEPlayerState::OnRep_ChallengeScore()
 }
 
 
+// Function GameEx.GEPlayerState.OnRep_HAS_PerformScore
+// (Event, Public, BlueprintEvent)
+
+void AGEPlayerState::OnRep_HAS_PerformScore()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerState", "OnRep_HAS_PerformScore");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GameEx.GEPlayerState.OnRep_InfectNum
 // (Event, Public, BlueprintEvent)
 
@@ -16800,6 +17408,31 @@ void AGEPlayerState::OnRep_ZBugPerformScore()
 		Func = Class->GetFunction("GEPlayerState", "OnRep_ZBugPerformScore");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameEx.GEPlayerState.SetHAS_PerformScore
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InNewValue                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGEPlayerState::SetHAS_PerformScore(float InNewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GEPlayerState", "SetHAS_PerformScore");
+
+	Params::GEPlayerState_SetHAS_PerformScore Parms{};
+
+	Parms.InNewValue = InNewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

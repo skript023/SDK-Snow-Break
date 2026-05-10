@@ -22,7 +22,6 @@ namespace SDK
 class ABullet_Girl002a01_Skill01_0_C final : public ABullet
 {
 public:
-	uint8                                         Pad_A28[0x8];                                      // 0x0A28(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A30(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	int32                                         Max;                                               // 0x0A38(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Min;                                               // 0x0A3C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

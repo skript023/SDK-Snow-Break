@@ -10,12 +10,21 @@
 
 #include "Basic.hpp"
 
-#include "ChaosSolverEngine_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ChaosSolverEngine_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function ChaosSolverEngine.ChaosSolverActor.SetSolverActive
+// 0x0001 (0x0001 - 0x0000)
+struct ChaosSolverActor_SetSolverActive final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ChaosSolverActor_SetSolverActive;
 
 // Function ChaosSolverEngine.ChaosSolverEngineBlueprintLibrary.ConvertPhysicsCollisionToHitResult
 // 0x0100 (0x0100 - 0x0000)
@@ -27,15 +36,6 @@ public:
 	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_ChaosSolverEngineBlueprintLibrary_ConvertPhysicsCollisionToHitResult;
-
-// Function ChaosSolverEngine.ChaosSolverActor.SetSolverActive
-// 0x0001 (0x0001 - 0x0000)
-struct ChaosSolverActor_SetSolverActive final
-{
-public:
-	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ChaosSolverActor_SetSolverActive;
 
 }
 

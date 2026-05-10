@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass WP_wp05_01_AimShootShake.WP_wp05_01_AimShootShake_C
-// 0x0000 (0x00C0 - 0x00C0)
+// 0x0000 (0x00D0 - 0x00D0)
 class UWP_wp05_01_AimShootShake_C final : public UGameCameraShake
 {
 public:

@@ -120,21 +120,6 @@ public:
 };
 DUMPER7_ASSERTS_FieldSystemComponent_ApplyUniformVectorFalloffForce;
 
-// Function FieldSystemEngine.OperatorField.SetOperatorField
-// 0x0028 (0x0028 - 0x0000)
-struct OperatorField_SetOperatorField final
-{
-public:
-	float                                         Magnitude_0;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	const class UFieldNodeBase*                   RightField_0;                                      // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	const class UFieldNodeBase*                   LeftField_0;                                       // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EFieldOperationType                           Operation_0;                                       // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOperatorField*                         ReturnValue;                                       // 0x0020(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_OperatorField_SetOperatorField;
-
 // Function FieldSystemEngine.FieldSystemMetaDataIteration.SetMetaDataIteration
 // 0x0010 (0x0010 - 0x0000)
 struct FieldSystemMetaDataIteration_SetMetaDataIteration final
@@ -156,15 +141,6 @@ public:
 	class UFieldSystemMetaDataProcessingResolution* ReturnValue;                                     // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FieldSystemMetaDataProcessingResolution_SetMetaDataaProcessingResolutionType;
-
-// Function FieldSystemEngine.ReturnResultsTerminal.SetReturnResultsTerminal
-// 0x0008 (0x0008 - 0x0000)
-struct ReturnResultsTerminal_SetReturnResultsTerminal final
-{
-public:
-	class UReturnResultsTerminal*                 ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ReturnResultsTerminal_SetReturnResultsTerminal;
 
 // Function FieldSystemEngine.UniformInteger.SetUniformInteger
 // 0x0010 (0x0010 - 0x0000)
@@ -301,6 +277,21 @@ public:
 };
 DUMPER7_ASSERTS_RandomVector_SetRandomVector;
 
+// Function FieldSystemEngine.OperatorField.SetOperatorField
+// 0x0028 (0x0028 - 0x0000)
+struct OperatorField_SetOperatorField final
+{
+public:
+	float                                         Magnitude_0;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	const class UFieldNodeBase*                   RightField_0;                                      // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UFieldNodeBase*                   LeftField_0;                                       // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EFieldOperationType                           Operation_0;                                       // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOperatorField*                         ReturnValue;                                       // 0x0020(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_OperatorField_SetOperatorField;
+
 // Function FieldSystemEngine.ToIntegerField.SetToIntegerField
 // 0x0010 (0x0010 - 0x0000)
 struct ToIntegerField_SetToIntegerField final
@@ -333,6 +324,15 @@ public:
 	class UCullingField*                          ReturnValue;                                       // 0x0018(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CullingField_SetCullingField;
+
+// Function FieldSystemEngine.ReturnResultsTerminal.SetReturnResultsTerminal
+// 0x0008 (0x0008 - 0x0000)
+struct ReturnResultsTerminal_SetReturnResultsTerminal final
+{
+public:
+	class UReturnResultsTerminal*                 ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ReturnResultsTerminal_SetReturnResultsTerminal;
 
 }
 

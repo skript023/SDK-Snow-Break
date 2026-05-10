@@ -18,13 +18,13 @@ namespace SDK::Params
 {
 
 // LuaFunction InjuryTransmissionSimilar.InjuryTransmissionSimilar_C.K2_InjuryTransmission
-// 0x02C0 (0x02C0 - 0x0000)
+// 0x02D8 (0x02D8 - 0x0000)
 struct InjuryTransmissionSimilar_C_K2_InjuryTransmission final
 {
 public:
 	class UAbilityComponentBase*                  lpTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPreDamageResultData                   PreResultData;                                     // 0x0008(0x01F8)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FApplyDamageResultData                 Info;                                              // 0x0200(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FPreDamageResultData                   PreResultData;                                     // 0x0008(0x0210)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FApplyDamageResultData                 Info;                                              // 0x0218(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_InjuryTransmissionSimilar_C_K2_InjuryTransmission;
 

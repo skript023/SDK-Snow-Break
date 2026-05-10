@@ -37,15 +37,15 @@ public:
 	class UGameCanvasPanel*                       PanelStrongTime;                                   // 0x03D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_ammunition2(int32 EntryPoint);
-	void K2_SkillCastBulletFail();
-	void OnBulletChange(int32 InCurBullet, int32 InMaxBullet, float InPercent);
-	void SetBulletCountEffect(float StartPercent, float EndPercent, float Start, float End);
-	void ClearBulletEffect();
-	void SetBulletTimeEffect(bool bShow);
-	void SetBulletEffect(bool bShow);
-	void Construct();
 	int32 GetNextLeftCount(class UModifier* InModifier);
+	void Construct();
+	void SetBulletEffect(bool bShow);
+	void SetBulletTimeEffect(bool bShow);
+	void ClearBulletEffect();
+	void SetBulletCountEffect(float StartPercent, float EndPercent, float Start, float End);
+	void OnBulletChange(int32 InCurBullet, int32 InMaxBullet, float InPercent);
+	void K2_SkillCastBulletFail();
+	void ExecuteUbergraph_uw_fight_ammunition2(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

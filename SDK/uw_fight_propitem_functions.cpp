@@ -111,6 +111,25 @@ void Uuw_fight_propitem_C::ExecuteUbergraph_uw_fight_propitem(int32 EntryPoint)
 }
 
 
+// LuaFunction uw_fight_propitem.uw_fight_propitem_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_propitem_C::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_propitem_C", "Destruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_propitem.uw_fight_propitem_C.OnListItemObjectSet
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -175,25 +194,6 @@ void Uuw_fight_propitem_C::K2_OnCustomUmgAnimFinished(const class FName& AnimNam
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_propitem.uw_fight_propitem_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_propitem_C::Destruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_propitem_C", "Destruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

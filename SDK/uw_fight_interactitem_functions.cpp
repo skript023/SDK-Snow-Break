@@ -17,15 +17,15 @@
 namespace SDK
 {
 
-// LuaFunction uw_fight_interactitem.uw_fight_interactitem_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_interactitem.uw_fight_interactitem_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_interactitem_C::OnConstruct()
+void Uuw_fight_interactitem_C::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_interactitem_C", "OnConstruct");
+		Func = Class->GetFunction("uw_fight_interactitem_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -36,15 +36,15 @@ void Uuw_fight_interactitem_C::OnConstruct()
 }
 
 
-// LuaFunction uw_fight_interactitem.uw_fight_interactitem_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_interactitem.uw_fight_interactitem_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_interactitem_C::Destruct()
+void Uuw_fight_interactitem_C::OnConstruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_interactitem_C", "Destruct");
+		Func = Class->GetFunction("uw_fight_interactitem_C", "OnConstruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -74,15 +74,15 @@ void Uuw_fight_interactitem_C::InitGamepadLongPressUI()
 }
 
 
-// LuaFunction uw_fight_interactitem.uw_fight_interactitem_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_interactitem.uw_fight_interactitem_C.UpdateKeyShow
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_interactitem_C::Construct()
+void Uuw_fight_interactitem_C::UpdateKeyShow()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_interactitem_C", "Construct");
+		Func = Class->GetFunction("uw_fight_interactitem_C", "UpdateKeyShow");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93,15 +93,15 @@ void Uuw_fight_interactitem_C::Construct()
 }
 
 
-// LuaFunction uw_fight_interactitem.uw_fight_interactitem_C.UpdateKeyShow
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// LuaFunction uw_fight_interactitem.uw_fight_interactitem_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_interactitem_C::UpdateKeyShow()
+void Uuw_fight_interactitem_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_interactitem_C", "UpdateKeyShow");
+		Func = Class->GetFunction("uw_fight_interactitem_C", "Construct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

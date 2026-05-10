@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function girl002a_skill04_self01_bp.girl002a_skill04_self01_bp_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void Agirl002a_skill04_self01_bp_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("girl002a_skill04_self01_bp_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function girl002a_skill04_self01_bp.girl002a_skill04_self01_bp_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -68,6 +54,20 @@ void Agirl002a_skill04_self01_bp_C::ExecuteUbergraph_girl002a_skill04_self01_bp(
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function girl002a_skill04_self01_bp.girl002a_skill04_self01_bp_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void Agirl002a_skill04_self01_bp_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("girl002a_skill04_self01_bp_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

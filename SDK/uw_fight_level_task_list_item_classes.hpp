@@ -49,8 +49,8 @@ public:
 	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
 	void ExecuteUbergraph_uw_fight_level_task_list_item(int32 EntryPoint);
 	void OnListItemObjectSet(class UObject* ListItemObject);
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

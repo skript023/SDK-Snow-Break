@@ -67,6 +67,30 @@ public:
 };
 DUMPER7_ASSERTS_UChaosEventListenerComponent;
 
+// Class ChaosSolverEngine.ChaosSolverSettings
+// 0x0020 (0x0058 - 0x0038)
+class UChaosSolverSettings final : public UDeveloperSettings
+{
+public:
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftClassPath                         DefaultChaosSolverActorClass;                      // 0x0040(0x0018)(Edit, ZeroConstructor, Config, NoClear, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ChaosSolverSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ChaosSolverSettings")
+	}
+	static class UChaosSolverSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UChaosSolverSettings>();
+	}
+};
+DUMPER7_ASSERTS_UChaosSolverSettings;
+
 // Class ChaosSolverEngine.ChaosGameplayEventDispatcher
 // 0x01B8 (0x0270 - 0x00B8)
 class UChaosGameplayEventDispatcher final : public UChaosEventListenerComponent
@@ -92,6 +116,59 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UChaosGameplayEventDispatcher;
+
+// Class ChaosSolverEngine.ChaosSolverActor
+// 0x00F8 (0x0320 - 0x0228)
+class AChaosSolverActor final : public AActor
+{
+public:
+	struct FChaosSolverConfiguration              Properties;                                        // 0x0228(0x0068)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         TimeStepMultiplier;                                // 0x0290(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CollisionIterations;                               // 0x0294(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PushOutIterations;                                 // 0x0298(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PushOutPairIterations;                             // 0x029C(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ClusterConnectionFactor;                           // 0x02A0(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EClusterConnectionTypeEnum                    ClusterUnionConnectionType;                        // 0x02A4(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          DoGenerateCollisionData;                           // 0x02A5(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A6[0x2];                                      // 0x02A6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSolverCollisionFilterSettings         CollisionFilterSettings;                           // 0x02A8(0x0010)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          DoGenerateBreakingData;                            // 0x02B8(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B9[0x3];                                      // 0x02B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSolverBreakingFilterSettings          BreakingFilterSettings;                            // 0x02BC(0x0010)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          DoGenerateTrailingData;                            // 0x02CC(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CD[0x3];                                      // 0x02CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSolverTrailingFilterSettings          TrailingFilterSettings;                            // 0x02D0(0x0010)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         MassScale;                                         // 0x02E0(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bGenerateContactGraph;                             // 0x02E4(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasFloor;                                         // 0x02E5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2E6[0x2];                                      // 0x02E6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FloorHeight;                                       // 0x02E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FChaosDebugSubstepControl              ChaosDebugSubstepControl;                          // 0x02EC(0x0003)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2EF[0x1];                                      // 0x02EF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBillboardComponent*                    SpriteComponent;                                   // 0x02F0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2F8[0x18];                                     // 0x02F8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	class UChaosGameplayEventDispatcher*          GameplayEventDispatcherComponent;                  // 0x0310(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_318[0x8];                                      // 0x0318(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetAsCurrentWorldSolver();
+	void SetSolverActive(bool bActive);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ChaosSolverActor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ChaosSolverActor")
+	}
+	static class AChaosSolverActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AChaosSolverActor>();
+	}
+};
+DUMPER7_ASSERTS_AChaosSolverActor;
 
 // Class ChaosSolverEngine.ChaosNotifyHandlerInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -164,83 +241,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UChaosSolver;
-
-// Class ChaosSolverEngine.ChaosSolverActor
-// 0x00F8 (0x0320 - 0x0228)
-class AChaosSolverActor final : public AActor
-{
-public:
-	struct FChaosSolverConfiguration              Properties;                                        // 0x0228(0x0068)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         TimeStepMultiplier;                                // 0x0290(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CollisionIterations;                               // 0x0294(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PushOutIterations;                                 // 0x0298(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PushOutPairIterations;                             // 0x029C(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ClusterConnectionFactor;                           // 0x02A0(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EClusterConnectionTypeEnum                    ClusterUnionConnectionType;                        // 0x02A4(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          DoGenerateCollisionData;                           // 0x02A5(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A6[0x2];                                      // 0x02A6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSolverCollisionFilterSettings         CollisionFilterSettings;                           // 0x02A8(0x0010)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          DoGenerateBreakingData;                            // 0x02B8(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B9[0x3];                                      // 0x02B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSolverBreakingFilterSettings          BreakingFilterSettings;                            // 0x02BC(0x0010)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          DoGenerateTrailingData;                            // 0x02CC(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CD[0x3];                                      // 0x02CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSolverTrailingFilterSettings          TrailingFilterSettings;                            // 0x02D0(0x0010)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         MassScale;                                         // 0x02E0(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bGenerateContactGraph;                             // 0x02E4(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHasFloor;                                         // 0x02E5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2E6[0x2];                                      // 0x02E6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FloorHeight;                                       // 0x02E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FChaosDebugSubstepControl              ChaosDebugSubstepControl;                          // 0x02EC(0x0003)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2EF[0x1];                                      // 0x02EF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBillboardComponent*                    SpriteComponent;                                   // 0x02F0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2F8[0x18];                                     // 0x02F8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	class UChaosGameplayEventDispatcher*          GameplayEventDispatcherComponent;                  // 0x0310(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_318[0x8];                                      // 0x0318(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetAsCurrentWorldSolver();
-	void SetSolverActive(bool bActive);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ChaosSolverActor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ChaosSolverActor")
-	}
-	static class AChaosSolverActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AChaosSolverActor>();
-	}
-};
-DUMPER7_ASSERTS_AChaosSolverActor;
-
-// Class ChaosSolverEngine.ChaosSolverSettings
-// 0x0020 (0x0058 - 0x0038)
-class UChaosSolverSettings final : public UDeveloperSettings
-{
-public:
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSoftClassPath                         DefaultChaosSolverActorClass;                      // 0x0040(0x0018)(Edit, ZeroConstructor, Config, NoClear, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ChaosSolverSettings")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ChaosSolverSettings")
-	}
-	static class UChaosSolverSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UChaosSolverSettings>();
-	}
-};
-DUMPER7_ASSERTS_UChaosSolverSettings;
 
 }
 

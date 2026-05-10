@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CharacterStateId_structs.hpp"
-#include "Game_structs.hpp"
 #include "FireStateEvent_structs.hpp"
+#include "Game_structs.hpp"
 #include "FireStateId_structs.hpp"
 #include "CharacterStateEvent_structs.hpp"
 

@@ -26,8 +26,8 @@ public:
 	class URedirectTextBlock*                     State_2;                                           // 0x0358(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void Construct();
 	void K2_OnUpdate(float InDeltaTime);
+	void Construct();
 	void Destruct();
 
 	class FString GetModuleName() const;

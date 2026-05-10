@@ -20,32 +20,6 @@
 namespace SDK
 {
 
-// Class PhysXVehicles.TireConfig
-// 0x0020 (0x0050 - 0x0030)
-class UTireConfig final : public UDataAsset
-{
-public:
-	float                                         FrictionScale;                                     // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FTireConfigMaterialFriction>    TireFrictionScales;                                // 0x0038(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("TireConfig")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"TireConfig")
-	}
-	static class UTireConfig* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UTireConfig>();
-	}
-};
-DUMPER7_ASSERTS_UTireConfig;
-
 // Class PhysXVehicles.WheeledVehicleMovementComponent
 // 0x0158 (0x0290 - 0x0138)
 class UWheeledVehicleMovementComponent : public UPawnMovementComponent
@@ -182,6 +156,32 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UWheeledVehicleMovementComponent4W;
+
+// Class PhysXVehicles.TireConfig
+// 0x0020 (0x0050 - 0x0030)
+class UTireConfig final : public UDataAsset
+{
+public:
+	float                                         FrictionScale;                                     // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FTireConfigMaterialFriction>    TireFrictionScales;                                // 0x0038(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("TireConfig")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TireConfig")
+	}
+	static class UTireConfig* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UTireConfig>();
+	}
+};
+DUMPER7_ASSERTS_UTireConfig;
 
 // Class PhysXVehicles.WheeledVehicle
 // 0x0010 (0x0298 - 0x0288)

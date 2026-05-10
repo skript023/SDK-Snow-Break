@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveActive
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class UObject*                    Instigator                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBulletRecover_C::K2_ReceiveActive(const class UObject* Instigator)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BulletRecover_C", "K2_ReceiveActive");
-
-	Params::BulletRecover_C_K2_ReceiveActive Parms{};
-
-	Parms.Instigator = Instigator;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveDeActive
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -94,6 +69,31 @@ bool UBulletRecover_C::K2_RecoverAttribute(class UAbilityComponentBase* InAbilit
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveActive
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class UObject*                    Instigator                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBulletRecover_C::K2_ReceiveActive(const class UObject* Instigator)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BulletRecover_C", "K2_ReceiveActive");
+
+	Params::BulletRecover_C_K2_ReceiveActive Parms{};
+
+	Parms.Instigator = Instigator;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

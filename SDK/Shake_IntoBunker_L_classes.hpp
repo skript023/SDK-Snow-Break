@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Shake_IntoBunker_L.Shake_IntoBunker_L_C
-// 0x0000 (0x00C0 - 0x00C0)
+// 0x0000 (0x00D0 - 0x00D0)
 class UShake_IntoBunker_L_C final : public UGameCameraShake
 {
 public:

@@ -13,13 +13,13 @@
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Plot_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
 #include "GameCore_structs.hpp"
 #include "GameCore_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "SlateCore_structs.hpp"
 #include "Slate_structs.hpp"
 
 
@@ -3509,6 +3509,9 @@ public:
 	uint8                                         Pad_290[0x10];                                     // 0x0290(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	static void DestroyAllSpineActor();
+
+public:
 	static class UClass* StaticClass()
 	{
 		STATIC_CLASS_IMPL("SpineActor")
@@ -3561,7 +3564,7 @@ public:
 DUMPER7_ASSERTS_UPlotSpineEffectImage;
 
 // Class Plot.PlotWidget
-// 0x0468 (0x06E8 - 0x0280)
+// 0x0470 (0x06F0 - 0x0280)
 class UPlotWidget : public UUserWidget
 {
 public:
@@ -3600,22 +3603,23 @@ public:
 	class UImage*                                 ImgRole;                                           // 0x03D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPlotWidgetCover*                       WidgetCover;                                       // 0x03E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UCanvasPanel*                           PanelKeyInfo;                                      // 0x03E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3F0[0xA8];                                     // 0x03F0(0x00A8)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               ImageRoleMaterial;                                 // 0x0498(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_4A0[0x10];                                     // 0x04A0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPlotWidgetInteractionGame*             InteractionGame;                                   // 0x04B0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UUserWidget*                            HandDrawWidget;                                    // 0x04B8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TextAreaMaxWidth;                                  // 0x04C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          DisableAddTalkRecords;                             // 0x04C4(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4C5[0x83];                                     // 0x04C5(0x0083)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPlotFindEvidenceWidget*                FindEvidenceWidget;                                // 0x0548(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, TWeakObjectPtr<class USpineWidget>> FullscreenSpineMap;                      // 0x0550(0x0050)(ExportObject, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_5A0[0x138];                                    // 0x05A0(0x0138)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bPaused;                                           // 0x06D8(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_6D9[0x2];                                      // 0x06D9(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          isCutin;                                           // 0x06DB(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6DC[0x4];                                      // 0x06DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPlotWidgetUMGSpineController*          UMGSpineController;                                // 0x06E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPlotWidgetFightSpine*                  WidgetFightSpine;                                  // 0x03F0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3F8[0xA8];                                     // 0x03F8(0x00A8)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               ImageRoleMaterial;                                 // 0x04A0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_4A8[0x10];                                     // 0x04A8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPlotWidgetInteractionGame*             InteractionGame;                                   // 0x04B8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UUserWidget*                            HandDrawWidget;                                    // 0x04C0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TextAreaMaxWidth;                                  // 0x04C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          DisableAddTalkRecords;                             // 0x04CC(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4CD[0x83];                                     // 0x04CD(0x0083)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPlotFindEvidenceWidget*                FindEvidenceWidget;                                // 0x0550(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, TWeakObjectPtr<class USpineWidget>> FullscreenSpineMap;                      // 0x0558(0x0050)(ExportObject, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_5A8[0x138];                                    // 0x05A8(0x0138)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bPaused;                                           // 0x06E0(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_6E1[0x2];                                      // 0x06E1(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          isCutin;                                           // 0x06E3(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6E4[0x4];                                      // 0x06E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPlotWidgetUMGSpineController*          UMGSpineController;                                // 0x06E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void Add2Root();
@@ -3777,6 +3781,32 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPlotWidgetCover;
+
+// Class Plot.PlotWidgetFightSpine
+// 0x0008 (0x02D0 - 0x02C8)
+class UPlotWidgetFightSpine final : public UGameCoreWidget
+{
+public:
+	class UWidget*                                TalkText;                                          // 0x02C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void DoTalk(class UPlotWidget* InParent, class UPlotItem_Talk* InData);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PlotWidgetFightSpine")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PlotWidgetFightSpine")
+	}
+	static class UPlotWidgetFightSpine* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPlotWidgetFightSpine>();
+	}
+};
+DUMPER7_ASSERTS_UPlotWidgetFightSpine;
 
 // Class Plot.PlotWidgetInteractionGameClick
 // 0x0018 (0x0298 - 0x0280)

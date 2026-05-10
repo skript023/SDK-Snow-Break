@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "InputCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "UniversalCameraPlugin_structs.hpp"
+#include "InputCore_structs.hpp"
 #include "CharacterInteractionV3_structs.hpp"
+#include "UniversalCameraPlugin_structs.hpp"
 
 
 namespace SDK::Params

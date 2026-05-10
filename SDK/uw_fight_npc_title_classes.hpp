@@ -24,12 +24,12 @@ public:
 	class UGameCanvasPanel*                       Root;                                              // 0x0418(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
+	void FreeWidget(class UWidget* InWidget);
 	class UWidget* AllocNewWidget();
 	void SetNpcName(class UWidget* InWidget, class FString* Name_0);
-	void FreeWidget(class UWidget* InWidget);
 	void Construct();
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

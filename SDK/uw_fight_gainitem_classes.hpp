@@ -37,8 +37,8 @@ public:
 	void ExecuteUbergraph_uw_fight_gainitem(int32 EntryPoint);
 	void OnListItemObjectSet(class UObject* ListItemObject);
 	void Construct();
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

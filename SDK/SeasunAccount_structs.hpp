@@ -117,27 +117,17 @@ enum class EWeaponSlotType : uint8
 	EWeaponSlotType_MAX                      = 10,
 };
 
-// ScriptStruct SeasunAccount.TrialCardTemplate
-// 0x0080 (0x0080 - 0x0000)
-struct FTrialCardTemplate final
+// ScriptStruct SeasunAccount.MonsterCardAttributePoolTemplate
+// 0x0028 (0x0028 - 0x0000)
+struct FMonsterCardAttributePoolTemplate final
 {
 public:
 	int32                                         ID;                                                // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 CardID;                                            // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         CardLevel;                                         // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CardBreak;                                         // 0x001C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CardProLevel;                                      // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 CardSkill;                                         // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 Weapons;                                           // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 SupporterCards;                                    // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 Skin;                                              // 0x0058(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 WeaponSkin;                                        // 0x0068(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         OnlineFlag;                                        // 0x0078(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<float>                                 AttributeList;                                     // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 LevelList;                                         // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FTrialCardTemplate;
+DUMPER7_ASSERTS_FMonsterCardAttributePoolTemplate;
 
 // ScriptStruct SeasunAccount.ItemTemplate
 // 0x0140 (0x0140 - 0x0000)
@@ -191,17 +181,16 @@ public:
 };
 DUMPER7_ASSERTS_FItemTemplate;
 
-// ScriptStruct SeasunAccount.MonsterCardAttributePoolTemplate
-// 0x0028 (0x0028 - 0x0000)
-struct FMonsterCardAttributePoolTemplate final
+// ScriptStruct SeasunAccount.MonGrowIntensity
+// 0x0018 (0x0018 - 0x0000)
+struct FMonGrowIntensity final
 {
 public:
 	int32                                         ID;                                                // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<float>                                 AttributeList;                                     // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 LevelList;                                         // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 IntensityValues;                                   // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMonsterCardAttributePoolTemplate;
+DUMPER7_ASSERTS_FMonGrowIntensity;
 
 // ScriptStruct SeasunAccount.TrialSupporterCardTemplate
 // 0x0030 (0x0030 - 0x0000)
@@ -233,6 +222,28 @@ public:
 };
 DUMPER7_ASSERTS_FTrialWeaponTemplate;
 
+// ScriptStruct SeasunAccount.TrialCardTemplate
+// 0x0080 (0x0080 - 0x0000)
+struct FTrialCardTemplate final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 CardID;                                            // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         CardLevel;                                         // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CardBreak;                                         // 0x001C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CardProLevel;                                      // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 CardSkill;                                         // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 Weapons;                                           // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 SupporterCards;                                    // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 Skin;                                              // 0x0058(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 WeaponSkin;                                        // 0x0068(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         OnlineFlag;                                        // 0x0078(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FTrialCardTemplate;
+
 // ScriptStruct SeasunAccount.SpineNodeGrowTemplate
 // 0x001C (0x001C - 0x0000)
 struct FSpineNodeGrowTemplate final
@@ -247,6 +258,18 @@ public:
 	int32                                         Command;                                           // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSpineNodeGrowTemplate;
+
+// ScriptStruct SeasunAccount.Lineup
+// 0x0028 (0x0028 - 0x0000)
+struct FLineup final
+{
+public:
+	int32                                         Index;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UCharacterCard*>                 Members;                                           // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLineup;
 
 // ScriptStruct SeasunAccount.SpineNodeTemplate
 // 0x0038 (0x0038 - 0x0000)
@@ -362,6 +385,18 @@ public:
 	struct FGrowLevelArrayFloat                   CharacterEnergyEfficiency_break;                   // 0x00E8(0x0010)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSupportAbilityGrowTemplate;
+
+// ScriptStruct SeasunAccount.FriendPieces
+// 0x0018 (0x0018 - 0x0000)
+struct FFriendPieces final
+{
+public:
+	int64                                         Index;                                             // 0x0000(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         PID;                                               // 0x0008(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         shape;                                             // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         expr;                                              // 0x0014(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FFriendPieces;
 
 // ScriptStruct SeasunAccount.WeaponPartsAbilityTemplate
 // 0x007C (0x007C - 0x0000)
@@ -533,17 +568,6 @@ public:
 };
 DUMPER7_ASSERTS_FMonSkillTemplate;
 
-// ScriptStruct SeasunAccount.MonGrowIntensity
-// 0x0018 (0x0018 - 0x0000)
-struct FMonGrowIntensity final
-{
-public:
-	int32                                         ID;                                                // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 IntensityValues;                                   // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMonGrowIntensity;
-
 // ScriptStruct SeasunAccount.MonGrowTemplate
 // 0x0018 (0x0018 - 0x0000)
 struct FMonGrowTemplate final
@@ -645,30 +669,6 @@ public:
 	int32                                         OnlineDefenceID;                                   // 0x036C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMonsterAbilityGrowTemplate;
-
-// ScriptStruct SeasunAccount.Lineup
-// 0x0028 (0x0028 - 0x0000)
-struct FLineup final
-{
-public:
-	int32                                         Index;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Name;                                              // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UCharacterCard*>                 Members;                                           // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLineup;
-
-// ScriptStruct SeasunAccount.FriendPieces
-// 0x0018 (0x0018 - 0x0000)
-struct FFriendPieces final
-{
-public:
-	int64                                         Index;                                             // 0x0000(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int64                                         PID;                                               // 0x0008(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         shape;                                             // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         expr;                                              // 0x0014(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FFriendPieces;
 
 }
 

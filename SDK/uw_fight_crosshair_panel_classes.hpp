@@ -26,8 +26,8 @@ public:
 	class UGameCanvasPanel*                       Root;                                              // 0x0358(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void InitCrossHair(const struct FSoftClassPath& CrossPath, const struct FSoftClassPath& AmmunitionPath);
 	void Construct();
+	void InitCrossHair(const struct FSoftClassPath& CrossPath, const struct FSoftClassPath& AmmunitionPath);
 	void K2_OnUpdate(float InDeltaTime);
 	void Destruct();
 

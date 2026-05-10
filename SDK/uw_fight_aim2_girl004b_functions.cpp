@@ -39,20 +39,6 @@ void Uuw_fight_aim2_girl004b_C::PlayAnim(class UWidgetAnimation* InAnim, bool bL
 }
 
 
-// Function uw_fight_aim2_girl004b.uw_fight_aim2_girl004b_C.EnterFinish
-// (BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_aim2_girl004b_C::EnterFinish()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_aim2_girl004b_C", "EnterFinish");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function uw_fight_aim2_girl004b.uw_fight_aim2_girl004b_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -132,6 +118,20 @@ void Uuw_fight_aim2_girl004b_C::ONVisibilityChange(ESlateVisibility InVisibility
 	Parms.InVisibility = InVisibility;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_aim2_girl004b.uw_fight_aim2_girl004b_C.EnterFinish
+// (BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_aim2_girl004b_C::EnterFinish()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_aim2_girl004b_C", "EnterFinish");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

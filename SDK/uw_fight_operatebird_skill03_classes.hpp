@@ -24,7 +24,7 @@ class Uuw_fight_operatebird_skill03_C final : public UNewBaseButton
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x04B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UWidgetAnimation*                       oncdreset;                                         // 0x04C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UWidgetAnimation*                       Oncd;                                              // 0x04C8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UWidgetAnimation*                       oncd;                                              // 0x04C8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       qta_cd;                                            // 0x04D0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UButton*                                ButtonUpDown;                                      // 0x04D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UGameCanvasPanel*                       CanvasPanel;                                       // 0x04E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -51,8 +51,8 @@ public:
 	void K2_OnButtonPress();
 	void BndEvt__uw_fight_operatebird_skill03_ButtonUpDown_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature();
 	void BndEvt__uw_fight_operatebird_skill03_ButtonUpDown_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature();
-	void Construct();
 	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void Construct();
 	void Destruct();
 
 	class FString GetModuleName() const;

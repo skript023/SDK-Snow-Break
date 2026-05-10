@@ -26,12 +26,12 @@ public:
 
 public:
 	bool IsUsedToAddVelocityInsteadOverride();
-	void OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement);
-	bool OnMoveTouchTargetCheck(class AActor* InTarget);
-	void OnMoveEnd(class UBaseMovementComponent* Movement);
-	void OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement);
-	void OnMoveBlock(const struct FHitResult& HitResult);
 	void OnMoveTickCheck(float DeltaTime);
+	void OnMoveEnd(class UBaseMovementComponent* Movement);
+	void OnMoveBlock(const struct FHitResult& HitResult);
+	bool OnMoveTouchTargetCheck(class AActor* InTarget);
+	void OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement);
+	void OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement);
 
 	class FString GetModuleName() const;
 

@@ -16,6 +16,24 @@
 namespace SDK::Params
 {
 
+// Function uw_fight_reload.uw_fight_reload_C.K2_OnCharacterChange
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_reload_C_K2_OnCharacterChange final
+{
+public:
+	class AGameCharacter*                         Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_reload_C_K2_OnCharacterChange;
+
+// Function uw_fight_reload.uw_fight_reload_C.UpdateFromCharacter
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_reload_C_UpdateFromCharacter final
+{
+public:
+	class AGameCharacter*                         Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_reload_C_UpdateFromCharacter;
+
 // Function uw_fight_reload.uw_fight_reload_C.ExecuteUbergraph_uw_fight_reload
 // 0x09D8 (0x09D8 - 0x0000)
 struct uw_fight_reload_C_ExecuteUbergraph_uw_fight_reload final
@@ -52,24 +70,6 @@ public:
 	bool                                          CallFunc_BooleanOR_ReturnValue_4;                  // 0x09D2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_reload_C_ExecuteUbergraph_uw_fight_reload;
-
-// Function uw_fight_reload.uw_fight_reload_C.UpdateFromCharacter
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_reload_C_UpdateFromCharacter final
-{
-public:
-	class AGameCharacter*                         Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_reload_C_UpdateFromCharacter;
-
-// Function uw_fight_reload.uw_fight_reload_C.K2_OnCharacterChange
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_reload_C_K2_OnCharacterChange final
-{
-public:
-	class AGameCharacter*                         Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_reload_C_K2_OnCharacterChange;
 
 }
 

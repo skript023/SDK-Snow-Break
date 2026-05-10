@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "TGameToolsRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_classes.hpp"
-#include "TGameToolsRuntime_structs.hpp"
 
 
 namespace SDK

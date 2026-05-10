@@ -33,8 +33,8 @@ public:
 	void StartProgress(float PerformTime);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void ExecuteUbergraph_uw_task_interaction_progress(int32 EntryPoint);
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

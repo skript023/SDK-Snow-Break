@@ -14,15 +14,6 @@
 namespace SDK::Params
 {
 
-// LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.SwitchCurrentInfoTo
-// 0x0004 (0x0004 - 0x0000)
-struct uw_fight_npc_talk_C_SwitchCurrentInfoTo final
-{
-public:
-	int32                                         InInfoIndex;                                       // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_uw_fight_npc_talk_C_SwitchCurrentInfoTo;
-
 // LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.PlaySoundInLua
 // 0x0004 (0x0004 - 0x0000)
 struct uw_fight_npc_talk_C_PlaySoundInLua final
@@ -31,6 +22,15 @@ public:
 	int32                                         SoundId;                                           // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_uw_fight_npc_talk_C_PlaySoundInLua;
+
+// LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.SwitchCurrentInfoTo
+// 0x0004 (0x0004 - 0x0000)
+struct uw_fight_npc_talk_C_SwitchCurrentInfoTo final
+{
+public:
+	int32                                         InInfoIndex;                                       // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_uw_fight_npc_talk_C_SwitchCurrentInfoTo;
 
 // Function uw_fight_npc_talk.uw_fight_npc_talk_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

@@ -17,55 +17,49 @@
 namespace SDK
 {
 
-// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.ExecuteUbergraph_uw_fight_monster_tips_item
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.SequenceEvent__ENTRYPOINTuw_fight_monster_tips_item_0
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_monster_tips_item_C::ExecuteUbergraph_uw_fight_monster_tips_item(int32 EntryPoint)
+void Uuw_fight_monster_tips_item_C::SequenceEvent__ENTRYPOINTuw_fight_monster_tips_item_0()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "ExecuteUbergraph_uw_fight_monster_tips_item");
-
-	Params::uw_fight_monster_tips_item_C_ExecuteUbergraph_uw_fight_monster_tips_item Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.PlayTypeAnim
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_monster_tips_item_C::PlayTypeAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "PlayTypeAnim");
+		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "SequenceEvent__ENTRYPOINTuw_fight_monster_tips_item_0");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.OnAnimationFinished
-// (BlueprintCosmetic, Event, Protected, BlueprintEvent)
-// Parameters:
-// const class UWidgetAnimation*           Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.PlayDieAnim
+// (Event, Public, BlueprintEvent)
 
-void Uuw_fight_monster_tips_item_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
+void Uuw_fight_monster_tips_item_C::PlayDieAnim()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "OnAnimationFinished");
+		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "PlayDieAnim");
 
-	Params::uw_fight_monster_tips_item_C_OnAnimationFinished Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.Animation = Animation;
+
+// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.OnVisibilityChanged_Event_0
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ESlateVisibility                        InVisibility                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_monster_tips_item_C::OnVisibilityChanged_Event_0(ESlateVisibility InVisibility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "OnVisibilityChanged_Event_0");
+
+	Params::uw_fight_monster_tips_item_C_OnVisibilityChanged_Event_0 Parms{};
+
+	Parms.InVisibility = InVisibility;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -91,75 +85,55 @@ void Uuw_fight_monster_tips_item_C::AppearFinish(class UWidgetAnimation* Animati
 }
 
 
-// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.PlayHitAnim
-// (Event, Public, HasOutParams, BlueprintEvent)
+// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.OnAnimationFinished
+// (BlueprintCosmetic, Event, Protected, BlueprintEvent)
 // Parameters:
-// const struct FApplyDamageResultData&    DamageResultData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_monster_tips_item_C::PlayHitAnim(const struct FApplyDamageResultData& DamageResultData)
+void Uuw_fight_monster_tips_item_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "PlayHitAnim");
+		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "OnAnimationFinished");
 
-	Params::uw_fight_monster_tips_item_C_PlayHitAnim Parms{};
+	Params::uw_fight_monster_tips_item_C_OnAnimationFinished Parms{};
 
-	Parms.DamageResultData = std::move(DamageResultData);
+	Parms.Animation = Animation;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.OnVisibilityChanged_Event_0
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ESlateVisibility                        InVisibility                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_monster_tips_item_C::OnVisibilityChanged_Event_0(ESlateVisibility InVisibility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "OnVisibilityChanged_Event_0");
-
-	Params::uw_fight_monster_tips_item_C_OnVisibilityChanged_Event_0 Parms{};
-
-	Parms.InVisibility = InVisibility;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.PlayDieAnim
+// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.PlayTypeAnim
 // (Event, Public, BlueprintEvent)
 
-void Uuw_fight_monster_tips_item_C::PlayDieAnim()
+void Uuw_fight_monster_tips_item_C::PlayTypeAnim()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "PlayDieAnim");
+		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "PlayTypeAnim");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.SetDefendTargetPercent
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.ExecuteUbergraph_uw_fight_monster_tips_item
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// float                                   Value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_monster_tips_item_C::SetDefendTargetPercent(float Value)
+void Uuw_fight_monster_tips_item_C::ExecuteUbergraph_uw_fight_monster_tips_item(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "SetDefendTargetPercent");
+		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "ExecuteUbergraph_uw_fight_monster_tips_item");
 
-	Params::uw_fight_monster_tips_item_C_SetDefendTargetPercent Parms{};
+	Params::uw_fight_monster_tips_item_C_ExecuteUbergraph_uw_fight_monster_tips_item Parms{};
 
-	Parms.Value = Value;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -187,17 +161,43 @@ void Uuw_fight_monster_tips_item_C::StartLoop(const class UObject* Object, bool 
 }
 
 
-// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.SequenceEvent__ENTRYPOINTuw_fight_monster_tips_item_0
+// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.SetDefendTargetPercent
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   Value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_monster_tips_item_C::SequenceEvent__ENTRYPOINTuw_fight_monster_tips_item_0()
+void Uuw_fight_monster_tips_item_C::SetDefendTargetPercent(float Value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "SequenceEvent__ENTRYPOINTuw_fight_monster_tips_item_0");
+		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "SetDefendTargetPercent");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::uw_fight_monster_tips_item_C_SetDefendTargetPercent Parms{};
+
+	Parms.Value = Value;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.PlayHitAnim
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FApplyDamageResultData&    DamageResultData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+
+void Uuw_fight_monster_tips_item_C::PlayHitAnim(const struct FApplyDamageResultData& DamageResultData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_tips_item_C", "PlayHitAnim");
+
+	Params::uw_fight_monster_tips_item_C_PlayHitAnim Parms{};
+
+	Parms.DamageResultData = std::move(DamageResultData);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

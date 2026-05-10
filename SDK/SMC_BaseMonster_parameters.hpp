@@ -17,13 +17,13 @@ namespace SDK::Params
 {
 
 // Function SMC_BaseMonster.SMC_BaseMonster_C.OnDie
-// 0x01D0 (0x01D0 - 0x0000)
+// 0x01E8 (0x01E8 - 0x0000)
 struct SMC_BaseMonster_C_OnDie final
 {
 public:
 	class AGameCharacter*                         Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AGameCharacter*                         Killer;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0010(0x01C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0010(0x01D8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_SMC_BaseMonster_C_OnDie;
 
@@ -46,7 +46,7 @@ public:
 DUMPER7_ASSERTS_SMC_BaseMonster_C_OnAIHasNewTarget;
 
 // Function SMC_BaseMonster.SMC_BaseMonster_C.ExecuteUbergraph_SMC_BaseMonster
-// 0x0240 (0x0240 - 0x0000)
+// 0x0258 (0x0258 - 0x0000)
 struct SMC_BaseMonster_C_ExecuteUbergraph_SMC_BaseMonster final
 {
 public:
@@ -63,17 +63,17 @@ public:
 	class AActor*                                 CallFunc_GetOwner_ReturnValue;                     // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AGameCharacter*                         K2Node_CustomEvent_Character;                      // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AGameCharacter*                         K2Node_CustomEvent_Killer;                         // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     K2Node_CustomEvent_HealthChangeValue;              // 0x0038(0x01C0)(ConstParm, ContainsInstancedReference)
-	class UAbilityComponent*                      CallFunc_GetComponentByClass_ReturnValue;          // 0x01F8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_201[0x3];                                      // 0x0201(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(class AGameCharacter* Character, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue)> K2Node_CreateDelegate_OutputDelegate_1; // 0x0204(0x0010)(ZeroConstructor, NoDestructor)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0214(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetOwner_ReturnValue_1;                   // 0x0218(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 K2Node_CustomEvent_Target;                         // 0x0220(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AAIController*                          CallFunc_GetAIController_ReturnValue;              // 0x0228(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AGameAIController*                      K2Node_DynamicCast_AsGame_AIController;            // 0x0230(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0238(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FHealthChangeValue                     K2Node_CustomEvent_HealthChangeValue;              // 0x0038(0x01D8)(ConstParm, ContainsInstancedReference)
+	class UAbilityComponent*                      CallFunc_GetComponentByClass_ReturnValue;          // 0x0210(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_219[0x3];                                      // 0x0219(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(class AGameCharacter* Character, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue)> K2Node_CreateDelegate_OutputDelegate_1; // 0x021C(0x0010)(ZeroConstructor, NoDestructor)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x022C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetOwner_ReturnValue_1;                   // 0x0230(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 K2Node_CustomEvent_Target;                         // 0x0238(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AAIController*                          CallFunc_GetAIController_ReturnValue;              // 0x0240(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameAIController*                      K2Node_DynamicCast_AsGame_AIController;            // 0x0248(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0250(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_SMC_BaseMonster_C_ExecuteUbergraph_SMC_BaseMonster;
 

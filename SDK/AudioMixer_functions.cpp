@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// Function AudioMixer.SubmixEffectSubmixEQPreset.SetSettings
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FSubmixEffectSubmixEQSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void USubmixEffectSubmixEQPreset::SetSettings(const struct FSubmixEffectSubmixEQSettings& InSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectSubmixEQPreset", "SetSettings");
-
-	Params::SubmixEffectSubmixEQPreset_SetSettings Parms{};
-
-	Parms.InSettings = std::move(InSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function AudioMixer.SynthComponent.SetLowPassFilterEnabled
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -207,28 +182,21 @@ bool USynthComponent::IsPlaying() const
 }
 
 
-// Function AudioMixer.QuartzSubsystem.CreateNewClock
-// (Final, Native, Public, BlueprintCallable)
+// Function AudioMixer.SubmixEffectSubmixEQPreset.SetSettings
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ClockName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FQuartzClockSettings&      InSettings                                             (Parm, NativeAccessSpecifierPublic)
-// bool                                    bOverrideSettingsIfClockExists                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UQuartzClockHandle*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FSubmixEffectSubmixEQSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-class UQuartzClockHandle* UQuartzSubsystem::CreateNewClock(const class UObject* WorldContextObject, class FName ClockName, const struct FQuartzClockSettings& InSettings, bool bOverrideSettingsIfClockExists)
+void USubmixEffectSubmixEQPreset::SetSettings(const struct FSubmixEffectSubmixEQSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("QuartzSubsystem", "CreateNewClock");
+		Func = Class->GetFunction("SubmixEffectSubmixEQPreset", "SetSettings");
 
-	Params::QuartzSubsystem_CreateNewClock Parms{};
+	Params::SubmixEffectSubmixEQPreset_SetSettings Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.ClockName = ClockName;
 	Parms.InSettings = std::move(InSettings);
-	Parms.bOverrideSettingsIfClockExists = bOverrideSettingsIfClockExists;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -236,29 +204,24 @@ class UQuartzClockHandle* UQuartzSubsystem::CreateNewClock(const class UObject* 
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function AudioMixer.QuartzSubsystem.DoesClockExist
-// (Final, Native, Public, BlueprintCallable)
+// Function AudioMixer.SubmixEffectReverbPreset.SetSettings
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ClockName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FSubmixEffectReverbSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-bool UQuartzSubsystem::DoesClockExist(const class UObject* WorldContextObject, class FName ClockName)
+void USubmixEffectReverbPreset::SetSettings(const struct FSubmixEffectReverbSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("QuartzSubsystem", "DoesClockExist");
+		Func = Class->GetFunction("SubmixEffectReverbPreset", "SetSettings");
 
-	Params::QuartzSubsystem_DoesClockExist Parms{};
+	Params::SubmixEffectReverbPreset_SetSettings Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.ClockName = ClockName;
+	Parms.InSettings = std::move(InSettings);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -266,49 +229,28 @@ bool UQuartzSubsystem::DoesClockExist(const class UObject* WorldContextObject, c
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function AudioMixer.QuartzSubsystem.GetAudioRenderThreadToGameThreadAverageLatency
+// Function AudioMixer.SubmixEffectReverbPreset.SetSettingsWithReverbEffect
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UReverbEffect*              InReverbEffect                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             WetLevel                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             DryLevel                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzSubsystem::GetAudioRenderThreadToGameThreadAverageLatency()
+void USubmixEffectReverbPreset::SetSettingsWithReverbEffect(const class UReverbEffect* InReverbEffect, const float WetLevel, const float DryLevel)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("QuartzSubsystem", "GetAudioRenderThreadToGameThreadAverageLatency");
+		Func = Class->GetFunction("SubmixEffectReverbPreset", "SetSettingsWithReverbEffect");
 
-	Params::QuartzSubsystem_GetAudioRenderThreadToGameThreadAverageLatency Parms{};
+	Params::SubmixEffectReverbPreset_SetSettingsWithReverbEffect Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AudioMixer.QuartzSubsystem.GetAudioRenderThreadToGameThreadMaxLatency
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UQuartzSubsystem::GetAudioRenderThreadToGameThreadMaxLatency()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("QuartzSubsystem", "GetAudioRenderThreadToGameThreadMaxLatency");
-
-	Params::QuartzSubsystem_GetAudioRenderThreadToGameThreadMaxLatency Parms{};
+	Parms.InReverbEffect = InReverbEffect;
+	Parms.WetLevel = WetLevel;
+	Parms.DryLevel = DryLevel;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -316,231 +258,6 @@ float UQuartzSubsystem::GetAudioRenderThreadToGameThreadMaxLatency()
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AudioMixer.QuartzSubsystem.GetAudioRenderThreadToGameThreadMinLatency
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UQuartzSubsystem::GetAudioRenderThreadToGameThreadMinLatency()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("QuartzSubsystem", "GetAudioRenderThreadToGameThreadMinLatency");
-
-	Params::QuartzSubsystem_GetAudioRenderThreadToGameThreadMinLatency Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AudioMixer.QuartzSubsystem.GetGameThreadToAudioRenderThreadAverageLatency
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UQuartzSubsystem::GetGameThreadToAudioRenderThreadAverageLatency(const class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("QuartzSubsystem", "GetGameThreadToAudioRenderThreadAverageLatency");
-
-	Params::QuartzSubsystem_GetGameThreadToAudioRenderThreadAverageLatency Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AudioMixer.QuartzSubsystem.GetGameThreadToAudioRenderThreadMaxLatency
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UQuartzSubsystem::GetGameThreadToAudioRenderThreadMaxLatency(const class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("QuartzSubsystem", "GetGameThreadToAudioRenderThreadMaxLatency");
-
-	Params::QuartzSubsystem_GetGameThreadToAudioRenderThreadMaxLatency Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AudioMixer.QuartzSubsystem.GetGameThreadToAudioRenderThreadMinLatency
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UQuartzSubsystem::GetGameThreadToAudioRenderThreadMinLatency(const class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("QuartzSubsystem", "GetGameThreadToAudioRenderThreadMinLatency");
-
-	Params::QuartzSubsystem_GetGameThreadToAudioRenderThreadMinLatency Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AudioMixer.QuartzSubsystem.GetHandleForClock
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ClockName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UQuartzClockHandle*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UQuartzClockHandle* UQuartzSubsystem::GetHandleForClock(const class UObject* WorldContextObject, class FName ClockName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("QuartzSubsystem", "GetHandleForClock");
-
-	Params::QuartzSubsystem_GetHandleForClock Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.ClockName = ClockName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AudioMixer.QuartzSubsystem.GetRoundTripAverageLatency
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UQuartzSubsystem::GetRoundTripAverageLatency(const class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("QuartzSubsystem", "GetRoundTripAverageLatency");
-
-	Params::QuartzSubsystem_GetRoundTripAverageLatency Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AudioMixer.QuartzSubsystem.GetRoundTripMaxLatency
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UQuartzSubsystem::GetRoundTripMaxLatency(const class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("QuartzSubsystem", "GetRoundTripMaxLatency");
-
-	Params::QuartzSubsystem_GetRoundTripMaxLatency Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AudioMixer.QuartzSubsystem.GetRoundTripMinLatency
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UQuartzSubsystem::GetRoundTripMinLatency(const class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("QuartzSubsystem", "GetRoundTripMinLatency");
-
-	Params::QuartzSubsystem_GetRoundTripMinLatency Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -2001,21 +1718,28 @@ void USubmixEffectDynamicsProcessorPreset::SetSettings(const struct FSubmixEffec
 }
 
 
-// Function AudioMixer.SubmixEffectReverbPreset.SetSettings
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Function AudioMixer.QuartzSubsystem.CreateNewClock
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// const struct FSubmixEffectReverbSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ClockName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FQuartzClockSettings&      InSettings                                             (Parm, NativeAccessSpecifierPublic)
+// bool                                    bOverrideSettingsIfClockExists                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UQuartzClockHandle*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectReverbPreset::SetSettings(const struct FSubmixEffectReverbSettings& InSettings)
+class UQuartzClockHandle* UQuartzSubsystem::CreateNewClock(const class UObject* WorldContextObject, class FName ClockName, const struct FQuartzClockSettings& InSettings, bool bOverrideSettingsIfClockExists)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectReverbPreset", "SetSettings");
+		Func = Class->GetFunction("QuartzSubsystem", "CreateNewClock");
 
-	Params::SubmixEffectReverbPreset_SetSettings Parms{};
+	Params::QuartzSubsystem_CreateNewClock Parms{};
 
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ClockName = ClockName;
 	Parms.InSettings = std::move(InSettings);
+	Parms.bOverrideSettingsIfClockExists = bOverrideSettingsIfClockExists;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2023,28 +1747,29 @@ void USubmixEffectReverbPreset::SetSettings(const struct FSubmixEffectReverbSett
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function AudioMixer.SubmixEffectReverbPreset.SetSettingsWithReverbEffect
+// Function AudioMixer.QuartzSubsystem.DoesClockExist
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// const class UReverbEffect*              InReverbEffect                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             WetLevel                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             DryLevel                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ClockName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectReverbPreset::SetSettingsWithReverbEffect(const class UReverbEffect* InReverbEffect, const float WetLevel, const float DryLevel)
+bool UQuartzSubsystem::DoesClockExist(const class UObject* WorldContextObject, class FName ClockName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectReverbPreset", "SetSettingsWithReverbEffect");
+		Func = Class->GetFunction("QuartzSubsystem", "DoesClockExist");
 
-	Params::SubmixEffectReverbPreset_SetSettingsWithReverbEffect Parms{};
+	Params::QuartzSubsystem_DoesClockExist Parms{};
 
-	Parms.InReverbEffect = InReverbEffect;
-	Parms.WetLevel = WetLevel;
-	Parms.DryLevel = DryLevel;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ClockName = ClockName;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2052,6 +1777,281 @@ void USubmixEffectReverbPreset::SetSettingsWithReverbEffect(const class UReverbE
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AudioMixer.QuartzSubsystem.GetAudioRenderThreadToGameThreadAverageLatency
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UQuartzSubsystem::GetAudioRenderThreadToGameThreadAverageLatency()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("QuartzSubsystem", "GetAudioRenderThreadToGameThreadAverageLatency");
+
+	Params::QuartzSubsystem_GetAudioRenderThreadToGameThreadAverageLatency Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AudioMixer.QuartzSubsystem.GetAudioRenderThreadToGameThreadMaxLatency
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UQuartzSubsystem::GetAudioRenderThreadToGameThreadMaxLatency()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("QuartzSubsystem", "GetAudioRenderThreadToGameThreadMaxLatency");
+
+	Params::QuartzSubsystem_GetAudioRenderThreadToGameThreadMaxLatency Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AudioMixer.QuartzSubsystem.GetAudioRenderThreadToGameThreadMinLatency
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UQuartzSubsystem::GetAudioRenderThreadToGameThreadMinLatency()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("QuartzSubsystem", "GetAudioRenderThreadToGameThreadMinLatency");
+
+	Params::QuartzSubsystem_GetAudioRenderThreadToGameThreadMinLatency Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AudioMixer.QuartzSubsystem.GetGameThreadToAudioRenderThreadAverageLatency
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UQuartzSubsystem::GetGameThreadToAudioRenderThreadAverageLatency(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("QuartzSubsystem", "GetGameThreadToAudioRenderThreadAverageLatency");
+
+	Params::QuartzSubsystem_GetGameThreadToAudioRenderThreadAverageLatency Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AudioMixer.QuartzSubsystem.GetGameThreadToAudioRenderThreadMaxLatency
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UQuartzSubsystem::GetGameThreadToAudioRenderThreadMaxLatency(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("QuartzSubsystem", "GetGameThreadToAudioRenderThreadMaxLatency");
+
+	Params::QuartzSubsystem_GetGameThreadToAudioRenderThreadMaxLatency Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AudioMixer.QuartzSubsystem.GetGameThreadToAudioRenderThreadMinLatency
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UQuartzSubsystem::GetGameThreadToAudioRenderThreadMinLatency(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("QuartzSubsystem", "GetGameThreadToAudioRenderThreadMinLatency");
+
+	Params::QuartzSubsystem_GetGameThreadToAudioRenderThreadMinLatency Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AudioMixer.QuartzSubsystem.GetHandleForClock
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ClockName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UQuartzClockHandle*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UQuartzClockHandle* UQuartzSubsystem::GetHandleForClock(const class UObject* WorldContextObject, class FName ClockName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("QuartzSubsystem", "GetHandleForClock");
+
+	Params::QuartzSubsystem_GetHandleForClock Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ClockName = ClockName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AudioMixer.QuartzSubsystem.GetRoundTripAverageLatency
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UQuartzSubsystem::GetRoundTripAverageLatency(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("QuartzSubsystem", "GetRoundTripAverageLatency");
+
+	Params::QuartzSubsystem_GetRoundTripAverageLatency Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AudioMixer.QuartzSubsystem.GetRoundTripMaxLatency
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UQuartzSubsystem::GetRoundTripMaxLatency(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("QuartzSubsystem", "GetRoundTripMaxLatency");
+
+	Params::QuartzSubsystem_GetRoundTripMaxLatency Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AudioMixer.QuartzSubsystem.GetRoundTripMinLatency
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UQuartzSubsystem::GetRoundTripMinLatency(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("QuartzSubsystem", "GetRoundTripMinLatency");
+
+	Params::QuartzSubsystem_GetRoundTripMinLatency Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 }

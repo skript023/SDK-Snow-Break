@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Game_structs.hpp"
-#include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "UMG_structs.hpp"
 
 
 namespace SDK::Params
@@ -219,34 +219,6 @@ public:
 };
 DUMPER7_ASSERTS_umg_fight_pc_C_Get_TxtOnlineNum_Text_0;
 
-// LuaFunction umg_fight_pc.umg_fight_pc_C.GetFightPartShow
-// 0x0002 (0x0002 - 0x0000)
-struct umg_fight_pc_C_GetFightPartShow final
-{
-public:
-	EFightWidgetPart                              InPart;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_pc_C_GetFightPartShow;
-
-// LuaFunction umg_fight_pc.umg_fight_pc_C.HideSkillSelector
-// 0x0004 (0x0004 - 0x0000)
-struct umg_fight_pc_C_HideSkillSelector final
-{
-public:
-	int32                                         SkillIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_pc_C_HideSkillSelector;
-
-// LuaFunction umg_fight_pc.umg_fight_pc_C.ShowSkillSelector
-// 0x0004 (0x0004 - 0x0000)
-struct umg_fight_pc_C_ShowSkillSelector final
-{
-public:
-	int32                                         SkillIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_pc_C_ShowSkillSelector;
-
 // LuaFunction umg_fight_pc.umg_fight_pc_C.CheckFightPartShow
 // 0x0003 (0x0003 - 0x0000)
 struct umg_fight_pc_C_CheckFightPartShow final
@@ -257,6 +229,52 @@ public:
 	bool                                          ReturnValue;                                       // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_umg_fight_pc_C_CheckFightPartShow;
+
+// LuaFunction umg_fight_pc.umg_fight_pc_C.HideSkillSelector
+// 0x0004 (0x0004 - 0x0000)
+struct umg_fight_pc_C_HideSkillSelector final
+{
+public:
+	int32                                         SkillIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_pc_C_HideSkillSelector;
+
+// LuaFunction umg_fight_pc.umg_fight_pc_C.ShowOrHideCross
+// 0x0001 (0x0001 - 0x0000)
+struct umg_fight_pc_C_ShowOrHideCross final
+{
+public:
+	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_pc_C_ShowOrHideCross;
+
+// LuaFunction umg_fight_pc.umg_fight_pc_C.ShowSkillSelector
+// 0x0004 (0x0004 - 0x0000)
+struct umg_fight_pc_C_ShowSkillSelector final
+{
+public:
+	int32                                         SkillIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_pc_C_ShowSkillSelector;
+
+// LuaFunction umg_fight_pc.umg_fight_pc_C.UpdateInteractionProgress
+// 0x0004 (0x0004 - 0x0000)
+struct umg_fight_pc_C_UpdateInteractionProgress final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_pc_C_UpdateInteractionProgress;
+
+// LuaFunction umg_fight_pc.umg_fight_pc_C.GetFightPartShow
+// 0x0002 (0x0002 - 0x0000)
+struct umg_fight_pc_C_GetFightPartShow final
+{
+public:
+	EFightWidgetPart                              InPart;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_umg_fight_pc_C_GetFightPartShow;
 
 // LuaFunction umg_fight_pc.umg_fight_pc_C.SetFightPartShow
 // 0x0004 (0x0004 - 0x0000)
@@ -269,24 +287,6 @@ public:
 	bool                                          bForce;                                            // 0x0003(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_umg_fight_pc_C_SetFightPartShow;
-
-// LuaFunction umg_fight_pc.umg_fight_pc_C.ShowOrHideCross
-// 0x0001 (0x0001 - 0x0000)
-struct umg_fight_pc_C_ShowOrHideCross final
-{
-public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_pc_C_ShowOrHideCross;
-
-// LuaFunction umg_fight_pc.umg_fight_pc_C.UpdateInteractionProgress
-// 0x0004 (0x0004 - 0x0000)
-struct umg_fight_pc_C_UpdateInteractionProgress final
-{
-public:
-	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_umg_fight_pc_C_UpdateInteractionProgress;
 
 // Function umg_fight_pc.umg_fight_pc_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

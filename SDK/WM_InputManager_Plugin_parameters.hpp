@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "WM_InputManager_Plugin_structs.hpp"
 #include "InputCore_structs.hpp"
+#include "WM_InputManager_Plugin_structs.hpp"
 
 
 namespace SDK::Params

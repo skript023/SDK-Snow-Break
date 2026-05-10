@@ -19,29 +19,29 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Girl004b.BP_Girl004b_C
-// 0x06D0 (0x2B60 - 0x2490)
+// 0x06D0 (0x2BA0 - 0x24D0)
 class ABP_Girl004b_C final : public ABaseCharacter_C
 {
 public:
-	uint8                                         Pad_2485[0x3];                                     // 0x2485(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Girl004b_C;                      // 0x2488(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class FString                                 NewVar_0;                                          // 0x2490(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	bool                                          End;                                               // 0x24A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          IsSpecialReload;                                   // 0x24A1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          bSkill01_0;                                        // 0x24A2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_24A3[0x5];                                     // 0x24A3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCameraInfo                            Special_Shoot_Fire_Camera_Info;                    // 0x24A8(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCameraInfo                            Special_Shoot_Normal_Camera_Info;                  // 0x2598(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCameraInfo                            Special_Shoot_Normal_Camera_Info_Start_Motionless; // 0x2688(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCameraInfo                            SpecialShootNormalCameraInfo_start01;              // 0x2778(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCameraInfo                            SpecialShootNormalCameraInfo_start02;              // 0x2868(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCameraInfo                            SpecialShootNormalCameraInfo_start03;              // 0x2958(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCameraInfo                            Special_Shoot_Aim_Camera_Info;                     // 0x2A48(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	int32                                         CurrentSkillId;                                    // 0x2B38(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         NeedRecoverModifierOverlaid;                       // 0x2B3C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 AttributeName;                                     // 0x2B40(0x0010)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	float                                         AttributeValue;                                    // 0x2B50(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Initialize;                                        // 0x2B54(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_24C5[0x3];                                     // 0x24C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Girl004b_C;                      // 0x24C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class FString                                 NewVar_0;                                          // 0x24D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	bool                                          End;                                               // 0x24E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          IsSpecialReload;                                   // 0x24E1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          bSkill01_0;                                        // 0x24E2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_24E3[0x5];                                     // 0x24E3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCameraInfo                            Special_Shoot_Fire_Camera_Info;                    // 0x24E8(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCameraInfo                            Special_Shoot_Normal_Camera_Info;                  // 0x25D8(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCameraInfo                            Special_Shoot_Normal_Camera_Info_Start_Motionless; // 0x26C8(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCameraInfo                            SpecialShootNormalCameraInfo_start01;              // 0x27B8(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCameraInfo                            SpecialShootNormalCameraInfo_start02;              // 0x28A8(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCameraInfo                            SpecialShootNormalCameraInfo_start03;              // 0x2998(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCameraInfo                            Special_Shoot_Aim_Camera_Info;                     // 0x2A88(0x00F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int32                                         CurrentSkillId;                                    // 0x2B78(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         NeedRecoverModifierOverlaid;                       // 0x2B7C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 AttributeName;                                     // 0x2B80(0x0010)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	float                                         AttributeValue;                                    // 0x2B90(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Initialize;                                        // 0x2B94(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	TArray<struct FSoftObjectPath> OnGetAssetPath_01(TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
@@ -49,12 +49,12 @@ public:
 	void Multicast_EnableSpecialShoot(bool bEnable, int32 OverrideRecoilID);
 	void ReceiveBeginPlay();
 	void NotifyRefreshPlayerSkinMesh(int32 SkinTemplateID, int32 SkinLevel);
+	void OnAbilityCast(int32 SkillID, const TArray<int32>& OriginSkills, class UGameAbilityComponent* AbilityRef);
 	void ReInitRecoverAttribute();
+	void ReInitSaveAttribute();
 	void RunServerAttributeChange(const class FString& AttributeName_0, float AttributeValue_0);
 	void OnAppliedModifierChange_Event_0(int32 ModifierID, bool IsApply);
 	void CustomEvent_0(const class APlayerWeapon* InCurWeapon);
-	void OnAbilityCast(int32 SkillID, const TArray<int32>& OriginSkills, class UGameAbilityComponent* AbilityRef);
-	void ReInitSaveAttribute();
 	void ReceiveTick(float DeltaSeconds);
 	void OnClearModifierKeepEffect();
 	void ExecuteUbergraph_BP_Girl004b(int32 EntryPoint);

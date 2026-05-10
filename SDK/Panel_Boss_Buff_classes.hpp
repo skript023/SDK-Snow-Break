@@ -23,7 +23,7 @@ class UPanel_Boss_Buff_C final : public UFightBossBuff
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWidgetAnimation*                       Interrupt;                                         // 0x03B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UWidgetAnimation*                       interrupt;                                         // 0x03B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Silent;                                            // 0x03C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Reset;                                             // 0x03C8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Finish;                                            // 0x03D0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
@@ -36,12 +36,12 @@ public:
 	class Uuw_Panel_Boss_Buff_data_C*             Data;                                              // 0x0408(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void PlayAnim(class UWidgetAnimation* InAnim);
-	class UWidget* Get_Group_Buff_1_ToolTipWidget_0();
-	void Construct();
-	void K2_PlayFinish(bool bReset);
-	void K2_OnSkillBlockup(bool bBlockup);
 	void ExecuteUbergraph_Panel_Boss_Buff(int32 EntryPoint);
+	void K2_OnSkillBlockup(bool bBlockup);
+	void K2_PlayFinish(bool bReset);
+	void Construct();
+	class UWidget* Get_Group_Buff_1_ToolTipWidget_0();
+	void PlayAnim(class UWidgetAnimation* InAnim);
 
 public:
 	static class UClass* StaticClass()

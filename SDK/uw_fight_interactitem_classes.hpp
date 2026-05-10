@@ -40,11 +40,11 @@ public:
 	int32                                         PriorityLevel;                                     // 0x0430(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnConstruct();
 	void Destruct();
+	void OnConstruct();
 	void InitGamepadLongPressUI();
-	void Construct();
 	void UpdateKeyShow();
+	void Construct();
 	void DontRequireNormalState(bool* ret);
 	void InitGamepadLongPressUI__Overridden();
 	void BindKeyBoardOnSettingChange();

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Girl014a.BP_Girl014a_C
-// 0x0000 (0x2490 - 0x2490)
+// 0x0000 (0x24D0 - 0x24D0)
 class ABP_Girl014a_C final : public ABaseCharacter_C
 {
 public:

@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_cross10.uw_fight_cross10_C.ExecuteUbergraph_uw_fight_cross10
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_cross10_C::ExecuteUbergraph_uw_fight_cross10(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_cross10_C", "ExecuteUbergraph_uw_fight_cross10");
-
-	Params::uw_fight_cross10_C_ExecuteUbergraph_uw_fight_cross10 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_cross10.uw_fight_cross10_C.K2_OnReloading
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -58,6 +38,26 @@ void Uuw_fight_cross10_C::K2_OnReloading(bool bIsReload, EWeaponType Type, bool 
 	Parms.Type = Type;
 	Parms.bInterrupt = bInterrupt;
 	Parms.AnimTime = AnimTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_cross10.uw_fight_cross10_C.ExecuteUbergraph_uw_fight_cross10
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_cross10_C::ExecuteUbergraph_uw_fight_cross10(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_cross10_C", "ExecuteUbergraph_uw_fight_cross10");
+
+	Params::uw_fight_cross10_C_ExecuteUbergraph_uw_fight_cross10 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

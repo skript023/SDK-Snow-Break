@@ -16,6 +16,15 @@
 namespace SDK::Params
 {
 
+// Function ABP_Girl004b_04_Aftetimage.ABP_Girl004b_04_Aftetimage_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ABP_Girl004b_04_Aftetimage_C_AnimGraph final
+{
+public:
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+};
+DUMPER7_ASSERTS_ABP_Girl004b_04_Aftetimage_C_AnimGraph;
+
 // Function ABP_Girl004b_04_Aftetimage.ABP_Girl004b_04_Aftetimage_C.BlueprintUpdateAnimation
 // 0x0004 (0x0004 - 0x0000)
 struct ABP_Girl004b_04_Aftetimage_C_BlueprintUpdateAnimation final
@@ -39,15 +48,6 @@ public:
 	float                                         K2Node_Event_DeltaTimeX;                           // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ABP_Girl004b_04_Aftetimage_C_ExecuteUbergraph_ABP_Girl004b_04_Aftetimage;
-
-// Function ABP_Girl004b_04_Aftetimage.ABP_Girl004b_04_Aftetimage_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ABP_Girl004b_04_Aftetimage_C_AnimGraph final
-{
-public:
-	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
-};
-DUMPER7_ASSERTS_ABP_Girl004b_04_Aftetimage_C_AnimGraph;
 
 }
 

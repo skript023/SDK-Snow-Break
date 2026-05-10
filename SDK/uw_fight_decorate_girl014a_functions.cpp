@@ -37,26 +37,6 @@ int32 Uuw_fight_decorate_girl014a_C::GetMaxBulletCount()
 }
 
 
-// Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.GetCurBulletCount
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-int32 Uuw_fight_decorate_girl014a_C::GetCurBulletCount()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_decorate_girl014a_C", "GetCurBulletCount");
-
-	Params::uw_fight_decorate_girl014a_C_GetCurBulletCount Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.EndPlay
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -93,20 +73,6 @@ void Uuw_fight_decorate_girl014a_C::Play_Anim(class UWidgetAnimation* InAnim, bo
 }
 
 
-// Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_decorate_girl014a_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_decorate_girl014a_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.ONVisibilityChange
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -124,6 +90,60 @@ void Uuw_fight_decorate_girl014a_C::ONVisibilityChange(ESlateVisibility InVisibi
 	Parms.InVisibility = InVisibility;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.K2_OnCustomUmgAnimFinished
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FName&                      AnimName                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_decorate_girl014a_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_decorate_girl014a_C", "K2_OnCustomUmgAnimFinished");
+
+	Params::uw_fight_decorate_girl014a_C_K2_OnCustomUmgAnimFinished Parms{};
+
+	Parms.AnimName = AnimName;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.GetCurBulletCount
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+int32 Uuw_fight_decorate_girl014a_C::GetCurBulletCount()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_decorate_girl014a_C", "GetCurBulletCount");
+
+	Params::uw_fight_decorate_girl014a_C_GetCurBulletCount Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_decorate_girl014a_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_decorate_girl014a_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -146,26 +166,6 @@ void Uuw_fight_decorate_girl014a_C::OnBulletChange(int32 InCurBullet, int32 InMa
 	Parms.InCurBullet = InCurBullet;
 	Parms.InMaxBullet = InMaxBullet;
 	Parms.InPercent = InPercent;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_decorate_girl014a.uw_fight_decorate_girl014a_C.K2_OnCustomUmgAnimFinished
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FName&                      AnimName                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_decorate_girl014a_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_decorate_girl014a_C", "K2_OnCustomUmgAnimFinished");
-
-	Params::uw_fight_decorate_girl014a_C_K2_OnCustomUmgAnimFinished Parms{};
-
-	Parms.AnimName = AnimName;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

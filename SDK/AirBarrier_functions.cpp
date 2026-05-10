@@ -17,83 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction AirBarrier.AirBarrier_C.DoRegionCheck
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool*                                   bPassCheck                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void AAirBarrier_C::DoRegionCheck(bool* bPassCheck)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AirBarrier_C", "DoRegionCheck");
-
-	Params::AirBarrier_C_DoRegionCheck Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (bPassCheck != nullptr)
-		*bPassCheck = Parms.bPassCheck;
-}
-
-
-// LuaFunction AirBarrier.AirBarrier_C.DoOnlineTDDutyCheck
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool*                                   bPassCheck                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void AAirBarrier_C::DoOnlineTDDutyCheck(bool* bPassCheck)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AirBarrier_C", "DoOnlineTDDutyCheck");
-
-	Params::AirBarrier_C_DoOnlineTDDutyCheck Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (bPassCheck != nullptr)
-		*bPassCheck = Parms.bPassCheck;
-}
-
-
-// LuaFunction AirBarrier.AirBarrier_C.ReceiveActorBeginOverlap
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AAirBarrier_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AirBarrier_C", "ReceiveActorBeginOverlap");
-
-	Params::AirBarrier_C_ReceiveActorBeginOverlap Parms{};
-
-	Parms.OtherActor = OtherActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function AirBarrier.AirBarrier_C.ShouldOpenTick
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -387,6 +310,83 @@ void AAirBarrier_C::ExecuteUbergraph_AirBarrier(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// LuaFunction AirBarrier.AirBarrier_C.ReceiveActorBeginOverlap
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AAirBarrier_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AirBarrier_C", "ReceiveActorBeginOverlap");
+
+	Params::AirBarrier_C_ReceiveActorBeginOverlap Parms{};
+
+	Parms.OtherActor = OtherActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction AirBarrier.AirBarrier_C.DoRegionCheck
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool*                                   bPassCheck                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void AAirBarrier_C::DoRegionCheck(bool* bPassCheck)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AirBarrier_C", "DoRegionCheck");
+
+	Params::AirBarrier_C_DoRegionCheck Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (bPassCheck != nullptr)
+		*bPassCheck = Parms.bPassCheck;
+}
+
+
+// LuaFunction AirBarrier.AirBarrier_C.DoOnlineTDDutyCheck
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool*                                   bPassCheck                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void AAirBarrier_C::DoOnlineTDDutyCheck(bool* bPassCheck)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AirBarrier_C", "DoOnlineTDDutyCheck");
+
+	Params::AirBarrier_C_DoOnlineTDDutyCheck Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (bPassCheck != nullptr)
+		*bPassCheck = Parms.bPassCheck;
 }
 
 

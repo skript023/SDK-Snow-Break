@@ -17,6 +17,120 @@
 namespace SDK
 {
 
+// Function uw_fight_fire_button_aim_new.uw_fight_fire_button_aim_new_C.ExecuteUbergraph_uw_fight_fire_button_aim_new
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_fire_button_aim_new_C::ExecuteUbergraph_uw_fight_fire_button_aim_new(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_fire_button_aim_new_C", "ExecuteUbergraph_uw_fight_fire_button_aim_new");
+
+	Params::uw_fight_fire_button_aim_new_C_ExecuteUbergraph_uw_fight_fire_button_aim_new Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_fire_button_aim_new.uw_fight_fire_button_aim_new_C.CheckHasModify
+// (BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_fire_button_aim_new_C::CheckHasModify()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_fire_button_aim_new_C", "CheckHasModify");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_fire_button_aim_new.uw_fight_fire_button_aim_new_C.EventSetPawn
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class APawn*                            Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_fire_button_aim_new_C::EventSetPawn(class APawn* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_fire_button_aim_new_C", "EventSetPawn");
+
+	Params::uw_fight_fire_button_aim_new_C_EventSetPawn Parms{};
+
+	Parms.Character = Character;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_fire_button_aim_new.uw_fight_fire_button_aim_new_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_fire_button_aim_new_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_fire_button_aim_new_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_fire_button_aim_new.uw_fight_fire_button_aim_new_C.ModifyChange
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   ModifierID                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsApply                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int64                                   LauncherCharacterHashIndex                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EModifierRemoveSourceType               RemoveSourceType                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_fire_button_aim_new_C::ModifyChange(int32 ModifierID, bool IsApply, int64 LauncherCharacterHashIndex, EModifierRemoveSourceType RemoveSourceType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_fire_button_aim_new_C", "ModifyChange");
+
+	Params::uw_fight_fire_button_aim_new_C_ModifyChange Parms{};
+
+	Parms.ModifierID = ModifierID;
+	Parms.IsApply = IsApply;
+	Parms.LauncherCharacterHashIndex = LauncherCharacterHashIndex;
+	Parms.RemoveSourceType = RemoveSourceType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_fire_button_aim_new.uw_fight_fire_button_aim_new_C.K2_OnCharacterChange
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AGameCharacter*                   Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_fire_button_aim_new_C::K2_OnCharacterChange(class AGameCharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_fire_button_aim_new_C", "K2_OnCharacterChange");
+
+	Params::uw_fight_fire_button_aim_new_C_K2_OnCharacterChange Parms{};
+
+	Parms.Character = Character;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function uw_fight_fire_button_aim_new.uw_fight_fire_button_aim_new_C.Clear Player Action
 // (Public, BlueprintCallable, BlueprintEvent)
 

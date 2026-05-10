@@ -73,26 +73,6 @@ void Uuw_fight_direction_shop_C::SetDefendTargetPercent(float Value)
 }
 
 
-// Function uw_fight_direction_shop.uw_fight_direction_shop_C.OnVisibilityChanged_Event_0
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ESlateVisibility                        InVisibility                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_direction_shop_C::OnVisibilityChanged_Event_0(ESlateVisibility InVisibility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_shop_C", "OnVisibilityChanged_Event_0");
-
-	Params::uw_fight_direction_shop_C_OnVisibilityChanged_Event_0 Parms{};
-
-	Parms.InVisibility = InVisibility;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_direction_shop.uw_fight_direction_shop_C.PlayDieAnim
 // (Event, Public, BlueprintEvent)
 
@@ -176,6 +156,26 @@ void Uuw_fight_direction_shop_C::ExecuteUbergraph_uw_fight_direction_shop(int32 
 	Params::uw_fight_direction_shop_C_ExecuteUbergraph_uw_fight_direction_shop Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_direction_shop.uw_fight_direction_shop_C.OnVisibilityChanged_Event_0
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ESlateVisibility                        InVisibility                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_direction_shop_C::OnVisibilityChanged_Event_0(ESlateVisibility InVisibility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_shop_C", "OnVisibilityChanged_Event_0");
+
+	Params::uw_fight_direction_shop_C_OnVisibilityChanged_Event_0 Parms{};
+
+	Parms.InVisibility = InVisibility;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

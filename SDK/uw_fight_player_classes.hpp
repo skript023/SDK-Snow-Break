@@ -48,9 +48,9 @@ public:
 	class URedirectTextBlock*                     TxtNun;                                            // 0x04B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_player(int32 EntryPoint);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void PlayPowerAnim(bool bFull);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void ExecuteUbergraph_uw_fight_player(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

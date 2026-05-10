@@ -187,6 +187,17 @@ public:
 };
 DUMPER7_ASSERTS_FLandscapeLayer;
 
+// ScriptStruct Landscape.PhysicalMaterialInput
+// 0x0020 (0x0020 - 0x0000)
+struct FPhysicalMaterialInput final
+{
+public:
+	class UPhysicalMaterial*                      PhysicalMaterial;                                  // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FExpressionInput                       Input;                                             // 0x0008(0x000C)(NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0xC];                                       // 0x0014(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FPhysicalMaterialInput;
+
 // ScriptStruct Landscape.HeightmapData
 // 0x0008 (0x0008 - 0x0000)
 struct FHeightmapData final
@@ -305,6 +316,24 @@ public:
 	class FName                                   LayerName;                                         // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLandscapeInfoLayerSettings;
+
+// ScriptStruct Landscape.LayerBlendInput
+// 0x0048 (0x0048 - 0x0000)
+struct FLayerBlendInput final
+{
+public:
+	class FName                                   LayerName;                                         // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELandscapeLayerBlendType                      BlendType;                                         // 0x0008(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FExpressionInput                       LayerInput;                                        // 0x000C(0x000C)(NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FExpressionInput                       HeightInput;                                       // 0x0020(0x000C)(NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x8];                                       // 0x002C(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PreviewWeight;                                     // 0x0034(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ConstLayerInput;                                   // 0x0038(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ConstHeightInput;                                  // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLayerBlendInput;
 
 // ScriptStruct Landscape.LandscapeMaterialTextureStreamingInfo
 // 0x000C (0x000C - 0x0000)
@@ -453,35 +482,6 @@ public:
 	uint8                                         Pad_1C[0xC];                                       // 0x001C(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FGrassInput;
-
-// ScriptStruct Landscape.LayerBlendInput
-// 0x0048 (0x0048 - 0x0000)
-struct FLayerBlendInput final
-{
-public:
-	class FName                                   LayerName;                                         // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELandscapeLayerBlendType                      BlendType;                                         // 0x0008(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FExpressionInput                       LayerInput;                                        // 0x000C(0x000C)(NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FExpressionInput                       HeightInput;                                       // 0x0020(0x000C)(NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x8];                                       // 0x002C(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         PreviewWeight;                                     // 0x0034(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ConstLayerInput;                                   // 0x0038(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ConstHeightInput;                                  // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLayerBlendInput;
-
-// ScriptStruct Landscape.PhysicalMaterialInput
-// 0x0020 (0x0020 - 0x0000)
-struct FPhysicalMaterialInput final
-{
-public:
-	class UPhysicalMaterial*                      PhysicalMaterial;                                  // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FExpressionInput                       Input;                                             // 0x0008(0x000C)(NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0xC];                                       // 0x0014(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FPhysicalMaterialInput;
 
 }
 

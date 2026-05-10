@@ -23,18 +23,19 @@ namespace SDK
 struct FPropertyCollector final
 {
 public:
-	class UCanvasPanel3D*                         None;                                              // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UUserWidget*                            None;                                              // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class USupporterCard*                         None_0;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UWeaponParts*                           None_1;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UWeaponItem*                            None_2;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         None_3;                                            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPlayerProfile*                         None_4;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMail*                                  None_5;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FItemTemplate                          None_6;                                            // 0x0000(0x0140)(HasGetValueTypeHash)
-	class UItem*                                  None_7;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UCharacterCard*                         None_8;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                None_9;                                            // 0x0000(0x000C)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FUIInfo                                None_10;                                           // 0x0000(0x0058)(HasGetValueTypeHash)
+	class UCanvasPanel3D*                         None_2;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWeaponItem*                            None_3;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         None_4;                                            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPlayerProfile*                         None_5;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMail*                                  None_6;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FItemTemplate                          None_7;                                            // 0x0000(0x0140)(HasGetValueTypeHash)
+	class UItem*                                  None_8;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCharacterCard*                         None_9;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                None_10;                                           // 0x0000(0x000C)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FUIInfo                                None_11;                                           // 0x0000(0x0058)(HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FPropertyCollector;
 

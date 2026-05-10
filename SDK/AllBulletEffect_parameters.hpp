@@ -38,17 +38,6 @@ public:
 };
 DUMPER7_ASSERTS_AllBulletEffect_C_K2_ReceiveActive;
 
-// Function AllBulletEffect.AllBulletEffect_C.OnPlayerActionFlay
-// 0x0010 (0x0010 - 0x0000)
-struct AllBulletEffect_C_OnPlayerActionFlay final
-{
-public:
-	class AGameCharacter*                         CurCharacter;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECharacterActionState                         InType;                                            // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bSet;                                              // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_AllBulletEffect_C_OnPlayerActionFlay;
-
 // Function AllBulletEffect.AllBulletEffect_C.K2_ReceiveDeActive
 // 0x0008 (0x0008 - 0x0000)
 struct AllBulletEffect_C_K2_ReceiveDeActive final
@@ -57,16 +46,6 @@ public:
 	const class UGameAbilityComponent*            Pawn;                                              // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AllBulletEffect_C_K2_ReceiveDeActive;
-
-// Function AllBulletEffect.AllBulletEffect_C.K2_ReceiveInitialize
-// 0x0018 (0x0018 - 0x0000)
-struct AllBulletEffect_C_K2_ReceiveInitialize final
-{
-public:
-	TArray<struct FParamInfo>                     Info;                                              // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	const class UGameAbilityComponent*            lpInstigator;                                      // 0x0010(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AllBulletEffect_C_K2_ReceiveInitialize;
 
 // Function AllBulletEffect.AllBulletEffect_C.ExecuteUbergraph_AllBulletEffect
 // 0x0080 (0x0080 - 0x0000)
@@ -103,6 +82,27 @@ public:
 	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x007D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_AllBulletEffect_C_ExecuteUbergraph_AllBulletEffect;
+
+// Function AllBulletEffect.AllBulletEffect_C.OnPlayerActionFlay
+// 0x0010 (0x0010 - 0x0000)
+struct AllBulletEffect_C_OnPlayerActionFlay final
+{
+public:
+	class AGameCharacter*                         CurCharacter;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECharacterActionState                         InType;                                            // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bSet;                                              // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_AllBulletEffect_C_OnPlayerActionFlay;
+
+// Function AllBulletEffect.AllBulletEffect_C.K2_ReceiveInitialize
+// 0x0018 (0x0018 - 0x0000)
+struct AllBulletEffect_C_K2_ReceiveInitialize final
+{
+public:
+	TArray<struct FParamInfo>                     Info;                                              // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	const class UGameAbilityComponent*            lpInstigator;                                      // 0x0010(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AllBulletEffect_C_K2_ReceiveInitialize;
 
 }
 

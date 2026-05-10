@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Game_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
@@ -48,12 +48,12 @@ public:
 DUMPER7_ASSERTS_Girl014aQTEEffectBuffer_C_K2_ReceiveDeActive;
 
 // Function Girl014aQTEEffectBuffer.Girl014aQTEEffectBuffer_C.OnNotifyDamage
-// 0x02B8 (0x02B8 - 0x0000)
+// 0x02D0 (0x02D0 - 0x0000)
 struct Girl014aQTEEffectBuffer_C_OnNotifyDamage final
 {
 public:
-	struct FPreDamageResultData                   PreResultData;                                     // 0x0000(0x01F8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-	struct FApplyDamageResultData                 DamageResultData;                                  // 0x01F8(0x00C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	struct FPreDamageResultData                   PreResultData;                                     // 0x0000(0x0210)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	struct FApplyDamageResultData                 DamageResultData;                                  // 0x0210(0x00C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_Girl014aQTEEffectBuffer_C_OnNotifyDamage;
 
@@ -85,7 +85,7 @@ public:
 DUMPER7_ASSERTS_Girl014aQTEEffectBuffer_C_K2_ReceiveActive;
 
 // Function Girl014aQTEEffectBuffer.Girl014aQTEEffectBuffer_C.ExecuteUbergraph_Girl014aQTEEffectBuffer
-// 0x0418 (0x0418 - 0x0000)
+// 0x0430 (0x0430 - 0x0000)
 struct Girl014aQTEEffectBuffer_C_ExecuteUbergraph_Girl014aQTEEffectBuffer final
 {
 public:
@@ -104,39 +104,39 @@ public:
 	int64                                         CallFunc_GetObjectHashIndex_ReturnValue_1;         // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPreDamageResultData                   K2Node_CustomEvent_PreResultData;                  // 0x0060(0x01F8)(ConstParm, ContainsInstancedReference)
-	struct FApplyDamageResultData                 K2Node_CustomEvent_DamageResultData;               // 0x0258(0x00C0)(ConstParm, ContainsInstancedReference)
-	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0318(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue_1;          // 0x0319(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x031A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31B[0x5];                                      // 0x031B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGirl014aQTEEffectBase*                 K2Node_Event_NextBuffer_1;                         // 0x0320(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UGirl014aQTEEffectBase*                 K2Node_Event_NextBuffer;                           // 0x0328(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetAbilityOwnerActor_ReturnValue;         // 0x0330(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetAbilityOwnerActor_ReturnValue_1;       // 0x0338(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetAbilityOwnerActor_ReturnValue_2;       // 0x0340(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AEffectAgent*                           CallFunc_Get_ReturnValue_2;                        // 0x0348(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0350(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_351[0x7];                                      // 0x0351(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AEffectAgent*                           CallFunc_Get_ReturnValue_3;                        // 0x0358(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetAbilityOwnerActor_ReturnValue_3;       // 0x0360(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	const class UGameAbilityComponent*            K2Node_Event_Pawn;                                 // 0x0368(0x0008)(ConstParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetWorldLocation_ReturnValue;             // 0x0370(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_GetWorldRotation_ReturnValue;             // 0x037C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector                                CallFunc_GetWorldLocation_ReturnValue_1;           // 0x0388(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_GetWorldRotation_ReturnValue_1;           // 0x0394(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector                                CallFunc_GetWorldLocation_ReturnValue_2;           // 0x03A0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_GetWorldRotation_ReturnValue_2;           // 0x03AC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector                                CallFunc_GetWorldLocation_ReturnValue_3;           // 0x03B8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_GetWorldRotation_ReturnValue_3;           // 0x03C4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector                                CallFunc_GetWorldLocation_ReturnValue_4;           // 0x03D0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_GetWorldRotation_ReturnValue_4;           // 0x03DC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	const class UObject*                          K2Node_Event_Instigator;                           // 0x03E8(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetAbilityCauserActor_ReturnValue_1;      // 0x03F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetAbilityCauserActor_ReturnValue_2;      // 0x03F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetAbilityCauserActor_ReturnValue_3;      // 0x0400(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetAbilityCauserActor_ReturnValue_4;      // 0x0408(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetAbilityCauserActor_ReturnValue_5;      // 0x0410(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPreDamageResultData                   K2Node_CustomEvent_PreResultData;                  // 0x0060(0x0210)(ConstParm, ContainsInstancedReference)
+	struct FApplyDamageResultData                 K2Node_CustomEvent_DamageResultData;               // 0x0270(0x00C0)(ConstParm, ContainsInstancedReference)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0330(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue_1;          // 0x0331(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0332(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_333[0x5];                                      // 0x0333(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGirl014aQTEEffectBase*                 K2Node_Event_NextBuffer_1;                         // 0x0338(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UGirl014aQTEEffectBase*                 K2Node_Event_NextBuffer;                           // 0x0340(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetAbilityOwnerActor_ReturnValue;         // 0x0348(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetAbilityOwnerActor_ReturnValue_1;       // 0x0350(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetAbilityOwnerActor_ReturnValue_2;       // 0x0358(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AEffectAgent*                           CallFunc_Get_ReturnValue_2;                        // 0x0360(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0368(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_369[0x7];                                      // 0x0369(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AEffectAgent*                           CallFunc_Get_ReturnValue_3;                        // 0x0370(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetAbilityOwnerActor_ReturnValue_3;       // 0x0378(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	const class UGameAbilityComponent*            K2Node_Event_Pawn;                                 // 0x0380(0x0008)(ConstParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetWorldLocation_ReturnValue;             // 0x0388(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_GetWorldRotation_ReturnValue;             // 0x0394(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                CallFunc_GetWorldLocation_ReturnValue_1;           // 0x03A0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_GetWorldRotation_ReturnValue_1;           // 0x03AC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                CallFunc_GetWorldLocation_ReturnValue_2;           // 0x03B8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_GetWorldRotation_ReturnValue_2;           // 0x03C4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                CallFunc_GetWorldLocation_ReturnValue_3;           // 0x03D0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_GetWorldRotation_ReturnValue_3;           // 0x03DC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                CallFunc_GetWorldLocation_ReturnValue_4;           // 0x03E8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_GetWorldRotation_ReturnValue_4;           // 0x03F4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	const class UObject*                          K2Node_Event_Instigator;                           // 0x0400(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetAbilityCauserActor_ReturnValue_1;      // 0x0408(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetAbilityCauserActor_ReturnValue_2;      // 0x0410(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetAbilityCauserActor_ReturnValue_3;      // 0x0418(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetAbilityCauserActor_ReturnValue_4;      // 0x0420(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetAbilityCauserActor_ReturnValue_5;      // 0x0428(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Girl014aQTEEffectBuffer_C_ExecuteUbergraph_Girl014aQTEEffectBuffer;
 

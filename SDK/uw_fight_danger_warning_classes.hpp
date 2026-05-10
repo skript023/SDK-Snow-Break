@@ -54,8 +54,8 @@ public:
 	class URedirectTextBlock*                     TxtWarnIntro;                                      // 0x0430(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_danger_warning(int32 EntryPoint);
 	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void ExecuteUbergraph_uw_fight_danger_warning(int32 EntryPoint);
 	void Construct();
 
 public:

@@ -17,6 +17,25 @@
 namespace SDK
 {
 
+// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnEnd_Client
+// (Native, Event, Public, BlueprintEvent)
+
+void UKillMonsterByIdExecute_C::OnEnd_Client()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnEnd_Client");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnCountDown_Client
 // (Native, Event, Public, BlueprintEvent)
 
@@ -36,15 +55,34 @@ void UKillMonsterByIdExecute_C::OnCountDown_Client()
 }
 
 
-// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnEnd_Client
+// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnActive
 // (Native, Event, Public, BlueprintEvent)
 
-void UKillMonsterByIdExecute_C::OnEnd_Client()
+void UKillMonsterByIdExecute_C::OnActive()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnEnd_Client");
+		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnActive");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnEnd
+// (Native, Event, Public, BlueprintEvent)
+
+void UKillMonsterByIdExecute_C::OnEnd()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnEnd");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -77,44 +115,6 @@ class FString UKillMonsterByIdExecute_C::GetDescription()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnEnd
-// (Native, Event, Public, BlueprintEvent)
-
-void UKillMonsterByIdExecute_C::OnEnd()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnEnd");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction KillMonsterByIDExecute.KillMonsterByIdExecute_C.OnActive
-// (Native, Event, Public, BlueprintEvent)
-
-void UKillMonsterByIdExecute_C::OnActive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KillMonsterByIdExecute_C", "OnActive");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 

@@ -17,6 +17,42 @@
 namespace SDK
 {
 
+// Function Emitter_SkillMove.Emitter_SkillMove_C.OnGetAssetPath
+// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TArray<struct FParamInfo>&        Values                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<int32>&                          CharacterIDs                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<int32>&                          SkillIDs                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<int32>&                          ModifierIDs                                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<int32>&                          EmitterIDs                                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSoftObjectPath>          ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+TArray<struct FSoftObjectPath> UEmitter_SkillMove_C::OnGetAssetPath(const TArray<struct FParamInfo>& Values, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Emitter_SkillMove_C", "OnGetAssetPath");
+
+	Params::Emitter_SkillMove_C_OnGetAssetPath Parms{};
+
+	Parms.Values = std::move(Values);
+	Parms.CharacterIDs = std::move(CharacterIDs);
+	Parms.SkillIDs = std::move(SkillIDs);
+	Parms.ModifierIDs = std::move(ModifierIDs);
+	Parms.EmitterIDs = std::move(EmitterIDs);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	CharacterIDs = std::move(Parms.CharacterIDs);
+	SkillIDs = std::move(Parms.SkillIDs);
+	ModifierIDs = std::move(Parms.ModifierIDs);
+	EmitterIDs = std::move(Parms.EmitterIDs);
+
+	return Parms.ReturnValue;
+}
+
+
 // LuaFunction Emitter_SkillMove.Emitter_SkillMove_C.OnEmitterInterrupt
 // (Native, Event, Protected, BlueprintEvent)
 
@@ -55,15 +91,15 @@ void UEmitter_SkillMove_C::OnEmitBegin()
 }
 
 
-// LuaFunction Emitter_SkillMove.Emitter_SkillMove_C.OnEmitEnd
-// (Native, Event, Protected, BlueprintEvent)
+// LuaFunction Emitter_SkillMove.Emitter_SkillMove_C.EmitterDestroyLua
+// (Native, Event, Public, BlueprintEvent)
 
-void UEmitter_SkillMove_C::OnEmitEnd()
+void UEmitter_SkillMove_C::EmitterDestroyLua()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_C", "OnEmitEnd");
+		Func = Class->GetFunction("Emitter_SkillMove_C", "EmitterDestroyLua");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -99,15 +135,15 @@ void UEmitter_SkillMove_C::OnEmitTick(float DeltaTime)
 }
 
 
-// LuaFunction Emitter_SkillMove.Emitter_SkillMove_C.EmitterDestroyLua
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction Emitter_SkillMove.Emitter_SkillMove_C.OnEmitEnd
+// (Native, Event, Protected, BlueprintEvent)
 
-void UEmitter_SkillMove_C::EmitterDestroyLua()
+void UEmitter_SkillMove_C::OnEmitEnd()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_C", "EmitterDestroyLua");
+		Func = Class->GetFunction("Emitter_SkillMove_C", "OnEmitEnd");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -115,42 +151,6 @@ void UEmitter_SkillMove_C::EmitterDestroyLua()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Emitter_SkillMove.Emitter_SkillMove_C.OnGetAssetPath
-// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TArray<struct FParamInfo>&        Values                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<int32>&                          CharacterIDs                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<int32>&                          SkillIDs                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<int32>&                          ModifierIDs                                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<int32>&                          EmitterIDs                                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<struct FSoftObjectPath>          ReturnValue                                            (Parm, OutParm, ReturnParm)
-
-TArray<struct FSoftObjectPath> UEmitter_SkillMove_C::OnGetAssetPath(const TArray<struct FParamInfo>& Values, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_C", "OnGetAssetPath");
-
-	Params::Emitter_SkillMove_C_OnGetAssetPath Parms{};
-
-	Parms.Values = std::move(Values);
-	Parms.CharacterIDs = std::move(CharacterIDs);
-	Parms.SkillIDs = std::move(SkillIDs);
-	Parms.ModifierIDs = std::move(ModifierIDs);
-	Parms.EmitterIDs = std::move(EmitterIDs);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	CharacterIDs = std::move(Parms.CharacterIDs);
-	SkillIDs = std::move(Parms.SkillIDs);
-	ModifierIDs = std::move(Parms.ModifierIDs);
-	EmitterIDs = std::move(Parms.EmitterIDs);
-
-	return Parms.ReturnValue;
 }
 
 

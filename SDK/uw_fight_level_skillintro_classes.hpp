@@ -43,8 +43,8 @@ public:
 	class UGameCanvasPanel*                       PanelBossPart;                                     // 0x0440(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UGameCanvasPanel*                       PanelKeystorke;                                    // 0x0448(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UGameCanvasPanel*                       PanelSkill;                                        // 0x0450(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class URedirectImage*                         point1;                                            // 0x0458(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class URedirectImage*                         point2;                                            // 0x0460(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class URedirectImage*                         Point1;                                            // 0x0458(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class URedirectImage*                         Point2;                                            // 0x0460(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         RedirectImage_167;                                 // 0x0468(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         RedirectImage_290;                                 // 0x0470(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UHyperTextBlock*                        SkillTxt;                                          // 0x0478(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -55,13 +55,13 @@ public:
 	float                                         ScrollSpeed;                                       // 0x0498(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_uw_fight_level_skillintro(int32 EntryPoint);
 	void Tick__Overridden(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void Construct();
+	void ExecuteUbergraph_uw_fight_level_skillintro(int32 EntryPoint);
 	void OnAnimationFinished(const class UWidgetAnimation* Animation);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void Destruct();
+	void Construct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

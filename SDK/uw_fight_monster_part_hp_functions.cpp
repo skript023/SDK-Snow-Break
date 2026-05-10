@@ -17,23 +17,17 @@
 namespace SDK
 {
 
-// Function uw_fight_monster_part_hp.uw_fight_monster_part_hp_C.ExecuteUbergraph_uw_fight_monster_part_hp
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_monster_part_hp.uw_fight_monster_part_hp_C.PlayWhiteAnim
+// (Event, Public, BlueprintEvent)
 
-void Uuw_fight_monster_part_hp_C::ExecuteUbergraph_uw_fight_monster_part_hp(int32 EntryPoint)
+void Uuw_fight_monster_part_hp_C::PlayWhiteAnim()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_part_hp_C", "ExecuteUbergraph_uw_fight_monster_part_hp");
+		Func = Class->GetFunction("uw_fight_monster_part_hp_C", "PlayWhiteAnim");
 
-	Params::uw_fight_monster_part_hp_C_ExecuteUbergraph_uw_fight_monster_part_hp Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -51,17 +45,23 @@ void Uuw_fight_monster_part_hp_C::K2_OnReset()
 }
 
 
-// Function uw_fight_monster_part_hp.uw_fight_monster_part_hp_C.PlayWhiteAnim
-// (Event, Public, BlueprintEvent)
+// Function uw_fight_monster_part_hp.uw_fight_monster_part_hp_C.ExecuteUbergraph_uw_fight_monster_part_hp
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_monster_part_hp_C::PlayWhiteAnim()
+void Uuw_fight_monster_part_hp_C::ExecuteUbergraph_uw_fight_monster_part_hp(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_part_hp_C", "PlayWhiteAnim");
+		Func = Class->GetFunction("uw_fight_monster_part_hp_C", "ExecuteUbergraph_uw_fight_monster_part_hp");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::uw_fight_monster_part_hp_C_ExecuteUbergraph_uw_fight_monster_part_hp Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

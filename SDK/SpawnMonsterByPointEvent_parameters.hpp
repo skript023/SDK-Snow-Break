@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Game_structs.hpp"
 #include "GameTask_structs.hpp"
+#include "Game_structs.hpp"
 
 
 namespace SDK::Params

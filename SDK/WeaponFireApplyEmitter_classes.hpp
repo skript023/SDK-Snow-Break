@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass WeaponFireApplyEmitter.WeaponFireApplyEmitter_C
-// 0x0010 (0x00E8 - 0x00D8)
+// 0x0010 (0x00F0 - 0x00E0)
 class UWeaponFireApplyEmitter_C final : public UModifierSpecialEffectObject
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	int32                                         EmitterID;                                         // 0x00E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00E0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	int32                                         EmitterID;                                         // 0x00E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	TArray<struct FSoftObjectPath> OnGetAssetPath(const TArray<struct FParamInfo>& InParams, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);

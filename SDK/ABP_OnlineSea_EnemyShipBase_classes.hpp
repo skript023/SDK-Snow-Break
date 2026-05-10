@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_OnlineSea_EnemyShipBase.ABP_OnlineSea_EnemyShipBase_C
-// 0x00B0 (0x05D0 - 0x0520)
+// 0x00C0 (0x05E0 - 0x0520)
 class UABP_OnlineSea_EnemyShipBase_C final : public UAnimInstanceBase
 {
 public:
@@ -31,12 +31,14 @@ public:
 	TMulticastInlineDelegate<void()>              PlayDeadAnimation;                                 // 0x05B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	class UAnimSequenceBase*                      HitAnimation;                                      // 0x05C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAnimSequenceBase*                      DeadAnimation;                                     // 0x05C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimSequenceBase*                      BornAnimation;                                     // 0x05D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
 	void PlayHitAnimationEvent();
 	void BlueprintInitializeAnimation();
 	void PlayDeadAnimationEvent();
+	void PlayBornAnimationEvent();
 	void ExecuteUbergraph_ABP_OnlineSea_EnemyShipBase(int32 EntryPoint);
 
 public:

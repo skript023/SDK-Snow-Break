@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PlayMontage_Server.PlayMontage_Server_C
-// 0x0000 (0x0110 - 0x0110)
+// 0x0000 (0x0118 - 0x0118)
 class UPlayMontage_Server_C final : public UPlaySkillMontageComponent
 {
 public:

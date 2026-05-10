@@ -35,15 +35,6 @@ public:
 };
 DUMPER7_ASSERTS_SwitchMgr_C_ExecuteUbergraph_SwitchMgr;
 
-// LuaFunction SwitchMgr.SwitchMgr_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct SwitchMgr_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_SwitchMgr_C_ReceiveTick;
-
 // LuaFunction SwitchMgr.SwitchMgr_C.ReceiveEndPlay
 // 0x0001 (0x0001 - 0x0000)
 struct SwitchMgr_C_ReceiveEndPlay final
@@ -52,6 +43,15 @@ public:
 	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SwitchMgr_C_ReceiveEndPlay;
+
+// LuaFunction SwitchMgr.SwitchMgr_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct SwitchMgr_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SwitchMgr_C_ReceiveTick;
 
 // Function SwitchMgr.SwitchMgr_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

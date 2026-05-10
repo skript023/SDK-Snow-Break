@@ -59,26 +59,6 @@ void UNoBulletConsume_C::K2_ReceiveInitialize(const TArray<struct FParamInfo>& I
 }
 
 
-// Function NoBulletConsume.NoBulletConsume_C.K2_ReceiveDeActive
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class UGameAbilityComponent*      Pawn                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UNoBulletConsume_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NoBulletConsume_C", "K2_ReceiveDeActive");
-
-	Params::NoBulletConsume_C_K2_ReceiveDeActive Parms{};
-
-	Parms.Pawn = Pawn;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function NoBulletConsume.NoBulletConsume_C.WeaponFire
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -116,6 +96,26 @@ void UNoBulletConsume_C::ExecuteUbergraph_NoBulletConsume(int32 EntryPoint)
 	Params::NoBulletConsume_C_ExecuteUbergraph_NoBulletConsume Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function NoBulletConsume.NoBulletConsume_C.K2_ReceiveDeActive
+// (Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class UGameAbilityComponent*      Pawn                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UNoBulletConsume_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NoBulletConsume_C", "K2_ReceiveDeActive");
+
+	Params::NoBulletConsume_C_K2_ReceiveDeActive Parms{};
+
+	Parms.Pawn = Pawn;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

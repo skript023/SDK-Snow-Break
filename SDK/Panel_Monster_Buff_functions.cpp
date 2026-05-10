@@ -17,57 +17,21 @@
 namespace SDK
 {
 
-// Function Panel_Monster_Buff.Panel_Monster_Buff_C.ExecuteUbergraph_Panel_Monster_Buff
-// (Final, UbergraphFunction, HasDefaults)
+// Function Panel_Monster_Buff.Panel_Monster_Buff_C.K2_OnSkillBlockup
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bInBlockUp                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UPanel_Monster_Buff_C::ExecuteUbergraph_Panel_Monster_Buff(int32 EntryPoint)
+void UPanel_Monster_Buff_C::K2_OnSkillBlockup(bool bInBlockUp)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Panel_Monster_Buff_C", "ExecuteUbergraph_Panel_Monster_Buff");
+		Func = Class->GetFunction("Panel_Monster_Buff_C", "K2_OnSkillBlockup");
 
-	Params::Panel_Monster_Buff_C_ExecuteUbergraph_Panel_Monster_Buff Parms{};
+	Params::Panel_Monster_Buff_C_K2_OnSkillBlockup Parms{};
 
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Panel_Monster_Buff.Panel_Monster_Buff_C.BP_OnEntryReleased_1
-// (BlueprintCallable, BlueprintEvent)
-
-void UPanel_Monster_Buff_C::BP_OnEntryReleased_1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Panel_Monster_Buff_C", "BP_OnEntryReleased_1");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Panel_Monster_Buff.Panel_Monster_Buff_C.Tick
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UPanel_Monster_Buff_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Panel_Monster_Buff_C", "Tick");
-
-	Params::Panel_Monster_Buff_C_Tick Parms{};
-
-	Parms.MyGeometry = std::move(MyGeometry);
-	Parms.InDeltaTime = InDeltaTime;
+	Parms.bInBlockUp = bInBlockUp;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -93,21 +57,57 @@ void UPanel_Monster_Buff_C::K2_OnCustomUmgAnimFinished(const class FName& AnimNa
 }
 
 
-// Function Panel_Monster_Buff.Panel_Monster_Buff_C.K2_OnSkillBlockup
-// (Event, Protected, BlueprintEvent)
+// Function Panel_Monster_Buff.Panel_Monster_Buff_C.Tick
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bInBlockUp                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPanel_Monster_Buff_C::K2_OnSkillBlockup(bool bInBlockUp)
+void UPanel_Monster_Buff_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Panel_Monster_Buff_C", "K2_OnSkillBlockup");
+		Func = Class->GetFunction("Panel_Monster_Buff_C", "Tick");
 
-	Params::Panel_Monster_Buff_C_K2_OnSkillBlockup Parms{};
+	Params::Panel_Monster_Buff_C_Tick Parms{};
 
-	Parms.bInBlockUp = bInBlockUp;
+	Parms.MyGeometry = std::move(MyGeometry);
+	Parms.InDeltaTime = InDeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Panel_Monster_Buff.Panel_Monster_Buff_C.BP_OnEntryReleased_1
+// (BlueprintCallable, BlueprintEvent)
+
+void UPanel_Monster_Buff_C::BP_OnEntryReleased_1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Panel_Monster_Buff_C", "BP_OnEntryReleased_1");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Panel_Monster_Buff.Panel_Monster_Buff_C.ExecuteUbergraph_Panel_Monster_Buff
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPanel_Monster_Buff_C::ExecuteUbergraph_Panel_Monster_Buff(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Panel_Monster_Buff_C", "ExecuteUbergraph_Panel_Monster_Buff");
+
+	Params::Panel_Monster_Buff_C_ExecuteUbergraph_Panel_Monster_Buff Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

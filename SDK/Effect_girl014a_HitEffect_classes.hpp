@@ -36,9 +36,9 @@ public:
 
 public:
 	void GetClosedPoint(class FName BoneName, const struct FVector& Point, class USkeletalMeshComponent* InMesh);
+	void K2_ReceiveDeActive();
 	void ReceiveBeginPlay();
 	void K2_ReceiveActive();
-	void K2_ReceiveDeActive();
 	void K2_ReceiveTick(float DeltaSeconds);
 	void ExecuteUbergraph_Effect_girl014a_HitEffect(int32 EntryPoint);
 

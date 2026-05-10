@@ -10,22 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "Game_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Game_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// LuaFunction Emitter_SkillMove.Emitter_SkillMove_C.OnEmitTick
-// 0x0004 (0x0004 - 0x0000)
-struct Emitter_SkillMove_C_OnEmitTick final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Emitter_SkillMove_C_OnEmitTick;
 
 // Function Emitter_SkillMove.Emitter_SkillMove_C.OnGetAssetPath
 // 0x0178 (0x0178 - 0x0000)
@@ -52,6 +43,15 @@ public:
 	TArray<struct FSoftObjectPath>                CallFunc_GetSkillMoveAseetPath_ReturnValue;        // 0x0168(0x0010)(ReferenceParm)
 };
 DUMPER7_ASSERTS_Emitter_SkillMove_C_OnGetAssetPath;
+
+// LuaFunction Emitter_SkillMove.Emitter_SkillMove_C.OnEmitTick
+// 0x0004 (0x0004 - 0x0000)
+struct Emitter_SkillMove_C_OnEmitTick final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Emitter_SkillMove_C_OnEmitTick;
 
 // Function Emitter_SkillMove.Emitter_SkillMove_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

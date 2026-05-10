@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.SequenceEvent__ENTRYPOINTuw_fight_direction_retreat_0
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_direction_retreat_C::SequenceEvent__ENTRYPOINTuw_fight_direction_retreat_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_retreat_C", "SequenceEvent__ENTRYPOINTuw_fight_direction_retreat_0");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.StartLoop
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -178,6 +164,20 @@ void Uuw_fight_direction_retreat_C::ExecuteUbergraph_uw_fight_direction_retreat(
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.SequenceEvent__ENTRYPOINTuw_fight_direction_retreat_0
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_direction_retreat_C::SequenceEvent__ENTRYPOINTuw_fight_direction_retreat_0()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_retreat_C", "SequenceEvent__ENTRYPOINTuw_fight_direction_retreat_0");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

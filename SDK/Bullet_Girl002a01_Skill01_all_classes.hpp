@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "Game_structs.hpp"
 #include "Game_classes.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -24,7 +24,6 @@ namespace SDK
 class alignas(0x10) ABullet_Girl002a01_Skill01_all_C : public ABullet
 {
 public:
-	uint8                                         Pad_A28[0x8];                                      // 0x0A28(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A30(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	bool                                          HasFire;                                           // 0x0A38(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_A39[0x7];                                      // 0x0A39(0x0007)(Fixing Size After Last Property [ Dumper-7 ])

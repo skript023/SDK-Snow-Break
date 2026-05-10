@@ -43,10 +43,10 @@ public:
 	void BP_OnItemSelectionChanged(bool bIsSelected);
 	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
 	void ExecuteUbergraph_uw_fight_propitem(int32 EntryPoint);
+	void Destruct();
 	void OnListItemObjectSet(class UObject* ListItemObject);
 	void Construct();
 	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
-	void Destruct();
 
 	class FString GetModuleName() const;
 

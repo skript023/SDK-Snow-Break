@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function Panel_Cd_Animation_pc.Panel_Cd_Animation_pc_C.Stop
+// (BlueprintCallable, BlueprintEvent)
+
+void UPanel_Cd_Animation_pc_C::Stop()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Panel_Cd_Animation_pc_C", "Stop");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function Panel_Cd_Animation_pc.Panel_Cd_Animation_pc_C.ExecuteUbergraph_Panel_Cd_Animation_pc
 // (Final, UbergraphFunction)
 // Parameters:
@@ -34,20 +48,6 @@ void UPanel_Cd_Animation_pc_C::ExecuteUbergraph_Panel_Cd_Animation_pc(int32 Entr
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Panel_Cd_Animation_pc.Panel_Cd_Animation_pc_C.Stop
-// (BlueprintCallable, BlueprintEvent)
-
-void UPanel_Cd_Animation_pc_C::Stop()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Panel_Cd_Animation_pc_C", "Stop");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

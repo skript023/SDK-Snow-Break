@@ -12,8 +12,8 @@
 
 #include "PhysicsControl_structs.hpp"
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "PhysXVehicles_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -91,55 +91,6 @@ public:
 	struct FPhysicsControlData                    ControlData;                                       // 0x0008(0x0020)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FVehicleControlDataInSet;
-
-// ScriptStruct SeasunVehicle.VehicleTemplateFirstPersonCameraDelay
-// 0x0008 (0x0008 - 0x0000)
-struct FVehicleTemplateFirstPersonCameraDelay final
-{
-public:
-	bool                                          bCanCameraRotateDelay;                             // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CameraRotDelayBlendSpd;                            // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FVehicleTemplateFirstPersonCameraDelay;
-
-// ScriptStruct SeasunVehicle.VehicleTemplateFirstPersonCamera
-// 0x0030 (0x0030 - 0x0000)
-struct FVehicleTemplateFirstPersonCamera final
-{
-public:
-	bool                                          bIsFixCamera;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               CameraRot;                                         // 0x0004(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                FirstCameraOffset;                                 // 0x0010(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               CameraDefaultRot;                                  // 0x001C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVehicleTemplateFirstPersonCameraDelay FirstPersonCameraDelay;                            // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FVehicleTemplateFirstPersonCamera;
-
-// ScriptStruct SeasunVehicle.VehicleTemplateEffect
-// 0x00A0 (0x00A0 - 0x0000)
-struct FVehicleTemplateEffect final
-{
-public:
-	TSoftObjectPtr<class UNiagaraSystem>          ExhaustEffect;                                     // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UNiagaraSystem>          WhiffEffect;                                       // 0x0028(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UNiagaraSystem>          SlipperySmokeEffect;                               // 0x0050(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UNiagaraSystem>          SlipperyTyreEffect;                                // 0x0078(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FVehicleTemplateEffect;
-
-// ScriptStruct SeasunVehicle.VehicleTemplateSound
-// 0x0040 (0x0040 - 0x0000)
-struct FVehicleTemplateSound final
-{
-public:
-	class FString                                 ChangeGearSound;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ZeroSpeedBrakeSound;                               // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 SpeedEffectSound;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 SlipEffectSound;                                   // 0x0030(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FVehicleTemplateSound;
 
 // ScriptStruct SeasunVehicle.VehicleTemplateWheelSettings
 // 0x0020 (0x0020 - 0x0000)
@@ -245,6 +196,30 @@ public:
 };
 DUMPER7_ASSERTS_FVehicleBlueprintParametersOverride;
 
+// ScriptStruct SeasunVehicle.VehicleTemplateEffect
+// 0x00A0 (0x00A0 - 0x0000)
+struct FVehicleTemplateEffect final
+{
+public:
+	TSoftObjectPtr<class UNiagaraSystem>          ExhaustEffect;                                     // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UNiagaraSystem>          WhiffEffect;                                       // 0x0028(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UNiagaraSystem>          SlipperySmokeEffect;                               // 0x0050(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UNiagaraSystem>          SlipperyTyreEffect;                                // 0x0078(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVehicleTemplateEffect;
+
+// ScriptStruct SeasunVehicle.VehicleTemplateSound
+// 0x0040 (0x0040 - 0x0000)
+struct FVehicleTemplateSound final
+{
+public:
+	class FString                                 ChangeGearSound;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ZeroSpeedBrakeSound;                               // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SpeedEffectSound;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SlipEffectSound;                                   // 0x0030(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVehicleTemplateSound;
+
 // ScriptStruct SeasunVehicle.VehicleTemplateTPCameraDelay
 // 0x0010 (0x0010 - 0x0000)
 struct FVehicleTemplateTPCameraDelay final
@@ -274,6 +249,31 @@ public:
 	struct FVehicleTemplateTPCameraDelay          ThirdPersonDelay;                                  // 0x0060(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FVehicleTemplateThirdPersonCamera;
+
+// ScriptStruct SeasunVehicle.VehicleTemplateFirstPersonCameraDelay
+// 0x0008 (0x0008 - 0x0000)
+struct FVehicleTemplateFirstPersonCameraDelay final
+{
+public:
+	bool                                          bCanCameraRotateDelay;                             // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CameraRotDelayBlendSpd;                            // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVehicleTemplateFirstPersonCameraDelay;
+
+// ScriptStruct SeasunVehicle.VehicleTemplateFirstPersonCamera
+// 0x0030 (0x0030 - 0x0000)
+struct FVehicleTemplateFirstPersonCamera final
+{
+public:
+	bool                                          bIsFixCamera;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               CameraRot;                                         // 0x0004(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                FirstCameraOffset;                                 // 0x0010(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               CameraDefaultRot;                                  // 0x001C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVehicleTemplateFirstPersonCameraDelay FirstPersonCameraDelay;                            // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVehicleTemplateFirstPersonCamera;
 
 // ScriptStruct SeasunVehicle.VehicleTemplate
 // 0x0318 (0x0320 - 0x0008)

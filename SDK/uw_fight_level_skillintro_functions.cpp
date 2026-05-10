@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_level_skillintro.uw_fight_level_skillintro_C.ExecuteUbergraph_uw_fight_level_skillintro
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_level_skillintro_C::ExecuteUbergraph_uw_fight_level_skillintro(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_skillintro_C", "ExecuteUbergraph_uw_fight_level_skillintro");
-
-	Params::uw_fight_level_skillintro_C_ExecuteUbergraph_uw_fight_level_skillintro Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_level_skillintro.uw_fight_level_skillintro_C.Tick__Overridden
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
@@ -59,22 +39,23 @@ void Uuw_fight_level_skillintro_C::Tick__Overridden(const struct FGeometry& MyGe
 }
 
 
-// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// Function uw_fight_level_skillintro.uw_fight_level_skillintro_C.ExecuteUbergraph_uw_fight_level_skillintro
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_level_skillintro_C::Construct()
+void Uuw_fight_level_skillintro_C::ExecuteUbergraph_uw_fight_level_skillintro(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_skillintro_C", "Construct");
+		Func = Class->GetFunction("uw_fight_level_skillintro_C", "ExecuteUbergraph_uw_fight_level_skillintro");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Params::uw_fight_level_skillintro_C_ExecuteUbergraph_uw_fight_level_skillintro Parms{};
 
-	UObject::ProcessEvent(Func, nullptr);
+	Parms.EntryPoint = EntryPoint;
 
-	Func->FunctionFlags = Flgs;
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -130,15 +111,15 @@ void Uuw_fight_level_skillintro_C::Tick(const struct FGeometry& MyGeometry, floa
 }
 
 
-// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.Destruct
+// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.Construct
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_level_skillintro_C::Destruct()
+void Uuw_fight_level_skillintro_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_skillintro_C", "Destruct");
+		Func = Class->GetFunction("uw_fight_level_skillintro_C", "Construct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -158,6 +139,25 @@ void Uuw_fight_level_skillintro_C::OnConstruct()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_level_skillintro_C", "OnConstruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_level_skillintro_C::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_skillintro_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

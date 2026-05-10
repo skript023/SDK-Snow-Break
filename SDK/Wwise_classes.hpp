@@ -49,43 +49,40 @@ public:
 DUMPER7_ASSERTS_AWwiseAmbientSound;
 
 // Class Wwise.WwiseComponent
-// 0x0260 (0x0460 - 0x0200)
+// 0x0210 (0x0410 - 0x0200)
 class UWwiseComponent final : public USceneComponent
 {
 public:
 	uint8                                         bUseSpatialAudio : 1;                              // 0x01F8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bUseReverbVolumes : 1;                             // 0x01F8(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bUseDefaultListeners : 1;                          // 0x01F8(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bEnableSpotReflectors : 1;                         // 0x01F8(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         Pad_1F9[0x3];                                      // 0x01F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         AttenuationScalingFactor;                          // 0x01FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bEnableSpotReflectors : 1;                         // 0x0200(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_201[0x7];                                      // 0x0201(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ReflectionAuxBus;                                  // 0x0208(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 EventName;                                         // 0x0218(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReflectionOrder;                                   // 0x0228(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReflectionBusSendGain;                             // 0x022C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReflectionMaxPathLength;                           // 0x0230(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReverbAuxBusGain;                                  // 0x0234(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DiffractionMaxEdges;                               // 0x0238(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DiffractionMaxPaths;                               // 0x023C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DiffractionMaxPathLength;                          // 0x0240(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECollisionChannel                             CollisionChannel;                                  // 0x0244(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_245[0x3];                                      // 0x0245(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CollisionCheckInterval;                            // 0x0248(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bAutoDestroy : 1;                                  // 0x024C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bIsDefaultListener : 1;                            // 0x024C(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_24D[0x3];                                      // 0x024D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class UWwiseComponent*>                  Listeners;                                         // 0x0250(0x0050)(ExportObject, Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TSet<class UWwiseComponent*>                  Emitters;                                          // 0x02A0(0x0050)(ExportObject, Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2F0[0x170];                                    // 0x02F0(0x0170)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ReflectionAuxBus;                                  // 0x0200(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 EventName;                                         // 0x0210(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReflectionOrder;                                   // 0x0220(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReflectionBusSendGain;                             // 0x0224(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReflectionMaxPathLength;                           // 0x0228(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReverbAuxBusGain;                                  // 0x022C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DiffractionMaxEdges;                               // 0x0230(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DiffractionMaxPaths;                               // 0x0234(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DiffractionMaxPathLength;                          // 0x0238(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECollisionChannel                             CollisionChannel;                                  // 0x023C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_23D[0x3];                                      // 0x023D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CollisionCheckInterval;                            // 0x0240(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_244[0x4];                                      // 0x0244(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class UWwiseComponent*>                  Listeners;                                         // 0x0248(0x0050)(ExportObject, Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	uint8                                         Pad_298[0x178];                                    // 0x0298(0x0178)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void SetbDefaultUseSpatialAudio(bool bInDefaultUseSpatialAudio);
 
+	bool IsLoadingBank();
 	bool IsPlayingSomething();
 	void PauseWithTransition(int32 InTransitionMS);
-	void PostEvent(const class FString& InEventName);
-	int32 PostEventWithCallback(const class FString& InEventName, const TDelegate<void(class UWwiseComponent* WwiseComponent)>& OnEndPlay, bool bEnablePlayInfo);
+	void PostEvent(const class FString& InEventName, bool bInForceSyncLoadBank);
+	int32 PostEventWithCallback(const class FString& InEventName, const TDelegate<void(class UWwiseComponent* WwiseComponent)>& OnEndPlay, bool bInEnablePlayInfo, bool bInForceSyncLoadBank);
 	void PostTrigger(const class FString& InTriggerName);
 	void RestoreDefaultVolume(const class FString& InRTPCName, float InDurationSec);
 	void ResumeWithTransition(int32 InTransitionMS);
@@ -190,9 +187,9 @@ public:
 	static void PauseOnEvent(const class FString& InEventName, int32 InTransitionDuration);
 	static void PauseOnPlayingID(int32 InPlayingID, int32 InTransitionDuration);
 	static void PauseSequcneWwiseComponents(int32 InTransitionDuration);
-	static class UWwiseComponent* PostEvent2D(class UObject* InWorldContext, const class FString& InEventName);
+	static class UWwiseComponent* PostEvent2D(class UObject* InWorldContext, const class FString& InEventName, bool bInForceSyncLoadBank);
 	static class UWwiseComponent* PostEvent2DInSequence(class UObject* InWorldContext, const class FString& InEventName);
-	static class UWwiseComponent* PostEvent2DWithCallback(class UObject* InWorldContext, const class FString& InEventName, const TDelegate<void(class UWwiseComponent* WwiseComponent)>& OnEndPlay);
+	static class UWwiseComponent* PostEvent2DWithCallback(class UObject* InWorldContext, const class FString& InEventName, const TDelegate<void(class UWwiseComponent* WwiseComponent)>& OnEndPlay, bool bInForceSyncLoadBank);
 	static void PostEvent2DWithoutWorld(const class FString& InEventName);
 	static class UWwiseComponent* PostEventAtLocation(class UObject* InWorldContext, const class FString& InEventName, const struct FVector& InLocation, const struct FRotator& InRotation, int32 SwitchState);
 	static class UWwiseComponent* PostEventAtLocationInSequence(class UObject* InWorldContext, const class FString& InEventName, const struct FVector& InLocation, const struct FRotator& InRotation, int32 SwitchState);

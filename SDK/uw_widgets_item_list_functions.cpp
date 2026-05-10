@@ -17,25 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction uw_widgets_item_list.uw_widgets_item_list_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
-
-void Uuw_widgets_item_list_C::OnConstruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_widgets_item_list_C", "OnConstruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_widgets_item_list.uw_widgets_item_list_C.Destruct
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
@@ -55,26 +36,39 @@ void Uuw_widgets_item_list_C::Destruct()
 }
 
 
-// LuaFunction uw_widgets_item_list.uw_widgets_item_list_C.OnListItemObjectSet
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// class UObject*                          ListItemObject                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// LuaFunction uw_widgets_item_list.uw_widgets_item_list_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
 
-void Uuw_widgets_item_list_C::OnListItemObjectSet(class UObject* ListItemObject)
+void Uuw_widgets_item_list_C::OnConstruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_widgets_item_list_C", "OnListItemObjectSet");
-
-	Params::uw_widgets_item_list_C_OnListItemObjectSet Parms{};
-
-	Parms.ListItemObject = ListItemObject;
+		Func = Class->GetFunction("uw_widgets_item_list_C", "OnConstruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_widgets_item_list.uw_widgets_item_list_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_widgets_item_list_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_widgets_item_list_C", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -118,20 +112,26 @@ void Uuw_widgets_item_list_C::CustListPlayAnim()
 }
 
 
-// LuaFunction uw_widgets_item_list.uw_widgets_item_list_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_widgets_item_list.uw_widgets_item_list_C.OnListItemObjectSet
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// class UObject*                          ListItemObject                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_widgets_item_list_C::Construct()
+void Uuw_widgets_item_list_C::OnListItemObjectSet(class UObject* ListItemObject)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_widgets_item_list_C", "Construct");
+		Func = Class->GetFunction("uw_widgets_item_list_C", "OnListItemObjectSet");
+
+	Params::uw_widgets_item_list_C_OnListItemObjectSet Parms{};
+
+	Parms.ListItemObject = ListItemObject;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

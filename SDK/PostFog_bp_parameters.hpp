@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "PostFog_Str_structs.hpp"
 #include "Engine_structs.hpp"
+#include "PostFog_Str_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 

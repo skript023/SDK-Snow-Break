@@ -14,16 +14,14 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_ammunition6.uw_fight_ammunition6_C.ExecuteUbergraph_uw_fight_ammunition6
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_ammunition6_C_ExecuteUbergraph_uw_fight_ammunition6 final
+// Function uw_fight_ammunition6.uw_fight_ammunition6_C.SetBulletEffect
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_ammunition6_C_SetBulletEffect final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_bShow_1;                              // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_Event_bShow;                                // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bShow;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_uw_fight_ammunition6_C_ExecuteUbergraph_uw_fight_ammunition6;
+DUMPER7_ASSERTS_uw_fight_ammunition6_C_SetBulletEffect;
 
 // Function uw_fight_ammunition6.uw_fight_ammunition6_C.SetBulletTimeEffect
 // 0x0001 (0x0001 - 0x0000)
@@ -34,14 +32,16 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_ammunition6_C_SetBulletTimeEffect;
 
-// Function uw_fight_ammunition6.uw_fight_ammunition6_C.SetBulletEffect
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_ammunition6_C_SetBulletEffect final
+// Function uw_fight_ammunition6.uw_fight_ammunition6_C.ExecuteUbergraph_uw_fight_ammunition6
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_ammunition6_C_ExecuteUbergraph_uw_fight_ammunition6 final
 {
 public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_bShow_1;                              // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_Event_bShow;                                // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_uw_fight_ammunition6_C_SetBulletEffect;
+DUMPER7_ASSERTS_uw_fight_ammunition6_C_ExecuteUbergraph_uw_fight_ammunition6;
 
 }
 

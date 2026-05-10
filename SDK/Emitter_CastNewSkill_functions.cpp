@@ -17,15 +17,15 @@
 namespace SDK
 {
 
-// LuaFunction Emitter_CastNewSkill.Emitter_CastNewSkill_C.OnEmitEnd
-// (Native, Event, Protected, BlueprintEvent)
+// LuaFunction Emitter_CastNewSkill.Emitter_CastNewSkill_C.EmitterDestroyLua
+// (Native, Event, Public, BlueprintEvent)
 
-void UEmitter_CastNewSkill_C::OnEmitEnd()
+void UEmitter_CastNewSkill_C::EmitterDestroyLua()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_CastNewSkill_C", "OnEmitEnd");
+		Func = Class->GetFunction("Emitter_CastNewSkill_C", "EmitterDestroyLua");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -61,15 +61,15 @@ EEmitterResult UEmitter_CastNewSkill_C::OnEmit()
 }
 
 
-// LuaFunction Emitter_CastNewSkill.Emitter_CastNewSkill_C.EmitterDestroyLua
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction Emitter_CastNewSkill.Emitter_CastNewSkill_C.OnEmitEnd
+// (Native, Event, Protected, BlueprintEvent)
 
-void UEmitter_CastNewSkill_C::EmitterDestroyLua()
+void UEmitter_CastNewSkill_C::OnEmitEnd()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_CastNewSkill_C", "EmitterDestroyLua");
+		Func = Class->GetFunction("Emitter_CastNewSkill_C", "OnEmitEnd");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

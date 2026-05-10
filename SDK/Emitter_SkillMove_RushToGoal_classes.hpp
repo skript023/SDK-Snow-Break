@@ -23,9 +23,9 @@ class UEmitter_SkillMove_RushToGoal_C final : public UEmitter_SkillMove_C
 public:
 	void OnEmitterInterrupt();
 	void OnEmitBegin();
-	void OnEmitEnd();
-	void OnEmitTick(float DeltaTime);
 	void EmitterDestroyLua();
+	void OnEmitTick(float DeltaTime);
+	void OnEmitEnd();
 	void GetDefaultParamsValue(TArray<struct FParamInfo>* Values);
 
 public:

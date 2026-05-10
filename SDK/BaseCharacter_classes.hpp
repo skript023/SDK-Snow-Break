@@ -20,23 +20,23 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BaseCharacter.BaseCharacter_C
-// 0x0050 (0x2490 - 0x2440)
+// 0x0050 (0x24D0 - 0x2480)
 #pragma pack(push, 0x1)
 class alignas(0x10) ABaseCharacter_C : public AGamePlayer
 {
 public:
-	uint8                                         Pad_2438[0x8];                                     // 0x2438(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2440(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UAttributeAgentInstance_C*              AttributeAgentInstance;                            // 0x2448(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UAnimSequence*                          RepelAnimRef;                                      // 0x2450(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAnimSequence*                          GetUpAnimRef;                                      // 0x2458(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         GetUpEndTerminationEarly;                          // 0x2460(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bInPerfectDodge;                                   // 0x2464(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2465[0x3];                                     // 0x2465(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UGameAbilityBuffer>         ReviveGodBuffer;                                   // 0x2468(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	TArray<struct FParamInfo>                     ParamInfos;                                        // 0x2470(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	int32                                         MinLOD;                                            // 0x2480(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          NoSpeedWarping;                                    // 0x2484(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2478[0x8];                                     // 0x2478(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2480(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UAttributeAgentInstance_C*              AttributeAgentInstance;                            // 0x2488(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAnimSequence*                          RepelAnimRef;                                      // 0x2490(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimSequence*                          GetUpAnimRef;                                      // 0x2498(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         GetUpEndTerminationEarly;                          // 0x24A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bInPerfectDodge;                                   // 0x24A4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_24A5[0x3];                                     // 0x24A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UGameAbilityBuffer>         ReviveGodBuffer;                                   // 0x24A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	TArray<struct FParamInfo>                     ParamInfos;                                        // 0x24B0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int32                                         MinLOD;                                            // 0x24C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          NoSpeedWarping;                                    // 0x24C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void RemoveEnchantEmitterForFire();

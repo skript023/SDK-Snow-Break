@@ -162,20 +162,6 @@ public:
 };
 DUMPER7_ASSERTS_FTargetFloat;
 
-// ScriptStruct UniversalCameraPlugin.UniversalCameraPositionSaveFormat
-// 0x0040 (0x0040 - 0x0000)
-struct FUniversalCameraPositionSaveFormat final
-{
-public:
-	struct FVector                                DesiredLocation;                                   // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                DesiredSocketOffset;                               // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                DesiredTargetOffset;                               // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               DesiredRotation;                                   // 0x0024(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRotator                               DesiredRotationOffset;                             // 0x0030(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         DesiredZoom;                                       // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUniversalCameraPositionSaveFormat;
-
 // ScriptStruct UniversalCameraPlugin.OffsetSettings
 // 0x0010 (0x0010 - 0x0000)
 struct FOffsetSettings final
@@ -186,14 +172,17 @@ public:
 };
 DUMPER7_ASSERTS_FOffsetSettings;
 
-// ScriptStruct UniversalCameraPlugin.TargetSettings_WithTemplates
-// 0x0028 (0x0028 - 0x0000)
-struct alignas(0x08) FTargetSettings_WithTemplates final
+// ScriptStruct UniversalCameraPlugin.PlaceholderCameraInfos
+// 0x0018 (0x0018 - 0x0000)
+struct FPlaceholderCameraInfos final
 {
 public:
-	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                Location;                                          // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Yaw;                                               // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Pitch;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Zoom;                                              // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FTargetSettings_WithTemplates;
+DUMPER7_ASSERTS_FPlaceholderCameraInfos;
 
 // ScriptStruct UniversalCameraPlugin.TargetVector
 // 0x0020 (0x0020 - 0x0000)
@@ -208,6 +197,20 @@ public:
 };
 DUMPER7_ASSERTS_FTargetVector;
 
+// ScriptStruct UniversalCameraPlugin.UniversalCameraPositionSaveFormat
+// 0x0040 (0x0040 - 0x0000)
+struct FUniversalCameraPositionSaveFormat final
+{
+public:
+	struct FVector                                DesiredLocation;                                   // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                DesiredSocketOffset;                               // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                DesiredTargetOffset;                               // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               DesiredRotation;                                   // 0x0024(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRotator                               DesiredRotationOffset;                             // 0x0030(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         DesiredZoom;                                       // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUniversalCameraPositionSaveFormat;
+
 // ScriptStruct UniversalCameraPlugin.TargetSettings
 // 0x0020 (0x0020 - 0x0000)
 struct FTargetSettings final
@@ -220,17 +223,14 @@ public:
 };
 DUMPER7_ASSERTS_FTargetSettings;
 
-// ScriptStruct UniversalCameraPlugin.PlaceholderCameraInfos
-// 0x0018 (0x0018 - 0x0000)
-struct FPlaceholderCameraInfos final
+// ScriptStruct UniversalCameraPlugin.TargetSettings_WithTemplates
+// 0x0028 (0x0028 - 0x0000)
+struct alignas(0x08) FTargetSettings_WithTemplates final
 {
 public:
-	struct FVector                                Location;                                          // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Yaw;                                               // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Pitch;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Zoom;                                              // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FPlaceholderCameraInfos;
+DUMPER7_ASSERTS_FTargetSettings_WithTemplates;
 
 // ScriptStruct UniversalCameraPlugin.BoolRotation
 // 0x0003 (0x0003 - 0x0000)

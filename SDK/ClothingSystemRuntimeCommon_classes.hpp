@@ -12,32 +12,49 @@
 
 #include "ClothingSystemRuntimeInterface_structs.hpp"
 #include "ClothingSystemRuntimeInterface_classes.hpp"
-#include "ClothingSystemRuntimeCommon_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ClothingSystemRuntimeCommon_structs.hpp"
 
 
 namespace SDK
 {
 
-// Class ClothingSystemRuntimeCommon.ClothingAssetCustomData
-// 0x0000 (0x0028 - 0x0028)
-class UClothingAssetCustomData final : public UObject
+// Class ClothingSystemRuntimeCommon.ClothingAssetCommon
+// 0x01A8 (0x01F0 - 0x0048)
+class UClothingAssetCommon final : public UClothingAssetBase
 {
+public:
+	class UPhysicsAsset*                          PhysicsAsset;                                      // 0x0048(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FName, class UClothConfigBase*>    ClothConfigs;                                      // 0x0050(0x0050)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, EditFixedSize, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class UClothConfigBase*                       ClothSharedSimConfig;                              // 0x00A0(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClothConfigBase*                       ClothSimConfig;                                    // 0x00A8(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClothConfigBase*                       ChaosClothSimConfig;                               // 0x00B0(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UClothLODDataCommon_Legacy*>     ClothLODData;                                      // 0x00B8(0x0010)(ZeroConstructor, Deprecated, NativeAccessSpecifierPublic)
+	TArray<struct FClothLODDataCommon>            LODData;                                           // 0x00C8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 LodMap;                                            // 0x00D8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FName>                           UsedBoneNames;                                     // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 UsedBoneIndices;                                   // 0x00F8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         ReferenceBoneIndex;                                // 0x0108(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UClothingAssetCustomData*               CustomData;                                        // 0x0110(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FClothConfig_Legacy                    ClothConfig;                                       // 0x0118(0x00D4)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1EC[0x4];                                      // 0x01EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ClothingAssetCustomData")
+		STATIC_CLASS_IMPL("ClothingAssetCommon")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ClothingAssetCustomData")
+		STATIC_NAME_IMPL(L"ClothingAssetCommon")
 	}
-	static class UClothingAssetCustomData* GetDefaultObj()
+	static class UClothingAssetCommon* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UClothingAssetCustomData>();
+		return GetDefaultObjImpl<UClothingAssetCommon>();
 	}
 };
-DUMPER7_ASSERTS_UClothingAssetCustomData;
+DUMPER7_ASSERTS_UClothingAssetCommon;
 
 // Class ClothingSystemRuntimeCommon.ClothConfigCommon
 // 0x0000 (0x0028 - 0x0028)
@@ -79,42 +96,25 @@ public:
 };
 DUMPER7_ASSERTS_UClothSharedConfigCommon;
 
-// Class ClothingSystemRuntimeCommon.ClothingAssetCommon
-// 0x01A8 (0x01F0 - 0x0048)
-class UClothingAssetCommon final : public UClothingAssetBase
+// Class ClothingSystemRuntimeCommon.ClothingAssetCustomData
+// 0x0000 (0x0028 - 0x0028)
+class UClothingAssetCustomData final : public UObject
 {
-public:
-	class UPhysicsAsset*                          PhysicsAsset;                                      // 0x0048(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FName, class UClothConfigBase*>    ClothConfigs;                                      // 0x0050(0x0050)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, EditFixedSize, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	class UClothConfigBase*                       ClothSharedSimConfig;                              // 0x00A0(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClothConfigBase*                       ClothSimConfig;                                    // 0x00A8(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClothConfigBase*                       ChaosClothSimConfig;                               // 0x00B0(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UClothLODDataCommon_Legacy*>     ClothLODData;                                      // 0x00B8(0x0010)(ZeroConstructor, Deprecated, NativeAccessSpecifierPublic)
-	TArray<struct FClothLODDataCommon>            LODData;                                           // 0x00C8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 LodMap;                                            // 0x00D8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FName>                           UsedBoneNames;                                     // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 UsedBoneIndices;                                   // 0x00F8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         ReferenceBoneIndex;                                // 0x0108(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UClothingAssetCustomData*               CustomData;                                        // 0x0110(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FClothConfig_Legacy                    ClothConfig;                                       // 0x0118(0x00D4)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1EC[0x4];                                      // 0x01EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ClothingAssetCommon")
+		STATIC_CLASS_IMPL("ClothingAssetCustomData")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ClothingAssetCommon")
+		STATIC_NAME_IMPL(L"ClothingAssetCustomData")
 	}
-	static class UClothingAssetCommon* GetDefaultObj()
+	static class UClothingAssetCustomData* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UClothingAssetCommon>();
+		return GetDefaultObjImpl<UClothingAssetCustomData>();
 	}
 };
-DUMPER7_ASSERTS_UClothingAssetCommon;
+DUMPER7_ASSERTS_UClothingAssetCustomData;
 
 // Class ClothingSystemRuntimeCommon.ClothLODDataCommon_Legacy
 // 0x0160 (0x0188 - 0x0028)

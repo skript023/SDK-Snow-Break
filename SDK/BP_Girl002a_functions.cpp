@@ -17,40 +17,6 @@
 namespace SDK
 {
 
-// Function BP_Girl002a.BP_Girl002a_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Girl002a_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Girl002a_C", "ReceiveTick");
-
-	Params::BP_Girl002a_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Girl002a.BP_Girl002a_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Girl002a_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Girl002a_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_Girl002a.BP_Girl002a_C.OnSwitchLeave
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -88,6 +54,40 @@ void ABP_Girl002a_C::OnSwitchEnter(const struct FTransform& Trans)
 	Parms.Trans = std::move(Trans);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Girl002a.BP_Girl002a_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Girl002a_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Girl002a_C", "ReceiveTick");
+
+	Params::BP_Girl002a_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Girl002a.BP_Girl002a_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Girl002a_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Girl002a_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -21,12 +21,12 @@ namespace SDK
 class UEmitter_SkillMove_SkillNormalMove_C final : public UEmitter_SkillMove_C
 {
 public:
+	void GetDefaultParamsValue(TArray<struct FParamInfo>* Values);
 	void OnEmitterInterrupt();
 	void OnEmitBegin();
-	void OnEmitEnd();
-	void OnEmitTick(float DeltaTime);
 	void EmitterDestroyLua();
-	void GetDefaultParamsValue(TArray<struct FParamInfo>* Values);
+	void OnEmitTick(float DeltaTime);
+	void OnEmitEnd();
 
 public:
 	static class UClass* StaticClass()

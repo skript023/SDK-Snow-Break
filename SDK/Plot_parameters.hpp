@@ -12,8 +12,8 @@
 
 #include "Plot_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "UMG_structs.hpp"
 
 
 namespace SDK::Params
@@ -1708,6 +1708,16 @@ public:
 	class FText                                   InText;                                            // 0x0008(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_PlotFightStyle_OnTextInfoChange;
+
+// Function Plot.PlotWidgetFightSpine.DoTalk
+// 0x0010 (0x0010 - 0x0000)
+struct PlotWidgetFightSpine_DoTalk final
+{
+public:
+	class UPlotWidget*                            InParent;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPlotItem_Talk*                         InData;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PlotWidgetFightSpine_DoTalk;
 
 // Function Plot.PlotItem_InteractionGame.GetHasPlayRecord
 // 0x0010 (0x0010 - 0x0000)

@@ -59,15 +59,6 @@ enum class ESMConditionalEvaluationType : uint8
 	SM_MAX                                   = 4,
 };
 
-// ScriptStruct SMSystem.SMConnectionValidator
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct alignas(0x01) FSMConnectionValidator
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FSMConnectionValidator;
-
 // ScriptStruct SMSystem.SMInfo_Base
 // 0x0060 (0x0060 - 0x0000)
 struct FSMInfo_Base
@@ -82,40 +73,6 @@ public:
 	class USMNodeInstance*                        NodeInstance;                                      // 0x0058(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSMInfo_Base;
-
-// ScriptStruct SMSystem.SMNodeDescription
-// 0x0038 (0x0038 - 0x0000)
-struct FSMNodeDescription final
-{
-public:
-	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   Category;                                          // 0x0008(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	class FText                                   Description;                                       // 0x0020(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSMNodeDescription;
-
-// ScriptStruct SMSystem.SMTransitionInfo
-// 0x0030 (0x0090 - 0x0060)
-struct FSMTransitionInfo final : public FSMInfo_Base
-{
-public:
-	struct FGuid                                  FromStateGuid;                                     // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  ToStateGuid;                                       // 0x0070(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Priority;                                          // 0x0080(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_84[0xC];                                       // 0x0084(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSMTransitionInfo;
-
-// ScriptStruct SMSystem.SMStateInfo
-// 0x0020 (0x0080 - 0x0060)
-struct FSMStateInfo final : public FSMInfo_Base
-{
-public:
-	TArray<struct FSMTransitionInfo>              OutgoingTransitions;                               // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bIsEndState;                                       // 0x0070(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSMStateInfo;
 
 // ScriptStruct SMSystem.SMExposedFunctionHandler
 // 0x0020 (0x0020 - 0x0000)
@@ -191,6 +148,18 @@ public:
 };
 DUMPER7_ASSERTS_FSMState_Base;
 
+// ScriptStruct SMSystem.SMTransitionInfo
+// 0x0030 (0x0090 - 0x0060)
+struct FSMTransitionInfo final : public FSMInfo_Base
+{
+public:
+	struct FGuid                                  FromStateGuid;                                     // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  ToStateGuid;                                       // 0x0070(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Priority;                                          // 0x0080(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_84[0xC];                                       // 0x0084(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSMTransitionInfo;
+
 // ScriptStruct SMSystem.SMConduit
 // 0x0030 (0x01B8 - 0x0188)
 struct FSMConduit final : public FSMState_Base
@@ -204,6 +173,17 @@ public:
 	uint8                                         Pad_1B0[0x8];                                      // 0x01B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSMConduit;
+
+// ScriptStruct SMSystem.SMStateInfo
+// 0x0020 (0x0080 - 0x0060)
+struct FSMStateInfo final : public FSMInfo_Base
+{
+public:
+	TArray<struct FSMTransitionInfo>              OutgoingTransitions;                               // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bIsEndState;                                       // 0x0070(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSMStateInfo;
 
 // ScriptStruct SMSystem.SMGraphProperty_Base
 // 0x00C0 (0x0110 - 0x0050)
@@ -258,6 +238,26 @@ public:
 	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSMNetworkedTransaction;
+
+// ScriptStruct SMSystem.SMNodeDescription
+// 0x0038 (0x0038 - 0x0000)
+struct FSMNodeDescription final
+{
+public:
+	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   Category;                                          // 0x0008(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class FText                                   Description;                                       // 0x0020(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSMNodeDescription;
+
+// ScriptStruct SMSystem.SMConnectionValidator
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct alignas(0x01) FSMConnectionValidator
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FSMConnectionValidator;
 
 // ScriptStruct SMSystem.SMNodeClassRule
 // 0x0010 (0x0010 - 0x0000)
@@ -342,10 +342,12 @@ struct alignas(0x01) FSMNodeWidgetInfo
 DUMPER7_ASSERTS_FSMNodeWidgetInfo;
 
 // ScriptStruct SMSystem.SMTextDisplayWidgetInfo
-// 0x0000 (0x0000 - 0x0000)
+// 0x0001 (0x0001 - 0x0000)
 #pragma pack(push, 0x1)
 struct alignas(0x01) FSMTextDisplayWidgetInfo : public FSMNodeWidgetInfo
 {
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 #pragma pack(pop)
 DUMPER7_ASSERTS_FSMTextDisplayWidgetInfo;

@@ -30,8 +30,8 @@ public:
 	void Destruct__Overridden();
 	void ExecuteUbergraph_uw_fight_level_star(int32 EntryPoint);
 	void Construct();
-	void Destruct();
 	void OnConstruct();
+	void Destruct();
 
 	class FString GetModuleName() const;
 

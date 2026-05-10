@@ -17,279 +17,83 @@
 namespace SDK
 {
 
-// Function HeadMountedDisplay.MotionControllerComponent.GetHandJointPosition
-// (Final, Native, Protected, HasOutParams, HasDefaults, BlueprintCallable)
+// Function HeadMountedDisplay.AsyncTask_LoadXRDeviceVisComponent.AddDeviceVisualizationComponentAsync
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// int32                                   jointIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool*                                   bValueFound                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Target                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FXRDeviceId&               XRDeviceId                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    bManualAttachment                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                RelativeTransform                                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent**             NewComponent                                           (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAsyncTask_LoadXRDeviceVisComponent*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UMotionControllerComponent::GetHandJointPosition(int32 jointIndex, bool* bValueFound)
+class UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::AddDeviceVisualizationComponentAsync(class AActor* Target, const struct FXRDeviceId& XRDeviceId, bool bManualAttachment, const struct FTransform& RelativeTransform, class UPrimitiveComponent** NewComponent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MotionControllerComponent", "GetHandJointPosition");
+		Func = StaticClass()->GetFunction("AsyncTask_LoadXRDeviceVisComponent", "AddDeviceVisualizationComponentAsync");
 
-	Params::MotionControllerComponent_GetHandJointPosition Parms{};
+	Params::AsyncTask_LoadXRDeviceVisComponent_AddDeviceVisualizationComponentAsync Parms{};
 
-	Parms.jointIndex = jointIndex;
+	Parms.Target = Target;
+	Parms.XRDeviceId = std::move(XRDeviceId);
+	Parms.bManualAttachment = bManualAttachment;
+	Parms.RelativeTransform = std::move(RelativeTransform);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
-	if (bValueFound != nullptr)
-		*bValueFound = Parms.bValueFound;
+	if (NewComponent != nullptr)
+		*NewComponent = Parms.NewComponent;
 
 	return Parms.ReturnValue;
 }
 
 
-// Function HeadMountedDisplay.MotionControllerComponent.GetParameterValue
-// (Final, Native, Protected, HasOutParams, BlueprintCallable)
+// Function HeadMountedDisplay.AsyncTask_LoadXRDeviceVisComponent.AddNamedDeviceVisualizationComponentAsync
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool*                                   bValueFound                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Target                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       SystemName                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       DeviceName                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bManualAttachment                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                RelativeTransform                                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FXRDeviceId*                     XRDeviceId                                             (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent**             NewComponent                                           (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAsyncTask_LoadXRDeviceVisComponent*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMotionControllerComponent::GetParameterValue(class FName InName, bool* bValueFound)
+class UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::AddNamedDeviceVisualizationComponentAsync(class AActor* Target, const class FName SystemName, const class FName DeviceName, bool bManualAttachment, const struct FTransform& RelativeTransform, struct FXRDeviceId* XRDeviceId, class UPrimitiveComponent** NewComponent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MotionControllerComponent", "GetParameterValue");
+		Func = StaticClass()->GetFunction("AsyncTask_LoadXRDeviceVisComponent", "AddNamedDeviceVisualizationComponentAsync");
 
-	Params::MotionControllerComponent_GetParameterValue Parms{};
+	Params::AsyncTask_LoadXRDeviceVisComponent_AddNamedDeviceVisualizationComponentAsync Parms{};
 
-	Parms.InName = InName;
+	Parms.Target = Target;
+	Parms.SystemName = SystemName;
+	Parms.DeviceName = DeviceName;
+	Parms.bManualAttachment = bManualAttachment;
+	Parms.RelativeTransform = std::move(RelativeTransform);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
-	if (bValueFound != nullptr)
-		*bValueFound = Parms.bValueFound;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function HeadMountedDisplay.MotionControllerComponent.OnMotionControllerUpdated
-// (Event, Protected, BlueprintEvent)
-
-void UMotionControllerComponent::OnMotionControllerUpdated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MotionControllerComponent", "OnMotionControllerUpdated");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function HeadMountedDisplay.MotionControllerComponent.SetAssociatedPlayerIndex
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const int32                             NewPlayer                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMotionControllerComponent::SetAssociatedPlayerIndex(const int32 NewPlayer)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MotionControllerComponent", "SetAssociatedPlayerIndex");
-
-	Params::MotionControllerComponent_SetAssociatedPlayerIndex Parms{};
-
-	Parms.NewPlayer = NewPlayer;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function HeadMountedDisplay.MotionControllerComponent.SetCustomDisplayMesh
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UStaticMesh*                      NewDisplayMesh                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMotionControllerComponent::SetCustomDisplayMesh(class UStaticMesh* NewDisplayMesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MotionControllerComponent", "SetCustomDisplayMesh");
-
-	Params::MotionControllerComponent_SetCustomDisplayMesh Parms{};
-
-	Parms.NewDisplayMesh = NewDisplayMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function HeadMountedDisplay.MotionControllerComponent.SetDisplayModelSource
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FName                       NewDisplayModelSource                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMotionControllerComponent::SetDisplayModelSource(const class FName NewDisplayModelSource)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MotionControllerComponent", "SetDisplayModelSource");
-
-	Params::MotionControllerComponent_SetDisplayModelSource Parms{};
-
-	Parms.NewDisplayModelSource = NewDisplayModelSource;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function HeadMountedDisplay.MotionControllerComponent.SetShowDeviceModel
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const bool                              bShowControllerModel                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMotionControllerComponent::SetShowDeviceModel(const bool bShowControllerModel)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MotionControllerComponent", "SetShowDeviceModel");
-
-	Params::MotionControllerComponent_SetShowDeviceModel Parms{};
-
-	Parms.bShowControllerModel = bShowControllerModel;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function HeadMountedDisplay.MotionControllerComponent.SetTrackingMotionSource
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FName                       NewSource                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMotionControllerComponent::SetTrackingMotionSource(const class FName NewSource)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MotionControllerComponent", "SetTrackingMotionSource");
-
-	Params::MotionControllerComponent_SetTrackingMotionSource Parms{};
-
-	Parms.NewSource = NewSource;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function HeadMountedDisplay.MotionControllerComponent.SetTrackingSource
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const EControllerHand                   NewSource                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMotionControllerComponent::SetTrackingSource(const EControllerHand NewSource)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MotionControllerComponent", "SetTrackingSource");
-
-	Params::MotionControllerComponent_SetTrackingSource Parms{};
-
-	Parms.NewSource = NewSource;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function HeadMountedDisplay.MotionControllerComponent.GetTrackingSource
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EControllerHand                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EControllerHand UMotionControllerComponent::GetTrackingSource() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MotionControllerComponent", "GetTrackingSource");
-
-	Params::MotionControllerComponent_GetTrackingSource Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function HeadMountedDisplay.MotionControllerComponent.IsTracked
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UMotionControllerComponent::IsTracked() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MotionControllerComponent", "IsTracked");
-
-	Params::MotionControllerComponent_IsTracked Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
+	if (XRDeviceId != nullptr)
+		*XRDeviceId = std::move(Parms.XRDeviceId);
+
+	if (NewComponent != nullptr)
+		*NewComponent = Parms.NewComponent;
 
 	return Parms.ReturnValue;
 }
@@ -1565,6 +1369,284 @@ void UHeadMountedDisplayFunctionLibrary::UpdateExternalTrackingHMDPosition(const
 }
 
 
+// Function HeadMountedDisplay.MotionControllerComponent.GetHandJointPosition
+// (Final, Native, Protected, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// int32                                   jointIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bValueFound                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector UMotionControllerComponent::GetHandJointPosition(int32 jointIndex, bool* bValueFound)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MotionControllerComponent", "GetHandJointPosition");
+
+	Params::MotionControllerComponent_GetHandJointPosition Parms{};
+
+	Parms.jointIndex = jointIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (bValueFound != nullptr)
+		*bValueFound = Parms.bValueFound;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function HeadMountedDisplay.MotionControllerComponent.GetParameterValue
+// (Final, Native, Protected, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bValueFound                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UMotionControllerComponent::GetParameterValue(class FName InName, bool* bValueFound)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MotionControllerComponent", "GetParameterValue");
+
+	Params::MotionControllerComponent_GetParameterValue Parms{};
+
+	Parms.InName = InName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (bValueFound != nullptr)
+		*bValueFound = Parms.bValueFound;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function HeadMountedDisplay.MotionControllerComponent.OnMotionControllerUpdated
+// (Event, Protected, BlueprintEvent)
+
+void UMotionControllerComponent::OnMotionControllerUpdated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MotionControllerComponent", "OnMotionControllerUpdated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function HeadMountedDisplay.MotionControllerComponent.SetAssociatedPlayerIndex
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const int32                             NewPlayer                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMotionControllerComponent::SetAssociatedPlayerIndex(const int32 NewPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MotionControllerComponent", "SetAssociatedPlayerIndex");
+
+	Params::MotionControllerComponent_SetAssociatedPlayerIndex Parms{};
+
+	Parms.NewPlayer = NewPlayer;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function HeadMountedDisplay.MotionControllerComponent.SetCustomDisplayMesh
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UStaticMesh*                      NewDisplayMesh                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMotionControllerComponent::SetCustomDisplayMesh(class UStaticMesh* NewDisplayMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MotionControllerComponent", "SetCustomDisplayMesh");
+
+	Params::MotionControllerComponent_SetCustomDisplayMesh Parms{};
+
+	Parms.NewDisplayMesh = NewDisplayMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function HeadMountedDisplay.MotionControllerComponent.SetDisplayModelSource
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FName                       NewDisplayModelSource                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMotionControllerComponent::SetDisplayModelSource(const class FName NewDisplayModelSource)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MotionControllerComponent", "SetDisplayModelSource");
+
+	Params::MotionControllerComponent_SetDisplayModelSource Parms{};
+
+	Parms.NewDisplayModelSource = NewDisplayModelSource;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function HeadMountedDisplay.MotionControllerComponent.SetShowDeviceModel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const bool                              bShowControllerModel                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMotionControllerComponent::SetShowDeviceModel(const bool bShowControllerModel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MotionControllerComponent", "SetShowDeviceModel");
+
+	Params::MotionControllerComponent_SetShowDeviceModel Parms{};
+
+	Parms.bShowControllerModel = bShowControllerModel;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function HeadMountedDisplay.MotionControllerComponent.SetTrackingMotionSource
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FName                       NewSource                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMotionControllerComponent::SetTrackingMotionSource(const class FName NewSource)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MotionControllerComponent", "SetTrackingMotionSource");
+
+	Params::MotionControllerComponent_SetTrackingMotionSource Parms{};
+
+	Parms.NewSource = NewSource;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function HeadMountedDisplay.MotionControllerComponent.SetTrackingSource
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const EControllerHand                   NewSource                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMotionControllerComponent::SetTrackingSource(const EControllerHand NewSource)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MotionControllerComponent", "SetTrackingSource");
+
+	Params::MotionControllerComponent_SetTrackingSource Parms{};
+
+	Parms.NewSource = NewSource;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function HeadMountedDisplay.MotionControllerComponent.GetTrackingSource
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EControllerHand                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EControllerHand UMotionControllerComponent::GetTrackingSource() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MotionControllerComponent", "GetTrackingSource");
+
+	Params::MotionControllerComponent_GetTrackingSource Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function HeadMountedDisplay.MotionControllerComponent.IsTracked
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMotionControllerComponent::IsTracked() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MotionControllerComponent", "IsTracked");
+
+	Params::MotionControllerComponent_IsTracked Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.DisableMotionTrackingForComponent
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -2113,88 +2195,6 @@ class UPrimitiveComponent* UXRAssetFunctionLibrary::AddNamedDeviceVisualizationC
 
 	if (XRDeviceId != nullptr)
 		*XRDeviceId = std::move(Parms.XRDeviceId);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function HeadMountedDisplay.AsyncTask_LoadXRDeviceVisComponent.AddDeviceVisualizationComponentAsync
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// class AActor*                           Target                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FXRDeviceId&               XRDeviceId                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bManualAttachment                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FTransform&                RelativeTransform                                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent**             NewComponent                                           (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAsyncTask_LoadXRDeviceVisComponent*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::AddDeviceVisualizationComponentAsync(class AActor* Target, const struct FXRDeviceId& XRDeviceId, bool bManualAttachment, const struct FTransform& RelativeTransform, class UPrimitiveComponent** NewComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AsyncTask_LoadXRDeviceVisComponent", "AddDeviceVisualizationComponentAsync");
-
-	Params::AsyncTask_LoadXRDeviceVisComponent_AddDeviceVisualizationComponentAsync Parms{};
-
-	Parms.Target = Target;
-	Parms.XRDeviceId = std::move(XRDeviceId);
-	Parms.bManualAttachment = bManualAttachment;
-	Parms.RelativeTransform = std::move(RelativeTransform);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (NewComponent != nullptr)
-		*NewComponent = Parms.NewComponent;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function HeadMountedDisplay.AsyncTask_LoadXRDeviceVisComponent.AddNamedDeviceVisualizationComponentAsync
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// class AActor*                           Target                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName                       SystemName                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName                       DeviceName                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bManualAttachment                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FTransform&                RelativeTransform                                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// struct FXRDeviceId*                     XRDeviceId                                             (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent**             NewComponent                                           (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAsyncTask_LoadXRDeviceVisComponent*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::AddNamedDeviceVisualizationComponentAsync(class AActor* Target, const class FName SystemName, const class FName DeviceName, bool bManualAttachment, const struct FTransform& RelativeTransform, struct FXRDeviceId* XRDeviceId, class UPrimitiveComponent** NewComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AsyncTask_LoadXRDeviceVisComponent", "AddNamedDeviceVisualizationComponentAsync");
-
-	Params::AsyncTask_LoadXRDeviceVisComponent_AddNamedDeviceVisualizationComponentAsync Parms{};
-
-	Parms.Target = Target;
-	Parms.SystemName = SystemName;
-	Parms.DeviceName = DeviceName;
-	Parms.bManualAttachment = bManualAttachment;
-	Parms.RelativeTransform = std::move(RelativeTransform);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (XRDeviceId != nullptr)
-		*XRDeviceId = std::move(Parms.XRDeviceId);
-
-	if (NewComponent != nullptr)
-		*NewComponent = Parms.NewComponent;
 
 	return Parms.ReturnValue;
 }

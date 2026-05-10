@@ -130,14 +130,14 @@ public:
 	void IsContain(class UWidget* InWidget, bool* bContain);
 	void HideHP(bool bHide_0);
 	class FText Get_TxtOnlineNum_Text_0();
-	bool GetFightPartShow(EFightWidgetPart InPart);
+	bool CheckFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason);
 	void HideSkillSelector(int32 SkillIndex);
+	void ShowOrHideCross(bool bShow);
 	void ShowSkillSelector(int32 SkillIndex);
 	void UpdateControl();
-	bool CheckFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason);
-	void SetFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason, bool bShow, bool bForce);
-	void ShowOrHideCross(bool bShow);
 	void UpdateInteractionProgress(float InValue);
+	bool GetFightPartShow(EFightWidgetPart InPart);
+	void SetFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason, bool bShow, bool bForce);
 	void Destruct();
 
 	class FString GetModuleName() const;

@@ -17,69 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction Emitter_Trap.Emitter_Trap_C.OnEmitEnd
-// (Native, Event, Protected, BlueprintEvent)
-
-void UEmitter_Trap_C::OnEmitEnd()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_Trap_C", "OnEmitEnd");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction Emitter_Trap.Emitter_Trap_C.OnEmit
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// EEmitterResult                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EEmitterResult UEmitter_Trap_C::OnEmit()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_Trap_C", "OnEmit");
-
-	Params::Emitter_Trap_C_OnEmit Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// LuaFunction Emitter_Trap.Emitter_Trap_C.EmitterDestroyLua
-// (Native, Event, Public, BlueprintEvent)
-
-void UEmitter_Trap_C::EmitterDestroyLua()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_Trap_C", "EmitterDestroyLua");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Emitter_Trap.Emitter_Trap_C.OnGetAssetPath
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -154,6 +91,69 @@ void UEmitter_Trap_C::ExecuteUbergraph_Emitter_Trap(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// LuaFunction Emitter_Trap.Emitter_Trap_C.EmitterDestroyLua
+// (Native, Event, Public, BlueprintEvent)
+
+void UEmitter_Trap_C::EmitterDestroyLua()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Emitter_Trap_C", "EmitterDestroyLua");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction Emitter_Trap.Emitter_Trap_C.OnEmit
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// EEmitterResult                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EEmitterResult UEmitter_Trap_C::OnEmit()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Emitter_Trap_C", "OnEmit");
+
+	Params::Emitter_Trap_C_OnEmit Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// LuaFunction Emitter_Trap.Emitter_Trap_C.OnEmitEnd
+// (Native, Event, Protected, BlueprintEvent)
+
+void UEmitter_Trap_C::OnEmitEnd()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Emitter_Trap_C", "OnEmitEnd");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

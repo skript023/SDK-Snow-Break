@@ -80,6 +80,20 @@ void UABP_OnlineSea_EnemyShipBase_C::PlayDeadAnimationEvent()
 }
 
 
+// Function ABP_OnlineSea_EnemyShipBase.ABP_OnlineSea_EnemyShipBase_C.PlayBornAnimationEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_OnlineSea_EnemyShipBase_C::PlayBornAnimationEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_OnlineSea_EnemyShipBase_C", "PlayBornAnimationEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ABP_OnlineSea_EnemyShipBase.ABP_OnlineSea_EnemyShipBase_C.ExecuteUbergraph_ABP_OnlineSea_EnemyShipBase
 // (Final, UbergraphFunction)
 // Parameters:
