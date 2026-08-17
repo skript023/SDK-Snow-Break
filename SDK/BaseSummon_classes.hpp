@@ -18,7 +18,8 @@ namespace SDK
 
 // BlueprintGeneratedClass BaseSummon.BaseSummon_C
 // 0x0010 (0x1500 - 0x14F0)
-class ABaseSummon_C final : public AGameSummon
+#pragma pack(push, 0x1)
+class alignas(0x10) ABaseSummon_C : public AGameSummon
 {
 public:
 	class UAnimMontage*                           Celebrate_Montage;                                 // 0x14F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -43,6 +44,7 @@ public:
 		return GetDefaultObjImpl<ABaseSummon_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_ABaseSummon_C;
 
 }

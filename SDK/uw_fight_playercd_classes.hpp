@@ -31,11 +31,11 @@ public:
 	class URedirectImage*                         Direction_cd_8;                                    // 0x02B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void Stop();
-	void Play(bool bLoop);
-	void CustomEvent_0();
 	void ExecuteUbergraph_uw_fight_playercd(int32 EntryPoint);
+	void CustomEvent_0();
+	void Play(bool bLoop);
+	void Stop();
+	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 
 public:
 	static class UClass* StaticClass()

@@ -14,24 +14,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_player_pc.uw_fight_player_pc_C.PlayPowerAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_player_pc_C_PlayPowerAnim final
-{
-public:
-	bool                                          bFull;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_player_pc_C_PlayPowerAnim;
-
-// Function uw_fight_player_pc.uw_fight_player_pc_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_player_pc_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_player_pc_C_K2_OnCustomUmgAnimFinished;
-
 // Function uw_fight_player_pc.uw_fight_player_pc_C.ExecuteUbergraph_uw_fight_player_pc
 // 0x0010 (0x0010 - 0x0000)
 struct uw_fight_player_pc_C_ExecuteUbergraph_uw_fight_player_pc final
@@ -43,6 +25,24 @@ public:
 	bool                                          K2Node_Event_bFull;                                // 0x000D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_player_pc_C_ExecuteUbergraph_uw_fight_player_pc;
+
+// Function uw_fight_player_pc.uw_fight_player_pc_C.K2_OnCustomUmgAnimFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_player_pc_C_K2_OnCustomUmgAnimFinished final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_player_pc_C_K2_OnCustomUmgAnimFinished;
+
+// Function uw_fight_player_pc.uw_fight_player_pc_C.PlayPowerAnim
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_player_pc_C_PlayPowerAnim final
+{
+public:
+	bool                                          bFull;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_player_pc_C_PlayPowerAnim;
 
 }
 

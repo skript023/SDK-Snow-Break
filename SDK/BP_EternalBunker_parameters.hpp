@@ -14,6 +14,16 @@
 namespace SDK::Params
 {
 
+// Function BP_EternalBunker.BP_EternalBunker_C.UserConstructionScript
+// 0x0018 (0x0018 - 0x0000)
+struct BP_EternalBunker_C_UserConstructionScript final
+{
+public:
+	class FString                                 CallFunc_GetObjectName_ReturnValue;                // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Contains_ReturnValue;                     // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_EternalBunker_C_UserConstructionScript;
+
 // Function BP_EternalBunker.BP_EternalBunker_C.SetupInShadow
 // 0x0060 (0x0060 - 0x0000)
 struct BP_EternalBunker_C_SetupInShadow final
@@ -37,16 +47,6 @@ public:
 	bool                                          CallFunc_EqualEqual_ClassClass_ReturnValue;        // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_EternalBunker_C_SetupInShadow;
-
-// Function BP_EternalBunker.BP_EternalBunker_C.UserConstructionScript
-// 0x0018 (0x0018 - 0x0000)
-struct BP_EternalBunker_C_UserConstructionScript final
-{
-public:
-	class FString                                 CallFunc_GetObjectName_ReturnValue;                // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Contains_ReturnValue;                     // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_EternalBunker_C_UserConstructionScript;
 
 // Function BP_EternalBunker.BP_EternalBunker_C.ExecuteUbergraph_BP_EternalBunker
 // 0x0008 (0x0008 - 0x0000)

@@ -46,9 +46,9 @@ public:
 	bool                                          bPlayCross;                                        // 0x03F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void OnFireStrengthening(bool bStart, bool bSmall);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void ExecuteUbergraph_uw_fight_crossstrong(int32 EntryPoint);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void OnFireStrengthening(bool bStart, bool bSmall);
 
 public:
 	static class UClass* StaticClass()

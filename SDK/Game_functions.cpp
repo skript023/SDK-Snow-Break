@@ -139909,15 +139909,15 @@ void UCustLightListView::AddChildToPanel(class UUserWidget* InWidget, const stru
 }
 
 
-// Function Game.CustLightListView.BP_OnReleaseSlateResources__Overridden
+// Function Game.CustLightListView.BP_OnReleaseSlateResources
 // (Event, Public, BlueprintEvent)
 
-void UCustLightListView::BP_OnReleaseSlateResources__Overridden()
+void UCustLightListView::BP_OnReleaseSlateResources()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CustLightListView", "BP_OnReleaseSlateResources__Overridden");
+		Func = Class->GetFunction("CustLightListView", "BP_OnReleaseSlateResources");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -140064,33 +140064,33 @@ struct FVector2D UCustLightListView::GetWidgetPosition(class UUserWidget* InWidg
 }
 
 
-// Function Game.CustLightListView.OnScrollViewReady__Overridden
+// Function Game.CustLightListView.OnScrollViewReady
 // (Event, Public, BlueprintEvent)
 
-void UCustLightListView::OnScrollViewReady__Overridden()
+void UCustLightListView::OnScrollViewReady()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CustLightListView", "OnScrollViewReady__Overridden");
+		Func = Class->GetFunction("CustLightListView", "OnScrollViewReady");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function Game.CustLightListView.OnUserScrolled__Overridden
+// Function Game.CustLightListView.OnUserScrolled
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // float                                   Offset                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCustLightListView::OnUserScrolled__Overridden(float Offset)
+void UCustLightListView::OnUserScrolled(float Offset)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CustLightListView", "OnUserScrolled__Overridden");
+		Func = Class->GetFunction("CustLightListView", "OnUserScrolled");
 
-	Params::CustLightListView_OnUserScrolled__Overridden Parms{};
+	Params::CustLightListView_OnUserScrolled Parms{};
 
 	Parms.Offset = Offset;
 
@@ -140098,15 +140098,15 @@ void UCustLightListView::OnUserScrolled__Overridden(float Offset)
 }
 
 
-// Function Game.CustLightListView.OnViewSizeChange__Overridden
+// Function Game.CustLightListView.OnViewSizeChange
 // (Event, Public, BlueprintEvent)
 
-void UCustLightListView::OnViewSizeChange__Overridden()
+void UCustLightListView::OnViewSizeChange()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CustLightListView", "OnViewSizeChange__Overridden");
+		Func = Class->GetFunction("CustLightListView", "OnViewSizeChange");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -140184,88 +140184,6 @@ void UCustLightListView::SetWidgetPosition(class UUserWidget* InWidget, const st
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction Game.CustLightListView.OnUserScrolled
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   Offset                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCustLightListView::OnUserScrolled(float Offset)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CustLightListView", "OnUserScrolled");
-
-	Params::CustLightListView_OnUserScrolled Parms{};
-
-	Parms.Offset = Offset;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction Game.CustLightListView.OnScrollViewReady
-// (Native, Event, Public, BlueprintEvent)
-
-void UCustLightListView::OnScrollViewReady()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CustLightListView", "OnScrollViewReady");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction Game.CustLightListView.OnViewSizeChange
-// (Native, Event, Public, BlueprintEvent)
-
-void UCustLightListView::OnViewSizeChange()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CustLightListView", "OnViewSizeChange");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction Game.CustLightListView.BP_OnReleaseSlateResources
-// (Native, Event, Public, BlueprintEvent)
-
-void UCustLightListView::BP_OnReleaseSlateResources()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CustLightListView", "BP_OnReleaseSlateResources");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

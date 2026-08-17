@@ -18,19 +18,6 @@
 namespace SDK::Params
 {
 
-// Function AIEvent_MoveTo.AIEvent_MoveTo_C.CanInterruptFight
-// 0x000C (0x000C - 0x0000)
-struct AIEvent_MoveTo_C_CanInterruptFight final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Conv_StringToInt_ReturnValue;             // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_StrStr_ReturnValue;              // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Conv_IntToBool_ReturnValue;               // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_AIEvent_MoveTo_C_CanInterruptFight;
-
 // Function AIEvent_MoveTo.AIEvent_MoveTo_C.OnMoveFinished_27A515F04C10695563425C91883D3501
 // 0x0010 (0x0010 - 0x0000)
 struct AIEvent_MoveTo_C_OnMoveFinished_27A515F04C10695563425C91883D3501 final
@@ -50,15 +37,6 @@ public:
 	class AGameCharacter*                         Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIEvent_MoveTo_C_OnExecute;
-
-// Function AIEvent_MoveTo.AIEvent_MoveTo_C.OnTick
-// 0x0004 (0x0004 - 0x0000)
-struct AIEvent_MoveTo_C_OnTick final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIEvent_MoveTo_C_OnTick;
 
 // Function AIEvent_MoveTo.AIEvent_MoveTo_C.ExecuteUbergraph_AIEvent_MoveTo
 // 0x0240 (0x0240 - 0x0000)
@@ -146,6 +124,28 @@ public:
 	class AActor*                                 CallFunc_GetActorByString_ReturnValue_1;           // 0x0238(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIEvent_MoveTo_C_ExecuteUbergraph_AIEvent_MoveTo;
+
+// Function AIEvent_MoveTo.AIEvent_MoveTo_C.CanInterruptFight
+// 0x000C (0x000C - 0x0000)
+struct AIEvent_MoveTo_C_CanInterruptFight final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Conv_StringToInt_ReturnValue;             // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_StrStr_ReturnValue;              // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Conv_IntToBool_ReturnValue;               // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_AIEvent_MoveTo_C_CanInterruptFight;
+
+// Function AIEvent_MoveTo.AIEvent_MoveTo_C.OnTick
+// 0x0004 (0x0004 - 0x0000)
+struct AIEvent_MoveTo_C_OnTick final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIEvent_MoveTo_C_OnTick;
 
 }
 

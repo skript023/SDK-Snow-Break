@@ -42,7 +42,7 @@ public:
 	class UWidgetAnimation*                       ReduceCD;                                          // 0x0638(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Revive;                                            // 0x0640(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       oncdreset;                                         // 0x0648(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UWidgetAnimation*                       oncd;                                              // 0x0650(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UWidgetAnimation*                       Oncd;                                              // 0x0650(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Select;                                            // 0x0658(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Die;                                               // 0x0660(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class URedirectImage*                         Add;                                               // 0x0668(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -59,7 +59,7 @@ public:
 	class UGameCanvasPanel*                       EmptyPanel_1;                                      // 0x06C0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         Glow;                                              // 0x06C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         Glow_1;                                            // 0x06D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class URedirectImage*                         HpBG;                                              // 0x06D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class URedirectImage*                         HpBg;                                              // 0x06D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         HpImg;                                             // 0x06E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         Image;                                             // 0x06E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         Image_1;                                           // 0x06F0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -159,34 +159,34 @@ public:
 	bool                                          bPlayPresentAnim;                                  // 0x09D2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void IsInFight(bool* InFight);
-	void Play_Activation(bool bForward);
-	void PlayEffect(const EPlayerItemEffectType InEffectType, bool bQTEEndSwitchBack);
-	void BndEvt__Btn_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
-	void StopEffect(const EPlayerItemEffectType InEffectType);
-	void K2_PlaySwitchCDAnim(bool bPlay);
-	void BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature();
-	void BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_2_OnButtonReleasedEvent__DelegateSignature();
-	void OnNotNormalSwitch(bool bNotNormalSwitch);
-	void OnReduceCD();
-	void OnBackSkillPress(bool bPress);
-	void BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature();
-	void BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_5_OnButtonReleasedEvent__DelegateSignature();
-	void PlayPresentAnim(bool bPresent);
-	void K2_NormalEnergyChange(bool bFull);
-	void K2_PlaySustainAnim(bool bPlayAnim);
-	void OnSkillStrengthening(bool bStart);
-	void OnUIEffectSkillLongPress(bool bStart);
 	void ExecuteUbergraph_uw_fight_player_item_pc(int32 EntryPoint);
-	void OnAnimationFinished(const class UWidgetAnimation* Animation);
-	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
-	void Construct();
-	void NotifyClick(EPlayerBtnType BtnType);
-	void NotifyRefreshCharacter();
-	void NotifyReviveCdOK();
+	void OnUIEffectSkillLongPress(bool bStart);
+	void OnSkillStrengthening(bool bStart);
+	void K2_PlaySustainAnim(bool bPlayAnim);
+	void K2_NormalEnergyChange(bool bFull);
+	void PlayPresentAnim(bool bPresent);
+	void BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_5_OnButtonReleasedEvent__DelegateSignature();
+	void BndEvt__uw_fight_player_item_BtnSkill_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature();
+	void OnBackSkillPress(bool bPress);
+	void OnReduceCD();
+	void OnNotNormalSwitch(bool bNotNormalSwitch);
+	void BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_2_OnButtonReleasedEvent__DelegateSignature();
+	void BndEvt__uw_fight_player_item_Btn_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature();
+	void K2_PlaySwitchCDAnim(bool bPlay);
+	void StopEffect(const EPlayerItemEffectType InEffectType);
+	void BndEvt__Btn_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
+	void PlayEffect(const EPlayerItemEffectType InEffectType, bool bQTEEndSwitchBack);
+	void Play_Activation(bool bForward);
+	void IsInFight(bool* InFight);
 	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void NotifyDataChange();
+	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
+	void OnAnimationFinished(const class UWidgetAnimation* Animation);
+	void Construct();
 	void UpdateKeyboard(int32 InIndex);
+	void NotifyClick(EPlayerBtnType BtnType);
+	void NotifyReviveCdOK();
+	void NotifyRefreshCharacter();
 	void Destruct();
 
 	class FString GetModuleName() const;

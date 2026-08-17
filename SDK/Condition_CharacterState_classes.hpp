@@ -32,18 +32,18 @@ public:
 	struct FVector                                LastPos;                                           // 0x0114(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void CheckShiftDistance();
 	void InitEnterCheck();
+	void OnNotifyPlayerAction(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet);
+	void NotifyPlayerAction(class AGameCharacter* InCharacter, ECharacterActionState InType, bool bSet);
+	void ExecuteUbergraph_Condition_CharacterState(int32 EntryPoint);
+	void CheckShiftDistance();
 	void K2_InitCondition();
 	void BindEvent(class AGameCharacter* InCharacter);
 	void UnbindEvent(class AGameCharacter* InCharacter);
-	void OnNotifyPlayerAction(class AGameCharacter* CurCharacter, ECharacterActionState InType, bool bSet);
-	void NotifyPlayerAction(class AGameCharacter* InCharacter, ECharacterActionState InType, bool bSet);
 	void OnNotifyPlayerMove(class AGameCharacter* CurCharacter, EGamePlayerMoveState LastType, EGamePlayerMoveState CurType);
 	void NotifyPlayerMove(class AGameCharacter* InCharacter, EGamePlayerMoveState LastType, EGamePlayerMoveState CurType);
 	void K2_BindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
 	void K2_UnbindEvent(class UAbilityComponentBase* InCurLauncher, class AGameCharacter* InCurLauncherChara);
-	void ExecuteUbergraph_Condition_CharacterState(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

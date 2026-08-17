@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function uw_fight_joystick_cover.uw_fight_joystick_cover_C.ExecuteUbergraph_uw_fight_joystick_cover
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_joystick_cover_C::ExecuteUbergraph_uw_fight_joystick_cover(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_joystick_cover_C", "ExecuteUbergraph_uw_fight_joystick_cover");
+
+	Params::uw_fight_joystick_cover_C_ExecuteUbergraph_uw_fight_joystick_cover Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function uw_fight_joystick_cover.uw_fight_joystick_cover_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
@@ -34,26 +54,6 @@ void Uuw_fight_joystick_cover_C::Tick(const struct FGeometry& MyGeometry, float 
 
 	Parms.MyGeometry = std::move(MyGeometry);
 	Parms.InDeltaTime = InDeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_joystick_cover.uw_fight_joystick_cover_C.ExecuteUbergraph_uw_fight_joystick_cover
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_joystick_cover_C::ExecuteUbergraph_uw_fight_joystick_cover(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_joystick_cover_C", "ExecuteUbergraph_uw_fight_joystick_cover");
-
-	Params::uw_fight_joystick_cover_C_ExecuteUbergraph_uw_fight_joystick_cover Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

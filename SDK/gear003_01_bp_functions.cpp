@@ -272,15 +272,15 @@ void Agear003_01_bp_C::阻挡是否启用显示()
 }
 
 
-// Function gear003_01_bp.gear003_01_bp_C.Setup in Shadow
+// Function gear003_01_bp.gear003_01_bp_C.Setup In Shadow
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void Agear003_01_bp_C::Setup_in_Shadow()
+void Agear003_01_bp_C::Setup_In_Shadow()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("gear003_01_bp_C", "Setup in Shadow");
+		Func = Class->GetFunction("gear003_01_bp_C", "Setup In Shadow");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

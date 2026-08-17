@@ -54,9 +54,9 @@ public:
 	class URedirectTextBlock*                     TxtNum;                                            // 0x0630(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void PlayWhiteAnim();
-	void K2_OnReset();
 	void ExecuteUbergraph_uw_fight_monster_part_hp(int32 EntryPoint);
+	void K2_OnReset();
+	void PlayWhiteAnim();
 
 public:
 	static class UClass* StaticClass()

@@ -40,10 +40,10 @@ public:
 	ESlateVisibility                              Visibity;                                          // 0x04E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Construct();
-	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void K2_OnReloading(bool bIsReload, EWeaponType Type, bool bInterrupt, float AnimTime);
 	void ExecuteUbergraph_uw_fight_plm_frame(int32 EntryPoint);
+	void K2_OnReloading(bool bIsReload, EWeaponType Type, bool bInterrupt, float AnimTime);
+	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void Construct();
 
 public:
 	static class UClass* StaticClass()

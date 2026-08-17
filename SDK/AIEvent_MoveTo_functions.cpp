@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function AIEvent_MoveTo.AIEvent_MoveTo_C.CanInterruptFight
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-
-bool UAIEvent_MoveTo_C::CanInterruptFight()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIEvent_MoveTo_C", "CanInterruptFight");
-
-	Params::AIEvent_MoveTo_C_CanInterruptFight Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function AIEvent_MoveTo.AIEvent_MoveTo_C.OnMoveFinished_27A515F04C10695563425C91883D3501
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -56,20 +36,6 @@ void UAIEvent_MoveTo_C::OnMoveFinished_27A515F04C10695563425C91883D3501(EPathFol
 	Parms.AIController_0 = AIController_0;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIEvent_MoveTo.AIEvent_MoveTo_C.OnRequestFailed_27A515F04C10695563425C91883D3501
-// (BlueprintCallable, BlueprintEvent)
-
-void UAIEvent_MoveTo_C::OnRequestFailed_27A515F04C10695563425C91883D3501()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIEvent_MoveTo_C", "OnRequestFailed_27A515F04C10695563425C91883D3501");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -93,26 +59,6 @@ void UAIEvent_MoveTo_C::OnExecute(class AGameCharacter* Character)
 }
 
 
-// Function AIEvent_MoveTo.AIEvent_MoveTo_C.OnTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIEvent_MoveTo_C::OnTick(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIEvent_MoveTo_C", "OnTick");
-
-	Params::AIEvent_MoveTo_C_OnTick Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function AIEvent_MoveTo.AIEvent_MoveTo_C.ExecuteUbergraph_AIEvent_MoveTo
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -128,6 +74,60 @@ void UAIEvent_MoveTo_C::ExecuteUbergraph_AIEvent_MoveTo(int32 EntryPoint)
 	Params::AIEvent_MoveTo_C_ExecuteUbergraph_AIEvent_MoveTo Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIEvent_MoveTo.AIEvent_MoveTo_C.CanInterruptFight
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UAIEvent_MoveTo_C::CanInterruptFight()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIEvent_MoveTo_C", "CanInterruptFight");
+
+	Params::AIEvent_MoveTo_C_CanInterruptFight Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIEvent_MoveTo.AIEvent_MoveTo_C.OnRequestFailed_27A515F04C10695563425C91883D3501
+// (BlueprintCallable, BlueprintEvent)
+
+void UAIEvent_MoveTo_C::OnRequestFailed_27A515F04C10695563425C91883D3501()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIEvent_MoveTo_C", "OnRequestFailed_27A515F04C10695563425C91883D3501");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function AIEvent_MoveTo.AIEvent_MoveTo_C.OnTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIEvent_MoveTo_C::OnTick(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIEvent_MoveTo_C", "OnTick");
+
+	Params::AIEvent_MoveTo_C_OnTick Parms{};
+
+	Parms.DeltaTime = DeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

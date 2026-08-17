@@ -17,56 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.OnMoveEnd
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkillMove_DragToLoc_Update_C::OnMoveEnd(class UBaseMovementComponent* Movement)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_DragToLoc_Update_C", "OnMoveEnd");
-
-	Params::SkillMove_DragToLoc_Update_C_OnMoveEnd Parms{};
-
-	Parms.Movement = Movement;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.IsUsedToAddVelocityInsteadOverride
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-bool USkillMove_DragToLoc_Update_C::IsUsedToAddVelocityInsteadOverride()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkillMove_DragToLoc_Update_C", "IsUsedToAddVelocityInsteadOverride");
-
-	Params::SkillMove_DragToLoc_Update_C_IsUsedToAddVelocityInsteadOverride Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // LuaFunction SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.OnMoveTick
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -116,6 +66,56 @@ void USkillMove_DragToLoc_Update_C::OnMoveStart(class AActor* Launcher, class UB
 	Params::SkillMove_DragToLoc_Update_C_OnMoveStart Parms{};
 
 	Parms.Launcher = Launcher;
+	Parms.Movement = Movement;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.IsUsedToAddVelocityInsteadOverride
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+bool USkillMove_DragToLoc_Update_C::IsUsedToAddVelocityInsteadOverride()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillMove_DragToLoc_Update_C", "IsUsedToAddVelocityInsteadOverride");
+
+	Params::SkillMove_DragToLoc_Update_C_IsUsedToAddVelocityInsteadOverride Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// LuaFunction SkillMove_DragToLoc_Update.SkillMove_DragToLoc_Update_C.OnMoveEnd
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// class UBaseMovementComponent*           Movement                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkillMove_DragToLoc_Update_C::OnMoveEnd(class UBaseMovementComponent* Movement)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkillMove_DragToLoc_Update_C", "OnMoveEnd");
+
+	Params::SkillMove_DragToLoc_Update_C_OnMoveEnd Parms{};
+
 	Parms.Movement = Movement;
 
 	auto Flgs = Func->FunctionFlags;

@@ -40,8 +40,8 @@ public:
 	class URedirectTextBlock*                     TxtRed;                                            // 0x0428(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void Tick__Overridden(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void ExecuteUbergraph_uw_fight_level_occupy(int32 EntryPoint);
+	void Tick__Overridden(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void Construct();
 	void OnConstruct();

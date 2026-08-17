@@ -16,17 +16,6 @@
 namespace SDK::Params
 {
 
-// Function BP_Bunker_WaterTank.BP_Bunker_WaterTank_C.OnDie
-// 0x01E8 (0x01E8 - 0x0000)
-struct BP_Bunker_WaterTank_C_OnDie final
-{
-public:
-	class AGameCharacter*                         Who;                                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AGameCharacter*                         Killer;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0010(0x01D8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_BP_Bunker_WaterTank_C_OnDie;
-
 // Function BP_Bunker_WaterTank.BP_Bunker_WaterTank_C.ExecuteUbergraph_BP_Bunker_WaterTank
 // 0x01F0 (0x01F0 - 0x0000)
 struct BP_Bunker_WaterTank_C_ExecuteUbergraph_BP_Bunker_WaterTank final
@@ -39,6 +28,17 @@ public:
 	struct FHealthChangeValue                     K2Node_Event_HealthChangeValue;                    // 0x0018(0x01D8)(ConstParm, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_BP_Bunker_WaterTank_C_ExecuteUbergraph_BP_Bunker_WaterTank;
+
+// Function BP_Bunker_WaterTank.BP_Bunker_WaterTank_C.OnDie
+// 0x01E8 (0x01E8 - 0x0000)
+struct BP_Bunker_WaterTank_C_OnDie final
+{
+public:
+	class AGameCharacter*                         Who;                                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameCharacter*                         Killer;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0010(0x01D8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_BP_Bunker_WaterTank_C_OnDie;
 
 }
 

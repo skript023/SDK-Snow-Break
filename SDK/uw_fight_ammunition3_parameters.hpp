@@ -14,17 +14,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_ammunition3.uw_fight_ammunition3_C.OnBulletChange
-// 0x000C (0x000C - 0x0000)
-struct uw_fight_ammunition3_C_OnBulletChange final
-{
-public:
-	int32                                         InCurBullet;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         InMaxBullet;                                       // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         InPercent;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_ammunition3_C_OnBulletChange;
-
 // Function uw_fight_ammunition3.uw_fight_ammunition3_C.ExecuteUbergraph_uw_fight_ammunition3
 // 0x0014 (0x0014 - 0x0000)
 struct uw_fight_ammunition3_C_ExecuteUbergraph_uw_fight_ammunition3 final
@@ -38,6 +27,17 @@ public:
 	float                                         K2Node_Event_InPercent;                            // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_ammunition3_C_ExecuteUbergraph_uw_fight_ammunition3;
+
+// Function uw_fight_ammunition3.uw_fight_ammunition3_C.OnBulletChange
+// 0x000C (0x000C - 0x0000)
+struct uw_fight_ammunition3_C_OnBulletChange final
+{
+public:
+	int32                                         InCurBullet;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         InMaxBullet;                                       // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         InPercent;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_ammunition3_C_OnBulletChange;
 
 }
 

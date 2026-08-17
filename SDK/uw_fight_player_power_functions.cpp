@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function uw_fight_player_power.uw_fight_player_power_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function uw_fight_player_power.uw_fight_player_power_C.ExecuteUbergraph_uw_fight_player_power
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_player_power_C::PreConstruct(bool IsDesignTime)
+void Uuw_fight_player_power_C::ExecuteUbergraph_uw_fight_player_power(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_power_C", "PreConstruct");
+		Func = Class->GetFunction("uw_fight_player_power_C", "ExecuteUbergraph_uw_fight_player_power");
 
-	Params::uw_fight_player_power_C_PreConstruct Parms{};
+	Params::uw_fight_player_power_C_ExecuteUbergraph_uw_fight_player_power Parms{};
 
-	Parms.IsDesignTime = IsDesignTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,21 +57,21 @@ void Uuw_fight_player_power_C::VisibilityChanged(ESlateVisibility InVisibility)
 }
 
 
-// Function uw_fight_player_power.uw_fight_player_power_C.ExecuteUbergraph_uw_fight_player_power
-// (Final, UbergraphFunction)
+// Function uw_fight_player_power.uw_fight_player_power_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_player_power_C::ExecuteUbergraph_uw_fight_player_power(int32 EntryPoint)
+void Uuw_fight_player_power_C::PreConstruct(bool IsDesignTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_power_C", "ExecuteUbergraph_uw_fight_player_power");
+		Func = Class->GetFunction("uw_fight_player_power_C", "PreConstruct");
 
-	Params::uw_fight_player_power_C_ExecuteUbergraph_uw_fight_player_power Parms{};
+	Params::uw_fight_player_power_C_PreConstruct Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.IsDesignTime = IsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

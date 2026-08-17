@@ -59,46 +59,6 @@ void UAllBulletEffect_C::K2_ReceiveActive(const class UObject* Instigator)
 }
 
 
-// Function AllBulletEffect.AllBulletEffect_C.K2_ReceiveDeActive
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class UGameAbilityComponent*      Pawn                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAllBulletEffect_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AllBulletEffect_C", "K2_ReceiveDeActive");
-
-	Params::AllBulletEffect_C_K2_ReceiveDeActive Parms{};
-
-	Parms.Pawn = Pawn;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AllBulletEffect.AllBulletEffect_C.ExecuteUbergraph_AllBulletEffect
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAllBulletEffect_C::ExecuteUbergraph_AllBulletEffect(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AllBulletEffect_C", "ExecuteUbergraph_AllBulletEffect");
-
-	Params::AllBulletEffect_C_ExecuteUbergraph_AllBulletEffect Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function AllBulletEffect.AllBulletEffect_C.OnPlayerActionFlay
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -123,6 +83,26 @@ void UAllBulletEffect_C::OnPlayerActionFlay(class AGameCharacter* CurCharacter, 
 }
 
 
+// Function AllBulletEffect.AllBulletEffect_C.K2_ReceiveDeActive
+// (Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class UGameAbilityComponent*      Pawn                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAllBulletEffect_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AllBulletEffect_C", "K2_ReceiveDeActive");
+
+	Params::AllBulletEffect_C_K2_ReceiveDeActive Parms{};
+
+	Parms.Pawn = Pawn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function AllBulletEffect.AllBulletEffect_C.K2_ReceiveInitialize
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -140,6 +120,26 @@ void UAllBulletEffect_C::K2_ReceiveInitialize(const TArray<struct FParamInfo>& I
 
 	Parms.Info = std::move(Info);
 	Parms.lpInstigator = lpInstigator;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AllBulletEffect.AllBulletEffect_C.ExecuteUbergraph_AllBulletEffect
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAllBulletEffect_C::ExecuteUbergraph_AllBulletEffect(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AllBulletEffect_C", "ExecuteUbergraph_AllBulletEffect");
+
+	Params::AllBulletEffect_C_ExecuteUbergraph_AllBulletEffect Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -26,11 +26,11 @@ public:
 	class UCurveFloat*                            SpeedRatioCurve;                                   // 0x01E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnMoveEnd(class UBaseMovementComponent* Movement);
-	bool IsUsedToAddVelocityInsteadOverride();
 	void OnMoveTickCheck(float DeltaTime);
 	void OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement);
 	void OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement);
+	void OnMoveEnd(class UBaseMovementComponent* Movement);
+	bool IsUsedToAddVelocityInsteadOverride();
 	TArray<struct FSoftObjectPath> OnGetAssetPath(const TArray<struct FParamInfo>& InParamInfo, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
 
 	class FString GetModuleName() const;

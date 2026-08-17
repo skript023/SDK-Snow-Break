@@ -36,12 +36,12 @@ public:
 
 public:
 	void PlayAnim(class UWidgetAnimation* InAnim, bool bLoop);
+	void EnterFinish();
 	void Construct();
 	void CloseFinish();
 	void LockFinish();
 	void TriggerEvent(class FName EventName);
 	void ONVisibilityChange(ESlateVisibility InVisibility);
-	void EnterFinish();
 	void ExecuteUbergraph_uw_fight_aim2_girl004b(int32 EntryPoint);
 
 public:

@@ -14,33 +14,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_star_tips.uw_fight_star_tips_C.OnListItemObjectSet__Overridden
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_star_tips_C_OnListItemObjectSet__Overridden final
-{
-public:
-	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_star_tips_C_OnListItemObjectSet__Overridden;
-
-// Function uw_fight_star_tips.uw_fight_star_tips_C.BP_OnItemSelectionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_star_tips_C_BP_OnItemSelectionChanged final
-{
-public:
-	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_star_tips_C_BP_OnItemSelectionChanged;
-
-// Function uw_fight_star_tips.uw_fight_star_tips_C.BP_OnItemExpansionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_star_tips_C_BP_OnItemExpansionChanged final
-{
-public:
-	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_star_tips_C_BP_OnItemExpansionChanged;
-
 // Function uw_fight_star_tips.uw_fight_star_tips_C.ExecuteUbergraph_uw_fight_star_tips
 // 0x0018 (0x0018 - 0x0000)
 struct uw_fight_star_tips_C_ExecuteUbergraph_uw_fight_star_tips final
@@ -53,6 +26,33 @@ public:
 	bool                                          K2Node_Event_bIsExpanded;                          // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_star_tips_C_ExecuteUbergraph_uw_fight_star_tips;
+
+// Function uw_fight_star_tips.uw_fight_star_tips_C.BP_OnItemExpansionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_star_tips_C_BP_OnItemExpansionChanged final
+{
+public:
+	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_star_tips_C_BP_OnItemExpansionChanged;
+
+// Function uw_fight_star_tips.uw_fight_star_tips_C.BP_OnItemSelectionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_star_tips_C_BP_OnItemSelectionChanged final
+{
+public:
+	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_star_tips_C_BP_OnItemSelectionChanged;
+
+// Function uw_fight_star_tips.uw_fight_star_tips_C.OnListItemObjectSet__Overridden
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_star_tips_C_OnListItemObjectSet__Overridden final
+{
+public:
+	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_star_tips_C_OnListItemObjectSet__Overridden;
 
 // LuaFunction uw_fight_star_tips.uw_fight_star_tips_C.OnAnimationFinished
 // 0x0008 (0x0008 - 0x0000)

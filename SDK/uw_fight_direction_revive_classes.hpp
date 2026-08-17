@@ -33,8 +33,8 @@ public:
 	class URedirectImage*                         ImgHeight;                                         // 0x0838(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void PlayTypeAnim();
 	void ExecuteUbergraph_uw_fight_direction_revive(int32 EntryPoint);
+	void PlayTypeAnim();
 	void OnAnimationFinished(const class UWidgetAnimation* Animation);
 	void AppearFinish(class UWidgetAnimation* Animation);
 	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);

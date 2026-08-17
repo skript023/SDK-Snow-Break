@@ -17,32 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.DontRequireNormalState
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool*                                   ret                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_open_machine_item_C::DontRequireNormalState(bool* ret)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_open_machine_item_C", "DontRequireNormalState");
-
-	Params::uw_fight_open_machine_item_C_DontRequireNormalState Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (ret != nullptr)
-		*ret = Parms.ret;
-}
-
-
 // LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.UpdateKeyShow
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
@@ -52,25 +26,6 @@ void Uuw_fight_open_machine_item_C::UpdateKeyShow()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_open_machine_item_C", "UpdateKeyShow");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.BindKeyBoardOnSettingChange
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_open_machine_item_C::BindKeyBoardOnSettingChange()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_open_machine_item_C", "BindKeyBoardOnSettingChange");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -100,6 +55,32 @@ void Uuw_fight_open_machine_item_C::TriggerInteract()
 }
 
 
+// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.DontRequireNormalState
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool*                                   ret                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_open_machine_item_C::DontRequireNormalState(bool* ret)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_open_machine_item_C", "DontRequireNormalState");
+
+	Params::uw_fight_open_machine_item_C_DontRequireNormalState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (ret != nullptr)
+		*ret = Parms.ret;
+}
+
+
 // LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.BindExitInteractEvent
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
@@ -109,6 +90,25 @@ void Uuw_fight_open_machine_item_C::BindExitInteractEvent()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_open_machine_item_C", "BindExitInteractEvent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_open_machine_item.uw_fight_open_machine_item_C.BindKeyBoardOnSettingChange
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_open_machine_item_C::BindKeyBoardOnSettingChange()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_open_machine_item_C", "BindKeyBoardOnSettingChange");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -14,14 +14,18 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.BP_OnItemExpansionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_level_occupy_list_C_BP_OnItemExpansionChanged final
+// Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.ExecuteUbergraph_uw_fight_level_occupy_list
+// 0x0018 (0x0018 - 0x0000)
+struct uw_fight_level_occupy_list_C_ExecuteUbergraph_uw_fight_level_occupy_list final
 {
 public:
-	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                K2Node_Event_ListItemObject;                       // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_bIsExpanded;                          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_Event_bIsSelected;                          // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_uw_fight_level_occupy_list_C_BP_OnItemExpansionChanged;
+DUMPER7_ASSERTS_uw_fight_level_occupy_list_C_ExecuteUbergraph_uw_fight_level_occupy_list;
 
 // Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.OnListItemObjectSet__Overridden
 // 0x0008 (0x0008 - 0x0000)
@@ -41,18 +45,14 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_level_occupy_list_C_BP_OnItemSelectionChanged;
 
-// Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.ExecuteUbergraph_uw_fight_level_occupy_list
-// 0x0018 (0x0018 - 0x0000)
-struct uw_fight_level_occupy_list_C_ExecuteUbergraph_uw_fight_level_occupy_list final
+// Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.BP_OnItemExpansionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_level_occupy_list_C_BP_OnItemExpansionChanged final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                K2Node_Event_ListItemObject;                       // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_bIsExpanded;                          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_Event_bIsSelected;                          // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_uw_fight_level_occupy_list_C_ExecuteUbergraph_uw_fight_level_occupy_list;
+DUMPER7_ASSERTS_uw_fight_level_occupy_list_C_BP_OnItemExpansionChanged;
 
 // LuaFunction uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.OnListItemObjectSet
 // 0x0008 (0x0008 - 0x0000)

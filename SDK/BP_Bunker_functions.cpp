@@ -17,27 +17,6 @@
 namespace SDK
 {
 
-// Function BP_Bunker.BP_Bunker_C.SpawnBunkerCollisionActor
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AActor**                          OutActor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Bunker_C::SpawnBunkerCollisionActor(class AActor** OutActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Bunker_C", "SpawnBunkerCollisionActor");
-
-	Params::BP_Bunker_C_SpawnBunkerCollisionActor Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (OutActor != nullptr)
-		*OutActor = Parms.OutActor;
-}
-
-
 // Function BP_Bunker.BP_Bunker_C.InactiveAbility
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -47,20 +26,6 @@ void ABP_Bunker_C::InactiveAbility()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Bunker_C", "InactiveAbility");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Bunker.BP_Bunker_C.SetShadow
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Bunker_C::SetShadow()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Bunker_C", "SetShadow");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -80,20 +45,6 @@ void ABP_Bunker_C::SetCullDistance()
 }
 
 
-// Function BP_Bunker.BP_Bunker_C.SetupInShadow
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_Bunker_C::SetupInShadow()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Bunker_C", "SetupInShadow");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_Bunker.BP_Bunker_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -105,30 +56,6 @@ void ABP_Bunker_C::UserConstructionScript()
 		Func = Class->GetFunction("BP_Bunker_C", "UserConstructionScript");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Bunker.BP_Bunker_C.OnDie
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// class AGameCharacter*                   Who                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AGameCharacter*                   Killer                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FHealthChangeValue&        HealthChangeValue                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-
-void ABP_Bunker_C::OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Bunker_C", "OnDie");
-
-	Params::BP_Bunker_C_OnDie Parms{};
-
-	Parms.Who = Who;
-	Parms.Killer = Killer;
-	Parms.HealthChangeValue = std::move(HealthChangeValue);
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -174,20 +101,6 @@ void ABP_Bunker_C::UpdateData()
 }
 
 
-// Function BP_Bunker.BP_Bunker_C.OnRecycle
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Bunker_C::OnRecycle()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Bunker_C", "OnRecycle");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_Bunker.BP_Bunker_C.ExecuteUbergraph_BP_Bunker
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -205,6 +118,93 @@ void ABP_Bunker_C::ExecuteUbergraph_BP_Bunker(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Bunker.BP_Bunker_C.SpawnBunkerCollisionActor
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor**                          OutActor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Bunker_C::SpawnBunkerCollisionActor(class AActor** OutActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Bunker_C", "SpawnBunkerCollisionActor");
+
+	Params::BP_Bunker_C_SpawnBunkerCollisionActor Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (OutActor != nullptr)
+		*OutActor = Parms.OutActor;
+}
+
+
+// Function BP_Bunker.BP_Bunker_C.SetShadow
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Bunker_C::SetShadow()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Bunker_C", "SetShadow");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Bunker.BP_Bunker_C.SetupInShadow
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_Bunker_C::SetupInShadow()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Bunker_C", "SetupInShadow");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Bunker.BP_Bunker_C.OnDie
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// class AGameCharacter*                   Who                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AGameCharacter*                   Killer                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHealthChangeValue&        HealthChangeValue                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+
+void ABP_Bunker_C::OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Bunker_C", "OnDie");
+
+	Params::BP_Bunker_C_OnDie Parms{};
+
+	Parms.Who = Who;
+	Parms.Killer = Killer;
+	Parms.HealthChangeValue = std::move(HealthChangeValue);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Bunker.BP_Bunker_C.OnRecycle
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Bunker_C::OnRecycle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Bunker_C", "OnRecycle");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

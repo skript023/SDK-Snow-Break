@@ -14,15 +14,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_player_hp.uw_fight_player_hp_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_player_hp_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_player_hp_C_K2_OnCustomUmgAnimFinished;
-
 // Function uw_fight_player_hp.uw_fight_player_hp_C.ExecuteUbergraph_uw_fight_player_hp
 // 0x0014 (0x0014 - 0x0000)
 struct uw_fight_player_hp_C_ExecuteUbergraph_uw_fight_player_hp final
@@ -37,6 +28,15 @@ public:
 	bool                                          K2Node_Event_bPlay;                                // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_player_hp_C_ExecuteUbergraph_uw_fight_player_hp;
+
+// Function uw_fight_player_hp.uw_fight_player_hp_C.K2_OnCustomUmgAnimFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_player_hp_C_K2_OnCustomUmgAnimFinished final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_player_hp_C_K2_OnCustomUmgAnimFinished;
 
 // Function uw_fight_player_hp.uw_fight_player_hp_C.K2_OnPlayEnergyFullLoopAnim
 // 0x0001 (0x0001 - 0x0000)

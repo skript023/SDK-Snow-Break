@@ -16,16 +16,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_level_skillintro.uw_fight_level_skillintro_C.Tick__Overridden
-// 0x003C (0x003C - 0x0000)
-struct uw_fight_level_skillintro_C_Tick__Overridden final
-{
-public:
-	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_level_skillintro_C_Tick__Overridden;
-
 // Function uw_fight_level_skillintro.uw_fight_level_skillintro_C.ExecuteUbergraph_uw_fight_level_skillintro
 // 0x0040 (0x0040 - 0x0000)
 struct uw_fight_level_skillintro_C_ExecuteUbergraph_uw_fight_level_skillintro final
@@ -37,14 +27,15 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_level_skillintro_C_ExecuteUbergraph_uw_fight_level_skillintro;
 
-// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.OnAnimationFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_level_skillintro_C_OnAnimationFinished final
+// Function uw_fight_level_skillintro.uw_fight_level_skillintro_C.Tick__Overridden
+// 0x003C (0x003C - 0x0000)
+struct uw_fight_level_skillintro_C_Tick__Overridden final
 {
 public:
-	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_uw_fight_level_skillintro_C_OnAnimationFinished;
+DUMPER7_ASSERTS_uw_fight_level_skillintro_C_Tick__Overridden;
 
 // LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.Tick
 // 0x003C (0x003C - 0x0000)
@@ -55,6 +46,15 @@ public:
 	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_level_skillintro_C_Tick;
+
+// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.OnAnimationFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_level_skillintro_C_OnAnimationFinished final
+{
+public:
+	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_uw_fight_level_skillintro_C_OnAnimationFinished;
 
 // Function uw_fight_level_skillintro.uw_fight_level_skillintro_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

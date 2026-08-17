@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CollisionType_Enum_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "CollisionType_Enum_structs.hpp"
 #include "Game_classes.hpp"
 
 

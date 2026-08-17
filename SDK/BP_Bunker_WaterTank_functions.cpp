@@ -17,30 +17,6 @@
 namespace SDK
 {
 
-// Function BP_Bunker_WaterTank.BP_Bunker_WaterTank_C.OnDie
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// class AGameCharacter*                   Who                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AGameCharacter*                   Killer                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FHealthChangeValue&        HealthChangeValue                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-
-void ABP_Bunker_WaterTank_C::OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Bunker_WaterTank_C", "OnDie");
-
-	Params::BP_Bunker_WaterTank_C_OnDie Parms{};
-
-	Parms.Who = Who;
-	Parms.Killer = Killer;
-	Parms.HealthChangeValue = std::move(HealthChangeValue);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Bunker_WaterTank.BP_Bunker_WaterTank_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 
@@ -70,6 +46,30 @@ void ABP_Bunker_WaterTank_C::ExecuteUbergraph_BP_Bunker_WaterTank(int32 EntryPoi
 	Params::BP_Bunker_WaterTank_C_ExecuteUbergraph_BP_Bunker_WaterTank Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Bunker_WaterTank.BP_Bunker_WaterTank_C.OnDie
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// class AGameCharacter*                   Who                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AGameCharacter*                   Killer                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHealthChangeValue&        HealthChangeValue                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+
+void ABP_Bunker_WaterTank_C::OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Bunker_WaterTank_C", "OnDie");
+
+	Params::BP_Bunker_WaterTank_C_OnDie Parms{};
+
+	Parms.Who = Who;
+	Parms.Killer = Killer;
+	Parms.HealthChangeValue = std::move(HealthChangeValue);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

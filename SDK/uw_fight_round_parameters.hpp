@@ -14,15 +14,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_round.uw_fight_round_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_round_C_PreConstruct final
-{
-public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_round_C_PreConstruct;
-
 // Function uw_fight_round.uw_fight_round_C.ExecuteUbergraph_uw_fight_round
 // 0x0020 (0x0020 - 0x0000)
 struct uw_fight_round_C_ExecuteUbergraph_uw_fight_round final
@@ -35,6 +26,15 @@ public:
 	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_round_C_ExecuteUbergraph_uw_fight_round;
+
+// Function uw_fight_round.uw_fight_round_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_round_C_PreConstruct final
+{
+public:
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_round_C_PreConstruct;
 
 }
 

@@ -27,9 +27,9 @@ public:
 	struct FBulletRecoverTemplate                 Config;                                            // 0x0140(0x0048)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn);
-	bool K2_RecoverAttribute(class UAbilityComponentBase* InAbility, float InValue);
 	void K2_ReceiveActive(const class UObject* Instigator);
+	bool K2_RecoverAttribute(class UAbilityComponentBase* InAbility, float InValue);
+	void K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn);
 	void InitConfig();
 	void ExecuteUbergraph_BulletRecover(int32 EntryPoint);
 

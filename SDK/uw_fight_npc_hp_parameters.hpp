@@ -16,34 +16,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_npc_hp.uw_fight_npc_hp_C.PlayLowAnim
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_npc_hp_C_PlayLowAnim final
-{
-public:
-	bool                                          bLow;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_npc_hp_C_PlayLowAnim;
-
-// Function uw_fight_npc_hp.uw_fight_npc_hp_C.SetHpPercent
-// 0x0004 (0x0004 - 0x0000)
-struct uw_fight_npc_hp_C_SetHpPercent final
-{
-public:
-	float                                         Percent;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_npc_hp_C_SetHpPercent;
-
-// Function uw_fight_npc_hp.uw_fight_npc_hp_C.Tick
-// 0x003C (0x003C - 0x0000)
-struct uw_fight_npc_hp_C_Tick final
-{
-public:
-	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_npc_hp_C_Tick;
-
 // Function uw_fight_npc_hp.uw_fight_npc_hp_C.ExecuteUbergraph_uw_fight_npc_hp
 // 0x004C (0x004C - 0x0000)
 struct uw_fight_npc_hp_C_ExecuteUbergraph_uw_fight_npc_hp final
@@ -60,6 +32,34 @@ public:
 	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_npc_hp_C_ExecuteUbergraph_uw_fight_npc_hp;
+
+// Function uw_fight_npc_hp.uw_fight_npc_hp_C.Tick
+// 0x003C (0x003C - 0x0000)
+struct uw_fight_npc_hp_C_Tick final
+{
+public:
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_npc_hp_C_Tick;
+
+// Function uw_fight_npc_hp.uw_fight_npc_hp_C.SetHpPercent
+// 0x0004 (0x0004 - 0x0000)
+struct uw_fight_npc_hp_C_SetHpPercent final
+{
+public:
+	float                                         Percent;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_npc_hp_C_SetHpPercent;
+
+// Function uw_fight_npc_hp.uw_fight_npc_hp_C.PlayLowAnim
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_npc_hp_C_PlayLowAnim final
+{
+public:
+	bool                                          bLow;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_npc_hp_C_PlayLowAnim;
 
 }
 

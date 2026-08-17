@@ -158,10 +158,10 @@ public:
 public:
 	void Destruct();
 	void OnConstruct();
+	void OnListItemObjectSet(class UObject* ListItemObject);
+	void CustListPlayAnim();
 	void Construct();
 	void CustListQuickPlayAnim();
-	void CustListPlayAnim();
-	void OnListItemObjectSet(class UObject* ListItemObject);
 	void SequenceEvent__ENTRYPOINTuw_widgets_item_list_3();
 	void SequenceEvent__ENTRYPOINTuw_widgets_item_list_2();
 	void SequenceEvent__ENTRYPOINTuw_widgets_item_list_1();

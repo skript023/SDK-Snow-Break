@@ -42,12 +42,12 @@ public:
 	float                                         LerpTime;                                          // 0x0590(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void PlayBreakAnim();
-	void PlayLowAnim(bool bLow);
-	void SetHpPercent(float Percent);
-	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void PlayWhiteAnim();
 	void ExecuteUbergraph_uw_fight_npc_hp(int32 EntryPoint);
+	void PlayWhiteAnim();
+	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void SetHpPercent(float Percent);
+	void PlayLowAnim(bool bLow);
+	void PlayBreakAnim();
 
 public:
 	static class UClass* StaticClass()

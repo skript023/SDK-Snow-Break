@@ -45,6 +45,9 @@ public:
 	int32                                         RushButtonType;                                    // 0x15FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void LuaImpl_CallDSExec(int32 InCmd, const class FString& InContent);
+	void LuaImpl_CallClientExec(int32 InCmd, const class FString& InContent);
+	void Client_ShowMessage(const int32& Type, const class FString& Message, const int32& Duration, const bool bUseUIShowTip);
 	void CalcSideLength(float InVal, float LineVal, float* ReturnVal);
 	void SetRushButtonType(int32 InType);
 	void AutoFireToRush();
@@ -64,9 +67,6 @@ public:
 	void NotifyInteractFailed();
 	void OnSwitchPlayerCharacterFinished();
 	void ExecuteUbergraph_BP_GameController(int32 EntryPoint);
-	void LuaImpl_CallDSExec(int32 InCmd, const class FString& InContent);
-	void LuaImpl_CallClientExec(int32 InCmd, const class FString& InContent);
-	void Client_ShowMessage(const int32& Type, const class FString& Message, const int32& Duration, const bool bUseUIShowTip);
 
 public:
 	static class UClass* StaticClass()

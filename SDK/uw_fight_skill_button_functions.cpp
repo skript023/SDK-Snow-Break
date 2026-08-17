@@ -17,237 +17,61 @@
 namespace SDK
 {
 
-// Function uw_fight_skill_button.uw_fight_skill_button_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function uw_fight_skill_button.uw_fight_skill_button_C.ExecuteUbergraph_uw_fight_skill_button
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_skill_button_C::PreConstruct(bool IsDesignTime)
+void Uuw_fight_skill_button_C::ExecuteUbergraph_uw_fight_skill_button(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "PreConstruct");
+		Func = Class->GetFunction("uw_fight_skill_button_C", "ExecuteUbergraph_uw_fight_skill_button");
 
-	Params::uw_fight_skill_button_C_PreConstruct Parms{};
+	Params::uw_fight_skill_button_C_ExecuteUbergraph_uw_fight_skill_button Parms{};
 
-	Parms.IsDesignTime = IsDesignTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_skill_button.uw_fight_skill_button_C.OnQTEStateChange
-// (Event, Public, BlueprintEvent)
+// Function uw_fight_skill_button.uw_fight_skill_button_C.K2_OnCustomUmgAnimFinished__Overridden
+// (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// bool                                    bActive                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const class FName&                      AnimName                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_skill_button_C::OnQTEStateChange(bool bActive)
+void Uuw_fight_skill_button_C::K2_OnCustomUmgAnimFinished__Overridden(const class FName& AnimName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "OnQTEStateChange");
+		Func = Class->GetFunction("uw_fight_skill_button_C", "K2_OnCustomUmgAnimFinished__Overridden");
 
-	Params::uw_fight_skill_button_C_OnQTEStateChange Parms{};
+	Params::uw_fight_skill_button_C_K2_OnCustomUmgAnimFinished__Overridden Parms{};
 
-	Parms.bActive = bActive;
+	Parms.AnimName = AnimName;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_skill_button.uw_fight_skill_button_C.OnModifyStateChange
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// const bool                              bModify                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_skill_button_C::OnModifyStateChange(const bool bModify)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "OnModifyStateChange");
-
-	Params::uw_fight_skill_button_C_OnModifyStateChange Parms{};
-
-	Parms.bModify = bModify;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_skill_button.uw_fight_skill_button_C.Construct__Overridden
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_skill_button_C::Construct__Overridden()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "Construct__Overridden");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_skill_button.uw_fight_skill_button_C.K2_PlayCDAnim__Overridden
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bPlay                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_skill_button_C::K2_PlayCDAnim__Overridden(bool bPlay)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "K2_PlayCDAnim__Overridden");
-
-	Params::uw_fight_skill_button_C_K2_PlayCDAnim__Overridden Parms{};
-
-	Parms.bPlay = bPlay;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_skill_button.uw_fight_skill_button_C.OnSkillStrengthening__Overridden
+// Function uw_fight_skill_button.uw_fight_skill_button_C.OnSkillKeepInterrupt
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    bStart                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_skill_button_C::OnSkillStrengthening__Overridden(bool bStart)
+void Uuw_fight_skill_button_C::OnSkillKeepInterrupt(bool bStart)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "OnSkillStrengthening__Overridden");
+		Func = Class->GetFunction("uw_fight_skill_button_C", "OnSkillKeepInterrupt");
 
-	Params::uw_fight_skill_button_C_OnSkillStrengthening__Overridden Parms{};
+	Params::uw_fight_skill_button_C_OnSkillKeepInterrupt Parms{};
 
 	Parms.bStart = bStart;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_skill_button.uw_fight_skill_button_C.OnReduceCD
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_skill_button_C::OnReduceCD()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "OnReduceCD");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_skill_button.uw_fight_skill_button_C.PlayCastableAnim
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_skill_button_C::PlayCastableAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "PlayCastableAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_skill_button.uw_fight_skill_button_C.Destruct__Overridden
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_skill_button_C::Destruct__Overridden()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "Destruct__Overridden");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_skill_button.uw_fight_skill_button_C.K2_NormalEnergyChange
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bFull                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_skill_button_C::K2_NormalEnergyChange(bool bFull)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "K2_NormalEnergyChange");
-
-	Params::uw_fight_skill_button_C_K2_NormalEnergyChange Parms{};
-
-	Parms.bFull = bFull;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_skill_button.uw_fight_skill_button_C.K2_SetButtonForbid
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bForbid                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_skill_button_C::K2_SetButtonForbid(bool bForbid)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "K2_SetButtonForbid");
-
-	Params::uw_fight_skill_button_C_K2_SetButtonForbid Parms{};
-
-	Parms.bForbid = bForbid;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_skill_button.uw_fight_skill_button_C.PlayDerivedSkillAnim
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bPlay                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_skill_button_C::PlayDerivedSkillAnim(bool bPlay)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "PlayDerivedSkillAnim");
-
-	Params::uw_fight_skill_button_C_PlayDerivedSkillAnim Parms{};
-
-	Parms.bPlay = bPlay;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_skill_button.uw_fight_skill_button_C.K2_PlaySustainAnim
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bPlay                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_skill_button_C::K2_PlaySustainAnim(bool bPlay)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "K2_PlaySustainAnim");
-
-	Params::uw_fight_skill_button_C_K2_PlaySustainAnim Parms{};
-
-	Parms.bPlay = bPlay;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -275,19 +99,141 @@ void Uuw_fight_skill_button_C::OnButtonDom(const int32 Type, const struct FPoint
 }
 
 
-// Function uw_fight_skill_button.uw_fight_skill_button_C.OnSkillKeepInterrupt
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function uw_fight_skill_button.uw_fight_skill_button_C.K2_PlaySustainAnim
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bStart                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    bPlay                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_skill_button_C::OnSkillKeepInterrupt(bool bStart)
+void Uuw_fight_skill_button_C::K2_PlaySustainAnim(bool bPlay)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "OnSkillKeepInterrupt");
+		Func = Class->GetFunction("uw_fight_skill_button_C", "K2_PlaySustainAnim");
 
-	Params::uw_fight_skill_button_C_OnSkillKeepInterrupt Parms{};
+	Params::uw_fight_skill_button_C_K2_PlaySustainAnim Parms{};
+
+	Parms.bPlay = bPlay;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_skill_button.uw_fight_skill_button_C.PlayDerivedSkillAnim
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bPlay                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_skill_button_C::PlayDerivedSkillAnim(bool bPlay)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_button_C", "PlayDerivedSkillAnim");
+
+	Params::uw_fight_skill_button_C_PlayDerivedSkillAnim Parms{};
+
+	Parms.bPlay = bPlay;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_skill_button.uw_fight_skill_button_C.K2_SetButtonForbid
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bForbid                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_skill_button_C::K2_SetButtonForbid(bool bForbid)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_button_C", "K2_SetButtonForbid");
+
+	Params::uw_fight_skill_button_C_K2_SetButtonForbid Parms{};
+
+	Parms.bForbid = bForbid;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_skill_button.uw_fight_skill_button_C.K2_NormalEnergyChange
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bFull                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_skill_button_C::K2_NormalEnergyChange(bool bFull)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_button_C", "K2_NormalEnergyChange");
+
+	Params::uw_fight_skill_button_C_K2_NormalEnergyChange Parms{};
+
+	Parms.bFull = bFull;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_skill_button.uw_fight_skill_button_C.Destruct__Overridden
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_skill_button_C::Destruct__Overridden()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_button_C", "Destruct__Overridden");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_skill_button.uw_fight_skill_button_C.PlayCastableAnim
+// (Event, Public, BlueprintEvent)
+
+void Uuw_fight_skill_button_C::PlayCastableAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_button_C", "PlayCastableAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_skill_button.uw_fight_skill_button_C.OnReduceCD
+// (Event, Public, BlueprintEvent)
+
+void Uuw_fight_skill_button_C::OnReduceCD()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_button_C", "OnReduceCD");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_skill_button.uw_fight_skill_button_C.OnSkillStrengthening__Overridden
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bStart                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_skill_button_C::OnSkillStrengthening__Overridden(bool bStart)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_button_C", "OnSkillStrengthening__Overridden");
+
+	Params::uw_fight_skill_button_C_OnSkillStrengthening__Overridden Parms{};
 
 	Parms.bStart = bStart;
 
@@ -295,41 +241,95 @@ void Uuw_fight_skill_button_C::OnSkillKeepInterrupt(bool bStart)
 }
 
 
-// Function uw_fight_skill_button.uw_fight_skill_button_C.K2_OnCustomUmgAnimFinished__Overridden
-// (Event, Public, HasOutParams, BlueprintEvent)
+// Function uw_fight_skill_button.uw_fight_skill_button_C.K2_PlayCDAnim__Overridden
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// const class FName&                      AnimName                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bPlay                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_skill_button_C::K2_OnCustomUmgAnimFinished__Overridden(const class FName& AnimName)
+void Uuw_fight_skill_button_C::K2_PlayCDAnim__Overridden(bool bPlay)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "K2_OnCustomUmgAnimFinished__Overridden");
+		Func = Class->GetFunction("uw_fight_skill_button_C", "K2_PlayCDAnim__Overridden");
 
-	Params::uw_fight_skill_button_C_K2_OnCustomUmgAnimFinished__Overridden Parms{};
+	Params::uw_fight_skill_button_C_K2_PlayCDAnim__Overridden Parms{};
 
-	Parms.AnimName = AnimName;
+	Parms.bPlay = bPlay;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_skill_button.uw_fight_skill_button_C.ExecuteUbergraph_uw_fight_skill_button
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_skill_button.uw_fight_skill_button_C.Construct__Overridden
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void Uuw_fight_skill_button_C::ExecuteUbergraph_uw_fight_skill_button(int32 EntryPoint)
+void Uuw_fight_skill_button_C::Construct__Overridden()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "ExecuteUbergraph_uw_fight_skill_button");
+		Func = Class->GetFunction("uw_fight_skill_button_C", "Construct__Overridden");
 
-	Params::uw_fight_skill_button_C_ExecuteUbergraph_uw_fight_skill_button Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function uw_fight_skill_button.uw_fight_skill_button_C.OnModifyStateChange
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const bool                              bModify                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_skill_button_C::OnModifyStateChange(const bool bModify)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_button_C", "OnModifyStateChange");
+
+	Params::uw_fight_skill_button_C_OnModifyStateChange Parms{};
+
+	Parms.bModify = bModify;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_skill_button.uw_fight_skill_button_C.OnQTEStateChange
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bActive                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_skill_button_C::OnQTEStateChange(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_button_C", "OnQTEStateChange");
+
+	Params::uw_fight_skill_button_C_OnQTEStateChange Parms{};
+
+	Parms.bActive = bActive;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_skill_button.uw_fight_skill_button_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_skill_button_C::PreConstruct(bool IsDesignTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_button_C", "PreConstruct");
+
+	Params::uw_fight_skill_button_C_PreConstruct Parms{};
+
+	Parms.IsDesignTime = IsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -360,31 +360,6 @@ void Uuw_fight_skill_button_C::K2_OnCustomUmgAnimFinished(const class FName& Ani
 }
 
 
-// LuaFunction uw_fight_skill_button.uw_fight_skill_button_C.OnSkillStrengthening
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bStart                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_skill_button_C::OnSkillStrengthening(bool bStart)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "OnSkillStrengthening");
-
-	Params::uw_fight_skill_button_C_OnSkillStrengthening Parms{};
-
-	Parms.bStart = bStart;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_skill_button.uw_fight_skill_button_C.Construct
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
@@ -404,21 +379,21 @@ void Uuw_fight_skill_button_C::Construct()
 }
 
 
-// LuaFunction uw_fight_skill_button.uw_fight_skill_button_C.K2_PlayCDAnim
-// (Native, Event, Protected, BlueprintEvent)
+// LuaFunction uw_fight_skill_button.uw_fight_skill_button_C.OnSkillStrengthening
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    bPlay                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    bStart                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_skill_button_C::K2_PlayCDAnim(bool bPlay)
+void Uuw_fight_skill_button_C::OnSkillStrengthening(bool bStart)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_skill_button_C", "K2_PlayCDAnim");
+		Func = Class->GetFunction("uw_fight_skill_button_C", "OnSkillStrengthening");
 
-	Params::uw_fight_skill_button_C_K2_PlayCDAnim Parms{};
+	Params::uw_fight_skill_button_C_OnSkillStrengthening Parms{};
 
-	Parms.bPlay = bPlay;
+	Parms.bStart = bStart;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -446,6 +421,31 @@ void Uuw_fight_skill_button_C::OnChargeTimesChange(int32 InCurrentTimes, int32 I
 
 	Parms.InCurrentTimes = InCurrentTimes;
 	Parms.InMaxTimes = InMaxTimes;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_skill_button.uw_fight_skill_button_C.K2_PlayCDAnim
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bPlay                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_skill_button_C::K2_PlayCDAnim(bool bPlay)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_skill_button_C", "K2_PlayCDAnim");
+
+	Params::uw_fight_skill_button_C_K2_PlayCDAnim Parms{};
+
+	Parms.bPlay = bPlay;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

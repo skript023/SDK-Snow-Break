@@ -22,7 +22,7 @@ namespace SDK
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void uw_fight_power_girl002a::Uuw_fight_power_girl002a_C::ExecuteUbergraph_uw_fight_power_girl002a(int32 EntryPoint)
+void Uuw_fight_power_girl002a_C::ExecuteUbergraph_uw_fight_power_girl002a(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
@@ -42,7 +42,7 @@ void uw_fight_power_girl002a::Uuw_fight_power_girl002a_C::ExecuteUbergraph_uw_fi
 // Parameters:
 // bool                                    StateType                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void uw_fight_power_girl002a::Uuw_fight_power_girl002a_C::PlayAnim(bool StateType)
+void Uuw_fight_power_girl002a_C::PlayAnim(bool StateType)
 {
 	static class UFunction* Func = nullptr;
 

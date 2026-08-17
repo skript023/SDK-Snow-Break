@@ -42,18 +42,18 @@ public:
 	bool                                          bHasSpawned;                                       // 0x1478(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void SpawnBunkerCollisionActor(class AActor** OutActor);
 	void InactiveAbility();
-	void SetShadow();
 	void SetCullDistance();
-	void SetupInShadow();
 	void UserConstructionScript();
-	void OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue);
 	void ReceiveBeginPlay();
 	void OnSpawn();
 	void UpdateData();
-	void OnRecycle();
 	void ExecuteUbergraph_BP_Bunker(int32 EntryPoint);
+	void SpawnBunkerCollisionActor(class AActor** OutActor);
+	void SetShadow();
+	void SetupInShadow();
+	void OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue);
+	void OnRecycle();
 
 public:
 	static class UClass* StaticClass()

@@ -111,12 +111,12 @@ public:
 	bool                                          bFirstEnergyFull;                                  // 0x0905(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void K2_OnPlayHpLowAnim(bool bPlay);
-	void K2_OnPlayEnergyFullAnim(bool bPlay);
-	void PlayStateAnim(bool bPlay);
-	void K2_OnPlayEnergyFullLoopAnim(bool bPlay);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void ExecuteUbergraph_uw_fight_player_hp_pc(int32 EntryPoint);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void K2_OnPlayEnergyFullLoopAnim(bool bPlay);
+	void PlayStateAnim(bool bPlay);
+	void K2_OnPlayEnergyFullAnim(bool bPlay);
+	void K2_OnPlayHpLowAnim(bool bPlay);
 
 public:
 	static class UClass* StaticClass()

@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_collimation.uw_fight_collimation_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_collimation_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_collimation_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function uw_fight_collimation.uw_fight_collimation_C.ExecuteUbergraph_uw_fight_collimation
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,6 +34,20 @@ void Uuw_fight_collimation_C::ExecuteUbergraph_uw_fight_collimation(int32 EntryP
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_collimation.uw_fight_collimation_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_collimation_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_collimation_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

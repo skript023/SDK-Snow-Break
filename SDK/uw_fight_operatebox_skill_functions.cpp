@@ -42,31 +42,6 @@ void Uuw_fight_operatebox_skill_C::K2_OnCustomUmgAnimFinished(const class FName&
 }
 
 
-// LuaFunction uw_fight_operatebox_skill.uw_fight_operatebox_skill_C.OnSkillStrengthening
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bStart                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void Uuw_fight_operatebox_skill_C::OnSkillStrengthening(bool bStart)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_operatebox_skill_C", "OnSkillStrengthening");
-
-	Params::uw_fight_operatebox_skill_C_OnSkillStrengthening Parms{};
-
-	Parms.bStart = bStart;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_operatebox_skill.uw_fight_operatebox_skill_C.Construct
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
@@ -86,21 +61,21 @@ void Uuw_fight_operatebox_skill_C::Construct()
 }
 
 
-// LuaFunction uw_fight_operatebox_skill.uw_fight_operatebox_skill_C.K2_PlayCDAnim
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_operatebox_skill.uw_fight_operatebox_skill_C.OnSkillStrengthening
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    bPlayCD                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    bStart                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-void Uuw_fight_operatebox_skill_C::K2_PlayCDAnim(bool bPlayCD)
+void Uuw_fight_operatebox_skill_C::OnSkillStrengthening(bool bStart)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_operatebox_skill_C", "K2_PlayCDAnim");
+		Func = Class->GetFunction("uw_fight_operatebox_skill_C", "OnSkillStrengthening");
 
-	Params::uw_fight_operatebox_skill_C_K2_PlayCDAnim Parms{};
+	Params::uw_fight_operatebox_skill_C_OnSkillStrengthening Parms{};
 
-	Parms.bPlayCD = bPlayCD;
+	Parms.bStart = bStart;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -128,6 +103,31 @@ void Uuw_fight_operatebox_skill_C::OnChargeTimesChange(int32 InCurrentTimes, int
 
 	Parms.InCurrentTimes = InCurrentTimes;
 	Parms.InMaxTimes = InMaxTimes;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_operatebox_skill.uw_fight_operatebox_skill_C.K2_PlayCDAnim
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bPlayCD                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void Uuw_fight_operatebox_skill_C::K2_PlayCDAnim(bool bPlayCD)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_operatebox_skill_C", "K2_PlayCDAnim");
+
+	Params::uw_fight_operatebox_skill_C_K2_PlayCDAnim Parms{};
+
+	Parms.bPlayCD = bPlayCD;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

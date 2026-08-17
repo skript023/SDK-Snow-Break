@@ -14,43 +14,6 @@
 namespace SDK::Params
 {
 
-// Function interaction_progress_component.interaction_progress_component_C.OpenUI
-// 0x0008 (0x0008 - 0x0000)
-struct interaction_progress_component_C_OpenUI final
-{
-public:
-	class UUserWidget*                            CallFunc_GetUserWidgetObject_ReturnValue;          // 0x0000(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_interaction_progress_component_C_OpenUI;
-
-// Function interaction_progress_component.interaction_progress_component_C.CloseUI
-// 0x0008 (0x0008 - 0x0000)
-struct interaction_progress_component_C_CloseUI final
-{
-public:
-	class UUserWidget*                            CallFunc_GetUserWidgetObject_ReturnValue;          // 0x0000(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_interaction_progress_component_C_CloseUI;
-
-// Function interaction_progress_component.interaction_progress_component_C.StartProgress
-// 0x0008 (0x0008 - 0x0000)
-struct interaction_progress_component_C_StartProgress final
-{
-public:
-	float                                         PerformTime;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_interaction_progress_component_C_StartProgress;
-
-// Function interaction_progress_component.interaction_progress_component_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct interaction_progress_component_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_interaction_progress_component_C_ReceiveTick;
-
 // Function interaction_progress_component.interaction_progress_component_C.ExecuteUbergraph_interaction_progress_component
 // 0x0028 (0x0028 - 0x0000)
 struct interaction_progress_component_C_ExecuteUbergraph_interaction_progress_component final
@@ -67,6 +30,43 @@ public:
 	bool                                          CallFunc_GreaterEqual_FloatFloat_ReturnValue;      // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_interaction_progress_component_C_ExecuteUbergraph_interaction_progress_component;
+
+// Function interaction_progress_component.interaction_progress_component_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct interaction_progress_component_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_interaction_progress_component_C_ReceiveTick;
+
+// Function interaction_progress_component.interaction_progress_component_C.StartProgress
+// 0x0008 (0x0008 - 0x0000)
+struct interaction_progress_component_C_StartProgress final
+{
+public:
+	float                                         PerformTime;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_interaction_progress_component_C_StartProgress;
+
+// Function interaction_progress_component.interaction_progress_component_C.CloseUI
+// 0x0008 (0x0008 - 0x0000)
+struct interaction_progress_component_C_CloseUI final
+{
+public:
+	class UUserWidget*                            CallFunc_GetUserWidgetObject_ReturnValue;          // 0x0000(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_interaction_progress_component_C_CloseUI;
+
+// Function interaction_progress_component.interaction_progress_component_C.OpenUI
+// 0x0008 (0x0008 - 0x0000)
+struct interaction_progress_component_C_OpenUI final
+{
+public:
+	class UUserWidget*                            CallFunc_GetUserWidgetObject_ReturnValue;          // 0x0000(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_interaction_progress_component_C_OpenUI;
 
 }
 

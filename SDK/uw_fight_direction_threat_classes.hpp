@@ -57,16 +57,16 @@ public:
 	class URedirectImage*                         vx_quan_diban_bai;                                 // 0x08F8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void SequenceEvent__ENTRYPOINTuw_fight_direction_threat_0();
-	void StartLoop(const class FName AnimName, bool HasAppear);
-	void SetDefendTargetPercent(float Value);
-	void PlayTypeAnim();
-	void PlayDieAnim();
-	void AppearFinish(class UWidgetAnimation* Animation);
-	void OnAnimationFinished(const class UWidgetAnimation* Animation);
-	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void ExecuteUbergraph_uw_fight_direction_threat(int32 EntryPoint);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);
+	void OnAnimationFinished(const class UWidgetAnimation* Animation);
+	void AppearFinish(class UWidgetAnimation* Animation);
+	void PlayDieAnim();
+	void PlayTypeAnim();
+	void SetDefendTargetPercent(float Value);
+	void StartLoop(const class FName AnimName, bool HasAppear);
+	void SequenceEvent__ENTRYPOINTuw_fight_direction_threat_0();
 
 public:
 	static class UClass* StaticClass()

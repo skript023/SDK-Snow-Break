@@ -18,6 +18,41 @@
 namespace SDK::Params
 {
 
+// LuaFunction BP_GameController.BP_GameController_C.LuaImpl_CallDSExec
+// 0x0018 (0x0018 - 0x0000)
+struct BP_GameController_C_LuaImpl_CallDSExec final
+{
+public:
+	int32                                         InCmd;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 InContent;                                         // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BP_GameController_C_LuaImpl_CallDSExec;
+
+// LuaFunction BP_GameController.BP_GameController_C.LuaImpl_CallClientExec
+// 0x0018 (0x0018 - 0x0000)
+struct BP_GameController_C_LuaImpl_CallClientExec final
+{
+public:
+	int32                                         InCmd;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 InContent;                                         // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BP_GameController_C_LuaImpl_CallClientExec;
+
+// LuaFunction BP_GameController.BP_GameController_C.Client_ShowMessage
+// 0x0020 (0x0020 - 0x0000)
+struct BP_GameController_C_Client_ShowMessage final
+{
+public:
+	int32                                         Type;                                              // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Message;                                           // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Duration;                                          // 0x0018(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseUIShowTip;                                     // 0x001C(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BP_GameController_C_Client_ShowMessage;
+
 // Function BP_GameController.BP_GameController_C.CalcSideLength
 // 0x0034 (0x0034 - 0x0000)
 struct BP_GameController_C_CalcSideLength final
@@ -265,41 +300,6 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_GameController_C_ExecuteUbergraph_BP_GameController;
-
-// LuaFunction BP_GameController.BP_GameController_C.LuaImpl_CallDSExec
-// 0x0018 (0x0018 - 0x0000)
-struct BP_GameController_C_LuaImpl_CallDSExec final
-{
-public:
-	int32                                         InCmd;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 InContent;                                         // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BP_GameController_C_LuaImpl_CallDSExec;
-
-// LuaFunction BP_GameController.BP_GameController_C.LuaImpl_CallClientExec
-// 0x0018 (0x0018 - 0x0000)
-struct BP_GameController_C_LuaImpl_CallClientExec final
-{
-public:
-	int32                                         InCmd;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 InContent;                                         // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BP_GameController_C_LuaImpl_CallClientExec;
-
-// LuaFunction BP_GameController.BP_GameController_C.Client_ShowMessage
-// 0x0020 (0x0020 - 0x0000)
-struct BP_GameController_C_Client_ShowMessage final
-{
-public:
-	int32                                         Type;                                              // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Message;                                           // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Duration;                                          // 0x0018(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseUIShowTip;                                     // 0x001C(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BP_GameController_C_Client_ShowMessage;
 
 }
 

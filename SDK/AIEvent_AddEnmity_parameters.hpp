@@ -16,6 +16,15 @@
 namespace SDK::Params
 {
 
+// Function AIEvent_AddEnmity.AIEvent_AddEnmity_C.ExecuteOnServer
+// 0x0008 (0x0008 - 0x0000)
+struct AIEvent_AddEnmity_C_ExecuteOnServer final
+{
+public:
+	class AActor*                                 InCharacter;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIEvent_AddEnmity_C_ExecuteOnServer;
+
 // Function AIEvent_AddEnmity.AIEvent_AddEnmity_C.CanInterruptFight
 // 0x0001 (0x0001 - 0x0000)
 struct AIEvent_AddEnmity_C_CanInterruptFight final
@@ -33,15 +42,6 @@ public:
 	class AGameCharacter*                         Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIEvent_AddEnmity_C_OnExecute;
-
-// Function AIEvent_AddEnmity.AIEvent_AddEnmity_C.ExecuteOnServer
-// 0x0008 (0x0008 - 0x0000)
-struct AIEvent_AddEnmity_C_ExecuteOnServer final
-{
-public:
-	class AActor*                                 InCharacter;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIEvent_AddEnmity_C_ExecuteOnServer;
 
 // Function AIEvent_AddEnmity.AIEvent_AddEnmity_C.ExecuteUbergraph_AIEvent_AddEnmity
 // 0x0088 (0x0088 - 0x0000)

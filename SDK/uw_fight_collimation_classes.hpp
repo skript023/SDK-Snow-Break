@@ -67,8 +67,8 @@ public:
 	int32                                         KillSound;                                         // 0x04DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Construct();
 	void ExecuteUbergraph_uw_fight_collimation(int32 EntryPoint);
+	void Construct();
 
 public:
 	static class UClass* StaticClass()

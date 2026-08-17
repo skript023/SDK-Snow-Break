@@ -21,11 +21,11 @@ namespace SDK
 class UEmitter_SkillMove_RushToGoal_C final : public UEmitter_SkillMove_C
 {
 public:
-	void OnEmitterInterrupt();
-	void OnEmitBegin();
 	void EmitterDestroyLua();
-	void OnEmitTick(float DeltaTime);
+	void OnEmitterInterrupt();
 	void OnEmitEnd();
+	void OnEmitBegin();
+	void OnEmitTick(float DeltaTime);
 	void GetDefaultParamsValue(TArray<struct FParamInfo>* Values);
 
 public:

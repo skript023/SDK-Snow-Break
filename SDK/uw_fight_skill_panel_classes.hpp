@@ -37,8 +37,8 @@ public:
 	class Uuw_fight_skill03_button_new_C*         SuperSkillNew;                                     // 0x0498(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ShowOrHideCancelBtn(bool bShow);
 	void ExecuteUbergraph_uw_fight_skill_panel(int32 EntryPoint);
+	void ShowOrHideCancelBtn(bool bShow);
 
 public:
 	static class UClass* StaticClass()

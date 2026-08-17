@@ -38,15 +38,15 @@ public:
 	class URedirectTextBlock*                     TxtTotalScore;                                     // 0x03B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void BP_OnEntryReleased();
-	void BP_OnItemExpansionChanged(bool bIsExpanded);
-	void BP_OnItemSelectionChanged(bool bIsSelected);
-	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
 	void ExecuteUbergraph_uw_fight_propitem(int32 EntryPoint);
-	void Destruct();
-	void OnListItemObjectSet(class UObject* ListItemObject);
+	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
+	void BP_OnItemSelectionChanged(bool bIsSelected);
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void BP_OnEntryReleased();
 	void Construct();
 	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void OnListItemObjectSet(class UObject* ListItemObject);
+	void Destruct();
 
 	class FString GetModuleName() const;
 

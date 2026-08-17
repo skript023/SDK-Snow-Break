@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_danger_warning.uw_fight_danger_warning_C.K2_OnCustomUmgAnimFinished
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FName&                      AnimName                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_danger_warning_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_danger_warning_C", "K2_OnCustomUmgAnimFinished");
-
-	Params::uw_fight_danger_warning_C_K2_OnCustomUmgAnimFinished Parms{};
-
-	Parms.AnimName = AnimName;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_danger_warning.uw_fight_danger_warning_C.ExecuteUbergraph_uw_fight_danger_warning
 // (Final, UbergraphFunction)
 // Parameters:
@@ -52,6 +32,26 @@ void Uuw_fight_danger_warning_C::ExecuteUbergraph_uw_fight_danger_warning(int32 
 	Params::uw_fight_danger_warning_C_ExecuteUbergraph_uw_fight_danger_warning Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_danger_warning.uw_fight_danger_warning_C.K2_OnCustomUmgAnimFinished
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FName&                      AnimName                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_danger_warning_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_danger_warning_C", "K2_OnCustomUmgAnimFinished");
+
+	Params::uw_fight_danger_warning_C_K2_OnCustomUmgAnimFinished Parms{};
+
+	Parms.AnimName = AnimName;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

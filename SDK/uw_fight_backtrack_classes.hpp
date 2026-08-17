@@ -91,11 +91,11 @@ public:
 	void OnMoveLeftStart__Overridden();
 	void OnMoveRightStart__Overridden();
 	void ConstructInLua__Overridden();
-	void OnMoveRightStart();
-	void OnMoveRightEnd();
-	void OnMoveLeftStart();
 	void OnMoveLeftEnd();
 	void ConstructInLua();
+	void OnMoveRightEnd();
+	void OnMoveLeftStart();
+	void OnMoveRightStart();
 	void Destruct();
 
 	class FString GetModuleName() const;

@@ -33,17 +33,17 @@ public:
 	int32                                         TeleportDirection;                                 // 0x0258(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnSwitchEvent__Overridden();
-	void OnBind__Overridden();
-	void SwitchForce__Overridden();
-	void ReceiveTick__Overridden(float DeltaSeconds);
 	void ExecuteUbergraph_SwitchMgr(int32 EntryPoint);
-	void OnBind();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveTick__Overridden(float DeltaSeconds);
+	void SwitchForce__Overridden();
+	void OnBind__Overridden();
+	void OnSwitchEvent__Overridden();
 	void ReceiveBeginPlay();
+	void OnBind();
 	void ReceiveTick(float DeltaSeconds);
 	void SwitchForce();
 	void OnSwitchEvent();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 
 	class FString GetModuleName() const;
 

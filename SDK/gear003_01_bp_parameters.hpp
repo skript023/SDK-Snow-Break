@@ -219,9 +219,9 @@ public:
 };
 DUMPER7_ASSERTS_gear003_01_bp_C_阻挡是否启用显示;
 
-// Function gear003_01_bp.gear003_01_bp_C.Setup in Shadow
+// Function gear003_01_bp.gear003_01_bp_C.Setup In Shadow
 // 0x0030 (0x0030 - 0x0000)
-struct gear003_01_bp_C_Setup_in_Shadow final
+struct gear003_01_bp_C_Setup_In_Shadow final
 {
 public:
 	class UMaterialInterface*                     CallFunc_GetMaterial_ReturnValue;                  // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -232,7 +232,7 @@ public:
 	class UClass*                                 CallFunc_GetObjectClass_ReturnValue;               // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_ClassClass_ReturnValue;        // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_gear003_01_bp_C_Setup_in_Shadow;
+DUMPER7_ASSERTS_gear003_01_bp_C_Setup_In_Shadow;
 
 // Function gear003_01_bp.gear003_01_bp_C.设置到达状态
 // 0x0001 (0x0001 - 0x0000)

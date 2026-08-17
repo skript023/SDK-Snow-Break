@@ -17,33 +17,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.OnVisibilityChanged_Event_0
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_monster_tips_item_C_OnVisibilityChanged_Event_0 final
-{
-public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_monster_tips_item_C_OnVisibilityChanged_Event_0;
-
-// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.AppearFinish
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_monster_tips_item_C_AppearFinish final
-{
-public:
-	class UWidgetAnimation*                       Animation;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_monster_tips_item_C_AppearFinish;
-
-// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.OnAnimationFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_monster_tips_item_C_OnAnimationFinished final
-{
-public:
-	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_monster_tips_item_C_OnAnimationFinished;
-
 // Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.ExecuteUbergraph_uw_fight_monster_tips_item
 // 0x0130 (0x0130 - 0x0000)
 struct uw_fight_monster_tips_item_C_ExecuteUbergraph_uw_fight_monster_tips_item final
@@ -80,6 +53,53 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_monster_tips_item_C_ExecuteUbergraph_uw_fight_monster_tips_item;
 
+// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.OnAnimationFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_monster_tips_item_C_OnAnimationFinished final
+{
+public:
+	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_monster_tips_item_C_OnAnimationFinished;
+
+// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.AppearFinish
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_monster_tips_item_C_AppearFinish final
+{
+public:
+	class UWidgetAnimation*                       Animation;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_monster_tips_item_C_AppearFinish;
+
+// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.PlayHitAnim
+// 0x00C0 (0x00C0 - 0x0000)
+struct uw_fight_monster_tips_item_C_PlayHitAnim final
+{
+public:
+	struct FApplyDamageResultData                 DamageResultData;                                  // 0x0000(0x00C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_uw_fight_monster_tips_item_C_PlayHitAnim;
+
+// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.OnVisibilityChanged_Event_0
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_monster_tips_item_C_OnVisibilityChanged_Event_0 final
+{
+public:
+	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_monster_tips_item_C_OnVisibilityChanged_Event_0;
+
+// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.SetDefendTargetPercent
+// 0x0010 (0x0010 - 0x0000)
+struct uw_fight_monster_tips_item_C_SetDefendTargetPercent final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               CallFunc_GetDynamicMaterial_ReturnValue;           // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_monster_tips_item_C_SetDefendTargetPercent;
+
 // Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.StartLoop
 // 0x0030 (0x0030 - 0x0000)
 struct uw_fight_monster_tips_item_C_StartLoop final
@@ -93,26 +113,6 @@ public:
 	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_monster_tips_item_C_StartLoop;
-
-// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.SetDefendTargetPercent
-// 0x0010 (0x0010 - 0x0000)
-struct uw_fight_monster_tips_item_C_SetDefendTargetPercent final
-{
-public:
-	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               CallFunc_GetDynamicMaterial_ReturnValue;           // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_monster_tips_item_C_SetDefendTargetPercent;
-
-// Function uw_fight_monster_tips_item.uw_fight_monster_tips_item_C.PlayHitAnim
-// 0x00C0 (0x00C0 - 0x0000)
-struct uw_fight_monster_tips_item_C_PlayHitAnim final
-{
-public:
-	struct FApplyDamageResultData                 DamageResultData;                                  // 0x0000(0x00C0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_uw_fight_monster_tips_item_C_PlayHitAnim;
 
 }
 

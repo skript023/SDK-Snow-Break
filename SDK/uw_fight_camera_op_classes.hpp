@@ -27,8 +27,8 @@ public:
 	TMap<int32, struct FVector2D>                 Indexs;                                            // 0x0300(0x0050)(Edit, BlueprintVisible)
 
 public:
-	void OnZoomChange(float Value);
 	void ExecuteUbergraph_uw_fight_camera_op(int32 EntryPoint);
+	void OnZoomChange(float Value);
 
 public:
 	static class UClass* StaticClass()

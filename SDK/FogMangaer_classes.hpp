@@ -45,6 +45,8 @@ public:
 	bool                                          TimeLineEnd;                                       // 0x0298(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
+	void NewTime();
+	void ExecuteUbergraph_FogMangaer(int32 EntryPoint);
 	void Update_Origin_Parameter(float Alpha, const struct FLinearColor& OnestFogColor, float OnestFogDensity, float OnestFogHeightFallOff, float OnestFogOpacity, float OnestFogStartDistance, const struct FLinearColor& TwostFogColor, float TwostFogDensity, float TwostFogHeightMax, float TwostFogHeightMin, float TwostFogHeightFade, float TwostFogHeightOffset, float OnestFogCustomHeight);
 	void Update_High_Parameter(float Alpha, const struct FLinearColor& OnestFogColor, float OnestFogDensity, float OnestFogHeightFallOff, float OnestFogOpacity, float OnestFogStartDistance, const struct FLinearColor& TwostFogColor, float TwostFogDensity, float TwostFogHeightMax, float TwostFogHeightMin, float TwostFogHeightFade, float TwostFogHeightOffset, const class FString& CurrentFog, const class FString& MoveFog, float Dist1stFogCustomHeight);
 	void Timeline_0__FinishedFunc();
@@ -57,8 +59,6 @@ public:
 	void bPawnActive();
 	void ReceiveTick(float DeltaSeconds);
 	void SwitchFogColor(const struct FLinearColor& Dist1stFogColor, float Dist1stFogDensity, float DIst1stFogHeightFallOff, float DIst1stFogOpacity, float DIst1stFogStartDistance, const struct FLinearColor& Dist2stFogColor, float Dist2stFogDensity, float DIst2stFogHeightMax, float Dist2stFogHeightMin, float Dist2stFogHeightFade, float Dist2stFogHeightOffset, const class FString& CurrentFog, const class FString& MoveFog, float Dist1stFogCustomHeight);
-	void NewTime();
-	void ExecuteUbergraph_FogMangaer(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

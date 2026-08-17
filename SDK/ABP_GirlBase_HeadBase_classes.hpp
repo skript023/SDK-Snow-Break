@@ -32,11 +32,11 @@ public:
 	int32                                         Times;                                             // 0x05C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
 	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void ExecuteUbergraph_ABP_GirlBase_HeadBase(int32 EntryPoint);
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 	void BlueprintBeginPlay();
 	void CustomEvent();
-	void ExecuteUbergraph_ABP_GirlBase_HeadBase(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

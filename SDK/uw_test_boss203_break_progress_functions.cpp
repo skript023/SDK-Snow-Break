@@ -17,35 +17,21 @@
 namespace SDK
 {
 
-// Function uw_test_boss203_break_progress.uw_test_boss203_break_progress_C.StopProgress
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_test_boss203_break_progress_C::StopProgress()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_test_boss203_break_progress_C", "StopProgress");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_test_boss203_break_progress.uw_test_boss203_break_progress_C.StartProgress
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function uw_test_boss203_break_progress.uw_test_boss203_break_progress_C.ExecuteUbergraph_uw_test_boss203_break_progress
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// float                                   PerformTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_test_boss203_break_progress_C::StartProgress(float PerformTime)
+void Uuw_test_boss203_break_progress_C::ExecuteUbergraph_uw_test_boss203_break_progress(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_test_boss203_break_progress_C", "StartProgress");
+		Func = Class->GetFunction("uw_test_boss203_break_progress_C", "ExecuteUbergraph_uw_test_boss203_break_progress");
 
-	Params::uw_test_boss203_break_progress_C_StartProgress Parms{};
+	Params::uw_test_boss203_break_progress_C_ExecuteUbergraph_uw_test_boss203_break_progress Parms{};
 
-	Parms.PerformTime = PerformTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -73,23 +59,37 @@ void Uuw_test_boss203_break_progress_C::Tick(const struct FGeometry& MyGeometry,
 }
 
 
-// Function uw_test_boss203_break_progress.uw_test_boss203_break_progress_C.ExecuteUbergraph_uw_test_boss203_break_progress
-// (Final, UbergraphFunction, HasDefaults)
+// Function uw_test_boss203_break_progress.uw_test_boss203_break_progress_C.StartProgress
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   PerformTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_test_boss203_break_progress_C::ExecuteUbergraph_uw_test_boss203_break_progress(int32 EntryPoint)
+void Uuw_test_boss203_break_progress_C::StartProgress(float PerformTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_test_boss203_break_progress_C", "ExecuteUbergraph_uw_test_boss203_break_progress");
+		Func = Class->GetFunction("uw_test_boss203_break_progress_C", "StartProgress");
 
-	Params::uw_test_boss203_break_progress_C_ExecuteUbergraph_uw_test_boss203_break_progress Parms{};
+	Params::uw_test_boss203_break_progress_C_StartProgress Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.PerformTime = PerformTime;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_test_boss203_break_progress.uw_test_boss203_break_progress_C.StopProgress
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_test_boss203_break_progress_C::StopProgress()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_test_boss203_break_progress_C", "StopProgress");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

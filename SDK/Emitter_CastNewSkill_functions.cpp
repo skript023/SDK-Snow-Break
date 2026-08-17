@@ -36,6 +36,25 @@ void UEmitter_CastNewSkill_C::EmitterDestroyLua()
 }
 
 
+// LuaFunction Emitter_CastNewSkill.Emitter_CastNewSkill_C.OnEmitEnd
+// (Native, Event, Protected, BlueprintEvent)
+
+void UEmitter_CastNewSkill_C::OnEmitEnd()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Emitter_CastNewSkill_C", "OnEmitEnd");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction Emitter_CastNewSkill.Emitter_CastNewSkill_C.OnEmit
 // (Native, Event, Protected, BlueprintEvent)
 // Parameters:
@@ -58,25 +77,6 @@ EEmitterResult UEmitter_CastNewSkill_C::OnEmit()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// LuaFunction Emitter_CastNewSkill.Emitter_CastNewSkill_C.OnEmitEnd
-// (Native, Event, Protected, BlueprintEvent)
-
-void UEmitter_CastNewSkill_C::OnEmitEnd()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_CastNewSkill_C", "OnEmitEnd");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 

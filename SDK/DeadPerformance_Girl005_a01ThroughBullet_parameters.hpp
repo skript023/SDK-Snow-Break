@@ -17,18 +17,6 @@
 namespace SDK::Params
 {
 
-// Function DeadPerformance_Girl005_a01ThroughBullet.DeadPerformance_Girl005_a01ThroughBullet_C.DeadPerformanceLogic
-// 0x01F0 (0x01F0 - 0x0000)
-struct DeadPerformance_Girl005_a01ThroughBullet_C_DeadPerformanceLogic final
-{
-public:
-	class AGameCharacter*                         DeadCharacter;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AGameCharacter*                         Killer;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UDeadPerformanceComponent*              DeadComponent;                                     // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0018(0x01D8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_DeadPerformance_Girl005_a01ThroughBullet_C_DeadPerformanceLogic;
-
 // Function DeadPerformance_Girl005_a01ThroughBullet.DeadPerformance_Girl005_a01ThroughBullet_C.OnTick
 // 0x01F8 (0x01F8 - 0x0000)
 struct DeadPerformance_Girl005_a01ThroughBullet_C_OnTick final
@@ -42,6 +30,18 @@ public:
 	float                                         TimeFromBegin;                                     // 0x01F4(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_DeadPerformance_Girl005_a01ThroughBullet_C_OnTick;
+
+// Function DeadPerformance_Girl005_a01ThroughBullet.DeadPerformance_Girl005_a01ThroughBullet_C.DeadPerformanceLogic
+// 0x01F0 (0x01F0 - 0x0000)
+struct DeadPerformance_Girl005_a01ThroughBullet_C_DeadPerformanceLogic final
+{
+public:
+	class AGameCharacter*                         DeadCharacter;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameCharacter*                         Killer;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UDeadPerformanceComponent*              DeadComponent;                                     // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHealthChangeValue                     HealthChangeValue;                                 // 0x0018(0x01D8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_DeadPerformance_Girl005_a01ThroughBullet_C_DeadPerformanceLogic;
 
 // Function DeadPerformance_Girl005_a01ThroughBullet.DeadPerformance_Girl005_a01ThroughBullet_C.ExecuteUbergraph_DeadPerformance_Girl005_a01ThroughBullet
 // 0x0470 (0x0470 - 0x0000)

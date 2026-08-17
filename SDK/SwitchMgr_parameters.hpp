@@ -16,15 +16,6 @@
 namespace SDK::Params
 {
 
-// Function SwitchMgr.SwitchMgr_C.ReceiveTick__Overridden
-// 0x0004 (0x0004 - 0x0000)
-struct SwitchMgr_C_ReceiveTick__Overridden final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_SwitchMgr_C_ReceiveTick__Overridden;
-
 // Function SwitchMgr.SwitchMgr_C.ExecuteUbergraph_SwitchMgr
 // 0x0008 (0x0008 - 0x0000)
 struct SwitchMgr_C_ExecuteUbergraph_SwitchMgr final
@@ -35,14 +26,14 @@ public:
 };
 DUMPER7_ASSERTS_SwitchMgr_C_ExecuteUbergraph_SwitchMgr;
 
-// LuaFunction SwitchMgr.SwitchMgr_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct SwitchMgr_C_ReceiveEndPlay final
+// Function SwitchMgr.SwitchMgr_C.ReceiveTick__Overridden
+// 0x0004 (0x0004 - 0x0000)
+struct SwitchMgr_C_ReceiveTick__Overridden final
 {
 public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_SwitchMgr_C_ReceiveEndPlay;
+DUMPER7_ASSERTS_SwitchMgr_C_ReceiveTick__Overridden;
 
 // LuaFunction SwitchMgr.SwitchMgr_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)
@@ -52,6 +43,15 @@ public:
 	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_SwitchMgr_C_ReceiveTick;
+
+// LuaFunction SwitchMgr.SwitchMgr_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct SwitchMgr_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SwitchMgr_C_ReceiveEndPlay;
 
 // Function SwitchMgr.SwitchMgr_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

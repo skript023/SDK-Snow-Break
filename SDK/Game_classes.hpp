@@ -1307,7 +1307,7 @@ DUMPER7_ASSERTS_UFightModifierSpecialSignaItem_Girl007a_Manager;
 
 // Class Game.ClampAbilityAttribute
 // 0x0018 (0x0128 - 0x0110)
-class UClampAbilityAttribute final : public UCustomGameAbilityBuffer
+class UClampAbilityAttribute : public UCustomGameAbilityBuffer
 {
 public:
 	EAttributeType                                AttributeType;                                     // 0x0110(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1449,7 +1449,7 @@ DUMPER7_ASSERTS_UAnimMoveStateDistanceMap;
 
 // Class Game.ParticleAttachAllPartition
 // 0x00E0 (0x03E8 - 0x0308)
-class AParticleAttachAllPartition final : public ACustomEffectActor
+class AParticleAttachAllPartition : public ACustomEffectActor
 {
 public:
 	TArray<class UFXSystemComponent*>             AllParticles;                                      // 0x0308(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
@@ -5329,7 +5329,7 @@ DUMPER7_ASSERTS_UAbilityComponent_LevelDrop;
 
 // Class Game.AnimInstance_Girl015
 // 0x01E0 (0x0600 - 0x0420)
-class UAnimInstance_Girl015 : public UCurveSequenceControllerAnimInstance
+class UAnimInstance_Girl015 final : public UCurveSequenceControllerAnimInstance
 {
 public:
 	struct FVector2D                              AimOffsetXY;                                       // 0x0420(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5902,7 +5902,7 @@ DUMPER7_ASSERTS_USlotConfigComponent;
 
 // Class Game.ModifierPostProcess
 // 0x0010 (0x0038 - 0x0028)
-class UModifierPostProcess : public UObject
+class UModifierPostProcess final : public UObject
 {
 public:
 	EPostProcessType                              ProcessType;                                       // 0x0028(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -7677,7 +7677,7 @@ DUMPER7_ASSERTS_UCharacterAnimNameGenConfig;
 
 // Class Game.AnimInstance_PostProcess
 // 0x01B0 (0x05D0 - 0x0420)
-class UAnimInstance_PostProcess final : public UCurveSequenceControllerAnimInstance
+class UAnimInstance_PostProcess : public UCurveSequenceControllerAnimInstance
 {
 public:
 	class UAnimSequenceBase*                      HitReactAnim;                                      // 0x0420(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -8625,7 +8625,7 @@ DUMPER7_ASSERTS_UAnimNotifyState_EnermySlomo;
 
 // Class Game.InjuryTransmissionSimilar
 // 0x0068 (0x0178 - 0x0110)
-class UInjuryTransmissionSimilar : public UCustomGameAbilityBuffer
+class UInjuryTransmissionSimilar final : public UCustomGameAbilityBuffer
 {
 public:
 	TMap<uint32, class UCastConditionCheck*>      CastConditionMap;                                  // 0x0110(0x0050)(Transient, Protected, NativeAccessSpecifierProtected)
@@ -14046,7 +14046,7 @@ DUMPER7_ASSERTS_UBTTask_NpcAI_OpenFire;
 
 // Class Game.AICondition_TimeAfterTeamMemberCastSkillNative
 // 0x0000 (0x0028 - 0x0028)
-class UAICondition_TimeAfterTeamMemberCastSkillNative final : public UAICondition_BlueprintLogic
+class UAICondition_TimeAfterTeamMemberCastSkillNative : public UAICondition_BlueprintLogic
 {
 public:
 	bool DoLogic(const class AGameCharacter* Who, int32 SkillIdVal, float TimeVal, EOperationType OperationTypeVal, bool CheckByOr);
@@ -15716,7 +15716,7 @@ DUMPER7_ASSERTS_UAIMove_BunkerPoint;
 
 // Class Game.AnimInstance_Locomotion
 // 0x00C0 (0x0380 - 0x02C0)
-class UAnimInstance_Locomotion final : public UAnimInstance
+class UAnimInstance_Locomotion : public UAnimInstance
 {
 public:
 	class UAnimSequenceBase*                      Falling_Fight_Stand;                               // 0x02B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -16128,7 +16128,7 @@ DUMPER7_ASSERTS_UAIMove_TrackingTarget;
 
 // Class Game.GameTaskEvent_AIDirector
 // 0x0010 (0x0180 - 0x0170)
-class UGameTaskEvent_AIDirector : public UGameTaskEvent
+class UGameTaskEvent_AIDirector final : public UGameTaskEvent
 {
 public:
 	TArray<class UAIDirectorGlobalEvent*>         AIDirectorEvents;                                  // 0x0170(0x0010)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
@@ -17200,7 +17200,7 @@ DUMPER7_ASSERTS_UPostProcessParams;
 
 // Class Game.AnimInstance_Bow
 // 0x0070 (0x0330 - 0x02C0)
-class UAnimInstance_Bow final : public UAnimInstance
+class UAnimInstance_Bow : public UAnimInstance
 {
 public:
 	class FName                                   StringBoneName;                                    // 0x02B8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -17370,7 +17370,7 @@ DUMPER7_ASSERTS_APortalBird;
 
 // Class Game.AnimInstance_Fishing
 // 0x0050 (0x0310 - 0x02C0)
-class UAnimInstance_Fishing : public UAnimInstance
+class UAnimInstance_Fishing final : public UAnimInstance
 {
 public:
 	class UAnimSequenceBase*                      Idle;                                              // 0x02B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -19750,7 +19750,7 @@ DUMPER7_ASSERTS_UAnimNotify_ShowTraceWarningTipsForEmitter;
 
 // Class Game.RayPathWarning
 // 0x0110 (0x0338 - 0x0228)
-class ARayPathWarning final : public AActor
+class ARayPathWarning : public AActor
 {
 public:
 	TWeakObjectPtr<class AActor>                  RayPathOwner;                                      // 0x0228(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -24757,7 +24757,7 @@ DUMPER7_ASSERTS_UMonBloodBar;
 
 // Class Game.BulletBox
 // 0x0000 (0x0A30 - 0x0A30)
-class ABulletBox final : public ABullet
+class ABulletBox : public ABullet
 {
 public:
 	static class UClass* StaticClass()
@@ -25617,7 +25617,7 @@ DUMPER7_ASSERTS_ABulletScreenEditor;
 
 // Class Game.BulletScreenReplicateEditor
 // 0x02D0 (0x0680 - 0x03B0)
-class ABulletScreenReplicateEditor final : public ABulletScreenEditor
+class ABulletScreenReplicateEditor : public ABulletScreenEditor
 {
 public:
 	uint8                                         bBeamTail;                                         // 0x03A8(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -26102,7 +26102,7 @@ DUMPER7_ASSERTS_UInteractNpcSubsystem;
 
 // Class Game.ChangeRotateMoveSpeedBase
 // 0x0018 (0x0128 - 0x0110)
-class UChangeRotateMoveSpeedBase final : public UCustomGameAbilityBuffer
+class UChangeRotateMoveSpeedBase : public UCustomGameAbilityBuffer
 {
 public:
 	float                                         CurSpeedPer;                                       // 0x0110(0x0004)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27551,7 +27551,7 @@ DUMPER7_ASSERTS_UBunkerQueryTest_PathExist;
 
 // Class Game.PalGameMode
 // 0x0308 (0x0720 - 0x0418)
-class APalGameMode final : public AGameBaseMode
+class APalGameMode : public AGameBaseMode
 {
 public:
 	int32                                         AIControlId;                                       // 0x0418(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -30643,7 +30643,7 @@ DUMPER7_ASSERTS_UCastConditionCheck_PlayerCastSkillBase;
 
 // Class Game.CastConditionCheck_Probility
 // 0x0000 (0x0108 - 0x0108)
-class UCastConditionCheck_Probility : public UCastConditionCheck
+class UCastConditionCheck_Probility final : public UCastConditionCheck
 {
 public:
 	static class UClass* StaticClass()
@@ -30720,7 +30720,7 @@ DUMPER7_ASSERTS_UCastConditionCheck_NotifyAttributeChangeBase;
 
 // Class Game.CastConditionCheck_NotifyAttributeChange
 // 0x0010 (0x0120 - 0x0110)
-class UCastConditionCheck_NotifyAttributeChange final : public UCastConditionCheck_NotifyAttributeChangeBase
+class UCastConditionCheck_NotifyAttributeChange : public UCastConditionCheck_NotifyAttributeChangeBase
 {
 public:
 	int32                                         CampareType;                                       // 0x0110(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -31067,7 +31067,7 @@ DUMPER7_ASSERTS_UCastConditionCheck_ApplyHit_Attribute;
 
 // Class Game.CastConditionCheck_ApplyHit_HitActorType
 // 0x0008 (0x0118 - 0x0110)
-class UCastConditionCheck_ApplyHit_HitActorType : public UCastConditionCheck_ApplyHitBase
+class UCastConditionCheck_ApplyHit_HitActorType final : public UCastConditionCheck_ApplyHitBase
 {
 public:
 	bool                                          bWeakness;                                         // 0x0110(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -31518,7 +31518,7 @@ DUMPER7_ASSERTS_UCastConditionCheck_DamageEffect_AttackModifyType;
 
 // Class Game.CastConditionCheck_DamageEffect_AttackSkill
 // 0x0000 (0x0130 - 0x0130)
-class UCastConditionCheck_DamageEffect_AttackSkill final : public UCastConditionCheck_DamageEffectBase
+class UCastConditionCheck_DamageEffect_AttackSkill : public UCastConditionCheck_DamageEffectBase
 {
 public:
 	static class UClass* StaticClass()
@@ -31565,7 +31565,7 @@ DUMPER7_ASSERTS_UGMRefresLog;
 
 // Class Game.CastConditionCheck_DamageEffect_AttackState
 // 0x0000 (0x0130 - 0x0130)
-class UCastConditionCheck_DamageEffect_AttackState : public UCastConditionCheck_DamageEffectBase
+class UCastConditionCheck_DamageEffect_AttackState final : public UCastConditionCheck_DamageEffectBase
 {
 public:
 	static class UClass* StaticClass()
@@ -31782,7 +31782,7 @@ DUMPER7_ASSERTS_UCastConditionCheck_DamageEffect_CompareAttribute;
 
 // Class Game.CastConditionCheck_DamageEffect_CompareAttribute2
 // 0x0000 (0x0130 - 0x0130)
-class UCastConditionCheck_DamageEffect_CompareAttribute2 final : public UCastConditionCheck_DamageEffect_CompareAttribute
+class UCastConditionCheck_DamageEffect_CompareAttribute2 : public UCastConditionCheck_DamageEffect_CompareAttribute
 {
 public:
 	static class UClass* StaticClass()
@@ -31879,7 +31879,7 @@ DUMPER7_ASSERTS_UCastConditionCheck_DamageEffect_DamageTagContain;
 
 // Class Game.CastConditionCheck_DamageEffect_DamageType
 // 0x0000 (0x0130 - 0x0130)
-class UCastConditionCheck_DamageEffect_DamageType final : public UCastConditionCheck_DamageEffectBase
+class UCastConditionCheck_DamageEffect_DamageType : public UCastConditionCheck_DamageEffectBase
 {
 public:
 	static class UClass* StaticClass()
@@ -32144,7 +32144,7 @@ DUMPER7_ASSERTS_ADrawPathActor;
 
 // Class Game.CastConditionCheck_DamageEffect_Part
 // 0x0000 (0x0130 - 0x0130)
-class UCastConditionCheck_DamageEffect_Part : public UCastConditionCheck_DamageEffectBase
+class UCastConditionCheck_DamageEffect_Part final : public UCastConditionCheck_DamageEffectBase
 {
 public:
 	static class UClass* StaticClass()
@@ -32164,7 +32164,7 @@ DUMPER7_ASSERTS_UCastConditionCheck_DamageEffect_Part;
 
 // Class Game.CastConditionCheck_DamageEffect_Shield
 // 0x0000 (0x0130 - 0x0130)
-class UCastConditionCheck_DamageEffect_Shield final : public UCastConditionCheck_DamageEffectBase
+class UCastConditionCheck_DamageEffect_Shield : public UCastConditionCheck_DamageEffectBase
 {
 public:
 	static class UClass* StaticClass()
@@ -32204,7 +32204,7 @@ DUMPER7_ASSERTS_UCastConditionCheck_DamageEffect_SourceModifier;
 
 // Class Game.CastConditionCheck_DamageEffect_TargetAbnormalState
 // 0x0050 (0x0180 - 0x0130)
-class UCastConditionCheck_DamageEffect_TargetAbnormalState : public UCastConditionCheck_DamageEffectBase
+class UCastConditionCheck_DamageEffect_TargetAbnormalState final : public UCastConditionCheck_DamageEffectBase
 {
 public:
 	TMap<class FString, struct FGameplayTag>      TypeToTags;                                        // 0x0130(0x0050)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
@@ -32528,7 +32528,7 @@ DUMPER7_ASSERTS_UCastConditionCheck_DamageEffect_TargetModifierID;
 
 // Class Game.CastConditionCheck_DamageEffect_TargetModifierIDNotExist
 // 0x0008 (0x0138 - 0x0130)
-class UCastConditionCheck_DamageEffect_TargetModifierIDNotExist final : public UCastConditionCheck_DamageEffectBase
+class UCastConditionCheck_DamageEffect_TargetModifierIDNotExist : public UCastConditionCheck_DamageEffectBase
 {
 public:
 	bool                                          bCheckLauncherAbility;                             // 0x0130(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -32552,7 +32552,7 @@ DUMPER7_ASSERTS_UCastConditionCheck_DamageEffect_TargetModifierIDNotExist;
 
 // Class Game.SkillSkeletalMeshAgent
 // 0x0040 (0x0268 - 0x0228)
-class ASkillSkeletalMeshAgent : public AActor
+class ASkillSkeletalMeshAgent final : public AActor
 {
 public:
 	class USkeletalMeshComponent*                 Mesh;                                              // 0x0228(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -32578,7 +32578,7 @@ DUMPER7_ASSERTS_ASkillSkeletalMeshAgent;
 
 // Class Game.CastConditionCheck_DamageEffect_TargetUseDestoryValue
 // 0x0000 (0x0130 - 0x0130)
-class UCastConditionCheck_DamageEffect_TargetUseDestoryValue final : public UCastConditionCheck_DamageEffectBase
+class UCastConditionCheck_DamageEffect_TargetUseDestoryValue : public UCastConditionCheck_DamageEffectBase
 {
 public:
 	static class UClass* StaticClass()
@@ -32887,7 +32887,7 @@ DUMPER7_ASSERTS_UWednesdayDroneManagerComponent;
 
 // Class Game.CastConditionCheck_SelfCheck_OnSkillStart
 // 0x0018 (0x0120 - 0x0108)
-class UCastConditionCheck_SelfCheck_OnSkillStart : public UCastConditionCheck
+class UCastConditionCheck_SelfCheck_OnSkillStart final : public UCastConditionCheck
 {
 public:
 	int32                                         SkillID;                                           // 0x0108(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -33063,7 +33063,7 @@ DUMPER7_ASSERTS_UCastConditionCheck_AroundCharacterNum;
 
 // Class Game.FightAimGirl006b
 // 0x0000 (0x03F0 - 0x03F0)
-class UFightAimGirl006b final : public UNewFightSpecialBase
+class UFightAimGirl006b : public UNewFightSpecialBase
 {
 public:
 	static class UClass* StaticClass()
@@ -33295,7 +33295,7 @@ DUMPER7_ASSERTS_UCastConditionCheck_ModifierNotExist;
 
 // Class Game.FightBarPowerEntryGirl004b
 // 0x0038 (0x0380 - 0x0348)
-class UFightBarPowerEntryGirl004b : public UUserWidgetAnimation
+class UFightBarPowerEntryGirl004b final : public UUserWidgetAnimation
 {
 public:
 	uint8                                         Pad_348[0x18];                                     // 0x0348(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
@@ -35323,7 +35323,7 @@ DUMPER7_ASSERTS_AGirlRushPlayer;
 
 // Class Game.CharacterAccessory_Girl002a
 // 0x0050 (0x05E0 - 0x0590)
-class ACharacterAccessory_Girl002a : public ACharacterAccessory
+class ACharacterAccessory_Girl002a final : public ACharacterAccessory
 {
 public:
 	struct FVector                                HalfBunkerLocationOffset;                          // 0x0590(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -38591,7 +38591,7 @@ DUMPER7_ASSERTS_UCrossHair_FightPlmFarme;
 
 // Class Game.CrossHair_FightCrossRoleAim010a
 // 0x0020 (0x0470 - 0x0450)
-class UCrossHair_FightCrossRoleAim010a final : public UCrossHairBase
+class UCrossHair_FightCrossRoleAim010a : public UCrossHairBase
 {
 public:
 	class UWidget*                                LU;                                                // 0x0450(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -38858,23 +38858,19 @@ public:
 
 public:
 	void AddChildToPanel(class UUserWidget* InWidget, const struct FVector2D& InPos);
-	void BP_OnReleaseSlateResources__Overridden();
+	void BP_OnReleaseSlateResources();
 	void ClearChildren();
 	void EndInertialScrolling();
 	class UUserWidget* GenerateEntryWidget();
 	TArray<class UUserWidget*> GetDisplayedEntryWidgets();
 	struct FVector2D GetScrollViewSize();
 	struct FVector2D GetWidgetPosition(class UUserWidget* InWidget);
-	void OnScrollViewReady__Overridden();
-	void OnUserScrolled__Overridden(float Offset);
-	void OnViewSizeChange__Overridden();
+	void OnScrollViewReady();
+	void OnUserScrolled(float Offset);
+	void OnViewSizeChange();
 	void SetScrollbarVisibility(ESlateVisibility InVisibility);
 	void SetScrollOffset(float InOffset);
 	void SetWidgetPosition(class UUserWidget* InWidget, const struct FVector2D& InPos);
-	void OnUserScrolled(float Offset);
-	void OnScrollViewReady();
-	void OnViewSizeChange();
-	void BP_OnReleaseSlateResources();
 
 	void SetBoxSize(const struct FVector2D& InSize) const;
 
@@ -40396,7 +40392,7 @@ DUMPER7_ASSERTS_UEmitterTargetsSortRule_FightTargetDistance;
 
 // Class Game.EmitterTargetsSortRule_ModifierOverlaid
 // 0x0000 (0x0030 - 0x0030)
-class UEmitterTargetsSortRule_ModifierOverlaid final : public UEmitterTargetsSortRule
+class UEmitterTargetsSortRule_ModifierOverlaid : public UEmitterTargetsSortRule
 {
 public:
 	static class UClass* StaticClass()
@@ -40416,7 +40412,7 @@ DUMPER7_ASSERTS_UEmitterTargetsSortRule_ModifierOverlaid;
 
 // Class Game.EmitterTargetsSortRule_ScreenViewportCentreSort
 // 0x0000 (0x0030 - 0x0030)
-class UEmitterTargetsSortRule_ScreenViewportCentreSort final : public UEmitterTargetsSortRule
+class UEmitterTargetsSortRule_ScreenViewportCentreSort : public UEmitterTargetsSortRule
 {
 public:
 	static class UClass* StaticClass()
@@ -42926,7 +42922,7 @@ DUMPER7_ASSERTS_UFightBarGirl003a;
 
 // Class Game.FightBarGirl004b
 // 0x0058 (0x03C8 - 0x0370)
-class UFightBarGirl004b : public UFightSpecialBase
+class UFightBarGirl004b final : public UFightSpecialBase
 {
 public:
 	class AGameCharacter*                         CurCharacter;                                      // 0x0370(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -43081,7 +43077,7 @@ DUMPER7_ASSERTS_UFightBarGirl006aItem;
 
 // Class Game.PlayerWeapon_Bow
 // 0x00E0 (0x1D60 - 0x1C80)
-class APlayerWeapon_Bow final : public APlayerWeapon
+class APlayerWeapon_Bow : public APlayerWeapon
 {
 public:
 	bool                                          bInJoin;                                           // 0x1C78(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -43388,7 +43384,7 @@ DUMPER7_ASSERTS_UFightBarGirl013a;
 
 // Class Game.FightBarGirl014b_ArrowIndicator
 // 0x0060 (0x03D0 - 0x0370)
-class UFightBarGirl014b_ArrowIndicator final : public UFightSpecialBase
+class UFightBarGirl014b_ArrowIndicator : public UFightSpecialBase
 {
 public:
 	int32                                         SupSkillModifierID;                                // 0x0370(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -43671,7 +43667,7 @@ DUMPER7_ASSERTS_UFightBarGirl022Energy;
 
 // Class Game.FightBarGirl024
 // 0x0050 (0x0440 - 0x03F0)
-class UFightBarGirl024 final : public UNewFightSpecialBase
+class UFightBarGirl024 : public UNewFightSpecialBase
 {
 public:
 	int32                                         CurrentLevel;                                      // 0x03F0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -44061,7 +44057,7 @@ DUMPER7_ASSERTS_UFightCardGirl017;
 
 // Class Game.FightCenterPointTagGirl006b
 // 0x0068 (0x0458 - 0x03F0)
-class UFightCenterPointTagGirl006b final : public UNewFightSpecialBase
+class UFightCenterPointTagGirl006b : public UNewFightSpecialBase
 {
 public:
 	TWeakObjectPtr<class ATrap>                   CacheTrap;                                         // 0x03F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -45550,7 +45546,7 @@ DUMPER7_ASSERTS_ASubtitleGameplay;
 
 // Class Game.PreheatBullet
 // 0x0010 (0x0AE0 - 0x0AD0)
-class APreheatBullet final : public AFireBullet
+class APreheatBullet : public AFireBullet
 {
 public:
 	float                                         PreheatValue;                                      // 0x0AD0(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -46984,7 +46980,7 @@ DUMPER7_ASSERTS_UGamepadNavigationWrapUserWidget;
 
 // Class Game.CriticalBaseBuffer
 // 0x0020 (0x0130 - 0x0110)
-class UCriticalBaseBuffer : public UCustomGameAbilityBuffer
+class UCriticalBaseBuffer final : public UCustomGameAbilityBuffer
 {
 public:
 	uint8                                         Pad_110[0x1];                                      // 0x0110(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
@@ -47297,7 +47293,7 @@ DUMPER7_ASSERTS_UInputBind;
 
 // Class Game.Girl014aQTEEffectBase
 // 0x0038 (0x0148 - 0x0110)
-class UGirl014aQTEEffectBase : public UCustomGameAbilityBuffer
+class UGirl014aQTEEffectBase final : public UCustomGameAbilityBuffer
 {
 public:
 	class UGirl014aQTEEffectBase*                 PreBuff;                                           // 0x0110(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -47600,7 +47596,7 @@ DUMPER7_ASSERTS_AItemSpawner_CanSave;
 
 // Class Game.DodgeSkillEndToRush
 // 0x0030 (0x0140 - 0x0110)
-class UDodgeSkillEndToRush : public UCustomGameAbilityBuffer
+class UDodgeSkillEndToRush final : public UCustomGameAbilityBuffer
 {
 public:
 	int32                                         EnterRushAddModifierID;                            // 0x0110(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -47823,7 +47819,7 @@ DUMPER7_ASSERTS_UUINiagaraAsset;
 
 // Class Game.BowArrowIgnoreResidueBufferBase
 // 0x0050 (0x0160 - 0x0110)
-class UBowArrowIgnoreResidueBufferBase final : public UCustomGameAbilityBuffer
+class UBowArrowIgnoreResidueBufferBase : public UCustomGameAbilityBuffer
 {
 public:
 	TSet<class FName>                             IgnoreBowArrowResidueTags;                         // 0x0110(0x0050)(BlueprintVisible, Transient, Protected, NativeAccessSpecifierProtected)
@@ -47849,7 +47845,7 @@ DUMPER7_ASSERTS_UBowArrowIgnoreResidueBufferBase;
 
 // Class Game.BowArrowResidueBufferRecoverBase
 // 0x0160 (0x0270 - 0x0110)
-class UBowArrowResidueBufferRecoverBase final : public UCustomGameAbilityBuffer
+class UBowArrowResidueBufferRecoverBase : public UCustomGameAbilityBuffer
 {
 public:
 	TMap<uint32, struct FSoftObjectPath>          CacheBowArrowPath;                                 // 0x0110(0x0050)(Transient, NativeAccessSpecifierPublic)
@@ -47908,7 +47904,7 @@ DUMPER7_ASSERTS_UBowArrowResidueBufferRecoverBase;
 
 // Class Game.BowArrowResidueBufferBase
 // 0x0090 (0x01A0 - 0x0110)
-class UBowArrowResidueBufferBase final : public UCustomGameAbilityBuffer
+class UBowArrowResidueBufferBase : public UCustomGameAbilityBuffer
 {
 public:
 	struct FSoftObjectPath                        BowArrowPath;                                      // 0x0110(0x0018)(BlueprintVisible, ZeroConstructor, Transient, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -52314,7 +52310,7 @@ DUMPER7_ASSERTS_UThreadCoreWidget;
 
 // Class Game.GameTaskEvent_FlowFinish
 // 0x0000 (0x0170 - 0x0170)
-class UGameTaskEvent_FlowFinish : public UGameTaskEvent
+class UGameTaskEvent_FlowFinish final : public UGameTaskEvent
 {
 public:
 	static class UClass* StaticClass()
@@ -55470,7 +55466,7 @@ DUMPER7_ASSERTS_UBuffIconItem;
 
 // Class Game.PlayerViewSpecialData
 // 0x0008 (0x0030 - 0x0028)
-class UPlayerViewSpecialData final : public UObject
+class UPlayerViewSpecialData : public UObject
 {
 public:
 	int32                                         ShowType;                                          // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -56605,7 +56601,7 @@ DUMPER7_ASSERTS_ULevelStarTask_PlayerHealth;
 
 // Class Game.LoadingWidget
 // 0x00A8 (0x0328 - 0x0280)
-class ULoadingWidget : public UUserWidget
+class ULoadingWidget final : public UUserWidget
 {
 public:
 	TArray<TSoftObjectPtr<class UTexture>>        RandomBgList;                                      // 0x0280(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic)
@@ -60408,7 +60404,7 @@ DUMPER7_ASSERTS_APlayerTeamLogic;
 
 // Class Game.SubPlayerWeapon
 // 0x0000 (0x1C80 - 0x1C80)
-class ASubPlayerWeapon final : public APlayerWeapon
+class ASubPlayerWeapon : public APlayerWeapon
 {
 public:
 	static class UClass* StaticClass()
@@ -62356,7 +62352,7 @@ DUMPER7_ASSERTS_UComstomWidgetAnimtion;
 
 // Class Game.RespawnActor
 // 0x0008 (0x0230 - 0x0228)
-class ARespawnActor final : public AActor
+class ARespawnActor : public AActor
 {
 public:
 	int32                                         RespawnId;                                         // 0x0228(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -65346,7 +65342,7 @@ DUMPER7_ASSERTS_ATrapGeneratorMgr;
 
 // Class Game.TrapLinkManager
 // 0x0128 (0x01D8 - 0x00B0)
-class UTrapLinkManager final : public UActorComponent
+class UTrapLinkManager : public UActorComponent
 {
 public:
 	TArray<struct FTrapLinkWidgetInfo>            TrapDisplayWidgetInfo;                             // 0x00B0(0x0010)(BlueprintVisible, ZeroConstructor, Protected, NativeAccessSpecifierProtected)

@@ -34,10 +34,10 @@ public:
 	ESlateVisibility                              Visibity;                                          // 0x04B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void K2_OnReloading(bool bIsReload, EWeaponType Type, bool bInterrupt, float AnimTime);
 	void ExecuteUbergraph_uw_fight_cross11(int32 EntryPoint);
-	void K2_OnUpdate(float InDeltaTime);
+	void K2_OnReloading(bool bIsReload, EWeaponType Type, bool bInterrupt, float AnimTime);
 	void Construct();
+	void K2_OnUpdate(float InDeltaTime);
 
 	class FString GetModuleName() const;
 

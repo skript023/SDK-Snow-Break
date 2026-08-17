@@ -17,45 +17,23 @@
 namespace SDK
 {
 
-// Function uw_fight_scene_off.uw_fight_scene_off_C.SceneOff
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function uw_fight_scene_off.uw_fight_scene_off_C.ExecuteUbergraph_uw_fight_scene_off
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_scene_off_C::SceneOff()
+void Uuw_fight_scene_off_C::ExecuteUbergraph_uw_fight_scene_off(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_scene_off_C", "SceneOff");
+		Func = Class->GetFunction("uw_fight_scene_off_C", "ExecuteUbergraph_uw_fight_scene_off");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::uw_fight_scene_off_C_ExecuteUbergraph_uw_fight_scene_off Parms{};
 
+	Parms.EntryPoint = EntryPoint;
 
-// Function uw_fight_scene_off.uw_fight_scene_off_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_scene_off_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_scene_off_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_scene_off.uw_fight_scene_off_C.data transmission off
-// (BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_scene_off_C::data_transmission_off()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_scene_off_C", "data transmission off");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -81,23 +59,45 @@ void Uuw_fight_scene_off_C::Tick(const struct FGeometry& MyGeometry, float InDel
 }
 
 
-// Function uw_fight_scene_off.uw_fight_scene_off_C.ExecuteUbergraph_uw_fight_scene_off
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_scene_off.uw_fight_scene_off_C.data transmission off
+// (BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_scene_off_C::ExecuteUbergraph_uw_fight_scene_off(int32 EntryPoint)
+void Uuw_fight_scene_off_C::data_transmission_off()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_scene_off_C", "ExecuteUbergraph_uw_fight_scene_off");
+		Func = Class->GetFunction("uw_fight_scene_off_C", "data transmission off");
 
-	Params::uw_fight_scene_off_C_ExecuteUbergraph_uw_fight_scene_off Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function uw_fight_scene_off.uw_fight_scene_off_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_scene_off_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_scene_off_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_scene_off.uw_fight_scene_off_C.SceneOff
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_scene_off_C::SceneOff()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_scene_off_C", "SceneOff");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

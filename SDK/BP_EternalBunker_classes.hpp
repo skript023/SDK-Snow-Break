@@ -42,12 +42,12 @@ public:
 public:
 	void SetShadow();
 	void SetCullDistance();
-	void SetupInShadow();
 	void UserConstructionScript();
-	void ReceiveBeginPlay();
 	void UpdateData();
-	void Pre_Spawn();
 	void Pre_Recycle();
+	void SetupInShadow();
+	void ReceiveBeginPlay();
+	void Pre_Spawn();
 	void ExecuteUbergraph_BP_EternalBunker(int32 EntryPoint);
 
 public:

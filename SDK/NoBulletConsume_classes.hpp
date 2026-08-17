@@ -29,9 +29,9 @@ public:
 public:
 	void K2_ReceiveActive(const class UObject* Instigator);
 	void K2_ReceiveInitialize(const TArray<struct FParamInfo>& Info, const class UGameAbilityComponent* lpInstigator);
+	void K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn);
 	void WeaponFire(uint8 ForceShootCount, class APlayerWeapon* InCurWeapon);
 	void ExecuteUbergraph_NoBulletConsume(int32 EntryPoint);
-	void K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn);
 
 public:
 	static class UClass* StaticClass()

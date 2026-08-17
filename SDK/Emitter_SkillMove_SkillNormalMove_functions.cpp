@@ -17,24 +17,22 @@
 namespace SDK
 {
 
-// Function Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.GetDefaultParamsValue
-// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<struct FParamInfo>*              Values                                                 (Parm, OutParm)
+// LuaFunction Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.EmitterDestroyLua
+// (Native, Event, Public, BlueprintEvent)
 
-void UEmitter_SkillMove_SkillNormalMove_C::GetDefaultParamsValue(TArray<struct FParamInfo>* Values)
+void UEmitter_SkillMove_SkillNormalMove_C::EmitterDestroyLua()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "GetDefaultParamsValue");
+		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "EmitterDestroyLua");
 
-	Params::Emitter_SkillMove_SkillNormalMove_C_GetDefaultParamsValue Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
-	if (Values != nullptr)
-		*Values = std::move(Parms.Values);
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -57,15 +55,15 @@ void UEmitter_SkillMove_SkillNormalMove_C::OnEmitterInterrupt()
 }
 
 
-// LuaFunction Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.OnEmitBegin
+// LuaFunction Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.OnEmitEnd
 // (Native, Event, Protected, BlueprintEvent)
 
-void UEmitter_SkillMove_SkillNormalMove_C::OnEmitBegin()
+void UEmitter_SkillMove_SkillNormalMove_C::OnEmitEnd()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "OnEmitBegin");
+		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "OnEmitEnd");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -76,15 +74,15 @@ void UEmitter_SkillMove_SkillNormalMove_C::OnEmitBegin()
 }
 
 
-// LuaFunction Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.EmitterDestroyLua
-// (Native, Event, Public, BlueprintEvent)
+// LuaFunction Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.OnEmitBegin
+// (Native, Event, Protected, BlueprintEvent)
 
-void UEmitter_SkillMove_SkillNormalMove_C::EmitterDestroyLua()
+void UEmitter_SkillMove_SkillNormalMove_C::OnEmitBegin()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "EmitterDestroyLua");
+		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "OnEmitBegin");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -120,22 +118,24 @@ void UEmitter_SkillMove_SkillNormalMove_C::OnEmitTick(float DeltaTime)
 }
 
 
-// LuaFunction Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.OnEmitEnd
-// (Native, Event, Protected, BlueprintEvent)
+// Function Emitter_SkillMove_SkillNormalMove.Emitter_SkillMove_SkillNormalMove_C.GetDefaultParamsValue
+// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<struct FParamInfo>*              Values                                                 (Parm, OutParm)
 
-void UEmitter_SkillMove_SkillNormalMove_C::OnEmitEnd()
+void UEmitter_SkillMove_SkillNormalMove_C::GetDefaultParamsValue(TArray<struct FParamInfo>* Values)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "OnEmitEnd");
+		Func = Class->GetFunction("Emitter_SkillMove_SkillNormalMove_C", "GetDefaultParamsValue");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Params::Emitter_SkillMove_SkillNormalMove_C_GetDefaultParamsValue Parms{};
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
-	Func->FunctionFlags = Flgs;
+	if (Values != nullptr)
+		*Values = std::move(Parms.Values);
 }
 
 }

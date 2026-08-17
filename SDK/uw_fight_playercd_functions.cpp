@@ -17,37 +17,35 @@
 namespace SDK
 {
 
-// Function uw_fight_playercd.uw_fight_playercd_C.Tick
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function uw_fight_playercd.uw_fight_playercd_C.ExecuteUbergraph_uw_fight_playercd
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_playercd_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
+void Uuw_fight_playercd_C::ExecuteUbergraph_uw_fight_playercd(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_playercd_C", "Tick");
+		Func = Class->GetFunction("uw_fight_playercd_C", "ExecuteUbergraph_uw_fight_playercd");
 
-	Params::uw_fight_playercd_C_Tick Parms{};
+	Params::uw_fight_playercd_C_ExecuteUbergraph_uw_fight_playercd Parms{};
 
-	Parms.MyGeometry = std::move(MyGeometry);
-	Parms.InDeltaTime = InDeltaTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_playercd.uw_fight_playercd_C.Stop
+// Function uw_fight_playercd.uw_fight_playercd_C.CustomEvent_0
 // (BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_playercd_C::Stop()
+void Uuw_fight_playercd_C::CustomEvent_0()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_playercd_C", "Stop");
+		Func = Class->GetFunction("uw_fight_playercd_C", "CustomEvent_0");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -73,35 +71,37 @@ void Uuw_fight_playercd_C::Play(bool bLoop)
 }
 
 
-// Function uw_fight_playercd.uw_fight_playercd_C.CustomEvent_0
+// Function uw_fight_playercd.uw_fight_playercd_C.Stop
 // (BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_playercd_C::CustomEvent_0()
+void Uuw_fight_playercd_C::Stop()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_playercd_C", "CustomEvent_0");
+		Func = Class->GetFunction("uw_fight_playercd_C", "Stop");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function uw_fight_playercd.uw_fight_playercd_C.ExecuteUbergraph_uw_fight_playercd
-// (Final, UbergraphFunction, HasDefaults)
+// Function uw_fight_playercd.uw_fight_playercd_C.Tick
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_playercd_C::ExecuteUbergraph_uw_fight_playercd(int32 EntryPoint)
+void Uuw_fight_playercd_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_playercd_C", "ExecuteUbergraph_uw_fight_playercd");
+		Func = Class->GetFunction("uw_fight_playercd_C", "Tick");
 
-	Params::uw_fight_playercd_C_ExecuteUbergraph_uw_fight_playercd Parms{};
+	Params::uw_fight_playercd_C_Tick Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.MyGeometry = std::move(MyGeometry);
+	Parms.InDeltaTime = InDeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -17,34 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void Uuw_fight_operatebird_skill_C::BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_operatebird_skill_C", "BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void Uuw_fight_operatebird_skill_C::BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_operatebird_skill_C", "BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.ExecuteUbergraph_uw_fight_operatebird_skill
 // (Final, UbergraphFunction)
 // Parameters:
@@ -62,6 +34,34 @@ void Uuw_fight_operatebird_skill_C::ExecuteUbergraph_uw_fight_operatebird_skill(
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void Uuw_fight_operatebird_skill_C::BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_operatebird_skill_C", "BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_operatebird_skill.uw_fight_operatebird_skill_C.BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void Uuw_fight_operatebird_skill_C::BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_operatebird_skill_C", "BndEvt__uw_fight_operatebird_skill_ButtonSkill_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

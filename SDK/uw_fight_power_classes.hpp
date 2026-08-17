@@ -45,10 +45,10 @@ public:
 	bool                                          bPlayWarn;                                         // 0x0440(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void K2_PlayAnim(float InValue);
-	void OnPowerStrengthening(bool bStart, float Start, float End);
-	void OnPowerTimeStrengthening(bool bStart);
 	void ExecuteUbergraph_uw_fight_power(int32 EntryPoint);
+	void OnPowerTimeStrengthening(bool bStart);
+	void OnPowerStrengthening(bool bStart, float Start, float End);
+	void K2_PlayAnim(float InValue);
 
 public:
 	static class UClass* StaticClass()

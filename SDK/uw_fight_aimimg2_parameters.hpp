@@ -16,24 +16,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_aimimg2.uw_fight_aimimg2_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_aimimg2_C_PreConstruct final
-{
-public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_aimimg2_C_PreConstruct;
-
-// Function uw_fight_aimimg2.uw_fight_aimimg2_C.VisibilityChange
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_aimimg2_C_VisibilityChange final
-{
-public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_aimimg2_C_VisibilityChange;
-
 // Function uw_fight_aimimg2.uw_fight_aimimg2_C.ExecuteUbergraph_uw_fight_aimimg2
 // 0x0020 (0x0020 - 0x0000)
 struct uw_fight_aimimg2_C_ExecuteUbergraph_uw_fight_aimimg2 final
@@ -48,6 +30,24 @@ public:
 	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_uw_fight_aimimg2_C_ExecuteUbergraph_uw_fight_aimimg2;
+
+// Function uw_fight_aimimg2.uw_fight_aimimg2_C.VisibilityChange
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_aimimg2_C_VisibilityChange final
+{
+public:
+	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_aimimg2_C_VisibilityChange;
+
+// Function uw_fight_aimimg2.uw_fight_aimimg2_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_aimimg2_C_PreConstruct final
+{
+public:
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_aimimg2_C_PreConstruct;
 
 }
 

@@ -25,13 +25,13 @@ public:
 	float                                         Distance;                                          // 0x01E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	bool OnMoveTouchTargetCheck(class AActor* InTarget);
+	void OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement);
 	bool IsUsedToAddVelocityInsteadOverride();
+	void OnMoveBlock(const struct FHitResult& HitResult);
+	void OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement);
 	void OnMoveTickCheck(float DeltaTime);
 	void OnMoveEnd(class UBaseMovementComponent* Movement);
-	void OnMoveBlock(const struct FHitResult& HitResult);
-	bool OnMoveTouchTargetCheck(class AActor* InTarget);
-	void OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement);
-	void OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement);
 
 	class FString GetModuleName() const;
 

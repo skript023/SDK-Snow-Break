@@ -30,7 +30,7 @@ public:
 	class UWidgetAnimation*                       Sustain;                                           // 0x05F0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       ReduceCD;                                          // 0x05F8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Strong;                                            // 0x0600(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UWidgetAnimation*                       oncd;                                              // 0x0608(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UWidgetAnimation*                       Oncd;                                              // 0x0608(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       qta_cd;                                            // 0x0610(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UWidgetAnimation*                       fight_cd;                                          // 0x0618(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UProgressBar*                           BarNoEnergy;                                       // 0x0620(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -107,7 +107,7 @@ public:
 	class URedirectImage*                         Qta_img_1;                                         // 0x0858(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UGameCanvasPanel*                       qtacd;                                             // 0x0860(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UGameCanvasPanel*                       Silence;                                           // 0x0868(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class URedirectTextBlock*                     Text_Num;                                          // 0x0870(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class URedirectTextBlock*                     Text_num;                                          // 0x0870(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectTextBlock*                     TxtCD;                                             // 0x0878(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectTextBlock*                     TxtTier;                                           // 0x0880(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	bool                                          bStartDerivedAnim;                                 // 0x0888(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
@@ -115,28 +115,28 @@ public:
 	int32                                         SoundId;                                           // 0x088C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void PreConstruct(bool IsDesignTime);
-	void OnQTEStateChange(bool bActive);
-	void OnModifyStateChange(const bool bModify);
-	void Construct__Overridden();
-	void K2_PlayCDAnim__Overridden(bool bPlay);
-	void OnSkillStrengthening__Overridden(bool bStart);
-	void OnReduceCD();
-	void PlayCastableAnim();
-	void Destruct__Overridden();
-	void K2_NormalEnergyChange(bool bFull);
-	void K2_SetButtonForbid(bool bForbid);
-	void PlayDerivedSkillAnim(bool bPlay);
-	void K2_PlaySustainAnim(bool bPlay);
-	void OnButtonDom(const int32 Type, const struct FPointerEvent& InMouseEvent);
-	void OnSkillKeepInterrupt(bool bStart);
-	void K2_OnCustomUmgAnimFinished__Overridden(const class FName& AnimName);
 	void ExecuteUbergraph_uw_fight_skill_button(int32 EntryPoint);
+	void K2_OnCustomUmgAnimFinished__Overridden(const class FName& AnimName);
+	void OnSkillKeepInterrupt(bool bStart);
+	void OnButtonDom(const int32 Type, const struct FPointerEvent& InMouseEvent);
+	void K2_PlaySustainAnim(bool bPlay);
+	void PlayDerivedSkillAnim(bool bPlay);
+	void K2_SetButtonForbid(bool bForbid);
+	void K2_NormalEnergyChange(bool bFull);
+	void Destruct__Overridden();
+	void PlayCastableAnim();
+	void OnReduceCD();
+	void OnSkillStrengthening__Overridden(bool bStart);
+	void K2_PlayCDAnim__Overridden(bool bPlay);
+	void Construct__Overridden();
+	void OnModifyStateChange(const bool bModify);
+	void OnQTEStateChange(bool bActive);
+	void PreConstruct(bool IsDesignTime);
 	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
-	void OnSkillStrengthening(bool bStart);
 	void Construct();
-	void K2_PlayCDAnim(bool bPlay);
+	void OnSkillStrengthening(bool bStart);
 	void OnChargeTimesChange(int32 InCurrentTimes, int32 InMaxTimes);
+	void K2_PlayCDAnim(bool bPlay);
 	void Destruct();
 
 	class FString GetModuleName() const;

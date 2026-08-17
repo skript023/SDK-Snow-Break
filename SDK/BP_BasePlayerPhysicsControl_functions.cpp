@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function BP_BasePlayerPhysicsControl.BP_BasePlayerPhysicsControl_C.ReceiveBeginPlay
-// (Event, Public, BlueprintEvent)
-
-void UBP_BasePlayerPhysicsControl_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BasePlayerPhysicsControl_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_BasePlayerPhysicsControl.BP_BasePlayerPhysicsControl_C.ExecuteUbergraph_BP_BasePlayerPhysicsControl
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,6 +34,20 @@ void UBP_BasePlayerPhysicsControl_C::ExecuteUbergraph_BP_BasePlayerPhysicsContro
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_BasePlayerPhysicsControl.BP_BasePlayerPhysicsControl_C.ReceiveBeginPlay
+// (Event, Public, BlueprintEvent)
+
+void UBP_BasePlayerPhysicsControl_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BasePlayerPhysicsControl_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

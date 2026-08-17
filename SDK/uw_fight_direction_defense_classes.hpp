@@ -42,17 +42,17 @@ public:
 	class URedirectTextBlock*                     TxtDefenseName;                                    // 0x0880(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void SequenceEvent__ENTRYPOINTuw_fight_direction_defense_0();
-	void StartLoop(const class FName AnimName, bool HasAppear);
-	void SetDefendTargetPercent(float Value);
-	void OnAnimationFinished(const class UWidgetAnimation* Animation);
-	void PlayDieAnim();
-	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);
-	void AppearFinish(class UWidgetAnimation* Animation);
-	void PlayHitAnim(const struct FApplyDamageResultData& DamageResultData);
-	void PlayTypeAnim();
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void ExecuteUbergraph_uw_fight_direction_defense(int32 EntryPoint);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void PlayTypeAnim();
+	void PlayHitAnim(const struct FApplyDamageResultData& DamageResultData);
+	void AppearFinish(class UWidgetAnimation* Animation);
+	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);
+	void PlayDieAnim();
+	void OnAnimationFinished(const class UWidgetAnimation* Animation);
+	void SetDefendTargetPercent(float Value);
+	void StartLoop(const class FName AnimName, bool HasAppear);
+	void SequenceEvent__ENTRYPOINTuw_fight_direction_defense_0();
 
 public:
 	static class UClass* StaticClass()

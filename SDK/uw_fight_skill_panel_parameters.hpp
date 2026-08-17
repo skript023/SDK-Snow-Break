@@ -14,15 +14,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_skill_panel.uw_fight_skill_panel_C.ShowOrHideCancelBtn
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_skill_panel_C_ShowOrHideCancelBtn final
-{
-public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_skill_panel_C_ShowOrHideCancelBtn;
-
 // Function uw_fight_skill_panel.uw_fight_skill_panel_C.ExecuteUbergraph_uw_fight_skill_panel
 // 0x0008 (0x0008 - 0x0000)
 struct uw_fight_skill_panel_C_ExecuteUbergraph_uw_fight_skill_panel final
@@ -32,6 +23,15 @@ public:
 	bool                                          K2Node_Event_bShow;                                // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_skill_panel_C_ExecuteUbergraph_uw_fight_skill_panel;
+
+// Function uw_fight_skill_panel.uw_fight_skill_panel_C.ShowOrHideCancelBtn
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_skill_panel_C_ShowOrHideCancelBtn final
+{
+public:
+	bool                                          bShow;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_skill_panel_C_ShowOrHideCancelBtn;
 
 }
 

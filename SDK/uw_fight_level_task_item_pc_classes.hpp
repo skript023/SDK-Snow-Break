@@ -33,16 +33,16 @@ public:
 	class URedirectTextBlock*                     Title;                                             // 0x0388(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void BP_OnEntryReleased();
-	void BP_OnItemExpansionChanged(bool bIsExpanded);
-	void BP_OnItemSelectionChanged(bool bIsSelected);
-	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
-	void BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature();
-	void BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature();
-	void Construct();
-	void Destruct__Overridden();
-	void OnClickTask();
 	void ExecuteUbergraph_uw_fight_level_task_item_pc(int32 EntryPoint);
+	void OnClickTask();
+	void Destruct__Overridden();
+	void Construct();
+	void BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature();
+	void BndEvt__uw_fight_level_task_item_BtnTask_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature();
+	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
+	void BP_OnItemSelectionChanged(bool bIsSelected);
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void BP_OnEntryReleased();
 	void OnListItemObjectSet(class UObject* ListItemObject);
 	void Destruct();
 

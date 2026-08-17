@@ -17,15 +17,40 @@
 namespace SDK
 {
 
-// LuaFunction TimerExecute.TimerExecute_C.OnActive
+// LuaFunction TimerExecute.TimerExecute_C.GetDescription
 // (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTimerExecute_C::OnActive()
+class FString UTimerExecute_C::GetDescription()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TimerExecute_C", "OnActive");
+		Func = Class->GetFunction("TimerExecute_C", "GetDescription");
+
+	Params::TimerExecute_C_GetDescription Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// LuaFunction TimerExecute.TimerExecute_C.OnActive_Client
+// (Native, Event, Public, BlueprintEvent)
+
+void UTimerExecute_C::OnActive_Client()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimerExecute_C", "OnActive_Client");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -55,15 +80,15 @@ void UTimerExecute_C::OnEnd()
 }
 
 
-// LuaFunction TimerExecute.TimerExecute_C.OnActive_Client
+// LuaFunction TimerExecute.TimerExecute_C.OnEnd_Client
 // (Native, Event, Public, BlueprintEvent)
 
-void UTimerExecute_C::OnActive_Client()
+void UTimerExecute_C::OnEnd_Client()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TimerExecute_C", "OnActive_Client");
+		Func = Class->GetFunction("TimerExecute_C", "OnEnd_Client");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -74,40 +99,15 @@ void UTimerExecute_C::OnActive_Client()
 }
 
 
-// LuaFunction TimerExecute.TimerExecute_C.GetDescription
+// LuaFunction TimerExecute.TimerExecute_C.OnActive
 // (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UTimerExecute_C::GetDescription()
+void UTimerExecute_C::OnActive()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TimerExecute_C", "GetDescription");
-
-	Params::TimerExecute_C_GetDescription Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// LuaFunction TimerExecute.TimerExecute_C.OnEnd_Client
-// (Native, Event, Public, BlueprintEvent)
-
-void UTimerExecute_C::OnEnd_Client()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimerExecute_C", "OnEnd_Client");
+		Func = Class->GetFunction("TimerExecute_C", "OnActive");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

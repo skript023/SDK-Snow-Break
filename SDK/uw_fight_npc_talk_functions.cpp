@@ -17,63 +17,6 @@
 namespace SDK
 {
 
-// LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.OnActive
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_npc_talk_C::OnActive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_npc_talk_C", "OnActive");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.OnSwitch
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_npc_talk_C::OnSwitch()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_npc_talk_C", "OnSwitch");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.ResetInfo
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void Uuw_fight_npc_talk_C::ResetInfo()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_npc_talk_C", "ResetInfo");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.PlaySoundInLua
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -99,6 +42,44 @@ void Uuw_fight_npc_talk_C::PlaySoundInLua(const int32& SoundId)
 }
 
 
+// LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.ResetInfo
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_npc_talk_C::ResetInfo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_npc_talk_C", "ResetInfo");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.OnActive
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_npc_talk_C::OnActive()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_npc_talk_C", "OnActive");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.SwitchCurrentInfoTo
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -119,6 +100,25 @@ void Uuw_fight_npc_talk_C::SwitchCurrentInfoTo(const int32& InInfoIndex)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_npc_talk.uw_fight_npc_talk_C.OnSwitch
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_npc_talk_C::OnSwitch()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_npc_talk_C", "OnSwitch");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

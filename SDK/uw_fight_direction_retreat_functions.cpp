@@ -17,23 +17,109 @@
 namespace SDK
 {
 
-// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.StartLoop
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.ExecuteUbergraph_uw_fight_direction_retreat
+// (Final, UbergraphFunction)
 // Parameters:
-// const class UObject*                    Object                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    HasAppear                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_direction_retreat_C::StartLoop(const class UObject* Object, bool HasAppear)
+void Uuw_fight_direction_retreat_C::ExecuteUbergraph_uw_fight_direction_retreat(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_retreat_C", "StartLoop");
+		Func = Class->GetFunction("uw_fight_direction_retreat_C", "ExecuteUbergraph_uw_fight_direction_retreat");
 
-	Params::uw_fight_direction_retreat_C_StartLoop Parms{};
+	Params::uw_fight_direction_retreat_C_ExecuteUbergraph_uw_fight_direction_retreat Parms{};
 
-	Parms.Object = Object;
-	Parms.HasAppear = HasAppear;
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.PlayTypeAnim
+// (Event, Public, BlueprintEvent)
+
+void Uuw_fight_direction_retreat_C::PlayTypeAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_retreat_C", "PlayTypeAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.OnAnimationFinished
+// (BlueprintCosmetic, Event, Protected, BlueprintEvent)
+// Parameters:
+// const class UWidgetAnimation*           Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_direction_retreat_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_retreat_C", "OnAnimationFinished");
+
+	Params::uw_fight_direction_retreat_C_OnAnimationFinished Parms{};
+
+	Parms.Animation = Animation;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.AppearFinish
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UWidgetAnimation*                 Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_direction_retreat_C::AppearFinish(class UWidgetAnimation* Animation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_retreat_C", "AppearFinish");
+
+	Params::uw_fight_direction_retreat_C_AppearFinish Parms{};
+
+	Parms.Animation = Animation;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.PlayDieAnim
+// (Event, Public, BlueprintEvent)
+
+void Uuw_fight_direction_retreat_C::PlayDieAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_retreat_C", "PlayDieAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.OnVisibilityChanged_Event_0
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ESlateVisibility                        InVisibility                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_direction_retreat_C::OnVisibilityChanged_Event_0(ESlateVisibility InVisibility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_retreat_C", "OnVisibilityChanged_Event_0");
+
+	Params::uw_fight_direction_retreat_C_OnVisibilityChanged_Event_0 Parms{};
+
+	Parms.InVisibility = InVisibility;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -59,109 +145,23 @@ void Uuw_fight_direction_retreat_C::SetDefendTargetPercent(float Value)
 }
 
 
-// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.OnVisibilityChanged_Event_0
-// (BlueprintCallable, BlueprintEvent)
+// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.StartLoop
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ESlateVisibility                        InVisibility                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UObject*                    Object                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    HasAppear                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_direction_retreat_C::OnVisibilityChanged_Event_0(ESlateVisibility InVisibility)
+void Uuw_fight_direction_retreat_C::StartLoop(const class UObject* Object, bool HasAppear)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_retreat_C", "OnVisibilityChanged_Event_0");
+		Func = Class->GetFunction("uw_fight_direction_retreat_C", "StartLoop");
 
-	Params::uw_fight_direction_retreat_C_OnVisibilityChanged_Event_0 Parms{};
+	Params::uw_fight_direction_retreat_C_StartLoop Parms{};
 
-	Parms.InVisibility = InVisibility;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.PlayDieAnim
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_direction_retreat_C::PlayDieAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_retreat_C", "PlayDieAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.AppearFinish
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UWidgetAnimation*                 Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_direction_retreat_C::AppearFinish(class UWidgetAnimation* Animation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_retreat_C", "AppearFinish");
-
-	Params::uw_fight_direction_retreat_C_AppearFinish Parms{};
-
-	Parms.Animation = Animation;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.OnAnimationFinished
-// (BlueprintCosmetic, Event, Protected, BlueprintEvent)
-// Parameters:
-// const class UWidgetAnimation*           Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_direction_retreat_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_retreat_C", "OnAnimationFinished");
-
-	Params::uw_fight_direction_retreat_C_OnAnimationFinished Parms{};
-
-	Parms.Animation = Animation;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.PlayTypeAnim
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_direction_retreat_C::PlayTypeAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_retreat_C", "PlayTypeAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_direction_retreat.uw_fight_direction_retreat_C.ExecuteUbergraph_uw_fight_direction_retreat
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_direction_retreat_C::ExecuteUbergraph_uw_fight_direction_retreat(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_retreat_C", "ExecuteUbergraph_uw_fight_direction_retreat");
-
-	Params::uw_fight_direction_retreat_C_ExecuteUbergraph_uw_fight_direction_retreat Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Parms.Object = Object;
+	Parms.HasAppear = HasAppear;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

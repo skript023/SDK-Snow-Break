@@ -18,8 +18,7 @@ namespace SDK
 
 // BlueprintGeneratedClass KillMonsterBaseExecute.KillMonsterBaseExecute_C
 // 0x0020 (0x0238 - 0x0218)
-#pragma pack(push, 0x1)
-class alignas(0x08) UKillMonsterBaseExecute_C : public UGameTask_Execute
+class UKillMonsterBaseExecute_C final : public UGameTask_Execute
 {
 public:
 	int32                                         Num;                                               // 0x0218(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -31,12 +30,12 @@ public:
 	bool                                          DoFuncImmediately;                                 // 0x0231(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void OnActive();
-	void OnEnd();
-	void OnActive_Client();
-	class FString GetDescription();
-	void OnEnd_Client();
 	void OnCountDown_Client();
+	class FString GetDescription();
+	void OnActive_Client();
+	void OnEnd();
+	void OnActive();
+	void OnEnd_Client();
 
 	class FString GetSpecialStaticDescription() const;
 	class FString GetModuleName() const;
@@ -55,7 +54,6 @@ public:
 		return GetDefaultObjImpl<UKillMonsterBaseExecute_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_UKillMonsterBaseExecute_C;
 
 }

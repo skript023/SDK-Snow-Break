@@ -52,7 +52,7 @@ public:
 	class Uuw_fight_guideimg_C*                   Guide;                                             // 0x0710(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class Uuw_fight_effect_C*                     HitEffect;                                         // 0x0718(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class Uuw_task_interaction_progress_C*        Interaction;                                       // 0x0720(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class Uuw_fight_interactlist_C*               InteractList;                                      // 0x0728(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class Uuw_fight_interactlist_C*               Interactlist;                                      // 0x0728(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class Uuw_fight_joystick_C*                   Joystick;                                          // 0x0730(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UGameCanvasPanel*                       JoyStickPanel;                                     // 0x0738(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class Uuw_fight_level_bar_C*                  LevelBar;                                          // 0x0740(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -90,7 +90,7 @@ public:
 	class Uuw_fight_level_skillintro_C*           SkillIntro;                                        // 0x0840(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class Uuw_fight_skill_panel_C*                SkillPanel;                                        // 0x0848(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class Uuw_fight_Skill_Special_Signa_C*        Special_Signa;                                     // 0x0850(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class Uuw_fight_level_star_C*                 Star;                                              // 0x0858(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class Uuw_fight_level_star_C*                 star;                                              // 0x0858(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class Uuw_fight_star_tips_C*                  StarTips;                                          // 0x0860(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class Uuw_fight_level_sudden_C*               Sudden;                                            // 0x0868(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class Uuw_fight_level_task_btn_C*             TaskBtn;                                           // 0x0870(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -130,13 +130,13 @@ public:
 	void IsContain(class UWidget* InWidget, bool* bContain);
 	void HideHP(bool bHide_0);
 	class FText Get_TxtOnlineNum_Text_0();
-	bool CheckFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason);
-	void HideSkillSelector(int32 SkillIndex);
-	void ShowOrHideCross(bool bShow);
-	void ShowSkillSelector(int32 SkillIndex);
 	void UpdateControl();
 	void UpdateInteractionProgress(float InValue);
+	void ShowSkillSelector(int32 SkillIndex);
 	bool GetFightPartShow(EFightWidgetPart InPart);
+	void ShowOrHideCross(bool bShow);
+	void HideSkillSelector(int32 SkillIndex);
+	bool CheckFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason);
 	void SetFightPartShow(EFightWidgetPart InPart, EFightWidgetPartHideReason InReason, bool bShow, bool bForce);
 	void Destruct();
 

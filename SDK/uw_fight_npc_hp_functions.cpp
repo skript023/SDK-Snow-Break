@@ -17,57 +17,37 @@
 namespace SDK
 {
 
-// Function uw_fight_npc_hp.uw_fight_npc_hp_C.PlayBreakAnim
-// (BlueprintCallable, BlueprintEvent)
+// Function uw_fight_npc_hp.uw_fight_npc_hp_C.ExecuteUbergraph_uw_fight_npc_hp
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_npc_hp_C::PlayBreakAnim()
+void Uuw_fight_npc_hp_C::ExecuteUbergraph_uw_fight_npc_hp(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_npc_hp_C", "PlayBreakAnim");
+		Func = Class->GetFunction("uw_fight_npc_hp_C", "ExecuteUbergraph_uw_fight_npc_hp");
+
+	Params::uw_fight_npc_hp_C_ExecuteUbergraph_uw_fight_npc_hp Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_npc_hp.uw_fight_npc_hp_C.PlayWhiteAnim
+// (Event, Public, BlueprintEvent)
+
+void Uuw_fight_npc_hp_C::PlayWhiteAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_npc_hp_C", "PlayWhiteAnim");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_npc_hp.uw_fight_npc_hp_C.PlayLowAnim
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bLow                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_npc_hp_C::PlayLowAnim(bool bLow)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_npc_hp_C", "PlayLowAnim");
-
-	Params::uw_fight_npc_hp_C_PlayLowAnim Parms{};
-
-	Parms.bLow = bLow;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_npc_hp.uw_fight_npc_hp_C.SetHpPercent
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   Percent                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_npc_hp_C::SetHpPercent(float Percent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_npc_hp_C", "SetHpPercent");
-
-	Params::uw_fight_npc_hp_C_SetHpPercent Parms{};
-
-	Parms.Percent = Percent;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -93,37 +73,57 @@ void Uuw_fight_npc_hp_C::Tick(const struct FGeometry& MyGeometry, float InDeltaT
 }
 
 
-// Function uw_fight_npc_hp.uw_fight_npc_hp_C.PlayWhiteAnim
-// (Event, Public, BlueprintEvent)
+// Function uw_fight_npc_hp.uw_fight_npc_hp_C.SetHpPercent
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   Percent                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_npc_hp_C::PlayWhiteAnim()
+void Uuw_fight_npc_hp_C::SetHpPercent(float Percent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_npc_hp_C", "PlayWhiteAnim");
+		Func = Class->GetFunction("uw_fight_npc_hp_C", "SetHpPercent");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::uw_fight_npc_hp_C_SetHpPercent Parms{};
+
+	Parms.Percent = Percent;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_npc_hp.uw_fight_npc_hp_C.ExecuteUbergraph_uw_fight_npc_hp
-// (Final, UbergraphFunction, HasDefaults)
+// Function uw_fight_npc_hp.uw_fight_npc_hp_C.PlayLowAnim
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bLow                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_npc_hp_C::ExecuteUbergraph_uw_fight_npc_hp(int32 EntryPoint)
+void Uuw_fight_npc_hp_C::PlayLowAnim(bool bLow)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_npc_hp_C", "ExecuteUbergraph_uw_fight_npc_hp");
+		Func = Class->GetFunction("uw_fight_npc_hp_C", "PlayLowAnim");
 
-	Params::uw_fight_npc_hp_C_ExecuteUbergraph_uw_fight_npc_hp Parms{};
+	Params::uw_fight_npc_hp_C_PlayLowAnim Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bLow = bLow;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_npc_hp.uw_fight_npc_hp_C.PlayBreakAnim
+// (BlueprintCallable, BlueprintEvent)
+
+void Uuw_fight_npc_hp_C::PlayBreakAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_npc_hp_C", "PlayBreakAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

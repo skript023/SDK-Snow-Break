@@ -17,140 +17,61 @@
 namespace SDK
 {
 
-// Function uw_fight_ammunition4.uw_fight_ammunition4_C.GetNextLeftCount
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function uw_fight_ammunition4.uw_fight_ammunition4_C.ExecuteUbergraph_uw_fight_ammunition4
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// class UModifier*                        InModifier                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-int32 Uuw_fight_ammunition4_C::GetNextLeftCount(class UModifier* InModifier)
+void Uuw_fight_ammunition4_C::ExecuteUbergraph_uw_fight_ammunition4(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition4_C", "GetNextLeftCount");
+		Func = Class->GetFunction("uw_fight_ammunition4_C", "ExecuteUbergraph_uw_fight_ammunition4");
 
-	Params::uw_fight_ammunition4_C_GetNextLeftCount Parms{};
+	Params::uw_fight_ammunition4_C_ExecuteUbergraph_uw_fight_ammunition4 Parms{};
 
-	Parms.InModifier = InModifier;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function uw_fight_ammunition4.uw_fight_ammunition4_C.Set Bullet Image
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Start                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   End                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_ammunition4_C::Set_Bullet_Image(int32 Start, int32 End, const struct FLinearColor& Color)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition4_C", "Set Bullet Image");
-
-	Params::uw_fight_ammunition4_C_Set_Bullet_Image Parms{};
-
-	Parms.Start = Start;
-	Parms.End = End;
-	Parms.Color = std::move(Color);
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function uw_fight_ammunition4.uw_fight_ammunition4_C.SetBullet
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UWidget*                          BulletWidget                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   InBulet                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_ammunition4.uw_fight_ammunition4_C.K2_SkillCastBulletFail
+// (Event, Public, BlueprintEvent)
 
-void Uuw_fight_ammunition4_C::SetBullet(class UWidget* BulletWidget, int32 InBulet)
+void Uuw_fight_ammunition4_C::K2_SkillCastBulletFail()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition4_C", "SetBullet");
-
-	Params::uw_fight_ammunition4_C_SetBullet Parms{};
-
-	Parms.BulletWidget = BulletWidget;
-	Parms.InBulet = InBulet;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_ammunition4.uw_fight_ammunition4_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_ammunition4_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition4_C", "Construct");
+		Func = Class->GetFunction("uw_fight_ammunition4_C", "K2_SkillCastBulletFail");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function uw_fight_ammunition4.uw_fight_ammunition4_C.SetBulletEffect
+// Function uw_fight_ammunition4.uw_fight_ammunition4_C.OnBulletChange
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bShow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   InCurBullet                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   InMaxBullet                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   InPercent                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_ammunition4_C::SetBulletEffect(bool bShow)
+void Uuw_fight_ammunition4_C::OnBulletChange(int32 InCurBullet, int32 InMaxBullet, float InPercent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition4_C", "SetBulletEffect");
+		Func = Class->GetFunction("uw_fight_ammunition4_C", "OnBulletChange");
 
-	Params::uw_fight_ammunition4_C_SetBulletEffect Parms{};
+	Params::uw_fight_ammunition4_C_OnBulletChange Parms{};
 
-	Parms.bShow = bShow;
+	Parms.InCurBullet = InCurBullet;
+	Parms.InMaxBullet = InMaxBullet;
+	Parms.InPercent = InPercent;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_ammunition4.uw_fight_ammunition4_C.SetBulletTimeEffect
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bShow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void Uuw_fight_ammunition4_C::SetBulletTimeEffect(bool bShow)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition4_C", "SetBulletTimeEffect");
-
-	Params::uw_fight_ammunition4_C_SetBulletTimeEffect Parms{};
-
-	Parms.bShow = bShow;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_ammunition4.uw_fight_ammunition4_C.ClearBulletEffect
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_ammunition4_C::ClearBulletEffect()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition4_C", "ClearBulletEffect");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -180,61 +101,140 @@ void Uuw_fight_ammunition4_C::SetBulletCountEffect(float StartPercent, float End
 }
 
 
-// Function uw_fight_ammunition4.uw_fight_ammunition4_C.OnBulletChange
+// Function uw_fight_ammunition4.uw_fight_ammunition4_C.ClearBulletEffect
 // (Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   InCurBullet                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   InMaxBullet                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   InPercent                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_ammunition4_C::OnBulletChange(int32 InCurBullet, int32 InMaxBullet, float InPercent)
+void Uuw_fight_ammunition4_C::ClearBulletEffect()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition4_C", "OnBulletChange");
-
-	Params::uw_fight_ammunition4_C_OnBulletChange Parms{};
-
-	Parms.InCurBullet = InCurBullet;
-	Parms.InMaxBullet = InMaxBullet;
-	Parms.InPercent = InPercent;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function uw_fight_ammunition4.uw_fight_ammunition4_C.K2_SkillCastBulletFail
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_ammunition4_C::K2_SkillCastBulletFail()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition4_C", "K2_SkillCastBulletFail");
+		Func = Class->GetFunction("uw_fight_ammunition4_C", "ClearBulletEffect");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function uw_fight_ammunition4.uw_fight_ammunition4_C.ExecuteUbergraph_uw_fight_ammunition4
-// (Final, UbergraphFunction, HasDefaults)
+// Function uw_fight_ammunition4.uw_fight_ammunition4_C.SetBulletTimeEffect
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bShow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_ammunition4_C::ExecuteUbergraph_uw_fight_ammunition4(int32 EntryPoint)
+void Uuw_fight_ammunition4_C::SetBulletTimeEffect(bool bShow)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition4_C", "ExecuteUbergraph_uw_fight_ammunition4");
+		Func = Class->GetFunction("uw_fight_ammunition4_C", "SetBulletTimeEffect");
 
-	Params::uw_fight_ammunition4_C_ExecuteUbergraph_uw_fight_ammunition4 Parms{};
+	Params::uw_fight_ammunition4_C_SetBulletTimeEffect Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bShow = bShow;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_ammunition4.uw_fight_ammunition4_C.SetBulletEffect
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bShow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void Uuw_fight_ammunition4_C::SetBulletEffect(bool bShow)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_ammunition4_C", "SetBulletEffect");
+
+	Params::uw_fight_ammunition4_C_SetBulletEffect Parms{};
+
+	Parms.bShow = bShow;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_ammunition4.uw_fight_ammunition4_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_ammunition4_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_ammunition4_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_ammunition4.uw_fight_ammunition4_C.SetBullet
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UWidget*                          BulletWidget                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   InBulet                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_ammunition4_C::SetBullet(class UWidget* BulletWidget, int32 InBulet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_ammunition4_C", "SetBullet");
+
+	Params::uw_fight_ammunition4_C_SetBullet Parms{};
+
+	Parms.BulletWidget = BulletWidget;
+	Parms.InBulet = InBulet;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_ammunition4.uw_fight_ammunition4_C.Set Bullet Image
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Start                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   End                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_ammunition4_C::Set_Bullet_Image(int32 Start, int32 End, const struct FLinearColor& Color)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_ammunition4_C", "Set Bullet Image");
+
+	Params::uw_fight_ammunition4_C_Set_Bullet_Image Parms{};
+
+	Parms.Start = Start;
+	Parms.End = End;
+	Parms.Color = std::move(Color);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_ammunition4.uw_fight_ammunition4_C.GetNextLeftCount
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UModifier*                        InModifier                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+int32 Uuw_fight_ammunition4_C::GetNextLeftCount(class UModifier* InModifier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_ammunition4_C", "GetNextLeftCount");
+
+	Params::uw_fight_ammunition4_C_GetNextLeftCount Parms{};
+
+	Parms.InModifier = InModifier;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 }

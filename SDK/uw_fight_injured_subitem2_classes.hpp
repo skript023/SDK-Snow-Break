@@ -33,8 +33,8 @@ public:
 	float                                         StartTime;                                         // 0x037C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void ExecuteUbergraph_uw_fight_injured_subitem2(int32 EntryPoint);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void Play(bool IsBigDamage);
 
 public:

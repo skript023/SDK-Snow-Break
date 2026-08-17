@@ -17,45 +17,23 @@
 namespace SDK
 {
 
-// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.PlayWhiteAnim
-// (Event, Public, BlueprintEvent)
+// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.ExecuteUbergraph_uw_fight_monster_hp_ordinary
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_monster_hp_ordinary_C::PlayWhiteAnim()
+void Uuw_fight_monster_hp_ordinary_C::ExecuteUbergraph_uw_fight_monster_hp_ordinary(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "PlayWhiteAnim");
+		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "ExecuteUbergraph_uw_fight_monster_hp_ordinary");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::uw_fight_monster_hp_ordinary_C_ExecuteUbergraph_uw_fight_monster_hp_ordinary Parms{};
 
+	Parms.EntryPoint = EntryPoint;
 
-// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.PlayVisibiltyAnim
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_monster_hp_ordinary_C::PlayVisibiltyAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "PlayVisibiltyAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_monster_hp_ordinary_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -79,42 +57,45 @@ void Uuw_fight_monster_hp_ordinary_C::UpdateImage(const EFightMonsterTipsType In
 }
 
 
-// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.ExecuteUbergraph_uw_fight_monster_hp_ordinary
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void Uuw_fight_monster_hp_ordinary_C::ExecuteUbergraph_uw_fight_monster_hp_ordinary(int32 EntryPoint)
+void Uuw_fight_monster_hp_ordinary_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "ExecuteUbergraph_uw_fight_monster_hp_ordinary");
+		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "Construct");
 
-	Params::uw_fight_monster_hp_ordinary_C_ExecuteUbergraph_uw_fight_monster_hp_ordinary Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// LuaFunction uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.K2_OnFree
-// (Native, Event, Public, BlueprintEvent)
+// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.PlayVisibiltyAnim
+// (Event, Public, BlueprintEvent)
 
-void Uuw_fight_monster_hp_ordinary_C::K2_OnFree()
+void Uuw_fight_monster_hp_ordinary_C::PlayVisibiltyAnim()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "K2_OnFree");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "PlayVisibiltyAnim");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Func->FunctionFlags = Flgs;
+
+// Function uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.PlayWhiteAnim
+// (Event, Public, BlueprintEvent)
+
+void Uuw_fight_monster_hp_ordinary_C::PlayWhiteAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "PlayWhiteAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -127,6 +108,25 @@ void Uuw_fight_monster_hp_ordinary_C::K2_OnReset()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "K2_OnReset");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_monster_hp_ordinary.uw_fight_monster_hp_ordinary_C.K2_OnFree
+// (Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_monster_hp_ordinary_C::K2_OnFree()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_hp_ordinary_C", "K2_OnFree");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

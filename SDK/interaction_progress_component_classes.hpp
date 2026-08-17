@@ -29,11 +29,11 @@ public:
 	float                                         AddSpeed;                                          // 0x05DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OpenUI();
-	void CloseUI();
-	void StartProgress(float PerformTime);
-	void ReceiveTick(float DeltaSeconds);
 	void ExecuteUbergraph_interaction_progress_component(int32 EntryPoint);
+	void ReceiveTick(float DeltaSeconds);
+	void StartProgress(float PerformTime);
+	void CloseUI();
+	void OpenUI();
 
 public:
 	static class UClass* StaticClass()

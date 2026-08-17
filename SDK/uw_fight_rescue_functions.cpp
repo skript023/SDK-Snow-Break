@@ -17,34 +17,15 @@
 namespace SDK
 {
 
-// LuaFunction uw_fight_rescue.uw_fight_rescue_C.Destruct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_rescue.uw_fight_rescue_C.BindExitInteractEvent
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_rescue_C::Destruct()
+void Uuw_fight_rescue_C::BindExitInteractEvent()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rescue_C", "Destruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_rescue.uw_fight_rescue_C.OnConstruct
-// (Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_rescue_C::OnConstruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rescue_C", "OnConstruct");
+		Func = Class->GetFunction("uw_fight_rescue_C", "BindExitInteractEvent");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -74,15 +55,34 @@ void Uuw_fight_rescue_C::TriggerInteract()
 }
 
 
-// LuaFunction uw_fight_rescue.uw_fight_rescue_C.BindExitInteractEvent
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// LuaFunction uw_fight_rescue.uw_fight_rescue_C.OnConstruct
+// (Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_rescue_C::BindExitInteractEvent()
+void Uuw_fight_rescue_C::OnConstruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_rescue_C", "BindExitInteractEvent");
+		Func = Class->GetFunction("uw_fight_rescue_C", "OnConstruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction uw_fight_rescue.uw_fight_rescue_C.Destruct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_rescue_C::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_rescue_C", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

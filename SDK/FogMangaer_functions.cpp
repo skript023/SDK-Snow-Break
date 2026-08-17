@@ -17,6 +17,40 @@
 namespace SDK
 {
 
+// Function FogMangaer.FogMangaer_C.NewTime
+// (BlueprintCallable, BlueprintEvent)
+
+void AFogMangaer_C::NewTime()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FogMangaer_C", "NewTime");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function FogMangaer.FogMangaer_C.ExecuteUbergraph_FogMangaer
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AFogMangaer_C::ExecuteUbergraph_FogMangaer(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FogMangaer_C", "ExecuteUbergraph_FogMangaer");
+
+	Params::FogMangaer_C_ExecuteUbergraph_FogMangaer Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function FogMangaer.FogMangaer_C.Update Origin Parameter
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -342,40 +376,6 @@ void AFogMangaer_C::SwitchFogColor(const struct FLinearColor& Dist1stFogColor, f
 	Parms.CurrentFog = std::move(CurrentFog);
 	Parms.MoveFog = std::move(MoveFog);
 	Parms.Dist1stFogCustomHeight = Dist1stFogCustomHeight;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function FogMangaer.FogMangaer_C.NewTime
-// (BlueprintCallable, BlueprintEvent)
-
-void AFogMangaer_C::NewTime()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FogMangaer_C", "NewTime");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function FogMangaer.FogMangaer_C.ExecuteUbergraph_FogMangaer
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AFogMangaer_C::ExecuteUbergraph_FogMangaer(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FogMangaer_C", "ExecuteUbergraph_FogMangaer");
-
-	Params::FogMangaer_C_ExecuteUbergraph_FogMangaer Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

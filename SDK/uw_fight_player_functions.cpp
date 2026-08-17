@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function uw_fight_player.uw_fight_player_C.PlayPowerAnim
-// (Event, Public, BlueprintEvent)
+// Function uw_fight_player.uw_fight_player_C.ExecuteUbergraph_uw_fight_player
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    bFull                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_player_C::PlayPowerAnim(bool bFull)
+void Uuw_fight_player_C::ExecuteUbergraph_uw_fight_player(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_C", "PlayPowerAnim");
+		Func = Class->GetFunction("uw_fight_player_C", "ExecuteUbergraph_uw_fight_player");
 
-	Params::uw_fight_player_C_PlayPowerAnim Parms{};
+	Params::uw_fight_player_C_ExecuteUbergraph_uw_fight_player Parms{};
 
-	Parms.bFull = bFull;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,21 +57,21 @@ void Uuw_fight_player_C::K2_OnCustomUmgAnimFinished(const class FName& AnimName)
 }
 
 
-// Function uw_fight_player.uw_fight_player_C.ExecuteUbergraph_uw_fight_player
-// (Final, UbergraphFunction)
+// Function uw_fight_player.uw_fight_player_C.PlayPowerAnim
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bFull                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_player_C::ExecuteUbergraph_uw_fight_player(int32 EntryPoint)
+void Uuw_fight_player_C::PlayPowerAnim(bool bFull)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_player_C", "ExecuteUbergraph_uw_fight_player");
+		Func = Class->GetFunction("uw_fight_player_C", "PlayPowerAnim");
 
-	Params::uw_fight_player_C_ExecuteUbergraph_uw_fight_player Parms{};
+	Params::uw_fight_player_C_PlayPowerAnim Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bFull = bFull;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

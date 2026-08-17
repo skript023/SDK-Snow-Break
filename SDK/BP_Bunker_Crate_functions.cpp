@@ -17,30 +17,6 @@
 namespace SDK
 {
 
-// Function BP_Bunker_Crate.BP_Bunker_Crate_C.OnDie
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// class AGameCharacter*                   Who                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AGameCharacter*                   Killer                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FHealthChangeValue&        HealthChangeValue                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-
-void ABP_Bunker_Crate_C::OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Bunker_Crate_C", "OnDie");
-
-	Params::BP_Bunker_Crate_C_OnDie Parms{};
-
-	Parms.Who = Who;
-	Parms.Killer = Killer;
-	Parms.HealthChangeValue = std::move(HealthChangeValue);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Bunker_Crate.BP_Bunker_Crate_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 
@@ -66,6 +42,30 @@ void ABP_Bunker_Crate_C::OnSpawn()
 		Func = Class->GetFunction("BP_Bunker_Crate_C", "OnSpawn");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Bunker_Crate.BP_Bunker_Crate_C.OnDie
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// class AGameCharacter*                   Who                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AGameCharacter*                   Killer                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHealthChangeValue&        HealthChangeValue                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+
+void ABP_Bunker_Crate_C::OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Bunker_Crate_C", "OnDie");
+
+	Params::BP_Bunker_Crate_C_OnDie Parms{};
+
+	Parms.Who = Who;
+	Parms.Killer = Killer;
+	Parms.HealthChangeValue = std::move(HealthChangeValue);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

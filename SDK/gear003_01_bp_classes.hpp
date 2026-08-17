@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "GearBase_classes.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -95,7 +95,7 @@ public:
 	void MoveToTarget();
 	void Set_All_Walls_Collision(class FName InCollisionProfileName);
 	void 阻挡是否启用显示();
-	void Setup_in_Shadow();
+	void Setup_In_Shadow();
 	void 设置到达状态();
 	void 设置初始状态();
 	void Set_Running_Time(float SpdScale);

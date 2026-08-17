@@ -14,33 +14,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_propitem.uw_fight_propitem_C.BP_OnItemExpansionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_propitem_C_BP_OnItemExpansionChanged final
-{
-public:
-	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_propitem_C_BP_OnItemExpansionChanged;
-
-// Function uw_fight_propitem.uw_fight_propitem_C.BP_OnItemSelectionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct uw_fight_propitem_C_BP_OnItemSelectionChanged final
-{
-public:
-	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_propitem_C_BP_OnItemSelectionChanged;
-
-// Function uw_fight_propitem.uw_fight_propitem_C.OnListItemObjectSet__Overridden
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_propitem_C_OnListItemObjectSet__Overridden final
-{
-public:
-	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_propitem_C_OnListItemObjectSet__Overridden;
-
 // Function uw_fight_propitem.uw_fight_propitem_C.ExecuteUbergraph_uw_fight_propitem
 // 0x0018 (0x0018 - 0x0000)
 struct uw_fight_propitem_C_ExecuteUbergraph_uw_fight_propitem final
@@ -54,14 +27,32 @@ public:
 };
 DUMPER7_ASSERTS_uw_fight_propitem_C_ExecuteUbergraph_uw_fight_propitem;
 
-// LuaFunction uw_fight_propitem.uw_fight_propitem_C.OnListItemObjectSet
+// Function uw_fight_propitem.uw_fight_propitem_C.OnListItemObjectSet__Overridden
 // 0x0008 (0x0008 - 0x0000)
-struct uw_fight_propitem_C_OnListItemObjectSet final
+struct uw_fight_propitem_C_OnListItemObjectSet__Overridden final
 {
 public:
 	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_uw_fight_propitem_C_OnListItemObjectSet;
+DUMPER7_ASSERTS_uw_fight_propitem_C_OnListItemObjectSet__Overridden;
+
+// Function uw_fight_propitem.uw_fight_propitem_C.BP_OnItemSelectionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_propitem_C_BP_OnItemSelectionChanged final
+{
+public:
+	bool                                          bIsSelected;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_propitem_C_BP_OnItemSelectionChanged;
+
+// Function uw_fight_propitem.uw_fight_propitem_C.BP_OnItemExpansionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct uw_fight_propitem_C_BP_OnItemExpansionChanged final
+{
+public:
+	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_propitem_C_BP_OnItemExpansionChanged;
 
 // LuaFunction uw_fight_propitem.uw_fight_propitem_C.K2_OnCustomUmgAnimFinished
 // 0x0008 (0x0008 - 0x0000)
@@ -71,6 +62,15 @@ public:
 	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_uw_fight_propitem_C_K2_OnCustomUmgAnimFinished;
+
+// LuaFunction uw_fight_propitem.uw_fight_propitem_C.OnListItemObjectSet
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_propitem_C_OnListItemObjectSet final
+{
+public:
+	class UObject*                                ListItemObject;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_propitem_C_OnListItemObjectSet;
 
 // Function uw_fight_propitem.uw_fight_propitem_C.GetModuleName
 // 0x0010 (0x0010 - 0x0000)

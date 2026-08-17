@@ -26,10 +26,10 @@ public:
 	float                                         ActiveTime;                                        // 0x01E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnMoveEnd(class UBaseMovementComponent* Movement);
-	bool IsUsedToAddVelocityInsteadOverride();
 	void OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement);
 	void OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement);
+	bool IsUsedToAddVelocityInsteadOverride();
+	void OnMoveEnd(class UBaseMovementComponent* Movement);
 	void ReceiveBeginPlay_1();
 	void ReceiveActorBeginOverlap_1(class AActor* OtherActor);
 	void ReceiveTick_1(float DeltaSeconds);

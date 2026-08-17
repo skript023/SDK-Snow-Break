@@ -24,10 +24,10 @@ public:
 	void Destruct();
 	void OnConstruct();
 	void InitGamepadLongPressUI();
-	void BindExitInteractEvent();
 	void TriggerInteract();
-	void UpdateKeyShow();
 	void BindKeyBoardOnSettingChange();
+	void UpdateKeyShow();
+	void BindExitInteractEvent();
 
 	class FString GetModuleName() const;
 

@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function uw_fight_level_skillintro.uw_fight_level_skillintro_C.ExecuteUbergraph_uw_fight_level_skillintro
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_level_skillintro_C::ExecuteUbergraph_uw_fight_level_skillintro(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_skillintro_C", "ExecuteUbergraph_uw_fight_level_skillintro");
+
+	Params::uw_fight_level_skillintro_C_ExecuteUbergraph_uw_fight_level_skillintro Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function uw_fight_level_skillintro.uw_fight_level_skillintro_C.Tick__Overridden
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
@@ -39,46 +59,20 @@ void Uuw_fight_level_skillintro_C::Tick__Overridden(const struct FGeometry& MyGe
 }
 
 
-// Function uw_fight_level_skillintro.uw_fight_level_skillintro_C.ExecuteUbergraph_uw_fight_level_skillintro
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 
-void Uuw_fight_level_skillintro_C::ExecuteUbergraph_uw_fight_level_skillintro(int32 EntryPoint)
+void Uuw_fight_level_skillintro_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_skillintro_C", "ExecuteUbergraph_uw_fight_level_skillintro");
-
-	Params::uw_fight_level_skillintro_C_ExecuteUbergraph_uw_fight_level_skillintro Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.OnAnimationFinished
-// (BlueprintCosmetic, Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void Uuw_fight_level_skillintro_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_skillintro_C", "OnAnimationFinished");
-
-	Params::uw_fight_level_skillintro_C_OnAnimationFinished Parms{};
-
-	Parms.Animation = Animation;
+		Func = Class->GetFunction("uw_fight_level_skillintro_C", "Construct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -111,20 +105,26 @@ void Uuw_fight_level_skillintro_C::Tick(const struct FGeometry& MyGeometry, floa
 }
 
 
-// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+// LuaFunction uw_fight_level_skillintro.uw_fight_level_skillintro_C.OnAnimationFinished
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void Uuw_fight_level_skillintro_C::Construct()
+void Uuw_fight_level_skillintro_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_skillintro_C", "Construct");
+		Func = Class->GetFunction("uw_fight_level_skillintro_C", "OnAnimationFinished");
+
+	Params::uw_fight_level_skillintro_C_OnAnimationFinished Parms{};
+
+	Parms.Animation = Animation;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

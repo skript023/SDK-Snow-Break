@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_monster_armor_hp.uw_fight_monster_armor_hp_C.PlayWhiteAnim
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_monster_armor_hp_C::PlayWhiteAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_monster_armor_hp_C", "PlayWhiteAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function uw_fight_monster_armor_hp.uw_fight_monster_armor_hp_C.ExecuteUbergraph_uw_fight_monster_armor_hp
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,6 +34,20 @@ void Uuw_fight_monster_armor_hp_C::ExecuteUbergraph_uw_fight_monster_armor_hp(in
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_monster_armor_hp.uw_fight_monster_armor_hp_C.PlayWhiteAnim
+// (Event, Public, BlueprintEvent)
+
+void Uuw_fight_monster_armor_hp_C::PlayWhiteAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_monster_armor_hp_C", "PlayWhiteAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

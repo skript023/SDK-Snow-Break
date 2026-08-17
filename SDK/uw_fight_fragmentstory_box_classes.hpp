@@ -21,10 +21,10 @@ namespace SDK
 class Uuw_fight_fragmentstory_box_C final : public Uuw_fight_interactitem_C
 {
 public:
-	void BindKeyBoardOnSettingChange();
 	void BindExitInteractEvent();
-	void TriggerInteract();
 	void UpdateKeyShow();
+	void TriggerInteract();
+	void BindKeyBoardOnSettingChange();
 	void InitGamepadLongPressUI();
 	void OnConstruct();
 	void Destruct();

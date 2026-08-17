@@ -26,10 +26,10 @@ public:
 	struct FVector                                FinalTargetLocation;                               // 0x01E4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnMoveEnd(class UBaseMovementComponent* Movement);
-	bool IsUsedToAddVelocityInsteadOverride();
 	void OnMoveTick(float DeltaTime, float Friction, bool bFluid, float BrakingDeceleration, class UBaseMovementComponent* Movement);
 	void OnMoveStart(class AActor* Launcher, class UBaseMovementComponent* Movement);
+	bool IsUsedToAddVelocityInsteadOverride();
+	void OnMoveEnd(class UBaseMovementComponent* Movement);
 
 	class FString GetModuleName() const;
 

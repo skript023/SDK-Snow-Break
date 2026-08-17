@@ -14,25 +14,6 @@
 namespace SDK::Params
 {
 
-// Function uw_fight_crossstrong.uw_fight_crossstrong_C.OnFireStrengthening
-// 0x0002 (0x0002 - 0x0000)
-struct uw_fight_crossstrong_C_OnFireStrengthening final
-{
-public:
-	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bSmall;                                            // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_uw_fight_crossstrong_C_OnFireStrengthening;
-
-// Function uw_fight_crossstrong.uw_fight_crossstrong_C.K2_OnCustomUmgAnimFinished
-// 0x0008 (0x0008 - 0x0000)
-struct uw_fight_crossstrong_C_K2_OnCustomUmgAnimFinished final
-{
-public:
-	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_uw_fight_crossstrong_C_K2_OnCustomUmgAnimFinished;
-
 // Function uw_fight_crossstrong.uw_fight_crossstrong_C.ExecuteUbergraph_uw_fight_crossstrong
 // 0x0010 (0x0010 - 0x0000)
 struct uw_fight_crossstrong_C_ExecuteUbergraph_uw_fight_crossstrong final
@@ -45,6 +26,25 @@ public:
 	bool                                          K2Node_Event_bSmall;                               // 0x000E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_uw_fight_crossstrong_C_ExecuteUbergraph_uw_fight_crossstrong;
+
+// Function uw_fight_crossstrong.uw_fight_crossstrong_C.K2_OnCustomUmgAnimFinished
+// 0x0008 (0x0008 - 0x0000)
+struct uw_fight_crossstrong_C_K2_OnCustomUmgAnimFinished final
+{
+public:
+	class FName                                   AnimName;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_uw_fight_crossstrong_C_K2_OnCustomUmgAnimFinished;
+
+// Function uw_fight_crossstrong.uw_fight_crossstrong_C.OnFireStrengthening
+// 0x0002 (0x0002 - 0x0000)
+struct uw_fight_crossstrong_C_OnFireStrengthening final
+{
+public:
+	bool                                          bStart;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bSmall;                                            // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_uw_fight_crossstrong_C_OnFireStrengthening;
 
 }
 

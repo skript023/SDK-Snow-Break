@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Bunker_Crate_C;                  // 0x1480(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue);
 	void ReceiveBeginPlay();
 	void OnSpawn();
+	void OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue);
 	void ExecuteUbergraph_BP_Bunker_Crate(int32 EntryPoint);
 
 public:

@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_camera_op.uw_fight_camera_op_C.OnZoomChange
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   Value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Uuw_fight_camera_op_C::OnZoomChange(float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_camera_op_C", "OnZoomChange");
-
-	Params::uw_fight_camera_op_C_OnZoomChange Parms{};
-
-	Parms.Value = Value;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function uw_fight_camera_op.uw_fight_camera_op_C.ExecuteUbergraph_uw_fight_camera_op
 // (Final, UbergraphFunction)
 // Parameters:
@@ -52,6 +32,26 @@ void Uuw_fight_camera_op_C::ExecuteUbergraph_uw_fight_camera_op(int32 EntryPoint
 	Params::uw_fight_camera_op_C_ExecuteUbergraph_uw_fight_camera_op Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_camera_op.uw_fight_camera_op_C.OnZoomChange
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   Value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Uuw_fight_camera_op_C::OnZoomChange(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_camera_op_C", "OnZoomChange");
+
+	Params::uw_fight_camera_op_C_OnZoomChange Parms{};
+
+	Parms.Value = Value;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

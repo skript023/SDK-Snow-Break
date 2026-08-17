@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_direction_revive.uw_fight_direction_revive_C.PlayTypeAnim
-// (Event, Public, BlueprintEvent)
-
-void Uuw_fight_direction_revive_C::PlayTypeAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_direction_revive_C", "PlayTypeAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function uw_fight_direction_revive.uw_fight_direction_revive_C.ExecuteUbergraph_uw_fight_direction_revive
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,6 +34,20 @@ void Uuw_fight_direction_revive_C::ExecuteUbergraph_uw_fight_direction_revive(in
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_direction_revive.uw_fight_direction_revive_C.PlayTypeAnim
+// (Event, Public, BlueprintEvent)
+
+void Uuw_fight_direction_revive_C::PlayTypeAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_direction_revive_C", "PlayTypeAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

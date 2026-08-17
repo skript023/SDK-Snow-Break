@@ -19,12 +19,12 @@ namespace SDK
 
 // WidgetBlueprintGeneratedClass uw_fight_power_girl002a.uw_fight_power_girl002a_C
 // 0x0050 (0x0438 - 0x03E8)
-class uw_fight_power_girl002a::Uuw_fight_power_girl002a_C final : public UFightBarGirl002a
+class Uuw_fight_power_girl002a_C final : public UFightBarGirl002a
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UWidgetAnimation*                       Small;                                             // 0x03F0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UWidgetAnimation*                       big;                                               // 0x03F8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UWidgetAnimation*                       Big;                                               // 0x03F8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class URedirectImage*                         Img1;                                              // 0x0400(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class URedirectImage*                         Img2;                                              // 0x0408(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UInvalidationBox*                       InvalidationBox_0;                                 // 0x0410(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -40,18 +40,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		BP_STATIC_CLASS_IMPL_FULLNAME("WidgetBlueprintGeneratedClass uw_fight_power_girl002a.uw_fight_power_girl002a_C")
+		BP_STATIC_CLASS_IMPL("uw_fight_power_girl002a_C")
 	}
 	static const class FName& StaticName()
 	{
 		STATIC_NAME_IMPL(L"uw_fight_power_girl002a_C")
 	}
-	static class uw_fight_power_girl002a::Uuw_fight_power_girl002a_C* GetDefaultObj()
+	static class Uuw_fight_power_girl002a_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<uw_fight_power_girl002a::Uuw_fight_power_girl002a_C>();
+		return GetDefaultObjImpl<Uuw_fight_power_girl002a_C>();
 	}
 };
-DUMPER7_ASSERTS_uw_fight_power_girl002a__Uuw_fight_power_girl002a_C;
+DUMPER7_ASSERTS_Uuw_fight_power_girl002a_C;
 
 }
 

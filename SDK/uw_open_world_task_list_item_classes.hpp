@@ -35,12 +35,12 @@ public:
 	class URedirectTextBlock*                     Succ;                                              // 0x0400(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void SetState(uint8 InState);
-	void BP_OnEntryReleased();
-	void BP_OnItemExpansionChanged(bool bIsExpanded);
-	void BP_OnItemSelectionChanged(bool bIsSelected);
-	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
 	void ExecuteUbergraph_uw_open_world_task_list_item(int32 EntryPoint);
+	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
+	void BP_OnItemSelectionChanged(bool bIsSelected);
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void BP_OnEntryReleased();
+	void SetState(uint8 InState);
 	void OnListItemObjectSet(class UObject* ListItemObject);
 	void OnConstruct();
 	void Destruct();

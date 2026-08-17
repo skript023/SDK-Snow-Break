@@ -26,12 +26,12 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0C80(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
+	void EmitterDestroyLua();
+	void OnEmitEnd();
+	EEmitterResult OnEmit();
 	TArray<struct FSoftObjectPath> OnGetAssetPath(const TArray<struct FParamInfo>& Values, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
 	void GetDefaultParamsValue(TArray<struct FParamInfo>* Values);
 	void ExecuteUbergraph_Emitter_Trap(int32 EntryPoint);
-	void EmitterDestroyLua();
-	EEmitterResult OnEmit();
-	void OnEmitEnd();
 
 	class FString GetModuleName() const;
 

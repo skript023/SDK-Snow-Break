@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.BP_OnItemExpansionChanged
-// (Event, Protected, BlueprintEvent)
+// Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.ExecuteUbergraph_uw_fight_level_occupy_list
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_level_occupy_list_C::BP_OnItemExpansionChanged(bool bIsExpanded)
+void Uuw_fight_level_occupy_list_C::ExecuteUbergraph_uw_fight_level_occupy_list(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_occupy_list_C", "BP_OnItemExpansionChanged");
+		Func = Class->GetFunction("uw_fight_level_occupy_list_C", "ExecuteUbergraph_uw_fight_level_occupy_list");
 
-	Params::uw_fight_level_occupy_list_C_BP_OnItemExpansionChanged Parms{};
+	Params::uw_fight_level_occupy_list_C_ExecuteUbergraph_uw_fight_level_occupy_list Parms{};
 
-	Parms.bIsExpanded = bIsExpanded;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,20 +57,6 @@ void Uuw_fight_level_occupy_list_C::OnListItemObjectSet__Overridden(class UObjec
 }
 
 
-// Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.BP_OnEntryReleased
-// (Event, Protected, BlueprintEvent)
-
-void Uuw_fight_level_occupy_list_C::BP_OnEntryReleased()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_occupy_list_C", "BP_OnEntryReleased");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.BP_OnItemSelectionChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -91,23 +77,56 @@ void Uuw_fight_level_occupy_list_C::BP_OnItemSelectionChanged(bool bIsSelected)
 }
 
 
-// Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.ExecuteUbergraph_uw_fight_level_occupy_list
-// (Final, UbergraphFunction)
+// Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.BP_OnItemExpansionChanged
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_level_occupy_list_C::ExecuteUbergraph_uw_fight_level_occupy_list(int32 EntryPoint)
+void Uuw_fight_level_occupy_list_C::BP_OnItemExpansionChanged(bool bIsExpanded)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_occupy_list_C", "ExecuteUbergraph_uw_fight_level_occupy_list");
+		Func = Class->GetFunction("uw_fight_level_occupy_list_C", "BP_OnItemExpansionChanged");
 
-	Params::uw_fight_level_occupy_list_C_ExecuteUbergraph_uw_fight_level_occupy_list Parms{};
+	Params::uw_fight_level_occupy_list_C_BP_OnItemExpansionChanged Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bIsExpanded = bIsExpanded;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.BP_OnEntryReleased
+// (Event, Protected, BlueprintEvent)
+
+void Uuw_fight_level_occupy_list_C::BP_OnEntryReleased()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_occupy_list_C", "BP_OnEntryReleased");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// LuaFunction uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_level_occupy_list_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_occupy_list_C", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -131,25 +150,6 @@ void Uuw_fight_level_occupy_list_C::OnListItemObjectSet(class UObject* ListItemO
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_level_occupy_list.uw_fight_level_occupy_list_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_level_occupy_list_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_occupy_list_C", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

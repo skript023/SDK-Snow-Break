@@ -17,34 +17,6 @@
 namespace SDK
 {
 
-// Function uw_fight_level_star.uw_fight_level_star_C.Construct__Overridden
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_level_star_C::Construct__Overridden()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_star_C", "Construct__Overridden");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function uw_fight_level_star.uw_fight_level_star_C.Destruct__Overridden
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void Uuw_fight_level_star_C::Destruct__Overridden()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_level_star_C", "Destruct__Overridden");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function uw_fight_level_star.uw_fight_level_star_C.ExecuteUbergraph_uw_fight_level_star
 // (Final, UbergraphFunction)
 // Parameters:
@@ -62,6 +34,34 @@ void Uuw_fight_level_star_C::ExecuteUbergraph_uw_fight_level_star(int32 EntryPoi
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function uw_fight_level_star.uw_fight_level_star_C.Destruct__Overridden
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_level_star_C::Destruct__Overridden()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_star_C", "Destruct__Overridden");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function uw_fight_level_star.uw_fight_level_star_C.Construct__Overridden
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void Uuw_fight_level_star_C::Construct__Overridden()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_level_star_C", "Construct__Overridden");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

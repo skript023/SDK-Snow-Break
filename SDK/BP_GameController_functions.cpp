@@ -17,6 +17,91 @@
 namespace SDK
 {
 
+// LuaFunction BP_GameController.BP_GameController_C.LuaImpl_CallDSExec
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   InCmd                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InContent                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABP_GameController_C::LuaImpl_CallDSExec(int32 InCmd, const class FString& InContent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GameController_C", "LuaImpl_CallDSExec");
+
+	Params::BP_GameController_C_LuaImpl_CallDSExec Parms{};
+
+	Parms.InCmd = InCmd;
+	Parms.InContent = std::move(InContent);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_GameController.BP_GameController_C.LuaImpl_CallClientExec
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   InCmd                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InContent                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABP_GameController_C::LuaImpl_CallClientExec(int32 InCmd, const class FString& InContent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GameController_C", "LuaImpl_CallClientExec");
+
+	Params::BP_GameController_C_LuaImpl_CallClientExec Parms{};
+
+	Parms.InCmd = InCmd;
+	Parms.InContent = std::move(InContent);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// LuaFunction BP_GameController.BP_GameController_C.Client_ShowMessage
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const int32&                            Type                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Message                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32&                            Duration                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUseUIShowTip                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void ABP_GameController_C::Client_ShowMessage(const int32& Type, const class FString& Message, const int32& Duration, const bool bUseUIShowTip)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GameController_C", "Client_ShowMessage");
+
+	Params::BP_GameController_C_Client_ShowMessage Parms{};
+
+	Parms.Type = Type;
+	Parms.Message = std::move(Message);
+	Parms.Duration = Duration;
+	Parms.bUseUIShowTip = bUseUIShowTip;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function BP_GameController.BP_GameController_C.CalcSideLength
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -367,91 +452,6 @@ void ABP_GameController_C::ExecuteUbergraph_BP_GameController(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// LuaFunction BP_GameController.BP_GameController_C.LuaImpl_CallDSExec
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   InCmd                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    InContent                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ABP_GameController_C::LuaImpl_CallDSExec(int32 InCmd, const class FString& InContent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GameController_C", "LuaImpl_CallDSExec");
-
-	Params::BP_GameController_C_LuaImpl_CallDSExec Parms{};
-
-	Parms.InCmd = InCmd;
-	Parms.InContent = std::move(InContent);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_GameController.BP_GameController_C.LuaImpl_CallClientExec
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   InCmd                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    InContent                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ABP_GameController_C::LuaImpl_CallClientExec(int32 InCmd, const class FString& InContent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GameController_C", "LuaImpl_CallClientExec");
-
-	Params::BP_GameController_C_LuaImpl_CallClientExec Parms{};
-
-	Parms.InCmd = InCmd;
-	Parms.InContent = std::move(InContent);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction BP_GameController.BP_GameController_C.Client_ShowMessage
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const int32&                            Type                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Message                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const int32&                            Duration                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              bUseUIShowTip                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void ABP_GameController_C::Client_ShowMessage(const int32& Type, const class FString& Message, const int32& Duration, const bool bUseUIShowTip)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GameController_C", "Client_ShowMessage");
-
-	Params::BP_GameController_C_Client_ShowMessage Parms{};
-
-	Parms.Type = Type;
-	Parms.Message = std::move(Message);
-	Parms.Duration = Duration;
-	Parms.bUseUIShowTip = bUseUIShowTip;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 }

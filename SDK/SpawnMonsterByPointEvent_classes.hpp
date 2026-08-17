@@ -32,8 +32,8 @@ public:
 	void PreLoadBeforeDo(const struct FActiveSpawnersTemplate& InTemplate);
 	int32 GetSpawnNum();
 	void Do__Overridden(const struct FActiveSpawnersTemplate& InTemplate);
-	void Do(const struct FActiveSpawnersTemplate& InTemplate);
 	bool TrySpawn();
+	void Do(const struct FActiveSpawnersTemplate& InTemplate);
 
 	class FString GetSpecialStaticDescription() const;
 	class FString GetModuleName() const;

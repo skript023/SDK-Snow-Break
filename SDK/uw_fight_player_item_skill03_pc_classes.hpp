@@ -91,13 +91,13 @@ public:
 	class URedirectImage*                         white02;                                           // 0x0778(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void K2_PlayFinishAnim();
-	void K2_PlayEnoughAnim(bool bPlay);
-	void OnSkillStrengthening(bool bStart);
-	void OnSkillKeepInterrupt(bool bStart);
-	void OnUIEffectSkillLongPress(bool bStart);
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void ExecuteUbergraph_uw_fight_player_item_skill03_pc(int32 EntryPoint);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
+	void OnUIEffectSkillLongPress(bool bStart);
+	void OnSkillKeepInterrupt(bool bStart);
+	void OnSkillStrengthening(bool bStart);
+	void K2_PlayEnoughAnim(bool bPlay);
+	void K2_PlayFinishAnim();
 
 public:
 	static class UClass* StaticClass()

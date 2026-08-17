@@ -46,18 +46,18 @@ public:
 	int32                                         EffectId2;                                         // 0x0380(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch02_3();
-	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch02_2();
-	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch02_1();
-	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch02_0();
-	void EndPlayEffect();
-	void SequenceEvent_0();
-	void SequenceEvent_1();
-	void SequenceEvent_2();
-	void SequenceEvent_3();
-	void OnInitialized();
-	void Destruct();
 	void ExecuteUbergraph_uw_fight_rogue3d_switch02(int32 EntryPoint);
+	void Destruct();
+	void OnInitialized();
+	void SequenceEvent_3();
+	void SequenceEvent_2();
+	void SequenceEvent_1();
+	void SequenceEvent_0();
+	void EndPlayEffect();
+	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch02_0();
+	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch02_1();
+	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch02_2();
+	void SequenceEvent__ENTRYPOINTuw_fight_rogue3d_switch02_3();
 
 public:
 	static class UClass* StaticClass()

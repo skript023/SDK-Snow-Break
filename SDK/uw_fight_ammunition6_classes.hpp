@@ -32,9 +32,9 @@ public:
 	class UGameCanvasPanel*                       PanelStrongTime;                                   // 0x03A8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void SetBulletEffect(bool bShow);
-	void SetBulletTimeEffect(bool bShow);
 	void ExecuteUbergraph_uw_fight_ammunition6(int32 EntryPoint);
+	void SetBulletTimeEffect(bool bShow);
+	void SetBulletEffect(bool bShow);
 
 public:
 	static class UClass* StaticClass()

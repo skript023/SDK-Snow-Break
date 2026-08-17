@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function uw_fight_ammunition6.uw_fight_ammunition6_C.SetBulletEffect
-// (Event, Public, BlueprintEvent)
+// Function uw_fight_ammunition6.uw_fight_ammunition6_C.ExecuteUbergraph_uw_fight_ammunition6
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    bShow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_ammunition6_C::SetBulletEffect(bool bShow)
+void Uuw_fight_ammunition6_C::ExecuteUbergraph_uw_fight_ammunition6(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition6_C", "SetBulletEffect");
+		Func = Class->GetFunction("uw_fight_ammunition6_C", "ExecuteUbergraph_uw_fight_ammunition6");
 
-	Params::uw_fight_ammunition6_C_SetBulletEffect Parms{};
+	Params::uw_fight_ammunition6_C_ExecuteUbergraph_uw_fight_ammunition6 Parms{};
 
-	Parms.bShow = bShow;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,21 +57,21 @@ void Uuw_fight_ammunition6_C::SetBulletTimeEffect(bool bShow)
 }
 
 
-// Function uw_fight_ammunition6.uw_fight_ammunition6_C.ExecuteUbergraph_uw_fight_ammunition6
-// (Final, UbergraphFunction)
+// Function uw_fight_ammunition6.uw_fight_ammunition6_C.SetBulletEffect
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bShow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void Uuw_fight_ammunition6_C::ExecuteUbergraph_uw_fight_ammunition6(int32 EntryPoint)
+void Uuw_fight_ammunition6_C::SetBulletEffect(bool bShow)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_ammunition6_C", "ExecuteUbergraph_uw_fight_ammunition6");
+		Func = Class->GetFunction("uw_fight_ammunition6_C", "SetBulletEffect");
 
-	Params::uw_fight_ammunition6_C_ExecuteUbergraph_uw_fight_ammunition6 Parms{};
+	Params::uw_fight_ammunition6_C_SetBulletEffect Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bShow = bShow;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

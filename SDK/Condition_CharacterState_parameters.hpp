@@ -18,24 +18,6 @@
 namespace SDK::Params
 {
 
-// Function Condition_CharacterState.Condition_CharacterState_C.CheckShiftDistance
-// 0x0038 (0x0038 - 0x0000)
-struct Condition_CharacterState_C_CheckShiftDistance final
-{
-public:
-	class AGameCharacter*                         CallFunc_GetLauncherOriginCharacter_ReturnValue;   // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class AGameCharacter*                         CallFunc_GetLauncherOriginCharacter_ReturnValue_1; // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Subtract_VectorVector_ReturnValue;        // 0x0024(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_VSize_ReturnValue;                        // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0035(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Condition_CharacterState_C_CheckShiftDistance;
-
 // Function Condition_CharacterState.Condition_CharacterState_C.InitEnterCheck
 // 0x0018 (0x0018 - 0x0000)
 struct Condition_CharacterState_C_InitEnterCheck final
@@ -49,24 +31,6 @@ public:
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0013(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_Condition_CharacterState_C_InitEnterCheck;
-
-// Function Condition_CharacterState.Condition_CharacterState_C.BindEvent
-// 0x0008 (0x0008 - 0x0000)
-struct Condition_CharacterState_C_BindEvent final
-{
-public:
-	class AGameCharacter*                         InCharacter;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Condition_CharacterState_C_BindEvent;
-
-// Function Condition_CharacterState.Condition_CharacterState_C.UnbindEvent
-// 0x0008 (0x0008 - 0x0000)
-struct Condition_CharacterState_C_UnbindEvent final
-{
-public:
-	class AGameCharacter*                         InCharacter;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Condition_CharacterState_C_UnbindEvent;
 
 // Function Condition_CharacterState.Condition_CharacterState_C.OnNotifyPlayerAction
 // 0x0010 (0x0010 - 0x0000)
@@ -89,48 +53,6 @@ public:
 	bool                                          bSet;                                              // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_Condition_CharacterState_C_NotifyPlayerAction;
-
-// Function Condition_CharacterState.Condition_CharacterState_C.OnNotifyPlayerMove
-// 0x0010 (0x0010 - 0x0000)
-struct Condition_CharacterState_C_OnNotifyPlayerMove final
-{
-public:
-	class AGameCharacter*                         CurCharacter;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EGamePlayerMoveState                          LastType;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EGamePlayerMoveState                          CurType;                                           // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Condition_CharacterState_C_OnNotifyPlayerMove;
-
-// Function Condition_CharacterState.Condition_CharacterState_C.NotifyPlayerMove
-// 0x0010 (0x0010 - 0x0000)
-struct Condition_CharacterState_C_NotifyPlayerMove final
-{
-public:
-	class AGameCharacter*                         InCharacter;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EGamePlayerMoveState                          LastType;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EGamePlayerMoveState                          CurType;                                           // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Condition_CharacterState_C_NotifyPlayerMove;
-
-// Function Condition_CharacterState.Condition_CharacterState_C.K2_BindEvent
-// 0x0010 (0x0010 - 0x0000)
-struct Condition_CharacterState_C_K2_BindEvent final
-{
-public:
-	class UAbilityComponentBase*                  InCurLauncher;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Condition_CharacterState_C_K2_BindEvent;
-
-// Function Condition_CharacterState.Condition_CharacterState_C.K2_UnbindEvent
-// 0x0010 (0x0010 - 0x0000)
-struct Condition_CharacterState_C_K2_UnbindEvent final
-{
-public:
-	class UAbilityComponentBase*                  InCurLauncher;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Condition_CharacterState_C_K2_UnbindEvent;
 
 // Function Condition_CharacterState.Condition_CharacterState_C.ExecuteUbergraph_Condition_CharacterState
 // 0x00D0 (0x00D0 - 0x0000)
@@ -186,6 +108,84 @@ public:
 	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x00C0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Condition_CharacterState_C_ExecuteUbergraph_Condition_CharacterState;
+
+// Function Condition_CharacterState.Condition_CharacterState_C.CheckShiftDistance
+// 0x0038 (0x0038 - 0x0000)
+struct Condition_CharacterState_C_CheckShiftDistance final
+{
+public:
+	class AGameCharacter*                         CallFunc_GetLauncherOriginCharacter_ReturnValue;   // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGameCharacter*                         CallFunc_GetLauncherOriginCharacter_ReturnValue_1; // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Subtract_VectorVector_ReturnValue;        // 0x0024(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_VSize_ReturnValue;                        // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0035(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Condition_CharacterState_C_CheckShiftDistance;
+
+// Function Condition_CharacterState.Condition_CharacterState_C.BindEvent
+// 0x0008 (0x0008 - 0x0000)
+struct Condition_CharacterState_C_BindEvent final
+{
+public:
+	class AGameCharacter*                         InCharacter;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Condition_CharacterState_C_BindEvent;
+
+// Function Condition_CharacterState.Condition_CharacterState_C.UnbindEvent
+// 0x0008 (0x0008 - 0x0000)
+struct Condition_CharacterState_C_UnbindEvent final
+{
+public:
+	class AGameCharacter*                         InCharacter;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Condition_CharacterState_C_UnbindEvent;
+
+// Function Condition_CharacterState.Condition_CharacterState_C.OnNotifyPlayerMove
+// 0x0010 (0x0010 - 0x0000)
+struct Condition_CharacterState_C_OnNotifyPlayerMove final
+{
+public:
+	class AGameCharacter*                         CurCharacter;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EGamePlayerMoveState                          LastType;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EGamePlayerMoveState                          CurType;                                           // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Condition_CharacterState_C_OnNotifyPlayerMove;
+
+// Function Condition_CharacterState.Condition_CharacterState_C.NotifyPlayerMove
+// 0x0010 (0x0010 - 0x0000)
+struct Condition_CharacterState_C_NotifyPlayerMove final
+{
+public:
+	class AGameCharacter*                         InCharacter;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EGamePlayerMoveState                          LastType;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EGamePlayerMoveState                          CurType;                                           // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Condition_CharacterState_C_NotifyPlayerMove;
+
+// Function Condition_CharacterState.Condition_CharacterState_C.K2_BindEvent
+// 0x0010 (0x0010 - 0x0000)
+struct Condition_CharacterState_C_K2_BindEvent final
+{
+public:
+	class UAbilityComponentBase*                  InCurLauncher;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Condition_CharacterState_C_K2_BindEvent;
+
+// Function Condition_CharacterState.Condition_CharacterState_C.K2_UnbindEvent
+// 0x0010 (0x0010 - 0x0000)
+struct Condition_CharacterState_C_K2_UnbindEvent final
+{
+public:
+	class UAbilityComponentBase*                  InCurLauncher;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameCharacter*                         InCurLauncherChara;                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Condition_CharacterState_C_K2_UnbindEvent;
 
 }
 

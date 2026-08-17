@@ -19,7 +19,7 @@ namespace SDK
 
 // BlueprintGeneratedClass SMC_BaseMonster.SMC_BaseMonster_C
 // 0x0010 (0x01B8 - 0x01A8)
-class USMC_BaseMonster_C final : public USMStateMachineComponent
+class USMC_BaseMonster_C : public USMStateMachineComponent
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x01A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

@@ -117,31 +117,6 @@ void USpawnMonsterByPointEvent_C::Do__Overridden(const struct FActiveSpawnersTem
 }
 
 
-// LuaFunction SpawnMonsterByPointEvent.SpawnMonsterByPointEvent_C.Do
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FActiveSpawnersTemplate&   InTemplate                                             (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void USpawnMonsterByPointEvent_C::Do(const struct FActiveSpawnersTemplate& InTemplate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpawnMonsterByPointEvent_C", "Do");
-
-	Params::SpawnMonsterByPointEvent_C_Do Parms{};
-
-	Parms.InTemplate = std::move(InTemplate);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // LuaFunction SpawnMonsterByPointEvent.SpawnMonsterByPointEvent_C.TrySpawn
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -164,6 +139,31 @@ bool USpawnMonsterByPointEvent_C::TrySpawn()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// LuaFunction SpawnMonsterByPointEvent.SpawnMonsterByPointEvent_C.Do
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FActiveSpawnersTemplate&   InTemplate                                             (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void USpawnMonsterByPointEvent_C::Do(const struct FActiveSpawnersTemplate& InTemplate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpawnMonsterByPointEvent_C", "Do");
+
+	Params::SpawnMonsterByPointEvent_C_Do Parms{};
+
+	Parms.InTemplate = std::move(InTemplate);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

@@ -74,17 +74,17 @@ public:
 	struct FLinearColor                           EffectColor;                                       // 0x0510(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	int32 GetNextLeftCount(class UModifier* InModifier);
-	void Set_Bullet_Image(int32 Start, int32 End, const struct FLinearColor& Color);
-	void SetBullet(class UWidget* BulletWidget, int32 InBulet);
-	void Construct();
-	void SetBulletEffect(bool bShow);
-	void SetBulletTimeEffect(bool bShow);
-	void ClearBulletEffect();
-	void SetBulletCountEffect(float StartPercent, float EndPercent, float Start, float End);
-	void OnBulletChange(int32 InCurBullet, int32 InMaxBullet, float InPercent);
-	void K2_SkillCastBulletFail();
 	void ExecuteUbergraph_uw_fight_ammunition4(int32 EntryPoint);
+	void K2_SkillCastBulletFail();
+	void OnBulletChange(int32 InCurBullet, int32 InMaxBullet, float InPercent);
+	void SetBulletCountEffect(float StartPercent, float EndPercent, float Start, float End);
+	void ClearBulletEffect();
+	void SetBulletTimeEffect(bool bShow);
+	void SetBulletEffect(bool bShow);
+	void Construct();
+	void SetBullet(class UWidget* BulletWidget, int32 InBulet);
+	void Set_Bullet_Image(int32 Start, int32 End, const struct FLinearColor& Color);
+	int32 GetNextLeftCount(class UModifier* InModifier);
 
 public:
 	static class UClass* StaticClass()

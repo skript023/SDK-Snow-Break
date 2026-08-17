@@ -35,9 +35,9 @@ public:
 	class URedirectImage*                         quan01;                                            // 0x02D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void PreConstruct(bool IsDesignTime);
-	void PlayEnd();
 	void ExecuteUbergraph_uw_fight_round(int32 EntryPoint);
+	void PlayEnd();
+	void PreConstruct(bool IsDesignTime);
 
 public:
 	static class UClass* StaticClass()

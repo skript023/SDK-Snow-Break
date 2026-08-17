@@ -34,8 +34,8 @@ public:
 	class UCustomText*                            PanelServant;                                      // 0x0840(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void ExecuteUbergraph_uw_fight_direction_servant(int32 EntryPoint);
+	void K2_OnCustomUmgAnimFinished(const class FName& AnimName);
 	void PlayDieAnim();
 	void AppearFinish(class UWidgetAnimation* Animation);
 	void OnVisibilityChanged_Event_0(ESlateVisibility InVisibility);

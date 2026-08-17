@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveDeActive
+// LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveActive
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const class UGameAbilityComponent*      Pawn                                                   (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UObject*                    Instigator                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBulletRecover_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn)
+void UBulletRecover_C::K2_ReceiveActive(const class UObject* Instigator)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BulletRecover_C", "K2_ReceiveDeActive");
+		Func = Class->GetFunction("BulletRecover_C", "K2_ReceiveActive");
 
-	Params::BulletRecover_C_K2_ReceiveDeActive Parms{};
+	Params::BulletRecover_C_K2_ReceiveActive Parms{};
 
-	Parms.Pawn = Pawn;
+	Parms.Instigator = Instigator;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -72,21 +72,21 @@ bool UBulletRecover_C::K2_RecoverAttribute(class UAbilityComponentBase* InAbilit
 }
 
 
-// LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveActive
+// LuaFunction BulletRecover.BulletRecover_C.K2_ReceiveDeActive
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const class UObject*                    Instigator                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UGameAbilityComponent*      Pawn                                                   (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBulletRecover_C::K2_ReceiveActive(const class UObject* Instigator)
+void UBulletRecover_C::K2_ReceiveDeActive(const class UGameAbilityComponent* Pawn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BulletRecover_C", "K2_ReceiveActive");
+		Func = Class->GetFunction("BulletRecover_C", "K2_ReceiveDeActive");
 
-	Params::BulletRecover_C_K2_ReceiveActive Parms{};
+	Params::BulletRecover_C_K2_ReceiveDeActive Parms{};
 
-	Parms.Instigator = Instigator;
+	Parms.Pawn = Pawn;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -32,8 +32,8 @@ public:
 	class URedirectImage*                         Direction_cd_4;                                    // 0x02B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void Stop();
 	void ExecuteUbergraph_Panel_Cd_Animation_pc(int32 EntryPoint);
+	void Stop();
 	void CustomEvent_0();
 	void Play(bool bLoop);
 

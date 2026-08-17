@@ -17,32 +17,6 @@
 namespace SDK
 {
 
-// Function DeadPerformance_Girl005_a01ThroughBullet.DeadPerformance_Girl005_a01ThroughBullet_C.DeadPerformanceLogic
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// class AGameCharacter*                   DeadCharacter                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AGameCharacter*                   Killer                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UDeadPerformanceComponent*        DeadComponent                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FHealthChangeValue&        HealthChangeValue                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-
-void UDeadPerformance_Girl005_a01ThroughBullet_C::DeadPerformanceLogic(class AGameCharacter* DeadCharacter, class AGameCharacter* Killer, class UDeadPerformanceComponent* DeadComponent, const struct FHealthChangeValue& HealthChangeValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DeadPerformance_Girl005_a01ThroughBullet_C", "DeadPerformanceLogic");
-
-	Params::DeadPerformance_Girl005_a01ThroughBullet_C_DeadPerformanceLogic Parms{};
-
-	Parms.DeadCharacter = DeadCharacter;
-	Parms.Killer = Killer;
-	Parms.DeadComponent = DeadComponent;
-	Parms.HealthChangeValue = std::move(HealthChangeValue);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function DeadPerformance_Girl005_a01ThroughBullet.DeadPerformance_Girl005_a01ThroughBullet_C.OnTick
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -68,6 +42,32 @@ void UDeadPerformance_Girl005_a01ThroughBullet_C::OnTick(class AGameCharacter* D
 	Parms.HealthChangeValue = std::move(HealthChangeValue);
 	Parms.DeltaTime = DeltaTime;
 	Parms.TimeFromBegin = TimeFromBegin;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function DeadPerformance_Girl005_a01ThroughBullet.DeadPerformance_Girl005_a01ThroughBullet_C.DeadPerformanceLogic
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// class AGameCharacter*                   DeadCharacter                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AGameCharacter*                   Killer                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UDeadPerformanceComponent*        DeadComponent                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHealthChangeValue&        HealthChangeValue                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+
+void UDeadPerformance_Girl005_a01ThroughBullet_C::DeadPerformanceLogic(class AGameCharacter* DeadCharacter, class AGameCharacter* Killer, class UDeadPerformanceComponent* DeadComponent, const struct FHealthChangeValue& HealthChangeValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DeadPerformance_Girl005_a01ThroughBullet_C", "DeadPerformanceLogic");
+
+	Params::DeadPerformance_Girl005_a01ThroughBullet_C_DeadPerformanceLogic Parms{};
+
+	Parms.DeadCharacter = DeadCharacter;
+	Parms.Killer = Killer;
+	Parms.DeadComponent = DeadComponent;
+	Parms.HealthChangeValue = std::move(HealthChangeValue);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

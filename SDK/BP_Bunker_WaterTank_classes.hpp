@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Bunker_WaterTank_C;              // 0x1480(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue);
 	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_Bunker_WaterTank(int32 EntryPoint);
+	void OnDie(class AGameCharacter* Who, class AGameCharacter* Killer, const struct FHealthChangeValue& HealthChangeValue);
 
 public:
 	static class UClass* StaticClass()

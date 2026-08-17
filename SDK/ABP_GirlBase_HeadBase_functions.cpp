@@ -17,6 +17,46 @@
 namespace SDK
 {
 
+// Function ABP_GirlBase_HeadBase.ABP_GirlBase_HeadBase_C.BlueprintUpdateAnimation
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTimeX                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_GirlBase_HeadBase_C::BlueprintUpdateAnimation(float DeltaTimeX)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_GirlBase_HeadBase_C", "BlueprintUpdateAnimation");
+
+	Params::ABP_GirlBase_HeadBase_C_BlueprintUpdateAnimation Parms{};
+
+	Parms.DeltaTimeX = DeltaTimeX;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_GirlBase_HeadBase.ABP_GirlBase_HeadBase_C.ExecuteUbergraph_ABP_GirlBase_HeadBase
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_GirlBase_HeadBase_C::ExecuteUbergraph_ABP_GirlBase_HeadBase(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_GirlBase_HeadBase_C", "ExecuteUbergraph_ABP_GirlBase_HeadBase");
+
+	Params::ABP_GirlBase_HeadBase_C_ExecuteUbergraph_ABP_GirlBase_HeadBase Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function ABP_GirlBase_HeadBase.ABP_GirlBase_HeadBase_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -35,26 +75,6 @@ void UABP_GirlBase_HeadBase_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 	if (AnimGraph_0 != nullptr)
 		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
-}
-
-
-// Function ABP_GirlBase_HeadBase.ABP_GirlBase_HeadBase_C.BlueprintUpdateAnimation
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTimeX                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UABP_GirlBase_HeadBase_C::BlueprintUpdateAnimation(float DeltaTimeX)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_GirlBase_HeadBase_C", "BlueprintUpdateAnimation");
-
-	Params::ABP_GirlBase_HeadBase_C_BlueprintUpdateAnimation Parms{};
-
-	Parms.DeltaTimeX = DeltaTimeX;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -83,26 +103,6 @@ void UABP_GirlBase_HeadBase_C::CustomEvent()
 		Func = Class->GetFunction("ABP_GirlBase_HeadBase_C", "CustomEvent");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_GirlBase_HeadBase.ABP_GirlBase_HeadBase_C.ExecuteUbergraph_ABP_GirlBase_HeadBase
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UABP_GirlBase_HeadBase_C::ExecuteUbergraph_ABP_GirlBase_HeadBase(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_GirlBase_HeadBase_C", "ExecuteUbergraph_ABP_GirlBase_HeadBase");
-
-	Params::ABP_GirlBase_HeadBase_C_ExecuteUbergraph_ABP_GirlBase_HeadBase Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

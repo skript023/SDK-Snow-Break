@@ -41,16 +41,16 @@ public:
 	class URedirectTextBlock*                     TxtTarget;                                         // 0x0430(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void TryPlay__Overridden();
-	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
-	void BP_OnItemSelectionChanged(bool bIsSelected);
-	void BP_OnItemExpansionChanged(bool bIsExpanded);
-	void BP_OnEntryReleased();
 	void ExecuteUbergraph_uw_fight_star_tips(int32 EntryPoint);
+	void BP_OnEntryReleased();
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void BP_OnItemSelectionChanged(bool bIsSelected);
+	void OnListItemObjectSet__Overridden(class UObject* ListItemObject);
+	void TryPlay__Overridden();
+	void Construct();
 	void TryPlay();
 	void OnAnimationFinished(const class UWidgetAnimation* Animation);
 	void OnListItemObjectSet(class UObject* ListItemObject);
-	void Construct();
 	void OnConstruct();
 	void Destruct();
 

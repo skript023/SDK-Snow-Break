@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.SetPlaySpeed
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.ExecuteUbergraph_uw_fight_grenade_tips
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// float                                   InSpeedPre                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_grenade_tips_C::SetPlaySpeed(float InSpeedPre)
+void Uuw_fight_grenade_tips_C::ExecuteUbergraph_uw_fight_grenade_tips(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_grenade_tips_C", "SetPlaySpeed");
+		Func = Class->GetFunction("uw_fight_grenade_tips_C", "ExecuteUbergraph_uw_fight_grenade_tips");
 
-	Params::uw_fight_grenade_tips_C_SetPlaySpeed Parms{};
+	Params::uw_fight_grenade_tips_C_ExecuteUbergraph_uw_fight_grenade_tips Parms{};
 
-	Parms.InSpeedPre = InSpeedPre;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -59,23 +59,17 @@ void Uuw_fight_grenade_tips_C::Tick__Overridden(const struct FGeometry& MyGeomet
 }
 
 
-// Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.ExecuteUbergraph_uw_fight_grenade_tips
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.Play
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void Uuw_fight_grenade_tips_C::ExecuteUbergraph_uw_fight_grenade_tips(int32 EntryPoint)
+void Uuw_fight_grenade_tips_C::Play()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_grenade_tips_C", "ExecuteUbergraph_uw_fight_grenade_tips");
+		Func = Class->GetFunction("uw_fight_grenade_tips_C", "Play");
 
-	Params::uw_fight_grenade_tips_C_ExecuteUbergraph_uw_fight_grenade_tips Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -93,17 +87,23 @@ void Uuw_fight_grenade_tips_C::Stop()
 }
 
 
-// Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.Play
+// Function uw_fight_grenade_tips.uw_fight_grenade_tips_C.SetPlaySpeed
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   InSpeedPre                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uuw_fight_grenade_tips_C::Play()
+void Uuw_fight_grenade_tips_C::SetPlaySpeed(float InSpeedPre)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_grenade_tips_C", "Play");
+		Func = Class->GetFunction("uw_fight_grenade_tips_C", "SetPlaySpeed");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::uw_fight_grenade_tips_C_SetPlaySpeed Parms{};
+
+	Parms.InSpeedPre = InSpeedPre;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -134,6 +134,25 @@ void Uuw_fight_grenade_tips_C::ReceiveWarning(bool IsWarning, float InTotalTime)
 }
 
 
+// LuaFunction uw_fight_grenade_tips.uw_fight_grenade_tips_C.Construct
+// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
+
+void Uuw_fight_grenade_tips_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("uw_fight_grenade_tips_C", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // LuaFunction uw_fight_grenade_tips.uw_fight_grenade_tips_C.Tick
 // (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -156,25 +175,6 @@ void Uuw_fight_grenade_tips_C::Tick(const struct FGeometry& MyGeometry, float In
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// LuaFunction uw_fight_grenade_tips.uw_fight_grenade_tips_C.Construct
-// (BlueprintCosmetic, Native, Event, Public, BlueprintEvent)
-
-void Uuw_fight_grenade_tips_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("uw_fight_grenade_tips_C", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

@@ -47835,14 +47835,14 @@ public:
 };
 DUMPER7_ASSERTS_CustLightListView_GetWidgetPosition;
 
-// Function Game.CustLightListView.OnUserScrolled__Overridden
+// Function Game.CustLightListView.OnUserScrolled
 // 0x0004 (0x0004 - 0x0000)
-struct CustLightListView_OnUserScrolled__Overridden final
+struct CustLightListView_OnUserScrolled final
 {
 public:
 	float                                         Offset;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CustLightListView_OnUserScrolled__Overridden;
+DUMPER7_ASSERTS_CustLightListView_OnUserScrolled;
 
 // Function Game.CustLightListView.SetScrollbarVisibility
 // 0x0001 (0x0001 - 0x0000)
@@ -47871,15 +47871,6 @@ public:
 	struct FVector2D                              InPos;                                             // 0x0008(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CustLightListView_SetWidgetPosition;
-
-// LuaFunction Game.CustLightListView.OnUserScrolled
-// 0x0004 (0x0004 - 0x0000)
-struct CustLightListView_OnUserScrolled final
-{
-public:
-	float                                         Offset;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CustLightListView_OnUserScrolled;
 
 // Function Game.CustLightListView.SetBoxSize
 // 0x0008 (0x0008 - 0x0000)

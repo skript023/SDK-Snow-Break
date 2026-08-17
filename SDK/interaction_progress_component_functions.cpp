@@ -17,49 +17,21 @@
 namespace SDK
 {
 
-// Function interaction_progress_component.interaction_progress_component_C.OpenUI
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uinteraction_progress_component_C::OpenUI()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("interaction_progress_component_C", "OpenUI");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function interaction_progress_component.interaction_progress_component_C.CloseUI
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void Uinteraction_progress_component_C::CloseUI()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("interaction_progress_component_C", "CloseUI");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function interaction_progress_component.interaction_progress_component_C.StartProgress
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function interaction_progress_component.interaction_progress_component_C.ExecuteUbergraph_interaction_progress_component
+// (Final, UbergraphFunction)
 // Parameters:
-// float                                   PerformTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uinteraction_progress_component_C::StartProgress(float PerformTime)
+void Uinteraction_progress_component_C::ExecuteUbergraph_interaction_progress_component(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("interaction_progress_component_C", "StartProgress");
+		Func = Class->GetFunction("interaction_progress_component_C", "ExecuteUbergraph_interaction_progress_component");
 
-	Params::interaction_progress_component_C_StartProgress Parms{};
+	Params::interaction_progress_component_C_ExecuteUbergraph_interaction_progress_component Parms{};
 
-	Parms.PerformTime = PerformTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -85,23 +57,51 @@ void Uinteraction_progress_component_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function interaction_progress_component.interaction_progress_component_C.ExecuteUbergraph_interaction_progress_component
-// (Final, UbergraphFunction)
+// Function interaction_progress_component.interaction_progress_component_C.StartProgress
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   PerformTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Uinteraction_progress_component_C::ExecuteUbergraph_interaction_progress_component(int32 EntryPoint)
+void Uinteraction_progress_component_C::StartProgress(float PerformTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("interaction_progress_component_C", "ExecuteUbergraph_interaction_progress_component");
+		Func = Class->GetFunction("interaction_progress_component_C", "StartProgress");
 
-	Params::interaction_progress_component_C_ExecuteUbergraph_interaction_progress_component Parms{};
+	Params::interaction_progress_component_C_StartProgress Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.PerformTime = PerformTime;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function interaction_progress_component.interaction_progress_component_C.CloseUI
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void Uinteraction_progress_component_C::CloseUI()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("interaction_progress_component_C", "CloseUI");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function interaction_progress_component.interaction_progress_component_C.OpenUI
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void Uinteraction_progress_component_C::OpenUI()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("interaction_progress_component_C", "OpenUI");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

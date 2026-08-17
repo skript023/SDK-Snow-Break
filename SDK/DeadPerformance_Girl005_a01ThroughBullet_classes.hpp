@@ -31,8 +31,8 @@ public:
 	int32                                         ID;                                                // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void DeadPerformanceLogic(class AGameCharacter* DeadCharacter, class AGameCharacter* Killer, class UDeadPerformanceComponent* DeadComponent, const struct FHealthChangeValue& HealthChangeValue);
 	void OnTick(class AGameCharacter* DeadCharacter, class AGameCharacter* Killer, class UDeadPerformanceComponent* DeadComponent, const struct FHealthChangeValue& HealthChangeValue, float DeltaTime, float TimeFromBegin);
+	void DeadPerformanceLogic(class AGameCharacter* DeadCharacter, class AGameCharacter* Killer, class UDeadPerformanceComponent* DeadComponent, const struct FHealthChangeValue& HealthChangeValue);
 	void ExecuteUbergraph_DeadPerformance_Girl005_a01ThroughBullet(int32 EntryPoint);
 
 public:

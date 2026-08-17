@@ -45,20 +45,6 @@ void ABP_EternalBunker_C::SetCullDistance()
 }
 
 
-// Function BP_EternalBunker.BP_EternalBunker_C.SetupInShadow
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_EternalBunker_C::SetupInShadow()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_EternalBunker_C", "SetupInShadow");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_EternalBunker.BP_EternalBunker_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -68,20 +54,6 @@ void ABP_EternalBunker_C::UserConstructionScript()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_EternalBunker_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_EternalBunker.BP_EternalBunker_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_EternalBunker_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_EternalBunker_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -101,20 +73,6 @@ void ABP_EternalBunker_C::UpdateData()
 }
 
 
-// Function BP_EternalBunker.BP_EternalBunker_C.Pre_Spawn
-// (Event, Public, BlueprintEvent)
-
-void ABP_EternalBunker_C::Pre_Spawn()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_EternalBunker_C", "Pre_Spawn");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_EternalBunker.BP_EternalBunker_C.Pre_Recycle
 // (Event, Public, BlueprintEvent)
 
@@ -124,6 +82,48 @@ void ABP_EternalBunker_C::Pre_Recycle()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_EternalBunker_C", "Pre_Recycle");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_EternalBunker.BP_EternalBunker_C.SetupInShadow
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_EternalBunker_C::SetupInShadow()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_EternalBunker_C", "SetupInShadow");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_EternalBunker.BP_EternalBunker_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_EternalBunker_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_EternalBunker_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_EternalBunker.BP_EternalBunker_C.Pre_Spawn
+// (Event, Public, BlueprintEvent)
+
+void ABP_EternalBunker_C::Pre_Spawn()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_EternalBunker_C", "Pre_Spawn");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

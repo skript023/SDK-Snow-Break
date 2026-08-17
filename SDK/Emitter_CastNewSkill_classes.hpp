@@ -23,8 +23,8 @@ class UEmitter_CastNewSkill_C final : public USkill_Emitter
 {
 public:
 	void EmitterDestroyLua();
-	EEmitterResult OnEmit();
 	void OnEmitEnd();
+	EEmitterResult OnEmit();
 	TArray<struct FSoftObjectPath> OnGetAssetPath(const TArray<struct FParamInfo>& Values, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
 	void GetDefaultParamsValue(TArray<struct FParamInfo>* Values);
 

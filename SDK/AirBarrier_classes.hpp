@@ -46,6 +46,9 @@ public:
 	bool                                          HideEffect;                                        // 0x0282(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
+	void DoRegionCheck(bool* bPassCheck);
+	void ReceiveActorBeginOverlap(class AActor* OtherActor);
+	void DoOnlineTDDutyCheck(bool* bPassCheck);
 	void ShouldOpenTick();
 	void Update();
 	void CheckTDDuty();
@@ -64,9 +67,6 @@ public:
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ReceiveTick(float DeltaSeconds);
 	void ExecuteUbergraph_AirBarrier(int32 EntryPoint);
-	void ReceiveActorBeginOverlap(class AActor* OtherActor);
-	void DoRegionCheck(bool* bPassCheck);
-	void DoOnlineTDDutyCheck(bool* bPassCheck);
 
 	class FString GetModuleName() const;
 

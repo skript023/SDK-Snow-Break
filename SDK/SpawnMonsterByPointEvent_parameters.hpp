@@ -77,15 +77,6 @@ public:
 };
 DUMPER7_ASSERTS_SpawnMonsterByPointEvent_C_Do__Overridden;
 
-// LuaFunction SpawnMonsterByPointEvent.SpawnMonsterByPointEvent_C.Do
-// 0x0088 (0x0088 - 0x0000)
-struct SpawnMonsterByPointEvent_C_Do final
-{
-public:
-	struct FActiveSpawnersTemplate                InTemplate;                                        // 0x0000(0x0088)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-DUMPER7_ASSERTS_SpawnMonsterByPointEvent_C_Do;
-
 // LuaFunction SpawnMonsterByPointEvent.SpawnMonsterByPointEvent_C.TrySpawn
 // 0x0001 (0x0001 - 0x0000)
 struct SpawnMonsterByPointEvent_C_TrySpawn final
@@ -94,6 +85,15 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SpawnMonsterByPointEvent_C_TrySpawn;
+
+// LuaFunction SpawnMonsterByPointEvent.SpawnMonsterByPointEvent_C.Do
+// 0x0088 (0x0088 - 0x0000)
+struct SpawnMonsterByPointEvent_C_Do final
+{
+public:
+	struct FActiveSpawnersTemplate                InTemplate;                                        // 0x0000(0x0088)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+DUMPER7_ASSERTS_SpawnMonsterByPointEvent_C_Do;
 
 // Function SpawnMonsterByPointEvent.SpawnMonsterByPointEvent_C.GetSpecialStaticDescription
 // 0x0050 (0x0050 - 0x0000)

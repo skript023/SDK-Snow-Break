@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Snow_Str_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "PostFog_Str_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params

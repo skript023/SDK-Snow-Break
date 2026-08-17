@@ -21,12 +21,12 @@ namespace SDK
 class UEmitter_SkillMove_C : public USkill_Emitter
 {
 public:
-	TArray<struct FSoftObjectPath> OnGetAssetPath(const TArray<struct FParamInfo>& Values, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
-	void OnEmitterInterrupt();
-	void OnEmitBegin();
 	void EmitterDestroyLua();
-	void OnEmitTick(float DeltaTime);
+	void OnEmitterInterrupt();
 	void OnEmitEnd();
+	void OnEmitBegin();
+	void OnEmitTick(float DeltaTime);
+	TArray<struct FSoftObjectPath> OnGetAssetPath(const TArray<struct FParamInfo>& Values, TArray<int32>& CharacterIDs, TArray<int32>& SkillIDs, TArray<int32>& ModifierIDs, TArray<int32>& EmitterIDs);
 
 	class FString GetModuleName() const;
 
